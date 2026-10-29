@@ -1,232 +1,242 @@
-# 05. Настройка Windows 11
+# 05. Windows 11 Tuning
 
-> Цель настройки Windows — убрать реальную фоновую нагрузку, выбрать корректные игровые параметры и сохранить систему стабильной и безопасной. Не нужно отключать десятки служб, Defender или обновления ради сомнительных «FPS-твиков».
+> The goal of Windows tuning is to reduce real background load, choose correct gaming options, and keep the system stable and secure. You do not need to disable dozens of services, Defender, or updates for questionable “FPS tweaks.”
 
-## Принцип
+## Principles
 
-- Меняйте настройки по одной.
-- После важных изменений перезагружайте ПК.
-- Проверяйте FPS, 1% low, frametime и стабильность.
-- Оставляйте только те изменения, которые дали измеримый результат или улучшили удобство.
+- Change settings one at a time.
+- Reboot after major changes.
+- Check FPS, 1% low, frametime, and stability.
+- Keep only changes that provide measurable results or better usability.
+
+### 5-minute Windows gaming pass
+
+| Check | Target |
+|---|---|
+| Game Mode | On |
+| Monitor refresh rate | Correct max stable value |
+| Startup load | Unneeded apps disabled |
+| Overlays | Keep only required ones |
+| Downloads/updates | Paused during session |
 
 > [!IMPORTANT]
-> Windows не становится быстрее от максимального количества отключённых функций. Стабильная система с нормальными драйверами и без тяжёлых программ в фоне лучше агрессивного debloat.
+> Windows does not become faster just because more features are disabled. A stable system with proper drivers and minimal heavy background apps is better than aggressive debloating.
 
 ---
 
-## 1. Игровой режим (Game Mode)
+## 1. Game Mode
 
-Откройте:
-
-```text
-Параметры → Игры → Игровой режим
-```
-
-Включите:
+Open:
 
 ```text
-Игровой режим → Вкл.
+Settings → Gaming → Game Mode
 ```
 
-Game Mode помогает Windows отдавать приоритет игровому процессу и уменьшать влияние части фоновой активности во время игры.
+Enable:
 
-### Когда оставить включённым
+```text
+Game Mode → On
+```
 
-- Для большинства игровых ПК и ноутбуков.
-- Если не видите проблем в конкретной игре.
+Game Mode helps Windows prioritize gameplay and reduce impact from some background activity while gaming.
 
-### Когда тестировать выключение
+### When to keep it enabled
 
-- Только если определённая игра стабильно работает хуже именно с включённым Game Mode.
-- Сравните одинаковую сцену до и после изменения.
+- For most gaming PCs and laptops.
+- If you do not see problems in a specific game.
+
+### When to test disabling
+
+- Only if a specific game consistently performs worse with Game Mode enabled.
+- Compare the same scene before and after change.
 
 ---
 
-## 2. Режим питания
+## 2. Power mode
 
-Откройте:
-
-```text
-Параметры → Система → Питание и батарея
-```
-
-Для стационарного ПК обычно подходит:
+Open:
 
 ```text
-Режим питания → Лучшая производительность
+Settings → System → Power & battery
 ```
 
-Для ноутбука:
+For desktop PCs, usually:
 
-- При игре используйте питание от сети.
-- Выберите производительный режим Windows и, если есть, профиль производителя ноутбука.
-- Помните, что высокий режим питания увеличивает нагрев, шум и расход батареи.
+```text
+Power mode → Best performance
+```
 
-### Проверить активный план
+For laptops:
+
+- Use AC power while gaming.
+- Select a performance mode in Windows and, if available, vendor performance profile.
+- Keep in mind higher power mode increases heat, noise, and battery usage.
+
+### Check active power plan
 
 ```powershell
 powercfg /getactivescheme
 ```
 
-### Посмотреть доступные планы
+### List available plans
 
 ```powershell
 powercfg /list
 ```
 
 > [!NOTE]
-> План `Ultimate Performance` не гарантирует прирост FPS. На современном ПК он может дать минимальную разницу, но повысить потребление и температуру в простое. Тестируйте, а не выбирайте по названию.
+> `Ultimate Performance` does not guarantee higher FPS. On modern PCs it may provide little to no gain while increasing idle power and temperature. Test, do not choose by name.
 
 ---
 
-## 3. Графические настройки Windows
+## 3. Windows graphics settings
 
-Откройте:
-
-```text
-Параметры → Система → Дисплей → Графика
-```
-
-Здесь можно назначить приложение на конкретный GPU и включить некоторые системные функции для игр.
-
-### Назначить высокопроизводительную видеокарту
-
-Это особенно актуально для ноутбуков и ПК с несколькими GPU.
-
-1. В разделе `Пользовательские параметры для приложений` найдите игру.
-2. Если её нет — нажмите `Обзор` и добавьте `.exe` файл игры.
-3. Нажмите `Параметры`.
-4. Выберите:
+Open:
 
 ```text
-Высокая производительность
+Settings → System → Display → Graphics
 ```
 
-5. Сохраните изменение.
+Here you can assign apps to a specific GPU and enable certain system gaming options.
+
+### Assign high-performance GPU
+
+This is especially relevant for laptops and systems with multiple GPUs.
+
+1. In `Custom settings for applications`, find the game.
+2. If missing, click `Browse` and add the game `.exe`.
+3. Click `Options`.
+4. Select:
+
+```text
+High performance
+```
+
+5. Save changes.
 
 > [!TIP]
-> На ноутбуке предпочтительный GPU также может задаваться в панели NVIDIA, AMD Software или утилите производителя. Не создавайте конфликтующие профили без необходимости.
+> On laptops, preferred GPU can also be set in NVIDIA Control Panel, AMD Software, or vendor utility. Avoid conflicting profiles unless required.
 
 ---
 
-## 4. Оптимизация для оконных игр
+## 4. Optimizations for windowed games
 
-Откройте:
-
-```text
-Параметры → Система → Дисплей → Графика → Изменить стандартные параметры графики
-```
-
-Там может быть параметр:
+Open:
 
 ```text
-Оптимизация для оконных игр
+Settings → System → Display → Graphics → Change default graphics settings
 ```
 
-Он относится к современным играм в оконном и безрамочном режиме. Проверьте его в своих играх: после изменения потребуется перезапуск игры, а иногда и Windows.
+There may be an option:
 
-### Как тестировать
+```text
+Optimizations for windowed games
+```
 
-1. Выберите один режим.
-2. Перезагрузите ПК, если система попросила.
-3. Проверьте одну и ту же сцену в игре.
-4. Сравните FPS, frametime, задержку и отсутствие проблем с полноэкранным режимом.
-5. Оставьте вариант, который работает лучше именно на вашем ПК.
+It applies to modern games in windowed/borderless mode. Test it in your games: changing it may require game restart and sometimes Windows restart.
+
+### How to test
+
+1. Choose one mode.
+2. Reboot if Windows asks.
+3. Test the same game scene.
+4. Compare FPS, frametime, latency, and fullscreen behavior.
+5. Keep the option that works better on your specific system.
 
 ---
 
 ## 5. Hardware-accelerated GPU scheduling (HAGS)
 
-HAGS находится в том же разделе:
+HAGS is in the same section:
 
 ```text
-Параметры → Система → Дисплей → Графика → Изменить стандартные параметры графики
+Settings → System → Display → Graphics → Change default graphics settings
 ```
 
-Название:
+Option name:
 
 ```text
-Планирование графического процессора с аппаратным ускорением
+Hardware-accelerated GPU scheduling
 ```
 
-### Что делать
+### What to do
 
-- Включите HAGS.
-- Перезагрузите ПК.
-- Протестируйте свои игры.
-- Если появились проблемы, статтеры или нет улучшений — выключите и сравните ещё раз.
+- Enable HAGS.
+- Reboot the PC.
+- Test your games.
+- If issues/stutter appear or no improvement is seen, disable it and compare again.
 
 > [!IMPORTANT]
-> HAGS — не обязательный «FPS boost». Результат зависит от GPU, драйвера, игры и версии Windows. Выбирайте вариант по замерам, а не по чужому тесту.
+> HAGS is not a mandatory “FPS boost.” Result depends on GPU, driver, game, and Windows version. Decide by your measurements, not someone else’s test.
 
 ---
 
-## 6. VRR, Auto HDR и HDR
+## 6. VRR, Auto HDR, and HDR
 
 ### Variable Refresh Rate (VRR)
 
-VRR может быть полезен для мониторов с FreeSync/G-SYNC Compatible и похожими технологиями.
+VRR can help on monitors with FreeSync/G-SYNC Compatible and similar technologies.
 
-Проверьте:
+Check:
 
-- включена ли адаптивная синхронизация в меню монитора;
-- включён ли VRR в панели драйвера;
-- нет ли мерцания или других проблем в конкретной игре.
+- adaptive sync is enabled in monitor OSD;
+- VRR is enabled in GPU driver panel;
+- no flicker or specific-game issues appear.
 
-### Auto HDR и HDR
+### Auto HDR and HDR
 
-Используйте HDR/Auto HDR, только если монитор действительно поддерживает HDR на приемлемом уровне и вам нравится результат.
+Use HDR/Auto HDR only if your monitor truly supports HDR at acceptable quality and you like the result.
 
-HDR может улучшить изображение в подходящих играх, но не является настройкой производительности. При проблемах с цветами, яркостью или совместимостью сначала выключите его для проверки.
+HDR can improve visuals in suitable games, but it is not a performance tweak. If color/brightness/compatibility issues appear, disable it first for testing.
 
 ---
 
-## 7. Частота обновления монитора
+## 7. Monitor refresh rate
 
-Проверьте:
+Check:
 
 ```text
-Параметры → Система → Дисплей → Дополнительный дисплей
+Settings → System → Display → Advanced display
 ```
 
-В поле `Выберите частоту обновления` установите максимальное стабильное значение, которое поддерживают монитор, кабель и видеокарта.
+In `Choose a refresh rate`, select the highest stable value supported by monitor, cable, and GPU.
 
-Пример:
+Example:
 
 ```text
-Монитор 165 Hz → в Windows должно быть выбрано 165 Hz, а не 60 Hz.
+165 Hz monitor → Windows should be set to 165 Hz, not 60 Hz.
 ```
 
 > [!WARNING]
-> Не путайте FPS и Hz. FPS — сколько кадров рендерит ПК; Hz — сколько раз монитор обновляет изображение в секунду. Оба показателя важны, но это не одно и то же.
+> Do not confuse FPS and Hz. FPS is how many frames the PC renders; Hz is how many times per second the monitor refreshes. Both matter, but they are not the same thing.
 
 ---
 
-## 8. Уведомления и режим «Не беспокоить»
+## 8. Notifications and Do Not Disturb
 
-Уведомления могут отвлекать, выводить игру из фокуса и иногда создавать лишние оверлеи.
+Notifications can distract, pull focus from game, and sometimes trigger extra overlays.
 
-Откройте:
+Open:
 
 ```text
-Параметры → Система → Уведомления
+Settings → System → Notifications
 ```
 
-Настройте:
+Configure:
 
-- Отключите уведомления от ненужных программ.
-- Используйте `Не беспокоить` во время игры.
-- Отключите рекламные и рекомендательные уведомления Windows, если они вам не нужны.
+- Disable notifications from unnecessary apps.
+- Use `Do Not Disturb` while gaming.
+- Disable Windows promotional/recommendation notifications if not needed.
 
-Это не увеличит FPS напрямую, но сделает игровой процесс чище и уменьшит количество отвлекающих событий.
+This does not directly increase FPS, but it improves gameplay focus and reduces interruptions.
 
 ---
 
-## 9. Оверлеи и запись
+## 9. Overlays and recording
 
-Оверлеи удобны, но несколько одновременно запущенных оверлеев могут создавать конфликты, нагрузку и проблемы с игрой.
+Overlays are useful, but running several overlays at once can cause conflicts, overhead, and game issues.
 
-Проверьте, нужны ли вам:
+Check if you really need:
 
 - Xbox Game Bar;
 - Discord Overlay;
@@ -234,103 +244,103 @@ HDR может улучшить изображение в подходящих �
 - AMD Overlay;
 - Steam Overlay;
 - Overwolf;
-- OBS Game Capture / запись;
-- оверлеи мониторинга и FPS.
+- OBS Game Capture / recording;
+- monitoring and FPS overlays.
 
-### Правильный подход
+### Correct approach
 
-1. Не отключайте всё навсегда.
-2. Оставьте только нужные функции.
-3. Если есть фризы, вылеты или плохой frametime — временно выключите оверлеи по одному.
-4. Проверьте результат в той же игре.
+1. Do not disable everything permanently.
+2. Keep only needed features.
+3. If stutter/crashes/bad frametime appear, disable overlays one by one temporarily.
+4. Re-test in the same game.
 
 > [!TIP]
-> MSI Afterburner + RTSS для мониторинга обычно полезны, но при проблемах в одной игре также проверьте её работу без RTSS Overlay.
+> MSI Afterburner + RTSS are often useful for monitoring, but for issues in one specific game, also test without RTSS overlay.
 
 ---
 
-## 10. Автозагрузка
+## 10. Startup apps
 
-Откройте:
+Open:
 
 ```text
-Диспетчер задач → Автозагрузка приложений
+Task Manager → Startup apps
 ```
 
-Отключайте из автозагрузки программы, которые не нужны сразу после включения ПК.
+Disable startup apps that are not needed right after boot.
 
-Часто можно отключить, если не требуется постоянно:
+Often safe to disable if not always needed:
 
-- лаунчеры игр;
-- мессенджеры;
+- game launchers;
+- messengers;
 - Adobe/Google/Office updaters;
-- облачные клиенты;
-- RGB-софт;
-- программы записи и оверлеи;
-- ненужные автообновляторы.
+- cloud clients;
+- RGB software;
+- recording and overlay tools;
+- unnecessary auto-updaters.
 
-Не отключайте без понимания:
+Do not disable blindly:
 
-- драйверы аудио;
-- компоненты тачпада, горячих клавиш и питания ноутбука;
-- ПО управления вентиляторами, если оно используется;
-- драйверы мыши/клавиатуры, если они нужны для профилей;
-- защиту, если это единственный активный антивирус.
+- audio driver components;
+- touchpad/hotkey/laptop power components;
+- fan control software if you use it;
+- mouse/keyboard driver software if profiles depend on it;
+- security software if it is your only active antivirus.
 
 ---
 
-## 11. Визуальные эффекты Windows
+## 11. Windows visual effects
 
-Откройте поиск Windows и введите:
+Open Windows search and type:
 
 ```text
-Настройка представления и производительности системы
+Adjust the appearance and performance of Windows
 ```
 
-Можно отключить некоторые анимации, если вы хотите более простой и быстрый интерфейс.
+You may disable some animations for a simpler and snappier desktop feel.
 
-Но помните:
+But remember:
 
-- На современном ПК это редко заметно влияет на FPS в игре.
-- Это настройка удобства рабочего стола, а не главный игровой твик.
-- Не отключайте элементы интерфейса, которые вам реально нужны, ради минимальной экономии ресурсов.
+- On modern PCs this rarely affects in-game FPS noticeably.
+- This is mostly a desktop comfort setting, not a core gaming tweak.
+- Do not disable interface features you actually use for tiny resource savings.
 
 ---
 
-## 12. Безопасность и виртуализация
+## 12. Security and virtualization
 
-Не отключайте без причины:
+Do not disable without a clear reason:
 
 - Microsoft Defender;
 - Windows Firewall;
 - UAC;
 - Windows Update;
-- изоляцию ядра;
-- VBS и другие защитные функции.
+- Core isolation;
+- VBS and related protections.
 
-Некоторые из них в отдельных конфигурациях могут иметь измеримое влияние на производительность, но отключение снижает безопасность и может влиять на совместимость. Сначала определите конкретную проблему, создайте точку восстановления и оцените компромисс.
+Some of these can have measurable impact in specific setups, but disabling them reduces security and may affect compatibility. First identify a concrete issue, create a restore point, and evaluate the tradeoff.
 
 > [!WARNING]
-> Не применяйте `.reg`, `.bat` и PowerShell-скрипты, которые массово отключают защиту и системные функции. «Больше отключено» не означает «лучше оптимизировано».
+> Do not run `.reg`, `.bat`, or PowerShell scripts that mass-disable protections and system features. “More disabled” does not mean “better optimized.”
 
 ---
 
-## 13. Полезные безопасные команды
+## 13. Useful safe commands
 
-### Текущая схема питания
+### Current power scheme
 
 ```powershell
 powercfg /getactivescheme
 ```
 
-### Список автозагрузки
+### Startup list
 
 ```powershell
 Get-CimInstance Win32_StartupCommand |
 Select-Object Name, Command, Location, User
 ```
 
-### Процессы с наибольшим временем CPU
+### Top CPU-time processes
 
 ```powershell
 Get-Process |
@@ -339,27 +349,27 @@ Select-Object -First 20 Name, Id, CPU, WorkingSet64
 ```
 
 > [!NOTE]
-> Эти команды не меняют Windows: они только показывают информацию.
+> These commands do not change Windows; they only display information.
 
 ---
 
-## Чек-лист Windows 11
+## Windows 11 checklist
 
-- [ ] Включён Game Mode.
-- [ ] Выбран подходящий режим питания.
-- [ ] Игра назначена на высокопроизводительную GPU, если в ПК несколько GPU.
-- [ ] Проверены HAGS и «Оптимизация для оконных игр».
-- [ ] Установлена правильная герцовка монитора.
-- [ ] Отключены ненужные уведомления.
-- [ ] Оставлены только нужные оверлеи.
-- [ ] Отключена ненужная автозагрузка.
-- [ ] Не отключены Defender, Firewall, Update и критичные компоненты Windows.
-- [ ] Все изменения протестированы в одинаковой сцене.
+- [ ] Game Mode is enabled.
+- [ ] Suitable power mode is selected.
+- [ ] Game is assigned to high-performance GPU if multiple GPUs exist.
+- [ ] HAGS and Optimizations for windowed games are tested.
+- [ ] Correct monitor refresh rate is set.
+- [ ] Unnecessary notifications are disabled.
+- [ ] Only required overlays remain active.
+- [ ] Unnecessary startup apps are disabled.
+- [ ] Defender, Firewall, Update, and critical Windows components remain enabled.
+- [ ] All changes are tested in the same scene.
 
 ---
 
-## Итог
+## Summary
 
-Для большинства ПК достаточно включить Game Mode, проверить режим питания, герцовку монитора, настройки графики для игры и убрать реально ненужные фоновые программы. HAGS, оконные оптимизации, VRR и оверлеи нужно тестировать на своём железе — универсально лучшего набора для всех систем нет.
+For most PCs, it is enough to enable Game Mode, verify power mode, refresh rate, graphics assignment, and remove truly unnecessary background apps. HAGS, windowed optimizations, VRR, and overlays should be tested on your own hardware—there is no universal best setup for every system.
 
-Следующий шаг: [Настройки видеокарты](06-gpu-settings.md).
+Next step: [GPU settings](06-gpu-settings.md).

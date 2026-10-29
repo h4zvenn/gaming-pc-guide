@@ -1,28 +1,28 @@
-# 11. Что не стоит делать
+# 11. What Not to Do
 
-> Вокруг «оптимизации» Windows много советов, которые обещают огромный прирост FPS одной командой. Чаще всего они либо не дают измеримого результата, либо создают проблемы со стабильностью, безопасностью, античитом, обновлениями и драйверами.
+> Around Windows “optimization” there are many tips promising huge FPS gains with one command. In most cases, they either provide no measurable result or create stability, security, anti-cheat, update, and driver issues.
 
-## Главный принцип
+## Core principle
 
-Если настройка:
+If a tweak:
 
-- обещает «+500 FPS»;
-- требует отключить десятки служб;
-- предлагает запустить большой скрипт от администратора;
-- удаляет компоненты Windows;
-- не объясняет, что делает каждая команда;
-- не имеет нормального способа отката;
+- promises “+500 FPS”;
+- requires disabling dozens of services;
+- asks to run a large script as administrator;
+- removes Windows components;
+- does not explain each command;
+- has no clear rollback path;
 
-то не применяйте её на основном ПК.
+do not apply it on your main PC.
 
 > [!IMPORTANT]
-> Хорошая оптимизация — это измеримый результат, стабильность и возможность отката. Не максимальное число отключённых функций.
+> Good optimization means measurable results, stability, and rollback capability—not maximum number of disabled features.
 
 ---
 
-## 1. Не используйте сомнительные сборки Windows
+## 1. Do not use questionable custom Windows builds
 
-Сборки с названиями вроде:
+Builds with names like:
 
 ```text
 Gaming Windows
@@ -32,24 +32,24 @@ Debloated Windows
 Ultra Low Latency Build
 ```
 
-могут содержать неизвестные изменения:
+can contain unknown changes:
 
-- удалённые компоненты Windows;
-- отключённые обновления и безопасность;
-- нестабильные настройки служб;
-- проблемы с Microsoft Store, Xbox, античитом и драйверами;
-- непроверенные скрипты;
-- вредоносное ПО или скрытую телеметрию автора сборки.
+- removed Windows components;
+- disabled updates and security features;
+- unstable service configurations;
+- issues with Microsoft Store, Xbox, anti-cheat, and drivers;
+- unverified scripts;
+- malware or hidden telemetry from build author.
 
-### Что делать вместо этого
+### What to do instead
 
-Используйте официальную Windows и настраивайте её точечно: автозагрузка, оверлеи, драйверы, питание, Game Mode и конкретные программы в фоне.
+Use official Windows and tune specific areas: startup apps, overlays, drivers, power settings, Game Mode, and real background apps.
 
 ---
 
-## 2. Не запускайте неизвестные BAT, REG и PowerShell-скрипты
+## 2. Do not run unknown BAT, REG, and PowerShell scripts
 
-Особенно опасны файлы:
+Especially dangerous files:
 
 ```text
 .bat
@@ -59,53 +59,53 @@ Ultra Low Latency Build
 .exe
 ```
 
-которые раздаются в Discord, Telegram, YouTube-описаниях, комментариях, файлообменниках и неизвестных GitHub-репозиториях.
+distributed in Discord, Telegram, YouTube descriptions/comments, file-sharing sites, and unknown GitHub repositories.
 
-### Перед запуском любого скрипта
+### Before running any script
 
-1. Откройте его в Блокноте или VS Code.
-2. Прочитайте каждую команду.
-3. Проверьте автора, историю репозитория и Issue/отзывы.
-4. Создайте точку восстановления.
-5. Не запускайте от администратора, если не понимаете последствия.
-6. Не вводите пароль, токен, API-ключ и не отключайте защиту ради запуска скрипта.
+1. Open it in Notepad or VS Code.
+2. Read every command.
+3. Check author, repository history, and issues/reviews.
+4. Create a restore point.
+5. Do not run as administrator if you do not understand consequences.
+6. Do not enter passwords/tokens/API keys or disable security just to run a script.
 
-### Красные флаги
+### Red flags
 
-- «Антивирус ругается, потому что это мощный твик»;
-- «Отключи Defender перед запуском»;
-- «Не читай код, просто запускай»;
-- «Нужно отключить SmartScreen и UAC»;
-- «Гарантированные +300 FPS на любом ПК»;
-- «После запуска не обновляй Windows».
+- “Antivirus flags it because this tweak is powerful”;
+- “Disable Defender before running”;
+- “Don’t read code, just run it”;
+- “You must disable SmartScreen and UAC”;
+- “Guaranteed +300 FPS on any PC”;
+- “Do not update Windows after running this”.
 
 ---
 
-## 3. Не отключайте Defender, Firewall, UAC и Windows Update
+## 3. Do not disable Defender, Firewall, UAC, and Windows Update
 
 ### Microsoft Defender
 
-Постоянное отключение защиты не является нормальной оптимизацией. Это повышает риск майнеров, стилеров паролей, троянов и заражённых модов/кряков.
+Permanently disabling protection is not valid optimization. It increases risk of miners, password stealers, trojans, and infected mods/cracks.
 
 ### Windows Firewall
 
-Firewall не повышает FPS и не снижает ping сам по себе. Если игра не подключается, настройте правило для конкретного доверенного приложения, а не выключайте защиту целиком.
+Firewall does not increase FPS or reduce ping by itself. If a game cannot connect, create a rule for the specific trusted app instead of disabling protection globally.
 
 ### UAC
 
-UAC предупреждает, когда программа пытается получить права администратора. Его отключение облегчает выполнение нежелательных изменений.
+UAC warns when an app requests admin rights. Disabling it makes unwanted changes easier.
 
 ### Windows Update
 
-Не отключайте обновления навсегда. Если они мешают в моменте — используйте паузу обновлений, активные часы или дождитесь окончания загрузки.
+Do not disable updates permanently. If updates interfere right now, use pause, active hours, or wait until download completes.
 
-Подробнее: [Службы и безопасность](08-services-and-security.md).
+More details: [Services and security](08-services-and-security.md).
 
 ---
 
-## 4. Не отключайте службы по готовым спискам
+## 4. Do not disable services by copy-paste lists
 
-Списки вида:
+Lists like:
 
 ```text
 Disable 50 Windows services for FPS
@@ -113,21 +113,21 @@ Disable 100 services for low input lag
 Best services to disable for gaming
 ```
 
-не учитывают вашу систему, ноутбук/ПК, драйверы, сеть, Bluetooth, аудио, VPN, Xbox-функции и античит.
+ignore your system specifics: laptop/desktop, drivers, network, Bluetooth, audio, VPN, Xbox features, and anti-cheat requirements.
 
-### Почему это не работает
+### Why it fails
 
-Большинство служб в простое почти не потребляют CPU. Отключив их, вы часто получите не FPS, а поломанные функции Windows.
+Most services consume nearly nothing when idle. Disabling them usually breaks functionality instead of improving FPS.
 
-### Что делать вместо этого
+### What to do instead
 
-Найдите конкретный процесс, который реально создаёт нагрузку. Затем отключите автозапуск, настройте или удалите именно связанную программу.
+Find the specific process causing real load. Then disable startup, configure, or uninstall the associated application.
 
 ---
 
-## 5. Не используйте RAM cleaners
+## 5. Do not use RAM cleaners
 
-Программы с обещаниями:
+Programs promising:
 
 ```text
 Free RAM
@@ -136,45 +136,45 @@ RAM Optimizer
 Boost Memory
 ```
 
-обычно принудительно выгружают данные из памяти.
+usually force memory data eviction.
 
-### Почему это может ухудшить плавность
+### Why this can reduce smoothness
 
-Windows использует свободную RAM как кэш. После агрессивной «очистки» программе приходится снова загружать данные с диска, что способно вызвать фризы и статтеры.
+Windows uses free RAM as cache. After aggressive “cleaning,” apps must reload data from disk, causing freezes/stutter.
 
-### Что делать вместо этого
+### What to do instead
 
-- Закройте тяжёлый браузер и ненужные приложения.
-- Отключите лишнюю автозагрузку.
-- Проверьте, хватает ли вам физического объёма RAM.
-- Не отключайте файл подкачки без причины.
+- Close heavy browser sessions and unnecessary apps.
+- Disable unnecessary startup items.
+- Verify whether physical RAM capacity is enough.
+- Do not disable page file without reason.
 
 ---
 
-## 6. Не отключайте файл подкачки «потому что много RAM»
+## 6. Do not disable page file “because RAM is large”
 
-Файл подкачки используется Windows и некоторыми программами. Его полное отключение может вызвать:
+Page file is used by Windows and some applications. Fully disabling it can cause:
 
-- вылеты игр и программ;
-- ошибки нехватки памяти;
-- проблемы с дампами при BSOD;
-- нестабильность при высоком использовании RAM.
+- game/app crashes;
+- out-of-memory errors;
+- issues with BSOD memory dumps;
+- instability under high RAM usage.
 
-### Что делать
+### What to do
 
-Для большинства пользователей лучший вариант:
+For most users, best option is:
 
 ```text
-Файл подкачки → Автоматически управлять объёмом файла подкачки
+Page file → Automatically manage paging file size
 ```
 
-Меняйте его вручную только при конкретной проблеме и понимании последствий.
+Change manually only for a specific problem with clear understanding of consequences.
 
 ---
 
-## 7. Не применяйте таймер-твики без диагностики
+## 7. Do not apply timer tweaks without diagnostics
 
-С осторожностью относитесь к советам про:
+Be careful with advice about:
 
 ```text
 HPET
@@ -183,165 +183,165 @@ useplatformclock
 useplatformtick
 dynamictick
 timer resolution tweaks
-MSI mode «для всех устройств»
+MSI mode “for all devices”
 ```
 
-### Почему
+### Why
 
-Это низкоуровневые настройки, которые зависят от версии Windows, драйверов и железа. На одном ПК они могут ничего не изменить, на другом — ухудшить frametime, энергопотребление, стабильность или работу устройств.
+These are low-level settings dependent on Windows version, drivers, and hardware. On one PC they may do nothing; on another they may worsen frametime, power behavior, stability, or device functionality.
 
-### Правильный подход
+### Correct approach
 
-- Не применяйте эти команды ради чужого результата.
-- Не меняйте несколько BCD-параметров сразу.
-- Если уже применили — сначала верните значения по умолчанию и проверьте систему.
-- Не пишите такие команды в универсальный гайд как обязательную настройку.
-
----
-
-## 8. Не отключайте VBS, изоляцию ядра и защиту без оценки риска
-
-Виртуализационные функции и защита ядра могут влиять на производительность в отдельных сценариях, но также защищают систему от определённых классов атак.
-
-### Перед изменением
-
-1. Измерьте FPS и frametime.
-2. Убедитесь, что проблема действительно связана с функцией.
-3. Создайте точку восстановления.
-4. Узнайте, какие функции безопасности вы теряете.
-5. После изменения измерьте результат.
-
-Если прироста нет или он незначителен — лучше оставить защиту включённой.
+- Do not apply commands based on someone else’s result.
+- Do not change multiple BCD parameters at once.
+- If already applied, restore defaults first and retest.
+- Do not present such commands as mandatory universal settings.
 
 ---
 
-## 9. Не делайте агрессивный разгон без тестов
+## 8. Do not disable VBS, core isolation, and security protections without risk evaluation
 
-Не копируйте значения:
+Virtualization-based features and kernel protections may affect performance in some scenarios, but they also protect against specific attack classes.
+
+### Before changing
+
+1. Measure FPS and frametime.
+2. Confirm issue is actually related to this feature.
+3. Create restore point.
+4. Understand which protections you are losing.
+5. Measure results after change.
+
+If gain is absent or minimal, keep protection enabled.
+
+---
+
+## 9. Do not do aggressive overclocking without testing
+
+Do not copy values for:
 
 - Curve Optimizer;
 - PBO limits;
-- напряжения CPU/SoC/RAM;
-- тайминги RAM;
-- частоту GPU;
+- CPU/SoC/RAM voltages;
+- RAM timings;
+- GPU frequency;
 - undervolt curve;
 
-из чужого видео или скриншота.
+from someone else’s video or screenshot.
 
-Даже одинаковые модели CPU/GPU/RAM имеют разный запас стабильности.
+Even identical CPU/GPU/RAM models have different stability margins.
 
-### Признаки, что настройка плохая
+### Signs that settings are bad
 
 - WHEA;
 - BSOD;
-- вылеты;
-- артефакты;
-- перезагрузки;
-- ошибки архивов;
-- редкие фризы;
-- падение производительности при нагреве.
+- crashes;
+- artifacts;
+- reboots;
+- archive errors;
+- rare freezes;
+- performance loss when heated.
 
-Если есть хотя бы один такой признак, ослабьте настройку или верните сток.
-
----
-
-## 10. Не меняйте реестр ради случайных «gaming tweaks»
-
-Реестр хранит важные настройки Windows и программ.
-
-Опасные советы часто предлагают:
-
-- отключить телеметрию через десятки ключей;
-- поменять NetworkThrottlingIndex;
-- изменить приоритеты CPU/GPU;
-- отключить системные функции;
-- задать неизвестные значения QoS;
-- применить «input lag registry pack».
-
-### Почему это рискованно
-
-- многие твики устарели;
-- часть настроек больше не работает на современных версиях Windows;
-- параметры могут конфликтовать с драйверами;
-- вы не сможете понять, какое изменение вызвало проблему;
-- откат без бэкапа бывает сложным.
-
-### Если изменение реестра необходимо
-
-1. Используйте только документированную настройку под конкретную проблему.
-2. Экспортируйте изменяемый ключ.
-3. Создайте точку восстановления.
-4. Меняйте один параметр.
-5. Запишите исходное значение.
-6. Проверьте результат.
+If any of these appears, relax settings or return to stock.
 
 ---
 
-## 11. Не доверяйте «100% CPU/GPU usage fix» без понимания причины
+## 10. Do not edit registry for random “gaming tweaks”
 
-Высокая загрузка GPU в тяжёлой игре обычно нормальна: она означает, что видеокарта используется.
+Registry stores critical Windows and application settings.
 
-Высокая загрузка CPU может быть нормальной в CPU-зависимой игре или при фоне/стриме.
+Risky advice often suggests:
 
-Проблема — не сама цифра загрузки, а:
+- disabling telemetry through dozens of keys;
+- changing NetworkThrottlingIndex;
+- changing CPU/GPU priorities;
+- disabling system features;
+- setting unknown QoS values;
+- applying “input lag registry packs”.
 
-- низкий FPS относительно ожиданий;
-- плохой frametime;
-- троттлинг;
-- перегрев;
-- вылеты;
-- нехватка RAM/VRAM;
-- нестабильность.
+### Why this is risky
 
-Сначала определите bottleneck: [Определение узкого места](02-find-the-bottleneck.md).
+- many tweaks are outdated;
+- some no longer work on modern Windows versions;
+- settings can conflict with drivers;
+- it becomes unclear which tweak caused the problem;
+- rollback without backup can be difficult.
+
+### If registry change is necessary
+
+1. Use only documented tweak for a specific issue.
+2. Export the key being changed.
+3. Create restore point.
+4. Change one parameter at a time.
+5. Record original value.
+6. Validate result.
 
 ---
 
-## 12. Не оценивайте результат по одному показателю
+## 11. Do not trust “100% CPU/GPU usage fix” without understanding root cause
 
-«Средний FPS вырос на 3» не всегда означает, что настройка полезна.
+High GPU usage in a heavy game is usually normal: it means GPU is being utilized.
 
-Всегда смотрите вместе:
+High CPU usage can also be normal in CPU-bound scenarios or while background tasks/streaming run.
+
+The problem is not the usage number itself, but:
+
+- low FPS relative to expectations;
+- bad frametime;
+- throttling;
+- overheating;
+- crashes;
+- RAM/VRAM shortage;
+- instability.
+
+First identify bottleneck: [Find the bottleneck](02-find-the-bottleneck.md).
+
+---
+
+## 12. Do not evaluate result by one metric only
+
+“Average FPS increased by 3” does not always mean tweak is useful.
+
+Always evaluate together:
 
 - Average FPS;
 - 1% low;
 - frametime;
-- задержку;
-- температуру;
-- шум;
-- стабильность;
-- качество изображения.
+- latency;
+- temperature;
+- noise;
+- stability;
+- image quality.
 
-Пример:
+Example:
 
 ```text
-Средний FPS: +2
+Average FPS: +2
 1% low: -15
-Температура GPU: +8°C
-Появились фризы
+GPU temperature: +8°C
+Stutters appeared
 
-Результат: настройку лучше откатить.
+Result: better to rollback this tweak.
 ```
 
 ---
 
-## Чек-лист безопасности
+## Security checklist
 
-- [ ] Используется официальная Windows, а не неизвестная сборка.
-- [ ] Не запускаются непонятные скрипты от администратора.
-- [ ] Defender, Firewall, UAC и Windows Update не отключены ради FPS.
-- [ ] Службы не отключаются по спискам.
-- [ ] Не используются RAM cleaners.
-- [ ] Файл подкачки оставлен в автоматическом режиме, если нет конкретной причины менять его.
-- [ ] Не применяются HPET/BCD/таймер-твики без диагностики и способа отката.
-- [ ] Реестр не меняется пакетами из интернета.
-- [ ] Разгон/undervolt тестируются по одному параметру.
-- [ ] Измеряются FPS, 1% low, frametime и стабильность.
+- [ ] Official Windows is used, not unknown custom build.
+- [ ] Unknown scripts are not run as administrator.
+- [ ] Defender, Firewall, UAC, and Windows Update are not disabled for FPS.
+- [ ] Services are not disabled from generic lists.
+- [ ] RAM cleaners are not used.
+- [ ] Page file stays on automatic mode unless a specific reason exists.
+- [ ] HPET/BCD/timer tweaks are not applied without diagnostics and rollback path.
+- [ ] Registry is not modified by random packs from internet.
+- [ ] Overclock/undervolt is tested one parameter at a time.
+- [ ] FPS, 1% low, frametime, and stability are measured.
 
 ---
 
-## Итог
+## Summary
 
-Самые опасные «оптимизации» обычно выглядят как быстрые и простые решения. Реальная оптимизация скучнее, но безопаснее: обновить драйверы, включить корректные настройки BIOS, убрать фоновые программы, следить за температурой, найти bottleneck и измерить результат.
+The most dangerous “optimizations” often look like quick and easy solutions. Real optimization is less flashy but safer: update drivers, use correct BIOS settings, reduce background load, monitor temperatures, identify bottlenecks, and measure results.
 
-Следующий шаг: [FAQ — частые вопросы](12-faq.md).
+Next step: [FAQ](12-faq.md).

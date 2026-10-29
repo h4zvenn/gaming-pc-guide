@@ -1,64 +1,72 @@
-# 01. Подготовка перед оптимизацией
+# 01. Preparation Before Optimization
 
-> Не начинайте с отключения служб, изменения реестра или разгона.
-> Сначала нужно сохранить возможность отката, проверить текущее состояние ПК и зафиксировать результат до изменений.
+> Do not start with disabling services, registry edits, or overclocking.
+> First, ensure rollback options exist, verify your current PC state, and record baseline results.
 
-## Что нужно сделать
+## What to do first
 
-Перед оптимизацией:
+Before optimization:
 
-- Создать точку восстановления Windows
-- Проверить температуры и частоты
-- Проверить, что монитор работает на нужной герцовке
-- Зафиксировать текущий FPS, 1% low и frametime
-- Проверить свободное место на SSD
-- Убедиться, что система стабильна до начала настроек
+- Create a Windows restore point
+- Check temperatures and clocks
+- Verify monitor refresh rate is correct
+- Record current FPS, 1% low, and frametime
+- Check free SSD space
+- Confirm system stability before tuning
+
+### Quick win table
+
+| If you only have 10 minutes | Do this first |
+|---|---|
+| You did not benchmark yet | Record baseline FPS + 1% low |
+| You are not sure about system state | Create restore point + check temps |
+| Game feels choppy | Verify monitor refresh rate + close heavy background apps |
 
 > [!IMPORTANT]
-> Меняйте только один параметр за раз.
+> Change only one setting at a time.
 >
-> Если применить десять твиков одновременно, невозможно понять, что реально помогло, а что вызвало проблемы.
+> If you apply many tweaks at once, you cannot tell what actually helped and what caused issues.
 
 ---
 
-## 1. Создайте точку восстановления
+## 1. Create a restore point
 
-Точка восстановления поможет откатить системные настройки, драйверы и часть изменений в Windows, если после оптимизации появились ошибки, фризы или проблемы с запуском программ.
+A restore point helps roll back system settings, drivers, and some Windows changes if optimization causes errors, stutter, or app launch issues.
 
-### Как создать
+### How to create it
 
-1. Нажмите `Win`.
-2. Введите: `Создание точки восстановления`.
-3. Откройте найденный пункт.
-4. Выберите системный диск, обычно `C:`.
-5. Если защита отключена, нажмите `Настроить` → `Включить защиту системы`.
-6. Нажмите `Создать`.
-7. Назовите точку, например:
+1. Press `Win`.
+2. Search for: `Create a restore point`.
+3. Open the matching result.
+4. Select the system drive, usually `C:`.
+5. If protection is off, click `Configure` → `Turn on system protection`.
+6. Click `Create`.
+7. Name the point, for example:
 
 ```text
 Before gaming optimization
 ```
 
-8. Дождитесь сообщения об успешном создании.
+8. Wait for the success message.
 
 > [!NOTE]
-> Точка восстановления не заменяет резервную копию личных файлов.
-> Она нужна прежде всего для отката системных изменений.
+> A restore point is not a backup of personal files.
+> It is mainly for rolling back system changes.
 
 ---
 
-## 2. Проверьте герцовку монитора
+## 2. Check monitor refresh rate
 
-Даже мощный ПК не даст плавности монитора на 144/165/240 Hz, если Windows выставила 60 Hz.
+Even a powerful PC will not feel smooth on a 144/165/240 Hz monitor if Windows is set to 60 Hz.
 
-### Как проверить
+### How to verify
 
-1. Откройте `Параметры`.
-2. Перейдите: `Система → Дисплей → Дополнительный дисплей`.
-3. Выберите нужный монитор, если их несколько.
-4. В пункте частоты обновления выберите максимальное стабильное значение.
+1. Open `Settings`.
+2. Go to: `System → Display → Advanced display`.
+3. Select the correct monitor if you use multiple displays.
+4. Set the highest stable refresh rate.
 
-Примеры:
+Examples:
 
 ```text
 60 Hz
@@ -70,22 +78,22 @@ Before gaming optimization
 ```
 
 > [!WARNING]
-> Не выбирайте частоту, которую монитор или кабель не поддерживает стабильно.
-> Если экран гаснет, появляются артефакты или пропадает сигнал — вернитесь к рабочему значению.
+> Do not select a refresh rate your monitor/cable cannot handle stably.
+> If screen blackout, artifacts, or signal loss appears, revert to a known stable value.
 
 ---
 
-## 3. Освободите место на SSD
+## 3. Free up SSD space
 
-Переполненный системный диск может ухудшать установку обновлений, работу файла подкачки, загрузку игр и общее ощущение от системы.
+An overfilled system drive can hurt update installation, page file behavior, game loading, and overall responsiveness.
 
-### Рекомендация
+### Recommendation
 
-Оставляйте свободными примерно 15–20% объёма системного SSD.
+Keep about 15–20% free space on the system SSD.
 
-### Проверка через PowerShell
+### Check using PowerShell
 
-Откройте Windows Terminal или PowerShell и вставьте:
+Open Windows Terminal or PowerShell and run:
 
 ```powershell
 Get-PSDrive -PSProvider FileSystem |
@@ -94,74 +102,72 @@ Select-Object Name,
 @{Name='FreeGB';Expression={[math]::Round($_.Free / 1GB, 1)}}
 ```
 
-### Что покажет команда
+### Output meaning
 
-- `Name` — буква диска
-- `UsedGB` — занятое место
-- `FreeGB` — свободное место
+- `Name` — drive letter
+- `UsedGB` — used space
+- `FreeGB` — free space
 
 > [!TIP]
-> Не используйте сомнительные «очистители реестра» ради свободного места.
-> Удалите ненужные игры, временные файлы, старые загрузки и неиспользуемые программы.
+> Avoid questionable “registry cleaners” just to free space.
+> Remove unused games, temporary files, old downloads, and software you do not use.
 
 ---
 
-## 4. Зафиксируйте результат до изменений
+## 4. Record baseline results
 
-Перед оптимизацией важно понять, как ПК работает сейчас.
+Before optimization, you need a clear picture of current behavior.
 
-### Что записать
+### What to record
 
-- Средний FPS
+- Average FPS
 - 1% low
 - Frametime
-- Загрузку GPU
-- Загрузку CPU
-- Использование RAM и VRAM
-- Температуру CPU и GPU
-- Частоты CPU и GPU
+- GPU usage
+- CPU usage
+- RAM and VRAM usage
+- CPU and GPU temperatures
+- CPU and GPU clocks
 
-### Чем измерять
+### Tools you can use
 
-Подойдут:
-
-- Встроенный бенчмарк игры
+- Built-in game benchmark
 - MSI Afterburner + RivaTuner Statistics Server
 - HWiNFO
 - CapFrameX
-- Оверлей NVIDIA App / AMD Software
+- NVIDIA App / AMD Software overlay
 
-### Как тестировать правильно
+### Correct test method
 
-1. Используйте одну игру или бенчмарк.
-2. Не меняйте разрешение, настройки графики и драйвер между прогонами.
-3. Тестируйте одинаковую сцену.
-4. Сделайте 2–3 прогона.
-5. Запишите средний результат.
+1. Use one game or one benchmark.
+2. Do not change resolution, graphics settings, or driver between runs.
+3. Test the same scene.
+4. Run 2–3 passes.
+5. Record the average result.
 
-Пример заметки:
+Sample note:
 
 ```text
-Дата: 22.08.2026
-Игра / бенчмарк: __________
-Разрешение: __________
-Настройки графики: __________
+Date: 22.08.2026
+Game / benchmark: __________
+Resolution: __________
+Graphics settings: __________
 Average FPS: __________
 1% low: __________
-Температура CPU: __________
-Температура GPU: __________
-Изменение: До оптимизации
+CPU temperature: __________
+GPU temperature: __________
+Change: Before optimization
 ```
 
 > [!IMPORTANT]
-> Средний FPS — не единственный показатель.
-> Если средний FPS почти не изменился, но 1% low стал выше, а frametime ровнее — оптимизация могла быть полезной.
+> Average FPS is not the only metric.
+> If average FPS barely changes but 1% low improves and frametime is smoother, the optimization may still be useful.
 
 ---
 
-## 5. Проверьте базовую информацию о ПК
+## 5. Check basic PC info
 
-### Процессор
+### Processor
 
 ```powershell
 Get-CimInstance Win32_Processor |
@@ -169,7 +175,7 @@ Select-Object Name, NumberOfCores, NumberOfLogicalProcessors,
 CurrentClockSpeed, MaxClockSpeed
 ```
 
-### Видеокарта и драйвер
+### GPU and driver
 
 ```powershell
 Get-CimInstance Win32_VideoController |
@@ -177,52 +183,52 @@ Select-Object Name, DriverVersion, CurrentHorizontalResolution,
 CurrentVerticalResolution, CurrentRefreshRate
 ```
 
-### Оперативная память
+### Memory
 
 ```powershell
 Get-CimInstance Win32_PhysicalMemory |
 Select-Object Manufacturer, PartNumber, Capacity, Speed, ConfiguredClockSpeed
 ```
 
-### Активный план питания
+### Active power plan
 
 ```powershell
 powercfg /getactivescheme
 ```
 
 > [!NOTE]
-> Команды в этом разделе диагностические: они ничего не меняют в Windows.
-> На GitHub блоки кода удобно копируются кнопкой Copy в правом верхнем углу блока.
+> Commands in this section are diagnostic only; they do not change Windows settings.
+> On GitHub, code blocks can be copied with the **Copy** button.
 
 ---
 
-## 6. Проверьте систему на очевидные проблемы
+## 6. Check for obvious system issues
 
-Перед тонкой оптимизацией сначала устраните реальные неисправности.
+Before fine-tuning, fix real hardware/software problems first.
 
-Проверьте:
+Check that:
 
-- Монитор подключён к дискретной видеокарте, а не к разъёму материнской платы
-- Вентиляторы CPU и корпуса работают
-- Видеокарта получает корректное питание
-- SSD не заполнен почти полностью
-- Нет сильного перегрева или троттлинга
-- Нет постоянных вылетов, BSOD и самопроизвольных перезагрузок
-- Не запущены тяжёлые загрузки, стримы, обновления или виртуальные машины
-- В Windows установлена реальная частота обновления монитора
+- Monitor is connected to the discrete GPU, not motherboard video output
+- CPU/case fans are working
+- GPU receives proper power
+- SSD is not nearly full
+- There is no severe overheating or throttling
+- There are no constant crashes, BSODs, or random reboots
+- No heavy downloads/streams/updates/VMs are running during tests
+- Windows is set to the actual monitor refresh rate
 
-Если ПК нестабилен в заводских настройках, не переходите к PBO, Curve Optimizer, XMP/EXPO, undervolt или ручному разгону. Сначала найдите и устраните причину нестабильности.
+If the PC is unstable at stock settings, do not proceed with PBO, Curve Optimizer, XMP/EXPO, undervolt, or manual overclocking. Find and fix root cause first.
 
 ---
 
-## Итог
+## Summary
 
-Теперь у вас есть:
+You now have:
 
-- Точка восстановления
-- Базовые показатели производительности
-- Информация о компонентах
-- Понимание текущих температур и возможных проблем
-- Возможность сравнить результат после каждого изменения
+- A restore point
+- Baseline performance metrics
+- Component information
+- Visibility into temperatures and likely issues
+- A way to compare each change reliably
 
-Следующий шаг: [Определение узкого места: CPU, GPU, RAM, VRAM, SSD или перегрев](02-find-the-bottleneck.md).
+Next step: [Find the bottleneck: CPU, GPU, RAM, VRAM, SSD, or thermals](02-find-the-bottleneck.md).

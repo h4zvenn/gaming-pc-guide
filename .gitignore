@@ -1,0 +1,26 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output (if any tooling is added later)
+bin/
+obj/
+out/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Logs
+*.log
+
+# Node / package managers (future-proof)
+node_modules/
+
+# Python caches (future-proof)
+__pycache__/
+*.pyc

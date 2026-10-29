@@ -1,140 +1,148 @@
-# 03. BIOS и железо
+# 03. BIOS and Hardware
 
-> Настройки BIOS и правильная конфигурация железа могут заметно влиять на стабильность, время загрузки, 1% low и производительность в играх. Но неправильные настройки способны вызвать вылеты, WHEA-ошибки и проблемы с запуском системы.
+> BIOS settings and correct hardware configuration can noticeably affect stability, boot time, 1% low, and gaming performance. Incorrect settings can also cause crashes, WHEA errors, and boot failures.
 
-## Перед началом
+## Before you start
 
-- Интерфейс и названия пунктов BIOS отличаются у ASUS, MSI, Gigabyte, ASRock и производителей ноутбуков.
-- Сфотографируйте текущие настройки или сохраните BIOS Profile, если плата это умеет.
-- Меняйте один параметр за раз.
-- После изменения проверяйте запуск Windows, игры, температуры и стабильность.
-- Если ПК не загружается после настройки памяти или разгона — сбросьте CMOS по инструкции к материнской плате.
+- BIOS interfaces and option names differ across ASUS, MSI, Gigabyte, ASRock, and laptop vendors.
+- Take photos of your current settings or save a BIOS profile if your board supports it.
+- Change one parameter at a time.
+- After each change, verify Windows boot, games, temperatures, and stability.
+- If the PC fails to boot after memory tuning or overclocking, reset CMOS using your motherboard manual.
+
+### Fast safe BIOS path
+
+| If you are unsure | Do this |
+|---|---|
+| New to BIOS tuning | Keep voltages on `Auto`, enable only XMP/EXPO + ReBAR |
+| System already stable | Change one option at a time and benchmark |
+| Boot problems after tuning | Revert to defaults and validate stock stability |
 
 > [!IMPORTANT]
-> Не обновляйте BIOS и не меняйте напряжения «просто так». Сначала убедитесь, что вам это действительно нужно и вы понимаете способ отката.
+> Do not update BIOS or change voltages “just because.” First make sure you actually need it and understand the rollback path.
 
 ---
 
-## 1. Проверка сборки и подключений
+## 1. Check build quality and connections
 
-До настроек BIOS убедитесь, что компоненты установлены и подключены правильно.
+Before changing BIOS settings, make sure components are installed and connected correctly.
 
-### Видеокарта
+### GPU
 
-- Монитор должен быть подключён к портам видеокарты, а не к HDMI/DisplayPort на материнской плате.
-- Видеокарта должна быть полностью вставлена в основной PCIe x16-слот.
-- Используйте корректные кабели питания GPU от блока питания.
-- Не перегибайте кабель 12VHPWR/12V-2x6 у самого разъёма и убедитесь, что он вставлен до конца.
+- Connect the monitor to the GPU outputs, not to motherboard HDMI/DisplayPort.
+- Ensure the GPU is fully seated in the primary PCIe x16 slot.
+- Use proper PSU power cables for the GPU.
+- Do not sharply bend the 12VHPWR/12V-2x6 cable near the connector and ensure it is fully inserted.
 
-### Оперативная память
+### RAM
 
-- При двух модулях устанавливайте их в рекомендованные слоты из инструкции к материнской плате. Обычно это `A2` и `B2`.
-- Не смешивайте разные комплекты RAM без необходимости: даже одинаковая частота на наклейке не гарантирует стабильную работу вместе.
-- Если XMP/EXPO не запускается стабильно, сначала обновите BIOS и проверьте установку модулей.
+- With two memory sticks, use the recommended slots from your motherboard manual (usually `A2` and `B2`).
+- Avoid mixing different RAM kits unless necessary; matching label frequency does not guarantee stability together.
+- If XMP/EXPO is unstable, update BIOS and re-check memory installation first.
 
-### Накопители
+### Storage
 
-- Для системного NVMe SSD используйте рекомендуемый M.2-слот из руководства платы.
-- Убедитесь, что SSD закреплён и не перегревается.
-- Не снимайте термопрокладки с M.2-радиатора, если производитель предусмотрел их для охлаждения накопителя.
+- For the system NVMe SSD, use the recommended M.2 slot from the motherboard manual.
+- Ensure the SSD is properly mounted and not overheating.
+- Do not remove thermal pads from the M.2 heatsink if the board includes them.
 
 ---
 
-## 2. Обновление BIOS
+## 2. BIOS update
 
-### Когда обновлять
+### When to update
 
-Обновление BIOS имеет смысл, если:
+A BIOS update makes sense if:
 
-- вы ставите новый процессор;
-- есть проблемы с памятью, запуском ПК, USB, сетью или совместимостью;
-- в changelog есть исправление вашей проблемы;
-- производитель выпустил важное обновление стабильности или безопасности.
+- you are installing a new CPU;
+- you have memory/boot/USB/network/compatibility issues;
+- the changelog includes a fix for your issue;
+- the vendor released an important stability or security update.
 
-Если ПК стабильно работает и в новой версии нет нужных исправлений, обновление не всегда необходимо.
+If the system is stable and the new version has no relevant fixes, updating is not always necessary.
 
-### Безопасный порядок
+### Safe update sequence
 
-1. Узнайте точную модель материнской платы или ноутбука.
-2. Откройте **официальную** страницу поддержки производителя.
-3. Скачайте BIOS только для своей точной модели и ревизии платы.
-4. Прочитайте инструкцию производителя: Q-Flash, M-Flash, EZ Flash, Instant Flash или другой встроенный инструмент.
-5. Подготовьте USB-накопитель в нужном формате, если этого требует инструкция.
-6. Не выключайте ПК, не перезагружайте его и не трогайте питание во время прошивки.
-7. После обновления загрузите `Load Optimized Defaults` / `Load UEFI Defaults`.
-8. Затем снова включите только нужные параметры: XMP/EXPO, ReBAR и другие проверенные настройки.
+1. Confirm your exact motherboard or laptop model.
+2. Open the vendor’s **official** support page.
+3. Download BIOS only for your exact model and board revision.
+4. Read the vendor instructions: Q-Flash, M-Flash, EZ Flash, Instant Flash, or equivalent.
+5. Prepare a USB drive in the required format if needed.
+6. Do not power off, reboot, or touch power during flashing.
+7. After update, load `Load Optimized Defaults` / `Load UEFI Defaults`.
+8. Re-enable only required settings: XMP/EXPO, ReBAR, and other verified options.
 
 > [!WARNING]
-> Никогда не прошивайте BIOS файлом от похожей, но другой модели платы. Ошибка модели или ревизии может вывести плату из строя.
+> Never flash BIOS using a file for a similar but different motherboard model. Wrong model/revision can brick the board.
 
 ---
 
-## 3. XMP и EXPO: настройка оперативной памяти
+## 3. XMP and EXPO: RAM configuration
 
-По умолчанию RAM может работать на базовом стандарте JEDEC, а не на заявленной частоте комплекта.
+By default, RAM may run at JEDEC baseline instead of your kit’s advertised speed.
 
-### Что включать
+### What to enable
 
-- На Intel-платформах обычно используется **XMP**.
-- На AMD-платформах обычно используется **EXPO**.
-- В BIOS эти параметры часто находятся в EZ Mode / Advanced Mode, OC, Tweaker, Ai Tweaker или Extreme Memory Profile.
+- On Intel platforms, this is usually **XMP**.
+- On AMD platforms, this is usually **EXPO**.
+- In BIOS, these options are often under EZ Mode / Advanced Mode, OC, Tweaker, Ai Tweaker, or Extreme Memory Profile.
 
-Выберите профиль, рекомендованный для вашего комплекта RAM, обычно `Profile 1`.
+Select the profile recommended for your RAM kit, usually `Profile 1`.
 
-### Как проверить в Windows
+### How to verify in Windows
 
-Откройте PowerShell:
+Open PowerShell:
 
 ```powershell
 Get-CimInstance Win32_PhysicalMemory |
 Select-Object Manufacturer, PartNumber, Capacity, Speed, ConfiguredClockSpeed
 ```
 
-Смотрите на `ConfiguredClockSpeed`.
+Check `ConfiguredClockSpeed`.
 
 > [!NOTE]
-> В CPU-Z и похожих программах частота DRAM может быть примерно вдвое ниже указанной на комплекте, потому что DDR означает Double Data Rate.
-> Например, около 3000 MHz DRAM соответствует DDR5-6000.
+> In CPU-Z and similar tools, DRAM frequency can appear around half of the advertised value because DDR means Double Data Rate.
+> For example, ~3000 MHz DRAM corresponds to DDR5-6000.
 
-### Если после XMP/EXPO есть проблемы
+### If issues appear after enabling XMP/EXPO
 
-Признаки нестабильности:
+Signs of instability:
 
-- ПК долго запускается или перезагружается при старте;
-- игра вылетает;
-- появляются BSOD;
-- WHEA-ошибки в журнале событий;
-- архивы распаковываются с ошибкой;
-- есть редкие фризы без понятной причины.
+- slow startup or boot loops;
+- game crashes;
+- BSODs;
+- WHEA errors in Event Viewer;
+- archive extraction errors;
+- rare random freezes.
 
-Что делать:
+What to do:
 
-1. Обновите BIOS, если есть исправления совместимости памяти.
-2. Проверьте, что модули стоят в правильных слотах.
-3. Временно верните RAM на `Auto` / JEDEC и проверьте стабильность.
-4. Попробуйте более мягкий профиль или меньшую частоту, если BIOS предоставляет выбор.
-5. Не копируйте чужие тайминги и напряжения без понимания их назначения.
+1. Update BIOS if memory compatibility fixes exist.
+2. Verify modules are in correct slots.
+3. Temporarily return RAM to `Auto` / JEDEC and test stability.
+4. Try a less aggressive profile or lower frequency if available.
+5. Do not copy other people’s timings/voltages without understanding them.
 
 ---
 
-## 4. Above 4G Decoding и Resizable BAR
+## 4. Above 4G Decoding and Resizable BAR
 
-Для современных систем с совместимой видеокартой обычно стоит включить:
+For modern systems with a compatible GPU, these are usually worth enabling:
 
 ```text
 Above 4G Decoding → Enabled
 Resizable BAR / Re-Size BAR → Enabled
 ```
 
-На AMD технология может называться **Smart Access Memory**.
+On AMD this may be called **Smart Access Memory**.
 
-### Зачем это нужно
+### Why it matters
 
-Resizable BAR позволяет процессору обращаться к большему объёму видеопамяти за раз. Влияние зависит от игры, драйвера и GPU: в отдельных играх прирост может быть заметнее, в других — минимальным.
+Resizable BAR allows the CPU to access a larger VRAM window at once. Impact depends on game, driver, and GPU: noticeable in some titles, minimal in others.
 
-### Где искать
+### Where to find these settings
 
-Чаще всего пункт находится в разделах:
+Usually in:
 
 ```text
 Advanced
@@ -143,154 +151,154 @@ IO Ports
 Settings
 ```
 
-### Если настройки недоступны
+### If options are unavailable
 
-Проверьте:
+Check:
 
-- обновлён ли BIOS материнской платы;
-- включён ли режим загрузки UEFI;
-- отключён ли CSM, если этого требует плата;
-- совместимы ли CPU, GPU и драйвер;
-- включён ли `Above 4G Decoding` до включения ReBAR.
+- motherboard BIOS is up to date;
+- UEFI boot mode is enabled;
+- CSM is disabled if required by the board;
+- CPU/GPU/driver compatibility;
+- `Above 4G Decoding` is enabled before ReBAR.
 
 > [!WARNING]
-> Не меняйте Secure Boot, TPM, CSM и схему разделов диска без понимания последствий. На системе с Legacy/MBR изменение режима загрузки может привести к невозможности запустить Windows.
+> Do not change Secure Boot, TPM, CSM, or partition scheme without understanding consequences. On Legacy/MBR systems, boot mode changes can make Windows unbootable.
 
 ---
 
-## 5. Режим PCIe
+## 5. PCIe mode
 
-### Рекомендованная настройка
+### Recommended setting
 
-Оставьте скорость PCIe на:
+Keep PCIe link speed at:
 
 ```text
 Auto
 ```
 
-Современная плата сама согласует подходящий режим с видеокартой и накопителем.
+Modern boards usually negotiate the best stable mode automatically.
 
-### Когда менять вручную
+### When to set manually
 
-Принудительно выставить Gen3/Gen4 можно только для диагностики конкретной проблемы:
+Force Gen3/Gen4 only for targeted troubleshooting:
 
-- нестабильный райзер;
-- старый PCIe-удлинитель;
-- проблемы совместимости;
-- редкие ошибки и чёрные экраны, которые исчезают на более низком поколении PCIe.
+- unstable riser cable;
+- old PCIe extender;
+- compatibility issues;
+- rare errors/black screens that disappear on lower PCIe generation.
 
-Не выставляйте Gen5/Gen4 вручную ради «бесплатного FPS», если `Auto` уже определяет максимальный стабильный режим.
+Do not force Gen5/Gen4 for “free FPS” if `Auto` already selects maximum stable mode.
 
 ---
 
-## 6. CPU: PBO, Curve Optimizer и разгон
+## 6. CPU: PBO, Curve Optimizer, and overclocking
 
-Это необязательный продвинутый этап, актуальный прежде всего для некоторых AMD Ryzen.
+This is an optional advanced step, mostly relevant for some AMD Ryzen setups.
 
-### Что означают настройки
+### What these settings mean
 
-- **PBO (Precision Boost Overdrive)** — меняет лимиты мощности и тока, в рамках которых процессор может автоматически буститься.
-- **Curve Optimizer (CO)** — корректирует кривую напряжение/частота. Отрицательное значение может уменьшить требуемое напряжение и иногда улучшить boost, но чрезмерное значение вызывает ошибки.
-- **Ручной all-core overclock** — фиксирует или задаёт частоту всех ядер вручную. На современных CPU это может ухудшить автоматический однопоточный boost.
+- **PBO (Precision Boost Overdrive)** — changes power/current limits that govern automatic boost behavior.
+- **Curve Optimizer (CO)** — adjusts the voltage/frequency curve. Negative values can reduce required voltage and sometimes improve boost, but too much can cause errors.
+- **Manual all-core overclock** — locks/sets all-core frequency manually. On modern CPUs this can reduce automatic single-thread boost behavior.
 
-### Безопасный подход
+### Safe approach
 
-1. Оставьте CPU в `Auto`, если система и так работает хорошо.
-2. Если хотите тестировать PBO/CO — начните с небольших изменений.
-3. Меняйте один параметр за раз.
-4. После изменения тестируйте не только бенчмарк, но и реальные игры.
-5. Следите за температурами, частотами и WHEA.
-6. При ошибке ослабьте настройку или верните `Auto`.
+1. Keep CPU on `Auto` if the system already performs well.
+2. If testing PBO/CO, start with small changes.
+3. Change one parameter at a time.
+4. Validate in real games, not only benchmarks.
+5. Monitor temperatures, clocks, and WHEA.
+6. If errors appear, relax settings or return to `Auto`.
 
-### Проверка WHEA
+### WHEA check
 
-1. Нажмите `Win`.
-2. Откройте `Просмотр событий`.
-3. Перейдите: `Журналы Windows → Система`.
-4. Найдите события с источником `WHEA-Logger`.
+1. Press `Win`.
+2. Open `Event Viewer`.
+3. Go to `Windows Logs → System`.
+4. Find events with source `WHEA-Logger`.
 
 > [!IMPORTANT]
-> Положительный результат в одном бенчмарке не доказывает стабильность. Если появились WHEA, вылеты или редкие фризы — настройка нестабильна, даже если средний FPS вырос.
+> One good benchmark score does not prove stability. If WHEA, crashes, or rare freezes appear, the setup is unstable even if average FPS increased.
 
 ---
 
-## 7. Undervolt GPU и настройка кривых вентиляторов
+## 7. GPU undervolt and fan curves
 
-Эти настройки не обязательны, но иногда помогают уменьшить температуру, шум и троттлинг.
+These are optional but can reduce temperature, noise, and throttling.
 
-### Undervolt GPU
+### GPU undervolt
 
-Суть: снизить напряжение видеокарты при сохранении близкой частоты.
+Goal: reduce GPU voltage while keeping similar frequency.
 
-Возможные результаты:
+Possible outcomes:
 
-- ниже температура;
-- ниже потребление;
-- тише вентиляторы;
-- более стабильная частота при ограничении по температуре/мощности.
+- lower temperature;
+- lower power draw;
+- quieter fans;
+- steadier clocks under thermal/power limits.
 
-Риски:
+Risks:
 
-- вылеты драйвера;
-- артефакты;
-- зависание игры;
-- нестабильность в одних играх при нормальной работе в других.
+- driver crashes;
+- artifacts;
+- game freezes;
+- stable in some games but unstable in others.
 
-Если вы не готовы тестировать и откатывать настройки, оставьте заводской профиль.
+If you are not ready to test and roll back, keep stock profile.
 
-### Кривые вентиляторов
+### Fan curves
 
-Можно настроить в BIOS, приложении производителя платы или надёжной программе мониторинга.
+Can be configured in BIOS, motherboard vendor software, or reliable monitoring tools.
 
-Принцип:
+Principle:
 
-- при низкой температуре — умеренные обороты и низкий шум;
-- при повышении температуры — плавный рост оборотов;
-- не делайте резких скачков каждые 1–2 °C, чтобы вентиляторы не меняли скорость постоянно.
+- at low temperature — moderate fan speed and low noise;
+- as temperature rises — smooth fan ramp;
+- avoid sharp jumps every 1–2 °C to prevent constant speed oscillation.
 
 ---
 
-## 8. Настройки, которые лучше оставить на Auto
+## 8. Settings best left on Auto
 
-Если нет конкретной причины, оставьте на `Auto`:
+Without a specific reason, keep these on `Auto`:
 
 - CPU Core Voltage;
 - SoC Voltage;
-- тайминги RAM;
+- RAM timings;
 - PCIe Link Speed;
-- напряжения чипсета;
+- chipset voltages;
 - LLC / Load-Line Calibration;
-- ручную частоту процессора;
-- ручную частоту Infinity Fabric;
-- случайные пункты в разделах Advanced/AMD Overclocking.
+- manual CPU frequency;
+- manual Infinity Fabric frequency;
+- random values in Advanced/AMD Overclocking sections.
 
 > [!TIP]
-> `Auto` — не «плохая настройка». Для большинства ПК это наиболее безопасный и правильный выбор.
+> `Auto` is not a “bad setting.” For most systems, it is the safest and most correct default.
 
 ---
 
-## Чек-лист BIOS
+## BIOS checklist
 
-- [ ] BIOS соответствует точной модели и ревизии платы.
-- [ ] После обновления загружены оптимальные настройки по умолчанию.
-- [ ] XMP/EXPO включён только после проверки стабильности.
-- [ ] RAM установлена в рекомендованные слоты.
-- [ ] Above 4G Decoding включён, если система совместима.
-- [ ] Resizable BAR включён, если система совместима.
-- [ ] PCIe Link Speed оставлен на Auto, если нет проблемы совместимости.
-- [ ] Нет WHEA, вылетов, перезагрузок и ошибок памяти.
-- [ ] PBO/Curve Optimizer/undervolt не применялись без тестирования.
+- [ ] BIOS file matches exact board model and revision.
+- [ ] Optimized defaults were loaded after BIOS update.
+- [ ] XMP/EXPO enabled only after stability verification.
+- [ ] RAM installed in recommended slots.
+- [ ] Above 4G Decoding enabled if supported.
+- [ ] Resizable BAR enabled if supported.
+- [ ] PCIe Link Speed left on Auto unless troubleshooting compatibility.
+- [ ] No WHEA errors, crashes, reboots, or memory errors.
+- [ ] PBO/Curve Optimizer/undervolt not used without testing.
 
 ---
 
-## Итог
+## Summary
 
-Базовая правильная настройка BIOS — это не максимальный разгон. Для большинства игровых ПК достаточно:
+Proper baseline BIOS setup is not maximum overclocking. For most gaming PCs, this is enough:
 
-1. Обновить BIOS при наличии причины.
-2. Включить стабильный XMP/EXPO.
-3. Включить Above 4G Decoding и Resizable BAR при совместимости.
-4. Оставить сложные напряжения и частоты на Auto.
-5. Проверить температуры, WHEA и стабильность.
+1. Update BIOS only when there is a real reason.
+2. Enable stable XMP/EXPO.
+3. Enable Above 4G Decoding and Resizable BAR if compatible.
+4. Keep complex voltages and frequencies on Auto.
+5. Verify temperatures, WHEA, and overall stability.
 
-Следующий шаг: [Драйверы и обновления](04-drivers-and-updates.md).
+Next step: [Drivers and updates](04-drivers-and-updates.md).

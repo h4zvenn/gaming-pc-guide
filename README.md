@@ -1,181 +1,208 @@
-# ⚙️ Оптимизация Windows 11 и игрового ПК
+# ⚙️ Windows 11 Gaming PC Optimization Guide (FPS, Stutter, Input Lag)
 
-> Понятный и безопасный гайд по настройке игрового ПК: **BIOS → драйверы → Windows → видеокарта → фоновые программы → диагностика → стабильность**.
+> Build a **smooth, stable, low-drama** gaming setup: **BIOS → drivers → Windows → GPU → background apps → diagnostics → stability**.
 >
-> Цель — не «+500 FPS одной командой», а стабильная система, высокий и ровный FPS, хороший 1% low, нормальные температуры и минимум лишнего фона.
+> No fake “+500 FPS” buttons. Just practical changes you can test, keep, or roll back.
+
+> **SEO focus:** Windows 11 gaming optimization, low FPS fix, stutter fix, input lag reduction, 1% low improvement, frametime stability.
 
 [![Platform](https://img.shields.io/badge/Platform-Windows%2011-0078D4?style=flat-square&logo=windows)](#)
-[![Language](https://img.shields.io/badge/Language-Русский-4CAF50?style=flat-square)](#)
-[![License](https://img.shields.io/badge/License-Добавь%20лицензию-orange?style=flat-square)](LICENSE)
+[![Language](https://img.shields.io/badge/Language-English-4CAF50?style=flat-square)](#)
+[![License](https://img.shields.io/badge/License-Add%20license-orange?style=flat-square)](LICENSE)
 
 ---
 
-## 👋 Что это за гайд
+## 👋 What this guide is
 
-Этот репозиторий поможет настроить **обычный игровой ПК или ноутбук на Windows 11** без сомнительных Windows-сборок, массового отключения служб и неизвестных «FPS boost»-скриптов.
+This repository helps you optimize a **regular Windows 11 gaming PC or laptop** without questionable custom Windows builds, mass service disabling, or unknown “FPS boost” scripts.
 
-Здесь нет привязки к одной игре, конкретному процессору или видеокарте. Вместо этого гайд объясняет, **как найти реальное узкое место** и настроить именно то, что нужно вашему ПК.
+The guide is not tied to a single game, CPU, or GPU model. Instead, it explains **how to find the real bottleneck** and tune only what your system actually needs.
 
-Подойдёт, если вы хотите:
+Use it if you want to:
 
-- повысить или стабилизировать FPS;
-- улучшить 1% low и frametime;
-- убрать реальные фоновые нагрузки;
-- правильно включить XMP/EXPO и Resizable BAR;
-- настроить Windows, NVIDIA, AMD или Intel GPU;
-- проверить температуры, троттлинг и стабильность;
-- использовать PowerShell для диагностики, а не для опасной «автооптимизации».
+- increase or stabilize FPS;
+- improve 1% low and frametime;
+- reduce real background load;
+- correctly enable XMP/EXPO and Resizable BAR;
+- tune Windows and NVIDIA/AMD/Intel GPU settings;
+- verify temperatures, throttling, and system stability;
+- use PowerShell for diagnostics instead of risky “auto-optimization”.
+
+> [!TIP]
+> Think of this guide as a playbook: detect bottleneck → apply one change → benchmark → keep or rollback.
 
 ---
 
-## 🚀 Начните здесь
+## 🚀 Start here
 
-Не применяйте все настройки подряд. Используйте такой порядок:
+Do not apply all tweaks at once. Follow this order:
 
-1. **Подготовка:** создайте точку восстановления и зафиксируйте текущий FPS/температуры.
-2. **Диагностика:** определите, что ограничивает ПК — CPU, GPU, RAM, VRAM, SSD, перегрев или фоновые программы.
-3. **База:** проверьте BIOS, XMP/EXPO, ReBAR, драйверы, герцовку монитора и Windows.
-4. **Точная настройка:** меняйте только те параметры, которые относятся к найденной проблеме.
-5. **Проверка:** сравните FPS, 1% low, frametime, температуры и стабильность.
+1. **Preparation:** create a restore point and record baseline FPS/temperatures.
+2. **Diagnostics:** identify what limits performance — CPU, GPU, RAM, VRAM, SSD, thermals, or background apps.
+3. **Baseline:** verify BIOS, XMP/EXPO, ReBAR, drivers, monitor refresh rate, and Windows settings.
+4. **Targeted tuning:** change only settings related to the detected issue.
+5. **Validation:** compare FPS, 1% low, frametime, temperatures, and stability.
 
 > [!IMPORTANT]
-> Меняйте **один параметр за раз**. Если применить десять твиков одновременно, невозможно понять, что помогло, а что вызвало проблему.
+> Change **one setting at a time**. If you apply ten tweaks at once, it is impossible to know what helped and what caused issues.
+
+### 🎮 Quick start by PC tier
+
+| Your setup | Start with | Then do |
+|---|---|---|
+| Entry-level / older PC | [02 Bottleneck](docs/02-find-the-bottleneck.md) + [07 Background apps](docs/07-background-apps.md) | [06 GPU settings](docs/06-gpu-settings.md) with smart FPS cap |
+| Mid-range gaming PC | [03 BIOS](docs/03-bios-and-hardware.md) + [05 Windows](docs/05-windows-11.md) | [10 Temps & stability](docs/10-temperatures-stability.md) |
+| High-end PC (high Hz target) | [06 GPU settings](docs/06-gpu-settings.md) + [10 Temps](docs/10-temperatures-stability.md) | [13 Security baseline](docs/13-security-hardening-baseline.md) |
+| Laptop gamer | [05 Windows](docs/05-windows-11.md) + [07 Background apps](docs/07-background-apps.md) | [10 Temps](docs/10-temperatures-stability.md) + fan/power profile checks |
 
 ---
 
-## 📚 Полный гайд
+## 📚 Full guide
 
-| Шаг | Раздел | Что внутри |
+| Step | Section | Contents |
 |:--:|---|---|
-| 01 | [Подготовка](docs/01-before-you-start.md) | Точка восстановления, герцовка, место на SSD, замеры до изменений |
-| 02 | [Определение узкого места](docs/02-find-the-bottleneck.md) | Как отличить упор в CPU, GPU, RAM, VRAM, SSD, перегрев или нестабильность |
-| 03 | [BIOS и железо](docs/03-bios-and-hardware.md) | XMP/EXPO, ReBAR, Above 4G Decoding, PBO, Curve Optimizer, PCIe |
-| 04 | [Драйверы и обновления](docs/04-drivers-and-updates.md) | Чипсет, GPU, Windows Update, чистая установка драйвера, SSD firmware |
-| 05 | [Настройка Windows 11](docs/05-windows-11.md) | Game Mode, питание, HAGS, герцовка, оверлеи, автозагрузка |
-| 06 | [Настройки видеокарты](docs/06-gpu-settings.md) | NVIDIA, AMD, Intel, Reflex, Anti-Lag, FPS cap, V-Sync, VRR, DLSS/FSR/XeSS |
-| 07 | [Фоновые приложения](docs/07-background-apps.md) | Браузер, загрузки, облака, RGB-софт, оверлеи, OBS, автозагрузка |
-| 08 | [Службы и безопасность](docs/08-services-and-security.md) | Что нельзя отключать, Defender, Firewall, Update, разбор процессов |
-| 09 | [PowerShell: диагностика](docs/09-powershell-diagnostics.md) | Безопасные команды для CPU, GPU, RAM, дисков, процессов, сети и WHEA |
-| 10 | [Температуры и стабильность](docs/10-temperatures-stability.md) | Троттлинг, airflow, чистка, стресс-тесты, XMP/EXPO, OC/undervolt |
-| 11 | [Что не стоит делать](docs/11-what-not-to-do.md) | Debloat-сборки, RAM cleaner, BCD/HPET, реестр, опасные скрипты |
-| 12 | [FAQ](docs/12-faq.md) | Короткие ответы на самые частые вопросы |
+| 01 | [Preparation](docs/01-before-you-start.md) | Restore point, refresh rate, SSD free space, baseline measurements |
+| 02 | [Find the bottleneck](docs/02-find-the-bottleneck.md) | How to identify CPU, GPU, RAM, VRAM, SSD, thermal, or stability limits |
+| 03 | [BIOS and hardware](docs/03-bios-and-hardware.md) | XMP/EXPO, ReBAR, Above 4G Decoding, PBO, Curve Optimizer, PCIe |
+| 04 | [Drivers and updates](docs/04-drivers-and-updates.md) | Chipset, GPU, Windows Update, clean GPU driver install, SSD firmware |
+| 05 | [Windows 11 tuning](docs/05-windows-11.md) | Game Mode, power plan, HAGS, refresh rate, overlays, startup apps |
+| 06 | [GPU settings](docs/06-gpu-settings.md) | NVIDIA, AMD, Intel, Reflex, Anti-Lag, FPS cap, V-Sync, VRR, DLSS/FSR/XeSS |
+| 07 | [Background apps](docs/07-background-apps.md) | Browser, downloads, cloud sync, RGB software, overlays, OBS, startup |
+| 08 | [Services and security](docs/08-services-and-security.md) | What not to disable, Defender, Firewall, Update, process analysis |
+| 09 | [PowerShell diagnostics](docs/09-powershell-diagnostics.md) | Safe commands for CPU, GPU, RAM, disks, processes, network, and WHEA |
+| 10 | [Temperatures and stability](docs/10-temperatures-stability.md) | Throttling, airflow, cleaning, stress tests, XMP/EXPO, OC/undervolt |
+| 11 | [What not to do](docs/11-what-not-to-do.md) | Debloat builds, RAM cleaners, BCD/HPET, registry tweaks, risky scripts |
+| 12 | [FAQ](docs/12-faq.md) | Quick answers to common questions |
+| 13 | [Security hardening baseline](docs/13-security-hardening-baseline.md) | Secure defaults, Defender/Firewall/Update checks, safe exception workflow |
+| 14 | [Quick-start presets](docs/14-quick-start-presets.md) | Ready optimization paths by hardware tier and goals |
+| 15 | [Troubleshooting decision trees](docs/15-troubleshooting-decision-trees.md) | Fast “if this → do that” flows for FPS, stutter, crashes, and ping |
+| 16 | [Benchmark templates](docs/16-benchmark-templates.md) | Repeatable templates to track tweaks and prove real gains |
+| 17 | [Common builds quick cards](docs/17-common-builds-quick-cards.md) | NVIDIA/AMD/Intel starting presets with safe defaults |
 
 ---
 
-## ✅ Быстрый чек-лист
+## 🤝 Community pack
 
-Если нужен безопасный минимум без глубоких твиков, начните с этого:
-
-- [ ] Монитор подключён к **дискретной видеокарте**, а не к материнской плате.
-- [ ] В Windows установлена максимальная стабильная герцовка монитора.
-- [ ] На SSD есть свободное место.
-- [ ] Установлены драйвер чипсета и стабильный драйвер видеокарты с официальных сайтов.
-- [ ] В BIOS включён XMP/EXPO, если система проходит тесты без ошибок.
-- [ ] Включены Above 4G Decoding и Resizable BAR, если железо совместимо.
-- [ ] Включён Game Mode.
-- [ ] Проверены HAGS и «Оптимизация для оконных игр» — оставлен лучший вариант по замерам.
-- [ ] Закрыты загрузки, браузерное видео, лишние оверлеи и тяжёлые фоновые программы.
-- [ ] Проверены температуры, частоты, FPS, 1% low и frametime.
-- [ ] Нет WHEA, вылетов, BSOD, артефактов и самопроизвольных перезагрузок.
+- Contribution rules: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Open issue template: [General issue](.github/ISSUE_TEMPLATE/general_issue.md)
+- New issue page: `https://github.com/h4zvenn/gaming-pc-optimization-ru/issues/new/choose`
 
 ---
 
-## 🧠 Главное: найдите причину
+## ✅ Quick checklist
 
-| Что происходит | С чего начать |
+If you want a safe baseline without deep tweaking, start here:
+
+- [ ] Monitor is connected to the **discrete GPU**, not motherboard video output.
+- [ ] Windows is set to the highest stable monitor refresh rate.
+- [ ] SSD has enough free space.
+- [ ] Chipset driver and stable GPU driver are installed from official sources.
+- [ ] XMP/EXPO is enabled in BIOS if the system passes stability tests.
+- [ ] Above 4G Decoding and Resizable BAR are enabled if supported.
+- [ ] Game Mode is enabled.
+- [ ] HAGS and “Optimizations for windowed games” were tested and the better option kept.
+- [ ] Downloads, browser video, unnecessary overlays, and heavy background apps are closed.
+- [ ] Temperatures, clocks, FPS, 1% low, and frametime were checked.
+- [ ] No WHEA errors, crashes, BSODs, artifacts, or random reboots.
+
+---
+
+## 🧠 Core principle: find the cause
+
+| Symptom | Start with |
 |---|---|
-| GPU держится 95–99%, FPS не хватает | [Настройки видеокарты](docs/06-gpu-settings.md): разрешение, тяжёлые эффекты, VRAM, апскейлер |
-| GPU загружена низко, а FPS не растёт | [Определение узкого места](docs/02-find-the-bottleneck.md): CPU-потоки, RAM, фоновые программы, температуры |
-| Средний FPS нормальный, но есть фризы | Проверьте [RAM/VRAM/SSD/шейдеры](docs/02-find-the-bottleneck.md) и [фоновые программы](docs/07-background-apps.md) |
-| FPS падает через 20–60 минут игры | Проверьте [температуры и троттлинг](docs/10-temperatures-stability.md) |
-| Игры вылетают или есть WHEA | Верните разгон к стоку и проверьте [стабильность](docs/10-temperatures-stability.md) |
-| Неизвестный процесс грузит CPU/диск/сеть | Найдите владельца процесса, не отключайте службы наугад: [службы и безопасность](docs/08-services-and-security.md) |
+| GPU sits at 95–99%, FPS is too low | [GPU settings](docs/06-gpu-settings.md): resolution, heavy effects, VRAM, upscaler |
+| GPU usage is low and FPS does not scale | [Find the bottleneck](docs/02-find-the-bottleneck.md): CPU threads, RAM, background load, thermals |
+| Average FPS is fine but stutter exists | Check [RAM/VRAM/SSD/shader issues](docs/02-find-the-bottleneck.md) and [background apps](docs/07-background-apps.md) |
+| FPS drops after 20–60 minutes | Check [temperatures and throttling](docs/10-temperatures-stability.md) |
+| Games crash or WHEA appears | Revert OC/undervolt to baseline and validate [stability](docs/10-temperatures-stability.md) |
+| Unknown process loads CPU/disk/network | Identify process owner, do not disable services blindly: [services and security](docs/08-services-and-security.md) |
 
 ---
 
-## 🛡️ Чего здесь нет
+## 🛡️ What is intentionally not included
 
-Гайд **специально не содержит**:
+This guide **does not include**:
 
-- готовых `.bat`, `.reg` и PowerShell-скриптов для «автооптимизации»;
-- массового отключения служб Windows;
-- советов выключить Defender, Firewall, UAC или Windows Update;
-- сомнительных Windows Lite/Gaming-сборок;
-- RAM-cleaner программ;
-- обязательных HPET/BCD/timer tweaks;
-- обещаний одинакового результата на любом ПК.
+- ready-made `.bat`, `.reg`, or PowerShell “auto-optimization” scripts;
+- mass disabling of Windows services;
+- advice to disable Defender, Firewall, UAC, or Windows Update;
+- questionable Windows Lite/Gaming builds;
+- RAM cleaner software;
+- mandatory HPET/BCD/timer tweaks;
+- promises of identical results on every PC.
 
-Такие методы часто не дают реального преимущества, но могут сломать обновления, сеть, античит, Microsoft Store, драйверы или безопасность системы.
+These methods often bring little real benefit but can break updates, networking, anti-cheat, Microsoft Store, drivers, or system security.
 
 ---
 
-## 🧪 Как тестировать изменения
+## 🧪 How to test changes
 
-Для честного сравнения:
+For fair comparison:
 
-1. Используйте одну игру или бенчмарк.
-2. Оставляйте одинаковыми разрешение, настройки графики и сцену.
-3. Делайте 2–3 прогона.
-4. Сравнивайте не только средний FPS, но и 1% low, frametime, температуру, частоты и стабильность.
-5. Если улучшений нет или появились проблемы — откатывайте изменение.
+1. Use one game or one benchmark.
+2. Keep resolution, graphics settings, and test scene identical.
+3. Run 2–3 passes.
+4. Compare not only average FPS, but also 1% low, frametime, temperatures, clocks, and stability.
+5. Revert the change if there is no benefit or new issues appear.
 
-Пример плохого результата:
+Example of a bad outcome:
 
 ```text
 Average FPS: +3
 1% low: -12
-Температура GPU: +9°C
-Появились статтеры
+GPU temperature: +9°C
+Stutters appeared
 
-Вывод: настройку лучше отменить.
+Conclusion: rollback this tweak.
 ```
 
 ---
 
-## 💻 Команды PowerShell
+## 💻 PowerShell commands
 
-Все команды в гайде находятся в отдельных блоках `powershell`, поэтому на GitHub их можно быстро скопировать кнопкой **Copy**.
+All commands in this guide are placed in `powershell` blocks, so you can quickly copy them on GitHub using the **Copy** button.
 
-Команды разделены на два типа:
+Commands are split into two categories:
 
-- **Диагностика** — только показывают информацию о системе.
-- **Системное восстановление** — явно помечены, если требуют запуска от имени администратора.
+- **Diagnostics** — read-only commands that display system information.
+- **System recovery** — clearly marked commands that may require administrator rights.
 
-Начать можно с раздела [PowerShell: проверка и диагностика](docs/09-powershell-diagnostics.md).
+Start with [PowerShell diagnostics](docs/09-powershell-diagnostics.md).
 
 ---
 
-## 🤝 Обратная связь
+## 🤝 Feedback
 
-Нашли ошибку, устаревшую информацию или хотите предложить полезное дополнение?
+Found outdated information, an error, or want to suggest an improvement?
 
-Создайте **Issue** и укажите:
+Open an **Issue** and include:
 
 ```text
-Версия Windows:
-Процессор:
-Видеокарта:
-ОЗУ:
-Материнская плата / модель ноутбука:
-Версия драйвера GPU:
-Что именно было изменено:
-Что получилось:
-Ошибки / скриншоты / логи:
+Windows version:
+CPU:
+GPU:
+RAM:
+Motherboard / laptop model:
+GPU driver version:
+What exactly was changed:
+What happened:
+Errors / screenshots / logs:
 ```
 
 > [!NOTE]
-> Не публикуйте в Issues серийные номера, пароли, токены, IP-адреса, личные файлы или полные дампы с конфиденциальными данными.
+> Do not post serial numbers, passwords, tokens, IP addresses, personal files, or full dumps with sensitive data in Issues.
 
 ---
 
-## ⚠️ Отказ от ответственности
+## ⚠️ Disclaimer
 
-Вы применяете настройки на свой риск. Автор гайда не несёт ответственности за потерю данных, нестабильность, поломку системы или железа после использования инструкций.
+Use these settings at your own risk. The guide author is not responsible for data loss, instability, system damage, or hardware damage resulting from these instructions.
 
-Перед изменением BIOS, разгона, undervolt, реестра или системных параметров создавайте точку восстановления, сохраняйте исходные значения и проверяйте результат.
+Before changing BIOS settings, overclocking, undervolt, registry values, or system-level options, create a restore point, save original values, and verify results.
 
 ---
 
-## ⭐ Поддержка
+## ⭐ Support
 
-Если гайд оказался полезным — поставьте репозиторию **Star**. Это поможет другим людям найти безопасную и понятную информацию об оптимизации ПК.
+If this guide was useful, give the repository a **Star** to help others find safe and practical PC optimization information.

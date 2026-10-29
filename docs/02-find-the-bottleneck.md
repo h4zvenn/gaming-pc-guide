@@ -1,269 +1,277 @@
-# 02. Определение узкого места
+# 02. Finding the Bottleneck
 
-> Прежде чем менять BIOS, настройки Windows или параметры драйвера, нужно понять, что именно ограничивает производительность: процессор, видеокарта, память, накопитель, перегрев или фоновые программы.
+> Before changing BIOS options, Windows settings, or driver parameters, identify what actually limits performance: CPU, GPU, memory, storage, thermals, or background load.
 
-## Что такое bottleneck
+## What a bottleneck means
 
-`Bottleneck` — это компонент или условие, которое в конкретный момент не позволяет ПК выдать больше FPS или ровнее frametime.
+A `bottleneck` is the component or condition that, at a specific moment, prevents your PC from delivering higher FPS or smoother frametime.
 
-Он не является постоянным свойством компьютера. Один и тот же ПК может:
+It is not a permanent property of the system. The same PC can:
 
-- упираться в GPU в тяжёлой графической игре;
-- упираться в CPU при низких настройках и высоком FPS;
-- страдать от нехватки VRAM при высоких текстурах;
-- получать статтеры из-за заполненного SSD, фоновых процессов или нестабильной RAM.
+- be GPU-bound in a graphically heavy game;
+- be CPU-bound at low settings with very high FPS targets;
+- run into VRAM limits with high texture settings;
+- stutter due to a full SSD, background processes, or unstable RAM.
 
 > [!IMPORTANT]
-> Не существует «универсального процента bottleneck».
-> Диагностика зависит от игры, разрешения, настроек, FPS-лимита и фоновой нагрузки.
+> There is no universal bottleneck percentage.
+> Diagnostics depend on the game, resolution, settings, FPS cap, and background load.
 
 ---
 
-## Что включить в мониторинге
+## What to monitor
 
-Для диагностики используйте MSI Afterburner + RivaTuner Statistics Server, HWiNFO, CapFrameX или встроенный оверлей драйвера.
+Use MSI Afterburner + RivaTuner Statistics Server, HWiNFO, CapFrameX, or your GPU driver overlay.
 
-Во время теста полезно видеть:
+During testing, monitor:
 
 - FPS
 - Frametime
 - 1% low
-- Загрузку GPU
-- Температуру GPU
-- Частоту и потребление GPU
-- Использование VRAM
-- Общую загрузку CPU
-- Загрузку отдельных потоков CPU
-- Температуру и частоты CPU
-- Использование RAM
-- Занятое место на SSD
+- GPU usage
+- GPU temperature
+- GPU clocks and power draw
+- VRAM usage
+- Total CPU usage
+- Per-thread CPU usage
+- CPU temperature and clocks
+- RAM usage
+- Used/free SSD space
 
 > [!TIP]
-> Для точной проверки смотрите не только среднюю загрузку CPU.
-> В игре может быть полностью загружен один главный поток, пока общая загрузка процессора выглядит невысокой.
+> Do not rely only on average CPU usage.
+> One main game thread can be fully loaded while total CPU usage still looks moderate.
+
+### Fast diagnosis cheat sheet
+
+| You see this | Try this first |
+|---|---|
+| Low FPS + GPU ~99% | Reduce GPU-heavy settings, test upscaler |
+| FPS won’t scale + one CPU thread maxed | Reduce CPU-heavy options, close background apps |
+| Stutter with okay average FPS | Check VRAM/RAM/SSD + overlays/downloads |
 
 ---
 
-## Быстрая таблица диагностики
+## Quick diagnostic table
 
-| Симптом | Возможная причина | Что проверить первым |
+| Symptom | Possible cause | Check first |
 |---|---|---|
-| GPU держится около 95–99%, FPS недостаточно | Упор в видеокарту | Разрешение, рендер-масштаб, RT, тени, апскейлер, температура GPU |
-| GPU ниже 90%, FPS не растёт, один поток CPU близок к 100% | Упор в процессор | Настройки CPU, фоновые процессы, RAM, температура CPU |
-| Средний FPS нормальный, но есть резкие фризы | RAM/VRAM, SSD, шейдеры, фон, нестабильность | Frametime, использование памяти, загрузки, WHEA, температура |
-| FPS постепенно падает после 20–60 минут | Перегрев или переполнение памяти | Температуры, частоты, VRAM/RAM, вентиляторы |
-| Картинка дёргается при движении камеры | Неровный frametime, компиляция шейдеров, стриминг данных | Frametime, SSD, VRAM, фоновые программы |
-| ПК зависает, перезагружается или игра вылетает | Нестабильный разгон, драйвер, RAM, питание, перегрев | Стоковые настройки, журнал событий, температуры |
+| GPU stays around 95–99%, FPS is too low | GPU limit | Resolution, render scale, RT, shadows, upscaler, GPU temp |
+| GPU below 90%, FPS does not increase, one CPU thread near 100% | CPU limit | CPU-related settings, background tasks, RAM, CPU temp |
+| Average FPS looks fine but hard stutter appears | RAM/VRAM, SSD, shaders, background load, instability | Frametime, memory usage, background downloads, WHEA, temps |
+| FPS drops gradually after 20–60 minutes | Thermal or memory saturation | Temps, clocks, VRAM/RAM usage, fan behavior |
+| Camera movement feels jerky | Uneven frametime, shader compilation, data streaming | Frametime, SSD, VRAM, background apps |
+| PC freezes/reboots or game crashes | Unstable OC, driver issue, RAM, power, thermals | Stock settings, event logs, temperatures |
 
 ---
 
-## 1. Упор в видеокарту (GPU-bound)
+## 1. GPU-bound scenario
 
-### Как выглядит
+### Typical signs
 
-Обычно видеокарта загружена примерно на 95–99%, а изменение графических настроек или разрешения заметно влияет на FPS.
+GPU usage is usually around 95–99%, and changing resolution/graphics has a clear FPS impact.
 
-Признаки:
+Signs:
 
-- GPU usage стабильно высокий;
-- снижение разрешения повышает FPS;
-- включение ray tracing, тяжёлых теней или отражений резко снижает FPS;
-- CPU не перегрет и не имеет постоянно загруженного главного потока.
+- consistently high GPU usage;
+- lowering resolution increases FPS;
+- enabling ray tracing, heavy shadows, or reflections sharply lowers FPS;
+- CPU is not overheating and no single CPU thread is permanently maxed out.
 
-### Что делать
+### What to do
 
-1. Уменьшите самые тяжёлые настройки:
+1. Reduce the heaviest settings:
    - Ray tracing
-   - Разрешение или render scale
-   - Тени
-   - Отражения
-   - Объёмный свет и туман
+   - Resolution or render scale
+   - Shadows
+   - Reflections
+   - Volumetric lighting/fog
    - Ambient occlusion
-2. Используйте DLSS, FSR или XeSS, если технология доступна и качество устраивает.
-3. Не ставьте текстуры выше объёма VRAM видеокарты.
-4. Проверьте температуру, частоту и лимит мощности GPU.
-5. Закройте приложения, которые используют GPU: браузер с видео, запись экрана, стриминг, лишние оверлеи.
+2. Use DLSS, FSR, or XeSS if available and quality is acceptable.
+3. Do not set textures beyond your GPU VRAM capacity.
+4. Check GPU temperature, clocks, and power limit behavior.
+5. Close GPU-consuming apps: browser video, recording, streaming, extra overlays.
 
-### Чего не делать
+### What not to do
 
-- Не отключайте службы Windows в надежде решить GPU-лимит.
-- Не снижайте настройки CPU, если видеокарта и так загружена на 99%.
-- Не меняйте PBO/Curve Optimizer только ради игры, в которой ограничение создаёт GPU.
-
----
-
-## 2. Упор в процессор (CPU-bound)
-
-### Как выглядит
-
-Видеокарта работает не на полную мощность, FPS не растёт, а один или несколько потоков процессора близки к 100%.
-
-Это особенно часто проявляется:
-
-- при низком разрешении;
-- при очень высоком целевом FPS;
-- в играх с большим количеством объектов, физики, NPC, симуляции или сетевых расчётов;
-- на старых 4-ядерных CPU;
-- при запущенных фоновых программах, стриме или записи.
-
-### Что делать
-
-1. Закройте тяжёлые приложения и оверлеи.
-2. Проверьте, что оперативная память работает с XMP/EXPO, если профиль поддерживается и система стабильна.
-3. Проверьте температуры CPU и наличие троттлинга.
-4. Снизьте CPU-зависимые параметры игры:
-   - Дальность прорисовки
-   - Плотность объектов
-   - Качество физики
-   - Количество NPC/толпы
-   - Дальность теней
-   - Детализацию мира
-5. Установите разумный лимит FPS, который ПК способен удерживать стабильно.
-6. Проверьте стабильность разгона CPU/RAM и WHEA-ошибки.
-
-### Важный нюанс
-
-Общая загрузка CPU в 30–50% не исключает CPU-лимит. Игра может упираться в один поток, а остальные ядра будут использоваться слабее.
+- Do not disable Windows services to fix a GPU limit.
+- Do not tune CPU settings when GPU is already pinned at 99%.
+- Do not adjust PBO/Curve Optimizer for a game that is clearly GPU-limited.
 
 ---
 
-## 3. Нехватка оперативной памяти (RAM)
+## 2. CPU-bound scenario
 
-### Признаки
+### Typical signs
 
-- Игра начинает фризить после долгой сессии.
-- Windows активно использует файл подкачки.
-- Во время игры диск неожиданно сильно загружен.
-- Одновременно открыты браузер, Discord, стрим, лаунчеры и другие тяжёлые приложения.
-- Использование RAM близко к доступному объёму.
+GPU is underutilized, FPS does not scale, and one or more CPU threads are near 100%.
 
-### Что делать
+This often happens:
 
-1. Закройте тяжёлые приложения перед игрой.
-2. Отключите ненужное из автозагрузки.
-3. Не отключайте файл подкачки без конкретной причины.
-4. Проверьте, что XMP/EXPO включён и память работает стабильно.
-5. Если памяти физически не хватает для ваших игр и задач — рассмотрите увеличение объёма RAM.
+- at low resolution;
+- with very high target FPS;
+- in games with many objects, physics, NPCs, simulation, or networking logic;
+- on older 4-core CPUs;
+- when heavy background apps, streaming, or recording are active.
 
-### Чего не делать
+### What to do
 
-Не используйте «RAM cleaner» и программы для принудительной очистки памяти. Они могут выгрузить нужные данные и ухудшить плавность вместо её улучшения.
+1. Close heavy apps and overlays.
+2. Verify RAM runs with XMP/EXPO (if supported and stable).
+3. Check CPU temperatures and throttling.
+4. Lower CPU-heavy game settings:
+   - Draw distance
+   - Object density
+   - Physics quality
+   - NPC/crowd count
+   - Shadow distance
+   - World detail
+5. Set a realistic FPS cap your system can hold steadily.
+6. Validate CPU/RAM overclock stability and check WHEA errors.
+
+### Important nuance
+
+Total CPU usage at 30–50% does not rule out a CPU bottleneck. A game may be blocked by one busy thread while other cores are lightly used.
 
 ---
 
-## 4. Нехватка видеопамяти (VRAM)
+## 3. RAM capacity limit
 
-### Признаки
+### Signs
 
-- Резкие статтеры при повороте камеры или входе в новую локацию.
-- Проблемы начинаются после повышения текстур или разрешения.
-- Видеокарта не обязательно загружена на 99%, но frametime становится неровным.
-- Игра сообщает о превышении доступной VRAM или использует почти весь объём видеопамяти.
+- The game starts stuttering after a long session.
+- Windows heavily uses the page file.
+- Disk activity spikes during gameplay.
+- Browser, Discord, stream, launchers, and other heavy apps are open together.
+- RAM usage is near available capacity.
 
-### Что делать
+### What to do
 
-1. Уменьшите качество текстур.
-2. Снизьте разрешение или render scale.
-3. Отключите/уменьшите ray tracing.
-4. Закройте GPU-нагружающие программы и оверлеи.
-5. Перезапустите игру после большого изменения текстурных настроек.
-6. Не включайте texture pack, который явно рассчитан на больший объём VRAM.
+1. Close heavy apps before gaming.
+2. Disable unnecessary startup apps.
+3. Do not disable the page file without a specific reason.
+4. Confirm XMP/EXPO is enabled and memory is stable.
+5. If capacity is physically insufficient for your games/tasks, consider adding more RAM.
+
+### What not to do
+
+Do not use “RAM cleaners” or forced memory cleanup tools. They can evict useful cached data and reduce smoothness.
+
+---
+
+## 4. VRAM capacity limit
+
+### Signs
+
+- Sharp stutters when rotating camera or entering new areas.
+- Problems start after increasing textures or resolution.
+- GPU may not be at 99%, but frametime becomes uneven.
+- Game warns about VRAM overuse or nearly fills available VRAM.
+
+### What to do
+
+1. Lower texture quality.
+2. Lower resolution or render scale.
+3. Disable/reduce ray tracing.
+4. Close GPU-heavy apps and overlays.
+5. Restart the game after major texture-setting changes.
+6. Do not enable texture packs that clearly require more VRAM than your GPU has.
 
 > [!NOTE]
-> Индикатор VRAM в игре — полезный ориентир, но не всегда точный лимит. Оценивайте его вместе с реальными статтерами, frametime и мониторингом.
+> In-game VRAM indicators are useful references, but not always exact limits. Evaluate together with real stutter, frametime, and monitoring data.
 
 ---
 
-## 5. SSD, загрузка данных и компиляция шейдеров
+## 5. SSD, asset streaming, and shader compilation
 
-### Признаки
+### Signs
 
-- Короткие фризы при первом посещении новой локации, эффекте или кат-сцене.
-- Неровный frametime после обновления игры или видеодрайвера.
-- Диск активно работает во время подгрузки мира.
-- Игра установлена на медленном HDD или почти заполненном SSD.
+- Short freezes on first visit to new areas/effects/cutscenes.
+- Uneven frametime after a game or GPU driver update.
+- High disk activity during world streaming.
+- Game installed on a slow HDD or nearly full SSD.
 
-### Что делать
+### What to do
 
-1. По возможности устанавливайте современные игры на SSD.
-2. Оставляйте на SSD свободное место.
-3. Дайте игре закончить компиляцию шейдеров, если она делает это при первом запуске.
-4. Не запускайте загрузку игр, торренты, облачную синхронизацию и обновления во время игры.
-5. Проверьте состояние накопителя утилитой производителя или SMART-мониторингом.
+1. Install modern games on SSD when possible.
+2. Keep free space available on SSD.
+3. Let shader compilation finish if the game performs it on first launch.
+4. Avoid game downloads, torrents, cloud sync, and updates while playing.
+5. Check drive health via vendor utility or SMART monitoring.
 
 > [!TIP]
-> Не каждый статтер исправляется настройками Windows. Некоторые проблемы находятся в самой игре, её движке, патче или процессе компиляции шейдеров.
+> Not every stutter is fixed by Windows tweaks. Some issues are in the game itself, its engine, a patch, or shader compilation behavior.
 
 ---
 
-## 6. Перегрев и троттлинг
+## 6. Overheating and throttling
 
-### Признаки
+### Signs
 
-- Производительность падает спустя время после запуска игры.
-- Температура CPU/GPU растёт, а частоты начинают снижаться.
-- Вентиляторы работают на высоких оборотах, корпус горячий.
-- После чистки или открытия боковой крышки производительность временно улучшается.
+- Performance drops after the game runs for a while.
+- CPU/GPU temperature rises and clocks begin to fall.
+- Fans spin fast and the case gets hot.
+- Performance temporarily improves after cleaning or opening the side panel.
 
-### Что делать
+### What to do
 
-1. Проверьте температуры и частоты в HWiNFO или MSI Afterburner.
-2. Очистите фильтры, вентиляторы и радиаторы от пыли.
-3. Убедитесь, что вентиляторы корпуса создают нормальный приток и выдув воздуха.
-4. Проверьте прижим кулера CPU и состояние термопасты, если есть подозрение на проблему.
-5. Настройте адекватную кривую вентиляторов.
-6. На ноутбуке используйте твёрдую поверхность, не перекрывайте воздухозаборники и играйте от сети.
+1. Check temperatures and clocks in HWiNFO or MSI Afterburner.
+2. Clean dust from filters, fans, and heatsinks.
+3. Ensure case airflow provides proper intake and exhaust.
+4. Check CPU cooler mounting and thermal paste condition if suspected.
+5. Tune a reasonable fan curve.
+6. On laptops, use a hard surface, keep air intakes clear, and play on AC power.
 
 > [!IMPORTANT]
-> Высокая температура не всегда означает неисправность. Смотрите на реальные частоты, лимиты мощности, троттлинг, шум и стабильность.
+> High temperature does not always mean a fault. Evaluate real clocks, power limits, throttling, noise, and stability together.
 
 ---
 
-## 7. Нестабильность системы
+## 7. System instability
 
-### Признаки
+### Signs
 
-- Вылеты игры или драйвера.
-- Синий экран, перезагрузки, чёрный экран.
-- Артефакты на изображении.
-- Ошибки распаковки архивов и установки игр.
-- WHEA-ошибки в журнале событий.
-- Редкие фризы после включения XMP/EXPO, PBO, Curve Optimizer, undervolt или разгона GPU.
+- Game or driver crashes.
+- BSOD, reboots, black screens.
+- Visual artifacts.
+- Archive extraction or game install errors.
+- WHEA errors in Event Viewer.
+- Rare freezes after enabling XMP/EXPO, PBO, Curve Optimizer, undervolt, or GPU OC.
 
-### Что делать
+### What to do
 
-1. Верните разгон CPU, GPU и RAM к заводским настройкам.
-2. Проверьте стабильность системы без твиков.
-3. Откройте `Просмотр событий → Журналы Windows → Система` и посмотрите ошибки WHEA.
-4. Проверьте температуры и питание.
-5. После каждого изменения проводите тест в реальных играх и стресс-тестах.
+1. Return CPU/GPU/RAM overclocks to stock.
+2. Verify stability without tweaks.
+3. Open `Event Viewer → Windows Logs → System` and check WHEA entries.
+4. Verify temperatures and power delivery.
+5. After each change, test in real games and stress tests.
 
 > [!WARNING]
-> «Работает на рабочем столе» не значит «стабильно в играх».
-> Редкие ошибки памяти или Curve Optimizer могут проявляться только при конкретной нагрузке.
+> “Works on desktop” does not mean “stable in games”.
+> Rare memory errors or Curve Optimizer instability can appear only under specific load patterns.
 
 ---
 
-## Алгоритм диагностики
+## Diagnostic workflow
 
-Используйте этот порядок:
+Use this order:
 
-1. Зафиксируйте FPS, 1% low, frametime и температуры.
-2. Посмотрите на загрузку GPU.
-3. Если GPU около 99% — начните с графики, разрешения и VRAM.
-4. Если GPU заметно ниже, проверьте потоки CPU, RAM, фоновые процессы и температуру CPU.
-5. При статтерах проверьте RAM, VRAM, SSD, компиляцию шейдеров и загрузки в фоне.
-6. При ухудшении производительности со временем — проверьте перегрев.
-7. При вылетах и WHEA — отмените разгон и ищите нестабильность, а не новый FPS-твик.
+1. Record FPS, 1% low, frametime, and temperatures.
+2. Check GPU usage.
+3. If GPU is near 99% — start with graphics, resolution, and VRAM.
+4. If GPU is much lower, check CPU threads, RAM, background processes, and CPU temperature.
+5. For stutters, check RAM, VRAM, SSD, shader compilation, and background downloads.
+6. If performance degrades over time, check thermals.
+7. For crashes and WHEA, remove overclocks and investigate instability instead of applying new FPS tweaks.
 
 ---
 
-## Итог
+## Summary
 
-Не нужно применять все настройки из гайда. Сначала найдите реальную причину проблемы, затем переходите к нужному разделу:
+Do not apply every tweak from the guide at once. First find the real root cause, then go to the relevant section:
 
-- [BIOS и железо](03-bios-and-hardware.md)
-- [Драйверы и обновления](04-drivers-and-updates.md)
+- [BIOS and hardware](03-bios-and-hardware.md)
+- [Drivers and updates](04-drivers-and-updates.md)
 - [Windows 11](05-windows-11.md)
-- [Настройки видеокарты](06-gpu-settings.md)
-- [Температуры и стабильность](10-temperatures-stability.md)
+- [GPU settings](06-gpu-settings.md)
+- [Temperatures and stability](10-temperatures-stability.md)

@@ -1,286 +1,296 @@
-# 06. Настройки видеокарты
+# 06. GPU Settings
 
-> Настраивайте видеодрайвер через профиль конкретной игры или приложения. Не меняйте все параметры глобально: одна игра может выиграть от настройки, а другая — получить баги, ухудшение изображения или нестабильность.
+> Configure the graphics driver per game/application profile. Do not change everything globally: one game may benefit while another gets bugs, image degradation, or instability.
 
-## Главный принцип
+## Core principle
 
-1. Сначала настройте графику, FPS-лимит, задержку и масштабирование **в самой игре**.
-2. Затем создайте профиль игры в панели NVIDIA, AMD или Intel.
-3. Меняйте один параметр.
-4. Проверяйте FPS, 1% low, frametime, изображение и стабильность.
+1. First tune graphics, FPS limit, latency, and scaling **inside the game**.
+2. Then create a game profile in NVIDIA, AMD, or Intel panel.
+3. Change one setting at a time.
+4. Validate FPS, 1% low, frametime, image quality, and stability.
 
 > [!IMPORTANT]
-> Панель видеодрайвера не создаёт производительность из воздуха. Она помогает правильно использовать доступную мощность GPU, уменьшать задержку в подходящих сценариях и избегать конфликтующих настроек.
+> Driver panel does not create performance out of nowhere. It helps use available GPU power correctly, reduce latency in suitable scenarios, and avoid conflicting settings.
+
+### Fast setup order (per game)
+
+| Order | Action |
+|---|---|
+| 1 | Set in-game resolution/quality |
+| 2 | Pick upscaler mode (Quality → Balanced → Performance) |
+| 3 | Set FPS cap for stable frametime |
+| 4 | Tune VRR/V-Sync behavior |
+| 5 | Apply only one driver tweak at a time |
 
 ---
 
-## 1. Общие настройки для любой видеокарты
+## 1. General settings for any GPU
 
-### Разрешение и render scale
+### Resolution and render scale
 
-- Нативное разрешение монитора обычно даёт наиболее чёткую картинку.
-- Уменьшение разрешения или render scale снижает нагрузку на GPU и может повысить FPS.
-- Если игра поддерживает DLSS, FSR или XeSS, сначала сравните их режимы `Quality`, `Balanced` и `Performance`.
-- Не выбирайте самый агрессивный режим масштабирования без необходимости: FPS может вырасти, но картинка станет заметно хуже.
+- Native monitor resolution usually gives the sharpest image.
+- Lowering resolution or render scale reduces GPU load and may increase FPS.
+- If the game supports DLSS, FSR, or XeSS, compare `Quality`, `Balanced`, and `Performance` first.
+- Do not pick the most aggressive scaling mode without need: FPS may rise, but image quality can noticeably drop.
 
-### Текстуры и VRAM
+### Textures and VRAM
 
-Текстуры часто зависят от объёма видеопамяти.
+Texture settings are often limited by VRAM capacity.
 
-- Если VRAM почти заполнена и есть статтеры — снизьте текстуры.
-- Не ставьте тяжёлые texture pack выше возможностей видеокарты.
-- Высокие текстуры не всегда сильно нагружают GPU по FPS, но могут вызвать проблемы при нехватке VRAM.
+- If VRAM is nearly full and stutter appears, reduce textures.
+- Do not use heavy texture packs beyond your GPU capability.
+- High textures do not always reduce FPS heavily, but can cause issues when VRAM is insufficient.
 
-### Самые тяжёлые настройки GPU
+### Most GPU-heavy settings
 
-При упоре в GPU обычно в первую очередь тестируют:
+When GPU-bound, test these first:
 
 - Ray tracing
 - Path tracing
-- Разрешение / render scale
-- Тени
-- Отражения
+- Resolution / render scale
+- Shadows
+- Reflections
 - Volumetric lighting / fog
 - Ambient occlusion
-- Дальность прорисовки
-- Качество волос, травы, частиц и воды
+- Draw distance
+- Hair, grass, particle, and water quality
 
-Не обязательно ставить всё на Low. Найдите баланс: уменьшайте настройки с большой потерей FPS и небольшой разницей в реальном изображении.
+You do not have to set everything to Low. Find balance: reduce options with large FPS cost and small visible quality difference.
 
 ---
 
-## 2. Лимит FPS
+## 2. FPS limit
 
-Лимит кадров может улучшить стабильность frametime, снизить нагрев, шум и энергопотребление.
+Frame limiting can improve frametime consistency and reduce heat, noise, and power usage.
 
-### Где ограничивать FPS
+### Where to cap FPS
 
-Приоритет обычно такой:
+Typical priority:
 
-1. Встроенный лимит FPS в самой игре.
-2. Лимит в драйвере видеокарты.
-3. RTSS, если нужен точный внешний лимитер и вы понимаете, как он работает.
+1. In-game FPS limiter.
+2. GPU driver limiter.
+3. RTSS, if you need precise external limiting and understand its behavior.
 
-### Как выбрать значение
+### How to choose a value
 
-- Если FPS нестабилен, ограничьте его значением, которое ПК может удерживать в тяжёлых сценах.
-- Если вы используете VRR, подберите лимит после настройки VRR и V-Sync для своего монитора.
-- Не ставьте лимит выше возможностей CPU/GPU только ради цифры в оверлее.
+- If FPS is unstable, cap to a value the system can sustain in heavy scenes.
+- If using VRR, tune cap after VRR and V-Sync are configured for your monitor.
+- Do not set cap above CPU/GPU capability only for bigger overlay numbers.
 
-Пример:
+Example:
 
 ```text
-ПК выдаёт 180–260 FPS, но часто падает до 165 FPS.
-Лимит 165 или 170 FPS может дать более ровный frametime, чем постоянно скачущий FPS без лимита.
+System outputs 180–260 FPS but often drops to 165 FPS.
+A 165 or 170 FPS cap may provide smoother frametime than uncapped fluctuation.
 ```
 
 > [!NOTE]
-> Нет универсального «идеального FPS cap» для всех. Выбор зависит от герцовки монитора, VRR, игры, производительности и личных ощущений.
+> There is no universal “perfect FPS cap.” It depends on monitor refresh rate, VRR, game behavior, system performance, and personal feel.
 
 ---
 
-## 3. V-Sync, VRR, G-SYNC и FreeSync
+## 3. V-Sync, VRR, G-SYNC, and FreeSync
 
-### Что такое V-Sync
+### What is V-Sync
 
-V-Sync синхронизирует вывод кадров с частотой обновления монитора и может убрать tearing. Однако в некоторых сценариях он увеличивает задержку и ограничивает FPS.
+V-Sync synchronizes frame output with monitor refresh rate and can remove tearing. In some scenarios it also increases latency and limits FPS.
 
-### Что такое VRR
+### What is VRR
 
-VRR — переменная частота обновления. Технология может называться:
+VRR means variable refresh rate. It may be branded as:
 
 - NVIDIA G-SYNC / G-SYNC Compatible
 - AMD FreeSync
 - Adaptive-Sync
 
-Она помогает сделать движение плавнее при изменяющемся FPS в рабочем диапазоне монитора.
+It helps smooth motion when FPS varies within monitor VRR range.
 
-### Правильный подход
+### Correct approach
 
-- Проверьте, что VRR включён в меню монитора.
-- Проверьте настройки в панели драйвера.
-- Протестируйте игру с V-Sync и без него.
-- При наличии VRR настройте FPS-лимит и V-Sync под свой сценарий, а не копируйте случайные значения из чужого ролика.
+- Verify VRR is enabled in monitor OSD.
+- Verify settings in driver panel.
+- Test game with V-Sync on and off.
+- With VRR, tune FPS cap + V-Sync for your use case instead of copying random settings.
 
 > [!WARNING]
-> Настройки V-Sync/VRR/лимита FPS влияют на плавность, tearing и задержку одновременно. Здесь нет одного режима, который будет лучшим для каждого монитора и каждой игры.
+> V-Sync/VRR/FPS-cap settings affect smoothness, tearing, and latency at the same time. There is no single best mode for every monitor and every game.
 
 ---
 
 ## 4. NVIDIA
 
-Создавайте настройки в NVIDIA App или NVIDIA Control Panel для отдельной игры.
+Configure settings in NVIDIA App or NVIDIA Control Panel per game.
 
 ### Power management mode
 
-Глобально обычно оставляйте настройку по умолчанию.
+Globally, keep default in most cases.
 
-Для конкретной игры при проблемах с частотами или агрессивным энергосбережением можно протестировать:
+For a specific game with clock/power-saving behavior issues, you can test:
 
 ```text
 Power management mode → Prefer maximum performance
 ```
 
-Возможные последствия:
+Possible effects:
 
-- GPU будет активнее удерживать высокие частоты в игре;
-- потребление, температура и шум могут вырасти;
-- в некоторых играх разницы не будет.
+- GPU holds higher clocks more aggressively in-game;
+- power/temperature/noise may increase;
+- some games may show no difference.
 
 ### NVIDIA Reflex
 
-Если игра поддерживает NVIDIA Reflex, включайте Reflex **в настройках самой игры**.
+If the game supports NVIDIA Reflex, enable Reflex **inside the game**.
 
-Reflex позволяет игре управлять очередью кадров для снижения системной задержки. Обычно это предпочтительнее, чем принудительно включать Low Latency Mode в драйвере.
+Reflex lets the game manage render queue for lower system latency. This is usually preferable to forcing Low Latency Mode in driver.
 
 ### Low Latency Mode
 
-Если игра не имеет Reflex, можно протестировать Low Latency Mode в профиле драйвера.
+If a game does not have Reflex, test Low Latency Mode in the driver profile.
 
-Режимы могут отличаться по версии драйвера, но общий смысл такой:
+Modes can differ by driver version, but generally:
 
-- `Off` — управление очередью кадров оставлено по умолчанию;
-- `On` — ограничение предварительно подготовленных кадров;
-- `Ultra` — более агрессивный режим минимизации очереди.
+- `Off` — default queue behavior;
+- `On` — limits pre-rendered frames;
+- `Ultra` — more aggressive queue minimization.
 
-Не включайте Low Latency Mode глобально для всех программ. Тестируйте по одной игре.
+Do not enable Low Latency Mode globally for all apps. Test per game.
 
 ### Texture filtering - Quality
 
-В профиле игры можно проверить режим качества фильтрации текстур.
+In game profile, test texture filtering quality mode.
 
-- `Quality` — разумный стандарт.
-- Режим с приоритетом производительности иногда даёт небольшой прирост на слабой GPU, но способен ухудшить картинку.
+- `Quality` — reasonable default.
+- Performance-priority mode can give a small gain on weak GPUs, but may degrade image quality.
 
-Не меняйте параметр без сравнения изображения и FPS.
+Do not change this without comparing image and FPS.
 
-### Что не нужно принудительно включать
+### What not to force-enable
 
-Без конкретной причины не включайте через драйвер:
+Without a specific reason, do not force via driver:
 
-- сглаживание поверх настроек игры;
+- anti-aliasing overriding game settings;
 - DSR/DLDSR;
-- масштабирование и резкость;
-- V-Sync для всех программ;
-- максимальную производительность глобально;
-- Low Latency Mode глобально.
+- scaling and sharpening;
+- global V-Sync for all programs;
+- global maximum performance mode;
+- global Low Latency Mode.
 
 ---
 
 ## 5. AMD Radeon
 
-Настраивайте профиль в AMD Software: Adrenalin Edition.
+Tune per-game profile in AMD Software: Adrenalin Edition.
 
 ### Radeon Anti-Lag
 
-Функция помогает уменьшить задержку в подходящих сценариях. Включайте её для конкретной игры и проверяйте результат.
+Can reduce latency in suitable scenarios. Enable per game and test result.
 
-Если игра имеет собственную технологию уменьшения задержки, сначала используйте настройки самой игры.
+If game has its own latency-reduction tech, try in-game option first.
 
 ### Radeon Chill
 
-Chill может ограничивать FPS и снижать энергопотребление. Он полезен для тихого режима или экономии, но не всегда подходит, если цель — максимальная отзывчивость.
+Chill can cap FPS and reduce power usage. Useful for quieter operation or efficiency, but not always ideal for maximum responsiveness.
 
 ### Enhanced Sync
 
-Enhanced Sync может уменьшить tearing в некоторых сценариях, но может работать по-разному в разных играх. Тестируйте вместе с VRR и FPS-лимитом.
+Enhanced Sync can reduce tearing in some scenarios, but behavior differs by game. Test together with VRR and FPS cap.
 
-### Radeon Super Resolution и масштабирование
+### Radeon Super Resolution and scaling
 
-Используйте RSR/масштабирование, когда игра не поддерживает встроенный FSR/DLSS/XeSS или если внешний вариант даёт приемлемую картинку.
+Use RSR/external scaling when a game lacks built-in FSR/DLSS/XeSS or when external method gives acceptable image quality.
 
-Сначала по возможности выбирайте встроенный апскейлер игры: он обычно лучше учитывает особенности её рендеринга и интерфейса.
+Prefer built-in game upscaler when possible: it usually handles rendering/UI specifics better.
 
-### Не включайте всё сразу
+### Do not enable everything at once
 
-Не активируйте одновременно все функции Anti-Lag, Chill, Enhanced Sync, внешнее масштабирование и лимиты кадров. В противном случае сложно понять, что влияет на результат и где появился конфликт.
-
----
-
-## 6. Intel Arc и встроенная Intel Graphics
-
-Используйте Intel Graphics Software и создавайте профиль для конкретной игры.
-
-### Рекомендации
-
-- Поддерживайте драйвер в актуальной стабильной версии.
-- Для игры сначала используйте её собственные настройки масштабирования и задержки.
-- При проблеме в конкретной игре проверьте known issues драйвера и варианты API в игре: DirectX 11, DirectX 12 или Vulkan, если она предлагает выбор.
-- На ноутбуке учитывайте настройки гибридной графики в Windows и программе производителя.
+Do not activate Anti-Lag, Chill, Enhanced Sync, external scaling, and frame limiters all at once. Otherwise it is hard to understand what affects result and where conflict appears.
 
 ---
 
-## 7. Апскейлеры и Frame Generation
+## 6. Intel Arc and integrated Intel Graphics
 
-### DLSS, FSR и XeSS
+Use Intel Graphics Software and create per-game profile.
 
-Это технологии масштабирования, которые могут увеличить FPS, рендеря игру во внутреннем разрешении ниже выходного.
+### Recommendations
 
-Рекомендованный порядок теста:
+- Keep driver on a current stable version.
+- For each game, start with its own scaling/latency settings.
+- If a specific game has issues, check driver known issues and test game API options: DirectX 11, DirectX 12, or Vulkan (if available).
+- On laptops, consider hybrid graphics settings in Windows and vendor utility.
 
-1. Нативное разрешение.
+---
+
+## 7. Upscalers and Frame Generation
+
+### DLSS, FSR, and XeSS
+
+These upscaling technologies can increase FPS by rendering internally at lower resolution.
+
+Recommended test order:
+
+1. Native resolution.
 2. `Quality`.
 3. `Balanced`.
-4. `Performance`, если FPS всё ещё недостаточен.
+4. `Performance` if FPS is still insufficient.
 
-Сравните:
+Compare:
 
-- FPS и 1% low;
-- чёткость мелких деталей;
-- качество движения;
-- артефакты на тонких объектах, листве, волосах и интерфейсе.
+- FPS and 1% low;
+- fine-detail sharpness;
+- motion quality;
+- artifacts on thin objects, foliage, hair, and UI.
 
 ### Frame Generation
 
-Генерация кадров может повысить отображаемый FPS, но она не заменяет достаточный базовый FPS и может менять ощущение задержки.
+Frame generation can increase displayed FPS, but it does not replace sufficient base FPS and can change latency feel.
 
-Перед включением:
+Before enabling:
 
-- добейтесь нормального нативного FPS;
-- включите доступную внутриигровую технологию снижения задержки;
-- проверьте картинку и отзывчивость лично;
-- не оценивайте только цифру FPS в оверлее.
+- achieve solid native/base FPS;
+- enable available in-game latency reduction;
+- evaluate image quality and responsiveness personally;
+- do not judge only by FPS overlay number.
 
 > [!IMPORTANT]
-> Frame Generation полезна прежде всего для визуальной плавности в подходящих играх. Она не исправляет CPU-лимит, статтеры, перегрев или нестабильность.
+> Frame Generation is mainly useful for visual smoothness in compatible games. It does not fix CPU limit, stutter, overheating, or instability.
 
 ---
 
-## 8. Проверка проблем GPU
+## 8. GPU issue diagnostics
 
-Если есть статтеры, вылеты или падение частот, проверьте:
+If you have stutter, crashes, or clock drops, check:
 
-- температуру GPU;
-- hotspot и температуру памяти GPU, если датчики доступны;
-- частоту и лимит мощности;
-- использование VRAM;
-- версию драйвера;
-- наличие разгона/undervolt;
-- питание видеокарты;
-- оверлеи, запись, браузер с видео;
-- стабильность в другой игре или бенчмарке.
+- GPU temperature;
+- GPU hotspot and memory temperature (if sensors available);
+- clock behavior and power limit;
+- VRAM usage;
+- driver version;
+- overclock/undervolt status;
+- GPU power delivery;
+- overlays, recording, browser video;
+- stability in another game/benchmark.
 
-При артефактах, чёрных экранах и вылетах сначала верните GPU к заводским настройкам. Не пытайтесь исправить нестабильный undervolt новыми настройками Windows.
-
----
-
-## Чек-лист
-
-- [ ] Графика настраивается сначала внутри игры.
-- [ ] Используется профиль драйвера для конкретного приложения.
-- [ ] Выбран разумный FPS-лимит.
-- [ ] VRR/V-Sync проверены на конкретном мониторе и в конкретной игре.
-- [ ] Reflex включён в игре при наличии поддержки NVIDIA Reflex.
-- [ ] Функции AMD включаются по одной и проверяются.
-- [ ] Текстуры соответствуют объёму VRAM.
-- [ ] Апскейлер выбран по балансу FPS и качества, а не по максимальной цифре.
-- [ ] Frame Generation не используется как замена нормальной базовой производительности.
-- [ ] Нет нестабильного разгона, перегрева или конфликтующих оверлеев.
+For artifacts, black screens, and crashes, return GPU to stock settings first. Do not try to fix unstable undervolt with new Windows tweaks.
 
 ---
 
-## Итог
+## Checklist
 
-Лучшие настройки видеокарты — это не максимальное количество включённых функций, а понятный профиль под конкретную игру. Сначала определите, упирается ли ПК в GPU или CPU, затем настройте разрешение, тяжёлые эффекты, FPS-лимит, VRR/V-Sync и технологии масштабирования. Оценивайте не только средний FPS, но и frametime, 1% low, качество изображения и задержку.
+- [ ] Graphics are tuned in-game first.
+- [ ] Driver profile is used per specific application.
+- [ ] Reasonable FPS cap is selected.
+- [ ] VRR/V-Sync tested on specific monitor and game.
+- [ ] Reflex is enabled in-game when NVIDIA Reflex support exists.
+- [ ] AMD features are enabled one by one and validated.
+- [ ] Textures match VRAM capacity.
+- [ ] Upscaler is chosen by FPS/quality balance, not peak number only.
+- [ ] Frame Generation is not used as substitute for solid baseline performance.
+- [ ] No unstable overclock, overheating, or conflicting overlays.
 
-Следующий шаг: [Фоновые приложения и автозагрузка](07-background-apps.md).
+---
+
+## Summary
+
+Best GPU settings are not maximum number of enabled features, but a clear per-game profile. First determine whether system is GPU-bound or CPU-bound, then tune resolution, heavy effects, FPS cap, VRR/V-Sync, and upscaling technologies. Evaluate not only average FPS, but also frametime, 1% low, image quality, and latency.
+
+Next step: [Background apps and startup](07-background-apps.md).

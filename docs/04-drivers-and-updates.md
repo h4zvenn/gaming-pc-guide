@@ -1,246 +1,254 @@
-# 04. Драйверы и обновления
+# 04. Drivers and Updates
 
-> Драйверы и обновления не дают «магический FPS», но обеспечивают совместимость, стабильность, исправления ошибок и корректную работу железа. Сначала используйте официальные источники, а не driver-pack, «ускорители» и случайные ссылки.
+> Drivers and updates do not provide “magic FPS,” but they ensure compatibility, stability, bug fixes, and proper hardware behavior. Always start with official sources, not driver packs, “boosters,” or random links.
 
-## Главное правило
+## Core rule
 
-Скачивайте драйверы только с официальных сайтов:
+Download drivers only from official websites:
 
-- Производитель материнской платы или ноутбука
+- Motherboard or laptop vendor
 - AMD
 - NVIDIA
 - Intel
 - Microsoft
-- Производитель SSD, Wi-Fi-адаптера или периферии
+- SSD, Wi-Fi adapter, or peripheral vendor
 
 > [!WARNING]
-> Не используйте Driver Booster, DriverPack, «автоматические обновляторы» и сайты с перепакованными драйверами. Они могут установить неподходящую версию, рекламное ПО или нестабильный компонент.
+> Do not use Driver Booster, DriverPack, “auto-updaters,” or repackaged driver websites. They may install incorrect versions, adware, or unstable components.
 
 ---
 
-## Правильный порядок обновления
+## Correct update order
 
-Для чистой установки Windows или новой сборки используйте такой порядок:
+For a clean Windows install or a new build, use this sequence:
 
-1. Установите обновления Windows.
-2. Установите драйвер чипсета.
-3. Установите драйвер видеокарты.
-4. Установите LAN/Wi-Fi/Bluetooth и аудиодрайвер при необходимости.
-5. Установите драйверы периферии только для используемых устройств.
-6. Перезагрузите ПК.
-7. Проверьте стабильность и версию драйверов.
+1. Install Windows updates.
+2. Install chipset driver.
+3. Install GPU driver.
+4. Install LAN/Wi-Fi/Bluetooth and audio drivers if needed.
+5. Install peripheral drivers only for devices you actually use.
+6. Reboot the PC.
+7. Verify stability and driver versions.
 
-Если ПК уже настроен и стабилен, не обязательно переустанавливать всё с нуля. Обновляйте только нужный компонент.
+If your system is already configured and stable, you do not need to reinstall everything from scratch. Update only the needed component.
+
+### Fast update strategy
+
+| Situation | Best move |
+|---|---|
+| Fresh Windows install | Follow full update order top-to-bottom |
+| Stable existing setup | Update only component with known issue/fix |
+| New game has launch issues | Try latest stable GPU driver first |
 
 ---
 
-## 1. Обновление Windows
+## 1. Windows Update
 
-Откройте:
-
-```text
-Параметры → Центр обновления Windows
-```
-
-Нажмите:
+Open:
 
 ```text
-Проверить наличие обновлений
+Settings → Windows Update
 ```
 
-Установите обычные накопительные обновления и перезагрузите ПК, если Windows просит об этом.
+Click:
 
-### Что устанавливать с осторожностью
+```text
+Check for updates
+```
 
-`Необязательные обновления` и драйверы из Windows Update не всегда являются лучшим выбором для GPU, чипсета и устройства производителя.
+Install regular cumulative updates and reboot if Windows requests it.
 
-Проверьте версию и источник перед установкой, особенно если:
+### What to install with caution
 
-- текущий драйвер работает стабильно;
-- вы используете ноутбук со специфическим управлением питанием;
-- обновление предлагается как Optional driver update;
-- недавно уже были проблемы с графическим драйвером.
+`Optional updates` and drivers from Windows Update are not always the best choice for GPU, chipset, or vendor-specific devices.
+
+Check version and source before installing, especially if:
+
+- current driver is stable;
+- you use a laptop with vendor-specific power management;
+- the update is offered as an Optional driver update;
+- you recently had graphics driver issues.
 
 > [!NOTE]
-> Не выключайте Windows Update навсегда ради «оптимизации». Обновления содержат исправления безопасности, стабильности и совместимости.
+> Do not permanently disable Windows Update for “optimization.” Updates include security, stability, and compatibility fixes.
 
 ---
 
-## 2. Драйвер чипсета
+## 2. Chipset driver
 
-Драйвер чипсета важен для корректной работы управления питанием, PCIe, USB, контроллеров и взаимодействия ОС с платформой.
+Chipset driver is important for proper power management, PCIe, USB, controller behavior, and OS/platform interaction.
 
-### Где скачать
+### Where to download
 
-- Для AMD-платформы: официальный сайт AMD или страница поддержки материнской платы/ноутбука.
-- Для Intel-платформы: официальный сайт Intel или страница поддержки материнской платы/ноутбука.
+- AMD platform: official AMD site or motherboard/laptop support page.
+- Intel platform: official Intel site or motherboard/laptop support page.
 
-### Как установить
+### How to install
 
-1. Скачайте драйвер под свою ОС и платформу.
-2. Закройте лишние программы.
-3. Запустите установщик.
-4. Завершите установку.
-5. Перезагрузите ПК.
+1. Download the driver for your OS and platform.
+2. Close unnecessary apps.
+3. Run installer.
+4. Finish installation.
+5. Reboot the PC.
 
 > [!TIP]
-> На ноутбуке сначала проверяйте страницу производителя. Там могут быть адаптированные драйверы, связанные с питанием, переключением графики, горячими клавишами или режимами охлаждения.
+> On laptops, check the vendor support page first. It may provide adapted drivers for power behavior, graphics switching, hotkeys, or cooling modes.
 
 ---
 
-## 3. Драйвер видеокарты
+## 3. GPU driver
 
 ### NVIDIA
 
-Используйте официальный драйвер через NVIDIA App или страницу загрузки NVIDIA.
+Use official driver via NVIDIA App or NVIDIA download page.
 
-Выберите драйвер, соответствующий:
+Select the driver matching:
 
-- вашей видеокарте;
-- версии Windows;
-- типу задач: Game Ready или Studio.
+- your GPU model;
+- Windows version;
+- workload type: Game Ready or Studio.
 
-Для большинства игровых ПК подходит Game Ready Driver. Studio Driver может быть удобнее для стабильности в рабочих приложениях, монтаже и 3D-задачах.
+For most gaming PCs, Game Ready Driver is suitable. Studio Driver can be preferable for workstation apps, editing, and 3D stability.
 
 ### AMD Radeon
 
-Используйте AMD Software: Adrenalin Edition с официального сайта AMD.
+Use AMD Software: Adrenalin Edition from the official AMD website.
 
-Выберите драйвер для своей серии Radeon и версии Windows.
+Pick the driver for your Radeon series and Windows version.
 
-### Intel Arc / встроенная графика Intel
+### Intel Arc / Intel integrated graphics
 
-Используйте Intel Graphics Software или официальный центр загрузок Intel.
+Use Intel Graphics Software or official Intel Download Center.
 
-Для ноутбука при проблемах с яркостью, гибридной графикой или режимами сна сначала попробуйте драйвер производителя ноутбука.
+On laptops, if brightness, hybrid graphics, or sleep issues appear, try the laptop vendor’s driver first.
 
 ---
 
-## 4. Нужно ли обновлять GPU-драйвер сразу после релиза?
+## 4. Should you update GPU driver immediately after release?
 
-Не обязательно.
+Not always.
 
-Обновление стоит установить, если:
+Update if:
 
-- новая игра требует свежую версию;
-- в changelog есть исправление вашей проблемы;
-- вы видите баг, вылет, артефакты или плохую совместимость;
-- драйвер добавляет поддержку нужной технологии;
-- вы устанавливаете Windows заново.
+- a new game requires latest version;
+- changelog contains a fix for your issue;
+- you have bugs, crashes, artifacts, or poor compatibility;
+- the driver adds support for a needed technology;
+- you are reinstalling Windows.
 
-Можно остаться на текущей версии, если:
+Stay on current version if:
 
-- всё стабильно;
-- вы не играете в новую игру, для которой выпущен Game Ready-профиль;
-- новые версии уже известны проблемами на вашей конфигурации;
-- ПК используется для важной работы, где стабильность важнее новизны.
+- everything is stable;
+- you do not play a newly released game with new Game Ready profile;
+- newer releases are known problematic on your configuration;
+- PC is used for critical work where stability matters more than novelty.
 
 > [!IMPORTANT]
-> Новее не всегда означает быстрее для каждой игры. Сравнивайте результат в своих играх и при необходимости возвращайтесь на последнюю стабильную версию.
+> Newer does not always mean faster in every game. Compare performance in your own titles and roll back to a known stable version if needed.
 
 ---
 
-## 5. Чистая установка GPU-драйвера
+## 5. Clean GPU driver install
 
-Обычное обновление драйвера подходит в большинстве случаев.
+Regular driver update works in most cases.
 
-Чистая установка нужна только при симптомах:
+Clean install is needed only for symptoms like:
 
-- графический драйвер постоянно падает;
-- после обновления появились чёрные экраны или артефакты;
-- настройки панели драйвера работают некорректно;
-- игра не запускается из-за конфликта старых компонентов;
-- вы меняли видеокарту AMD ↔ NVIDIA ↔ Intel.
+- frequent graphics driver crashes;
+- black screens or artifacts after update;
+- driver control panel settings behave incorrectly;
+- game fails to launch due to legacy component conflicts;
+- you switched GPU vendor (AMD ↔ NVIDIA ↔ Intel).
 
-### Сначала попробуйте простой способ
+### Try simple method first
 
-При установке NVIDIA выберите вариант чистой установки, если он доступен в установщике. Для AMD можно использовать Factory Reset только если понимаете, что настройки драйвера будут сброшены.
+For NVIDIA, choose clean installation option if available in installer. For AMD, use Factory Reset only if you understand that driver settings will be reset.
 
-### DDU — только при реальной необходимости
+### DDU — only when truly needed
 
-Display Driver Uninstaller — инструмент для полного удаления видеодрайвера. Он может помочь при серьёзных конфликтах, но не является обязательной процедурой перед каждым обновлением.
+Display Driver Uninstaller fully removes GPU drivers. It can help with severe conflicts, but it is not required before every update.
 
-Если используете DDU:
+If using DDU:
 
-1. Создайте точку восстановления.
-2. Скачайте свежий драйвер заранее.
-3. Прочитайте инструкцию инструмента.
-4. Не используйте его ради обычного обновления без проблемы.
-5. После удаления установите драйвер с официального сайта.
+1. Create a restore point.
+2. Download fresh driver package in advance.
+3. Read tool instructions.
+4. Do not use it for routine updates without actual problem.
+5. Install driver from official source after cleanup.
 
 > [!WARNING]
-> Не запускайте DDU ежемесячно «для FPS». Частое полное удаление драйвера не является оптимизацией.
+> Do not run DDU monthly “for FPS.” Frequent full driver removal is not optimization.
 
 ---
 
-## 6. Драйверы материнской платы и ноутбука
+## 6. Motherboard and laptop drivers
 
-На странице поддержки своей модели обычно доступны:
+Your model support page usually includes:
 
 - LAN/Ethernet;
 - Wi-Fi;
 - Bluetooth;
 - Audio;
 - SATA/RAID;
-- утилиты BIOS;
-- приложения управления вентиляторами, подсветкой и питанием.
+- BIOS utilities;
+- fan/RGB/power management apps.
 
-Устанавливайте только то, что вам нужно.
+Install only what you need.
 
-Например:
+For example:
 
-- Если используете Ethernet, Wi-Fi-драйвер необязателен.
-- Если не используете RGB-подсветку, не обязательно ставить тяжёлый RGB-комбайн.
-- Если программа производителя постоянно нагружает CPU/RAM или вызывает ошибки, проверьте возможность отключить её автозапуск без удаления нужного драйвера.
+- If you use Ethernet, Wi-Fi driver may be unnecessary.
+- If you do not use RGB lighting, heavy RGB suites are optional.
+- If vendor software constantly loads CPU/RAM or causes errors, disable its startup first without removing required driver components.
 
 > [!TIP]
-> Драйвер и фирменная утилита — не одно и то же. Драйвер сети/звука часто необходим, а большая программа с подсветкой, телеметрией и оверлеем может быть необязательна.
+> Driver and vendor utility are not the same thing. Network/audio drivers are often required; large overlay/telemetry/lighting suites may be optional.
 
 ---
 
-## 7. Драйверы SSD и прошивка
+## 7. SSD drivers and firmware
 
-### NVMe/SATA-драйверы
+### NVMe/SATA drivers
 
-В большинстве случаев стандартный драйвер Microsoft работает нормально. Не устанавливайте отдельный драйвер контроллера без причины или рекомендации производителя.
+In most cases, default Microsoft storage drivers work well. Do not install separate controller drivers without clear reason or vendor recommendation.
 
-### Прошивка SSD
+### SSD firmware
 
-Обновление firmware SSD имеет смысл, если производитель указывает исправление:
+SSD firmware update is useful when vendor lists fixes for:
 
-- стабильности;
-- потери данных;
-- сна/пробуждения;
-- перегрева;
-- совместимости;
-- производительности в конкретном сценарии.
+- stability;
+- data loss;
+- sleep/wake behavior;
+- overheating;
+- compatibility;
+- performance in a specific scenario.
 
-Перед обновлением прошивки SSD:
+Before updating SSD firmware:
 
-1. Сделайте резервную копию важного.
-2. Прочитайте инструкцию производителя.
-3. Подключите ноутбук к сети.
-4. Не выключайте ПК во время обновления.
+1. Back up important data.
+2. Read vendor instructions.
+3. Keep laptop on AC power.
+4. Do not power off during update.
 
 ---
 
-## 8. Проверка драйверов через Windows
+## 8. Verify drivers in Windows
 
-### Диспетчер устройств
+### Device Manager
 
-1. Нажмите `Win + X`.
-2. Выберите `Диспетчер устройств`.
-3. Проверьте, нет ли устройств с жёлтым предупреждающим значком.
-4. Откройте свойства нужного устройства → `Драйвер`.
+1. Press `Win + X`.
+2. Open `Device Manager`.
+3. Check for devices with yellow warning icons.
+4. Open target device properties → `Driver` tab.
 
-### Информация о видеокарте в PowerShell
+### GPU information via PowerShell
 
 ```powershell
 Get-CimInstance Win32_VideoController |
 Select-Object Name, DriverVersion, DriverDate, VideoProcessor
 ```
 
-### Версия Windows
+### Windows version
 
 ```powershell
 Get-ComputerInfo |
@@ -248,52 +256,52 @@ Select-Object WindowsProductName, WindowsVersion, OsBuildNumber
 ```
 
 > [!NOTE]
-> Эти команды только показывают информацию и не меняют настройки системы.
+> These commands only display information and do not modify system settings.
 
 ---
 
-## 9. Необязательные программы производителя
+## 9. Optional vendor software
 
-Перед установкой спросите себя: «Что конкретно мне даст эта программа?»
+Before installing, ask: “What exact benefit do I get from this app?”
 
-Часто необязательны:
+Often optional:
 
-- автообновляторы драйверов;
-- «игровые оптимизаторы»;
-- дублирующие оверлеи;
-- программы очистки RAM;
-- утилиты с постоянной телеметрией;
-- RGB-комбайны, если подсветка не нужна;
-- предустановленные пробные антивирусы.
+- automatic driver updaters;
+- “gaming optimizers”;
+- duplicate overlays;
+- RAM cleaning tools;
+- always-on telemetry utilities;
+- RGB suites if lighting control is not needed;
+- preinstalled trial antivirus software.
 
-Могут быть нужны:
+May be required:
 
-- управление режимом питания ноутбука;
-- настройка вентиляторов;
-- горячие клавиши;
-- профили тачпада;
-- переключение гибридной/дискретной графики;
-- обновление firmware периферии.
+- laptop power mode control;
+- fan tuning;
+- hotkeys;
+- touchpad profiles;
+- hybrid/discrete graphics switching;
+- peripheral firmware updates.
 
-Не удаляйте программу, пока не понимаете, за что она отвечает. Сначала отключите её из автозагрузки и проверьте работу ПК.
-
----
-
-## Чек-лист
-
-- [ ] Установлены обновления Windows.
-- [ ] Установлен драйвер чипсета с официального источника.
-- [ ] Установлен стабильный драйвер GPU.
-- [ ] Нет устройств с жёлтым значком в Диспетчере устройств.
-- [ ] Не используются driver-pack и сомнительные автообновляторы.
-- [ ] Чистая установка драйвера применяется только при реальной проблеме.
-- [ ] Обновление firmware SSD выполняется только по инструкции и при наличии причины.
-- [ ] Необязательные утилиты не висят в фоне без необходимости.
+Do not uninstall software until you understand its role. Disable startup first and test system behavior.
 
 ---
 
-## Итог
+## Checklist
 
-Стабильная база важнее постоянной гонки за новыми версиями. Используйте официальные драйверы, обновляйте компоненты осознанно, делайте чистую установку только при проблемах и не засоряйте систему лишними «помощниками».
+- [ ] Windows updates installed.
+- [ ] Chipset driver installed from official source.
+- [ ] Stable GPU driver installed.
+- [ ] No devices with yellow warning icon in Device Manager.
+- [ ] No driver packs or questionable auto-updaters used.
+- [ ] Clean driver install used only for real issues.
+- [ ] SSD firmware updated only when justified and per vendor instructions.
+- [ ] Optional utilities are not running in background without need.
 
-Следующий шаг: [Настройка Windows 11](05-windows-11.md).
+---
+
+## Summary
+
+A stable baseline is more important than chasing every new version. Use official drivers, update components intentionally, perform clean installs only when needed, and keep the system free from unnecessary “helper” tools.
+
+Next step: [Windows 11 tuning](05-windows-11.md).

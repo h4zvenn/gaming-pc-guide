@@ -1,119 +1,127 @@
-# 12. FAQ — частые вопросы
+# 12. FAQ
 
-> Короткие ответы на популярные вопросы об оптимизации Windows и игрового ПК. Если ответ зависит от железа, версии Windows или конкретной игры — тестируйте изменения на своей системе.
+> Short answers to common questions about Windows and gaming PC optimization. If an answer depends on hardware, Windows version, or a specific game, test on your own system.
 
-## BIOS, CPU и RAM
+### Start here if you are in a hurry
 
-### Нужно ли обновлять BIOS?
+| You want… | Go to |
+|---|---|
+| Fast FPS gains safely | [14 Quick-start presets](14-quick-start-presets.md) |
+| Fix stutter/crash quickly | [15 Troubleshooting decision trees](15-troubleshooting-decision-trees.md) |
+| Prove tweaks actually work | [16 Benchmark templates](16-benchmark-templates.md) |
 
-Не всегда.
+## BIOS, CPU, and RAM
 
-Обновляйте BIOS, если:
+### Should I update BIOS?
 
-- вы устанавливаете новый CPU;
-- есть проблема со стабильностью, памятью, USB или совместимостью;
-- обновление исправляет нужную вам ошибку;
-- производитель рекомендует версию для вашей конфигурации.
+Not always.
 
-Если ПК стабильно работает, а в changelog нет полезных изменений, обновление не обязательно.
+Update BIOS if:
 
-Подробнее: [BIOS и железо](03-bios-and-hardware.md).
+- you install a new CPU;
+- you have stability, memory, USB, or compatibility issues;
+- update changelog fixes your specific issue;
+- vendor recommends a version for your configuration.
 
----
+If your PC is stable and changelog has no useful fixes, update is optional.
 
-### Нужно ли включать XMP или EXPO?
-
-Обычно да, если комплект RAM поддерживает профиль и система работает стабильно.
-
-Без XMP/EXPO память может работать на базовой частоте JEDEC, ниже заявленной производителем. После включения профиля проверьте игры, перезагрузки и WHEA.
-
-Если появились вылеты, BSOD, ошибки архивов или проблемы запуска — верните настройки памяти на `Auto` и ищите причину нестабильности.
+More details: [BIOS and hardware](03-bios-and-hardware.md).
 
 ---
 
-### Нужно ли включать Resizable BAR / Above 4G Decoding?
+### Should I enable XMP or EXPO?
 
-Для современных совместимых CPU, GPU и материнских плат обычно да.
+Usually yes, if RAM kit supports profile and system remains stable.
 
-В BIOS включите:
+Without XMP/EXPO, memory may run at JEDEC baseline below advertised speed. After enabling profile, verify games, reboots, and WHEA.
+
+If crashes, BSOD, archive errors, or boot issues appear, revert memory settings to `Auto` and troubleshoot stability.
+
+---
+
+### Should I enable Resizable BAR / Above 4G Decoding?
+
+For modern compatible CPU/GPU/motherboard combinations, usually yes.
+
+Enable in BIOS:
 
 ```text
 Above 4G Decoding → Enabled
 Resizable BAR / Re-Size BAR → Enabled
 ```
 
-На AMD функция также может называться Smart Access Memory.
+On AMD it may also be called Smart Access Memory.
 
-Эффект зависит от игры: где-то он заметнее, где-то минимален. Если система совместима и стабильно работает, обычно нет причины держать настройку выключенной.
+Impact varies by game: noticeable in some, minimal in others. If system is compatible and stable, there is usually no reason to keep it disabled.
 
 ---
 
-### Стоит ли включать PBO и Curve Optimizer?
+### Should I enable PBO and Curve Optimizer?
 
-Это необязательно.
+Optional.
 
-PBO и Curve Optimizer — продвинутые настройки Ryzen. Они могут улучшить boost или эффективность, но при неверных значениях дают WHEA, вылеты и редкие фризы.
+PBO and Curve Optimizer are advanced Ryzen tuning options. They can improve boost/efficiency, but wrong values can cause WHEA, crashes, and rare freezes.
 
-Если вы не готовы тестировать стабильность, оставьте CPU на `Auto`.
+If you are not ready to test stability, keep CPU on `Auto`.
 
 > [!IMPORTANT]
-> Не копируйте значения Curve Optimizer у другого человека: одинаковые процессоры могут иметь разный запас стабильности.
+> Do not copy Curve Optimizer values from someone else: even identical CPU models can have different stability headroom.
 
 ---
 
-### Нужно ли разгонять RAM вручную?
+### Should I manually overclock RAM?
 
-Нет, для большинства пользователей достаточно стабильного XMP/EXPO.
+No, for most users stable XMP/EXPO is enough.
 
-Ручная настройка частоты, таймингов и напряжений требует долгого тестирования. Нестабильная RAM опаснее небольшой потери производительности: возможны вылеты, ошибки файлов и повреждение данных.
+Manual frequency/timing/voltage tuning requires extensive testing. Unstable RAM is more dangerous than small performance loss: crashes, file errors, and possible data corruption.
 
 ---
 
 ## Windows 11
 
-### Включать ли Game Mode?
+### Should I enable Game Mode?
 
-Для большинства игровых ПК — да.
+For most gaming PCs: yes.
 
-Откройте:
-
-```text
-Параметры → Игры → Игровой режим → Вкл.
-```
-
-Отключать его стоит только для проверки, если конкретная игра стабильно работает хуже именно с включённым режимом.
-
----
-
-### Включать ли HAGS?
-
-Нужно тестировать.
-
-Откройте:
+Open:
 
 ```text
-Параметры → Система → Дисплей → Графика → Изменить стандартные параметры графики
+Settings → Gaming → Game Mode → On
 ```
 
-Включите HAGS, перезагрузите ПК и сравните FPS, 1% low, frametime и стабильность в своих играх. На части систем результат может быть лучше, на других — разницы не будет или появятся проблемы.
+Disable only for troubleshooting if a specific game consistently performs worse with Game Mode enabled.
 
 ---
 
-### Включать ли «Оптимизацию для оконных игр»?
+### Should I enable HAGS?
 
-Тоже нужно тестировать.
+Test it.
 
-Функция актуальна для современных игр в оконном и безрамочном режимах. После изменения перезапустите игру и сравните работу в одинаковой сцене.
+Open:
+
+```text
+Settings → System → Display → Graphics → Change default graphics settings
+```
+
+Enable HAGS, reboot, and compare FPS, 1% low, frametime, and stability in your games. Some systems improve, others show no change or issues.
 
 ---
 
-### Нужен ли режим Ultimate Performance?
+### Should I enable Optimizations for windowed games?
 
-Не обязательно.
+Also test it.
 
-На стационарном ПК обычно достаточно `Лучшая производительность` или проверенной схемы `Высокая производительность`. `Ultimate Performance` может почти не изменить FPS, но увеличить потребление, нагрев и работу в простое.
+This matters for modern games in windowed/borderless mode. After changing, restart game and compare in the same scene.
 
-Проверить схему питания:
+---
+
+### Do I need Ultimate Performance power mode?
+
+Not necessarily.
+
+For desktops, `Best performance` or a verified `High performance` plan is usually enough. `Ultimate Performance` may barely affect FPS while increasing power draw and heat at idle.
+
+Check active plan:
 
 ```powershell
 powercfg /getactivescheme
@@ -121,179 +129,179 @@ powercfg /getactivescheme
 
 ---
 
-### Нужно ли отключать визуальные эффекты Windows?
+### Should I disable Windows visual effects?
 
-Это настройка удобства, а не ключевой способ повысить FPS.
+This is mostly a usability preference, not a major FPS method.
 
-На современном ПК отключение анимаций рабочего стола редко заметно влияет на производительность в игре. Если вам нравится более простой интерфейс — отключайте, но не ждите большого прироста.
-
----
-
-### Нужно ли отключать Defender, Firewall, UAC и Windows Update?
-
-Нет.
-
-Они не являются нормальной целью игровой оптимизации. Отключение защиты и обновлений повышает риск заражения, проблем с совместимостью и ошибок Windows.
-
-Если обновления мешают во время игры, используйте временную паузу или активные часы. Если Defender сканирует файлы — дождитесь окончания или найдите конкретную причину нагрузки.
+On modern PCs, disabling desktop animations rarely has significant in-game impact. If you prefer simpler UI, disable them—but do not expect major gains.
 
 ---
 
-### Нужно ли отключать службы Windows?
+### Should I disable Defender, Firewall, UAC, and Windows Update?
 
-Не по готовым спискам.
+No.
 
-Большинство служб в простое почти не влияют на FPS. Если есть нагрузка, найдите конкретный процесс, его программу-владельца и устраните именно причину: отключите автозапуск, настройте или удалите ненужную программу.
+These are not normal gaming optimization targets. Disabling protection/updates increases risk of infection, compatibility issues, and Windows errors.
 
-Подробнее: [Службы и безопасность](08-services-and-security.md).
-
----
-
-### Нужно ли отключать файл подкачки, если много RAM?
-
-Нет, обычно лучше оставить автоматическое управление.
-
-Некоторые игры и программы используют файл подкачки даже при большом объёме RAM. Полное отключение может привести к вылетам, ошибкам нехватки памяти и проблемам с дампами BSOD.
+If updates interfere while gaming, use temporary pause or active hours. If Defender scans heavily, wait for completion or identify concrete cause.
 
 ---
 
-## Видеокарта и FPS
+### Should I disable Windows services?
 
-### Почему GPU загружена на 99%? Это плохо?
+Not via generic lists.
 
-Нет, часто это нормально.
+Most services have near-zero idle FPS impact. If load exists, find the specific process and owning program, then fix root cause: disable startup, configure, or uninstall the app.
 
-В тяжёлой игре высокая загрузка GPU обычно означает, что вы упираетесь в видеокарту и она используется эффективно. Проблема — не сама загрузка, а перегрев, статтеры, слишком низкий FPS или нестабильность.
-
----
-
-### Почему CPU загружен только на 40%, но FPS не растёт?
-
-Игра может упираться в один или несколько потоков CPU, а общая загрузка по всем ядрам будет выглядеть низкой.
-
-Проверьте загрузку отдельных потоков, фоновые программы, частоту RAM, температуру CPU и CPU-зависимые настройки в игре.
-
-Подробнее: [Определение узкого места](02-find-the-bottleneck.md).
+More details: [Services and security](08-services-and-security.md).
 
 ---
 
-### Что важнее: Average FPS или 1% low?
+### Should I disable page file if I have lots of RAM?
 
-Нужны оба показателя.
+No, usually automatic management is better.
 
-- `Average FPS` показывает общую производительность.
-- `1% low` лучше отражает заметные просадки и плавность.
-- `Frametime` показывает, насколько ровно создаются кадры.
-
-Высокий средний FPS с плохим 1% low может ощущаться хуже, чем чуть меньший FPS с ровным frametime.
+Some games/apps use page file even with large RAM. Fully disabling it can cause crashes, memory errors, and BSOD dump issues.
 
 ---
 
-### Нужно ли ограничивать FPS?
+## GPU and FPS
 
-Иногда да.
+### Why is GPU at 99% usage? Is it bad?
 
-FPS-лимит может сделать frametime ровнее, уменьшить нагрев, шум и скачки производительности. Ставьте лимит, который ПК может стабильно удерживать в тяжёлых сценах.
+No, often normal.
 
-Сначала используйте встроенный ограничитель игры. Затем при необходимости тестируйте ограничение через драйвер или RTSS.
-
----
-
-### Нужно ли включать V-Sync?
-
-Зависит от сценария.
-
-V-Sync может убрать tearing, но иногда увеличивает задержку и ограничивает FPS. При мониторе с VRR/G-SYNC/FreeSync комбинацию V-Sync, VRR и FPS-лимита нужно настроить под конкретный монитор и игру.
-
-Не существует одной настройки, подходящей всем.
+In heavy games, high GPU usage usually means you are GPU-bound and GPU is used efficiently. The issue is not usage itself, but overheating, stutter, too-low FPS, or instability.
 
 ---
 
-### Что выбрать: DLSS, FSR или XeSS?
+### Why is CPU only at 40%, but FPS does not increase?
 
-Используйте технологию, которая поддерживается игрой и даёт лучший баланс изображения и FPS на вашей видеокарте.
+Game may be limited by one/few CPU threads while total all-core usage looks low.
 
-Начните с:
+Check per-thread usage, background apps, RAM frequency, CPU temperature, and CPU-heavy in-game settings.
+
+More details: [Find the bottleneck](02-find-the-bottleneck.md).
+
+---
+
+### What is more important: Average FPS or 1% low?
+
+Both matter.
+
+- `Average FPS` shows overall throughput.
+- `1% low` better reflects noticeable drops and smoothness.
+- `Frametime` shows frame pacing consistency.
+
+High average FPS with bad 1% low can feel worse than slightly lower FPS with smooth frametime.
+
+---
+
+### Should I cap FPS?
+
+Sometimes yes.
+
+FPS cap can improve frametime consistency and reduce heat, noise, and fluctuations. Use a cap your PC can sustain in heavy scenes.
+
+Start with in-game limiter. Then test driver limiter or RTSS if needed.
+
+---
+
+### Should I enable V-Sync?
+
+Depends on scenario.
+
+V-Sync can remove tearing, but sometimes increases latency and limits FPS. With VRR/G-SYNC/FreeSync monitors, V-Sync + VRR + FPS cap should be tuned for specific monitor/game.
+
+There is no single setting that fits everyone.
+
+---
+
+### Which upscaler should I use: DLSS, FSR, or XeSS?
+
+Use the one supported by game that gives best image/FPS balance on your GPU.
+
+Start with:
 
 ```text
 Quality → Balanced → Performance
 ```
 
-Сравнивайте не только FPS, но и чёткость, качество движения, артефакты и 1% low.
+Compare not only FPS, but also sharpness, motion quality, artifacts, and 1% low.
 
 ---
 
-### Стоит ли включать Frame Generation?
+### Should I enable Frame Generation?
 
-Frame Generation может повысить отображаемый FPS и визуальную плавность, но не заменяет нормальный базовый FPS и может менять ощущение задержки.
+Frame Generation can increase displayed FPS and visual smoothness, but it does not replace adequate base FPS and can alter latency feel.
 
-Сначала добейтесь приемлемого базового FPS, затем тестируйте генерацию кадров вместе с внутриигровыми настройками задержки.
-
----
-
-### Включать ли NVIDIA Reflex?
-
-Если игра поддерживает Reflex — включайте его **внутри игры**.
-
-Reflex предназначен для уменьшения системной задержки. Не обязательно одновременно принудительно включать Low Latency Mode в панели NVIDIA: сначала проверьте работу игры с её нативной настройкой Reflex.
+First achieve acceptable base FPS, then test frame generation together with in-game latency settings.
 
 ---
 
-### Включать ли NVIDIA Low Latency Mode?
+### Should I enable NVIDIA Reflex?
 
-Тестируйте только для конкретной игры, если она не поддерживает NVIDIA Reflex.
+If game supports Reflex, enable it **in-game**.
 
-Не включайте режим глобально для всех программ. Он может по-разному влиять на разные игры и сценарии нагрузки.
-
----
-
-### Включать ли AMD Anti-Lag?
-
-Тестируйте в профиле конкретной игры.
-
-Если игра имеет собственную технологию снижения задержки, сначала используйте настройки игры. Не включайте одновременно все функции Radeon без проверки результата.
+Reflex is designed to reduce system latency. You do not need to force NVIDIA Low Latency Mode at the same time; first test game with native Reflex setting.
 
 ---
 
-## Температуры и стабильность
+### Should I enable NVIDIA Low Latency Mode?
 
-### Какая температура CPU/GPU нормальная?
+Test only per game if it does not support NVIDIA Reflex.
 
-Зависит от модели CPU/GPU, охлаждения, корпуса, нагрузки и температуры комнаты.
-
-Вместо одной «правильной цифры» смотрите на:
-
-- троттлинг;
-- падение частот;
-- лимиты мощности;
-- шум;
-- вылеты;
-- ухудшение FPS после долгой игры.
-
-Если производительность стабильна, нет ошибок и компоненты не достигают критических лимитов — высокая, но ожидаемая температура под нагрузкой не всегда проблема.
+Do not enable globally for all apps. Effect can vary by game and workload.
 
 ---
 
-### Как понять, что есть троттлинг?
+### Should I enable AMD Anti-Lag?
 
-Признаки:
+Test in per-game profile.
 
-- температура растёт, а частота CPU/GPU заметно падает;
-- FPS ухудшается после долгой нагрузки;
-- мониторинг показывает thermal limit / throttling;
-- вентиляторы работают на максимуме.
-
-Проверьте охлаждение, пыль, airflow, кривую вентиляторов и правильность установки кулера.
+If game has built-in latency reduction, try in-game option first. Do not enable all Radeon features simultaneously without validation.
 
 ---
 
-### Что такое WHEA и нужно ли переживать?
+## Temperatures and stability
 
-WHEA — сообщения Windows об аппаратных ошибках.
+### What CPU/GPU temperature is normal?
 
-Повторяющиеся WHEA после разгона, Curve Optimizer, XMP/EXPO или undervolt — признак нестабильности. Ослабьте настройку или верните заводские параметры.
+Depends on CPU/GPU model, cooling, case, workload, and ambient temperature.
 
-Проверка:
+Instead of one “correct number,” evaluate:
+
+- throttling;
+- clock drops;
+- power limits;
+- noise;
+- crashes;
+- FPS degradation after long sessions.
+
+If performance is stable, no errors appear, and components do not hit critical limits—high but expected load temperature is not always a problem.
+
+---
+
+### How to tell if throttling happens?
+
+Signs:
+
+- temperature rises while CPU/GPU clocks drop significantly;
+- FPS degrades after sustained load;
+- monitoring shows thermal limit / throttling;
+- fans run at maximum speed.
+
+Check cooling, dust, airflow, fan curves, and cooler mounting quality.
+
+---
+
+### What is WHEA and should I worry?
+
+WHEA are Windows hardware error reports.
+
+Recurring WHEA after OC/Curve Optimizer/XMP-EXPO/undervolt indicates instability. Relax settings or revert to stock.
+
+Check:
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -305,60 +313,60 @@ Select-Object TimeCreated, Id, LevelDisplayName, Message
 
 ---
 
-### Стоит ли делать undervolt GPU?
+### Should I undervolt GPU?
 
-Только если вы готовы тестировать результат.
+Only if you are ready to test.
 
-Undervolt может снизить температуру, шум и потребление при близкой производительности. Но слишком агрессивная кривая вызывает вылеты, артефакты и сброс драйвера.
+Undervolt can reduce temperature, noise, and power draw with similar performance. But overly aggressive curves cause crashes, artifacts, and driver resets.
 
-Начинайте с малых изменений, тестируйте в тяжёлых играх и всегда имейте возможность вернуться к заводским настройкам.
-
----
-
-## Программы и скрипты
-
-### Нужны ли game booster и optimizer-программы?
-
-Обычно нет.
-
-Они часто просто закрывают программы, меняют план питания, отключают функции Windows или запускают сомнительные твики. Всё полезное из этого лучше сделать вручную и понимать, что именно меняется.
+Start with small changes, test in heavy games, and always keep rollback path to stock settings.
 
 ---
 
-### Нужны ли RAM cleaner-программы?
+## Apps and scripts
 
-Нет.
+### Do I need game booster/optimizer apps?
 
-Они могут выгружать полезный кэш из памяти и ухудшать frametime. Если RAM не хватает — закройте тяжёлые программы или увеличьте объём памяти.
+Usually no.
 
----
-
-### Почему нельзя просто запустить большой PowerShell-скрипт?
-
-Скрипт может менять службы, реестр, безопасность, сеть, BCD, права доступа и системные компоненты. Если вы не понимаете код и способ отката, вы не сможете безопасно проверить или исправить последствия.
-
-Используйте PowerShell в первую очередь для диагностики: [PowerShell: проверка и диагностика](09-powershell-diagnostics.md).
+They often just close apps, change power plan, disable Windows features, or apply questionable tweaks. It is better to do useful parts manually and understand each change.
 
 ---
 
-## Финальный чек-лист
+### Do I need RAM cleaner apps?
 
-- [ ] Сначала определён bottleneck, а не применены все твики сразу.
-- [ ] XMP/EXPO включён только при стабильной работе.
-- [ ] ReBAR/Above 4G включены при совместимости.
-- [ ] Windows, чипсет и GPU-драйверы работают стабильно.
-- [ ] Game Mode включён.
-- [ ] HAGS и оконные оптимизации проверены на своём ПК.
-- [ ] Установлена правильная герцовка монитора.
-- [ ] Нет лишних загрузок, облака, браузерного видео и оверлеев.
-- [ ] Температуры, частоты, frametime и WHEA проверены.
-- [ ] Не отключены критичные службы и защита Windows.
-- [ ] Все изменения можно откатить.
+No.
+
+They can evict useful memory cache and worsen frametime. If RAM is insufficient, close heavy apps or increase memory capacity.
 
 ---
 
-## Итог
+### Why not run one large PowerShell optimization script?
 
-Оптимизация — это последовательный процесс: измерить → найти узкое место → изменить один параметр → проверить → оставить или откатить. Если конкретной проблемы нет, не нужно искать опасные твики: стабильная система, актуальные драйверы, нормальное охлаждение и чистый фон уже дают большую часть результата.
+Script can modify services, registry, security, network, BCD, permissions, and system components. If you do not understand code and rollback path, you cannot safely verify/fix consequences.
 
-Вернуться на главную страницу: [README](../README.md).
+Use PowerShell primarily for diagnostics: [PowerShell: checks and diagnostics](09-powershell-diagnostics.md).
+
+---
+
+## Final checklist
+
+- [ ] Bottleneck identified first, not all tweaks applied at once.
+- [ ] XMP/EXPO enabled only if stable.
+- [ ] ReBAR/Above 4G enabled when compatible.
+- [ ] Windows, chipset, and GPU drivers are stable.
+- [ ] Game Mode is enabled.
+- [ ] HAGS and windowed optimizations tested on your own PC.
+- [ ] Correct monitor refresh rate is set.
+- [ ] No unnecessary downloads, cloud sync, browser video, or overlays.
+- [ ] Temperatures, clocks, frametime, and WHEA are checked.
+- [ ] Critical services and Windows protections are not disabled.
+- [ ] All changes are reversible.
+
+---
+
+## Summary
+
+Optimization is a sequential process: measure → find bottleneck → change one setting → test → keep or rollback. If there is no specific issue, do not chase risky tweaks: stable system, up-to-date drivers, proper cooling, and clean background already provide most of the result.
+
+Back to main page: [README](../README.md).

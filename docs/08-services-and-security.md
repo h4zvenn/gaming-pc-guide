@@ -1,53 +1,61 @@
-# 08. Службы и безопасность
+# 08. Services and Security
 
-> Отключение служб — один из самых переоценённых и рискованных видов «оптимизации». Большинство служб в простое почти не создают нагрузки, а массовое отключение может сломать сеть, звук, обновления, античит, установку программ и безопасность Windows.
+> Disabling services is one of the most overrated and risky “optimization” methods. Most services consume almost nothing while idle, and mass disabling can break networking, audio, updates, anti-cheat, app installation, and Windows security.
 
-## Главное правило
+## Core rule
 
-Не отключайте службу, пока не можете ответить на три вопроса:
+Do not disable a service until you can answer three questions:
 
-1. Что именно делает эта служба?
-2. Какую конкретную проблему она вызывает на моём ПК?
-3. Как я верну настройку обратно, если что-то перестанет работать?
+1. What exactly does this service do?
+2. What specific problem does it cause on my PC?
+3. How will I revert the change if something stops working?
 
 > [!IMPORTANT]
-> Цель — убрать конкретную ненужную программу, а не максимально сократить число служб в Windows.
+> The goal is to remove a specific unnecessary program, not to minimize the number of Windows services at all costs.
+
+### Safe decision matrix
+
+| You see | First action |
+|---|---|
+| High CPU/disk usage | Find process owner before touching services |
+| Update-related load | Pause/schedule updates, do not disable services |
+| Unknown service name | Research origin and file path first |
 
 ---
 
-## 1. Почему «отключить 100 служб» — плохая идея
+## 1. Why “disable 100 services” is a bad idea
 
-Готовые debloat-скрипты, видео и списки «ненужных служб» часто не учитывают:
+Prebuilt debloat scripts, videos, and “unnecessary services” lists often ignore:
 
-- версию Windows;
-- домашний ПК или ноутбук;
-- установленный драйвер и периферию;
-- VPN, принтеры, Bluetooth, Wi-Fi;
-- античит и игровые лаунчеры;
-- функции Microsoft Store/Xbox;
-- корпоративные программы и удалённый доступ.
+- Windows version;
+- desktop vs laptop usage;
+- installed drivers and peripherals;
+- VPN, printers, Bluetooth, Wi-Fi;
+- anti-cheat and game launchers;
+- Microsoft Store/Xbox features;
+- corporate software and remote access needs.
 
-Служба, которая не нужна одному человеку, может быть критичной для другого.
+A service that is unnecessary for one user may be critical for another.
 
-### Возможные последствия
+### Possible consequences
 
-- пропал интернет, DNS или DHCP;
-- исчез звук или микрофон;
-- не подключается Bluetooth/Wi-Fi;
-- не запускается игра/античит;
-- не устанавливаются драйверы;
-- сломались обновления Windows;
-- не работает Microsoft Store, Game Pass или Xbox-функции;
-- появились ошибки в журнале событий;
-- снизилась безопасность системы.
+- loss of internet, DNS, or DHCP;
+- no sound or microphone;
+- Bluetooth/Wi-Fi connection failure;
+- game/anti-cheat launch failure;
+- driver installation issues;
+- broken Windows updates;
+- Microsoft Store, Game Pass, or Xbox features stop working;
+- Event Viewer errors;
+- reduced system security.
 
 ---
 
-## 2. Что нельзя отключать наугад
+## 2. What you should not disable blindly
 
-Ниже — важные компоненты Windows. Не отключайте их без точной, документированной причины.
+Below are critical Windows components. Do not disable them without an exact documented reason.
 
-### Система и установка программ
+### System and software installation
 
 - Remote Procedure Call (RPC)
 - DCOM Server Process Launcher
@@ -60,24 +68,24 @@
 - Windows Event Log
 - Windows Management Instrumentation
 
-### Сеть
+### Networking
 
 - DHCP Client
 - DNS Client
 - Network Location Awareness
 - Network List Service
 - Network Connections
-- WLAN AutoConfig, если используете Wi-Fi
-- Bluetooth Support Service, если используете Bluetooth
+- WLAN AutoConfig (if you use Wi-Fi)
+- Bluetooth Support Service (if you use Bluetooth)
 
-### Звук и устройства
+### Audio and devices
 
 - Windows Audio
 - Windows Audio Endpoint Builder
 - Human Interface Device Service
 - Device Install Service
 
-### Безопасность
+### Security
 
 - Microsoft Defender Antivirus Service
 - Windows Security Service
@@ -87,156 +95,156 @@
 - Background Intelligent Transfer Service (BITS)
 
 > [!WARNING]
-> Отключение Defender, Firewall, Windows Update, UAC, сети или служб сертификатов ради FPS — плохой компромисс. Вы снижаете защиту и можете создать проблемы, а прирост обычно отсутствует или незначителен.
+> Disabling Defender, Firewall, Windows Update, UAC, network, or certificate services for FPS is a bad tradeoff. Security drops, issues appear, and performance gains are usually zero or negligible.
 
 ---
 
-## 3. Как правильно найти виновника нагрузки
+## 3. Correct way to identify the real load source
 
-Если вы видите высокую загрузку CPU, диска, RAM или сети, не идите сразу в `services.msc`.
+If CPU/disk/RAM/network usage is high, do not jump straight into `services.msc`.
 
-### Шаг 1. Найдите процесс
+### Step 1. Find the process
 
-Откройте:
+Open:
 
 ```text
-Ctrl + Shift + Esc → Диспетчер задач → Процессы
+Ctrl + Shift + Esc → Task Manager → Processes
 ```
 
-Отсортируйте по:
+Sort by:
 
 - CPU;
-- Памяти;
-- Диску;
-- Сети;
+- Memory;
+- Disk;
+- Network;
 - GPU.
 
-### Шаг 2. Определите владельца
+### Step 2. Identify process owner
 
-- Нажмите правой кнопкой на процесс.
-- Выберите `Открыть расположение файла`.
-- Выберите `Свойства` → `Цифровые подписи`.
-- Найдите название программы и проверьте, нужна ли она.
+- Right-click the process.
+- Select `Open file location`.
+- Open `Properties` → `Digital Signatures`.
+- Identify app name and verify if it is needed.
 
-### Шаг 3. Найдите связанную службу
+### Step 3. Find related service
 
-В Диспетчере задач откройте вкладку:
+In Task Manager, open:
 
 ```text
-Службы
+Services
 ```
 
-Или:
+Or:
 
 ```text
 Win + R → services.msc
 ```
 
-Не меняйте тип запуска до того, как поймёте связь службы с программой или драйвером.
+Do not change startup type before understanding service relation to app or driver.
 
-### Шаг 4. Исправьте причину
+### Step 4. Fix root cause
 
-Вместо отключения системной службы:
+Instead of disabling a system service:
 
-- закройте программу;
-- отключите её из автозагрузки;
-- выключите ненужную функцию в настройках программы;
-- обновите/переустановите проблемную программу;
-- удалите её, если не используете;
-- запланируйте синхронизацию или сканирование на время, когда не играете.
+- close the program;
+- disable its startup;
+- turn off unnecessary feature inside app settings;
+- update/reinstall problematic app;
+- uninstall it if unused;
+- schedule sync/scans for non-gaming time.
 
 ---
 
-## 4. `svchost.exe` и Service Host
+## 4. `svchost.exe` and Service Host
 
-В Диспетчере задач могут быть десятки процессов `Service Host` / `svchost.exe`. Это нормально: Windows запускает службы в отдельных группах для стабильности и безопасности.
+Seeing many `Service Host` / `svchost.exe` processes in Task Manager is normal. Windows runs services in separated groups for stability and security.
 
-### Что делать при высокой нагрузке
+### What to do on high load
 
-1. Разверните группу `Service Host` в Диспетчере задач.
-2. Посмотрите, какая именно служба находится внутри.
-3. Определите причину: обновление, индексация, синхронизация, сеть, ошибка драйвера.
-4. Не удаляйте и не блокируйте `svchost.exe`.
+1. Expand the `Service Host` group in Task Manager.
+2. Check which exact service is inside.
+3. Determine cause: update, indexing, sync, network, driver error.
+4. Do not delete or block `svchost.exe`.
 
 > [!WARNING]
-> `svchost.exe` — системный процесс Windows. Его удаление, блокировка или «оптимизация» сторонним скриптом может повредить систему.
+> `svchost.exe` is a core Windows process. Deleting/blocking/"optimizing" it with third-party scripts can damage the system.
 
 ---
 
 ## 5. Microsoft Defender
 
-Defender обеспечивает встроенную защиту Windows от вредоносных программ.
+Defender provides built-in malware protection.
 
-### Что делать, если сканирование мешает
+### What to do if scans interfere
 
-Не отключайте Defender навсегда. Лучше:
+Do not disable Defender permanently. Better options:
 
-- дождитесь завершения разового сканирования;
-- не запускайте ручное полное сканирование во время игры;
-- проверьте, нет ли подозрительной программы, вызывающей постоянное сканирование;
-- обновите базы защиты;
-- добавляйте исключения только для доверенных папок и только если вы понимаете риск.
+- wait for one-time scan to finish;
+- do not run manual full scan during gaming;
+- check for suspicious app causing constant scanning;
+- update protection signatures;
+- add exclusions only for trusted folders and only if you understand the risk.
 
-### Об исключениях
+### About exclusions
 
-Исключение означает, что Defender не будет проверять указанный файл/папку. Не добавляйте в исключения:
+An exclusion means Defender will skip scanning that file/folder. Do not exclude:
 
-- весь системный диск `C:`;
-- папку `Downloads`;
-- неизвестные репозитории и скрипты;
-- пиратские программы;
-- папки браузера;
-- всё подряд ради «производительности».
+- full system drive `C:`;
+- `Downloads` folder;
+- unknown repositories/scripts;
+- pirated software;
+- browser folders;
+- everything “for performance.”
 
-Если доверенная игра или инструмент действительно конфликтует с проверкой, используйте минимально необходимое исключение и по возможности ориентируйтесь на рекомендации разработчика.
+If a trusted game/tool truly conflicts with scanning, use the minimal required exclusion and prefer developer recommendations.
 
 ---
 
-## 6. Windows Update и BITS
+## 6. Windows Update and BITS
 
-Windows Update и BITS отвечают за обновления, в том числе обновления безопасности и драйверов.
+Windows Update and BITS handle updates, including security and driver updates.
 
-### Если обновления нагружают ПК
+### If updates load the system
 
-Вместо отключения служб:
+Instead of disabling services:
 
-1. Откройте `Параметры → Центр обновления Windows`.
-2. Поставьте обновления на паузу на короткое время, если нужно.
-3. Укажите активные часы.
-4. Дайте обновлению завершиться после игры.
-5. Перезагрузите ПК, если этого требует Windows.
+1. Open `Settings → Windows Update`.
+2. Pause updates briefly if needed.
+3. Configure active hours.
+4. Let updates complete after gaming.
+5. Reboot if Windows requires it.
 
 > [!NOTE]
-> Временная пауза обновлений — нормальный вариант. Постоянно отключённый Windows Update создаёт риск безопасности и со временем вызывает проблемы совместимости.
+> Temporary update pause is normal. Permanently disabled Windows Update creates security risk and long-term compatibility issues.
 
 ---
 
-## 7. UAC, Firewall и SmartScreen
+## 7. UAC, Firewall, and SmartScreen
 
 ### UAC
 
-UAC предупреждает о запуске программ с правами администратора. Не отключайте его ради удобства: он помогает заметить нежелательные изменения в системе.
+UAC warns when apps request administrator rights. Do not disable it for convenience; it helps detect unwanted system changes.
 
 ### Windows Firewall
 
-Firewall контролирует сетевые подключения. Его отключение не является способом понизить ping или поднять FPS.
+Firewall controls network connections. Disabling it is not a way to reduce ping or increase FPS.
 
-Если игра не подключается к сети:
+If a game cannot connect:
 
-- проверьте правила Firewall;
-- разрешите конкретное доверенное приложение;
-- проверьте роутер, VPN, антивирус и сервер игры;
-- не отключайте защиту целиком.
+- check Firewall rules;
+- allow specific trusted app;
+- check router, VPN, antivirus, and game server status;
+- do not disable protection globally.
 
 ### SmartScreen
 
-SmartScreen предупреждает о подозрительных файлах и сайтах. Не отключайте его, чтобы запустить неизвестный `.exe`, `.bat`, `.reg` или PowerShell-скрипт.
+SmartScreen warns about suspicious files/sites. Do not disable it just to run unknown `.exe`, `.bat`, `.reg`, or PowerShell scripts.
 
 ---
 
-## 8. Безопасная проверка статуса служб
+## 8. Safe service status checks
 
-### Посмотреть запущенные службы
+### View running services
 
 ```powershell
 Get-Service |
@@ -245,16 +253,16 @@ Sort-Object DisplayName |
 Select-Object Status, Name, DisplayName
 ```
 
-### Найти службу по части названия
+### Find service by partial name
 
-Пример для поиска слова `Update`:
+Example for the word `Update`:
 
 ```powershell
 Get-Service *Update* |
 Select-Object Status, Name, DisplayName
 ```
 
-### Посмотреть службы, которые запускаются автоматически
+### View services set to automatic startup
 
 ```powershell
 Get-CimInstance Win32_Service |
@@ -264,35 +272,35 @@ Select-Object Name, DisplayName, State, StartMode
 ```
 
 > [!NOTE]
-> Все команды выше только выводят информацию. Они не меняют конфигурацию Windows.
+> All commands above are read-only. They do not change Windows configuration.
 
 ---
 
-## 9. Если нужно отключить стороннюю службу
+## 9. If you need to disable a third-party service
 
-Иногда сторонняя программа действительно устанавливает ненужную службу: updater, телеметрия, RGB-комбайн, пробный антивирус или старый лаунчер.
+Sometimes a third-party app installs an unnecessary service: updater, telemetry agent, RGB suite, trial antivirus, or old launcher.
 
-Безопасная последовательность:
+Safe sequence:
 
-1. Убедитесь, что служба не является компонентом драйвера или нужной программы.
-2. Закройте программу.
-3. Отключите её из автозагрузки.
-4. Проверьте, есть ли в самой программе настройка запуска/службы.
-5. Если программа не нужна — удалите её через:
+1. Verify service is not part of a required driver or app.
+2. Close the app.
+3. Disable app startup.
+4. Check whether app has built-in startup/service option.
+5. If app is unnecessary, uninstall it via:
 
 ```text
-Параметры → Приложения → Установленные приложения
+Settings → Apps → Installed apps
 ```
 
-6. Перезагрузите ПК и проверьте работу системы.
+6. Reboot and verify system behavior.
 
-Не удаляйте службы вручную через реестр или команды, если можно безопасно удалить программу обычным способом.
+Do not manually remove services via registry/commands when normal app uninstall is sufficient.
 
 ---
 
-## 10. Готовые debloat-скрипты и «оптимизаторы»
+## 10. Prebuilt debloat scripts and “optimizers”
 
-Особенно осторожно относитесь к файлам:
+Be especially careful with files like:
 
 ```text
 .bat
@@ -302,44 +310,44 @@ Select-Object Name, DisplayName, State, StartMode
 .exe
 ```
 
-которые обещают:
+that promise:
 
-- «+500 FPS»;
-- «отключить всю телеметрию»;
-- «снизить input lag одной кнопкой»;
-- «удалить мусор Windows без последствий»;
-- «отключить 200 ненужных служб»;
-- «починить ping»;
-- «оптимизировать таймеры/HPET/BCD».
+- “+500 FPS”;
+- “disable all telemetry”;
+- “reduce input lag with one click”;
+- “remove Windows bloat without side effects”;
+- “disable 200 unnecessary services”;
+- “fix ping”;
+- “optimize timers/HPET/BCD”.
 
-Перед запуском скрипта:
+Before running any script:
 
-1. Откройте его в Блокноте или VS Code.
-2. Прочитайте каждую команду.
-3. Проверьте автора и исходный репозиторий.
-4. Создайте точку восстановления.
-5. Не запускайте его от администратора, если не понимаете, что он меняет.
-6. Не запускайте скрипты из архивов, Discord, YouTube-описаний или неизвестных сайтов без проверки.
+1. Open it in Notepad or VS Code.
+2. Read every command.
+3. Verify author and source repository.
+4. Create a restore point.
+5. Do not run as administrator if you do not understand what it changes.
+6. Do not run scripts from archives, Discord, YouTube descriptions, or unknown websites without review.
 
 > [!IMPORTANT]
-> Если скрипт нельзя прочитать и понять — его нельзя безопасно запускать.
+> If a script cannot be read and understood, it cannot be run safely.
 
 ---
 
-## Чек-лист
+## Checklist
 
-- [ ] Службы Windows не отключаются «по списку».
-- [ ] При нагрузке сначала найден конкретный процесс и его владелец.
-- [ ] Сторонняя ненужная программа отключена из автозагрузки или удалена нормально.
-- [ ] Defender, Firewall, UAC, Windows Update и сетевые службы не отключены.
-- [ ] Не удаляются `svchost.exe` и другие системные процессы.
-- [ ] Не применяются неизвестные BAT/REG/PowerShell-скрипты.
-- [ ] Перед изменениями создана точка восстановления.
+- [ ] Windows services are not disabled “by list.”
+- [ ] Under load, a specific process and owner are identified first.
+- [ ] Unnecessary third-party program is disabled from startup or uninstalled safely.
+- [ ] Defender, Firewall, UAC, Windows Update, and network services stay enabled.
+- [ ] `svchost.exe` and other system processes are not removed.
+- [ ] Unknown BAT/REG/PowerShell scripts are not applied.
+- [ ] Restore point is created before major changes.
 
 ---
 
-## Итог
+## Summary
 
-Службы — не место для массовой «оптимизации». Если есть фоновая нагрузка, найдите конкретную программу и устраните причину: настройте её, отключите автозапуск или удалите. Так вы сохраните FPS, стабильность, античит, сеть и безопасность Windows.
+Services are not the place for mass “optimization.” If there is background load, identify the specific program and remove root cause: configure it, disable startup, or uninstall it. This preserves FPS, stability, anti-cheat compatibility, networking, and Windows security.
 
-Следующий шаг: [PowerShell: проверка и диагностика](09-powershell-diagnostics.md).
+Next step: [PowerShell: diagnostics and checks](09-powershell-diagnostics.md).

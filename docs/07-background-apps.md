@@ -1,39 +1,48 @@
-# 07. Фоновые приложения и автозагрузка
+# 07. Background Apps and Startup
 
-> Самый безопасный способ уменьшить лишнюю нагрузку — убрать ненужные программы из автозагрузки и закрывать тяжёлые задачи перед игрой. Не нужно завершать системные процессы и отключать службы Windows наугад.
+> The safest way to reduce unnecessary load is to remove unneeded startup apps and close heavy tasks before gaming. Do not randomly kill system processes or disable Windows services.
 
-## Что реально влияет на игру
+## What actually affects gaming
 
-Фоновые приложения могут занимать:
+Background apps can consume:
 
-- процессорное время;
-- оперативную память;
-- видеопамять и ресурсы GPU;
-- скорость интернета;
-- SSD/HDD;
-- внимание: уведомления, оверлеи и всплывающие окна.
+- CPU time;
+- RAM;
+- VRAM and GPU resources;
+- internet bandwidth;
+- SSD/HDD activity;
+- attention via notifications, overlays, and popups.
 
-Особенно заметно это на ПК с небольшим объёмом RAM, слабым CPU, медленным накопителем или при одновременном стриме/записи.
+This is especially noticeable on PCs with limited RAM, weaker CPUs, slower storage, or while streaming/recording at the same time.
+
+### Pre-game quick shutdown list
+
+| App type | Action before launch |
+|---|---|
+| Browser video/streams | Close |
+| Downloads/cloud sync | Pause |
+| Extra overlays | Disable |
+| Recording/stream tools | Keep only one if needed |
 
 ---
 
-## 1. Как найти тяжёлую программу
+## 1. How to find heavy apps
 
-### Через Диспетчер задач
+### Using Task Manager
 
-1. Нажмите `Ctrl + Shift + Esc`.
-2. Откройте вкладку `Процессы`.
-3. Нажмите на нужный столбец, чтобы отсортировать процессы по:
+1. Press `Ctrl + Shift + Esc`.
+2. Open `Processes` tab.
+3. Click a column to sort by:
    - CPU;
-   - Памяти;
-   - Диску;
-   - Сети;
+   - Memory;
+   - Disk;
+   - Network;
    - GPU.
-4. Посмотрите, какая программа создаёт нагрузку.
+4. Identify which app creates the load.
 
-Не завершайте процесс, если не понимаете, что это. Сначала нажмите правой кнопкой → `Открыть расположение файла` или найдите название программы.
+Do not end a process if you do not know what it is. First right-click → `Open file location`, or search the app name.
 
-### Через PowerShell: процессы с большим временем CPU
+### PowerShell: processes with highest total CPU time
 
 ```powershell
 Get-Process |
@@ -41,7 +50,7 @@ Sort-Object CPU -Descending |
 Select-Object -First 20 Name, Id, CPU, WorkingSet64
 ```
 
-### Через PowerShell: самые «тяжёлые» процессы сейчас
+### PowerShell: most memory-heavy processes right now
 
 ```powershell
 Get-Process |
@@ -51,113 +60,113 @@ Select-Object -First 20 Name, Id,
 ```
 
 > [!NOTE]
-> Показатель `CPU` в PowerShell — суммарное процессорное время с запуска процесса, а не текущий процент загрузки. Для текущей нагрузки удобнее использовать Диспетчер задач или HWiNFO.
+> `CPU` in PowerShell is cumulative CPU time since process start, not current usage percentage. For real-time load, Task Manager or HWiNFO is more useful.
 
 ---
 
-## 2. Автозагрузка
+## 2. Startup apps
 
-Откройте:
+Open:
 
 ```text
-Диспетчер задач → Автозагрузка приложений
+Task Manager → Startup apps
 ```
 
-Отключайте то, что не должно запускаться каждый раз вместе с Windows.
+Disable apps that should not launch with Windows every boot.
 
-### Обычно можно отключить, если не нужно постоянно
+### Usually safe to disable if not always needed
 
-- лаунчеры игр;
-- Discord, Telegram, Teams и другие мессенджеры;
-- облачные клиенты;
+- game launchers;
+- Discord, Telegram, Teams, and other messengers;
+- cloud clients;
 - Adobe/Google/Office updaters;
-- RGB-софт;
-- программы для записи и стрима;
-- Spotify и похожие приложения;
-- браузерные помощники;
-- автоматические обновляторы программ;
-- сторонние «game booster» и «optimizer» приложения.
+- RGB software;
+- recording/streaming apps;
+- Spotify and similar apps;
+- browser helper apps;
+- automatic software updaters;
+- third-party “game booster” and “optimizer” apps.
 
-### Не отключайте без понимания
+### Do not disable blindly
 
-- программы управления питанием ноутбука;
-- драйверы тачпада, горячих клавиш, камеры и аудио;
-- утилиты, отвечающие за режимы вентиляторов;
-- драйверы или менеджеры профилей мыши/клавиатуры, если вы ими пользуетесь;
-- защиту, если это единственный активный антивирус;
-- важные корпоративные/VPN-клиенты, если они нужны для работы.
+- laptop power management apps;
+- touchpad/hotkey/camera/audio driver components;
+- fan mode control utilities;
+- mouse/keyboard profile drivers/tools if you use them;
+- security software if it is your only active antivirus;
+- critical corporate/VPN clients required for work.
 
 > [!TIP]
-> Отключение из автозагрузки не удаляет программу. Её всегда можно запустить вручную или включить обратно.
+> Disabling startup does not uninstall the app. You can always launch it manually or re-enable startup later.
 
 ---
 
-## 3. Проверка автозагрузки через PowerShell
+## 3. Check startup via PowerShell
 
 ```powershell
 Get-CimInstance Win32_StartupCommand |
 Select-Object Name, Command, Location, User
 ```
 
-Команда показывает, что Windows пытается запускать при входе пользователя.
+This command shows what Windows tries to launch at sign-in.
 
-### Что делать с результатом
+### What to do with results
 
-1. Найдите неизвестную программу через поиск.
-2. Если она не нужна при старте Windows — отключите её в Диспетчере задач.
-3. Если программа выглядит подозрительно — проверьте путь файла и выполните проверку безопасности.
-4. Не удаляйте ключи реестра вручную, если обычного отключения автозагрузки достаточно.
-
----
-
-## 4. Браузер
-
-Современный браузер может потреблять много RAM, CPU, GPU и сети — особенно при открытом видео, стримах, десятках вкладок и расширениях.
-
-Перед игрой:
-
-- закройте вкладки с YouTube, Twitch, фильмами и рекламой;
-- отключите ненужные расширения;
-- завершите загрузки;
-- при нехватке RAM полностью закройте браузер, а не только окно;
-- проверьте, не работает ли браузер в фоне после закрытия.
-
-### Что не нужно делать
-
-Не отключайте аппаратное ускорение браузера «для FPS» без причины. Оно может как уменьшать, так и переносить нагрузку на GPU; тестируйте только при конкретных проблемах с видео, браузером или оверлеями.
+1. Search unknown app names.
+2. If app is not needed at startup, disable it in Task Manager.
+3. If app looks suspicious, verify file path and run security checks.
+4. Do not manually delete registry startup keys if normal startup disable is sufficient.
 
 ---
 
-## 5. Загрузки, облако и сеть
+## 4. Browser
 
-Во время игры закройте или приостановите:
+Modern browsers can consume significant RAM, CPU, GPU, and network—especially with video playback, streams, dozens of tabs, and many extensions.
 
-- скачивание игр в Steam, Epic Games, Battle.net и других лаунчерах;
-- торренты;
-- Windows Update, если он активно загружает данные;
-- синхронизацию OneDrive, Google Drive, Dropbox и других облаков;
-- резервное копирование в облако;
-- стримы/видео в высоком качестве на другом устройстве, если интернет-канал ограничен.
+Before gaming:
 
-### Почему это важно
+- close tabs with YouTube/Twitch/movies/ads;
+- disable unnecessary extensions;
+- finish downloads;
+- if RAM is limited, fully close browser process, not only window;
+- check if browser remains running in background after closing.
 
-Загрузки могут:
+### What not to do
 
-- занимать интернет-канал и ухудшать ping;
-- создавать нагрузку на SSD;
-- использовать CPU для распаковки/проверки файлов;
-- вызывать статтеры на слабом ПК.
+Do not disable browser hardware acceleration “for FPS” without reason. It can reduce or shift load to GPU depending on case; test only for specific browser/video/overlay issues.
+
+---
+
+## 5. Downloads, cloud sync, and network load
+
+While gaming, close or pause:
+
+- game downloads in Steam, Epic Games, Battle.net, and similar launchers;
+- torrents;
+- Windows Update if it is actively downloading;
+- sync in OneDrive, Google Drive, Dropbox, and other cloud services;
+- cloud backup jobs;
+- high-bitrate streaming/video on other devices if your connection is limited.
+
+### Why it matters
+
+Downloads can:
+
+- saturate bandwidth and worsen ping;
+- increase SSD load;
+- consume CPU for file verification/decompression;
+- cause stutters on weaker systems.
 
 > [!NOTE]
-> Если проблема только в пинге или packet loss, не пытайтесь исправить её отключением служб Windows. Сначала проверьте загрузки, Wi-Fi, кабель, роутер, провайдера и сервер игры.
+> If the issue is only ping or packet loss, do not try to fix it by disabling Windows services. First check downloads, Wi-Fi/cable, router, ISP, and game server status.
 
 ---
 
-## 6. Оверлеи
+## 6. Overlays
 
-Оверлей — интерфейс поверх игры: FPS-счётчик, чат, запись, уведомления, браузер или магазин.
+Overlay means UI on top of the game: FPS counter, chat, recording, notifications, browser, or store.
 
-Распространённые оверлеи:
+Common overlays:
 
 - Steam Overlay;
 - Discord Overlay;
@@ -166,116 +175,116 @@ Select-Object Name, Command, Location, User
 - Xbox Game Bar;
 - Overwolf;
 - MSI Afterburner + RTSS;
-- приложение периферии;
-- OBS/запись экрана.
+- peripheral vendor overlays;
+- OBS/screen recording overlays.
 
-### Как тестировать
+### How to test
 
-Если есть статтеры, вылеты или проблемы с запуском:
+If stutters, crashes, or launch issues appear:
 
-1. Отключите один оверлей.
-2. Перезапустите игру.
-3. Проверьте ту же сцену.
-4. Если нет разницы — верните функцию, если она вам нужна.
-5. Повторите с другим оверлеем.
+1. Disable one overlay.
+2. Restart the game.
+3. Test the same scene.
+4. If no difference, re-enable it if needed.
+5. Repeat with next overlay.
 
 > [!IMPORTANT]
-> Не запускайте несколько средств записи и несколько FPS-оверлеев одновременно. Они могут конфликтовать друг с другом.
+> Do not run multiple recording tools and multiple FPS overlays at the same time. They can conflict.
 
 ---
 
-## 7. RGB-софт и программы периферии
+## 7. RGB software and peripheral utilities
 
-Утилиты RGB и периферии могут быть полезны для:
+RGB/peripheral tools can be useful for:
 
-- DPI и polling rate мыши;
-- макросов;
-- профилей клавиатуры;
-- подсветки;
-- кривых вентиляторов;
-- мониторинга.
+- mouse DPI and polling rate;
+- macros;
+- keyboard profiles;
+- lighting;
+- fan curves;
+- monitoring.
 
-Но некоторые программы постоянно используют CPU/RAM, запускают сервисы, оверлеи и телеметрию.
+But some tools continuously consume CPU/RAM and run extra services, overlays, and telemetry.
 
-### Правильный подход
+### Correct approach
 
-1. Сохраните профиль устройства во встроенную память мыши/клавиатуры, если она есть.
-2. Проверьте, можно ли отключить приложение из автозагрузки без потери нужных функций.
-3. Не удаляйте утилиту управления вентиляторами, пока не убедитесь, что вентиляторы будут работать корректно без неё.
-4. Если есть несколько RGB-программ от разных производителей, по возможности оставьте минимальное число нужных.
-
----
-
-## 8. Запись, стриминг и виртуальные камеры
-
-OBS, Discord-стрим, NVIDIA ShadowPlay/Instant Replay, AMD ReLive, Xbox Game Bar и другие программы могут использовать CPU, GPU, VRAM, SSD и сеть.
-
-### Перед игрой решите, что вам нужно
-
-- Нужна запись? Оставьте один способ записи.
-- Нужен стрим? Настройте отдельный профиль OBS и тестируйте нагрузку.
-- Не нужна запись? Выключите Instant Replay/Replay Buffer и лишние оверлеи.
-- Не используете виртуальную камеру? Закройте её вместе с приложением.
-
-### Что отслеживать
-
-При стриме/записи смотрите:
-
-- пропуски кадров в OBS;
-- загрузку GPU;
-- использование VRAM;
-- загрузку CPU;
-- скорость записи на SSD;
-- температуру и частоты.
+1. Save device profile to onboard mouse/keyboard memory if available.
+2. Check whether app can be removed from startup without losing needed features.
+3. Do not uninstall fan-control utility until you confirm fan behavior remains correct without it.
+4. If multiple RGB suites from different vendors are installed, keep only the minimal set you need.
 
 ---
 
-## 9. Что делать перед запуском игры
+## 8. Recording, streaming, and virtual cameras
 
-Короткий порядок:
+OBS, Discord stream, NVIDIA ShadowPlay/Instant Replay, AMD ReLive, Xbox Game Bar, and similar apps can use CPU, GPU, VRAM, SSD, and network resources.
 
-1. Завершите загрузки и обновления.
-2. Закройте браузер с видео и лишними вкладками.
-3. Остановите облачную синхронизацию, если она активно работает.
-4. Оставьте только нужный мессенджер/голосовой чат.
-5. Отключите ненужные оверлеи.
-6. Закройте тяжёлые рабочие программы: монтаж, Photoshop, IDE, виртуальные машины.
-7. Проверьте, что не идёт запись или стрим, если они не нужны.
-8. Запустите игру.
+### Decide what you need before gaming
+
+- Need recording? Keep one recording method enabled.
+- Need streaming? Use a dedicated OBS profile and test load.
+- No recording needed? Disable Instant Replay/Replay Buffer and extra overlays.
+- Not using virtual camera? Close it with the parent app.
+
+### What to monitor
+
+During stream/recording, watch:
+
+- dropped frames in OBS;
+- GPU usage;
+- VRAM usage;
+- CPU load;
+- SSD write speed;
+- temperatures and clocks.
 
 ---
 
-## 10. Чего не нужно закрывать
+## 9. What to do before launching a game
 
-Не завершайте наугад:
+Quick sequence:
+
+1. Finish downloads and updates.
+2. Close browser video and unnecessary tabs.
+3. Pause cloud sync if actively running.
+4. Keep only required messenger/voice chat.
+5. Disable unnecessary overlays.
+6. Close heavy work apps: video editing, Photoshop, IDEs, VMs.
+7. Verify recording/streaming is off if not needed.
+8. Launch the game.
+
+---
+
+## 10. What not to close
+
+Do not randomly terminate:
 
 - `explorer.exe`;
-- процессы Windows с неизвестным назначением;
-- драйверные процессы;
-- аудиослужбы;
-- процессы безопасности;
-- сетевые компоненты;
-- процессы античита во время игры;
-- системные процессы с названием `Service Host` / `svchost.exe`.
+- Windows processes with unknown purpose;
+- driver-related processes;
+- audio services;
+- security processes;
+- network components;
+- anti-cheat processes while gaming;
+- system processes named `Service Host` / `svchost.exe`.
 
-Если какой-то процесс постоянно создаёт нагрузку, сначала выясните, какой программе он принадлежит. Раздел об этом: [Службы и безопасность](08-services-and-security.md).
-
----
-
-## Чек-лист
-
-- [ ] Отключена ненужная автозагрузка.
-- [ ] Перед игрой закрыты браузерное видео и тяжёлые приложения.
-- [ ] Приостановлены загрузки и облачная синхронизация.
-- [ ] Не работают несколько оверлеев/рекордеров одновременно.
-- [ ] RGB и периферийный софт запускаются только при необходимости.
-- [ ] Не завершались системные процессы наугад.
-- [ ] Все изменения проверены в игре.
+If a process constantly creates load, first identify which application owns it. See: [Services and security](08-services-and-security.md).
 
 ---
 
-## Итог
+## Checklist
 
-Оптимизация фона — это не «убить всё в Диспетчере задач». Отключайте только то, что вы узнали, не используете и можете безопасно запустить позже вручную. Самые полезные действия — чистая автозагрузка, остановка загрузок, закрытый браузер с видео и минимальное число оверлеев.
+- [ ] Unnecessary startup apps are disabled.
+- [ ] Browser video and heavy apps are closed before gaming.
+- [ ] Downloads and cloud sync are paused.
+- [ ] Multiple overlays/recorders are not running simultaneously.
+- [ ] RGB/peripheral software runs only when needed.
+- [ ] No random termination of system processes.
+- [ ] All changes are validated in-game.
 
-Следующий шаг: [Службы и безопасность](08-services-and-security.md).
+---
+
+## Summary
+
+Background optimization is not about “killing everything in Task Manager.” Disable only what you understand, do not use, and can safely start later manually. Most useful actions are clean startup, paused downloads, closed video browser tabs, and minimal overlays.
+
+Next step: [Services and security](08-services-and-security.md).

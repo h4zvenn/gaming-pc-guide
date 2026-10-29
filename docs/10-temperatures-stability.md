@@ -1,93 +1,101 @@
-# 10. Температуры, стабильность и обслуживание
+# 10. Temperatures, Stability, and Maintenance
 
-> Высокий FPS не имеет смысла, если ПК перегревается, троттлит, вылетает или выдаёт WHEA-ошибки. Стабильность и ровный frametime важнее нескольких дополнительных кадров из агрессивного разгона.
+> High FPS is pointless if the PC overheats, throttles, crashes, or throws WHEA errors. Stability and smooth frametime matter more than a few extra frames from aggressive overclocking.
 
-## Что нужно контролировать
+## What to monitor
 
-Во время игры или бенчмарка отслеживайте:
+During gaming or benchmarking, track:
 
-- температуру CPU;
-- температуру GPU;
-- GPU hotspot, если датчик доступен;
-- температуру памяти GPU, если датчик доступен;
-- температуру SSD;
-- частоты CPU/GPU;
-- лимиты мощности и троттлинг;
-- загрузку CPU/GPU;
-- использование RAM и VRAM;
-- FPS, 1% low и frametime;
-- ошибки WHEA.
+- CPU temperature;
+- GPU temperature;
+- GPU hotspot (if sensor is available);
+- GPU memory temperature (if sensor is available);
+- SSD temperature;
+- CPU/GPU clocks;
+- power limits and throttling;
+- CPU/GPU usage;
+- RAM and VRAM usage;
+- FPS, 1% low, and frametime;
+- WHEA errors.
 
-### Полезные программы
+### Useful tools
 
 - HWiNFO
 - MSI Afterburner + RivaTuner Statistics Server
 - CapFrameX
 - OCCT
-- утилита производителя SSD/материнской платы/GPU
+- SSD/motherboard/GPU vendor utility
 
 > [!NOTE]
-> Не сравнивайте температуру разных процессоров и видеокарт «в лоб». У разных моделей разные датчики, лимиты, потребление и алгоритмы буста. Важнее смотреть на троттлинг, падение частот, шум и стабильность.
+> Do not compare temperatures of different CPUs/GPUs directly. Different models have different sensors, limits, power behavior, and boost algorithms. Focus on throttling, clock drops, noise, and stability.
+
+### Fast thermal triage
+
+| Symptom | First check |
+|---|---|
+| FPS drops over time | CPU/GPU temp + clocks after 30–60 min |
+| Fans suddenly loud | Thermal limit / fan curve / dust filters |
+| Random stutter under load | Hotspot/VRAM temp + power limit behavior |
 
 ---
 
-## 1. Что такое троттлинг
+## 1. What throttling means
 
-Троттлинг — это снижение частоты или производительности для соблюдения температурного, энергетического или другого лимита.
+Throttling is clock/performance reduction to stay within thermal, power, or other limits.
 
-### Как он проявляется
+### Typical signs
 
-- FPS падает спустя 10–60 минут игры;
-- температура растёт, а частота CPU/GPU снижается;
-- вентиляторы работают очень громко;
-- производительность хуже в жаркой комнате;
-- после открытия боковой панели корпуса или чистки ПК результат улучшается.
+- FPS drops after 10–60 minutes of gaming;
+- temperature rises while CPU/GPU clocks decrease;
+- fans become very loud;
+- performance worsens in a hot room;
+- results improve after opening side panel or cleaning dust.
 
-### Что делать
+### What to do
 
-1. Откройте мониторинг и запишите температуру и частоты в начале и в конце игровой сессии.
-2. Проверьте, есть ли индикаторы thermal throttling / power limit.
-3. Очистите пыль и проверьте воздушный поток.
-4. Настройте кривые вентиляторов.
-5. Убедитесь, что кулер CPU и вентиляторы GPU работают.
-6. При необходимости снизьте лимиты мощности или сделайте аккуратный undervolt после тестов.
+1. Open monitoring and record temperatures/clocks at session start and end.
+2. Check for thermal throttling / power limit indicators.
+3. Clean dust and verify airflow.
+4. Tune fan curves.
+5. Ensure CPU cooler and GPU fans are working.
+6. If needed, reduce power limits or apply careful undervolt after testing.
 
 ---
 
-## 2. Температура CPU
+## 2. CPU temperature
 
-Современные CPU автоматически бустятся до доступных лимитов температуры, мощности и тока. Поэтому сама по себе высокая температура не всегда означает неисправность.
+Modern CPUs automatically boost within available thermal, power, and current limits. High temperature alone does not always mean a fault.
 
-### Обращайте внимание на сочетание признаков
+### Look at combined symptoms
 
-Проблема вероятна, если:
+Likely problem if:
 
-- температура постоянно достигает лимита;
-- частота заметно снижается;
-- появляются фризы, вылеты или перезагрузки;
-- охлаждение шумит на максимуме;
-- производительность падает со временем;
-- ПК плохо вентилируется или давно не чистился.
+- temperature constantly hits limits;
+- clock speed drops significantly;
+- stutters, crashes, or reboots appear;
+- cooling runs at maximum noise;
+- performance degrades over time;
+- airflow is poor or system was not cleaned for long time.
 
-### Что проверить
+### What to check
 
-- правильно ли установлен кулер;
-- снята ли защитная плёнка с основания нового кулера;
-- равномерный ли прижим;
-- не высохла ли термопаста;
-- подключён ли вентилятор CPU в нужный разъём;
-- работают ли вентиляторы корпуса;
-- не перекрыт ли радиатор пылью;
-- не ограничен ли воздушный поток стеклом, стеной или плотным фильтром.
+- cooler mounting correctness;
+- protective film removed from new cooler base;
+- even mounting pressure;
+- thermal paste condition;
+- CPU fan connected to correct header;
+- case fans operation;
+- heatsink blocked by dust;
+- airflow blocked by glass panel, wall proximity, or dense filters.
 
 > [!TIP]
-> Не меняйте термопасту слишком часто без причины. Начните с чистки, проверки вентиляторов и правильной установки кулера.
+> Do not replace thermal paste too often without reason. Start with cleaning, fan checks, and proper cooler mounting.
 
 ---
 
-## 3. Температура GPU
+## 3. GPU temperature
 
-У видеокарты могут быть отдельные датчики:
+GPU often has separate sensors:
 
 - Core temperature;
 - Hotspot temperature;
@@ -95,165 +103,165 @@
 - VRM temperature;
 - Power limit / thermal limit.
 
-### Что может ухудшить работу GPU
+### What can hurt GPU behavior
 
-- пыль в радиаторе;
-- слабый выдув горячего воздуха из корпуса;
-- высокая температура в комнате;
-- слишком тихая кривая вентиляторов;
-- плохой контакт радиатора после разборки;
-- нестабильный overclock/undervolt;
-- ограничение по мощности.
+- dust in heatsink;
+- weak hot-air exhaust from case;
+- high ambient room temperature;
+- overly quiet fan curve;
+- poor heatsink contact after disassembly;
+- unstable overclock/undervolt;
+- power limit constraints.
 
-### Что делать
+### What to do
 
-1. Проверьте температуры, частоту и нагрузку GPU в одной игре/бенчмарке.
-2. Убедитесь, что вентиляторы видеокарты вращаются под нагрузкой.
-3. Очистите корпус и радиаторы.
-4. Улучшите приток и выдув воздуха из корпуса.
-5. Сбросьте разгон/undervolt, если есть артефакты, вылеты или падения драйвера.
-6. Настройте более адекватную кривую вентиляторов, если шум приемлем.
+1. Check GPU temperature, clock, and load in one game/benchmark.
+2. Confirm GPU fans spin under load.
+3. Clean case and heatsinks.
+4. Improve case intake/exhaust airflow.
+5. Revert GPU OC/undervolt if artifacts, crashes, or driver resets appear.
+6. Tune a more suitable fan curve if noise is acceptable.
 
 > [!WARNING]
-> Не разбирайте видеокарту ради замены термопасты/термопрокладок без опыта. Ошибка может повредить карту, прокладки или гарантийные пломбы.
+> Do not disassemble GPU for paste/pad replacement without experience. Mistakes can damage the card, pads, or warranty seals.
 
 ---
 
-## 4. Температура SSD
+## 4. SSD temperature
 
-NVMe SSD может нагреваться при установке игр, распаковке архивов, копировании файлов и загрузке уровней.
+NVMe SSD can heat up during game installs, archive extraction, large copies, and level streaming.
 
-### Признаки проблемы
+### Signs of issue
 
-- резкие фризы во время подгрузки;
-- скорость записи/чтения падает после длительной нагрузки;
-- утилита показывает высокую температуру;
-- SSD находится под GPU без радиатора и почти без потока воздуха.
+- sharp stutters during asset loading;
+- read/write speed drops after sustained load;
+- utility reports high SSD temperature;
+- SSD sits under GPU without heatsink and with poor airflow.
 
-### Что делать
+### What to do
 
-- используйте M.2-радиатор, если он предусмотрен платой;
-- не забудьте снять защитную плёнку с термопрокладки радиатора;
-- не перекрывайте SSD толстым кабелем или компонентом;
-- оставляйте свободное место на накопителе;
-- проверяйте firmware SSD только на официальном сайте производителя.
-
----
-
-## 5. Воздушный поток в корпусе
-
-Хороший воздушный поток обычно строится по простой схеме:
-
-- передняя/нижняя часть корпуса — приток прохладного воздуха;
-- задняя/верхняя часть — выдув горячего воздуха.
-
-### Базовые рекомендации
-
-- Не ставьте корпус вплотную к стене.
-- Не закрывайте вентиляционные отверстия.
-- Регулярно очищайте фильтры от пыли.
-- Проверьте направление каждого вентилятора.
-- Не устанавливайте много вентиляторов без понятной схемы: важен путь движения воздуха, а не только их количество.
-- Держите кабели так, чтобы они не мешали потоку воздуха и не касались вентиляторов.
-
-### Ноутбук
-
-- Используйте твёрдую ровную поверхность.
-- Не играйте на кровати, пледе или подушке.
-- Не перекрывайте воздухозаборники.
-- Подключайте штатный блок питания.
-- При необходимости проверьте режим производительности в утилите производителя.
+- use M.2 heatsink if your board provides one;
+- remove protective film from heatsink thermal pad;
+- avoid blocking SSD with thick cable/component;
+- keep free space on drive;
+- check SSD firmware only via official vendor source.
 
 ---
 
-## 6. Стабильность XMP/EXPO, CPU и GPU
+## 5. Case airflow
 
-Разгон и undervolt должны проверяться отдельно.
+Good airflow usually follows a simple pattern:
 
-### Память: XMP/EXPO
+- front/bottom case area — cool air intake;
+- rear/top area — hot air exhaust.
 
-Признаки нестабильности:
+### Basic recommendations
 
-- ошибки распаковки;
-- вылеты игр;
+- Do not place case tightly against a wall.
+- Do not block ventilation openings.
+- Clean dust filters regularly.
+- Verify orientation of each fan.
+- Do not add many fans without a clear airflow plan: path matters more than count.
+- Route cables so they do not block airflow or touch fans.
+
+### Laptop
+
+- Use a hard, flat surface.
+- Do not game on bed/blanket/pillow.
+- Keep air intakes unobstructed.
+- Use the original power adapter.
+- If needed, check performance mode in vendor utility.
+
+---
+
+## 6. Stability of XMP/EXPO, CPU, and GPU settings
+
+Overclock and undervolt must be validated separately.
+
+### Memory: XMP/EXPO
+
+Instability signs:
+
+- archive extraction errors;
+- game crashes;
 - BSOD;
-- редкие зависания;
+- rare freezes;
 - WHEA;
-- проблемы запуска после выключения ПК.
+- boot issues after shutdown.
 
-### CPU: PBO, Curve Optimizer, undervolt, разгон
+### CPU: PBO, Curve Optimizer, undervolt, overclock
 
-Признаки нестабильности:
+Instability signs:
 
-- WHEA Logger;
-- вылеты под нагрузкой;
-- самопроизвольные перезагрузки;
-- редкие фризы;
-- ошибки в стресс-тесте.
+- WHEA Logger events;
+- crashes under load;
+- random reboots;
+- rare freezes;
+- stress-test errors.
 
 ### GPU: overclock / undervolt
 
-Признаки нестабильности:
+Instability signs:
 
-- артефакты;
-- чёрный экран;
-- сброс драйвера;
-- вылеты игры;
-- зависания;
-- проблемы только в конкретной тяжёлой игре.
+- artifacts;
+- black screen;
+- driver reset;
+- game crashes;
+- hangs;
+- issues only in specific heavy games.
 
 > [!IMPORTANT]
-> Если настройка «проходит бенчмарк», но игра вылетает или появляются WHEA — она нестабильна. Ослабьте её или верните заводские параметры.
+> If a setup “passes benchmark” but game crashes or WHEA appears, it is unstable. Relax settings or return to stock.
 
 ---
 
-## 7. Как тестировать стабильность
+## 7. How to test stability
 
-Тест должен соответствовать тому, что вы изменили.
+Testing should match what you changed.
 
-### После настройки RAM
+### After RAM tuning
 
-Проверьте:
+Check:
 
-- несколько запусков/перезагрузок ПК;
-- игры, в которых раньше были проблемы;
-- стресс-тест памяти;
-- отсутствие WHEA;
-- отсутствие ошибок архивов и установщиков.
+- multiple cold boots/restarts;
+- games that previously had issues;
+- memory stress test;
+- no WHEA;
+- no archive/installer errors.
 
-### После CPU-настроек
+### After CPU tuning
 
-Проверьте:
+Check:
 
-- игру с высокой нагрузкой на CPU;
-- циклический бенчмарк;
-- стресс-тест CPU;
-- температуры, частоты и WHEA.
+- CPU-heavy game scenario;
+- looped benchmark;
+- CPU stress test;
+- temperatures, clocks, and WHEA.
 
-### После GPU-настроек
+### After GPU tuning
 
-Проверьте:
+Check:
 
-- тяжёлую игру;
-- бенчмарк;
-- отсутствие артефактов;
-- стабильность драйвера;
-- температуру и частоту GPU.
+- heavy game;
+- benchmark;
+- no artifacts;
+- driver stability;
+- GPU temperature and clocks.
 
-### Практичный порядок
+### Practical sequence
 
-1. Сделайте короткий тест после каждого шага.
-2. Если всё нормально — сделайте долгую игровую сессию.
-3. Проверьте журнал событий.
-4. Не применяйте следующий разгон, пока не проверили предыдущий.
+1. Run a short test after each step.
+2. If stable, run a long gaming session.
+3. Check Event Viewer.
+4. Do not apply next overclock step before validating previous one.
 
 ---
 
-## 8. WHEA-ошибки
+## 8. WHEA errors
 
-WHEA — сообщения Windows об аппаратных ошибках. Они могут быть связаны с CPU, RAM, PBO, Curve Optimizer, undervolt, PCIe, GPU или другими компонентами.
+WHEA are Windows hardware error reports. They may relate to CPU, RAM, PBO, Curve Optimizer, undervolt, PCIe, GPU, or other components.
 
-### Проверка через PowerShell
+### Check via PowerShell
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -263,77 +271,77 @@ Get-WinEvent -FilterHashtable @{
 Select-Object TimeCreated, Id, LevelDisplayName, Message
 ```
 
-### Что делать
+### What to do
 
-1. Если ошибки появились после настройки — отмените последнее изменение.
-2. Верните PBO/Curve Optimizer/undervolt/XMP-EXPO к стабильному режиму.
-3. Проверьте температуры и питание.
-4. Повторите тест.
-5. Если WHEA остаются на заводских настройках — нужна диагностика железа.
+1. If errors started after tuning, revert the latest change.
+2. Return PBO/Curve Optimizer/undervolt/XMP-EXPO to stable settings.
+3. Check temperatures and power.
+4. Re-test.
+5. If WHEA persists at stock settings, hardware diagnostics are required.
 
 ---
 
-## 9. Когда нужна чистка
+## 9. When cleaning is needed
 
-Признаки, что ПК стоит обслужить:
+Signs your PC should be serviced:
 
-- температура или шум стали заметно выше, чем раньше;
-- фильтры и радиаторы покрыты пылью;
-- вентиляторы плохо вращаются;
-- в корпусе много пыли;
-- GPU/CPU начинают троттлить;
-- ПК давно не чистился и находится рядом с ковром, животными или курящими людьми.
+- temperature or noise became noticeably worse;
+- filters/heatsinks are dusty;
+- fans spin poorly;
+- heavy dust inside case;
+- GPU/CPU starts throttling;
+- long period without cleaning, especially near carpets, pets, or smokers.
 
-### Как чистить безопасно
+### Safe cleaning method
 
-1. Полностью выключите ПК.
-2. Отключите кабель питания.
-3. Нажмите кнопку питания на корпусе на несколько секунд.
-4. Откройте корпус.
-5. Удерживайте лопасти вентиляторов, чтобы не раскручивать их потоком воздуха.
-6. Используйте баллон со сжатым воздухом короткими продувками.
-7. Не используйте пылесос внутри ПК: статическое электричество и механическое воздействие могут быть опасны.
-8. Соберите ПК и проверьте, что все кабели подключены.
+1. Fully shut down PC.
+2. Unplug power cable.
+3. Press case power button for a few seconds.
+4. Open case.
+5. Hold fan blades to prevent overspin from air flow.
+6. Use compressed air in short bursts.
+7. Do not use vacuum inside PC: static and mechanical stress may be risky.
+8. Reassemble and verify all cables are connected.
 
 > [!WARNING]
-> Не распыляйте жидкость и не используйте влажную уборку внутри корпуса. Если не уверены в разборке ноутбука или GPU — лучше обратитесь в сервис.
+> Do not spray liquids or use wet cleaning inside the case. If unsure about laptop/GPU disassembly, use a service center.
 
 ---
 
-## 10. Когда обращаться в сервис
+## 10. When to contact service
 
-Самостоятельные настройки не помогут, если есть признаки неисправности:
+Manual tuning will not fix hardware faults. Warning signs:
 
-- постоянные чёрные экраны;
-- запах гари;
-- искры, треск или повреждённый кабель;
-- вентилятор не вращается;
-- GPU/CPU перегревается сразу после включения нагрузки;
-- BIOS не видит накопитель;
-- ПК выключается под нагрузкой;
-- артефакты есть даже на заводских настройках;
-- WHEA/BSOD не исчезают после возврата к стоку.
+- persistent black screens;
+- burning smell;
+- sparks/crackling/damaged cable;
+- fan not spinning;
+- instant GPU/CPU overheating under load;
+- BIOS cannot detect storage;
+- PC powers off under load;
+- artifacts even at stock settings;
+- WHEA/BSOD persists after reverting to stock.
 
-Остановите эксперименты, сохраните важные данные и проведите диагностику железа.
-
----
-
-## Чек-лист
-
-- [ ] Температуры и частоты проверены под игровой нагрузкой.
-- [ ] Нет thermal throttling, критического power limit или резкого падения частот.
-- [ ] Корпус и фильтры очищены от пыли.
-- [ ] Воздушный поток не перекрыт.
-- [ ] Вентиляторы CPU/GPU/корпуса работают.
-- [ ] SSD не перегревается и имеет свободное место.
-- [ ] XMP/EXPO, PBO, Curve Optimizer, GPU OC и undervolt проверены отдельно.
-- [ ] После твиков нет WHEA, вылетов, BSOD и артефактов.
-- [ ] При признаках неисправности настройки возвращены на сток.
+Stop experiments, back up important data, and run hardware diagnostics.
 
 ---
 
-## Итог
+## Checklist
 
-Стабильный, чистый и нормально охлаждаемый ПК даёт больше пользы, чем агрессивный разгон. Сначала устраните перегрев, плохой воздушный поток, переполненный SSD и нестабильность. Только затем имеет смысл тонкая настройка частот, напряжений и вентиляторов.
+- [ ] Temperatures and clocks validated under gaming load.
+- [ ] No thermal throttling, critical power limit, or severe clock drops.
+- [ ] Case and filters cleaned from dust.
+- [ ] Airflow path is not blocked.
+- [ ] CPU/GPU/case fans are working.
+- [ ] SSD is not overheating and has free space.
+- [ ] XMP/EXPO, PBO, Curve Optimizer, GPU OC, and undervolt tested separately.
+- [ ] No WHEA, crashes, BSOD, or artifacts after tweaks.
+- [ ] On fault symptoms, settings reverted to stock.
 
-Следующий шаг: [Что не стоит делать](11-what-not-to-do.md).
+---
+
+## Summary
+
+A stable, clean, and properly cooled PC is more valuable than aggressive overclocking. First fix overheating, poor airflow, full SSD, and instability. Only then fine-tuning clocks, voltages, and fan curves makes sense.
+
+Next step: [What not to do](11-what-not-to-do.md).
