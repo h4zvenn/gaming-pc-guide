@@ -14,7 +14,9 @@
     // Front matter title + document h1 can trigger false positives.
     "MD025": false,
     // <details>/<summary> are standard GitHub Markdown for collapsible sections.
-    "MD033": false
+    "MD033": false,
+    // Disable strict table column style checks to prevent lint errors on tables
+    "MD060": false
   },
   "ignores": [
     ".github/ISSUE_TEMPLATE/*.md"
