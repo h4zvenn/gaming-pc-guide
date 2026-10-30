@@ -2,21 +2,13 @@
 
 ## Summary
 
-Describe what changed and why.
-
-## Type of change
-
-- [ ] Docs clarity
-- [ ] New optimization guidance
-- [ ] Security improvement
-- [ ] Structure/navigation
+What changed and why?
 
 ## Validation
 
-- [ ] I verified links in changed files.
-- [ ] I kept guidance safe and rollback-friendly.
-- [ ] I avoided blanket risky tweaks.
+How was this checked?
+For text-only changes, a manual review may be sufficient.
 
-## Notes
+## Related issue
 
-Add benchmark evidence or references if relevant.
+Optional.
