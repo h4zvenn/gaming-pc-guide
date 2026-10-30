@@ -10,7 +10,9 @@
     // Repeating headings like "Baseline" is expected under different sections.
     "MD024": {
       "siblings_only": true
-    }
+    },
+    // <details>/<summary> are standard GitHub Markdown for collapsible sections.
+    "MD033": false
   },
   "ignores": [
     ".github/ISSUE_TEMPLATE/*.md"
