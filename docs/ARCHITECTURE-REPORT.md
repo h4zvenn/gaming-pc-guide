@@ -7,7 +7,7 @@
 ## 1. Tree: Common Base + Game Sections
 
 ```text
-gaming-pc-optimization-ru/
+gaming-pc-guide/
 ├── README.md                    # EN entry point
 ├── README.ru.md                 # RU entry point (to be created)
 ├── docs/

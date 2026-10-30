@@ -88,11 +88,11 @@ Do not apply all tweaks at once. Follow this order:
 
 | Game | Status | Anticheat | Focus | Last checked |
 |------|--------|-----------|-------|--------------|
-| [Counter-Strike 2](docs/games/counter-strike-2/en.md) | ✅ Ready | VAC | Max FPS, min input lag, Source 2 specifics | 2026-10-30 |
-| [VALORANT](docs/games/valorant/en.md) | 📋 Planned | Vanguard | Kernel-level anticheat compatibility | — |
-| [PUBG](docs/games/pubg/en.md) | 📋 Planned | BattlEye | Frametime stability, large maps | — |
-| [Minecraft Java](docs/games/minecraft-java/en.md) | 📋 Planned | Varies | Mod compatibility, shaders | — |
-| [World of Tanks](docs/games/world-of-tanks/en.md) | 📋 Planned | Proprietary | Client optimization, network | — |
+| [Counter-Strike 2](docs/games/cs2.md) | ✅ Pilot | VAC | Max FPS, min input lag, Source 2 specifics | 2026-10-30 |
+| [VALORANT](docs/games/valorant.md) | 📋 Planned | Vanguard | Kernel-level anticheat compatibility | — |
+| [PUBG](docs/games/pubg.md) | 📋 Planned | BattlEye | Frametime stability, large maps | — |
+| [Minecraft Java](docs/games/minecraft-java.md) | 📋 Planned | Varies | Mod compatibility, shaders | — |
+| [World of Tanks](docs/games/world-of-tanks.md) | 📋 Planned | Proprietary | Client optimization, network | — |
 
 **Browse all game guides:** [docs/games/](docs/games/)
 
@@ -102,13 +102,13 @@ Not sure which guide to use? Start with the symptom:
 
 | Symptom | Diagnostic guide |
 |---------|------------------|
-| Low average FPS | [Low FPS diagnostics](docs/diagnostics/low-fps.md) |
-| Stutter / frametime spikes | [Frametime diagnostics](docs/diagnostics/frametime-spikes.md) |
-| Input delay | [Input lag diagnostics](docs/diagnostics/input-lag.md) |
-| High ping / rubber-banding | [Network lag diagnostics](docs/diagnostics/network-lag.md) |
-| Crashes / freezes | [Crash diagnostics](docs/diagnostics/crashes.md) |
+| Low average FPS | [Bottleneck diagnostics](docs/02-find-the-bottleneck.md) |
+| Stutter / frametime spikes | [Bottleneck diagnostics](docs/02-find-the-bottleneck.md) |
+| Input delay | [GPU settings / sync](docs/06-gpu-settings.md) + [Diagnostics](docs/09-powershell-diagnostics.md) |
+| High ping / rubber-banding | [Network diagnostics](docs/09-powershell-diagnostics.md#network) |
+| Crashes / freezes | [Troubleshooting trees](docs/15-troubleshooting-decision-trees.md) |
 
-**Full diagnostic index:** [docs/diagnostics/symptom-index.md](docs/diagnostics/symptom-index.md)
+**Full diagnostic index:** [docs/15-troubleshooting-decision-trees.md](docs/15-troubleshooting-decision-trees.md)
 
 ---
 
@@ -116,7 +116,7 @@ Not sure which guide to use? Start with the symptom:
 
 - Contribution rules: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Open issue template: [General issue](.github/ISSUE_TEMPLATE/general_issue.md)
-- New issue page: `https://github.com/h4zvenn/gaming-pc-optimization-ru/issues/new/choose`
+- New issue page: `https://github.com/h4zvenn/gaming-pc-guide/issues/new/choose`
 
 ## 🗂️ Project meta
 
