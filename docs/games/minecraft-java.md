@@ -14,7 +14,7 @@
 
 ## Quick Start
 
-1. Common base first (see [CS2 Quick Start](../cs2.md#quick-start)).
+1. Common base first (see [CS2 Quick Start](cs2.md#quick-start)).
 2. No kernel anti-cheat in singleplayer; server rules apply for multiplayer.
 3. Java runtime and launch arguments matter — test, do not copy "magic flags".
 4. Apply only Minecraft-specific items below.
@@ -96,4 +96,4 @@
 - Secondary: Aikar's JVM flags (server-only — marked secondary), Prism/ATLauncher wikis.
 - Community: Reddit r/Minecraft, r/admincraft — hypothesis only.
 
-Back to main guide: [README](../README.md).
+Back to main guide: [README](../../README.md).

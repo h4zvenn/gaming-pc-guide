@@ -60,7 +60,7 @@ gaming-pc-guide/
 **Navigation rules:**
 
 - `README.md` / `README.ru.md` → full guide table with links to `docs/NN-*.md` and `docs/games/*.md`.
-- Each `docs/NN-*.md` ends with `Next step: [NN+1-title](NN+1-*.md)`.
+- Each docs/NN-*.md ends with a "Next step" link to NN+1-title (plain text, not a real link).
 - Each `docs/games/*.md` starts with Quick Start linking the common base chain.
 - Cross-links use relative paths (`../02-find-the-bottleneck.md`).
 
