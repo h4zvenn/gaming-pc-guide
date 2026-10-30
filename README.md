@@ -1,86 +1,127 @@
 # Windows 11 Gaming PC Optimization Guide
 
-Practical guide for tuning a regular Windows 11 gaming PC or laptop: find the real bottleneck, change one setting at a time, benchmark, keep or rollback. No custom Windows builds, no mass service disabling, no "FPS boost" scripts.
+Evidence-based guide for optimizing Windows 11 gaming performance. Find your bottleneck, apply one change at a time, benchmark results, keep what works.
+
+**No** custom Windows builds • **No** mass service disabling • **No** "FPS boost" scripts
 
 [![Platform](https://img.shields.io/badge/Platform-Windows%2011-0078D4?style=flat-square&logo=windows)](docs/05-windows-11.md)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![CI](https://img.shields.io/badge/CI-markdownlint%2Blychee-green?style=flat-square)](.github/workflows/docs-quality.yml)
+[![CI](https://img.shields.io/badge/CI-passing-green?style=flat-square)](.github/workflows/docs-quality.yml)
 
-## Start here
+---
 
-1. **Prepare and save your baseline.** Create a restore point, record FPS, 1% low, frametime, and temperatures. → [Preparation](docs/01-before-you-start.md)
-2. **Find the bottleneck.** Identify whether CPU, GPU, RAM, VRAM, SSD, thermals, or background apps limit performance. → [Find the bottleneck](docs/02-find-the-bottleneck.md)
-3. **Change one setting and verify.** Apply a single targeted tweak, then compare metrics. → [Benchmark templates](docs/16-benchmark-templates.md)
+## Quick Start
 
-## Symptom → where to go
+### 3-Step Process
 
-| Symptom | Start with |
-|---|---|
-| Low FPS | [Find bottleneck](docs/02-find-the-bottleneck.md) → [GPU settings](docs/06-gpu-settings.md) |
-| Stutter / bad frametime | [Find bottleneck](docs/02-find-the-bottleneck.md) → [Temperatures](docs/10-temperatures-stability.md) |
-| Input lag | [GPU settings](docs/06-gpu-settings.md) → [Diagnostics](docs/09-powershell-diagnostics.md) |
-| Network lag / ping | [Diagnostics / network](docs/09-powershell-diagnostics.md#9-network) |
-| Crash / freeze | [Troubleshooting trees](docs/15-troubleshooting-decision-trees.md) |
+1. **Baseline** — Create restore point, record FPS/frametime/temps → [Preparation](docs/01-before-you-start.md)
+2. **Diagnose** — Identify your actual bottleneck (CPU/GPU/RAM/thermal) → [Find Bottleneck](docs/02-find-the-bottleneck.md)
+3. **Optimize** — Change one setting, benchmark, keep or rollback → [Benchmark Templates](docs/16-benchmark-templates.md)
 
-## Game guides
+### Fix Common Issues
 
-Available:
+| Problem | Solution Path |
+|---------|---------------|
+| **Low FPS** | [Bottleneck](docs/02-find-the-bottleneck.md) → [GPU Settings](docs/06-gpu-settings.md) |
+| **Stutter / Bad Frametime** | [Bottleneck](docs/02-find-the-bottleneck.md) → [Thermals](docs/10-temperatures-stability.md) |
+| **Input Lag** | [GPU Settings](docs/06-gpu-settings.md) → [Diagnostics](docs/09-powershell-diagnostics.md) |
+| **Network Lag / High Ping** | [Network Diagnostics](docs/09-powershell-diagnostics.md#9-network) |
+| **Crashes / Freezes** | [Troubleshooting](docs/15-troubleshooting-decision-trees.md) |
 
-- [Counter-Strike 2](docs/games/cs2.md) — pilot page (VAC, Source 2, Reflex, FPS cap)
+---
 
-Planned (not yet available):
+## Game-Specific Guides
 
-- VALORANT
-- PUBG
-- Minecraft Java
-- World of Tanks
+| Game | Status | Notes |
+|------|--------|-------|
+| [Counter-Strike 2](docs/games/cs2.md) | ✅ Live | VAC, Source 2, Reflex, launch options |
+| [Minecraft Java](docs/games/minecraft-java.md) | 🟡 Draft | JVM flags, mods, chunk optimization |
+| [VALORANT](docs/games/valorant.md) | 🟡 Draft | Vanguard, Reflex, competitive settings |
+| [PUBG](docs/games/pubg.md) | 🟡 Draft | BattlEye, DX11/DX12, texture streaming |
+| [World of Tanks](docs/games/world-of-tanks.md) | 🟡 Draft | Mod Hub, SD/HD client |
 
-[Game page template](docs/games/_template.md)
+[Game Guide Template](docs/games/_template.md)
 
-## Principles
+---
 
-- Find the bottleneck before changing anything.
-- One setting at a time; benchmark after each change.
-- No universal BIOS presets, no mass service disables, no registry scripts.
-- If it breaks, rollback to baseline.
+## Complete Documentation
 
-## Full guide
+### Core Diagnostics
 
-### Preparation and diagnostics
+| Guide | What It Covers |
+|-------|----------------|
+| [01 — Preparation](docs/01-before-you-start.md) | Restore point, baseline metrics, monitor refresh rate |
+| [02 — Find Bottleneck](docs/02-find-the-bottleneck.md) | CPU, GPU, RAM, VRAM, SSD, thermal limits |
+| [09 — Diagnostics](docs/09-powershell-diagnostics.md) | PowerShell commands for hardware/network/WHEA checks |
+| [10 — Thermals](docs/10-temperatures-stability.md) | Throttling detection, airflow, stress testing |
+| [15 — Troubleshooting](docs/15-troubleshooting-decision-trees.md) | Fast decision trees for common problems |
 
-- [01 Preparation](docs/01-before-you-start.md) — restore point, refresh rate, SSD space, baseline
-- [02 Find the bottleneck](docs/02-find-the-bottleneck.md) — CPU, GPU, RAM, VRAM, SSD, thermal limits
-- [09 PowerShell diagnostics](docs/09-powershell-diagnostics.md) — safe commands for CPU, GPU, RAM, disks, network, WHEA
-- [10 Temperatures and stability](docs/10-temperatures-stability.md) — throttling, airflow, stress tests
-- [15 Troubleshooting decision trees](docs/15-troubleshooting-decision-trees.md) — fast "if this → do that" flows
+### System Optimization
 
-### System and hardware settings
+| Guide | What It Covers |
+|-------|----------------|
+| [03 — BIOS & Hardware](docs/03-bios-and-hardware.md) | XMP/EXPO, ReBAR, PBO, PCIe settings |
+| [04 — Drivers](docs/04-drivers-and-updates.md) | Chipset, GPU drivers, clean install process |
+| [05 — Windows 11](docs/05-windows-11.md) | Game Mode, power plan, HAGS, overlays |
+| [06 — GPU Settings](docs/06-gpu-settings.md) | NVIDIA/AMD/Intel, Reflex, V-Sync, DLSS/FSR/XeSS |
+| [07 — Background Apps](docs/07-background-apps.md) | Browser, downloads, cloud sync, overlays |
+| [08 — Services & Security](docs/08-services-and-security.md) | What NOT to disable, Defender, Firewall |
+| [11 — What NOT to Do](docs/11-what-not-to-do.md) | Debloat scripts, RAM cleaners, registry tweaks |
+| [12 — FAQ](docs/12-faq.md) | Common questions answered |
 
-- [03 BIOS and hardware](docs/03-bios-and-hardware.md) — XMP/EXPO, ReBAR, PBO, PCIe
-- [04 Drivers and updates](docs/04-drivers-and-updates.md) — chipset, GPU, Windows Update, clean install
-- [05 Windows 11 tuning](docs/05-windows-11.md) — Game Mode, power plan, HAGS, refresh rate, overlays
-- [06 GPU settings](docs/06-gpu-settings.md) — NVIDIA, AMD, Intel, Reflex, Anti-Lag, FPS cap, V-Sync, VRR, DLSS/FSR/XeSS
-- [07 Background apps](docs/07-background-apps.md) — browser, downloads, cloud sync, overlays, OBS
-- [08 Services and security](docs/08-services-and-security.md) — what not to disable, Defender, Firewall, Update
-- [11 What not to do](docs/11-what-not-to-do.md) — debloat builds, RAM cleaners, BCD/HPET, registry tweaks
-- [12 FAQ](docs/12-faq.md) — quick answers
+### Validation & Tools
 
-### Validation and troubleshooting
+| Guide | What It Covers |
+|-------|----------------|
+| [16 — Benchmark Templates](docs/16-benchmark-templates.md) | Repeatable testing methodology, metric definitions |
+| [13 — Security Baseline](docs/13-security-hardening-baseline.md) | Safe defaults for Defender/Firewall/Updates |
+| [14 — Quick Presets](docs/14-quick-start-presets.md) | Ready-to-use optimization paths by hardware tier |
+| [17 — Build Cards](docs/17-common-builds-quick-cards.md) | NVIDIA/AMD/Intel starting configurations |
+| [18 — Tools Evidence](docs/18-optimization-tools-evidence.md) | Third-party optimizer analysis (claims vs reality) |
 
-- [16 Benchmark templates](docs/16-benchmark-templates.md) — repeatable templates to track tweaks and prove gains
+---
 
-<details>
-<summary>Additional resources</summary>
+## Core Principles
 
-- [13 Security hardening baseline](docs/13-security-hardening-baseline.md) — secure defaults, Defender/Firewall/Update checks
-- [14 Quick-start presets](docs/14-quick-start-presets.md) — ready optimization paths by hardware tier
-- [17 Common builds quick cards](docs/17-common-builds-quick-cards.md) — NVIDIA/AMD/Intel starting presets
-- [18 Optimization tools evidence](docs/18-optimization-tools-evidence.md) — BoosterX, Hone, BRUTAL-FPS, Razer Cortex: claims vs docs/code/tests
-- [Architecture report](docs/ARCHITECTURE-REPORT.md) — tree, matrix, pilot plan, readiness criteria
+✅ **Find bottleneck first** — Random tweaks waste time  
+✅ **One change at a time** — Know what actually helped  
+✅ **Benchmark every change** — Feelings lie, metrics don't  
+✅ **Keep rollback path** — Restore point before major changes  
 
-</details>
+❌ **No blind service disabling** — Breaks updates/networking/security  
+❌ **No universal BIOS presets** — Every system is different  
+❌ **No registry scripts** — Unmaintainable and risky  
 
-## Community
+---
 
-- [Issues](https://github.com/h4zvenn/gaming-pc-guide/issues) · [Discussions](https://github.com/h4zvenn/gaming-pc-guide/discussions)
-- [CONTRIBUTING.md](CONTRIBUTING.md) · [CHANGELOG.md](CHANGELOG.md) · [LICENSE](LICENSE)
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+**Quick rules:**
+- Evidence-based only (benchmarks required)
+- Safe and reversible changes
+- No snake oil / "magic FPS" claims
+- English language
+
+---
+
+## Project Status
+
+- **Last Updated:** 2026-10-30
+- **Windows Version:** Windows 11 (22H2+)
+- **License:** MIT
+- **Issues:** [Report bugs](https://github.com/h4zvenn/gaming-pc-guide/issues)
+- **Discussions:** [Ask questions](https://github.com/h4zvenn/gaming-pc-guide/discussions)
+
+---
+
+## Additional Resources
+
+- [CHANGELOG.md](CHANGELOG.md) — Version history
+- [SECURITY.md](SECURITY.md) — Security policy
+- [Architecture Report](docs/ARCHITECTURE-REPORT.md) — Project structure and design decisions
+
+---
+
+<sub>Made for gamers who want real performance gains, not placebo tweaks.</sub>

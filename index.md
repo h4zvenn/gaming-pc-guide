@@ -32,11 +32,11 @@ title: Home
 
 | Symptom | Start with |
 |---|---|
-| Low FPS | [Find bottleneck](docs/02-find-the-bottleneck.md) → [GPU settings](docs/06-gpu-settings.md) |
-| Stutter / bad frametime | [Find bottleneck](docs/02-find-the-bottleneck.md) → [Temperatures](docs/10-temperatures-stability.md) |
-| Input lag | [GPU settings](docs/06-gpu-settings.md) → [Diagnostics](docs/09-powershell-diagnostics.md) |
-| Network lag / ping | [Diagnostics / network](docs/09-powershell-diagnostics.md#9-network) |
-| Crash / freeze | [Troubleshooting trees](docs/15-troubleshooting-decision-trees.md) |
+| Low FPS | [Find bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) → [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }}) |
+| Stutter / bad frametime | [Find bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) → [Temperatures]({{ '/docs/10-temperatures-stability/' | relative_url }}) |
+| Input lag | [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }}) → [Diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }}) |
+| Network lag / ping | [Diagnostics / network]({{ '/docs/09-powershell-diagnostics/' | relative_url }}#9-network) |
+| Crash / freeze | [Troubleshooting trees]({{ '/docs/15-troubleshooting-decision-trees/' | relative_url }}) |
 
 ## Available game guides
 
@@ -53,12 +53,12 @@ Planned: VALORANT, PUBG, Minecraft Java, World of Tanks.
 
 See the documentation sidebar or browse all sections:
 
-- [Preparation](docs/01-before-you-start.md) · [Find bottleneck](docs/02-find-the-bottleneck.md) · [BIOS / Hardware](docs/03-bios-and-hardware.md)
-- [Drivers](docs/04-drivers-and-updates.md) · [Windows 11](docs/05-windows-11.md) · [GPU settings](docs/06-gpu-settings.md)
-- [Background apps](docs/07-background-apps.md) · [Services / Security](docs/08-services-and-security.md) · [Diagnostics](docs/09-powershell-diagnostics.md)
-- [Temperatures](docs/10-temperatures-stability.md) · [What not to do](docs/11-what-not-to-do.md) · [FAQ](docs/12-faq.md)
-- [Security baseline](docs/13-security-hardening-baseline.md) · [Presets](docs/14-quick-start-presets.md) · [Troubleshooting](docs/15-troubleshooting-decision-trees.md)
-- [Benchmark templates](docs/16-benchmark-templates.md) · [Build cards](docs/17-common-builds-quick-cards.md) · [Tools evidence](docs/18-optimization-tools-evidence.md)
+- [Preparation]({{ '/docs/01-before-you-start/' | relative_url }}) · [Find bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) · [BIOS / Hardware]({{ '/docs/03-bios-and-hardware/' | relative_url }})
+- [Drivers]({{ '/docs/04-drivers-and-updates/' | relative_url }}) · [Windows 11]({{ '/docs/05-windows-11/' | relative_url }}) · [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }})
+- [Background apps]({{ '/docs/07-background-apps/' | relative_url }}) · [Services / Security]({{ '/docs/08-services-and-security/' | relative_url }}) · [Diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }})
+- [Temperatures]({{ '/docs/10-temperatures-stability/' | relative_url }}) · [What not to do]({{ '/docs/11-what-not-to-do/' | relative_url }}) · [FAQ]({{ '/docs/12-faq/' | relative_url }})
+- [Security baseline]({{ '/docs/13-security-hardening-baseline/' | relative_url }}) · [Presets]({{ '/docs/14-quick-start-presets/' | relative_url }}) · [Troubleshooting]({{ '/docs/15-troubleshooting-decision-trees/' | relative_url }})
+- [Benchmark templates]({{ '/docs/16-benchmark-templates/' | relative_url }}) · [Build cards]({{ '/docs/17-common-builds-quick-cards/' | relative_url }}) · [Tools evidence]({{ '/docs/18-optimization-tools-evidence/' | relative_url }})
 
 ## Principles
 
