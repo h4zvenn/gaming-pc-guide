@@ -35,7 +35,7 @@ title: Home
 | Low FPS | [Find bottleneck](docs/02-find-the-bottleneck.md) → [GPU settings](docs/06-gpu-settings.md) |
 | Stutter / bad frametime | [Find bottleneck](docs/02-find-the-bottleneck.md) → [Temperatures](docs/10-temperatures-stability.md) |
 | Input lag | [GPU settings](docs/06-gpu-settings.md) → [Diagnostics](docs/09-powershell-diagnostics.md) |
-| Network lag / ping | [Diagnostics / network](docs/09-powershell-diagnostics.md#network) |
+| Network lag / ping | [Diagnostics / network](docs/09-powershell-diagnostics.md#9-network) |
 | Crash / freeze | [Troubleshooting trees](docs/15-troubleshooting-decision-trees.md) |
 
 ## Available game guides

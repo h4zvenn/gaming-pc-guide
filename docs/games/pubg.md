@@ -75,7 +75,7 @@ title: "pubg"
 | Low FPS, CPU-bound | Lower View Distance, Foliage, Effects; test DX12 | [Bottleneck](../02-find-the-bottleneck.md) |
 | Stutter on new areas | Texture streaming, SSD space, shader cache | [Bottleneck](../02-find-the-bottleneck.md) |
 | Input latency | FPS cap, disable V-Sync, test DX12 | [GPU settings](../06-gpu-settings.md) |
-| Network desync / high ping | Region selection, Ethernet, background traffic | [Network diagnostics](../09-powershell-diagnostics.md#network) |
+| Network desync / high ping | Region selection, Ethernet, background traffic | [Network diagnostics](../09-powershell-diagnostics.md#9-network) |
 
 ## Benchmark Scenario
 

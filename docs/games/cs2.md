@@ -79,7 +79,7 @@ title: "cs2"
 | Low FPS, one CPU core 100% | Lower Particle Detail, disable multicore rendering test, close background | [Bottleneck](../02-find-the-bottleneck.md) |
 | Stutter on new maps/rounds | Shader pre-compilation, verify game files, SSD space | [Bottleneck](../02-find-the-bottleneck.md) |
 | Input latency feels high | Reflex On+Boost, `fps_max` cap, VRR profile, disable overlays | [GPU settings](../06-gpu-settings.md) |
-| Network latency / loss | `net_graph 1`, Steam region, Ethernet vs Wi-Fi | [Network diagnostics](../09-powershell-diagnostics.md#network) |
+| Network latency / loss | `net_graph 1`, Steam region, Ethernet vs Wi-Fi | [Network diagnostics](../09-powershell-diagnostics.md#9-network) |
 | Crash on launch / "VAC unable to verify" | Verify integrity, disable overlays, check `-allow_third_party_software` | [Troubleshooting](../15-troubleshooting-decision-trees.md) |
 | "Trusted Mode" blocks overlay | Disable overlay or use `-allow_third_party_software` knowingly | — |
 
