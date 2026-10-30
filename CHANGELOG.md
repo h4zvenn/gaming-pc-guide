@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 - **Game-Specific Optimization Guides** — new section with dedicated guides for specific games.
-  - Full Counter-Strike 2 optimization guide (`docs/games/counter-strike-2/en.md`):
+  - Full Counter-Strike 2 optimization guide (`docs/games/cs2.md`):
     - Graphics settings impact table with 12 settings analyzed.
     - 3 presets: Competitive, Balanced, Quality.
     - Launch options with Source 2 engine specifics.
@@ -19,12 +19,12 @@ All notable changes to this project will be documented in this file.
   - CS2 configuration files:
     - `autoexec-competitive.cfg` — maximum FPS, minimum input lag (128-tick ready).
     - `autoexec-balanced.cfg` — balanced performance and quality.
-  - CS2 benchmark guide (`benchmarks/testing-guide.md`) with 3 testing methods.
-- **Anticheat Compatibility Reference** (`docs/common/anticheat-compatibility.md`):
+  - CS2 benchmark guide (see `docs/16-benchmark-templates.md`) with 3 testing methods.
+- **Anticheat / game compatibility** — covered in each `docs/games/*.md` (VAC, Vanguard, BattlEye) and `docs/08-services-and-security.md`.
   - Comprehensive guide for VAC, Riot Vanguard, BattlEye, and Easy Anti-Cheat.
   - What is safe, what requires caution, what is forbidden for each anticheat.
   - Specific examples and false ban appeal process.
-- **Diagnostic Symptom Index** (`docs/diagnostics/symptom-index.md`):
+- **Diagnostic methodology** (`docs/15-troubleshooting-decision-trees.md` + `docs/09-powershell-diagnostics.md`):
   - Fast symptom-to-solution lookup covering low FPS, stutter, input lag, network lag, crashes, and overheating.
   - Quick checks and common causes for each symptom.
   - Links to detailed diagnostic pages and tools reference.
@@ -47,17 +47,12 @@ All notable changes to this project will be documented in this file.
 ### Project Structure
 
 New directories:
-```
-docs/common/              — Shared resources (anticheat compatibility)
-docs/diagnostics/         — Symptom-based diagnostic guides
-docs/games/               — Game-specific optimization guides
-  ├── counter-strike-2/   — CS2 guide, configs, benchmarks
-  ├── valorant/           — Placeholder for future content
-  ├── pubg/               — Placeholder for future content
-  ├── minecraft-java/     — Placeholder for future content
-  └── world-of-tanks/     — Placeholder for future content
-images/games/             — Game-specific images (empty, ready for screenshots)
-```
+
+- `docs/games/` — Game-specific optimization guides (cs2.md, valorant.md, pubg.md, minecraft-java.md, world-of-tanks.md)
+  - `_template.md` — Canonical template for new game pages
+- `docs/ARCHITECTURE-REPORT.md` — Common base vs game matrix, readiness criteria
+- `docs/16-benchmark-templates.md` — Reproducible benchmark protocol
+- `images/` — Shared assets (webp/png/svg, current usage only)
 
 ### Notes
 
