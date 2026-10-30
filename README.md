@@ -54,6 +54,7 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 <br>
 
 ### 🔍 Core Diagnostics
+
 * [01 — Preparation](docs/01-before-you-start.md) — Restore point setup, baseline metrics, refresh rate verification
 * [02 — Find Bottleneck](docs/02-find-the-bottleneck.md) — Step-by-step CPU, GPU, RAM, VRAM, and thermal limit detection
 * [09 — Diagnostics](docs/09-powershell-diagnostics.md) — Safe PowerShell commands for hardware, network, and WHEA errors
@@ -61,6 +62,7 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 * [15 — Troubleshooting](docs/15-troubleshooting-decision-trees.md) — Decision trees for system instability and crashes
 
 ### ⚙️ System Optimization
+
 * [03 — BIOS & Hardware](docs/03-bios-and-hardware.md) — XMP/EXPO, ReBAR, PBO, and PCIe configurations
 * [04 — Drivers & Updates](docs/04-drivers-and-updates.md) — Chipset drivers, GPU clean installation (DDU)
 * [05 — Windows 11 Core](docs/05-windows-11.md) — Game Mode, Power Plans, HAGS, and overlay management
@@ -71,6 +73,7 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 * [12 — FAQ](docs/12-faq.md) — Frequently asked questions and common myths
 
 ### 📊 Validation, Templates & Tools
+
 * [13 — Security Baseline](docs/13-security-hardening-baseline.md) — Safe default baseline for system protection
 * [14 — Quick Presets](docs/14-quick-start-presets.md) — Ready-to-use optimization presets for different PC tiers
 * [16 — Benchmark Templates](docs/16-benchmark-templates.md) — Repeatable testing methodology and metric logs
@@ -87,7 +90,7 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 > 🎯 **One change at a time** — Know exactly what helped or hurt  
 > 🎯 **Benchmark every change** — Feelings lie, metrics don't  
 > 🎯 **Keep rollback path** — Always create a restore point before changes  
-
+>  
 > 🚫 **No blind service disabling** — Avoid breaking Windows Update or networking  
 > 🚫 **No universal BIOS presets** — Custom hardware needs custom approaches  
 > 🚫 **No registry scripts** — Avoid risky and unmaintainable tweaks  
@@ -96,9 +99,9 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 
 ## 🤝 Project Info & Resources
 
-* **Contributing:** Want to add benchmarks or guides? Please review [CONTRIBUTING.md](CONTRIBUTING.md) first.
-* **Changelog:** See [CHANGELOG.md](CHANGELOG.md) for version history and updates.
-* **License:** Distributed under the [MIT License](LICENSE).
+- **Contributing:** Want to add benchmarks or guides? Please review [CONTRIBUTING.md](CONTRIBUTING.md) first.
+- **Changelog:** See [CHANGELOG.md](CHANGELOG.md) for version history and updates.
+- **License:** Distributed under the [MIT License](LICENSE).
 
 ---
 

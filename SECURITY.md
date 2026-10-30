@@ -23,6 +23,6 @@ If you identify a security risk, dangerous tweak, or unsafe recommendation in th
 
 Security reports are critical for:
 
-* Unsafe optimization advice or risky script execution.
-* Disabling core protections (Defender, Firewall, UAC, Windows Update) without explicit warnings.
-* Supply-chain or malware risks in referenced third-party tools.
+- Unsafe optimization advice or risky script execution.
+- Disabling core protections (Defender, Firewall, UAC, Windows Update) without explicit warnings.
+- Supply-chain or malware risks in referenced third-party tools.

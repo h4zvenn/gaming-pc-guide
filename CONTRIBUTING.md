@@ -36,5 +36,5 @@ Your contribution must meet the following checks:
 
 ## 📬 Reporting Issues
 
-* Use the unified issue template: `.github/ISSUE_TEMPLATE/general_issue.md`.
-* **Privacy Check:** Never post passwords, tokens, API keys, serial numbers, or personal data.
+- Use the unified issue template: `.github/ISSUE_TEMPLATE/general_issue.md`.
+- **Privacy Check:** Never post passwords, tokens, API keys, serial numbers, or personal data.
