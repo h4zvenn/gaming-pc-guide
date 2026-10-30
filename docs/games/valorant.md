@@ -22,7 +22,7 @@ title: "valorant"
 1. Common base first (see [CS2 Quick Start](cs2.md#quick-start)).
 2. Vanguard requires TPM 2.0 + Secure Boot on Windows 11 — verify before BIOS changes.
 3. Apply only VALORANT-specific items below.
-4. Validate with [Benchmark template](../16-benchmark-templates.md).
+4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates/' | relative_url }}).
 
 ## Requirements & Compatibility
 
@@ -71,9 +71,9 @@ title: "valorant"
 |---|---|---|
 | Vanguard error / not initialized | Secure Boot + TPM 2.0 enabled, Vanguard service running | — |
 | "VAN" error codes | Riot support KB for specific code | — |
-| Low FPS, GPU not saturated | CPU-bound: lower Material/Texture/Detail, enable Multithreaded Rendering | [Bottleneck](../02-find-the-bottleneck.md) |
-| Input latency | Reflex On+Boost, Raw Input Buffer on, cap FPS | [GPU settings](../06-gpu-settings.md) |
-| Network spikes | Ethernet, Riot server region, background downloads | [Network diagnostics](../09-powershell-diagnostics.md#9-network) |
+| Low FPS, GPU not saturated | CPU-bound: lower Material/Texture/Detail, enable Multithreaded Rendering | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
+| Input latency | Reflex On+Boost, Raw Input Buffer on, cap FPS | [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }}) |
+| Network spikes | Ethernet, Riot server region, background downloads | [Network diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }}#9-network) |
 
 ## Benchmark Scenario
 
@@ -94,4 +94,4 @@ title: "valorant"
 - Secondary: —
 - Community: —
 
-Back to main guide: [README](../../README.md).
+Back to main guide: [README]({{ '/' | relative_url }}).

@@ -19,9 +19,9 @@ title: "cs2"
 
 ## Quick Start
 
-1. Complete the common base: [Preparation](../01-before-you-start.md) → [Bottleneck](../02-find-the-bottleneck.md) → [BIOS/Hardware](../03-bios-and-hardware.md) → [Drivers](../04-drivers-and-updates.md) → [Windows](../05-windows-11.md) → [GPU](../06-gpu-settings.md) → [Background](../07-background-apps.md) → [Security/Services](../08-services-and-security.md) → [Diagnostics](../09-powershell-diagnostics.md) → [Thermals/Stability](../10-temperatures-stability.md).
+1. Complete the common base: [Preparation]({{ '/docs/01-before-you-start/' | relative_url }}) → [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) → [BIOS/Hardware]({{ '/docs/03-bios-and-hardware/' | relative_url }}) → [Drivers]({{ '/docs/04-drivers-and-updates/' | relative_url }}) → [Windows]({{ '/docs/05-windows-11/' | relative_url }}) → [GPU]({{ '/docs/06-gpu-settings/' | relative_url }}) → [Background]({{ '/docs/07-background-apps/' | relative_url }}) → [Security/Services]({{ '/docs/08-services-and-security/' | relative_url }}) → [Diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }}) → [Thermals/Stability]({{ '/docs/10-temperatures-stability/' | relative_url }}).
 2. Apply only the CS2-specific items below that match your symptom.
-3. Validate with the [Benchmark template](../16-benchmark-templates.md).
+3. Validate with the [Benchmark template]({{ '/docs/16-benchmark-templates/' | relative_url }}).
 4. Keep only what improves your metrics without instability.
 
 ## Requirements & Compatibility
@@ -75,12 +75,12 @@ title: "cs2"
 
 | Symptom | First check | Link |
 |---|---|---|
-| Low FPS, GPU busy 95–99% | Lower Shader Detail, Shadows, Particle Detail, disable MSAA | [Bottleneck](../02-find-the-bottleneck.md) |
-| Low FPS, one CPU core 100% | Lower Particle Detail, disable multicore rendering test, close background | [Bottleneck](../02-find-the-bottleneck.md) |
-| Stutter on new maps/rounds | Shader pre-compilation, verify game files, SSD space | [Bottleneck](../02-find-the-bottleneck.md) |
-| Input latency feels high | Reflex On+Boost, `fps_max` cap, VRR profile, disable overlays | [GPU settings](../06-gpu-settings.md) |
-| Network latency / loss | `net_graph 1`, Steam region, Ethernet vs Wi-Fi | [Network diagnostics](../09-powershell-diagnostics.md#9-network) |
-| Crash on launch / "VAC unable to verify" | Verify integrity, disable overlays, check `-allow_third_party_software` | [Troubleshooting](../15-troubleshooting-decision-trees.md) |
+| Low FPS, GPU busy 95–99% | Lower Shader Detail, Shadows, Particle Detail, disable MSAA | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
+| Low FPS, one CPU core 100% | Lower Particle Detail, disable multicore rendering test, close background | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
+| Stutter on new maps/rounds | Shader pre-compilation, verify game files, SSD space | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
+| Input latency feels high | Reflex On+Boost, `fps_max` cap, VRR profile, disable overlays | [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }}) |
+| Network latency / loss | `net_graph 1`, Steam region, Ethernet vs Wi-Fi | [Network diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }}#9-network) |
+| Crash on launch / "VAC unable to verify" | Verify integrity, disable overlays, check `-allow_third_party_software` | [Troubleshooting]({{ '/docs/15-troubleshooting-decision-trees/' | relative_url }}) |
 | "Trusted Mode" blocks overlay | Disable overlay or use `-allow_third_party_software` knowingly | — |
 
 > CS2-specific: shader compilation on first launch / after driver update causes one-time stutter. Let it finish before benchmarking.
@@ -109,4 +109,4 @@ title: "cs2"
 
 > Mark each recommendation with: `verified` | `needs-verification` | `deprecated` and the date.
 
-Back to main guide: [README](../../README.md).
+Back to main guide: [README]({{ '/' | relative_url }}).
