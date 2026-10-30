@@ -1,11 +1,11 @@
----
+﻿---
 layout: doc
 title: "04-drivers-and-updates"
 ---
 
 # 04. Drivers and Updates
 
-> Drivers and updates do not provide “magic FPS,” but they ensure compatibility, stability, bug fixes, and proper hardware behavior. Always start with official sources, not driver packs, “boosters,” or random links.
+> Drivers and updates do not provide вЂњmagic FPS,вЂќ but they ensure compatibility, stability, bug fixes, and proper hardware behavior. Always start with official sources, not driver packs, вЂњboosters,вЂќ or random links.
 
 ## Core rule
 
@@ -19,7 +19,7 @@ Download drivers only from official websites:
 - SSD, Wi-Fi adapter, or peripheral vendor
 
 > [!WARNING]
-> Do not use Driver Booster, DriverPack, “auto-updaters,” or repackaged driver websites. They may install incorrect versions, adware, or unstable components.
+> Do not use Driver Booster, DriverPack, вЂњauto-updaters,вЂќ or repackaged driver websites. They may install incorrect versions, adware, or unstable components.
 
 ---
 
@@ -52,7 +52,7 @@ If your system is already configured and stable, you do not need to reinstall ev
 Open:
 
 ```text
-Settings → Windows Update
+Settings в†’ Windows Update
 ```
 
 Click:
@@ -75,7 +75,7 @@ Check version and source before installing, especially if:
 - you recently had graphics driver issues.
 
 > [!NOTE]
-> Do not permanently disable Windows Update for “optimization.” Updates include security, stability, and compatibility fixes. Optional driver updates from Windows Update are not always preferred over vendor drivers; review the source before applying, especially when the current GPU or chipset driver is stable.
+> Do not permanently disable Windows Update for вЂњoptimization.вЂќ Updates include security, stability, and compatibility fixes. Optional driver updates from Windows Update are not always preferred over vendor drivers; review the source before applying, especially when the current GPU or chipset driver is stable.
 
 ---
 
@@ -125,7 +125,7 @@ Pick the driver for your Radeon series and Windows version.
 
 Use Intel Graphics Software or official Intel Download Center.
 
-On laptops, if brightness, hybrid graphics, or sleep issues appear, try the laptop vendor’s driver first.
+On laptops, if brightness, hybrid graphics, or sleep issues appear, try the laptop vendorвЂ™s driver first.
 
 ---
 
@@ -163,13 +163,13 @@ Clean install is needed only for symptoms like:
 - black screens or artifacts after update;
 - driver control panel settings behave incorrectly;
 - game fails to launch due to legacy component conflicts;
-- you switched GPU vendor (AMD ↔ NVIDIA ↔ Intel).
+- you switched GPU vendor (AMD в†” NVIDIA в†” Intel).
 
 ### Try simple method first
 
 For NVIDIA, choose clean installation option if available in installer. For AMD, use Factory Reset only if you understand that driver settings will be reset.
 
-### DDU — only when truly needed
+### DDU вЂ” only when truly needed
 
 Display Driver Uninstaller fully removes GPU drivers. It can help with severe conflicts, but it is not required before every update.
 
@@ -182,7 +182,7 @@ If using DDU:
 5. Install driver from official source after cleanup.
 
 > [!WARNING]
-> Do not run DDU monthly “for FPS.” Frequent full driver removal is not optimization.
+> Do not run DDU monthly вЂњfor FPS.вЂќ Frequent full driver removal is not optimization.
 
 ### How to roll back a GPU driver
 
@@ -251,7 +251,7 @@ Before updating SSD firmware:
 1. Press `Win + X`.
 2. Open `Device Manager`.
 3. Check for devices with yellow warning icons.
-4. Open target device properties → `Driver` tab.
+4. Open target device properties в†’ `Driver` tab.
 
 ### GPU information via PowerShell
 
@@ -274,12 +274,12 @@ Select-Object WindowsProductName, WindowsVersion, OsBuildNumber
 
 ## 9. Optional vendor software
 
-Before installing, ask: “What exact benefit do I get from this app?”
+Before installing, ask: вЂњWhat exact benefit do I get from this app?вЂќ
 
 Often optional:
 
 - automatic driver updaters;
-- “gaming optimizers”;
+- вЂњgaming optimizersвЂќ;
 - duplicate overlays;
 - RAM cleaning tools;
 - always-on telemetry utilities;
@@ -314,6 +314,6 @@ Do not uninstall software until you understand its role. Disable startup first a
 
 ## Summary
 
-A stable baseline is more important than chasing every new version. Use official drivers, update components intentionally, perform clean installs only when needed, and keep the system free from unnecessary “helper” tools.
+A stable baseline is more important than chasing every new version. Use official drivers, update components intentionally, perform clean installs only when needed, and keep the system free from unnecessary вЂњhelperвЂќ tools.
 
-Next step: [Windows 11 tuning](05-windows-11.md).
+Next step: [Windows 11 tuning](05-windows-11.html).

@@ -1,11 +1,11 @@
----
+﻿---
 layout: doc
 title: "_template"
 ---
 
 # Game Page Template
 
-> Copy this file to `docs/games/<game-slug>.md` and fill in every section. Do not duplicate common base content — link to it.
+> Copy this file to `docs/games/<game-slug>.md` and fill in every section. Do not duplicate common base content вЂ” link to it.
 
 ## Applicability
 
@@ -19,9 +19,9 @@ title: "_template"
 
 ## Quick Start
 
-1. Complete the common base: [Preparation](../01-before-you-start.md) → [Bottleneck](../02-find-the-bottleneck.md) → [BIOS/Hardware](../03-bios-and-hardware.md) → [Drivers](../04-drivers-and-updates.md) → [Windows](../05-windows-11.md) → [GPU](../06-gpu-settings.md) → [Background](../07-background-apps.md) → [Security/Services](../08-services-and-security.md) → [Diagnostics](../09-powershell-diagnostics.md) → [Thermals/Stability](../10-temperatures-stability.md).
+1. Complete the common base: [Preparation](../01-before-you-start.html) в†’ [Bottleneck](../02-find-the-bottleneck.html) в†’ [BIOS/Hardware](../03-bios-and-hardware.html) в†’ [Drivers](../04-drivers-and-updates.html) в†’ [Windows](../05-windows-11.html) в†’ [GPU](../06-gpu-settings.html) в†’ [Background](../07-background-apps.html) в†’ [Security/Services](../08-services-and-security.html) в†’ [Diagnostics](../09-powershell-diagnostics.html) в†’ [Thermals/Stability](../10-temperatures-stability.html).
 2. Apply only the game-specific items below that match your symptom.
-3. Validate with the [Benchmark template](../16-benchmark-templates.md).
+3. Validate with the [Benchmark template](../16-benchmark-templates.html).
 4. Keep only what improves your metrics without instability.
 
 ## Requirements & Compatibility
@@ -30,13 +30,13 @@ title: "_template"
 - **OS / API requirements:** `Windows 10/11, DirectX 11/12/Vulkan, specific build if relevant`
 - **Known incompatibilities:** `overlays, injectors, specific drivers, OS features that break the game`
 
-## Graphics Settings — Tradeoffs
+## Graphics Settings вЂ” Tradeoffs
 
 | Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
 |---|---|---|---|---|
 | Resolution | | | | Native |
 | Render scale | | | | 100% |
-| Upscaler (DLSS/FSR/XeSS) | | | | Quality → Balanced |
+| Upscaler (DLSS/FSR/XeSS) | | | | Quality в†’ Balanced |
 | Anti-aliasing | | | | |
 | Shadows | | | | |
 | Reflections / RT | | | | |
@@ -67,11 +67,11 @@ title: "_template"
 
 | Symptom | First check | Link |
 |---|---|---|
-| Low FPS | | [Bottleneck](../02-find-the-bottleneck.md) |
-| Stutter / bad frametime | | [Bottleneck](../02-find-the-bottleneck.md) |
-| Input latency | | [GPU settings](../06-gpu-settings.md) |
-| Network latency / packet loss | | [Network diagnostics](../09-powershell-diagnostics.md#9-network) |
-| Crashes / launches fail | | [Troubleshooting](../15-troubleshooting-decision-trees.md) |
+| Low FPS | | [Bottleneck](../02-find-the-bottleneck.html) |
+| Stutter / bad frametime | | [Bottleneck](../02-find-the-bottleneck.html) |
+| Input latency | | [GPU settings](../06-gpu-settings.html) |
+| Network latency / packet loss | | [Network diagnostics](../09-powershell-diagnostics.html#9-network) |
+| Crashes / launches fail | | [Troubleshooting](../15-troubleshooting-decision-trees.html) |
 
 > Add game-specific failure modes (shader compilation stutter, asset streaming, specific anti-cheat launch failures).
 
@@ -79,7 +79,7 @@ title: "_template"
 
 - **Scene:** `workshop map / demo file / practice range / fixed route`
 - **Warm-up:** `seconds/minutes`
-- **Runs:** ≥3
+- **Runs:** в‰Ґ3
 - **Metrics:** avg FPS, 1% low, 0.1% low, p99 frametime, GPU busy, CPU core saturation, temps, WHEA
 - **Tools:** CapFrameX / PresentMon / HWiNFO / in-game benchmark
 
@@ -93,8 +93,8 @@ title: "_template"
 
 - Primary: `official patch notes, developer blog, vendor docs, support KB`
 - Secondary: `technical publications, vendor-adjacent testing`
-- Community: `forums, Reddit, videos — hypothesis only`
+- Community: `forums, Reddit, videos вЂ” hypothesis only`
 
 > Mark each recommendation with: `verified` | `needs-verification` | `deprecated` and the date.
 
-Back to main guide: [README](../../README.md).
+Back to main guide: [README](../../README.html).

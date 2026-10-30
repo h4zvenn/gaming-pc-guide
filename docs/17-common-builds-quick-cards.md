@@ -1,4 +1,4 @@
----
+﻿---
 layout: doc
 title: "17-common-builds-quick-cards"
 ---
@@ -11,7 +11,7 @@ title: "17-common-builds-quick-cards"
 
 1. Pick your platform card.
 2. Apply baseline settings only.
-3. Run benchmark from [16 Benchmark templates](16-benchmark-templates.md).
+3. Run benchmark from [16 Benchmark templates](16-benchmark-templates.html).
 4. Tune one setting at a time.
 
 ---
@@ -116,4 +116,4 @@ title: "17-common-builds-quick-cards"
 - [ ] No new crashes/WHEA/artifacts.
 - [ ] Keep only measurable gains.
 
-Back to main guide: [README](../README.md).
+Back to main guide: [README](../README.html).

@@ -1,17 +1,17 @@
----
+﻿---
 layout: doc
 title: "11-what-not-to-do"
 ---
 
 # 11. What Not to Do
 
-> Around Windows “optimization” there are many tips promising huge FPS gains with one command. In most cases, they either provide no measurable result or create stability, security, anti-cheat, update, and driver issues.
+> Around Windows вЂњoptimizationвЂќ there are many tips promising huge FPS gains with one command. In most cases, they either provide no measurable result or create stability, security, anti-cheat, update, and driver issues.
 
 ## Core principle
 
 If a tweak:
 
-- promises “+500 FPS”;
+- promises вЂњ+500 FPSвЂќ;
 - requires disabling dozens of services;
 - asks to run a large script as administrator;
 - removes Windows components;
@@ -21,7 +21,7 @@ If a tweak:
 do not apply it on your main PC.
 
 > [!IMPORTANT]
-> Good optimization means measurable results, stability, and rollback capability—not maximum number of disabled features.
+> Good optimization means measurable results, stability, and rollback capabilityвЂ”not maximum number of disabled features.
 
 ---
 
@@ -77,12 +77,12 @@ distributed in Discord, Telegram, YouTube descriptions/comments, file-sharing si
 
 ### Red flags
 
-- “Antivirus flags it because this tweak is powerful”;
-- “Disable Defender before running”;
-- “Don’t read code, just run it”;
-- “You must disable SmartScreen and UAC”;
-- “Guaranteed +300 FPS on any PC”;
-- “Do not update Windows after running this”.
+- вЂњAntivirus flags it because this tweak is powerfulвЂќ;
+- вЂњDisable Defender before runningвЂќ;
+- вЂњDonвЂ™t read code, just run itвЂќ;
+- вЂњYou must disable SmartScreen and UACвЂќ;
+- вЂњGuaranteed +300 FPS on any PCвЂќ;
+- вЂњDo not update Windows after running thisвЂќ.
 
 ---
 
@@ -104,7 +104,7 @@ UAC warns when an app requests admin rights. Disabling it makes unwanted changes
 
 Do not disable updates permanently. If updates interfere right now, use pause, active hours, or wait until download completes.
 
-More details: [Services and security](08-services-and-security.md).
+More details: [Services and security](08-services-and-security.html).
 
 ---
 
@@ -145,7 +145,7 @@ usually force memory data eviction.
 
 ### Why this can reduce smoothness
 
-Windows uses free RAM as cache. After aggressive “cleaning,” apps must reload data from disk, causing freezes/stutter.
+Windows uses free RAM as cache. After aggressive вЂњcleaning,вЂќ apps must reload data from disk, causing freezes/stutter.
 
 ### What to do instead
 
@@ -156,7 +156,7 @@ Windows uses free RAM as cache. After aggressive “cleaning,” apps must reloa
 
 ---
 
-## 6. Do not disable page file “because RAM is large”
+## 6. Do not disable page file вЂњbecause RAM is largeвЂќ
 
 Page file is used by Windows and some applications. Fully disabling it can cause:
 
@@ -170,7 +170,7 @@ Page file is used by Windows and some applications. Fully disabling it can cause
 For most users, best option is:
 
 ```text
-Page file → Automatically manage paging file size
+Page file в†’ Automatically manage paging file size
 ```
 
 Change manually only for a specific problem with clear understanding of consequences.
@@ -188,7 +188,7 @@ useplatformclock
 useplatformtick
 dynamictick
 timer resolution tweaks
-MSI mode “for all devices”
+MSI mode вЂњfor all devicesвЂќ
 ```
 
 ### Why
@@ -197,7 +197,7 @@ These are low-level settings dependent on Windows version, drivers, and hardware
 
 ### Correct approach
 
-- Do not apply commands based on someone else’s result.
+- Do not apply commands based on someone elseвЂ™s result.
 - Do not change multiple BCD parameters at once.
 - If already applied, restore defaults first and retest.
 - Do not present such commands as mandatory universal settings.
@@ -231,7 +231,7 @@ Do not copy values for:
 - GPU frequency;
 - undervolt curve;
 
-from someone else’s video or screenshot.
+from someone elseвЂ™s video or screenshot.
 
 Even identical CPU/GPU/RAM models have different stability margins.
 
@@ -250,7 +250,7 @@ If any of these appears, relax settings or return to stock.
 
 ---
 
-## 10. Do not edit registry for random “gaming tweaks”
+## 10. Do not edit registry for random вЂњgaming tweaksвЂќ
 
 Registry stores critical Windows and application settings.
 
@@ -261,7 +261,7 @@ Risky advice often suggests:
 - changing CPU/GPU priorities;
 - disabling system features;
 - setting unknown QoS values;
-- applying “input lag registry packs”.
+- applying вЂњinput lag registry packsвЂќ.
 
 ### Why this is risky
 
@@ -282,7 +282,7 @@ Risky advice often suggests:
 
 ---
 
-## 11. Do not trust “100% CPU/GPU usage fix” without understanding root cause
+## 11. Do not trust вЂњ100% CPU/GPU usage fixвЂќ without understanding root cause
 
 High GPU usage in a heavy game is usually normal: it means GPU is being utilized.
 
@@ -298,13 +298,13 @@ The problem is not the usage number itself, but:
 - RAM/VRAM shortage;
 - instability.
 
-First identify bottleneck: [Find the bottleneck](02-find-the-bottleneck.md).
+First identify bottleneck: [Find the bottleneck](02-find-the-bottleneck.html).
 
 ---
 
 ## 12. Do not evaluate result by one metric only
 
-“Average FPS increased by 3” does not always mean tweak is useful.
+вЂњAverage FPS increased by 3вЂќ does not always mean tweak is useful.
 
 Always evaluate together:
 
@@ -322,7 +322,7 @@ Example:
 ```text
 Average FPS: +2
 1% low: -15
-GPU temperature: +8°C
+GPU temperature: +8В°C
 Stutters appeared
 
 Result: better to rollback this tweak.
@@ -347,6 +347,6 @@ Result: better to rollback this tweak.
 
 ## Summary
 
-The most dangerous “optimizations” often look like quick and easy solutions. Real optimization is less flashy but safer: update drivers, use correct BIOS settings, reduce background load, monitor temperatures, identify bottlenecks, and measure results.
+The most dangerous вЂњoptimizationsвЂќ often look like quick and easy solutions. Real optimization is less flashy but safer: update drivers, use correct BIOS settings, reduce background load, monitor temperatures, identify bottlenecks, and measure results.
 
-Next step: [FAQ](12-faq.md).
+Next step: [FAQ](12-faq.html).

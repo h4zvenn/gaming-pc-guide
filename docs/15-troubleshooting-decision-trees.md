@@ -1,11 +1,11 @@
----
+﻿---
 layout: doc
 title: "15-troubleshooting-decision-trees"
 ---
 
 # 15. Troubleshooting Decision Trees
 
-> Fast path: find symptom → follow decision tree → test one fix at a time.
+> Fast path: find symptom в†’ follow decision tree в†’ test one fix at a time.
 
 ## How to use
 
@@ -87,7 +87,7 @@ flowchart TD
 
 Quick actions table:
 
-| If this happened after… | Do this first |
+| If this happened afterвЂ¦ | Do this first |
 |---|---|
 | Curve Optimizer / PBO tweak | Revert and test stock |
 | GPU undervolt | Relax curve or return default |
@@ -122,7 +122,7 @@ Quick actions table:
 
 ---
 
-## 5) “No change after optimization” tree
+## 5) вЂњNo change after optimizationвЂќ tree
 
 ```mermaid
 flowchart TD
@@ -142,4 +142,4 @@ flowchart TD
 - Do not apply unknown scripts.
 - Do not stack multiple changes without testing.
 
-Next step: [16 Benchmark templates](16-benchmark-templates.md).
+Next step: [16 Benchmark templates](16-benchmark-templates.html).

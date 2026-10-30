@@ -1,4 +1,4 @@
----
+﻿---
 layout: doc
 title: "07-background-apps"
 ---
@@ -45,7 +45,7 @@ This is especially noticeable on PCs with limited RAM, weaker CPUs, slower stora
    - GPU.
 4. Identify which app creates the load.
 
-Do not end a process if you do not know what it is. First right-click → `Open file location`, or search the app name.
+Do not end a process if you do not know what it is. First right-click в†’ `Open file location`, or search the app name.
 
 ### PowerShell: processes with highest total CPU time
 
@@ -74,7 +74,7 @@ Select-Object -First 20 Name, Id,
 Open:
 
 ```text
-Task Manager → Startup apps
+Task Manager в†’ Startup apps
 ```
 
 Disable apps that should not launch with Windows every boot.
@@ -90,7 +90,7 @@ Disable apps that should not launch with Windows every boot.
 - Spotify and similar apps;
 - browser helper apps;
 - automatic software updaters;
-- third-party “game booster” and “optimizer” apps.
+- third-party вЂњgame boosterвЂќ and вЂњoptimizerвЂќ apps.
 
 ### Do not disable blindly
 
@@ -126,7 +126,7 @@ This command shows what Windows tries to launch at sign-in.
 
 ## 4. Browser
 
-Modern browsers can consume significant RAM, CPU, GPU, and network—especially with video playback, streams, dozens of tabs, and many extensions.
+Modern browsers can consume significant RAM, CPU, GPU, and networkвЂ”especially with video playback, streams, dozens of tabs, and many extensions.
 
 Before gaming:
 
@@ -138,7 +138,7 @@ Before gaming:
 
 ### What not to do
 
-Do not disable browser hardware acceleration “for FPS” without reason. It can reduce or shift load to GPU depending on case; test only for specific browser/video/overlay issues.
+Do not disable browser hardware acceleration вЂњfor FPSвЂќ without reason. It can reduce or shift load to GPU depending on case; test only for specific browser/video/overlay issues.
 
 ---
 
@@ -272,7 +272,7 @@ Do not randomly terminate:
 - anti-cheat processes while gaming;
 - system processes named `Service Host` / `svchost.exe`.
 
-If a process constantly creates load, first identify which application owns it. See: [Services and security](08-services-and-security.md).
+If a process constantly creates load, first identify which application owns it. See: [Services and security](08-services-and-security.html).
 
 ---
 
@@ -290,6 +290,6 @@ If a process constantly creates load, first identify which application owns it. 
 
 ## Summary
 
-Background optimization is not about “killing everything in Task Manager.” Disable only what you understand, do not use, and can safely start later manually. Most useful actions are clean startup, paused downloads, closed video browser tabs, and minimal overlays.
+Background optimization is not about вЂњkilling everything in Task Manager.вЂќ Disable only what you understand, do not use, and can safely start later manually. Most useful actions are clean startup, paused downloads, closed video browser tabs, and minimal overlays.
 
-Next step: [Services and security](08-services-and-security.md).
+Next step: [Services and security](08-services-and-security.html).

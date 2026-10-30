@@ -1,4 +1,4 @@
----
+﻿---
 layout: doc
 title: "09-powershell-diagnostics"
 ---
@@ -146,7 +146,7 @@ Disable startup items via:
 Task Manager -> Startup apps -> Disable
 ```
 
-Related guide: [Background apps and startup](07-background-apps.md).
+Related guide: [Background apps and startup](07-background-apps.html).
 
 ---
 
@@ -208,7 +208,7 @@ Get-Service *audio* |
 Select-Object Status, Name, DisplayName
 ```
 
-Related guide: [Services and security](08-services-and-security.md).
+Related guide: [Services and security](08-services-and-security.html).
 
 ---
 
@@ -244,7 +244,7 @@ Test-Connection 1.1.1.1 -Count 10
 To measure latency to the server you actually play on:
 
 1. Identify the game server region or address from launcher/game logs.
-2. Run a short 5–10 minute latency and loss test toward that host.
+2. Run a short 5вЂ“10 minute latency and loss test toward that host.
 3. Record min/avg/max latency and packet loss.
 4. Repeat on Wi-Fi and Ethernet if you want to separate wireless noise from real network latency.
 
@@ -329,4 +329,4 @@ driverquery /v /fo csv | Out-File -Encoding utf8 "$env:USERPROFILE\Desktop\drive
 - [ ] Results are validated in-game (FPS, 1% low, frametime, stability).
 - [ ] Unknown processes/services are not modified blindly.
 
-Next step: [Temperatures, stability, and maintenance](10-temperatures-stability.md).
+Next step: [Temperatures, stability, and maintenance](10-temperatures-stability.html).

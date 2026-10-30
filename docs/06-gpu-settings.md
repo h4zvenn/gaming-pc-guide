@@ -1,4 +1,4 @@
----
+﻿---
 layout: doc
 title: "06-gpu-settings"
 ---
@@ -22,7 +22,7 @@ title: "06-gpu-settings"
 | Order | Action |
 |---|---|
 | 1 | Set in-game resolution/quality |
-| 2 | Pick upscaler mode (Quality → Balanced → Performance) |
+| 2 | Pick upscaler mode (Quality в†’ Balanced в†’ Performance) |
 | 3 | Set FPS cap for stable frametime |
 | 4 | Tune VRR/V-Sync behavior |
 | 5 | Apply only one driver tweak at a time |
@@ -85,12 +85,12 @@ Typical priority:
 Example:
 
 ```text
-System outputs 180–260 FPS but often drops to 165 FPS.
+System outputs 180вЂ“260 FPS but often drops to 165 FPS.
 A 165 or 170 FPS cap may provide smoother frametime than uncapped fluctuation.
 ```
 
 > [!NOTE]
-> There is no universal “perfect FPS cap.” It depends on monitor refresh rate, VRR, game behavior, system performance, and personal feel.
+> There is no universal вЂњperfect FPS cap.вЂќ It depends on monitor refresh rate, VRR, game behavior, system performance, and personal feel.
 
 ---
 
@@ -122,9 +122,9 @@ It helps smooth motion when FPS varies within monitor VRR range.
 | Goal | V-Sync | VRR | FPS cap | What to compare |
 |---|---|---|---|---|
 | Lowest latency | Off | Off | Test uncapped against a sustainable cap | p99 frametime, tearing, subjective input feel |
-| Smoothest motion | On in driver, off in game if the game has its own option | On | Slightly below the monitor’s maximum refresh | Frametime, VRR range, flicker, subjective smoothness |
+| Smoothest motion | On in driver, off in game if the game has its own option | On | Slightly below the monitorвЂ™s maximum refresh | Frametime, VRR range, flicker, subjective smoothness |
 
-These are test starting points, not universal settings. Confirm the monitor’s VRR range and the current driver behavior before keeping a profile.
+These are test starting points, not universal settings. Confirm the monitorвЂ™s VRR range and the current driver behavior before keeping a profile.
 
 > [!WARNING]
 > V-Sync/VRR/FPS-cap settings affect smoothness, tearing, and latency at the same time. There is no single best mode for every monitor and every game.
@@ -142,7 +142,7 @@ Globally, keep default in most cases.
 For a specific game with clock/power-saving behavior issues, you can test:
 
 ```text
-Power management mode → Prefer maximum performance
+Power management mode в†’ Prefer maximum performance
 ```
 
 Possible effects:
@@ -157,7 +157,7 @@ If the game supports NVIDIA Reflex, enable Reflex **inside the game**.
 
 Reflex lets the game manage render queue for lower system latency. This is usually preferable to forcing Low Latency Mode in driver.
 
-Do not enable Reflex and a forced driver Low Latency Mode at the same time without an A/B test. The combination can behave differently by game, and a subjective “snappier” feeling is not a latency measurement.
+Do not enable Reflex and a forced driver Low Latency Mode at the same time without an A/B test. The combination can behave differently by game, and a subjective вЂњsnappierвЂќ feeling is not a latency measurement.
 
 ### Low Latency Mode
 
@@ -165,9 +165,9 @@ If a game does not have Reflex, test Low Latency Mode in the driver profile.
 
 Modes can differ by driver version, but generally:
 
-- `Off` — default queue behavior;
-- `On` — limits pre-rendered frames;
-- `Ultra` — more aggressive queue minimization.
+- `Off` вЂ” default queue behavior;
+- `On` вЂ” limits pre-rendered frames;
+- `Ultra` вЂ” more aggressive queue minimization.
 
 Do not enable Low Latency Mode globally for all apps. Test per game.
 
@@ -175,7 +175,7 @@ Do not enable Low Latency Mode globally for all apps. Test per game.
 
 In game profile, test texture filtering quality mode.
 
-- `Quality` — reasonable default.
+- `Quality` вЂ” reasonable default.
 - Performance-priority mode can give a small gain on weak GPUs, but may degrade image quality.
 
 Do not change this without comparing image and FPS.
@@ -309,4 +309,4 @@ For artifacts, black screens, and crashes, return GPU to stock settings first. D
 
 Best GPU settings are not maximum number of enabled features, but a clear per-game profile. First determine whether system is GPU-bound or CPU-bound, then tune resolution, heavy effects, FPS cap, VRR/V-Sync, and upscaling technologies. Evaluate not only average FPS, but also frametime, 1% low, image quality, and latency.
 
-Next step: [Background apps and startup](07-background-apps.md).
+Next step: [Background apps and startup](07-background-apps.html).

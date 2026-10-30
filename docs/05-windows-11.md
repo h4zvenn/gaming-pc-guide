@@ -1,11 +1,11 @@
----
+﻿---
 layout: doc
 title: "05-windows-11"
 ---
 
 # 05. Windows 11 Tuning
 
-> The goal of Windows tuning is to reduce real background load, choose correct gaming options, and keep the system stable and secure. You do not need to disable dozens of services, Defender, or updates for questionable “FPS tweaks.”
+> The goal of Windows tuning is to reduce real background load, choose correct gaming options, and keep the system stable and secure. You do not need to disable dozens of services, Defender, or updates for questionable вЂњFPS tweaks.вЂќ
 
 ## Principles
 
@@ -34,13 +34,13 @@ title: "05-windows-11"
 Open:
 
 ```text
-Settings → Gaming → Game Mode
+Settings в†’ Gaming в†’ Game Mode
 ```
 
 Enable:
 
 ```text
-Game Mode → On
+Game Mode в†’ On
 ```
 
 Game Mode helps Windows prioritize gameplay and reduce impact from some background activity while gaming.
@@ -62,13 +62,13 @@ Game Mode helps Windows prioritize gameplay and reduce impact from some backgrou
 Open:
 
 ```text
-Settings → System → Power & battery
+Settings в†’ System в†’ Power & battery
 ```
 
 For desktop PCs, start with:
 
 ```text
-Power mode → Best performance
+Power mode в†’ Best performance
 ```
 
 Then compare idle power draw, temperature, and fan noise. Keep a higher power mode only if it produces a useful result for your workload; on an idle desktop it can increase power use without improving games.
@@ -101,7 +101,7 @@ powercfg /list
 Open:
 
 ```text
-Settings → System → Display → Graphics
+Settings в†’ System в†’ Display в†’ Graphics
 ```
 
 Here you can assign apps to a specific GPU and enable certain system gaming options.
@@ -131,7 +131,7 @@ This is especially relevant for laptops and systems with multiple GPUs.
 Open:
 
 ```text
-Settings → System → Display → Graphics → Change default graphics settings
+Settings в†’ System в†’ Display в†’ Graphics в†’ Change default graphics settings
 ```
 
 There may be an option:
@@ -157,7 +157,7 @@ It applies to modern games in windowed/borderless mode on Windows 11 22H2 and la
 HAGS is in the same section:
 
 ```text
-Settings → System → Display → Graphics → Change default graphics settings
+Settings в†’ System в†’ Display в†’ Graphics в†’ Change default graphics settings
 ```
 
 Option name:
@@ -183,7 +183,7 @@ HAGS is an optional test, not a default recommendation.
 Background: [Hardware Accelerated GPU Scheduling](https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling/).
 
 > [!IMPORTANT]
-> HAGS is not a mandatory “FPS boost.” Result depends on GPU, driver, game, and Windows version. Decide by your measurements, not someone else’s test.
+> HAGS is not a mandatory вЂњFPS boost.вЂќ Result depends on GPU, driver, game, and Windows version. Decide by your measurements, not someone elseвЂ™s test.
 
 ---
 
@@ -212,7 +212,7 @@ HDR can improve visuals in suitable games, but it is not a performance tweak. If
 Check:
 
 ```text
-Settings → System → Display → Advanced display
+Settings в†’ System в†’ Display в†’ Advanced display
 ```
 
 In `Choose a refresh rate`, select the highest stable value supported by monitor, cable, and GPU.
@@ -220,7 +220,7 @@ In `Choose a refresh rate`, select the highest stable value supported by monitor
 Example:
 
 ```text
-165 Hz monitor → Windows should be set to 165 Hz, not 60 Hz.
+165 Hz monitor в†’ Windows should be set to 165 Hz, not 60 Hz.
 ```
 
 > [!WARNING]
@@ -235,7 +235,7 @@ Notifications can distract, pull focus from game, and sometimes trigger extra ov
 Open:
 
 ```text
-Settings → System → Notifications
+Settings в†’ System в†’ Notifications
 ```
 
 Configure:
@@ -280,7 +280,7 @@ Check if you really need:
 Open:
 
 ```text
-Task Manager → Startup apps
+Task Manager в†’ Startup apps
 ```
 
 Disable startup apps that are not needed right after boot.
@@ -336,10 +336,10 @@ Do not disable without a clear reason:
 
 Some of these can have measurable impact in specific setups, but disabling them reduces security and may affect compatibility. First identify a concrete issue, create a restore point, and evaluate the tradeoff.
 
-Microsoft’s guidance for memory integrity and VBS is to keep the protection enabled unless there is a specific, understood reason to change it. See [Enable memory integrity](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity).
+MicrosoftвЂ™s guidance for memory integrity and VBS is to keep the protection enabled unless there is a specific, understood reason to change it. See [Enable memory integrity](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity).
 
 > [!WARNING]
-> Do not run `.reg`, `.bat`, or PowerShell scripts that mass-disable protections and system features. “More disabled” does not mean “better optimized.”
+> Do not run `.reg`, `.bat`, or PowerShell scripts that mass-disable protections and system features. вЂњMore disabledвЂќ does not mean вЂњbetter optimized.вЂќ
 
 ---
 
@@ -388,6 +388,6 @@ Select-Object -First 20 Name, Id, CPU, WorkingSet64
 
 ## Summary
 
-For most PCs, it is enough to enable Game Mode, verify power mode, refresh rate, graphics assignment, and remove truly unnecessary background apps. HAGS, windowed optimizations, VRR, and overlays should be tested on your own hardware—there is no universal best setup for every system.
+For most PCs, it is enough to enable Game Mode, verify power mode, refresh rate, graphics assignment, and remove truly unnecessary background apps. HAGS, windowed optimizations, VRR, and overlays should be tested on your own hardwareвЂ”there is no universal best setup for every system.
 
-Next step: [GPU settings](06-gpu-settings.md).
+Next step: [GPU settings](06-gpu-settings.html).

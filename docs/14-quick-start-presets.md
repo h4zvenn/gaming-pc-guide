@@ -1,4 +1,4 @@
----
+﻿---
 layout: doc
 title: "14-quick-start-presets"
 ---
@@ -11,7 +11,7 @@ title: "14-quick-start-presets"
 
 1. Pick the closest hardware tier.
 2. Apply only the listed steps.
-3. Benchmark with the template from [16 Benchmark templates](16-benchmark-templates.md).
+3. Benchmark with the template from [16 Benchmark templates](16-benchmark-templates.html).
 4. Keep only changes that improve FPS/1% low/frametime without instability.
 
 > [!IMPORTANT]
@@ -21,7 +21,7 @@ title: "14-quick-start-presets"
 
 ---
 
-## Preset A — Entry-level / older gaming PC
+## Preset A вЂ” Entry-level / older gaming PC
 
 ### Goal
 
@@ -46,7 +46,7 @@ Improve smoothness and 1% low without risky tuning.
 
 ---
 
-## Preset B — Mid-range gaming PC
+## Preset B вЂ” Mid-range gaming PC
 
 ### Goal
 
@@ -56,7 +56,7 @@ Balance visual quality and stable high FPS.
 
 | Step | Action | Why |
 |---|---|---|
-| 1 | Check XMP/EXPO is enabled and stable (see [03](03-bios-and-hardware.md)) | Avoid JEDEC baseline in CPU-limited scenes |
+| 1 | Check XMP/EXPO is enabled and stable (see [03](03-bios-and-hardware.html)) | Avoid JEDEC baseline in CPU-limited scenes |
 | 2 | Enable Above 4G + ReBAR (if supported) | Potential uplift in some titles |
 | 3 | Update chipset + stable GPU driver | Better compatibility/perf consistency |
 | 4 | Test HAGS and Windowed Optimizations | Keep whichever performs better |
@@ -65,16 +65,16 @@ Balance visual quality and stable high FPS.
 
 ### Do not do in this preset
 
-- No global “max performance” for all apps.
+- No global вЂњmax performanceвЂќ for all apps.
 - No all-in-one optimizer scripts.
 
 ---
 
-## Preset C — High-end / high-refresh target
+## Preset C вЂ” High-end / high-refresh target
 
 ### Goal
 
-Maximize consistency at high FPS (165–360 Hz class).
+Maximize consistency at high FPS (165вЂ“360 Hz class).
 
 ### Apply in this order
 
@@ -94,7 +94,7 @@ Maximize consistency at high FPS (165–360 Hz class).
 
 ---
 
-## Preset D — Gaming laptop (performance + thermals)
+## Preset D вЂ” Gaming laptop (performance + thermals)
 
 ### Goal
 
@@ -109,7 +109,7 @@ Keep stable FPS while controlling heat and noise.
 | 3 | Clean startup/background load | Preserve thermal budget |
 | 4 | Cap FPS to sustainable level | Lower heat spikes |
 | 5 | Check intake vents and surface | Prevent thermal choking |
-| 6 | Validate temps after 30–60 min session | Detect thermal fade |
+| 6 | Validate temps after 30вЂ“60 min session | Detect thermal fade |
 
 ### Do not do in this preset
 
@@ -118,14 +118,14 @@ Keep stable FPS while controlling heat and noise.
 
 ---
 
-## Fast “what preset should I choose?”
+## Fast вЂњwhat preset should I choose?вЂќ
 
-| If your problem is… | Start with |
+| If your problem isвЂ¦ | Start with |
 |---|---|
 | Low FPS in heavy scenes | Preset A or B |
 | Stutter after long sessions | Preset D or C |
-| Random crashes after tuning | Stop presets, run [10 Temperatures and stability](10-temperatures-stability.md) |
-| Unclear bottleneck | Start from [02 Find the bottleneck](02-find-the-bottleneck.md) |
+| Random crashes after tuning | Stop presets, run [10 Temperatures and stability](10-temperatures-stability.html) |
+| Unclear bottleneck | Start from [02 Find the bottleneck](02-find-the-bottleneck.html) |
 
 ---
 
@@ -137,4 +137,4 @@ Keep stable FPS while controlling heat and noise.
 - [ ] No new crashes/WHEA/BSOD.
 - [ ] Rolled back changes that made results worse.
 
-Next step: [15 Troubleshooting decision trees](15-troubleshooting-decision-trees.md).
+Next step: [15 Troubleshooting decision trees](15-troubleshooting-decision-trees.html).

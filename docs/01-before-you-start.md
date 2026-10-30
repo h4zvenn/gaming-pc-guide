@@ -1,4 +1,4 @@
----
+﻿---
 layout: doc
 title: "01-before-you-start"
 ---
@@ -44,7 +44,7 @@ A restore point helps roll back system settings, drivers, and some Windows chang
 2. Search for: `Create a restore point`.
 3. Open the matching result.
 4. Select the system drive, usually `C:`.
-5. If protection is off, click `Configure` → `Turn on system protection`.
+5. If protection is off, click `Configure` в†’ `Turn on system protection`.
 6. Click `Create`.
 7. Name the point, for example:
 
@@ -69,7 +69,7 @@ Even a powerful PC will not feel smooth on a 144/165/240 Hz monitor if Windows i
 ### How to verify
 
 1. Open `Settings`.
-2. Go to: `System → Display → Advanced display`.
+2. Go to: `System в†’ Display в†’ Advanced display`.
 3. Select the correct monitor if you use multiple displays.
 4. Set the highest stable refresh rate.
 
@@ -96,7 +96,7 @@ An overfilled system drive can hurt update installation, page file behavior, gam
 
 ### Recommendation
 
-Keep enough free space for updates, the page file, and game installs. A common starting point is 15–20% on the system drive, but the real limit depends on the SSD model, firmware, and workload. Watch for sustained write-speed drops and rising latency instead of treating one percentage as universal.
+Keep enough free space for updates, the page file, and game installs. A common starting point is 15вЂ“20% on the system drive, but the real limit depends on the SSD model, firmware, and workload. Watch for sustained write-speed drops and rising latency instead of treating one percentage as universal.
 
 ### Check using PowerShell
 
@@ -111,12 +111,12 @@ Select-Object Name,
 
 ### Output meaning
 
-- `Name` — drive letter
-- `UsedGB` — used space
-- `FreeGB` — free space
+- `Name` вЂ” drive letter
+- `UsedGB` вЂ” used space
+- `FreeGB` вЂ” free space
 
 > [!TIP]
-> Avoid questionable “registry cleaners” just to free space.
+> Avoid questionable вЂњregistry cleanersвЂќ just to free space.
 > Remove unused games, temporary files, old downloads, and software you do not use.
 
 ---
@@ -149,9 +149,9 @@ Before optimization, you need a clear picture of current behavior.
 1. Use one game or one benchmark.
 2. Do not change resolution, graphics settings, or driver between runs.
 3. Test the same scene.
-4. Warm up for 5–10 minutes, then run at least 3 passes.
-5. Report the median and the min–max range, not only the average or the best run.
-6. See [16 Benchmark templates](16-benchmark-templates.md) for metric definitions and the full protocol.
+4. Warm up for 5вЂ“10 minutes, then run at least 3 passes.
+5. Report the median and the minвЂ“max range, not only the average or the best run.
+6. See [16 Benchmark templates](16-benchmark-templates.html) for metric definitions and the full protocol.
 
 Sample note:
 
@@ -239,4 +239,4 @@ You now have:
 - Visibility into temperatures and likely issues
 - A way to compare each change reliably
 
-Next step: [Find the bottleneck: CPU, GPU, RAM, VRAM, SSD, or thermals](02-find-the-bottleneck.md).
+Next step: [Find the bottleneck: CPU, GPU, RAM, VRAM, SSD, or thermals](02-find-the-bottleneck.html).

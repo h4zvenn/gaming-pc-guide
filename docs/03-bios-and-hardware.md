@@ -1,4 +1,4 @@
----
+﻿---
 layout: doc
 title: "03-bios-and-hardware"
 ---
@@ -24,7 +24,7 @@ title: "03-bios-and-hardware"
 | Boot problems after tuning | Revert to defaults and validate stock stability |
 
 > [!IMPORTANT]
-> Do not update BIOS or change voltages “just because.” First make sure you actually need it and understand the rollback path.
+> Do not update BIOS or change voltages вЂњjust because.вЂќ First make sure you actually need it and understand the rollback path.
 
 ---
 
@@ -69,7 +69,7 @@ If the system is stable and the new version has no relevant fixes, updating is n
 ### Safe update sequence
 
 1. Confirm your exact motherboard or laptop model.
-2. Open the vendor’s **official** support page.
+2. Open the vendorвЂ™s **official** support page.
 3. Download BIOS only for your exact model and board revision.
 4. Read the vendor instructions: Q-Flash, M-Flash, EZ Flash, Instant Flash, or equivalent.
 5. Prepare a USB drive in the required format if needed.
@@ -85,7 +85,7 @@ If the system is stable and the new version has no relevant fixes, updating is n
 
 ## 3. XMP and EXPO: RAM configuration
 
-By default, RAM may run at JEDEC baseline instead of your kit’s advertised speed.
+By default, RAM may run at JEDEC baseline instead of your kitвЂ™s advertised speed.
 
 ### What to enable
 
@@ -127,7 +127,7 @@ What to do:
 2. Temporarily return RAM to `Auto` / JEDEC and test stability.
 3. Update BIOS only if its changelog lists memory-compatibility fixes for your configuration.
 4. Try a less aggressive profile or lower frequency if available.
-5. Do not copy other people’s timings/voltages without understanding them.
+5. Do not copy other peopleвЂ™s timings/voltages without understanding them.
 
 ---
 
@@ -136,8 +136,8 @@ What to do:
 On modern systems with a compatible CPU, GPU, motherboard, and driver, these are usually worth testing:
 
 ```text
-Above 4G Decoding → Enabled
-Resizable BAR / Re-Size BAR → Enabled
+Above 4G Decoding в†’ Enabled
+Resizable BAR / Re-Size BAR в†’ Enabled
 ```
 
 On AMD this may be called **Smart Access Memory**.
@@ -195,7 +195,7 @@ Force Gen3/Gen4 only for targeted troubleshooting:
 - compatibility issues;
 - rare errors/black screens that disappear on lower PCIe generation.
 
-Do not force Gen5/Gen4 for “free FPS” if `Auto` already selects maximum stable mode.
+Do not force Gen5/Gen4 for вЂњfree FPSвЂќ if `Auto` already selects maximum stable mode.
 
 ---
 
@@ -205,9 +205,9 @@ This is an optional advanced step, mostly relevant for some AMD Ryzen setups.
 
 ### What these settings mean
 
-- **PBO (Precision Boost Overdrive)** — changes power/current limits that govern automatic boost behavior.
-- **Curve Optimizer (CO)** — adjusts the voltage/frequency curve. Negative values can reduce required voltage and sometimes improve boost, but too much can cause errors.
-- **Manual all-core overclock** — locks/sets all-core frequency manually. On modern CPUs this can reduce automatic single-thread boost behavior.
+- **PBO (Precision Boost Overdrive)** вЂ” changes power/current limits that govern automatic boost behavior.
+- **Curve Optimizer (CO)** вЂ” adjusts the voltage/frequency curve. Negative values can reduce required voltage and sometimes improve boost, but too much can cause errors.
+- **Manual all-core overclock** вЂ” locks/sets all-core frequency manually. On modern CPUs this can reduce automatic single-thread boost behavior.
 
 ### Safe approach
 
@@ -222,7 +222,7 @@ This is an optional advanced step, mostly relevant for some AMD Ryzen setups.
 
 1. Press `Win`.
 2. Open `Event Viewer`.
-3. Go to `Windows Logs → System`.
+3. Go to `Windows Logs в†’ System`.
 4. Find events with source `WHEA-Logger`.
 
 > [!IMPORTANT]
@@ -260,9 +260,9 @@ Can be configured in BIOS, motherboard vendor software, or reliable monitoring t
 
 Principle:
 
-- at low temperature — moderate fan speed and low noise;
-- as temperature rises — smooth fan ramp;
-- avoid sharp jumps every 1–2 °C to prevent constant speed oscillation.
+- at low temperature вЂ” moderate fan speed and low noise;
+- as temperature rises вЂ” smooth fan ramp;
+- avoid sharp jumps every 1вЂ“2 В°C to prevent constant speed oscillation.
 
 ---
 
@@ -281,7 +281,7 @@ Without a specific reason, keep these on `Auto`:
 - random values in Advanced/AMD Overclocking sections.
 
 > [!TIP]
-> `Auto` is not a “bad setting.” For most systems, it is the safest and most correct default.
+> `Auto` is not a вЂњbad setting.вЂќ For most systems, it is the safest and most correct default.
 
 ---
 
@@ -309,4 +309,4 @@ Proper baseline BIOS setup is not maximum overclocking. For most gaming PCs, thi
 4. Keep complex voltages and frequencies on Auto.
 5. Verify temperatures, WHEA, and overall stability.
 
-Next step: [Drivers and updates](04-drivers-and-updates.md).
+Next step: [Drivers and updates](04-drivers-and-updates.html).

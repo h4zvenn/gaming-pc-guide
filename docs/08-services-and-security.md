@@ -1,11 +1,11 @@
----
+﻿---
 layout: doc
 title: "08-services-and-security"
 ---
 
 # 08. Services and Security
 
-> Disabling services is one of the most overrated and risky “optimization” methods. Most services consume almost nothing while idle, and mass disabling can break networking, audio, updates, anti-cheat, app installation, and Windows security.
+> Disabling services is one of the most overrated and risky вЂњoptimizationвЂќ methods. Most services consume almost nothing while idle, and mass disabling can break networking, audio, updates, anti-cheat, app installation, and Windows security.
 
 ## Core rule
 
@@ -26,13 +26,13 @@ Do not disable a service until you can answer three questions:
 | Update-related load | Pause/schedule updates, do not disable services |
 | Unknown service name | Research origin and file path first |
 
-Third-party tools that apply service, registry, or debloat changes — for example BoosterX background services, Hone registry optimizations, GTtwick, Sparkle, RyTuneX, Exoptimizer, and BRUTAL-FPS process tuning — must follow the same guardrails described here: one area at a time, keep a rollback path, and do not blanket-disable critical services or security protections.
+Third-party tools that apply service, registry, or debloat changes вЂ” for example BoosterX background services, Hone registry optimizations, GTtwick, Sparkle, RyTuneX, Exoptimizer, and BRUTAL-FPS process tuning вЂ” must follow the same guardrails described here: one area at a time, keep a rollback path, and do not blanket-disable critical services or security protections.
 
 ---
 
-## 1. Why “disable 100 services” is a bad idea
+## 1. Why вЂњdisable 100 servicesвЂќ is a bad idea
 
-Prebuilt debloat scripts, videos, and “unnecessary services” lists often ignore:
+Prebuilt debloat scripts, videos, and вЂњunnecessary servicesвЂќ lists often ignore:
 
 - Windows version;
 - desktop vs laptop usage;
@@ -116,7 +116,7 @@ If CPU/disk/RAM/network usage is high, do not jump straight into `services.msc`.
 Open:
 
 ```text
-Ctrl + Shift + Esc → Task Manager → Processes
+Ctrl + Shift + Esc в†’ Task Manager в†’ Processes
 ```
 
 Sort by:
@@ -131,7 +131,7 @@ Sort by:
 
 - Right-click the process.
 - Select `Open file location`.
-- Open `Properties` → `Digital Signatures`.
+- Open `Properties` в†’ `Digital Signatures`.
 - Identify app name and verify if it is needed.
 
 ### Step 3. Find related service
@@ -145,7 +145,7 @@ Services
 Or:
 
 ```text
-Win + R → services.msc
+Win + R в†’ services.msc
 ```
 
 Do not change startup type before understanding service relation to app or driver.
@@ -202,7 +202,7 @@ An exclusion means Defender will skip scanning that file/folder. Do not exclude:
 - unknown repositories/scripts;
 - pirated software;
 - browser folders;
-- everything “for performance.”
+- everything вЂњfor performance.вЂќ
 
 If a trusted game/tool truly conflicts with scanning, use the minimal required exclusion and prefer developer recommendations.
 
@@ -216,7 +216,7 @@ Windows Update and BITS handle updates, including security and driver updates.
 
 Instead of disabling services:
 
-1. Open `Settings → Windows Update`.
+1. Open `Settings в†’ Windows Update`.
 2. Pause updates briefly if needed.
 3. Configure active hours.
 4. Let updates complete after gaming.
@@ -297,7 +297,7 @@ Safe sequence:
 5. If app is unnecessary, uninstall it via:
 
     ```text
-    Settings → Apps → Installed apps
+    Settings в†’ Apps в†’ Installed apps
     ```
 
 6. Reboot and verify system behavior.
@@ -306,7 +306,7 @@ Do not manually remove services via registry/commands when normal app uninstall 
 
 ---
 
-## 10. Prebuilt debloat scripts and “optimizers”
+## 10. Prebuilt debloat scripts and вЂњoptimizersвЂќ
 
 Be especially careful with files like:
 
@@ -320,13 +320,13 @@ Be especially careful with files like:
 
 that promise:
 
-- “+500 FPS”;
-- “disable all telemetry”;
-- “reduce input lag with one click”;
-- “remove Windows bloat without side effects”;
-- “disable 200 unnecessary services”;
-- “fix ping”;
-- “optimize timers/HPET/BCD”.
+- вЂњ+500 FPSвЂќ;
+- вЂњdisable all telemetryвЂќ;
+- вЂњreduce input lag with one clickвЂќ;
+- вЂњremove Windows bloat without side effectsвЂќ;
+- вЂњdisable 200 unnecessary servicesвЂќ;
+- вЂњfix pingвЂќ;
+- вЂњoptimize timers/HPET/BCDвЂќ.
 
 Before running any script:
 
@@ -344,7 +344,7 @@ Before running any script:
 
 ## Checklist
 
-- [ ] Windows services are not disabled “by list.”
+- [ ] Windows services are not disabled вЂњby list.вЂќ
 - [ ] Under load, a specific process and owner are identified first.
 - [ ] Unnecessary third-party program is disabled from startup or uninstalled safely.
 - [ ] Defender, Firewall, UAC, Windows Update, and network services stay enabled.
@@ -356,6 +356,6 @@ Before running any script:
 
 ## Summary
 
-Services are not the place for mass “optimization.” If there is background load, identify the specific program and remove root cause: configure it, disable startup, or uninstall it. This preserves FPS, stability, anti-cheat compatibility, networking, and Windows security.
+Services are not the place for mass вЂњoptimization.вЂќ If there is background load, identify the specific program and remove root cause: configure it, disable startup, or uninstall it. This preserves FPS, stability, anti-cheat compatibility, networking, and Windows security.
 
-Next step: [PowerShell: diagnostics and checks](09-powershell-diagnostics.md).
+Next step: [PowerShell: diagnostics and checks](09-powershell-diagnostics.html).

@@ -1,4 +1,4 @@
----
+﻿---
 layout: doc
 title: "16-benchmark-templates"
 ---
@@ -44,10 +44,10 @@ If any of these change between runs, the comparison is invalid.
 ## 3. Run protocol
 
 1. Use the same scene, route, replay, or demo for every run.
-2. Warm up for 5–10 minutes so shaders and caches settle.
+2. Warm up for 5вЂ“10 minutes so shaders and caches settle.
 3. Run at least 3 passes; use 5 for noisy scenes or crowded multiplayer maps.
 4. Keep raw frametime logs, not only the summary screen.
-5. Report the median and the min–max range. Do not report only the best run.
+5. Report the median and the minвЂ“max range. Do not report only the best run.
 6. If the first run is visibly different because of shader compilation, mark it and exclude it consistently from both baseline and test.
 7. Do not change more than one experimental variable between baseline and test.
 
@@ -56,7 +56,7 @@ If any of these change between runs, the comparison is invalid.
 
 ---
 
-## 4. Template A — Quick A/B test (single tweak)
+## 4. Template A вЂ” Quick A/B test (single tweak)
 
 ```text
 Game / patch:
@@ -94,7 +94,7 @@ Reason:
 
 ---
 
-## 5. Template B — Multi-run table
+## 5. Template B вЂ” Multi-run table
 
 | Run | Avg FPS | 1% low | 0.1% low | p99 frametime | CPU Temp | GPU Temp | Notes |
 |---|---:|---:|---:|---:|---:|---:|---|
@@ -110,26 +110,26 @@ Reason:
 
 ---
 
-## 6. Template C — Session stability (30–60 minutes)
+## 6. Template C вЂ” Session stability (30вЂ“60 minutes)
 
 Use this when FPS drops over time.
 
 | Time mark | Avg FPS | 1% low | CPU Clock | GPU Clock | CPU Temp | GPU Temp | Stutter? |
 |---|---:|---:|---:|---:|---:|---:|---|
-| 0–5 min |  |  |  |  |  |  |  |
-| 15–20 min |  |  |  |  |  |  |  |
-| 30–35 min |  |  |  |  |  |  |  |
-| 45–50 min |  |  |  |  |  |  |  |
+| 0вЂ“5 min |  |  |  |  |  |  |  |
+| 15вЂ“20 min |  |  |  |  |  |  |  |
+| 30вЂ“35 min |  |  |  |  |  |  |  |
+| 45вЂ“50 min |  |  |  |  |  |  |  |
 
 Also record WHEA events and driver resets for the whole session.
 
 ---
 
-## 7. Template D — Input-latency and sync A/B
+## 7. Template D вЂ” Input-latency and sync A/B
 
 For Reflex/Anti-Lag/V-Sync/VRR/FPS-cap combinations.
 
-| Setup | Avg FPS | 1% low | p99 frametime | Tearing (yes/no) | Subjective input score (1–5) | Keep? |
+| Setup | Avg FPS | 1% low | p99 frametime | Tearing (yes/no) | Subjective input score (1вЂ“5) | Keep? |
 |---|---:|---:|---:|---|---:|---|
 | Base |  |  |  |  |  |  |
 | + Reflex/Anti-Lag |  |  |  |  |  |  |
@@ -139,7 +139,7 @@ For Reflex/Anti-Lag/V-Sync/VRR/FPS-cap combinations.
 > [!IMPORTANT]
 > Input latency in milliseconds requires a tool such as LDAT or NVIDIA Reflex Analyzer. Without one, mark the result as subjective and do not publish a millisecond claim.
 
-For a subjective comparison, hide which configuration is active, alternate A/B/A/B, and use the same scene. A 1–5 score is a preference, not a measurement.
+For a subjective comparison, hide which configuration is active, alternate A/B/A/B, and use the same scene. A 1вЂ“5 score is a preference, not a measurement.
 
 ---
 
@@ -148,7 +148,7 @@ For a subjective comparison, hide which configuration is active, alternate A/B/A
 | Result pattern | Decision |
 |---|---|
 | Improvement is inside the run-to-run range | Inconclusive; do not keep it as a proven gain |
-| Avg FPS +2, 1% low −10, more stutter | Rollback |
+| Avg FPS +2, 1% low в€’10, more stutter | Rollback |
 | Avg FPS unchanged, 1% low better, frametime smoother | Keep only if the change is repeatable |
 | Better FPS but crashes/WHEA/artifacts | Rollback immediately |
 | Better only in a benchmark, worse in the real game | Prefer the real-game result |
@@ -172,13 +172,13 @@ For every recommendation, record:
 - rollback path;
 - status: `verified`, `needs-verification`, or `deprecated`.
 
-Do not publish “up to +X% FPS” without your own reproducible measurement. Do not present a patch-specific behavior as a permanent rule.
+Do not publish вЂњup to +X% FPSвЂќ without your own reproducible measurement. Do not present a patch-specific behavior as a permanent rule.
 
-Third-party tool entries live in [18 Optimization tools evidence](18-optimization-tools-evidence.md).
+Third-party tool entries live in [18 Optimization tools evidence](18-optimization-tools-evidence.html).
 
 ---
 
-## 10. “Keep or rollback” checklist
+## 10. вЂњKeep or rollbackвЂќ checklist
 
 - [ ] Metrics and tool definitions are written down.
 - [ ] The same scene, patch, driver, settings, and overlays were used.
@@ -190,4 +190,4 @@ Third-party tool entries live in [18 Optimization tools evidence](18-optimizatio
 - [ ] Temperatures and noise remain acceptable.
 - [ ] The change has a documented rollback path.
 
-Back to main guide: [README](../README.md).
+Back to main guide: [README](../README.html).

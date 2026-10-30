@@ -1,9 +1,9 @@
----
+﻿---
 layout: doc
 title: "valorant"
 ---
 
-# VALORANT — Game Page (Stub)
+# VALORANT вЂ” Game Page (Stub)
 
 > Pilot expansion. Fill after source audit and template agreement.
 
@@ -19,8 +19,8 @@ title: "valorant"
 
 ## Quick Start
 
-1. Common base first (see [CS2 Quick Start](cs2.md#quick-start)).
-2. Vanguard requires TPM 2.0 + Secure Boot on Windows 11 — verify before BIOS changes.
+1. Common base first (see [CS2 Quick Start](cs2.html#quick-start)).
+2. Vanguard requires TPM 2.0 + Secure Boot on Windows 11 вЂ” verify before BIOS changes.
 3. Apply only VALORANT-specific items below.
 4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates/' | relative_url }}).
 
@@ -30,7 +30,7 @@ title: "valorant"
 - **OS / API requirements:** Windows 10 1909+ / Windows 11; DirectX 11.
 - **Known incompatibilities:** Some overlays and monitoring tools conflict with Vanguard. Test clean first.
 
-## Graphics Settings — Tradeoffs
+## Graphics Settings вЂ” Tradeoffs
 
 | Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
 |---|---|---|---|---|
@@ -55,7 +55,7 @@ title: "valorant"
 - **In-game FPS limiter:** Available (`Limit FPS` in Video settings).
 - **V-Sync:** In-game + driver. Competitive: off.
 - **VRR:** Supported. Test with V-Sync off (driver) + cap inside VRR range.
-- **NVIDIA Reflex:** Supported in-game (`Reflex Low Latency` → On / On+Boost).
+- **NVIDIA Reflex:** Supported in-game (`Reflex Low Latency` в†’ On / On+Boost).
 - **AMD Anti-Lag:** Driver fallback if Reflex unavailable.
 - **Raw Input Buffer:** In-game option (mouse raw input). Test.
 
@@ -69,8 +69,8 @@ title: "valorant"
 
 | Symptom | First check | Link |
 |---|---|---|
-| Vanguard error / not initialized | Secure Boot + TPM 2.0 enabled, Vanguard service running | — |
-| "VAN" error codes | Riot support KB for specific code | — |
+| Vanguard error / not initialized | Secure Boot + TPM 2.0 enabled, Vanguard service running | вЂ” |
+| "VAN" error codes | Riot support KB for specific code | вЂ” |
 | Low FPS, GPU not saturated | CPU-bound: lower Material/Texture/Detail, enable Multithreaded Rendering | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
 | Input latency | Reflex On+Boost, Raw Input Buffer on, cap FPS | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings/) |
 | Network spikes | Ethernet, Riot server region, background downloads | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics/#9-network) |
@@ -78,8 +78,8 @@ title: "valorant"
 ## Benchmark Scenario
 
 - **Scene:** Range (fixed bot count, fixed route) or custom game with bots.
-- **Warm-up:** 3–5 minutes.
-- **Runs:** ≥3.
+- **Warm-up:** 3вЂ“5 minutes.
+- **Runs:** в‰Ґ3.
 - **Metrics:** avg FPS, 1% low, p99 frametime, GPU busy, CPU core saturation, temps.
 
 ## Rollback
@@ -91,7 +91,7 @@ title: "valorant"
 ## Sources
 
 - Primary: Riot VALORANT patch notes, Vanguard FAQ, NVIDIA/AMD Reflex docs.
-- Secondary: —
-- Community: —
+- Secondary: вЂ”
+- Community: вЂ”
 
 Back to main guide: [README]({{ '/' | relative_url }}).

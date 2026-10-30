@@ -1,4 +1,4 @@
----
+﻿---
 layout: doc
 title: "10-temperatures-stability"
 ---
@@ -38,7 +38,7 @@ During gaming or benchmarking, track:
 
 | Symptom | First check |
 |---|---|
-| FPS drops over time | CPU/GPU temp + clocks after 30–60 min |
+| FPS drops over time | CPU/GPU temp + clocks after 30вЂ“60 min |
 | Fans suddenly loud | Thermal limit / fan curve / dust filters |
 | Random stutter under load | Hotspot/VRAM temp + power limit behavior |
 
@@ -50,7 +50,7 @@ Throttling is clock/performance reduction to stay within thermal, power, or othe
 
 ### Typical signs
 
-- FPS drops after 10–60 minutes of gaming;
+- FPS drops after 10вЂ“60 minutes of gaming;
 - temperature rises while CPU/GPU clocks decrease;
 - fans become very loud;
 - performance worsens in a hot room;
@@ -157,8 +157,8 @@ NVMe SSD can heat up during game installs, archive extraction, large copies, and
 
 Good airflow usually follows a simple pattern:
 
-- front/bottom case area — cool air intake;
-- rear/top area — hot air exhaust.
+- front/bottom case area вЂ” cool air intake;
+- rear/top area вЂ” hot air exhaust.
 
 ### Basic recommendations
 
@@ -216,7 +216,7 @@ Instability signs:
 - issues only in specific heavy games.
 
 > [!IMPORTANT]
-> If a setup “passes benchmark” but game crashes or WHEA appears, it is unstable. Relax settings or return to stock.
+> If a setup вЂњpasses benchmarkвЂќ but game crashes or WHEA appears, it is unstable. Relax settings or return to stock.
 
 ---
 
@@ -362,4 +362,4 @@ Stop experiments, back up important data, and run hardware diagnostics.
 
 A stable, clean, and properly cooled PC is more valuable than aggressive overclocking. First fix overheating, poor airflow, full SSD, and instability. Only then fine-tuning clocks, voltages, and fan curves makes sense.
 
-Next step: [What not to do](11-what-not-to-do.md).
+Next step: [What not to do](11-what-not-to-do.html).
