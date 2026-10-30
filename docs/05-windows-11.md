@@ -390,4 +390,4 @@ Select-Object -First 20 Name, Id, CPU, WorkingSet64
 
 For most PCs, it is enough to enable Game Mode, verify power mode, refresh rate, graphics assignment, and remove truly unnecessary background apps. HAGS, windowed optimizations, VRR, and overlays should be tested on your own hardwareвЂ”there is no universal best setup for every system.
 
-Next step: [GPU settings](06-gpu-settings.html).
+Next step: [GPU settings](06-gpu-settings.md).

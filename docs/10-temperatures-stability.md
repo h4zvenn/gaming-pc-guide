@@ -362,4 +362,4 @@ Stop experiments, back up important data, and run hardware diagnostics.
 
 A stable, clean, and properly cooled PC is more valuable than aggressive overclocking. First fix overheating, poor airflow, full SSD, and instability. Only then fine-tuning clocks, voltages, and fan curves makes sense.
 
-Next step: [What not to do](11-what-not-to-do.html).
+Next step: [What not to do](11-what-not-to-do.md).

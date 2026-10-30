@@ -272,7 +272,7 @@ Do not randomly terminate:
 - anti-cheat processes while gaming;
 - system processes named `Service Host` / `svchost.exe`.
 
-If a process constantly creates load, first identify which application owns it. See: [Services and security](08-services-and-security.html).
+If a process constantly creates load, first identify which application owns it. See: [Services and security](08-services-and-security.md).
 
 ---
 
@@ -292,4 +292,4 @@ If a process constantly creates load, first identify which application owns it. 
 
 Background optimization is not about вЂњkilling everything in Task Manager.вЂќ Disable only what you understand, do not use, and can safely start later manually. Most useful actions are clean startup, paused downloads, closed video browser tabs, and minimal overlays.
 
-Next step: [Services and security](08-services-and-security.html).
+Next step: [Services and security](08-services-and-security.md).

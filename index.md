@@ -69,4 +69,4 @@ See the documentation sidebar or browse all sections:
 
 ---
 
-[GitHub repository](https://github.com/h4zvenn/gaming-pc-guide) В· [Issues](https://github.com/h4zvenn/gaming-pc-guide/issues) В· [Discussions](https://github.com/h4zvenn/gaming-pc-guide/discussions) В· [CONTRIBUTING](CONTRIBUTING.html) В· [CHANGELOG](CHANGELOG.html) В· [LICENSE](LICENSE)
+[GitHub repository](https://github.com/h4zvenn/gaming-pc-guide) В· [Issues](https://github.com/h4zvenn/gaming-pc-guide/issues) В· [Discussions](https://github.com/h4zvenn/gaming-pc-guide/discussions) В· [CONTRIBUTING](CONTRIBUTING.md) В· [CHANGELOG](CHANGELOG.md) В· [LICENSE](LICENSE)

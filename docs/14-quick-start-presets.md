@@ -11,7 +11,7 @@ title: "14-quick-start-presets"
 
 1. Pick the closest hardware tier.
 2. Apply only the listed steps.
-3. Benchmark with the template from [16 Benchmark templates](16-benchmark-templates.html).
+3. Benchmark with the template from [16 Benchmark templates](16-benchmark-templates.md).
 4. Keep only changes that improve FPS/1% low/frametime without instability.
 
 > [!IMPORTANT]
@@ -56,7 +56,7 @@ Balance visual quality and stable high FPS.
 
 | Step | Action | Why |
 |---|---|---|
-| 1 | Check XMP/EXPO is enabled and stable (see [03](03-bios-and-hardware.html)) | Avoid JEDEC baseline in CPU-limited scenes |
+| 1 | Check XMP/EXPO is enabled and stable (see [03](03-bios-and-hardware.md)) | Avoid JEDEC baseline in CPU-limited scenes |
 | 2 | Enable Above 4G + ReBAR (if supported) | Potential uplift in some titles |
 | 3 | Update chipset + stable GPU driver | Better compatibility/perf consistency |
 | 4 | Test HAGS and Windowed Optimizations | Keep whichever performs better |
@@ -124,8 +124,8 @@ Keep stable FPS while controlling heat and noise.
 |---|---|
 | Low FPS in heavy scenes | Preset A or B |
 | Stutter after long sessions | Preset D or C |
-| Random crashes after tuning | Stop presets, run [10 Temperatures and stability](10-temperatures-stability.html) |
-| Unclear bottleneck | Start from [02 Find the bottleneck](02-find-the-bottleneck.html) |
+| Random crashes after tuning | Stop presets, run [10 Temperatures and stability](10-temperatures-stability.md) |
+| Unclear bottleneck | Start from [02 Find the bottleneck](02-find-the-bottleneck.md) |
 
 ---
 
@@ -137,4 +137,4 @@ Keep stable FPS while controlling heat and noise.
 - [ ] No new crashes/WHEA/BSOD.
 - [ ] Rolled back changes that made results worse.
 
-Next step: [15 Troubleshooting decision trees](15-troubleshooting-decision-trees.html).
+Next step: [15 Troubleshooting decision trees](15-troubleshooting-decision-trees.md).

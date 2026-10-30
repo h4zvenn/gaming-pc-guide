@@ -309,4 +309,4 @@ Proper baseline BIOS setup is not maximum overclocking. For most gaming PCs, thi
 4. Keep complex voltages and frequencies on Auto.
 5. Verify temperatures, WHEA, and overall stability.
 
-Next step: [Drivers and updates](04-drivers-and-updates.html).
+Next step: [Drivers and updates](04-drivers-and-updates.md).

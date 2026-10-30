@@ -277,8 +277,8 @@ Use this order:
 
 Do not apply every tweak from the guide at once. First find the real root cause, then go to the relevant section:
 
-- [BIOS and hardware](03-bios-and-hardware.html)
-- [Drivers and updates](04-drivers-and-updates.html)
-- [Windows 11](05-windows-11.html)
-- [GPU settings](06-gpu-settings.html)
-- [Temperatures and stability](10-temperatures-stability.html)
+- [BIOS and hardware](03-bios-and-hardware.md)
+- [Drivers and updates](04-drivers-and-updates.md)
+- [Windows 11](05-windows-11.md)
+- [GPU settings](06-gpu-settings.md)
+- [Temperatures and stability](10-temperatures-stability.md)

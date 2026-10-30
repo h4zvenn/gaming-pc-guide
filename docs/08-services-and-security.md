@@ -358,4 +358,4 @@ Before running any script:
 
 Services are not the place for mass вЂњoptimization.вЂќ If there is background load, identify the specific program and remove root cause: configure it, disable startup, or uninstall it. This preserves FPS, stability, anti-cheat compatibility, networking, and Windows security.
 
-Next step: [PowerShell: diagnostics and checks](09-powershell-diagnostics.html).
+Next step: [PowerShell: diagnostics and checks](09-powershell-diagnostics.md).

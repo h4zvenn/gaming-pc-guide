@@ -104,7 +104,7 @@ UAC warns when an app requests admin rights. Disabling it makes unwanted changes
 
 Do not disable updates permanently. If updates interfere right now, use pause, active hours, or wait until download completes.
 
-More details: [Services and security](08-services-and-security.html).
+More details: [Services and security](08-services-and-security.md).
 
 ---
 
@@ -298,7 +298,7 @@ The problem is not the usage number itself, but:
 - RAM/VRAM shortage;
 - instability.
 
-First identify bottleneck: [Find the bottleneck](02-find-the-bottleneck.html).
+First identify bottleneck: [Find the bottleneck](02-find-the-bottleneck.md).
 
 ---
 
@@ -349,4 +349,4 @@ Result: better to rollback this tweak.
 
 The most dangerous вЂњoptimizationsвЂќ often look like quick and easy solutions. Real optimization is less flashy but safer: update drivers, use correct BIOS settings, reduce background load, monitor temperatures, identify bottlenecks, and measure results.
 
-Next step: [FAQ](12-faq.html).
+Next step: [FAQ](12-faq.md).

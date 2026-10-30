@@ -11,9 +11,9 @@ title: "12-faq"
 
 | You wantвЂ¦ | Go to |
 |---|---|
-| Fast FPS gains safely | [14 Quick-start presets](14-quick-start-presets.html) |
-| Fix stutter/crash quickly | [15 Troubleshooting decision trees](15-troubleshooting-decision-trees.html) |
-| Prove tweaks actually work | [16 Benchmark templates](16-benchmark-templates.html) |
+| Fast FPS gains safely | [14 Quick-start presets](14-quick-start-presets.md) |
+| Fix stutter/crash quickly | [15 Troubleshooting decision trees](15-troubleshooting-decision-trees.md) |
+| Prove tweaks actually work | [16 Benchmark templates](16-benchmark-templates.md) |
 
 ## BIOS, CPU, and RAM
 
@@ -30,7 +30,7 @@ Update BIOS if:
 
 If your PC is stable and changelog has no useful fixes, update is optional.
 
-More details: [BIOS and hardware](03-bios-and-hardware.html).
+More details: [BIOS and hardware](03-bios-and-hardware.md).
 
 ---
 
@@ -158,7 +158,7 @@ Not via generic lists.
 
 Most services have near-zero idle FPS impact. If load exists, find the specific process and owning program, then fix root cause: disable startup, configure, or uninstall the app.
 
-More details: [Services and security](08-services-and-security.html).
+More details: [Services and security](08-services-and-security.md).
 
 ---
 
@@ -176,7 +176,7 @@ Some games/apps use page file even with large RAM. Fully disabling it can cause 
 
 BoosterX and Hone are third-party tools. Their own documentation states that an FPS increase is not guaranteed and depends on hardware, drivers, game settings and what limits performance.
 
-Treat such tools as proposed optimizations. See [18 Optimization tools evidence](18-optimization-tools-evidence.html) for the claim, documentation, test and license layers.
+Treat such tools as proposed optimizations. See [18 Optimization tools evidence](18-optimization-tools-evidence.md) for the claim, documentation, test and license layers.
 
 ### Why is GPU at 99% usage? Is it bad?
 
@@ -192,7 +192,7 @@ Game may be limited by one/few CPU threads while total all-core usage looks low.
 
 Check per-thread usage, background apps, RAM frequency, CPU temperature, and CPU-heavy in-game settings.
 
-More details: [Find the bottleneck](02-find-the-bottleneck.html).
+More details: [Find the bottleneck](02-find-the-bottleneck.md).
 
 ---
 
@@ -206,7 +206,7 @@ Both matter.
 
 High average FPS with bad 1% low can feel worse than slightly lower FPS with smooth frametime.
 
-The exact value depends on how the tool defines 1% low. Do not compare numbers from different tools; see [16 Benchmark templates](16-benchmark-templates.html).
+The exact value depends on how the tool defines 1% low. Do not compare numbers from different tools; see [16 Benchmark templates](16-benchmark-templates.md).
 
 ---
 
@@ -358,7 +358,7 @@ They can evict useful memory cache and worsen frametime. If RAM is insufficient,
 
 Script can modify services, registry, security, network, BCD, permissions, and system components. If you do not understand code and rollback path, you cannot safely verify/fix consequences.
 
-Use PowerShell primarily for diagnostics: [PowerShell: checks and diagnostics](09-powershell-diagnostics.html).
+Use PowerShell primarily for diagnostics: [PowerShell: checks and diagnostics](09-powershell-diagnostics.md).
 
 ---
 
@@ -382,4 +382,4 @@ Use PowerShell primarily for diagnostics: [PowerShell: checks and diagnostics](0
 
 Optimization is a sequential process: measure в†’ find bottleneck в†’ change one setting в†’ test в†’ keep or rollback. If there is no specific issue, do not chase risky tweaks: stable system, up-to-date drivers, proper cooling, and clean background already provide most of the result.
 
-Back to main page: [README](../README.html).
+Back to main page: [README](../README.md).

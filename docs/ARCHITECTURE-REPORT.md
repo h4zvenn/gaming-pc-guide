@@ -185,4 +185,4 @@ Counter-Strike 2 as the first page to validate template, navigation, evidence st
 5. Automate "no duplication" check in CI (diff vs common base).
 6. Add `bug_report.md` and `improvement.md` content.
 
-Back to main guide: [README](../README.html).
+Back to main guide: [README](../README.md).

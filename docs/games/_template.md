@@ -19,9 +19,9 @@ title: "_template"
 
 ## Quick Start
 
-1. Complete the common base: [Preparation](../01-before-you-start.html) в†’ [Bottleneck](../02-find-the-bottleneck.html) в†’ [BIOS/Hardware](../03-bios-and-hardware.html) в†’ [Drivers](../04-drivers-and-updates.html) в†’ [Windows](../05-windows-11.html) в†’ [GPU](../06-gpu-settings.html) в†’ [Background](../07-background-apps.html) в†’ [Security/Services](../08-services-and-security.html) в†’ [Diagnostics](../09-powershell-diagnostics.html) в†’ [Thermals/Stability](../10-temperatures-stability.html).
+1. Complete the common base: [Preparation](../01-before-you-start.md) в†’ [Bottleneck](../02-find-the-bottleneck.md) в†’ [BIOS/Hardware](../03-bios-and-hardware.md) в†’ [Drivers](../04-drivers-and-updates.md) в†’ [Windows](../05-windows-11.md) в†’ [GPU](../06-gpu-settings.md) в†’ [Background](../07-background-apps.md) в†’ [Security/Services](../08-services-and-security.md) в†’ [Diagnostics](../09-powershell-diagnostics.md) в†’ [Thermals/Stability](../10-temperatures-stability.md).
 2. Apply only the game-specific items below that match your symptom.
-3. Validate with the [Benchmark template](../16-benchmark-templates.html).
+3. Validate with the [Benchmark template](../16-benchmark-templates.md).
 4. Keep only what improves your metrics without instability.
 
 ## Requirements & Compatibility
@@ -67,11 +67,11 @@ title: "_template"
 
 | Symptom | First check | Link |
 |---|---|---|
-| Low FPS | | [Bottleneck](../02-find-the-bottleneck.html) |
-| Stutter / bad frametime | | [Bottleneck](../02-find-the-bottleneck.html) |
-| Input latency | | [GPU settings](../06-gpu-settings.html) |
-| Network latency / packet loss | | [Network diagnostics](../09-powershell-diagnostics.html#9-network) |
-| Crashes / launches fail | | [Troubleshooting](../15-troubleshooting-decision-trees.html) |
+| Low FPS | | [Bottleneck](../02-find-the-bottleneck.md) |
+| Stutter / bad frametime | | [Bottleneck](../02-find-the-bottleneck.md) |
+| Input latency | | [GPU settings](../06-gpu-settings.md) |
+| Network latency / packet loss | | [Network diagnostics](../09-powershell-diagnostics.md#9-network) |
+| Crashes / launches fail | | [Troubleshooting](../15-troubleshooting-decision-trees.md) |
 
 > Add game-specific failure modes (shader compilation stutter, asset streaming, specific anti-cheat launch failures).
 
@@ -97,4 +97,4 @@ title: "_template"
 
 > Mark each recommendation with: `verified` | `needs-verification` | `deprecated` and the date.
 
-Back to main guide: [README](../../README.html).
+Back to main guide: [README](../../README.md).

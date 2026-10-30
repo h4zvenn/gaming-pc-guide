@@ -316,4 +316,4 @@ Do not uninstall software until you understand its role. Disable startup first a
 
 A stable baseline is more important than chasing every new version. Use official drivers, update components intentionally, perform clean installs only when needed, and keep the system free from unnecessary вЂњhelperвЂќ tools.
 
-Next step: [Windows 11 tuning](05-windows-11.html).
+Next step: [Windows 11 tuning](05-windows-11.md).
