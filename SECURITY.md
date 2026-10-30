@@ -1,25 +1,28 @@
 # Security Policy
 
-## Supported Versions
+## 🛡️ Supported Versions
 
-This project is documentation-first. Security-relevant content is maintained on the `main` branch.
+This project is documentation-first. Security-relevant content and guide optimizations are maintained on the `main` branch.
 
-## Reporting a Vulnerability
+---
 
-If you find a security issue in guidance, scripts, or recommendations:
+## 🚨 Reporting a Vulnerability
 
-1. Do **not** post exploit details publicly.
-2. Open a GitHub issue with label `security` using the unified template, **or** contact the maintainer directly.
-3. Include:
-   - affected file/section,
-   - risk description,
-   - safer alternative.
+If you identify a security risk, dangerous tweak, or unsafe recommendation in the guide:
 
-## Scope
+1. **Do not post exploit details publicly.**
+2. Open a GitHub Issue using the unified template with the **`security`** label, or contact the maintainer directly.
+3. **Include the following in your report:**
+   - Affected file or section path.
+   - Description of the security/system risk.
+   - Safer alternative or proposed fix.
 
-Security reports are especially relevant for:
+---
 
-- unsafe optimization advice,
-- risky script usage,
-- disabling core protections (Defender/Firewall/UAC/Update) without clear warnings,
-- supply-chain risks in referenced tools.
+## 🔍 In-Scope Topics
+
+Security reports are critical for:
+
+* Unsafe optimization advice or risky script execution.
+* Disabling core protections (Defender, Firewall, UAC, Windows Update) without explicit warnings.
+* Supply-chain or malware risks in referenced third-party tools.

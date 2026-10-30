@@ -1,33 +1,40 @@
-# Contributing (Light)
+# Contributing Guidelines
 
-Thanks for improving this guide.
+Thanks for improving this guide! This repository prioritizes **safe, testable, and rollback-friendly** Windows 11 gaming optimizations.
 
-## Project standard
+---
 
-This repository prioritizes **safe, testable, rollback-friendly** Windows 11 gaming optimization.
+## 🎯 Contribution Principles
 
-## Keep contributions simple
+- **English Only:** All content and documentation must be in English.
+- **Tone:** Balanced technical precision with gamer-friendly language.
+- **Keep it Focused:** One clear change or topic per Pull Request (PR).
+- **Format:** Prefer short actionable steps, checklists, and clean tables.
 
-- English only.
-- Tone: **balanced tech + gamer**.
-- One clear change per PR.
-- Prefer short steps, checklists, and quick tables.
+---
 
-## Must-pass quality checks
+## ✅ Quality Criteria for PRs
 
-- Measurable (FPS / 1% low / frametime or clear behavior change).
-- Safe (no risky blanket tweaks).
-- Reversible (rollback path exists).
-- Compatible (no forced breakage for anti-cheat, updates, networking, drivers).
+Your contribution must meet the following checks:
 
-## Not accepted
+| Requirement | Description |
+|:---|:---|
+| 📊 **Measurable** | Supported by data (FPS, 1% low, frametimes, or clear behavior change). |
+| 🛡️ **Safe** | Free of risky blanket tweaks or destructive scripts. |
+| 🔄 **Reversible** | Clear rollback steps or restore point instructions included. |
+| ⚡ **Compatible** | No breakage for anti-cheat, Windows Update, network, or drivers. |
 
-- “Magic FPS” claims without proof.
-- Scripts that disable security/services blindly.
-- Advice to disable Defender/Firewall/UAC/Windows Update by default.
+---
 
-## Reporting issues
+## 🚫 What Is Not Accepted
 
-Use the unified template: `.github/ISSUE_TEMPLATE/general_issue.md`.
+- "Magic FPS" claims without benchmark evidence.
+- Scripts or tweaks that disable system security/services blindly.
+- Recommendations to turn off Defender, Firewall, UAC, or Windows Update by default.
 
-Do not post passwords, tokens, keys, serial numbers, or private data.
+---
+
+## 📬 Reporting Issues
+
+* Use the unified issue template: `.github/ISSUE_TEMPLATE/general_issue.md`.
+* **Privacy Check:** Never post passwords, tokens, API keys, serial numbers, or personal data.
