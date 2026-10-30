@@ -23,7 +23,7 @@ title: "minecraft-java"
 2. No kernel anti-cheat in singleplayer; server rules apply for multiplayer.
 3. Java runtime and launch arguments matter — test, do not copy "magic flags".
 4. Apply only Minecraft-specific items below.
-5. Validate with [Benchmark template](../16-benchmark-templates.md).
+5. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates/' | relative_url }}).
 
 ## Requirements & Compatibility
 
@@ -74,9 +74,9 @@ title: "minecraft-java"
 
 | Symptom | First check | Link |
 |---|---|---|
-| Low FPS, high CPU | Lower Render/Simulation Distance, disable shaders, test Sodium/Lithium | [Bottleneck](../02-find-the-bottleneck.md) |
-| Stutter every few seconds | GC spikes: check RAM allocation, try `-Xms=Xmx`, test G1GC/ZGC | [Bottleneck](../02-find-the-bottleneck.md) |
-| Chunk load stutter | Pre-generate chunks (Chunky), lower Render Distance, SSD | [Bottleneck](../02-find-the-bottleneck.md) |
+| Low FPS, high CPU | Lower Render/Simulation Distance, disable shaders, test Sodium/Lithium | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
+| Stutter every few seconds | GC spikes: check RAM allocation, try `-Xms=Xmx`, test G1GC/ZGC | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
+| Chunk load stutter | Pre-generate chunks (Chunky), lower Render Distance, SSD | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
 | Shader compile lag | Iris/OptiFine shader cache, pre-compile | — |
 | Mod crash / incompatibility | Check mod loader version (Forge/Fabric/NeoForge) matches Minecraft version; read mod changelogs | — |
 
@@ -101,4 +101,4 @@ title: "minecraft-java"
 - Secondary: Aikar's JVM flags (server-only — marked secondary), Prism/ATLauncher wikis.
 - Community: Reddit r/Minecraft, r/admincraft — hypothesis only.
 
-Back to main guide: [README](../../README.md).
+Back to main guide: [README]({{ '/' | relative_url }}).
