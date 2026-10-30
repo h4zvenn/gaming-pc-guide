@@ -74,9 +74,9 @@ title: "minecraft-java"
 
 | Symptom | First check | Link |
 |---|---|---|
-| Low FPS, high CPU | Lower Render/Simulation Distance, disable shaders, test Sodium/Lithium | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| Stutter every few seconds | GC spikes: check RAM allocation, try `-Xms=Xmx`, test G1GC/ZGC | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| Chunk load stutter | Pre-generate chunks (Chunky), lower Render Distance, SSD | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
+| Low FPS, high CPU | Lower Render/Simulation Distance, disable shaders, test Sodium/Lithium | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Stutter every few seconds | GC spikes: check RAM allocation, try `-Xms=Xmx`, test G1GC/ZGC | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Chunk load stutter | Pre-generate chunks (Chunky), lower Render Distance, SSD | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
 | Shader compile lag | Iris/OptiFine shader cache, pre-compile | — |
 | Mod crash / incompatibility | Check mod loader version (Forge/Fabric/NeoForge) matches Minecraft version; read mod changelogs | — |
 

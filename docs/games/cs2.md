@@ -75,12 +75,12 @@ title: "cs2"
 
 | Symptom | First check | Link |
 |---|---|---|
-| Low FPS, GPU busy 95–99% | Lower Shader Detail, Shadows, Particle Detail, disable MSAA | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| Low FPS, one CPU core 100% | Lower Particle Detail, disable multicore rendering test, close background | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| Stutter on new maps/rounds | Shader pre-compilation, verify game files, SSD space | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| Input latency feels high | Reflex On+Boost, `fps_max` cap, VRR profile, disable overlays | [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }}) |
-| Network latency / loss | `net_graph 1`, Steam region, Ethernet vs Wi-Fi | [Network diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }}#9-network) |
-| Crash on launch / "VAC unable to verify" | Verify integrity, disable overlays, check `-allow_third_party_software` | [Troubleshooting]({{ '/docs/15-troubleshooting-decision-trees/' | relative_url }}) |
+| Low FPS, GPU busy 95–99% | Lower Shader Detail, Shadows, Particle Detail, disable MSAA | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Low FPS, one CPU core 100% | Lower Particle Detail, disable multicore rendering test, close background | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Stutter on new maps/rounds | Shader pre-compilation, verify game files, SSD space | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Input latency feels high | Reflex On+Boost, `fps_max` cap, VRR profile, disable overlays | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings/) |
+| Network latency / loss | `net_graph 1`, Steam region, Ethernet vs Wi-Fi | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics/#9-network) |
+| Crash on launch / "VAC unable to verify" | Verify integrity, disable overlays, check `-allow_third_party_software` | [Troubleshooting]({{ site.baseurl }}/docs/15-troubleshooting-decision-trees/) |
 | "Trusted Mode" blocks overlay | Disable overlay or use `-allow_third_party_software` knowingly | — |
 
 > CS2-specific: shader compilation on first launch / after driver update causes one-time stutter. Let it finish before benchmarking.

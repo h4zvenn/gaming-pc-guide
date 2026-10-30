@@ -68,10 +68,10 @@ title: "world-of-tanks"
 | Symptom | First check | Link |
 |---|---|---|
 | "Game integrity check failed" | Remove mods, verify files via WGC/Steam | — |
-| Low FPS, GPU-bound | Lower Render Scale, Particle Quality, Water, Post-Processing | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| Low FPS, CPU-bound | Lower Grass, View Distance, Shadows | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| Stutter in battle | Texture streaming, SSD space, background downloads | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| High ping / packet loss | Server region, Ethernet, background traffic | [Network diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }}#9-network) |
+| Low FPS, GPU-bound | Lower Render Scale, Particle Quality, Water, Post-Processing | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Low FPS, CPU-bound | Lower Grass, View Distance, Shadows | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Stutter in battle | Texture streaming, SSD space, background downloads | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| High ping / packet loss | Server region, Ethernet, background traffic | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics/#9-network) |
 
 ## Benchmark Scenario
 

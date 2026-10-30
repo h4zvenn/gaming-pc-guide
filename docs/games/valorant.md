@@ -71,9 +71,9 @@ title: "valorant"
 |---|---|---|
 | Vanguard error / not initialized | Secure Boot + TPM 2.0 enabled, Vanguard service running | — |
 | "VAN" error codes | Riot support KB for specific code | — |
-| Low FPS, GPU not saturated | CPU-bound: lower Material/Texture/Detail, enable Multithreaded Rendering | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| Input latency | Reflex On+Boost, Raw Input Buffer on, cap FPS | [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }}) |
-| Network spikes | Ethernet, Riot server region, background downloads | [Network diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }}#9-network) |
+| Low FPS, GPU not saturated | CPU-bound: lower Material/Texture/Detail, enable Multithreaded Rendering | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Input latency | Reflex On+Boost, Raw Input Buffer on, cap FPS | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings/) |
+| Network spikes | Ethernet, Riot server region, background downloads | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics/#9-network) |
 
 ## Benchmark Scenario
 

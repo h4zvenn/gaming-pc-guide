@@ -99,12 +99,14 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 **Quick rules:**
+
 - Evidence-based only (benchmarks required)
 - Safe and reversible changes
 - No snake oil / "magic FPS" claims
 - English language
 
 ---
+
 
 ## Project Status
 

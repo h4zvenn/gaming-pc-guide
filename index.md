@@ -32,11 +32,11 @@ title: Home
 
 | Symptom | Start with |
 |---|---|
-| Low FPS | [Find bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) → [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }}) |
-| Stutter / bad frametime | [Find bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) → [Temperatures]({{ '/docs/10-temperatures-stability/' | relative_url }}) |
-| Input lag | [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }}) → [Diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }}) |
-| Network lag / ping | [Diagnostics / network]({{ '/docs/09-powershell-diagnostics/' | relative_url }}#9-network) |
-| Crash / freeze | [Troubleshooting trees]({{ '/docs/15-troubleshooting-decision-trees/' | relative_url }}) |
+| Low FPS | [Find bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) → [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings/) |
+| Stutter / bad frametime | [Find bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) → [Temperatures]({{ site.baseurl }}/docs/10-temperatures-stability/) |
+| Input lag | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings/) → [Diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics/) |
+| Network lag / ping | [Diagnostics / network]({{ site.baseurl }}/docs/09-powershell-diagnostics/#9-network) |
+| Crash / freeze | [Troubleshooting trees]({{ site.baseurl }}/docs/15-troubleshooting-decision-trees/) |
 
 ## Available game guides
 

@@ -72,10 +72,10 @@ title: "pubg"
 | Symptom | First check | Link |
 |---|---|---|
 | BattlEye initialization failed | Verify game files, reinstall BattlEye via launcher | — |
-| Low FPS, CPU-bound | Lower View Distance, Foliage, Effects; test DX12 | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| Stutter on new areas | Texture streaming, SSD space, shader cache | [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) |
-| Input latency | FPS cap, disable V-Sync, test DX12 | [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }}) |
-| Network desync / high ping | Region selection, Ethernet, background traffic | [Network diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }}#9-network) |
+| Low FPS, CPU-bound | Lower View Distance, Foliage, Effects; test DX12 | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Stutter on new areas | Texture streaming, SSD space, shader cache | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Input latency | FPS cap, disable V-Sync, test DX12 | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings/) |
+| Network desync / high ping | Region selection, Ethernet, background traffic | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics/#9-network) |
 
 ## Benchmark Scenario
 
