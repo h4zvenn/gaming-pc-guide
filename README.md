@@ -37,14 +37,18 @@ Use it if you want to:
 
 Do not apply all tweaks at once. Follow this order:
 
-1. **Preparation:** create a restore point and record baseline FPS/temperatures.
-2. **Diagnostics:** identify what limits performance — CPU, GPU, RAM, VRAM, SSD, thermals, or background apps.
-3. **Baseline:** verify BIOS, XMP/EXPO, ReBAR, drivers, monitor refresh rate, and Windows settings.
-4. **Targeted tuning:** change only settings related to the detected issue.
-5. **Validation:** compare FPS, 1% low, frametime, temperatures, and stability.
+1. **Start with safe baseline actions (required):** [Preparation](docs/01-before-you-start.md#before-you-change-anything) and [Find the bottleneck](docs/02-find-the-bottleneck.md).
+2. **Confirm platform baseline (required):** [Drivers and updates](docs/04-drivers-and-updates.md) and [Windows 11 tuning](docs/05-windows-11.md).
+3. **Apply targeted changes (only if relevant):** [GPU settings](docs/06-gpu-settings.md), [Background apps](docs/07-background-apps.md), [Temperatures and stability](docs/10-temperatures-stability.md).
+4. **Use optional advanced sections only when needed:** [BIOS and hardware](docs/03-bios-and-hardware.md), [Security hardening baseline](docs/13-security-hardening-baseline.md), [Common builds quick cards](docs/17-common-builds-quick-cards.md).
+5. **Validate results:** [Testing results template](docs/16-benchmark-templates.md#testing-results).
 
 > [!IMPORTANT]
 > Change **one setting at a time**. If you apply ten tweaks at once, it is impossible to know what helped and what caused issues.
+
+> [!NOTE]
+> BIOS updates, overclocking, undervolting, and similar advanced changes are **not mandatory** for every user.
+> Use them only if your issue clearly requires them and you have a rollback plan.
 
 ### 🎮 Quick start by PC tier
 

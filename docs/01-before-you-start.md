@@ -29,6 +29,41 @@ Before optimization:
 
 ---
 
+## Before you change anything
+
+Use this as a mandatory pre-change checklist:
+
+- Record your current settings and baseline metrics before editing anything.
+- Save a copy of every config file before you modify it.
+- Define rollback steps in advance for each planned change.
+- Apply one change at a time, then test and log results.
+
+### Baseline log (minimum)
+
+- Windows version/build
+- Game + scene/benchmark used for testing
+- Resolution and graphics settings
+- Driver version(s)
+- Baseline metrics relevant to your issue (FPS/frametime only when relevant)
+
+### Config backup examples
+
+- Export game config or profile files to a dated backup folder.
+- Copy current GPU profile/settings before changing global options.
+- Save BIOS values you plan to modify as photos/notes first.
+
+### Rollback planning rules
+
+- For each tweak, write: what changed, where, and exact rollback steps.
+- Do not rely only on memory when changing multiple areas.
+- Do not queue multiple untested changes.
+
+> [!WARNING]
+> A Windows restore point is not a full backup of your files.
+> It also does not roll back BIOS settings.
+
+---
+
 ## 1. Create a restore point
 
 A restore point helps roll back system settings, drivers, and some Windows changes if optimization causes errors, stutter, or app launch issues.

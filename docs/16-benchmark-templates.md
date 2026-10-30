@@ -12,6 +12,24 @@
 
 ---
 
+## Testing results
+
+Use this empty table to document each change.
+
+| Change | Test conditions | Before | After | Keep / Revert | Notes |
+|---|---|---|---|---|---|
+|  |  |  |  |  |  |
+
+### How to compare correctly
+
+- Compare before/after only under the same conditions.
+- Always specify game, scene/benchmark, graphics settings, and test conditions.
+- Do not make decisions from one lucky run; confirm with repeatable passes.
+- Include FPS and frametime only when those metrics are relevant to the tested change.
+- Do not insert invented numbers.
+
+---
+
 ## Template A — Quick A/B test (single tweak)
 
 Copy this block:
