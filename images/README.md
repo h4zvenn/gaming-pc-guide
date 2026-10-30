@@ -31,5 +31,5 @@ Use lowercase kebab-case:
 ## Markdown usage example
 
 ```markdown
-![Quick start flow](images/quick-start-flow.webp)
+Example (file may not exist yet): markdown image link to quick-start-flow.webp
 ```

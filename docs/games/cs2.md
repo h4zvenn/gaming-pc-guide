@@ -104,4 +104,4 @@
 
 > Mark each recommendation with: `verified` | `needs-verification` | `deprecated` and the date.
 
-Back to main guide: [README](../README.md).
+Back to main guide: [README](../../README.md).

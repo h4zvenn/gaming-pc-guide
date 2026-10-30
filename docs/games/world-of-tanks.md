@@ -14,7 +14,7 @@
 
 ## Quick Start
 
-1. Common base first (see [CS2 Quick Start](../cs2.md#quick-start)).
+1. Common base first (see [CS2 Quick Start](cs2.md#quick-start)).
 2. Mods only from officially allowed sources (Wargaming Mod Hub). XVM and others — verify current policy.
 3. Apply only WoT-specific items below.
 4. Validate with [Benchmark template](../16-benchmark-templates.md).
@@ -87,4 +87,4 @@
 - Secondary: —
 - Community: —
 
-Back to main guide: [README](../README.md).
+Back to main guide: [README](../../README.md).

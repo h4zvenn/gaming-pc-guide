@@ -14,7 +14,7 @@
 
 ## Quick Start
 
-1. Common base first (see [CS2 Quick Start](../cs2.md#quick-start)).
+1. Common base first (see [CS2 Quick Start](cs2.md#quick-start)).
 2. BattlEye: do not modify game files, do not inject, do not disable its service.
 3. Apply only PUBG-specific items below.
 4. Validate with [Benchmark template](../16-benchmark-templates.md).
@@ -92,4 +92,4 @@
 - Secondary: —
 - Community: —
 
-Back to main guide: [README](../README.md).
+Back to main guide: [README](../../README.md).
