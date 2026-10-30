@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "18-optimization-tools-evidence"
+---
+
 # 18. Third-Party Optimization Tools: Evidence
 
 > A third-party tool can publish a claim, publish documentation, and publish code. Independent testing confirms the effect. The guide needs all three layers before citing an FPS or latency number.

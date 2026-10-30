@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "13-security-hardening-baseline"
+---
+
 # 13) Security Hardening Baseline (Gaming PC, Windows 11)
 
 > Goal: improve real security with minimal FPS impact and keep system compatibility for games, anti-cheat, and updates.

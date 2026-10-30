@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "world-of-tanks"
+---
+
 # World of Tanks — Game Page (Stub)
 
 > Pilot expansion. Fill after source audit and template agreement.

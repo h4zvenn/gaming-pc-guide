@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "02-find-the-bottleneck"
+---
+
 # 02. Finding the Bottleneck
 
 > Before changing BIOS options, Windows settings, or driver parameters, identify what actually limits performance: CPU, GPU, memory, storage, thermals, or background load.

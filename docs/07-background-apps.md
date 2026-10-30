@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "07-background-apps"
+---
+
 # 07. Background Apps and Startup
 
 > The safest way to reduce unnecessary load is to remove unneeded startup apps and close heavy tasks before gaming. Do not randomly kill system processes or disable Windows services.

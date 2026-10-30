@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "16-benchmark-templates"
+---
+
 # 16. Benchmark Templates and Measurement Rules
 
 > If it is not measured, it is not optimization.

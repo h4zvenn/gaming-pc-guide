@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "12-faq"
+---
+
 # 12. FAQ
 
 > Short answers to common questions about Windows and gaming PC optimization. If an answer depends on hardware, Windows version, or a specific game, test on your own system.

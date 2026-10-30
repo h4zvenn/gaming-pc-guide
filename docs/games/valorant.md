@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "valorant"
+---
+
 # VALORANT — Game Page (Stub)
 
 > Pilot expansion. Fill after source audit and template agreement.

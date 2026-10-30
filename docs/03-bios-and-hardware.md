@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "03-bios-and-hardware"
+---
+
 # 03. BIOS and Hardware
 
 > BIOS settings and correct hardware configuration can noticeably affect stability, boot time, 1% low, and gaming performance. Incorrect settings can also cause crashes, WHEA errors, and boot failures.

@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "cs2"
+---
+
 # Counter-Strike 2 (CS2) — Pilot Game Page
 
 > Pilot page for the game-section architecture. Keep only deltas; link to common base for everything else.

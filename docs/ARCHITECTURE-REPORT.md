@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "ARCHITECTURE-REPORT"
+---
+
 # Architecture Report: Common Base + Game Sections
 
 > First report per specification. Covers tree, matrix, pilot plan, readiness criteria.

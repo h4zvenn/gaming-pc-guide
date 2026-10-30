@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "_template"
+---
+
 # Game Page Template
 
 > Copy this file to `docs/games/<game-slug>.md` and fill in every section. Do not duplicate common base content — link to it.

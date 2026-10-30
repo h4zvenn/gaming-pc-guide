@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "04-drivers-and-updates"
+---
+
 # 04. Drivers and Updates
 
 > Drivers and updates do not provide “magic FPS,” but they ensure compatibility, stability, bug fixes, and proper hardware behavior. Always start with official sources, not driver packs, “boosters,” or random links.

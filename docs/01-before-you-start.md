@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "01-before-you-start"
+---
+
 # 01. Preparation Before Optimization
 
 > Do not start with disabling services, registry edits, or overclocking.

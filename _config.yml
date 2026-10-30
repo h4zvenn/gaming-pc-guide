@@ -1,0 +1,30 @@
+title: Windows 11 Gaming PC Optimization Guide
+description: Practical guide for tuning a Windows 11 gaming PC: find the real bottleneck, change one setting at a time, benchmark, keep or rollback.
+baseurl: ""
+url: "https://h4zvenn.github.io"
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Exclude from build
+exclude:
+  - .git
+  - .github
+  - .markdownlint-cli2.jsonc
+  - README.md
+  - CHANGELOG.md
+  - CONTRIBUTING.md
+  - LICENSE
+  - SECURITY.md
+  - node_modules
+  - vendor
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "docs"
+    values:
+      layout: doc
