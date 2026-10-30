@@ -8,7 +8,7 @@
 
 [![Platform](https://img.shields.io/badge/Platform-Windows%2011-0078D4?style=flat-square&logo=windows)](#)
 [![Language](https://img.shields.io/badge/Language-English-4CAF50?style=flat-square)](#)
-[![License](https://img.shields.io/badge/License-Add%20license-orange?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 ---
 
@@ -86,6 +86,11 @@ Do not apply all tweaks at once. Follow this order:
 - Contribution rules: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Open issue template: [General issue](.github/ISSUE_TEMPLATE/general_issue.md)
 - New issue page: `https://github.com/h4zvenn/gaming-pc-optimization-ru/issues/new/choose`
+
+## 🗂️ Project meta
+
+- Changelog: [CHANGELOG.md](CHANGELOG.md)
+- License: [MIT](LICENSE)
 
 ---
 
