@@ -4,7 +4,7 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 
 **No** custom Windows builds • **No** mass service disabling • **No** "FPS boost" scripts
 
-[🌐 Live Site](https://h4zvenn.github.io/gaming-pc-guide/) • ![Platform](https://img.shields.io/badge/Platform-Windows%2011-0078D4?style=flat-square&logo=windows) • [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE) • [![CI](https://img.shields.io/badge/CI-passing-green?style=flat-square)](.github/workflows/docs-quality.yml)
+[![Read Online](https://img.shields.io/badge/🌐_Read_Online-h4zvenn.github.io-0078D4?style=flat-square)](https://h4zvenn.github.io/gaming-pc-guide/) ![Platform](https://img.shields.io/badge/Platform-Windows%2011-0078D4?style=flat-square&logo=windows) [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE) [![CI](https://img.shields.io/badge/CI-passing-green?style=flat-square)](.github/workflows/docs-quality.yml)
 
 ---
 
