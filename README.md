@@ -83,10 +83,10 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 > 🎯 **One change at a time** — Know exactly what helped or hurt  
 > 🎯 **Benchmark every change** — Feelings lie, metrics don't  
 > 🎯 **Keep rollback path** — Always create a restore point before changes  
-> 
+>
 > 🚫 **No blind service disabling** — Avoid breaking Windows Update or networking  
 > 🚫 **No universal BIOS presets** — Custom hardware needs custom approaches  
-> 🚫 **No registry scripts** — Avoid risky and unmaintainable tweaks  
+> 🚫 **No registry scripts** — Avoid risky and unmaintainable tweaks
 
 ---
 
