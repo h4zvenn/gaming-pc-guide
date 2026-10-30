@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "10-temperatures-stability"
+---
+
 # 10. Temperatures, Stability, and Maintenance
 
 > High FPS is pointless if the PC overheats, throttles, crashes, or throws WHEA errors. Stability and smooth frametime matter more than a few extra frames from aggressive overclocking.

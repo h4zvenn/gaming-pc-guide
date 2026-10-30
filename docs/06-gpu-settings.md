@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "06-gpu-settings"
+---
+
 # 06. GPU Settings
 
 > Configure the graphics driver per game/application profile. Do not change everything globally: one game may benefit while another gets bugs, image degradation, or instability.

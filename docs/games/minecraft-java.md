@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "minecraft-java"
+---
+
 # Minecraft Java Edition — Game Page (Stub)
 
 > Pilot expansion. Fill after source audit and template agreement. **Java and Bedrock are separate pages.**

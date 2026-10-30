@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "17-common-builds-quick-cards"
+---
+
 # 17. Common Builds Quick Cards (NVIDIA / AMD / Intel)
 
 > Start fast with safe defaults. Then benchmark and tune per game.

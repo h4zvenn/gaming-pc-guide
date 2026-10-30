@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "_template"
+---
+
 # Game Page Template
 
 > Copy this file to `docs/games/<game-slug>.md` and fill in every section. Do not duplicate common base content — link to it.
@@ -65,7 +70,7 @@
 | Low FPS | | [Bottleneck](../02-find-the-bottleneck.md) |
 | Stutter / bad frametime | | [Bottleneck](../02-find-the-bottleneck.md) |
 | Input latency | | [GPU settings](../06-gpu-settings.md) |
-| Network latency / packet loss | | [Network diagnostics](../09-powershell-diagnostics.md#network) |
+| Network latency / packet loss | | [Network diagnostics](../09-powershell-diagnostics.md#9-network) |
 | Crashes / launches fail | | [Troubleshooting](../15-troubleshooting-decision-trees.md) |
 
 > Add game-specific failure modes (shader compilation stutter, asset streaming, specific anti-cheat launch failures).

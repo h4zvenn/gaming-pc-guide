@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "world-of-tanks"
+---
+
 # World of Tanks — Game Page (Stub)
 
 > Pilot expansion. Fill after source audit and template agreement.
@@ -66,7 +71,7 @@
 | Low FPS, GPU-bound | Lower Render Scale, Particle Quality, Water, Post-Processing | [Bottleneck](../02-find-the-bottleneck.md) |
 | Low FPS, CPU-bound | Lower Grass, View Distance, Shadows | [Bottleneck](../02-find-the-bottleneck.md) |
 | Stutter in battle | Texture streaming, SSD space, background downloads | [Bottleneck](../02-find-the-bottleneck.md) |
-| High ping / packet loss | Server region, Ethernet, background traffic | [Network diagnostics](../09-powershell-diagnostics.md#network) |
+| High ping / packet loss | Server region, Ethernet, background traffic | [Network diagnostics](../09-powershell-diagnostics.md#9-network) |
 
 ## Benchmark Scenario
 

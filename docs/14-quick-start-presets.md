@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "14-quick-start-presets"
+---
+
 # 14. Quick-Start Presets by PC Tier
 
 > Want fast results without random tweaking? Pick your tier, follow one preset, benchmark, then adjust.

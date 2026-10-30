@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "05-windows-11"
+---
+
 # 05. Windows 11 Tuning
 
 > The goal of Windows tuning is to reduce real background load, choose correct gaming options, and keep the system stable and secure. You do not need to disable dozens of services, Defender, or updates for questionable “FPS tweaks.”

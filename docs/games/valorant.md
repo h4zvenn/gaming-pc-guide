@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "valorant"
+---
+
 # VALORANT — Game Page (Stub)
 
 > Pilot expansion. Fill after source audit and template agreement.
@@ -68,7 +73,7 @@
 | "VAN" error codes | Riot support KB for specific code | — |
 | Low FPS, GPU not saturated | CPU-bound: lower Material/Texture/Detail, enable Multithreaded Rendering | [Bottleneck](../02-find-the-bottleneck.md) |
 | Input latency | Reflex On+Boost, Raw Input Buffer on, cap FPS | [GPU settings](../06-gpu-settings.md) |
-| Network spikes | Ethernet, Riot server region, background downloads | [Network diagnostics](../09-powershell-diagnostics.md#network) |
+| Network spikes | Ethernet, Riot server region, background downloads | [Network diagnostics](../09-powershell-diagnostics.md#9-network) |
 
 ## Benchmark Scenario
 

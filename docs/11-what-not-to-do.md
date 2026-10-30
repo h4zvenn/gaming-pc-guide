@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "11-what-not-to-do"
+---
+
 # 11. What Not to Do
 
 > Around Windows “optimization” there are many tips promising huge FPS gains with one command. In most cases, they either provide no measurable result or create stability, security, anti-cheat, update, and driver issues.

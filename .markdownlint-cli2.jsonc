@@ -11,6 +11,8 @@
     "MD024": {
       "siblings_only": true
     },
+    // Front matter title + document h1 can trigger false positives.
+    "MD025": false,
     // <details>/<summary> are standard GitHub Markdown for collapsible sections.
     "MD033": false
   },

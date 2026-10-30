@@ -1,3 +1,8 @@
+---
+layout: doc
+title: "15-troubleshooting-decision-trees"
+---
+
 # 15. Troubleshooting Decision Trees
 
 > Fast path: find symptom → follow decision tree → test one fix at a time.
