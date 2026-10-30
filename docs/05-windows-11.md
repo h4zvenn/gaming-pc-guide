@@ -60,11 +60,13 @@ Open:
 Settings → System → Power & battery
 ```
 
-For desktop PCs, usually:
+For desktop PCs, start with:
 
 ```text
 Power mode → Best performance
 ```
+
+Then compare idle power draw, temperature, and fan noise. Keep a higher power mode only if it produces a useful result for your workload; on an idle desktop it can increase power use without improving games.
 
 For laptops:
 
@@ -108,9 +110,9 @@ This is especially relevant for laptops and systems with multiple GPUs.
 3. Click `Options`.
 4. Select:
 
-```text
-High performance
-```
+    ```text
+    High performance
+    ```
 
 5. Save changes.
 
@@ -133,7 +135,7 @@ There may be an option:
 Optimizations for windowed games
 ```
 
-It applies to modern games in windowed/borderless mode. Test it in your games: changing it may require game restart and sometimes Windows restart.
+It applies to modern games in windowed/borderless mode on Windows 11 22H2 and later. Test it in your games: changing it may require game restart and sometimes Windows restart.
 
 ### How to test
 
@@ -161,10 +163,19 @@ Hardware-accelerated GPU scheduling
 
 ### What to do
 
-- Enable HAGS.
-- Reboot the PC.
-- Test your games.
-- If issues/stutter appear or no improvement is seen, disable it and compare again.
+HAGS is an optional test, not a default recommendation.
+
+1. Record a baseline in one repeatable game scene.
+2. Enable HAGS.
+3. Reboot the PC.
+4. Repeat the same scene with the same settings and overlays.
+5. Compare 1% low, frametime, stability, and any new stutter.
+6. Keep the setting only if the result is repeatable and no new issues appear. Otherwise disable it and reboot again.
+
+> [!NOTE]
+> HAGS requires a supported GPU and driver. Some features, such as certain frame-generation implementations, may require it. Check the current vendor documentation for your GPU.
+
+Background: [Hardware Accelerated GPU Scheduling](https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling/).
 
 > [!IMPORTANT]
 > HAGS is not a mandatory “FPS boost.” Result depends on GPU, driver, game, and Windows version. Decide by your measurements, not someone else’s test.
@@ -319,6 +330,8 @@ Do not disable without a clear reason:
 - VBS and related protections.
 
 Some of these can have measurable impact in specific setups, but disabling them reduces security and may affect compatibility. First identify a concrete issue, create a restore point, and evaluate the tradeoff.
+
+Microsoft’s guidance for memory integrity and VBS is to keep the protection enabled unless there is a specific, understood reason to change it. See [Enable memory integrity](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity).
 
 > [!WARNING]
 > Do not run `.reg`, `.bat`, or PowerShell scripts that mass-disable protections and system features. “More disabled” does not mean “better optimized.”

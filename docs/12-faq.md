@@ -2,7 +2,7 @@
 
 > Short answers to common questions about Windows and gaming PC optimization. If an answer depends on hardware, Windows version, or a specific game, test on your own system.
 
-### Start here if you are in a hurry
+## Start here if you are in a hurry
 
 | You want… | Go to |
 |---|---|
@@ -103,7 +103,7 @@ Open:
 Settings → System → Display → Graphics → Change default graphics settings
 ```
 
-Enable HAGS, reboot, and compare FPS, 1% low, frametime, and stability in your games. Some systems improve, others show no change or issues.
+Enable HAGS, reboot, and compare FPS, 1% low, frametime, and stability in your games. Some systems improve, others show no change or issues. Keep it only if the result is repeatable; otherwise disable it and reboot again.
 
 ---
 
@@ -167,6 +167,12 @@ Some games/apps use page file even with large RAM. Fully disabling it can cause 
 
 ## GPU and FPS
 
+### Should I use a third-party FPS booster such as BoosterX or Hone?
+
+BoosterX and Hone are third-party tools. Their own documentation states that an FPS increase is not guaranteed and depends on hardware, drivers, game settings and what limits performance.
+
+Treat such tools as proposed optimizations. See [18 Optimization tools evidence](18-optimization-tools-evidence.md) for the claim, documentation, test and license layers.
+
 ### Why is GPU at 99% usage? Is it bad?
 
 No, often normal.
@@ -194,6 +200,8 @@ Both matter.
 - `Frametime` shows frame pacing consistency.
 
 High average FPS with bad 1% low can feel worse than slightly lower FPS with smooth frametime.
+
+The exact value depends on how the tool defines 1% low. Do not compare numbers from different tools; see [16 Benchmark templates](16-benchmark-templates.md).
 
 ---
 

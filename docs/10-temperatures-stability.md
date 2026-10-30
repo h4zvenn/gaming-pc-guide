@@ -219,6 +219,19 @@ Instability signs:
 
 Testing should match what you changed.
 
+### Pass/fail criteria
+
+For each stress test, record:
+
+- the tool and version used;
+- the duration;
+- errors reported by the tool;
+- WHEA events;
+- crashes, reboots, or freezes;
+- cold boots after reboot.
+
+One short passing pass is not enough to approve an overclock. Follow it with a long gaming session and check the Event Viewer.
+
 ### After RAM tuning
 
 Check:

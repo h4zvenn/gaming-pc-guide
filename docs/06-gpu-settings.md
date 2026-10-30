@@ -112,6 +112,15 @@ It helps smooth motion when FPS varies within monitor VRR range.
 - Test game with V-Sync on and off.
 - With VRR, tune FPS cap + V-Sync for your use case instead of copying random settings.
 
+#### Two starting profiles to test
+
+| Goal | V-Sync | VRR | FPS cap | What to compare |
+|---|---|---|---|---|
+| Lowest latency | Off | Off | Test uncapped against a sustainable cap | p99 frametime, tearing, subjective input feel |
+| Smoothest motion | On in driver, off in game if the game has its own option | On | Slightly below the monitor’s maximum refresh | Frametime, VRR range, flicker, subjective smoothness |
+
+These are test starting points, not universal settings. Confirm the monitor’s VRR range and the current driver behavior before keeping a profile.
+
 > [!WARNING]
 > V-Sync/VRR/FPS-cap settings affect smoothness, tearing, and latency at the same time. There is no single best mode for every monitor and every game.
 
@@ -142,6 +151,8 @@ Possible effects:
 If the game supports NVIDIA Reflex, enable Reflex **inside the game**.
 
 Reflex lets the game manage render queue for lower system latency. This is usually preferable to forcing Low Latency Mode in driver.
+
+Do not enable Reflex and a forced driver Low Latency Mode at the same time without an A/B test. The combination can behave differently by game, and a subjective “snappier” feeling is not a latency measurement.
 
 ### Low Latency Mode
 
@@ -242,7 +253,7 @@ Compare:
 
 ### Frame Generation
 
-Frame generation can increase displayed FPS, but it does not replace sufficient base FPS and can change latency feel.
+Frame generation can increase displayed FPS, but it does not replace sufficient base FPS. Its effect on latency must be measured with a suitable tool; do not judge it only by the FPS counter.
 
 Before enabling:
 

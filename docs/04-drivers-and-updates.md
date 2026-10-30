@@ -70,7 +70,7 @@ Check version and source before installing, especially if:
 - you recently had graphics driver issues.
 
 > [!NOTE]
-> Do not permanently disable Windows Update for “optimization.” Updates include security, stability, and compatibility fixes.
+> Do not permanently disable Windows Update for “optimization.” Updates include security, stability, and compatibility fixes. Optional driver updates from Windows Update are not always preferred over vendor drivers; review the source before applying, especially when the current GPU or chipset driver is stable.
 
 ---
 
@@ -178,6 +178,13 @@ If using DDU:
 
 > [!WARNING]
 > Do not run DDU monthly “for FPS.” Frequent full driver removal is not optimization.
+
+### How to roll back a GPU driver
+
+1. Open Device Manager, open the GPU entry, and use `Roll Back Driver` on the `Driver` tab, if available.
+2. If rollback is unavailable, install the previous official GPU driver package from the vendor source.
+3. If neither rollback path exists and the problem appeared after a driver update, use DDU as described above.
+4. Do not mix rollback and clean install in one step without re-testing the affected game.
 
 ---
 

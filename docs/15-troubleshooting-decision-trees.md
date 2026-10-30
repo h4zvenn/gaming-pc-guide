@@ -15,23 +15,29 @@
 
 ```mermaid
 flowchart TD
-	A[Low FPS] --> B{GPU usage 95-99%?}
-	B -- Yes --> C[GPU-bound: lower RT/shadows/reflections]
-	C --> D[Test DLSS/FSR/XeSS Quality/Balanced]
-	D --> E[Set realistic FPS cap]
-	B -- No --> F{One CPU thread near 100%?}
-	F -- Yes --> G[CPU-bound: reduce draw distance/crowd/physics]
-	G --> H[Close background apps + overlays]
-	F -- No --> I[Check RAM/VRAM usage + SSD free space]
-	I --> J[Validate temperatures and throttling]
+    A[Low FPS] --> B{Uncapped and V-Sync off?}
+    B -- No --> B1[Remove FPS cap and V-Sync, re-test]
+    B1 --> B
+    B -- Yes --> C{GPU busy 95-99%, uncapped?}
+    C -- Yes --> D[GPU-bound: lower RT/shadows/reflections]
+    D --> E[Test DLSS/FSR/XeSS Quality/Balanced]
+    E --> F[Set realistic FPS cap]
+    C -- No --> G{One CPU core saturated?}
+    G -- Yes --> H[CPU-bound: reduce draw distance/crowd/physics]
+    H --> I[Close background apps + overlays]
+    G -- No --> J[Check RAM/VRAM usage + SSD free space]
+    J --> K[Validate temperatures and throttling]
 ```
+
+> [!IMPORTANT]
+> Measure the first branch with the frame cap removed and V-Sync off. A capped or V-Sync-limited GPU can show low usage even when it is still the limiting component. Prefer GPU busy time from PresentMon or CapFrameX over a Task Manager percentage.
 
 Quick actions table:
 
 | Signal | First fix |
 |---|---|
-| GPU 99%, low FPS | Reduce GPU-heavy settings first |
-| GPU low, CPU thread maxed | Reduce CPU-heavy settings + background load |
+| GPU busy 95-99% with no cap, low FPS | Reduce GPU-heavy settings first |
+| GPU not saturated, one CPU core maxed | Reduce CPU-heavy settings + background load |
 | Normal average FPS, bad 1% low | Check RAM/VRAM/SSD + shader/loading stutter |
 
 ---
@@ -40,14 +46,14 @@ Quick actions table:
 
 ```mermaid
 flowchart TD
-	A[Stutter / bad frametime] --> B{Happens after 20-60 min?}
-	B -- Yes --> C[Check thermals, clocks, throttling]
-	C --> D[Improve airflow / fan curve]
-	B -- No --> E{Happens on new area/camera turns?}
-	E -- Yes --> F[Likely shader/streaming/VRAM issue]
-	F --> G[Lower textures or render scale]
-	E -- No --> H[Check overlay conflicts + background downloads]
-	H --> I[Test with minimal overlays]
+    A[Stutter / bad frametime] --> B{Happens after 20-60 min?}
+    B -- Yes --> C[Check thermals, clocks, throttling]
+    C --> D[Improve airflow / fan curve]
+    B -- No --> E{Happens on new area/camera turns?}
+    E -- Yes --> F[Likely shader/streaming/VRAM issue]
+    F --> G[Lower textures or render scale]
+    E -- No --> H[Check overlay conflicts + background downloads]
+    H --> I[Test with minimal overlays]
 ```
 
 Quick actions table:
@@ -64,13 +70,14 @@ Quick actions table:
 
 ```mermaid
 flowchart TD
-	A[Crash / black screen] --> B{Recent OC/undervolt/XMP change?}
-	B -- Yes --> C[Revert latest tweak to stock]
-	C --> D[Re-test game + check WHEA]
-	B -- No --> E{Driver recently updated?}
-	E -- Yes --> F[Clean reinstall or rollback to known stable]
-	E -- No --> G[Check PSU cables, temps, hotspot, RAM stability]
-	G --> H[Run stress + long game session]
+    A[Crash / black screen] --> B{Recent OC/undervolt/XMP change?}
+    B -- Yes --> C[Revert latest tweak to stock]
+    C --> D[Re-test game + check WHEA]
+    B -- No --> E{Driver recently updated?}
+    E -- Yes --> F[Roll back to the previous known-stable driver]
+    F --> F1[Clean install only if rollback fails and symptoms match section 5 of 04]
+    E -- No --> G[Check PSU cables, temps, hotspot, RAM stability]
+    G --> H[Run stress + long game session]
 ```
 
 Quick actions table:
@@ -79,7 +86,7 @@ Quick actions table:
 |---|---|
 | Curve Optimizer / PBO tweak | Revert and test stock |
 | GPU undervolt | Relax curve or return default |
-| Driver update | Roll back or clean reinstall |
+| Driver update | Roll back first; clean install only if rollback fails |
 
 ---
 
@@ -87,12 +94,12 @@ Quick actions table:
 
 ```mermaid
 flowchart TD
-	A[High ping / packet loss] --> B{Downloads/updates running?}
-	B -- Yes --> C[Pause downloads/cloud sync]
-	B -- No --> D{Wi-Fi signal weak or unstable?}
-	D -- Yes --> E[Test Ethernet or better Wi-Fi channel]
-	D -- No --> F[Check router reboot + ISP status]
-	F --> G[Compare with another server/region]
+    A[High ping / packet loss] --> B{Downloads/updates running?}
+    B -- Yes --> C[Pause downloads/cloud sync]
+    B -- No --> D{Wi-Fi signal weak or unstable?}
+    D -- Yes --> E[Test Ethernet or better Wi-Fi channel]
+    D -- No --> F[Check router reboot + ISP status]
+    F --> G[Compare with another server/region]
 ```
 
 Quick actions table:
@@ -105,16 +112,21 @@ Quick actions table:
 
 ---
 
+> [!NOTE]
+> Measure ping against the game server region or address you actually play on. Baseline connectivity checks such as `1.1.1.1` do not replace real-game server latency measurement.
+
+---
+
 ## 5) “No change after optimization” tree
 
 ```mermaid
 flowchart TD
-	A[No measurable improvement] --> B{Changed many settings at once?}
-	B -- Yes --> C[Rollback and retest one-by-one]
-	B -- No --> D{Bottleneck identified correctly?}
-	D -- No --> E[Re-run bottleneck diagnostics]
-	D -- Yes --> F[Keep only changes with measurable gain]
-	F --> G[Document baseline and final results]
+    A[No measurable improvement] --> B{Changed many settings at once?}
+    B -- Yes --> C[Rollback and retest one-by-one]
+    B -- No --> D{Bottleneck identified correctly?}
+    D -- No --> E[Re-run bottleneck diagnostics]
+    D -- Yes --> F[Keep only changes with measurable gain]
+    F --> G[Document baseline and final results]
 ```
 
 ---
