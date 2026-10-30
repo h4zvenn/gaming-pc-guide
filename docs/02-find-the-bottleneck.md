@@ -38,7 +38,9 @@ During testing, monitor:
 - RAM usage
 - Used/free SSD space
 
-> [!TIP]
+> [!IMPORTANT]
+> Measure GPU/CPU balance with the frame cap removed and V-Sync off. A capped or V-Sync-limited GPU can show low usage even when it is still the limiting component. Prefer GPU busy time from PresentMon or CapFrameX over a Task Manager percentage.
+>
 > Do not rely only on average CPU usage.
 > One main game thread can be fully loaded while total CPU usage still looks moderate.
 
@@ -56,8 +58,8 @@ During testing, monitor:
 
 | Symptom | Possible cause | Check first |
 |---|---|---|
-| GPU stays around 95–99%, FPS is too low | GPU limit | Resolution, render scale, RT, shadows, upscaler, GPU temp |
-| GPU below 90%, FPS does not increase, one CPU thread near 100% | CPU limit | CPU-related settings, background tasks, RAM, CPU temp |
+| GPU busy stays around 95–99% with no cap, FPS is too low | GPU limit | Resolution, render scale, RT, shadows, upscaler, GPU temp |
+| GPU not saturated, FPS does not increase, one CPU core near 100% | CPU limit | CPU-related settings, background tasks, RAM, CPU temp |
 | Average FPS looks fine but hard stutter appears | RAM/VRAM, SSD, shaders, background load, instability | Frametime, memory usage, background downloads, WHEA, temps |
 | FPS drops gradually after 20–60 minutes | Thermal or memory saturation | Temps, clocks, VRAM/RAM usage, fan behavior |
 | Camera movement feels jerky | Uneven frametime, shader compilation, data streaming | Frametime, SSD, VRAM, background apps |
@@ -256,10 +258,10 @@ Do not use “RAM cleaners” or forced memory cleanup tools. They can evict use
 
 Use this order:
 
-1. Record FPS, 1% low, frametime, and temperatures.
-2. Check GPU usage.
-3. If GPU is near 99% — start with graphics, resolution, and VRAM.
-4. If GPU is much lower, check CPU threads, RAM, background processes, and CPU temperature.
+1. Remove the FPS cap and V-Sync, then record FPS, 1% low, frametime, and temperatures.
+2. Check GPU busy time, not only the Task Manager percentage.
+3. If GPU busy is near 99% — start with graphics, resolution, and VRAM.
+4. If GPU busy is lower, check CPU cores/threads, RAM, background processes, and CPU temperature.
 5. For stutters, check RAM, VRAM, SSD, shader compilation, and background downloads.
 6. If performance degrades over time, check thermals.
 7. For crashes and WHEA, remove overclocks and investigate instability instead of applying new FPS tweaks.

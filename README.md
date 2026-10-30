@@ -3,11 +3,11 @@
 > Build a **smooth, stable, low-drama** gaming setup: **BIOS → drivers → Windows → GPU → background apps → diagnostics → stability**.
 >
 > No fake “+500 FPS” buttons. Just practical changes you can test, keep, or roll back.
-
+>
 > **SEO focus:** Windows 11 gaming optimization, low FPS fix, stutter fix, input lag reduction, 1% low improvement, frametime stability.
 
-[![Platform](https://img.shields.io/badge/Platform-Windows%2011-0078D4?style=flat-square&logo=windows)](#)
-[![Language](https://img.shields.io/badge/Language-English-4CAF50?style=flat-square)](#)
+![Platform](https://img.shields.io/badge/Platform-Windows%2011-0078D4?style=flat-square&logo=windows)
+![Language](https://img.shields.io/badge/Language-English-4CAF50?style=flat-square)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 ---
@@ -78,6 +78,37 @@ Do not apply all tweaks at once. Follow this order:
 | 15 | [Troubleshooting decision trees](docs/15-troubleshooting-decision-trees.md) | Fast “if this → do that” flows for FPS, stutter, crashes, and ping |
 | 16 | [Benchmark templates](docs/16-benchmark-templates.md) | Repeatable templates to track tweaks and prove real gains |
 | 17 | [Common builds quick cards](docs/17-common-builds-quick-cards.md) | NVIDIA/AMD/Intel starting presets with safe defaults |
+| 18 | [Optimization tools evidence](docs/18-optimization-tools-evidence.md) | BoosterX, Hone/HoneCtrl, BRUTAL-FPS, Razer Cortex and tweak tools: claims, docs/code, tests, license |
+
+---
+
+## 🎮 Game-Specific Optimization Guides
+
+**After completing the baseline system optimization above, apply game-specific tweaks:**
+
+| Game | Status | Anticheat | Focus | Last checked |
+|------|--------|-----------|-------|--------------|
+| [Counter-Strike 2](docs/games/counter-strike-2/en.md) | ✅ Ready | VAC | Max FPS, min input lag, Source 2 specifics | 2026-10-30 |
+| [VALORANT](docs/games/valorant/en.md) | 📋 Planned | Vanguard | Kernel-level anticheat compatibility | — |
+| [PUBG](docs/games/pubg/en.md) | 📋 Planned | BattlEye | Frametime stability, large maps | — |
+| [Minecraft Java](docs/games/minecraft-java/en.md) | 📋 Planned | Varies | Mod compatibility, shaders | — |
+| [World of Tanks](docs/games/world-of-tanks/en.md) | 📋 Planned | Proprietary | Client optimization, network | — |
+
+**Browse all game guides:** [docs/games/](docs/games/)
+
+### 🔍 Find by symptom
+
+Not sure which guide to use? Start with the symptom:
+
+| Symptom | Diagnostic guide |
+|---------|------------------|
+| Low average FPS | [Low FPS diagnostics](docs/diagnostics/low-fps.md) |
+| Stutter / frametime spikes | [Frametime diagnostics](docs/diagnostics/frametime-spikes.md) |
+| Input delay | [Input lag diagnostics](docs/diagnostics/input-lag.md) |
+| High ping / rubber-banding | [Network lag diagnostics](docs/diagnostics/network-lag.md) |
+| Crashes / freezes | [Crash diagnostics](docs/diagnostics/crashes.md) |
+
+**Full diagnostic index:** [docs/diagnostics/symptom-index.md](docs/diagnostics/symptom-index.md)
 
 ---
 
@@ -147,9 +178,11 @@ For fair comparison:
 
 1. Use one game or one benchmark.
 2. Keep resolution, graphics settings, and test scene identical.
-3. Run 2–3 passes.
+3. Run 2–3 passes, then report the median and the min–max range.
 4. Compare not only average FPS, but also 1% low, frametime, temperatures, clocks, and stability.
 5. Revert the change if there is no benefit or new issues appear.
+
+For metric definitions and the full run protocol, see [16 Benchmark templates](docs/16-benchmark-templates.md).
 
 Example of a bad outcome:
 

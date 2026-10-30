@@ -77,9 +77,9 @@ Total RAM in GB:
 
 ```powershell
 [math]::Round(
-	(Get-CimInstance Win32_PhysicalMemory |
-	Measure-Object -Property Capacity -Sum).Sum / 1GB,
-	0
+    (Get-CimInstance Win32_PhysicalMemory |
+    Measure-Object -Property Capacity -Sum).Sum / 1GB,
+    0
 )
 ```
 
@@ -234,29 +234,54 @@ Basic latency test:
 Test-Connection 1.1.1.1 -Count 10
 ```
 
+### Game-server latency
+
+To measure latency to the server you actually play on:
+
+1. Identify the game server region or address from launcher/game logs.
+2. Run a short 5–10 minute latency and loss test toward that host.
+3. Record min/avg/max latency and packet loss.
+4. Repeat on Wi-Fi and Ethernet if you want to separate wireless noise from real network latency.
+
+> [!IMPORTANT]
+> The `1.1.1.1` test is not your game server ping; it is only a baseline connectivity check.
+> `Test-Connection` uses ICMP, which some servers and firewalls block. A failed ping does not automatically prove a bad game connection.
+
+### Network load during play
+
+Before measuring, pause downloads, cloud sync, torrents, and streaming. Network saturation can be reported as high latency and be unrelated to routing or ISP problems.
+
 > [!NOTE]
-> `1.1.1.1` test is not your game server ping; it is just a baseline connectivity check.
+> For real gameplay networking, use the game server host or region data rather than the `1.1.1.1` baseline.
 
 ---
 
 ## 10. System file integrity (admin only)
 
-Use only for suspected Windows corruption.
+Use only for suspected Windows corruption. Both commands can take a long time and require an administrator terminal.
 
-```powershell
-sfc /scannow
-```
+DISM repairs the Windows component store. SFC checks and replaces protected system files using that store. If the store itself is damaged, SFC may be unable to repair anything, so the more reliable repair order is DISM first, then SFC.
 
 ```powershell
 DISM /Online /Cleanup-Image /RestoreHealth
 ```
 
+```powershell
+sfc /scannow
+```
+
 Order:
 
-1. Run SFC.
-2. If unresolved, run DISM.
-3. Reboot.
-4. Run SFC again if needed.
+1. Run `DISM /Online /Cleanup-Image /RestoreHealth`.
+2. Wait for it to finish and read the result.
+3. Run `sfc /scannow`.
+4. Reboot.
+5. If problems persist, repeat the sequence and check the CBS log.
+
+> [!NOTE]
+> Some Microsoft support pages describe SFC first as a quick check. That order can still be useful for diagnosis, but it does not repair a damaged component store. Use DISM first when the goal is repair.
+>
+> Sources: [Repair a Windows image](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image), [System File Checker](https://support.microsoft.com/en-us/windows/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system-files-79aa86cb-ca52-166a-92a3-966e85d4094e).
 
 ---
 
@@ -266,8 +291,8 @@ WHEA check:
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
-	LogName = 'System'
-	ProviderName = 'Microsoft-Windows-WHEA-Logger'
+    LogName = 'System'
+    ProviderName = 'Microsoft-Windows-WHEA-Logger'
 } -MaxEvents 20 |
 Select-Object TimeCreated, Id, LevelDisplayName, Message
 ```

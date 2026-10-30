@@ -1,0 +1,15 @@
+{
+  // The guide intentionally uses long, unwrapped paragraphs and table rows.
+  // MD013 is a hard-wrap style rule, not a content correctness check.
+  "config": {
+    "MD010": {
+      // Tabs are intentional inside Mermaid and PowerShell code blocks.
+      "code_blocks": false
+    },
+    "MD013": false,
+    // Repeating headings like "Baseline" is expected under different sections.
+    "MD024": {
+      "siblings_only": true
+    }
+  }
+}

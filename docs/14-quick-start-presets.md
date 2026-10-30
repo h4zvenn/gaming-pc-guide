@@ -11,6 +11,8 @@
 
 > [!IMPORTANT]
 > One preset at a time. Do not mix all presets in one session.
+>
+> A preset is an ordered checklist, not a batch script. Apply one row, verify it in the same scene, then continue. If a row changes several inseparable settings, treat the whole row as one experiment and record it.
 
 ---
 
@@ -26,10 +28,10 @@ Improve smoothness and 1% low without risky tuning.
 |---|---|---|
 | 1 | Set correct monitor refresh rate | Avoid fake 60 Hz bottleneck |
 | 2 | Close browser video/downloads/overlays | Free CPU/RAM/GPU headroom |
-| 3 | Enable Game Mode | Better scheduling for gameplay |
+| 3 | Enable Game Mode | May help Windows prioritize gameplay; effect varies |
 | 4 | Set in-game FPS cap to stable floor | Better frametime consistency |
-| 5 | Lower heavy GPU options first (RT, shadows, reflections) | Biggest FPS gain per quality loss |
-| 6 | Use DLSS/FSR/XeSS Quality/Balanced | FPS gain with acceptable visuals |
+| 5 | Lower heavy GPU options first (RT, shadows, reflections) | Usually a large FPS gain per visual cost in GPU-bound scenes; verify in your game |
+| 6 | Use DLSS/FSR/XeSS Quality/Balanced | FPS gain with an image-quality tradeoff; compare |
 
 ### Do not do in this preset
 
@@ -49,7 +51,7 @@ Balance visual quality and stable high FPS.
 
 | Step | Action | Why |
 |---|---|---|
-| 1 | Verify XMP/EXPO stability | Better CPU-limited performance |
+| 1 | Check XMP/EXPO is enabled and stable (see [03](03-bios-and-hardware.md)) | Avoid JEDEC baseline in CPU-limited scenes |
 | 2 | Enable Above 4G + ReBAR (if supported) | Potential uplift in some titles |
 | 3 | Update chipset + stable GPU driver | Better compatibility/perf consistency |
 | 4 | Test HAGS and Windowed Optimizations | Keep whichever performs better |
@@ -76,7 +78,7 @@ Maximize consistency at high FPS (165–360 Hz class).
 | 1 | Confirm CPU/GPU clocks are stable under load | Remove hidden throttling |
 | 2 | Tune FPS cap around real stable range | Smoother frametime than uncapped spikes |
 | 3 | Tune VRR + V-Sync behavior per game | Better smoothness/latency balance |
-| 4 | Use low-latency in-game options (Reflex/Anti-Lag) | Lower system latency |
+| 4 | Use low-latency in-game options (Reflex/Anti-Lag) | May reduce latency; measure it or treat the result as subjective |
 | 5 | Remove overlay stacking | Reduce capture/overlay conflicts |
 | 6 | Run WHEA check after tweaks | Catch hidden instability early |
 

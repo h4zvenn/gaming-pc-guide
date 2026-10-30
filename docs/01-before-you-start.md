@@ -43,15 +43,17 @@ A restore point helps roll back system settings, drivers, and some Windows chang
 6. Click `Create`.
 7. Name the point, for example:
 
-```text
-Before gaming optimization
-```
+    ```text
+    Before gaming optimization
+    ```
 
 8. Wait for the success message.
 
 > [!NOTE]
 > A restore point is not a backup of personal files.
 > It is mainly for rolling back system changes.
+>
+> If BitLocker is enabled, save the recovery key before changing BIOS, TPM, Secure Boot, or boot-order settings. A restore point does not replace that key.
 
 ---
 
@@ -89,7 +91,7 @@ An overfilled system drive can hurt update installation, page file behavior, gam
 
 ### Recommendation
 
-Keep about 15–20% free space on the system SSD.
+Keep enough free space for updates, the page file, and game installs. A common starting point is 15–20% on the system drive, but the real limit depends on the SSD model, firmware, and workload. Watch for sustained write-speed drops and rising latency instead of treating one percentage as universal.
 
 ### Check using PowerShell
 
@@ -142,8 +144,9 @@ Before optimization, you need a clear picture of current behavior.
 1. Use one game or one benchmark.
 2. Do not change resolution, graphics settings, or driver between runs.
 3. Test the same scene.
-4. Run 2–3 passes.
-5. Record the average result.
+4. Warm up for 5–10 minutes, then run at least 3 passes.
+5. Report the median and the min–max range, not only the average or the best run.
+6. See [16 Benchmark templates](16-benchmark-templates.md) for metric definitions and the full protocol.
 
 Sample note:
 

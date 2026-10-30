@@ -69,8 +69,9 @@ If the system is stable and the new version has no relevant fixes, updating is n
 4. Read the vendor instructions: Q-Flash, M-Flash, EZ Flash, Instant Flash, or equivalent.
 5. Prepare a USB drive in the required format if needed.
 6. Do not power off, reboot, or touch power during flashing.
-7. After update, load `Load Optimized Defaults` / `Load UEFI Defaults`.
-8. Re-enable only required settings: XMP/EXPO, ReBAR, and other verified options.
+7. If BitLocker is enabled, save the recovery key before changing BIOS, TPM, Secure Boot, or boot-order settings.
+8. After update, load `Load Optimized Defaults` / `Load UEFI Defaults`.
+9. Re-enable only required settings: XMP/EXPO, ReBAR, and other verified options.
 
 > [!WARNING]
 > Never flash BIOS using a file for a similar but different motherboard model. Wrong model/revision can brick the board.
@@ -117,9 +118,9 @@ Signs of instability:
 
 What to do:
 
-1. Update BIOS if memory compatibility fixes exist.
-2. Verify modules are in correct slots.
-3. Temporarily return RAM to `Auto` / JEDEC and test stability.
+1. Verify modules are in the correct slots.
+2. Temporarily return RAM to `Auto` / JEDEC and test stability.
+3. Update BIOS only if its changelog lists memory-compatibility fixes for your configuration.
 4. Try a less aggressive profile or lower frequency if available.
 5. Do not copy other people’s timings/voltages without understanding them.
 
@@ -127,7 +128,7 @@ What to do:
 
 ## 4. Above 4G Decoding and Resizable BAR
 
-For modern systems with a compatible GPU, these are usually worth enabling:
+On modern systems with a compatible CPU, GPU, motherboard, and driver, these are usually worth testing:
 
 ```text
 Above 4G Decoding → Enabled
@@ -135,6 +136,8 @@ Resizable BAR / Re-Size BAR → Enabled
 ```
 
 On AMD this may be called **Smart Access Memory**.
+
+ReBAR is not universally neutral: the effect depends on the game, driver, and GPU, and some titles have shown regressions. Enable it, then compare your own games. If a specific game becomes slower or less stable, disable ReBAR for testing before changing anything else.
 
 ### Why it matters
 
@@ -281,7 +284,7 @@ Without a specific reason, keep these on `Auto`:
 
 - [ ] BIOS file matches exact board model and revision.
 - [ ] Optimized defaults were loaded after BIOS update.
-- [ ] XMP/EXPO enabled only after stability verification.
+- [ ] XMP/EXPO profile enabled, then verified for stability; kept only if stable.
 - [ ] RAM installed in recommended slots.
 - [ ] Above 4G Decoding enabled if supported.
 - [ ] Resizable BAR enabled if supported.

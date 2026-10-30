@@ -21,6 +21,8 @@ Do not disable a service until you can answer three questions:
 | Update-related load | Pause/schedule updates, do not disable services |
 | Unknown service name | Research origin and file path first |
 
+Third-party tools that apply service, registry, or debloat changes — for example BoosterX background services, Hone registry optimizations, GTtwick, Sparkle, RyTuneX, Exoptimizer, and BRUTAL-FPS process tuning — must follow the same guardrails described here: one area at a time, keep a rollback path, and do not blanket-disable critical services or security protections.
+
 ---
 
 ## 1. Why “disable 100 services” is a bad idea
@@ -92,10 +94,11 @@ Below are critical Windows components. Do not disable them without an exact docu
 - Windows Firewall
 - Security Center
 - Windows Update
-- Background Intelligent Transfer Service (BITS)
 
 > [!WARNING]
 > Disabling Defender, Firewall, Windows Update, UAC, network, or certificate services for FPS is a bad tradeoff. Security drops, issues appear, and performance gains are usually zero or negligible.
+
+BITS (Background Intelligent Transfer Service) is an update-delivery component, not a security feature. Do not disable it to stop updates; use Windows Update settings instead.
 
 ---
 
@@ -288,9 +291,9 @@ Safe sequence:
 4. Check whether app has built-in startup/service option.
 5. If app is unnecessary, uninstall it via:
 
-```text
-Settings → Apps → Installed apps
-```
+    ```text
+    Settings → Apps → Installed apps
+    ```
 
 6. Reboot and verify system behavior.
 
