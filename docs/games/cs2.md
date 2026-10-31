@@ -19,10 +19,13 @@ title: "cs2"
 
 ## Quick Start
 
-1. Complete the core system baseline steps: [Preparation]({{ '/docs/01-before-you-start/' | relative_url }}) → [Bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) → [BIOS/Hardware]({{ '/docs/03-bios-and-hardware/' | relative_url }}) → [Drivers]({{ '/docs/04-drivers-and-updates/' | relative_url }}) → [Windows]({{ '/docs/05-windows-11/' | relative_url }}) → [GPU]({{ '/docs/06-gpu-settings/' | relative_url }}) → [Background]({{ '/docs/07-background-apps/' | relative_url }}) → [Security/Services]({{ '/docs/08-services-and-security/' | relative_url }}) → [Diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }}) → [Thermals]({{ '/docs/10-temperatures-stability/' | relative_url }}).
-2. Apply the CS2-specific settings below according to your hardware.
-3. Validate metrics using the [Benchmark template]({{ '/docs/16-benchmark-templates/' | relative_url }}).
-4. Keep only settings that demonstrably improve performance without causing instability.
+Before tuning CS2, verify your system configuration in this order:
+
+1. **System Preparation:** [Before You Start]({{ '/docs/01-before-you-start.html' | relative_url }}) → [Find the Bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }})
+2. **Hardware & OS:** [BIOS Setup]({{ '/docs/03-bios-and-hardware.html' | relative_url }}) → [Drivers & Updates]({{ '/docs/04-drivers-and-updates.html' | relative_url }}) → [Windows 11 Tweaks]({{ '/docs/05-windows-11.html' | relative_url }})
+3. **Graphics & Background:** [GPU Settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) → [Background Apps]({{ '/docs/07-background-apps.html' | relative_url }}) → [Services & Security]({{ '/docs/08-services-and-security.html' | relative_url }})
+4. **Diagnostics & Stability:** [PowerShell Diagnostics]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) → [Temperatures & Stability]({{ '/docs/10-temperatures-stability.html' | relative_url }})
+5. **CS2 Validation:** Apply the settings below and measure performance with the [Benchmark Template]({{ '/docs/16-benchmark-templates.html' | relative_url }}).
 
 ## Requirements & Compatibility
 
@@ -72,12 +75,12 @@ title: "cs2"
 
 | Symptom | First check | Link |
 | --- | --- | --- |
-| Low FPS, GPU busy at 95-99% | Lower Shader Detail, Shadow Quality, disable MSAA | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
-| Low FPS, single CPU core at 100% | Lower Particle Detail, terminate background processes | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
-| Micro-stutter on new maps | Shader pre-compilation, verify game files, move to NVMe SSD | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
-| Heavy input latency / sluggish mouse | Enable Reflex On+Boost, disable V-Sync and third-party overlays | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings/) |
-| Packet loss / sub-tick delay | Check telemetry overlay, switch to Ethernet, check bufferbloat | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics/#9-network) |
-| Crash on launch / "VAC unable to verify" | Verify file integrity in Steam, disable third-party hooks | [Troubleshooting]({{ site.baseurl }}/docs/15-troubleshooting-decision-trees/) |
+| Low FPS, GPU busy at 95-99% | Lower Shader Detail, Shadow Quality, disable MSAA | [Bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) |
+| Low FPS, single CPU core at 100% | Lower Particle Detail, terminate background processes | [Bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) |
+| Micro-stutter on new maps | Shader pre-compilation, verify game files, move to NVMe SSD | [Bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) |
+| Heavy input latency / sluggish mouse | Enable Reflex On+Boost, disable V-Sync and third-party overlays | [GPU settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) |
+| Packet loss / sub-tick delay | Check telemetry overlay, switch to Ethernet, check bufferbloat | [Network diagnostics]({{ '/docs/09-powershell-diagnostics.html#9-network' | relative_url }}) |
+| Crash on launch / "VAC unable to verify" | Verify file integrity in Steam, disable third-party hooks | [Troubleshooting]({{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}) |
 
 > **Source 2 Shader Note:** Shaders compile dynamically during your first few matches. If you experience stutters after a GPU driver update, complete 1 full Deathmatch game to allow the disk shader cache to build.
 
