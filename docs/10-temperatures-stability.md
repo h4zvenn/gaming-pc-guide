@@ -1,285 +1,286 @@
 ---
 layout: doc
-title: "10-temperatures-stability"
+title: "Temperatures & Stability"
 description: "Check temperatures, throttling, cooling, and system stability before changing performance settings."
 lang: en
 translation_key: temperatures-stability
 permalink: /docs/10-temperatures-stability.html
 ---
 
-# 10. Temperatures, Stability, and Maintenance
+# Temperatures & Stability
 
-> High FPS is pointless if the PC overheats, throttles, crashes, or throws WHEA errors. Stability and smooth frametime matter more than a few extra frames from aggressive overclocking.
+High FPS is pointless if the PC overheats, throttles, crashes, or reports WHEA errors. Stability and consistent frame times matter more than a few extra frames from aggressive overclocking.
+
+> **Note:** Do not compare temperatures between different CPUs and GPUs directly. Different models use different sensors, limits, power behavior, and boost algorithms. Focus on throttling, clock drops, noise, and stability.
+
+---
 
 ## What to monitor
 
 During gaming or benchmarking, track:
 
-- CPU temperature;
-- GPU temperature;
-- GPU hotspot (if sensor is available);
-- GPU memory temperature (if sensor is available);
-- SSD temperature;
-- CPU/GPU clocks;
-- power limits and throttling;
-- CPU/GPU usage;
-- RAM and VRAM usage;
-- FPS, 1% low, and frametime;
-- WHEA errors.
+- CPU temperature
+- GPU temperature
+- GPU hotspot and memory temperature, if available
+- SSD temperature
+- CPU and GPU clocks
+- Power limits and throttling
+- CPU and GPU usage
+- RAM and VRAM usage
+- FPS, 1% lows, and frame times
+- WHEA errors
 
-### Useful tools
+Useful tools:
 
 - HWiNFO
-- MSI Afterburner + RivaTuner Statistics Server
+- MSI Afterburner with RivaTuner Statistics Server
 - CapFrameX
 - OCCT
-- SSD/motherboard/GPU vendor utility
-
-> **Note:** > Do not compare temperatures of different CPUs/GPUs directly. Different models have different sensors, limits, power behavior, and boost algorithms. Focus on throttling, clock drops, noise, and stability.
-
-### Fast thermal triage
-
-| Symptom | First check |
-| --- | --- |
-| FPS drops over time | CPU/GPU temp + clocks after 30–60 min |
-| Fans suddenly loud | Thermal limit / fan curve / dust filters |
-| Random stutter under load | Hotspot/VRAM temp + power limit behavior |
+- SSD, motherboard, or GPU vendor utility
 
 ---
 
-## 1. What throttling means
+## Fast thermal triage
 
-Throttling is clock/performance reduction to stay within thermal, power, or other limits.
+| Symptom | Check first |
+| --- | --- |
+| FPS drops over time | CPU and GPU temperatures and clocks after 30–60 minutes |
+| Fans suddenly become loud | Thermal limit, fan curve, dust filters |
+| Random stutter under load | GPU hotspot, VRAM temperature, power-limit behavior |
+| Crashes or WHEA errors after tuning | Overclock, undervolt, XMP/EXPO, temperatures |
 
-### Typical signs
+---
 
-- FPS drops after 10–60 minutes of gaming;
-- temperature rises while CPU/GPU clocks decrease;
-- fans become very loud;
-- performance worsens in a hot room;
-- results improve after opening side panel or cleaning dust.
+## Throttling
+
+Throttling is a reduction in clock speed or performance to stay within thermal, power, or current limits.
+
+Typical signs:
+
+- FPS drops after 10–60 minutes of gaming
+- Temperature rises while CPU or GPU clocks decrease
+- Fans become very loud
+- Performance worsens in a hot room
+- Results improve after cleaning dust or opening the side panel
 
 ### What to do
 
-1. Open monitoring and record temperatures/clocks at session start and end.
-2. Check for thermal throttling / power limit indicators.
+1. Record temperatures and clocks at the start and end of a session.
+2. Check for thermal or power-limit indicators.
 3. Clean dust and verify airflow.
-4. Tune fan curves.
-5. Ensure CPU cooler and GPU fans are working.
-6. If needed, reduce power limits or apply careful undervolt after testing.
+4. Configure reasonable fan curves.
+5. Ensure the CPU cooler and GPU fans are working.
+6. If necessary, reduce power limits or apply a carefully tested undervolt.
 
 ---
 
-## 2. CPU temperature
+## CPU temperature
 
-Modern CPUs automatically boost within available thermal, power, and current limits. High temperature alone does not always mean a fault.
+Modern CPUs automatically boost within available thermal, power, and current limits. High temperature alone does not always indicate a fault.
 
-### Look at combined symptoms
+A problem is likely if:
 
-Likely problem if:
-
-- temperature constantly hits limits;
-- clock speed drops significantly;
-- stutters, crashes, or reboots appear;
-- cooling runs at maximum noise;
-- performance degrades over time;
-- airflow is poor or system was not cleaned for long time.
+- Temperature constantly reaches its limit
+- Clock speed drops significantly
+- Stutter, crashes, or reboots appear
+- Cooling runs at maximum noise
+- Performance degrades over time
+- Airflow is poor or the system has not been cleaned for a long time
 
 ### What to check
 
-- cooler mounting correctness;
-- protective film removed from new cooler base;
-- even mounting pressure;
-- thermal paste condition;
-- CPU fan connected to correct header;
-- case fans operation;
-- heatsink blocked by dust;
-- airflow blocked by glass panel, wall proximity, or dense filters.
+- Cooler mounting and mounting pressure
+- Protective film removed from a new cooler base
+- Thermal paste condition
+- CPU fan connected to the correct header
+- Case fans and airflow
+- Dust in the heatsink
+- Airflow blocked by a glass panel, wall, or dense filters
 
-> **Tip:** > Do not replace thermal paste too often without reason. Start with cleaning, fan checks, and proper cooler mounting.
+> **Tip:** Do not replace thermal paste too often without a reason. Start with cleaning, fan checks, and proper cooler mounting.
 
 ---
 
-## 3. GPU temperature
+## GPU temperature
 
-GPU often has separate sensors:
+A GPU can report several separate sensors:
 
-- Core temperature;
-- Hotspot temperature;
-- Memory temperature;
-- VRM temperature;
-- Power limit / thermal limit.
+- Core temperature
+- Hotspot temperature
+- Memory temperature
+- VRM temperature
+- Power or thermal limit
 
-### What can hurt GPU behavior
+### Common causes of GPU heat issues
 
-- dust in heatsink;
-- weak hot-air exhaust from case;
-- high ambient room temperature;
-- overly quiet fan curve;
-- poor heatsink contact after disassembly;
-- unstable overclock/undervolt;
-- power limit constraints.
+- Dust in the heatsink
+- Weak hot-air exhaust from the case
+- High ambient room temperature
+- An overly quiet fan curve
+- Poor heatsink contact after disassembly
+- Unstable overclock or undervolt
+- Power-limit constraints
 
 ### What to do
 
-1. Check GPU temperature, clock, and load in one game/benchmark.
-2. Confirm GPU fans spin under load.
-3. Clean case and heatsinks.
-4. Improve case intake/exhaust airflow.
-5. Revert GPU OC/undervolt if artifacts, crashes, or driver resets appear.
-6. Tune a more suitable fan curve if noise is acceptable.
+1. Check GPU temperature, clocks, and load in one game or benchmark.
+2. Confirm that GPU fans spin under load.
+3. Clean the case and heatsinks.
+4. Improve case intake and exhaust airflow.
+5. Revert GPU overclocking or undervolting if artifacts, crashes, or driver resets appear.
+6. Adjust the fan curve if noise is acceptable.
 
-> **Warning:** > Do not disassemble GPU for paste/pad replacement without experience. Mistakes can damage the card, pads, or warranty seals.
+> **Warning:** Do not disassemble a GPU for thermal paste or pad replacement without experience. Mistakes can damage the card, pads, or warranty seals.
 
 ---
 
-## 4. SSD temperature
+## SSD temperature
 
-NVMe SSD can heat up during game installs, archive extraction, large copies, and level streaming.
+NVMe SSDs can heat up during game installations, archive extraction, large file copies, and level streaming.
 
-### Signs of issue
+### Signs of an issue
 
-- sharp stutters during asset loading;
-- read/write speed drops after sustained load;
-- utility reports high SSD temperature;
-- SSD sits under GPU without heatsink and with poor airflow.
+- Sharp stutter during asset loading
+- Read or write speed drops after sustained load
+- A monitoring utility reports high SSD temperature
+- The SSD sits under the GPU without a heatsink and has poor airflow
 
 ### What to do
 
-- use M.2 heatsink if your board provides one;
-- remove protective film from heatsink thermal pad;
-- avoid blocking SSD with thick cable/component;
-- keep free space on drive;
-- check SSD firmware only via official vendor source.
+- Use an M.2 heatsink if the motherboard provides one.
+- Remove the protective film from the heatsink thermal pad.
+- Avoid blocking the SSD with cables or other components.
+- Keep free space on the drive.
+- Update SSD firmware only through the official vendor utility.
 
 ---
 
-## 5. Case airflow
+## Case airflow
 
-Good airflow usually follows a simple pattern:
+A typical airflow pattern is:
 
-- front/bottom case area — cool air intake;
-- rear/top area — hot air exhaust.
+- Front and bottom areas bring in cool air.
+- Rear and top areas exhaust hot air.
 
-### Basic recommendations
+### Desktop recommendations
 
-- Do not place case tightly against a wall.
+- Do not place the case tightly against a wall.
 - Do not block ventilation openings.
 - Clean dust filters regularly.
-- Verify orientation of each fan.
-- Do not add many fans without a clear airflow plan: path matters more than count.
+- Verify the orientation of every fan.
+- Do not add fans without an airflow plan; airflow path matters more than fan count.
 - Route cables so they do not block airflow or touch fans.
 
-### Laptop
+### Laptop recommendations
 
 - Use a hard, flat surface.
-- Do not game on bed/blanket/pillow.
+- Do not game on a bed, blanket, or pillow.
 - Keep air intakes unobstructed.
 - Use the original power adapter.
-- If needed, check performance mode in vendor utility.
+- Check the performance profile in the laptop vendor utility.
 
 ---
 
-## 6. Stability of XMP/EXPO, CPU, and GPU settings
+## XMP, EXPO, CPU, and GPU stability
 
-Overclock and undervolt must be validated separately.
+Validate memory, CPU, and GPU tuning separately.
 
-### Memory: XMP/EXPO
+### Memory: XMP or EXPO
 
-Instability signs:
+Instability can appear as:
 
-- archive extraction errors;
-- game crashes;
-- BSOD;
-- rare freezes;
-- WHEA;
-- boot issues after shutdown.
+- Archive extraction errors
+- Game crashes
+- BSODs
+- Rare freezes
+- WHEA errors
+- Boot issues after shutdown
 
-### CPU: PBO, Curve Optimizer, undervolt, overclock
+### CPU: PBO, Curve Optimizer, undervolting, overclocking
 
-Instability signs:
+Instability can appear as:
 
-- WHEA Logger events;
-- crashes under load;
-- random reboots;
-- rare freezes;
-- stress-test errors.
+- WHEA Logger events
+- Crashes under load
+- Random reboots
+- Rare freezes
+- Stress-test errors
 
-### GPU: overclock / undervolt
+### GPU: overclocking or undervolting
 
-Instability signs:
+Instability can appear as:
 
-- artifacts;
-- black screen;
-- driver reset;
-- game crashes;
-- hangs;
-- issues only in specific heavy games.
+- Visual artifacts
+- Black screens
+- Driver resets
+- Game crashes
+- Hangs
+- Issues only in specific demanding games
 
-> **Important:** > If a setup вЂњpasses benchmarkвЂќ but game crashes or WHEA appears, it is unstable. Relax settings or return to stock.
+> **Important:** If a setup passes a benchmark but games crash or WHEA errors appear, it is unstable. Relax the settings or return to stock.
 
 ---
 
-## 7. How to test stability
+## How to test stability
 
-Testing should match what you changed.
+Testing should match the change you made.
 
-### Pass/fail criteria
+### Pass or fail criteria
 
-For each stress test, record:
+For every stress test, record:
 
-- the tool and version used;
-- the duration;
-- errors reported by the tool;
-- WHEA events;
-- crashes, reboots, or freezes;
-- cold boots after reboot.
+- Tool and version used
+- Test duration
+- Errors reported by the tool
+- WHEA events
+- Crashes, reboots, or freezes
+- Cold-boot behavior after a restart
 
-One short passing pass is not enough to approve an overclock. Follow it with a long gaming session and check the Event Viewer.
+One short successful test is not enough to approve an overclock. Follow it with a long gaming session and check Event Viewer.
 
 ### After RAM tuning
 
 Check:
 
-- multiple cold boots/restarts;
-- games that previously had issues;
-- memory stress test;
-- no WHEA;
-- no archive/installer errors.
+- Multiple cold boots and restarts
+- Games that previously had issues
+- A memory stress test
+- Absence of WHEA errors
+- Absence of archive or installer errors
 
 ### After CPU tuning
 
 Check:
 
-- CPU-heavy game scenario;
-- looped benchmark;
-- CPU stress test;
-- temperatures, clocks, and WHEA.
+- A CPU-heavy game scenario
+- A looped benchmark
+- A CPU stress test
+- Temperatures, clocks, and WHEA errors
 
 ### After GPU tuning
 
 Check:
 
-- heavy game;
-- benchmark;
-- no artifacts;
-- driver stability;
-- GPU temperature and clocks.
+- A demanding game
+- A benchmark
+- Absence of artifacts
+- Driver stability
+- GPU temperature and clocks
 
 ### Practical sequence
 
-1. Run a short test after each step.
+1. Run a short test after each change.
 2. If stable, run a long gaming session.
 3. Check Event Viewer.
-4. Do not apply next overclock step before validating previous one.
+4. Do not apply the next tuning step before validating the previous one.
 
 ---
 
-## 8. WHEA errors
+## WHEA errors
 
-WHEA are Windows hardware error reports. They may relate to CPU, RAM, PBO, Curve Optimizer, undervolt, PCIe, GPU, or other components.
+WHEA errors are Windows hardware error reports. They may relate to the CPU, RAM, PBO, Curve Optimizer, undervolting, PCIe, GPU, or another component.
 
-### Check via PowerShell
+Check recent WHEA events:
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -292,73 +293,71 @@ Select-Object TimeCreated, Id, LevelDisplayName, Message
 ### What to do
 
 1. If errors started after tuning, revert the latest change.
-2. Return PBO/Curve Optimizer/undervolt/XMP-EXPO to stable settings.
-3. Check temperatures and power.
+2. Return PBO, Curve Optimizer, undervolting, or XMP/EXPO to stable settings.
+3. Check temperatures and power delivery.
 4. Re-test.
-5. If WHEA persists at stock settings, hardware diagnostics are required.
+5. If WHEA errors persist at stock settings, run hardware diagnostics.
 
 ---
 
-## 9. When cleaning is needed
+## When cleaning is needed
 
-Signs your PC should be serviced:
+Service the PC if:
 
-- temperature or noise became noticeably worse;
-- filters/heatsinks are dusty;
-- fans spin poorly;
-- heavy dust inside case;
-- GPU/CPU starts throttling;
-- long period without cleaning, especially near carpets, pets, or smokers.
+- Temperature or noise became noticeably worse
+- Filters or heatsinks are dusty
+- Fans spin poorly
+- There is heavy dust inside the case
+- The GPU or CPU starts throttling
+- The PC has not been cleaned for a long time, especially near carpets, pets, or smokers
 
 ### Safe cleaning method
 
-1. Fully shut down PC.
-2. Unplug power cable.
-3. Press case power button for a few seconds.
-4. Open case.
-5. Hold fan blades to prevent overspin from air flow.
+1. Fully shut down the PC.
+2. Unplug the power cable.
+3. Press the case power button for a few seconds.
+4. Open the case.
+5. Hold fan blades to prevent them from overspinning.
 6. Use compressed air in short bursts.
-7. Do not use vacuum inside PC: static and mechanical stress may be risky.
-8. Reassemble and verify all cables are connected.
+7. Do not use a vacuum inside the PC; static electricity and mechanical stress can be risky.
+8. Reassemble the PC and verify that all cables are connected.
 
-> **Warning:** > Do not spray liquids or use wet cleaning inside the case. If unsure about laptop/GPU disassembly, use a service center.
+> **Warning:** Do not spray liquids or use wet cleaning inside the case. If you are unsure about laptop or GPU disassembly, use a service center.
 
 ---
 
-## 10. When to contact service
+## When to contact service
 
-Manual tuning will not fix hardware faults. Warning signs:
+Manual tuning will not fix hardware faults. Stop experimenting and seek service if you see:
 
-- persistent black screens;
-- burning smell;
-- sparks/crackling/damaged cable;
-- fan not spinning;
-- instant GPU/CPU overheating under load;
-- BIOS cannot detect storage;
-- PC powers off under load;
-- artifacts even at stock settings;
-- WHEA/BSOD persists after reverting to stock.
+- Persistent black screens
+- Burning smell
+- Sparks, crackling, or damaged cables
+- A fan that does not spin
+- Immediate CPU or GPU overheating under load
+- BIOS cannot detect storage
+- The PC powers off under load
+- Artifacts at stock settings
+- WHEA errors or BSODs that persist after returning to stock
 
-Stop experiments, back up important data, and run hardware diagnostics.
+Back up important data before further diagnostics.
 
 ---
 
 ## Checklist
 
-- [ ] Temperatures and clocks validated under gaming load.
-- [ ] No thermal throttling, critical power limit, or severe clock drops.
-- [ ] Case and filters cleaned from dust.
-- [ ] Airflow path is not blocked.
-- [ ] CPU/GPU/case fans are working.
-- [ ] SSD is not overheating and has free space.
-- [ ] XMP/EXPO, PBO, Curve Optimizer, GPU OC, and undervolt tested separately.
-- [ ] No WHEA, crashes, BSOD, or artifacts after tweaks.
-- [ ] On fault symptoms, settings reverted to stock.
+- [ ] Temperatures and clocks are validated under gaming load.
+- [ ] There is no thermal throttling, critical power limit, or severe clock drop.
+- [ ] Case and dust filters are clean.
+- [ ] The airflow path is not blocked.
+- [ ] CPU, GPU, and case fans are working.
+- [ ] The SSD is not overheating and has free space.
+- [ ] XMP/EXPO, PBO, Curve Optimizer, GPU overclocking, and undervolting are tested separately.
+- [ ] No WHEA errors, crashes, BSODs, or artifacts appear after tuning.
+- [ ] Settings are reverted to stock when fault symptoms appear.
 
 ---
 
-## Summary
+## Next step
 
-A stable, clean, and properly cooled PC is more valuable than aggressive overclocking. First fix overheating, poor airflow, full SSD, and instability. Only then fine-tuning clocks, voltages, and fan curves makes sense.
-
-Next step: [What not to do](https://h4zvenn.github.io/gaming-pc-guide/docs/11-what-not-to-do.html).
+[What Not To Do](11-what-not-to-do.html)
