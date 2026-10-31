@@ -26,7 +26,7 @@ flowchart TD
     A[Low FPS] --> B{FPS cap and V-Sync disabled?}
     B -- No --> B1[Remove FPS cap and V-Sync, then re-test]
     B1 --> B
-    B -- Yes --> C{GPU busy time is 95-99 percent?}
+    B -- Yes --> C{Is GPU busy time 95–99%?}
     C -- Yes --> D[GPU-bound: reduce ray tracing, shadows, or reflections]
     D --> E[Test DLSS, FSR, or XeSS in Quality or Balanced mode]
     E --> F[Set a realistic FPS cap]
@@ -50,7 +50,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-    A[Stutter or bad frame times] --> B{Does it appear after 20-60 minutes?}
+    A[Stutter or bad frame times] --> B{Does it appear after 20–60 minutes?}
     B -- Yes --> C[Check temperatures, clocks, and throttling]
     C --> D[Improve airflow or adjust the fan curve]
     B -- No --> E{Does it happen in new areas or during camera movement?}
@@ -108,7 +108,7 @@ flowchart TD
 | Random packet loss | Wi-Fi quality, Ethernet cable, or router |
 | Lag only on one server or region | Server-side routing or load |
 
-> **Note:** Measure ping against the game server region or address you actually play on. A baseline check against `1.1.1.1` does not replace real-game server latency measurement.
+> **Note:** Measure ping against the game-server region or address you actually play on. A baseline check against `1.1.1.1` does not replace real game-server latency measurement.
 
 ---
 
