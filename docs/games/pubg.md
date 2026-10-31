@@ -23,7 +23,7 @@ permalink: /docs/games/pubg.html
 
 ## Quick Start
 
-1. Common base first (see [CS2 Quick Start](https://h4zvenn.github.io/gaming-pc-guide/docs/cs2.html#quick-start)).
+1. Common base first (see [CS2 Quick Start](https://h4zvenn.github.io/gaming-pc-guide/docs/games/cs2.html#quick-start)).
 2. BattlEye: do not modify game files, do not inject, do not disable its service.
 3. Apply only PUBG-specific items below.
 4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates.html' | relative_url }}).

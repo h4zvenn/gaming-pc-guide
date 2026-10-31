@@ -39,4 +39,4 @@ permalink: /docs/18-optimization-tools-evidence.html
 
 - Do not cite a tool number without the corresponding evidence layer.
 
-Back to main guide: [README](https://h4zvenn.github.io/gaming-pc-guide/docs/../README.html).
+Back to main guide: [Home]({{ '/' | relative_url }}).

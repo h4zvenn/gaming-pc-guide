@@ -97,4 +97,4 @@ title: "_template"
 
 > Mark each recommendation with: `verified` | `needs-verification` | `deprecated` and the date.
 
-Back to main guide: [README](https://h4zvenn.github.io/gaming-pc-guide/docs/../../README.html).
+Back to main guide: [Home]({{ '/' | relative_url }}).
