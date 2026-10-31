@@ -7,30 +7,30 @@ translation_key: windows-11
 permalink: /docs/05-windows-11.html
 ---
 
-> The goal of Windows tuning is to reduce real background load, choose correct gaming options, and keep the system stable and secure. You do not need to disable dozens of services, Defender, or updates for questionable вЂњFPS tweaks.вЂќ
+> The goal of Windows tuning is to reduce real background load, choose correct gaming options, and keep the system stable and secure. You do not need to disable dozens of services, Defender, or updates for questionable “FPS tweaks.”
 
 ## Principles
 
 - Change settings one at a time.
 - Reboot after major changes.
-- Check FPS, 1% low, frametime, and stability.
+- Check FPS, 1% lows, frame times, and stability.
 - Keep only changes that provide measurable results or better usability.
 
-### 5-minute Windows gaming pass
+## 5-minute gaming pass
 
 | Check | Target |
 | --- | --- |
 | Game Mode | On |
-| Monitor refresh rate | Correct max stable value |
+| Monitor refresh rate | Highest stable value |
 | Startup load | Unneeded apps disabled |
 | Overlays | Keep only required ones |
-| Downloads/updates | Paused during session |
+| Downloads and updates | Paused during the session |
 
-> **Important:** > Windows does not become faster just because more features are disabled. A stable system with proper drivers and minimal heavy background apps is better than aggressive debloating.
+> **Important:** Windows does not become faster just because more features are disabled. A stable system with proper drivers and minimal heavy background activity is better than aggressive debloating.
 
 ---
 
-## 1. Game Mode
+## Game Mode
 
 Open:
 
@@ -41,24 +41,16 @@ Settings → Gaming → Game Mode
 Enable:
 
 ```text
-Game Mode → On
+Game Mode: On
 ```
 
-Game Mode helps Windows prioritize gameplay and reduce impact from some background activity while gaming.
+Game Mode helps Windows prioritize gameplay and reduce the impact of some background activity while gaming.
 
-### When to keep it enabled
-
-- For most gaming PCs and laptops.
-- If you do not see problems in a specific game.
-
-### When to test disabling
-
-- Only if a specific game consistently performs worse with Game Mode enabled.
-- Compare the same scene before and after change.
+Keep it enabled for most gaming PCs and laptops. Test disabling it only if a specific game consistently performs worse with it enabled, and compare the same scene before and after.
 
 ---
 
-## 2. Power mode
+## Power mode
 
 Open:
 
@@ -69,34 +61,34 @@ Settings → System → Power & battery
 For desktop PCs, start with:
 
 ```text
-Power mode → Best performance
+Power mode: Best performance
 ```
 
-Then compare idle power draw, temperature, and fan noise. Keep a higher power mode only if it produces a useful result for your workload; on an idle desktop it can increase power use without improving games.
+Then compare idle power draw, temperature, and fan noise. Keep a higher power mode only if it produces a useful result for your workload; on an idle desktop, it can increase power use without improving games.
 
 For laptops:
 
 - Use AC power while gaming.
-- Select a performance mode in Windows and, if available, vendor performance profile.
-- Keep in mind higher power mode increases heat, noise, and battery usage.
+- Select a performance mode in Windows and, if available, in the laptop vendor utility.
+- Remember that a higher power mode increases heat, noise, and battery usage.
 
-### Check active power plan
+Check the active power plan:
 
 ```powershell
 powercfg /getactivescheme
 ```
 
-### List available plans
+List available plans:
 
 ```powershell
 powercfg /list
 ```
 
-> **Note:** > `Ultimate Performance` does not guarantee higher FPS. On modern PCs it may provide little to no gain while increasing idle power and temperature. Test, do not choose by name.
+> **Note:** Ultimate Performance does not guarantee higher FPS. On modern PCs, it may provide little or no gain while increasing idle power consumption and temperature. Test it instead of choosing it by name.
 
 ---
 
-## 3. Windows graphics settings
+## Windows graphics settings
 
 Open:
 
@@ -104,28 +96,28 @@ Open:
 Settings → System → Display → Graphics
 ```
 
-Here you can assign apps to a specific GPU and enable certain system gaming options.
+Here you can assign apps to a specific GPU and enable system gaming options.
 
-### Assign high-performance GPU
+### Assign the high-performance GPU
 
 This is especially relevant for laptops and systems with multiple GPUs.
 
 1. In `Custom settings for applications`, find the game.
-2. If missing, click `Browse` and add the game `.exe`.
-3. Click `Options`.
-4. Select:
+2. If it is missing, select `Browse` and add the game `.exe`.
+3. Select `Options`.
+4. Choose:
 
-    ```text
-    High performance
-    ```
+   ```text
+   High performance
+   ```
 
-5. Save changes.
+5. Save the changes.
 
-> **Tip:** > On laptops, preferred GPU can also be set in NVIDIA Control Panel, AMD Software, or vendor utility. Avoid conflicting profiles unless required.
+> **Tip:** On laptops, the preferred GPU can also be set in NVIDIA Control Panel, AMD Software, or the laptop vendor utility. Avoid conflicting profiles unless necessary.
 
 ---
 
-## 4. Optimizations for windowed games
+## Optimizations for windowed games
 
 Open:
 
@@ -133,39 +125,37 @@ Open:
 Settings → System → Display → Graphics → Change default graphics settings
 ```
 
-There may be an option:
+Find:
 
 ```text
 Optimizations for windowed games
 ```
 
-It applies to modern games in windowed/borderless mode on Windows 11 22H2 and later. Test it in your games: changing it may require game restart and sometimes Windows restart.
+This setting applies to modern games in windowed or borderless mode on Windows 11 22H2 and later. Changing it may require restarting the game and sometimes Windows.
 
 ### How to test
 
 1. Choose one mode.
 2. Reboot if Windows asks.
 3. Test the same game scene.
-4. Compare FPS, frametime, latency, and fullscreen behavior.
-5. Keep the option that works better on your specific system.
+4. Compare FPS, frame times, latency, and fullscreen behavior.
+5. Keep the option that works better on your system.
 
 ---
 
-## 5. Hardware-accelerated GPU scheduling (HAGS)
+## Hardware-accelerated GPU scheduling
 
-HAGS is in the same section:
+Hardware-accelerated GPU scheduling (HAGS) is in the same section:
 
 ```text
 Settings → System → Display → Graphics → Change default graphics settings
 ```
 
-Option name:
+Find:
 
 ```text
 Hardware-accelerated GPU scheduling
 ```
-
-### What to do
 
 HAGS is an optional test, not a default recommendation.
 
@@ -173,60 +163,60 @@ HAGS is an optional test, not a default recommendation.
 2. Enable HAGS.
 3. Reboot the PC.
 4. Repeat the same scene with the same settings and overlays.
-5. Compare 1% low, frametime, stability, and any new stutter.
-6. Keep the setting only if the result is repeatable and no new issues appear. Otherwise disable it and reboot again.
+5. Compare 1% lows, frame times, stability, and any new stutter.
+6. Keep it only if the result is repeatable and no new issues appear. Otherwise, disable it and reboot again.
 
-> **Note:** > HAGS requires a supported GPU and driver. Some features, such as certain frame-generation implementations, may require it. Check the current vendor documentation for your GPU.
+HAGS requires a supported GPU and driver. Some features, including certain frame-generation implementations, may require it. Check the current documentation for your GPU vendor.
 
-Background: [Hardware Accelerated GPU Scheduling](https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling/).
+Microsoft describes HAGS as a way to offload most GPU scheduling to a dedicated GPU-based scheduling processor; for most users, the transition is intended to be transparent. [Microsoft DirectX Developer Blog](https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling/)
 
-> **Important:** > HAGS is not a mandatory вЂњFPS boost.вЂќ Result depends on GPU, driver, game, and Windows version. Decide by your measurements, not someone elseвЂ™s test.
+> **Important:** HAGS is not a mandatory FPS boost. The result depends on the GPU, driver, game, and Windows version. Decide based on your own measurements.
 
 ---
 
-## 6. VRR, Auto HDR, and HDR
+## VRR, Auto HDR, and HDR
 
-### Variable Refresh Rate (VRR)
+### Variable Refresh Rate
 
-VRR can help on monitors with FreeSync/G-SYNC Compatible and similar technologies.
+VRR can help on monitors with FreeSync, G-SYNC Compatible, or similar technologies.
 
-Check:
+Check that:
 
-- adaptive sync is enabled in monitor OSD;
-- VRR is enabled in GPU driver panel;
-- no flicker or specific-game issues appear.
+- Adaptive Sync is enabled in the monitor’s on-screen display.
+- VRR is enabled in the GPU driver panel.
+- No flicker or game-specific issues appear.
 
 ### Auto HDR and HDR
 
-Use HDR/Auto HDR only if your monitor truly supports HDR at acceptable quality and you like the result.
+Use HDR or Auto HDR only if your monitor supports HDR at acceptable quality and you like the result.
 
-HDR can improve visuals in suitable games, but it is not a performance tweak. If color/brightness/compatibility issues appear, disable it first for testing.
+HDR can improve visuals in suitable games, but it is not a performance tweak. If color, brightness, or compatibility issues appear, disable it first for testing.
 
 ---
 
-## 7. Monitor refresh rate
+## Monitor refresh rate
 
-Check:
+Open:
 
 ```text
 Settings → System → Display → Advanced display
 ```
 
-In `Choose a refresh rate`, select the highest stable value supported by monitor, cable, and GPU.
+In `Choose a refresh rate`, select the highest stable value supported by the monitor, cable, and GPU.
 
 Example:
 
 ```text
-165 Hz monitor → Windows should be set to 165 Hz, not 60 Hz.
+A 165 Hz monitor should be set to 165 Hz in Windows, not 60 Hz.
 ```
 
-> **Warning:** > Do not confuse FPS and Hz. FPS is how many frames the PC renders; Hz is how many times per second the monitor refreshes. Both matter, but they are not the same thing.
+> **Warning:** Do not confuse FPS and Hz. FPS is how many frames the PC renders; Hz is how many times per second the monitor refreshes. Both matter, but they are not the same thing.
 
 ---
 
-## 8. Notifications and Do Not Disturb
+## Notifications and Do Not Disturb
 
-Notifications can distract, pull focus from game, and sometimes trigger extra overlays.
+Notifications can distract you and sometimes trigger extra overlays.
 
 Open:
 
@@ -234,43 +224,36 @@ Open:
 Settings → System → Notifications
 ```
 
-Configure:
-
 - Disable notifications from unnecessary apps.
-- Use `Do Not Disturb` while gaming.
-- Disable Windows promotional/recommendation notifications if not needed.
+- Use Do Not Disturb while gaming.
+- Disable promotional or recommendation notifications if you do not need them.
 
-This does not directly increase FPS, but it improves gameplay focus and reduces interruptions.
-
----
-
-## 9. Overlays and recording
-
-Overlays are useful, but running several overlays at once can cause conflicts, overhead, and game issues.
-
-Check if you really need:
-
-- Xbox Game Bar;
-- Discord Overlay;
-- NVIDIA Overlay;
-- AMD Overlay;
-- Steam Overlay;
-- Overwolf;
-- OBS Game Capture / recording;
-- monitoring and FPS overlays.
-
-### Correct approach
-
-1. Do not disable everything permanently.
-2. Keep only needed features.
-3. If stutter/crashes/bad frametime appear, disable overlays one by one temporarily.
-4. Re-test in the same game.
-
-> **Tip:** > MSI Afterburner + RTSS are often useful for monitoring, but for issues in one specific game, also test without RTSS overlay.
+This does not directly increase FPS, but it reduces interruptions during gameplay.
 
 ---
 
-## 10. Startup apps
+## Overlays and recording
+
+Overlays are useful, but running several at once can cause conflicts, overhead, and game issues.
+
+Check whether you actually need:
+
+- Xbox Game Bar
+- Discord Overlay
+- NVIDIA Overlay
+- AMD Overlay
+- Steam Overlay
+- Overwolf
+- OBS Game Capture or recording
+- Monitoring and FPS overlays
+
+Do not disable everything permanently. Keep only the features you need. If stutter, crashes, or bad frame times appear, disable overlays one by one temporarily and re-test the same game.
+
+> **Tip:** MSI Afterburner with RTSS is useful for monitoring, but if one specific game has issues, also test without the RTSS overlay.
+
+---
+
+## Startup apps
 
 Open:
 
@@ -278,29 +261,29 @@ Open:
 Task Manager → Startup apps
 ```
 
-Disable startup apps that are not needed right after boot.
+Disable startup apps that are not needed immediately after boot.
 
 Often safe to disable if not always needed:
 
-- game launchers;
-- messengers;
-- Adobe/Google/Office updaters;
-- cloud clients;
-- RGB software;
-- recording and overlay tools;
-- unnecessary auto-updaters.
+- Game launchers
+- Messengers
+- Adobe, Google, or Office updaters
+- Cloud clients
+- RGB software
+- Recording and overlay tools
+- Unnecessary auto-updaters
 
 Do not disable blindly:
 
-- audio driver components;
-- touchpad/hotkey/laptop power components;
-- fan control software if you use it;
-- mouse/keyboard driver software if profiles depend on it;
-- security software if it is your only active antivirus.
+- Audio driver components
+- Touchpad, hotkey, or laptop power components
+- Fan-control software, if you use it
+- Mouse or keyboard software, if your profiles depend on it
+- Security software, if it is your only active antivirus
 
 ---
 
-## 11. Windows visual effects
+## Windows visual effects
 
 Open Windows search and type:
 
@@ -308,38 +291,34 @@ Open Windows search and type:
 Adjust the appearance and performance of Windows
 ```
 
-You may disable some animations for a simpler and snappier desktop feel.
+You can disable some animations for a simpler, snappier desktop feel.
 
-But remember:
-
-- On modern PCs this rarely affects in-game FPS noticeably.
-- This is mostly a desktop comfort setting, not a core gaming tweak.
-- Do not disable interface features you actually use for tiny resource savings.
+On modern PCs, this rarely affects in-game FPS noticeably. Treat it as a desktop comfort setting, not a core gaming tweak. Do not disable interface features you actually use for tiny resource savings.
 
 ---
 
-## 12. Security and virtualization
+## Security and virtualization
 
-Do not disable without a clear reason:
+Do not disable these without a clear reason:
 
-- Microsoft Defender;
-- Windows Firewall;
-- UAC;
-- Windows Update;
-- Core isolation;
-- VBS and related protections.
+- Microsoft Defender
+- Windows Firewall
+- UAC
+- Windows Update
+- Core isolation
+- VBS and related protections
 
-Some of these can have measurable impact in specific setups, but disabling them reduces security and may affect compatibility. First identify a concrete issue, create a restore point, and evaluate the tradeoff.
+Some of these can have a measurable impact in specific setups, but disabling them reduces security and may affect compatibility. First identify a concrete issue, create a restore point, and evaluate the trade-off.
 
-MicrosoftвЂ™s guidance for memory integrity and VBS is to keep the protection enabled unless there is a specific, understood reason to change it. See [Enable memory integrity](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity).
+Microsoft recommends keeping memory integrity enabled unless there is a specific, understood reason to change it. [Microsoft Learn](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity)
 
-> **Warning:** > Do not run `.reg`, `.bat`, or PowerShell scripts that mass-disable protections and system features. вЂњMore disabledвЂќ does not mean вЂњbetter optimized.вЂќ
+> **Warning:** Do not run `.reg`, `.bat`, or PowerShell scripts that mass-disable protections and system features. “More disabled” does not mean “better optimized.”
 
 ---
 
-## 13. Useful safe commands
+## Useful diagnostic commands
 
-### Current power scheme
+### Current power plan
 
 ```powershell
 powercfg /getactivescheme
@@ -352,7 +331,7 @@ Get-CimInstance Win32_StartupCommand |
 Select-Object Name, Command, Location, User
 ```
 
-### Top CPU-time processes
+### Processes using the most CPU time
 
 ```powershell
 Get-Process |
@@ -360,27 +339,25 @@ Sort-Object CPU -Descending |
 Select-Object -First 20 Name, Id, CPU, WorkingSet64
 ```
 
-> **Note:** > These commands do not change Windows; they only display information.
+These commands do not change Windows; they only display information.
 
 ---
 
-## Windows 11 checklist
+## Checklist
 
 - [ ] Game Mode is enabled.
-- [ ] Suitable power mode is selected.
-- [ ] Game is assigned to high-performance GPU if multiple GPUs exist.
-- [ ] HAGS and Optimizations for windowed games are tested.
-- [ ] Correct monitor refresh rate is set.
+- [ ] A suitable power mode is selected.
+- [ ] The game is assigned to the high-performance GPU, if the system has multiple GPUs.
+- [ ] HAGS and Optimizations for Windowed Games are tested.
+- [ ] The correct monitor refresh rate is set.
 - [ ] Unnecessary notifications are disabled.
 - [ ] Only required overlays remain active.
 - [ ] Unnecessary startup apps are disabled.
-- [ ] Defender, Firewall, Update, and critical Windows components remain enabled.
-- [ ] All changes are tested in the same scene.
+- [ ] Defender, Firewall, Windows Update, and critical Windows components remain enabled.
+- [ ] Every change is tested in the same scene.
 
 ---
 
-## Summary
+## Next step
 
-For most PCs, it is enough to enable Game Mode, verify power mode, refresh rate, graphics assignment, and remove truly unnecessary background apps. HAGS, windowed optimizations, VRR, and overlays should be tested on your own hardware—there is no universal best setup for every system.
-
-Next step: [GPU settings](https://h4zvenn.github.io/gaming-pc-guide/docs/06-gpu-settings.html).
+[GPU Settings](06-gpu-settings.html)
