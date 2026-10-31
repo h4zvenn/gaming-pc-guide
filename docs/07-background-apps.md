@@ -63,8 +63,7 @@ Get-Process |
   @{Name = 'RAM_MB'; Expression = { [math]::Round($_.WorkingSet64 / 1MB, 0) }}
 ```
 
-> [!NOTE]
-> `CPU` in PowerShell is cumulative CPU time since process start, not current usage percentage. For real-time load, Task Manager or HWiNFO is more useful.
+> **Note:** > `CPU` in PowerShell is cumulative CPU time since process start, not current usage percentage. For real-time load, Task Manager or HWiNFO is more useful.
 
 ---
 
@@ -159,8 +158,7 @@ foreach ($name in $disable) {
 | Logitech G HUB | Optional |
 | NVIDIA | Do not disable |
 
-> [!TIP]
-> Disabling startup does not uninstall the app. You can launch it manually or re-enable startup later.
+> **Tip:** > Disabling startup does not uninstall the app. You can launch it manually or re-enable startup later.
 
 ### Verify startup changes
 
@@ -234,8 +232,7 @@ Downloads can:
 - Consume CPU for file verification or decompression.
 - Cause stutters on weaker systems.
 
-> [!NOTE]
-> If the issue is only ping or packet loss, do not try to fix it by disabling Windows services. First check downloads, Wi-Fi or cable, router, ISP, and game-server status.
+> **Note:** > If the issue is only ping or packet loss, do not try to fix it by disabling Windows services. First check downloads, Wi-Fi or cable, router, ISP, and game-server status.
 
 ---
 
@@ -265,8 +262,7 @@ If stutters, crashes, or launch issues appear:
 4. If there is no difference, re-enable it if needed.
 5. Repeat with the next overlay.
 
-> [!IMPORTANT]
-> Do not run multiple recording tools and multiple FPS overlays at the same time. They can conflict.
+> **Important:** > Do not run multiple recording tools and multiple FPS overlays at the same time. They can conflict.
 
 ---
 

@@ -18,8 +18,7 @@ permalink: /docs/06-gpu-settings.html
 3. Change one setting at a time.
 4. Validate FPS, 1% low, frametime, image quality, and stability.
 
-> [!IMPORTANT]
-> Driver panel does not create performance out of nowhere. It helps use available GPU power correctly, reduce latency in suitable scenarios, and avoid conflicting settings.
+> **Important:** > Driver panel does not create performance out of nowhere. It helps use available GPU power correctly, reduce latency in suitable scenarios, and avoid conflicting settings.
 
 ### Fast setup order (per game)
 
@@ -111,8 +110,7 @@ System outputs 180–260 FPS but often drops to 165 FPS.
 A 165 or 170 FPS cap may provide smoother frametime than uncapped fluctuation.
 ```
 
-> [!NOTE]
-> There is no universal вЂњperfect FPS cap.вЂќ It depends on monitor refresh rate, VRR, game behavior, system performance, and personal feel.
+> **Note:** > There is no universal вЂњperfect FPS cap.вЂќ It depends on monitor refresh rate, VRR, game behavior, system performance, and personal feel.
 
 ---
 
@@ -148,8 +146,7 @@ It helps smooth motion when FPS varies within monitor VRR range.
 
 These are test starting points, not universal settings. Confirm the monitorвЂ™s VRR range and the current driver behavior before keeping a profile.
 
-> [!WARNING]
-> V-Sync/VRR/FPS-cap settings affect smoothness, tearing, and latency at the same time. There is no single best mode for every monitor and every game.
+> **Warning:** > V-Sync/VRR/FPS-cap settings affect smoothness, tearing, and latency at the same time. There is no single best mode for every monitor and every game.
 
 ---
 
@@ -289,8 +286,7 @@ Before enabling:
 - evaluate image quality and responsiveness personally;
 - do not judge only by FPS overlay number.
 
-> [!IMPORTANT]
-> Frame Generation is mainly useful for visual smoothness in compatible games. It does not fix CPU limit, stutter, overheating, or instability.
+> **Important:** > Frame Generation is mainly useful for visual smoothness in compatible games. It does not fix CPU limit, stutter, overheating, or instability.
 
 ---
 

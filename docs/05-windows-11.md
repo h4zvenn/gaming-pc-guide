@@ -28,8 +28,7 @@ permalink: /docs/05-windows-11.html
 | Overlays | Keep only required ones |
 | Downloads/updates | Paused during session |
 
-> [!IMPORTANT]
-> Windows does not become faster just because more features are disabled. A stable system with proper drivers and minimal heavy background apps is better than aggressive debloating.
+> **Important:** > Windows does not become faster just because more features are disabled. A stable system with proper drivers and minimal heavy background apps is better than aggressive debloating.
 
 ---
 
@@ -95,8 +94,7 @@ powercfg /getactivescheme
 powercfg /list
 ```
 
-> [!NOTE]
-> `Ultimate Performance` does not guarantee higher FPS. On modern PCs it may provide little to no gain while increasing idle power and temperature. Test, do not choose by name.
+> **Note:** > `Ultimate Performance` does not guarantee higher FPS. On modern PCs it may provide little to no gain while increasing idle power and temperature. Test, do not choose by name.
 
 ---
 
@@ -125,8 +123,7 @@ This is especially relevant for laptops and systems with multiple GPUs.
 
 5. Save changes.
 
-> [!TIP]
-> On laptops, preferred GPU can also be set in NVIDIA Control Panel, AMD Software, or vendor utility. Avoid conflicting profiles unless required.
+> **Tip:** > On laptops, preferred GPU can also be set in NVIDIA Control Panel, AMD Software, or vendor utility. Avoid conflicting profiles unless required.
 
 ---
 
@@ -181,13 +178,11 @@ HAGS is an optional test, not a default recommendation.
 5. Compare 1% low, frametime, stability, and any new stutter.
 6. Keep the setting only if the result is repeatable and no new issues appear. Otherwise disable it and reboot again.
 
-> [!NOTE]
-> HAGS requires a supported GPU and driver. Some features, such as certain frame-generation implementations, may require it. Check the current vendor documentation for your GPU.
+> **Note:** > HAGS requires a supported GPU and driver. Some features, such as certain frame-generation implementations, may require it. Check the current vendor documentation for your GPU.
 
 Background: [Hardware Accelerated GPU Scheduling](https://devblogs.microsoft.com/directx/hardware-accelerated-gpu-scheduling/).
 
-> [!IMPORTANT]
-> HAGS is not a mandatory вЂњFPS boost.вЂќ Result depends on GPU, driver, game, and Windows version. Decide by your measurements, not someone elseвЂ™s test.
+> **Important:** > HAGS is not a mandatory вЂњFPS boost.вЂќ Result depends on GPU, driver, game, and Windows version. Decide by your measurements, not someone elseвЂ™s test.
 
 ---
 
@@ -227,8 +222,7 @@ Example:
 165 Hz monitor → Windows should be set to 165 Hz, not 60 Hz.
 ```
 
-> [!WARNING]
-> Do not confuse FPS and Hz. FPS is how many frames the PC renders; Hz is how many times per second the monitor refreshes. Both matter, but they are not the same thing.
+> **Warning:** > Do not confuse FPS and Hz. FPS is how many frames the PC renders; Hz is how many times per second the monitor refreshes. Both matter, but they are not the same thing.
 
 ---
 
@@ -274,8 +268,7 @@ Check if you really need:
 3. If stutter/crashes/bad frametime appear, disable overlays one by one temporarily.
 4. Re-test in the same game.
 
-> [!TIP]
-> MSI Afterburner + RTSS are often useful for monitoring, but for issues in one specific game, also test without RTSS overlay.
+> **Tip:** > MSI Afterburner + RTSS are often useful for monitoring, but for issues in one specific game, also test without RTSS overlay.
 
 ---
 
@@ -342,8 +335,7 @@ Some of these can have measurable impact in specific setups, but disabling them 
 
 MicrosoftвЂ™s guidance for memory integrity and VBS is to keep the protection enabled unless there is a specific, understood reason to change it. See [Enable memory integrity](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity).
 
-> [!WARNING]
-> Do not run `.reg`, `.bat`, or PowerShell scripts that mass-disable protections and system features. вЂњMore disabledвЂќ does not mean вЂњbetter optimized.вЂќ
+> **Warning:** > Do not run `.reg`, `.bat`, or PowerShell scripts that mass-disable protections and system features. вЂњMore disabledвЂќ does not mean вЂњbetter optimized.вЂќ
 
 ---
 
@@ -370,8 +362,7 @@ Sort-Object CPU -Descending |
 Select-Object -First 20 Name, Id, CPU, WorkingSet64
 ```
 
-> [!NOTE]
-> These commands do not change Windows; they only display information.
+> **Note:** > These commands do not change Windows; they only display information.
 
 ---
 

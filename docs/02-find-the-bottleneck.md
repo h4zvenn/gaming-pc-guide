@@ -22,8 +22,7 @@ It is not a permanent property of the system. The same PC can:
 - run into VRAM limits with high texture settings;
 - stutter due to a full SSD, background processes, or unstable RAM.
 
-> [!IMPORTANT]
-> There is no universal bottleneck percentage.
+> **Important:** > There is no universal bottleneck percentage.
 > Diagnostics depend on the game, resolution, settings, FPS cap, and background load.
 
 ---
@@ -47,8 +46,7 @@ During testing, monitor:
 - RAM usage
 - Used/free SSD space
 
-> [!IMPORTANT]
-> Measure GPU/CPU balance with the frame cap removed and V-Sync off. A capped or V-Sync-limited GPU can show low usage even when it is still the limiting component. Prefer GPU busy time from PresentMon or CapFrameX over a Task Manager percentage.
+> **Important:** > Measure GPU/CPU balance with the frame cap removed and V-Sync off. A capped or V-Sync-limited GPU can show low usage even when it is still the limiting component. Prefer GPU busy time from PresentMon or CapFrameX over a Task Manager percentage.
 >
 > Do not rely only on average CPU usage.
 > One main game thread can be fully loaded while total CPU usage still looks moderate.
@@ -188,8 +186,7 @@ Do not use вЂњRAM cleanersвЂќ or forced memory cleanup tools. They can evi
 5. Restart the game after major texture-setting changes.
 6. Do not enable texture packs that clearly require more VRAM than your GPU has.
 
-> [!NOTE]
-> In-game VRAM indicators are useful references, but not always exact limits. Evaluate together with real stutter, frametime, and monitoring data.
+> **Note:** > In-game VRAM indicators are useful references, but not always exact limits. Evaluate together with real stutter, frametime, and monitoring data.
 
 ---
 
@@ -210,8 +207,7 @@ Do not use вЂњRAM cleanersвЂќ or forced memory cleanup tools. They can evi
 4. Avoid game downloads, torrents, cloud sync, and updates while playing.
 5. Check drive health via vendor utility or SMART monitoring.
 
-> [!TIP]
-> Not every stutter is fixed by Windows tweaks. Some issues are in the game itself, its engine, a patch, or shader compilation behavior.
+> **Tip:** > Not every stutter is fixed by Windows tweaks. Some issues are in the game itself, its engine, a patch, or shader compilation behavior.
 
 ---
 
@@ -233,8 +229,7 @@ Do not use вЂњRAM cleanersвЂќ or forced memory cleanup tools. They can evi
 5. Tune a reasonable fan curve.
 6. On laptops, use a hard surface, keep air intakes clear, and play on AC power.
 
-> [!IMPORTANT]
-> High temperature does not always mean a fault. Evaluate real clocks, power limits, throttling, noise, and stability together.
+> **Important:** > High temperature does not always mean a fault. Evaluate real clocks, power limits, throttling, noise, and stability together.
 
 ---
 
@@ -257,8 +252,7 @@ Do not use вЂњRAM cleanersвЂќ or forced memory cleanup tools. They can evi
 4. Verify temperatures and power delivery.
 5. After each change, test in real games and stress tests.
 
-> [!WARNING]
-> вЂњWorks on desktopвЂќ does not mean вЂњstable in gamesвЂќ.
+> **Warning:** > вЂњWorks on desktopвЂќ does not mean вЂњstable in gamesвЂќ.
 > Rare memory errors or Curve Optimizer instability can appear only under specific load patterns.
 
 ---

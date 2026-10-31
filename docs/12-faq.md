@@ -73,8 +73,7 @@ PBO and Curve Optimizer are advanced Ryzen tuning options. They can improve boos
 
 If you are not ready to test stability, keep CPU on `Auto`.
 
-> [!IMPORTANT]
-> Do not copy Curve Optimizer values from someone else: even identical CPU models can have different stability headroom.
+> **Important:** > Do not copy Curve Optimizer values from someone else: even identical CPU models can have different stability headroom.
 
 ---
 

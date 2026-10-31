@@ -42,8 +42,7 @@ Only when explicitly required.
 2. Type `Windows Terminal`.
 3. Right-click -> `Run as administrator`.
 
-> [!WARNING]
-> Do not run unknown commands as administrator.
+> **Warning:** > Do not run unknown commands as administrator.
 
 ---
 
@@ -180,8 +179,7 @@ Get-Process *discord* -ErrorAction SilentlyContinue |
 Select-Object Name, Id, CPU, WorkingSet64
 ```
 
-> [!WARNING]
-> Do not kill unknown/system processes blindly.
+> **Warning:** > Do not kill unknown/system processes blindly.
 
 ---
 
@@ -252,16 +250,14 @@ To measure latency to the server you actually play on:
 3. Record min/avg/max latency and packet loss.
 4. Repeat on Wi-Fi and Ethernet if you want to separate wireless noise from real network latency.
 
-> [!IMPORTANT]
-> The `1.1.1.1` test is not your game server ping; it is only a baseline connectivity check.
+> **Important:** > The `1.1.1.1` test is not your game server ping; it is only a baseline connectivity check.
 > `Test-Connection` uses ICMP, which some servers and firewalls block. A failed ping does not automatically prove a bad game connection.
 
 ### Network load during play
 
 Before measuring, pause downloads, cloud sync, torrents, and streaming. Network saturation can be reported as high latency and be unrelated to routing or ISP problems.
 
-> [!NOTE]
-> For real gameplay networking, use the game server host or region data rather than the `1.1.1.1` baseline.
+> **Note:** > For real gameplay networking, use the game server host or region data rather than the `1.1.1.1` baseline.
 
 ---
 
@@ -287,8 +283,7 @@ Order:
 4. Reboot.
 5. If problems persist, repeat the sequence and check the CBS log.
 
-> [!NOTE]
-> Some Microsoft support pages describe SFC first as a quick check. That order can still be useful for diagnosis, but it does not repair a damaged component store. Use DISM first when the goal is repair.
+> **Note:** > Some Microsoft support pages describe SFC first as a quick check. That order can still be useful for diagnosis, but it does not repair a damaged component store. Use DISM first when the goal is repair.
 >
 > Sources: [Repair a Windows image](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image), [System File Checker](https://support.microsoft.com/en-us/windows/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system-files-79aa86cb-ca52-166a-92a3-966e85d4094e).
 

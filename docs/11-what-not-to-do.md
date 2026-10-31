@@ -24,8 +24,7 @@ If a tweak:
 
 do not apply it on your main PC.
 
-> [!IMPORTANT]
-> Good optimization means measurable results, stability, and rollback capability—not maximum number of disabled features.
+> **Important:** > Good optimization means measurable results, stability, and rollback capability—not maximum number of disabled features.
 
 ---
 

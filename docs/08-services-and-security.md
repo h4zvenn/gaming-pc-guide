@@ -19,8 +19,7 @@ Do not disable a service until you can answer three questions:
 2. What specific problem does it cause on my PC?
 3. How will I revert the change if something stops working?
 
-> [!IMPORTANT]
-> The goal is to remove a specific unnecessary program, not to minimize the number of Windows services at all costs.
+> **Important:** > The goal is to remove a specific unnecessary program, not to minimize the number of Windows services at all costs.
 
 ### Safe decision matrix
 
@@ -104,8 +103,7 @@ These Windows components are critical. Do not disable them without an exact, doc
 - Security Center
 - Windows Update
 
-> [!WARNING]
-> Disabling Defender, Firewall, Windows Update, UAC, network, or certificate services for FPS is a bad tradeoff. Security drops, issues appear, and performance gains are usually zero or negligible.
+> **Warning:** > Disabling Defender, Firewall, Windows Update, UAC, network, or certificate services for FPS is a bad tradeoff. Security drops, issues appear, and performance gains are usually zero or negligible.
 
 BITS (Background Intelligent Transfer Service) is an update-delivery component, not a security feature. Do not disable it to stop updates; use Windows Update settings instead.
 
@@ -178,8 +176,7 @@ Seeing many `Service Host` / `svchost.exe` processes in Task Manager is normal. 
 3. Determine the cause: update, indexing, sync, network, or driver error.
 4. Do not delete or block `svchost.exe`.
 
-> [!WARNING]
-> `svchost.exe` is a core Windows process. Deleting, blocking, or “optimizing” it with third-party scripts can damage the system.
+> **Warning:** > `svchost.exe` is a core Windows process. Deleting, blocking, or “optimizing” it with third-party scripts can damage the system.
 
 ---
 
@@ -226,8 +223,7 @@ Instead of disabling services:
 4. Let updates complete after gaming.
 5. Reboot if Windows requires it.
 
-> [!NOTE]
-> A temporary update pause is normal. Permanently disabled Windows Update creates security risk and long-term compatibility issues.
+> **Note:** > A temporary update pause is normal. Permanently disabled Windows Update creates security risk and long-term compatibility issues.
 
 ---
 
@@ -283,8 +279,7 @@ Get-CimInstance Win32_Service |
   Select-Object Name, DisplayName, State, StartMode
 ```
 
-> [!NOTE]
-> All commands above are read-only. They do not change Windows configuration.
+> **Note:** > All commands above are read-only. They do not change Windows configuration.
 
 ---
 
@@ -398,8 +393,7 @@ Before running any script:
 5. Do not run it as administrator if you do not understand what it changes.
 6. Do not run scripts from archives, Discord, YouTube descriptions, or unknown websites without review.
 
-> [!IMPORTANT]
-> If a script cannot be read and understood, it cannot be run safely.
+> **Important:** > If a script cannot be read and understood, it cannot be run safely.
 
 ---
 

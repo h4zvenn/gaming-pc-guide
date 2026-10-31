@@ -31,8 +31,7 @@ Before optimization:
 | You are not sure about system state | Create restore point + check temps |
 | Game feels choppy | Verify monitor refresh rate + close heavy background apps |
 
-> [!IMPORTANT]
-> Change only one setting at a time.
+> **Important:** > Change only one setting at a time.
 >
 > If you apply many tweaks at once, you cannot tell what actually helped and what caused issues.
 
@@ -58,8 +57,7 @@ A restore point helps roll back system settings, drivers, and some Windows chang
 
 8. Wait for the success message.
 
-> [!NOTE]
-> A restore point is not a backup of personal files.
+> **Note:** > A restore point is not a backup of personal files.
 > It is mainly for rolling back system changes.
 >
 > If BitLocker is enabled, save the recovery key before changing BIOS, TPM, Secure Boot, or boot-order settings. A restore point does not replace that key.
@@ -88,8 +86,7 @@ Examples:
 360 Hz
 ```
 
-> [!WARNING]
-> Do not select a refresh rate your monitor/cable cannot handle stably.
+> **Warning:** > Do not select a refresh rate your monitor/cable cannot handle stably.
 > If screen blackout, artifacts, or signal loss appears, revert to a known stable value.
 
 ---
@@ -119,8 +116,7 @@ Select-Object Name,
 - `UsedGB` — used space
 - `FreeGB` — free space
 
-> [!TIP]
-> Avoid questionable вЂњregistry cleanersвЂќ just to free space.
+> **Tip:** > Avoid questionable вЂњregistry cleanersвЂќ just to free space.
 > Remove unused games, temporary files, old downloads, and software you do not use.
 
 ---
@@ -171,8 +167,7 @@ GPU temperature: __________
 Change: Before optimization
 ```
 
-> [!IMPORTANT]
-> Average FPS is not the only metric.
+> **Important:** > Average FPS is not the only metric.
 > If average FPS barely changes but 1% low improves and frametime is smoother, the optimization may still be useful.
 
 ---
@@ -208,8 +203,7 @@ Select-Object Manufacturer, PartNumber, Capacity, Speed, ConfiguredClockSpeed
 powercfg /getactivescheme
 ```
 
-> [!NOTE]
-> Commands in this section are diagnostic only; they do not change Windows settings.
+> **Note:** > Commands in this section are diagnostic only; they do not change Windows settings.
 > On GitHub, code blocks can be copied with the **Copy** button.
 
 ---

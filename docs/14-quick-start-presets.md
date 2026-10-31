@@ -18,8 +18,7 @@ permalink: /docs/14-quick-start-presets.html
 3. Benchmark with the template from [16 Benchmark templates](https://h4zvenn.github.io/gaming-pc-guide/docs/16-benchmark-templates.html).
 4. Keep only changes that improve FPS/1% low/frametime without instability.
 
-> [!IMPORTANT]
-> One preset at a time. Do not mix all presets in one session.
+> **Important:** > One preset at a time. Do not mix all presets in one session.
 >
 > A preset is an ordered checklist, not a batch script. Apply one row, verify it in the same scene, then continue. If a row changes several inseparable settings, treat the whole row as one experiment and record it.
 

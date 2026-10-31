@@ -35,8 +35,7 @@ During gaming or benchmarking, track:
 - OCCT
 - SSD/motherboard/GPU vendor utility
 
-> [!NOTE]
-> Do not compare temperatures of different CPUs/GPUs directly. Different models have different sensors, limits, power behavior, and boost algorithms. Focus on throttling, clock drops, noise, and stability.
+> **Note:** > Do not compare temperatures of different CPUs/GPUs directly. Different models have different sensors, limits, power behavior, and boost algorithms. Focus on throttling, clock drops, noise, and stability.
 
 ### Fast thermal triage
 
@@ -97,8 +96,7 @@ Likely problem if:
 - heatsink blocked by dust;
 - airflow blocked by glass panel, wall proximity, or dense filters.
 
-> [!TIP]
-> Do not replace thermal paste too often without reason. Start with cleaning, fan checks, and proper cooler mounting.
+> **Tip:** > Do not replace thermal paste too often without reason. Start with cleaning, fan checks, and proper cooler mounting.
 
 ---
 
@@ -131,8 +129,7 @@ GPU often has separate sensors:
 5. Revert GPU OC/undervolt if artifacts, crashes, or driver resets appear.
 6. Tune a more suitable fan curve if noise is acceptable.
 
-> [!WARNING]
-> Do not disassemble GPU for paste/pad replacement without experience. Mistakes can damage the card, pads, or warranty seals.
+> **Warning:** > Do not disassemble GPU for paste/pad replacement without experience. Mistakes can damage the card, pads, or warranty seals.
 
 ---
 
@@ -219,8 +216,7 @@ Instability signs:
 - hangs;
 - issues only in specific heavy games.
 
-> [!IMPORTANT]
-> If a setup вЂњpasses benchmarkвЂќ but game crashes or WHEA appears, it is unstable. Relax settings or return to stock.
+> **Important:** > If a setup вЂњpasses benchmarkвЂќ but game crashes or WHEA appears, it is unstable. Relax settings or return to stock.
 
 ---
 
@@ -325,8 +321,7 @@ Signs your PC should be serviced:
 7. Do not use vacuum inside PC: static and mechanical stress may be risky.
 8. Reassemble and verify all cables are connected.
 
-> [!WARNING]
-> Do not spray liquids or use wet cleaning inside the case. If unsure about laptop/GPU disassembly, use a service center.
+> **Warning:** > Do not spray liquids or use wet cleaning inside the case. If unsure about laptop/GPU disassembly, use a service center.
 
 ---
 

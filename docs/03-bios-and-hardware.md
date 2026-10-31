@@ -27,8 +27,7 @@ permalink: /docs/03-bios-and-hardware.html
 | System already stable | Change one option at a time and benchmark |
 | Boot problems after tuning | Revert to defaults and validate stock stability |
 
-> [!IMPORTANT]
-> Do not update BIOS or change voltages вЂњjust because.вЂќ First make sure you actually need it and understand the rollback path.
+> **Important:** > Do not update BIOS or change voltages вЂњjust because.вЂќ First make sure you actually need it and understand the rollback path.
 
 ---
 
@@ -82,8 +81,7 @@ If the system is stable and the new version has no relevant fixes, updating is n
 8. After update, load `Load Optimized Defaults` / `Load UEFI Defaults`.
 9. Re-enable only required settings: XMP/EXPO, ReBAR, and other verified options.
 
-> [!WARNING]
-> Never flash BIOS using a file for a similar but different motherboard model. Wrong model/revision can brick the board.
+> **Warning:** > Never flash BIOS using a file for a similar but different motherboard model. Wrong model/revision can brick the board.
 
 ---
 
@@ -110,8 +108,7 @@ Select-Object Manufacturer, PartNumber, Capacity, Speed, ConfiguredClockSpeed
 
 Check `ConfiguredClockSpeed`.
 
-> [!NOTE]
-> In CPU-Z and similar tools, DRAM frequency can appear around half of the advertised value because DDR means Double Data Rate.
+> **Note:** > In CPU-Z and similar tools, DRAM frequency can appear around half of the advertised value because DDR means Double Data Rate.
 > For example, ~3000 MHz DRAM corresponds to DDR5-6000.
 
 ### If issues appear after enabling XMP/EXPO
@@ -173,8 +170,7 @@ Check:
 - CPU/GPU/driver compatibility;
 - `Above 4G Decoding` is enabled before ReBAR.
 
-> [!WARNING]
-> Do not change Secure Boot, TPM, CSM, or partition scheme without understanding consequences. On Legacy/MBR systems, boot mode changes can make Windows unbootable.
+> **Warning:** > Do not change Secure Boot, TPM, CSM, or partition scheme without understanding consequences. On Legacy/MBR systems, boot mode changes can make Windows unbootable.
 
 ---
 
@@ -229,8 +225,7 @@ This is an optional advanced step, mostly relevant for some AMD Ryzen setups.
 3. Go to `Windows Logs → System`.
 4. Find events with source `WHEA-Logger`.
 
-> [!IMPORTANT]
-> One good benchmark score does not prove stability. If WHEA, crashes, or rare freezes appear, the setup is unstable even if average FPS increased.
+> **Important:** > One good benchmark score does not prove stability. If WHEA, crashes, or rare freezes appear, the setup is unstable even if average FPS increased.
 
 ---
 
@@ -284,8 +279,7 @@ Without a specific reason, keep these on `Auto`:
 - manual Infinity Fabric frequency;
 - random values in Advanced/AMD Overclocking sections.
 
-> [!TIP]
-> `Auto` is not a вЂњbad setting.вЂќ For most systems, it is the safest and most correct default.
+> **Tip:** > `Auto` is not a вЂњbad setting.вЂќ For most systems, it is the safest and most correct default.
 
 ---
 

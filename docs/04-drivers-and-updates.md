@@ -22,8 +22,7 @@ Download drivers only from official websites:
 - Microsoft
 - SSD, Wi-Fi adapter, or peripheral vendor
 
-> [!WARNING]
-> Do not use Driver Booster, DriverPack, вЂњauto-updaters,вЂќ or repackaged driver websites. They may install incorrect versions, adware, or unstable components.
+> **Warning:** > Do not use Driver Booster, DriverPack, вЂњauto-updaters,вЂќ or repackaged driver websites. They may install incorrect versions, adware, or unstable components.
 
 ---
 
@@ -78,8 +77,7 @@ Check version and source before installing, especially if:
 - the update is offered as an Optional driver update;
 - you recently had graphics driver issues.
 
-> [!NOTE]
-> Do not permanently disable Windows Update for вЂњoptimization.вЂќ Updates include security, stability, and compatibility fixes. Optional driver updates from Windows Update are not always preferred over vendor drivers; review the source before applying, especially when the current GPU or chipset driver is stable.
+> **Note:** > Do not permanently disable Windows Update for вЂњoptimization.вЂќ Updates include security, stability, and compatibility fixes. Optional driver updates from Windows Update are not always preferred over vendor drivers; review the source before applying, especially when the current GPU or chipset driver is stable.
 
 ---
 
@@ -100,8 +98,7 @@ Chipset driver is important for proper power management, PCIe, USB, controller b
 4. Finish installation.
 5. Reboot the PC.
 
-> [!TIP]
-> On laptops, check the vendor support page first. It may provide adapted drivers for power behavior, graphics switching, hotkeys, or cooling modes.
+> **Tip:** > On laptops, check the vendor support page first. It may provide adapted drivers for power behavior, graphics switching, hotkeys, or cooling modes.
 
 ---
 
@@ -152,8 +149,7 @@ Stay on current version if:
 - newer releases are known problematic on your configuration;
 - PC is used for critical work where stability matters more than novelty.
 
-> [!IMPORTANT]
-> Newer does not always mean faster in every game. Compare performance in your own titles and roll back to a known stable version if needed.
+> **Important:** > Newer does not always mean faster in every game. Compare performance in your own titles and roll back to a known stable version if needed.
 
 ---
 
@@ -185,8 +181,7 @@ If using DDU:
 4. Do not use it for routine updates without actual problem.
 5. Install driver from official source after cleanup.
 
-> [!WARNING]
-> Do not run DDU monthly вЂњfor FPS.вЂќ Frequent full driver removal is not optimization.
+> **Warning:** > Do not run DDU monthly вЂњfor FPS.вЂќ Frequent full driver removal is not optimization.
 
 ### How to roll back a GPU driver
 
@@ -217,8 +212,7 @@ For example:
 - If you do not use RGB lighting, heavy RGB suites are optional.
 - If vendor software constantly loads CPU/RAM or causes errors, disable its startup first without removing required driver components.
 
-> [!TIP]
-> Driver and vendor utility are not the same thing. Network/audio drivers are often required; large overlay/telemetry/lighting suites may be optional.
+> **Tip:** > Driver and vendor utility are not the same thing. Network/audio drivers are often required; large overlay/telemetry/lighting suites may be optional.
 
 ---
 
@@ -271,8 +265,7 @@ Get-ComputerInfo |
 Select-Object WindowsProductName, WindowsVersion, OsBuildNumber
 ```
 
-> [!NOTE]
-> These commands only display information and do not modify system settings.
+> **Note:** > These commands only display information and do not modify system settings.
 
 ---
 

@@ -24,8 +24,7 @@ A number without a definition is not evidence. Record which tool produced each m
 | GPU busy | Time the GPU is busy processing frames | Prefer PresentMon or CapFrameX over a Task Manager percentage |
 | CPU core saturation | A specific core/thread staying near 100% | Total CPU usage can look low while one game thread is saturated |
 
-> [!IMPORTANT]
-> Do not compare 1% low values produced by different tools or different definitions. Pick one tool, one version, and one definition for the whole comparison.
+> **Important:** > Do not compare 1% low values produced by different tools or different definitions. Pick one tool, one version, and one definition for the whole comparison.
 
 ---
 
@@ -55,8 +54,7 @@ If any of these change between runs, the comparison is invalid.
 6. If the first run is visibly different because of shader compilation, mark it and exclude it consistently from both baseline and test.
 7. Do not change more than one experimental variable between baseline and test.
 
-> [!NOTE]
-> A single 5-minute run is a smoke test, not proof. Stability claims need a longer session and a separate check for WHEA, crashes, and driver resets.
+> **Note:** > A single 5-minute run is a smoke test, not proof. Stability claims need a longer session and a separate check for WHEA, crashes, and driver resets.
 
 ---
 
@@ -109,8 +107,7 @@ Reason:
 | Tweak #2 | | | | | | | |
 | Tweak #3 | | | | | | | |
 
-> [!TIP]
-> Report the median of each column and the range. A change that is smaller than the baseline range is not proven.
+> **Tip:** > Report the median of each column and the range. A change that is smaller than the baseline range is not proven.
 
 ---
 
@@ -140,8 +137,7 @@ For Reflex/Anti-Lag/V-Sync/VRR/FPS-cap combinations.
 | + FPS cap | | | | | | |
 | + V-Sync/VRR tune | | | | | | |
 
-> [!IMPORTANT]
-> Input latency in milliseconds requires a tool such as LDAT or NVIDIA Reflex Analyzer. Without one, mark the result as subjective and do not publish a millisecond claim.
+> **Important:** > Input latency in milliseconds requires a tool such as LDAT or NVIDIA Reflex Analyzer. Without one, mark the result as subjective and do not publish a millisecond claim.
 
 For a subjective comparison, hide which configuration is active, alternate A/B/A/B, and use the same scene. A 1–5 score is a preference, not a measurement.
 

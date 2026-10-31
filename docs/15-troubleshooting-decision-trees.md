@@ -38,8 +38,7 @@ flowchart TD
     J --> K[Validate temperatures and throttling]
 ```
 
-> [!IMPORTANT]
-> Measure the first branch with the frame cap removed and V-Sync off. A capped or V-Sync-limited GPU can show low usage even when it is still the limiting component. Prefer GPU busy time from PresentMon or CapFrameX over a Task Manager percentage.
+> **Important:** > Measure the first branch with the frame cap removed and V-Sync off. A capped or V-Sync-limited GPU can show low usage even when it is still the limiting component. Prefer GPU busy time from PresentMon or CapFrameX over a Task Manager percentage.
 
 Quick actions table:
 
@@ -121,8 +120,7 @@ Quick actions table:
 
 ---
 
-> [!NOTE]
-> Measure ping against the game server region or address you actually play on. Baseline connectivity checks such as `1.1.1.1` do not replace real-game server latency measurement.
+> **Note:** > Measure ping against the game server region or address you actually play on. Baseline connectivity checks such as `1.1.1.1` do not replace real-game server latency measurement.
 
 ---
 
