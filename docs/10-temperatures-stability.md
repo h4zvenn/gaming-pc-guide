@@ -7,11 +7,9 @@ translation_key: temperatures-stability
 permalink: /docs/10-temperatures-stability.html
 ---
 
-High FPS is pointless if the PC overheats, throttles, crashes, or reports WHEA errors. Stability and consistent frame times matter more than a few extra frames from aggressive overclocking.
+> High FPS is pointless if the PC overheats, throttles, crashes, or reports WHEA errors. Stability and consistent frame times matter more than a few extra frames from aggressive overclocking.
 
 > **Note:** Do not compare temperatures between different CPUs and GPUs directly. Different models use different sensors, limits, power behavior, and boost algorithms. Focus on throttling, clock drops, noise, and stability.
-
----
 
 ## What to monitor
 
@@ -36,8 +34,6 @@ Useful tools:
 - OCCT
 - SSD, motherboard, or GPU vendor utility
 
----
-
 ## Fast thermal triage
 
 | Symptom | Check first |
@@ -61,7 +57,7 @@ Typical signs:
 - Performance worsens in a hot room
 - Results improve after cleaning dust or opening the side panel
 
-### What to do
+What to do:
 
 1. Record temperatures and clocks at the start and end of a session.
 2. Check for thermal or power-limit indicators.
@@ -85,7 +81,7 @@ A problem is likely if:
 - Performance degrades over time
 - Airflow is poor or the system has not been cleaned for a long time
 
-### What to check
+Check:
 
 - Cooler mounting and mounting pressure
 - Protective film removed from a new cooler base
@@ -109,7 +105,7 @@ A GPU can report several separate sensors:
 - VRM temperature
 - Power or thermal limit
 
-### Common causes of GPU heat issues
+Common causes of GPU heat issues:
 
 - Dust in the heatsink
 - Weak hot-air exhaust from the case
@@ -119,7 +115,7 @@ A GPU can report several separate sensors:
 - Unstable overclock or undervolt
 - Power-limit constraints
 
-### What to do
+What to do:
 
 1. Check GPU temperature, clocks, and load in one game or benchmark.
 2. Confirm that GPU fans spin under load.
@@ -136,14 +132,14 @@ A GPU can report several separate sensors:
 
 NVMe SSDs can heat up during game installations, archive extraction, large file copies, and level streaming.
 
-### Signs of an issue
+Signs of an issue:
 
 - Sharp stutter during asset loading
 - Read or write speed drops after sustained load
 - A monitoring utility reports high SSD temperature
 - The SSD sits under the GPU without a heatsink and has poor airflow
 
-### What to do
+What to do:
 
 - Use an M.2 heatsink if the motherboard provides one.
 - Remove the protective film from the heatsink thermal pad.
@@ -160,7 +156,7 @@ A typical airflow pattern is:
 - Front and bottom areas bring in cool air.
 - Rear and top areas exhaust hot air.
 
-### Desktop recommendations
+### Desktop
 
 - Do not place the case tightly against a wall.
 - Do not block ventilation openings.
@@ -169,7 +165,7 @@ A typical airflow pattern is:
 - Do not add fans without an airflow plan; airflow path matters more than fan count.
 - Route cables so they do not block airflow or touch fans.
 
-### Laptop recommendations
+### Laptop
 
 - Use a hard, flat surface.
 - Do not game on a bed, blanket, or pillow.
@@ -179,11 +175,11 @@ A typical airflow pattern is:
 
 ---
 
-## XMP, EXPO, CPU, and GPU stability
+## Memory, CPU, and GPU stability
 
 Validate memory, CPU, and GPU tuning separately.
 
-### Memory: XMP or EXPO
+### XMP or EXPO
 
 Instability can appear as:
 
@@ -194,7 +190,7 @@ Instability can appear as:
 - WHEA errors
 - Boot issues after shutdown
 
-### CPU: PBO, Curve Optimizer, undervolting, overclocking
+### PBO, Curve Optimizer, undervolting, overclocking
 
 Instability can appear as:
 
@@ -204,7 +200,7 @@ Instability can appear as:
 - Rare freezes
 - Stress-test errors
 
-### GPU: overclocking or undervolting
+### GPU overclocking or undervolting
 
 Instability can appear as:
 
@@ -222,8 +218,6 @@ Instability can appear as:
 ## How to test stability
 
 Testing should match the change you made.
-
-### Pass or fail criteria
 
 For every stress test, record:
 
@@ -288,7 +282,7 @@ Get-WinEvent -FilterHashtable @{
 Select-Object TimeCreated, Id, LevelDisplayName, Message
 ```
 
-### What to do
+What to do:
 
 1. If errors started after tuning, revert the latest change.
 2. Return PBO, Curve Optimizer, undervolting, or XMP/EXPO to stable settings.
@@ -298,7 +292,7 @@ Select-Object TimeCreated, Id, LevelDisplayName, Message
 
 ---
 
-## When cleaning is needed
+## Cleaning
 
 Service the PC if:
 
