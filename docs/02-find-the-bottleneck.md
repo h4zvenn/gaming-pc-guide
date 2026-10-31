@@ -1,91 +1,70 @@
 ---
 layout: doc
-title: "02-find-the-bottleneck"
+title: "Find the Bottleneck"
 description: "Identify whether CPU, GPU, memory, storage, thermals, or background activity limits gaming performance."
 lang: en
 translation_key: find-the-bottleneck
 permalink: /docs/02-find-the-bottleneck.html
 ---
 
-# 02. Finding the Bottleneck
+# Find the Bottleneck
 
-> Before changing BIOS options, Windows settings, or driver parameters, identify what actually limits performance: CPU, GPU, memory, storage, thermals, or background load.
+Before changing BIOS options, Windows settings, or driver parameters, identify what actually limits performance: CPU, GPU, memory, storage, thermals, or background load.
 
-## What a bottleneck means
+A bottleneck is the component or condition that prevents your PC from delivering higher FPS or smoother frame times at a specific moment.
 
-A `bottleneck` is the component or condition that, at a specific moment, prevents your PC from delivering higher FPS or smoother frametime.
+It is not a permanent property of your system. The same PC can be GPU-bound in a graphically demanding game, CPU-bound at low settings, limited by VRAM with high textures, or stutter because of background activity.
 
-It is not a permanent property of the system. The same PC can:
-
-- be GPU-bound in a graphically heavy game;
-- be CPU-bound at low settings with very high FPS targets;
-- run into VRAM limits with high texture settings;
-- stutter due to a full SSD, background processes, or unstable RAM.
-
-> **Important:** > There is no universal bottleneck percentage.
-> Diagnostics depend on the game, resolution, settings, FPS cap, and background load.
+> **Important:** There is no universal bottleneck percentage. Diagnostics depend on the game, resolution, settings, FPS cap, and background load.
 
 ---
 
 ## What to monitor
 
-Use MSI Afterburner + RivaTuner Statistics Server, HWiNFO, CapFrameX, or your GPU driver overlay.
+Use MSI Afterburner with RivaTuner Statistics Server, HWiNFO, CapFrameX, or your GPU driver overlay.
 
-During testing, monitor:
+Monitor:
 
 - FPS
-- Frametime
-- 1% low
+- Frame time
+- 1% lows
 - GPU usage
 - GPU temperature
 - GPU clocks and power draw
 - VRAM usage
 - Total CPU usage
-- Per-thread CPU usage
+- Per-core CPU usage
 - CPU temperature and clocks
 - RAM usage
-- Used/free SSD space
+- Free SSD space
 
-> **Important:** > Measure GPU/CPU balance with the frame cap removed and V-Sync off. A capped or V-Sync-limited GPU can show low usage even when it is still the limiting component. Prefer GPU busy time from PresentMon or CapFrameX over a Task Manager percentage.
->
-> Do not rely only on average CPU usage.
-> One main game thread can be fully loaded while total CPU usage still looks moderate.
+> **Important:** Measure GPU and CPU balance with the FPS cap removed and V-Sync disabled. A capped or V-Sync-limited GPU can show low usage even when it is still the limiting component. Prefer GPU busy time from PresentMon or CapFrameX over Task Manager percentages.
 
-### Fast diagnosis cheat sheet
-
-| You see this | Try this first |
-| --- | --- |
-| Low FPS + GPU ~99% | Reduce GPU-heavy settings, test upscaler |
-| FPS wonвЂ™t scale + one CPU thread maxed | Reduce CPU-heavy options, close background apps |
-| Stutter with okay average FPS | Check VRAM/RAM/SSD + overlays/downloads |
+Do not rely only on average CPU usage. One main game thread can be fully loaded while total CPU usage still looks moderate.
 
 ---
 
-## Quick diagnostic table
+## Fast diagnosis
 
-| Symptom | Possible cause | Check first |
+| Symptom | Likely cause | Check first |
 | --- | --- | --- |
-| GPU busy stays around 95–99% with no cap, FPS is too low | GPU limit | Resolution, render scale, RT, shadows, upscaler, GPU temp |
-| GPU not saturated, FPS does not increase, one CPU core near 100% | CPU limit | CPU-related settings, background tasks, RAM, CPU temp |
-| Average FPS looks fine but hard stutter appears | RAM/VRAM, SSD, shaders, background load, instability | Frametime, memory usage, background downloads, WHEA, temps |
-| FPS drops gradually after 20–60 minutes | Thermal or memory saturation | Temps, clocks, VRAM/RAM usage, fan behavior |
-| Camera movement feels jerky | Uneven frametime, shader compilation, data streaming | Frametime, SSD, VRAM, background apps |
-| PC freezes/reboots or game crashes | Unstable OC, driver issue, RAM, power, thermals | Stock settings, event logs, temperatures |
+| GPU usage stays around 95–99% without an FPS cap, but FPS is too low | GPU limit | Resolution, render scale, ray tracing, shadows, upscaling, GPU temperature |
+| GPU is not saturated, FPS does not increase, and one CPU core is near 100% | CPU limit | Background tasks, CPU-heavy settings, RAM, CPU temperature |
+| Average FPS looks fine, but hard stutter appears | RAM, VRAM, SSD, shaders, or background load | Frame time, memory usage, downloads, WHEA errors, temperatures |
+| Performance drops after 20–60 minutes | Thermal throttling or memory saturation | Temperatures, clocks, VRAM and RAM usage, fan behavior |
+| Camera movement feels jerky | Uneven frame times, shader compilation, or asset streaming | Frame time, SSD, VRAM, background apps |
+| Game crashes, freezes, or the PC reboots | Unstable overclock, driver issue, RAM, power, or thermals | Stock settings, Event Viewer, temperatures |
 
 ---
 
-## 1. GPU-bound scenario
+## GPU bottleneck
 
-### Typical signs
+### Signs
 
-GPU usage is usually around 95–99%, and changing resolution/graphics has a clear FPS impact.
-
-Signs:
-
-- consistently high GPU usage;
-- lowering resolution increases FPS;
-- enabling ray tracing, heavy shadows, or reflections sharply lowers FPS;
-- CPU is not overheating and no single CPU thread is permanently maxed out.
+- GPU usage is consistently around 95–99%.
+- Lowering resolution or graphics settings clearly increases FPS.
+- Ray tracing, shadows, or reflections sharply reduce FPS.
+- No single CPU thread is permanently maxed out.
 
 ### What to do
 
@@ -94,189 +73,181 @@ Signs:
    - Resolution or render scale
    - Shadows
    - Reflections
-   - Volumetric lighting/fog
+   - Volumetric lighting and fog
    - Ambient occlusion
-2. Use DLSS, FSR, or XeSS if available and quality is acceptable.
-3. Do not set textures beyond your GPU VRAM capacity.
-4. Check GPU temperature, clocks, and power limit behavior.
-5. Close GPU-consuming apps: browser video, recording, streaming, extra overlays.
+2. Use DLSS, FSR, or XeSS if available and image quality is acceptable.
+3. Do not use texture settings that exceed available VRAM.
+4. Check GPU temperature, clocks, and power-limit behavior.
+5. Close GPU-heavy apps such as browser video, recording, streaming, and extra overlays.
 
-### What not to do
+### What to avoid
 
 - Do not disable Windows services to fix a GPU limit.
-- Do not tune CPU settings when GPU is already pinned at 99%.
-- Do not adjust PBO/Curve Optimizer for a game that is clearly GPU-limited.
+- Do not tune CPU settings when the GPU is already pinned at 99%.
+- Do not adjust PBO or Curve Optimizer for a clearly GPU-limited game.
 
 ---
 
-## 2. CPU-bound scenario
+## CPU bottleneck
 
-### Typical signs
+### Signs
 
-GPU is underutilized, FPS does not scale, and one or more CPU threads are near 100%.
+- GPU usage is lower than expected.
+- FPS does not increase when graphics settings are lowered.
+- One or more CPU cores stay near 100%.
+- The issue is more visible at low resolution or with high FPS targets.
 
-This often happens:
-
-- at low resolution;
-- with very high target FPS;
-- in games with many objects, physics, NPCs, simulation, or networking logic;
-- on older 4-core CPUs;
-- when heavy background apps, streaming, or recording are active.
+This often happens in games with many objects, physics, NPCs, simulation, or networking logic. It can also appear when streaming, recording, or heavy background apps are running.
 
 ### What to do
 
 1. Close heavy apps and overlays.
-2. Verify RAM runs with XMP/EXPO (if supported and stable).
-3. Check CPU temperatures and throttling.
-4. Lower CPU-heavy game settings:
+2. Verify that XMP or EXPO is enabled and stable.
+3. Check CPU temperature and throttling.
+4. Lower CPU-heavy settings:
    - Draw distance
    - Object density
    - Physics quality
-   - NPC/crowd count
+   - NPC and crowd count
    - Shadow distance
    - World detail
-5. Set a realistic FPS cap your system can hold steadily.
-6. Validate CPU/RAM overclock stability and check WHEA errors.
+5. Set an FPS cap your system can hold steadily.
+6. Check WHEA errors if you use overclocking or memory tuning.
 
 ### Important nuance
 
-Total CPU usage at 30–50% does not rule out a CPU bottleneck. A game may be blocked by one busy thread while other cores are lightly used.
+Total CPU usage of 30–50% does not rule out a CPU bottleneck. A game may be limited by one busy thread while other cores are lightly used.
 
 ---
 
-## 3. RAM capacity limit
+## RAM capacity limit
 
 ### Signs
 
-- The game starts stuttering after a long session.
+- Stuttering appears after a long gaming session.
 - Windows heavily uses the page file.
 - Disk activity spikes during gameplay.
-- Browser, Discord, stream, launchers, and other heavy apps are open together.
-- RAM usage is near available capacity.
+- RAM usage is close to available capacity.
+- Browser, Discord, launchers, streaming, and other apps are open together.
 
 ### What to do
 
 1. Close heavy apps before gaming.
 2. Disable unnecessary startup apps.
-3. Do not disable the page file without a specific reason.
-4. Confirm XMP/EXPO is enabled and memory is stable.
-5. If capacity is physically insufficient for your games/tasks, consider adding more RAM.
+3. Confirm that XMP or EXPO is enabled and stable.
+4. Keep the page file enabled unless you have a specific reason to change it.
+5. Add more RAM only if your games and background workload genuinely require it.
 
-### What not to do
+### What to avoid
 
-Do not use вЂњRAM cleanersвЂќ or forced memory cleanup tools. They can evict useful cached data and reduce smoothness.
+Do not use RAM cleaners or forced memory-cleanup tools. They can evict useful cached data and reduce smoothness.
 
 ---
 
-## 4. VRAM capacity limit
+## VRAM capacity limit
 
 ### Signs
 
-- Sharp stutters when rotating camera or entering new areas.
-- Problems start after increasing textures or resolution.
-- GPU may not be at 99%, but frametime becomes uneven.
-- Game warns about VRAM overuse or nearly fills available VRAM.
+- Sharp stutter appears when rotating the camera or entering new areas.
+- Problems begin after increasing texture quality or resolution.
+- Frame times become uneven even when GPU usage is not at 99%.
+- The game warns about VRAM overuse or nearly fills available VRAM.
 
 ### What to do
 
 1. Lower texture quality.
 2. Lower resolution or render scale.
-3. Disable/reduce ray tracing.
+3. Disable or reduce ray tracing.
 4. Close GPU-heavy apps and overlays.
 5. Restart the game after major texture-setting changes.
-6. Do not enable texture packs that clearly require more VRAM than your GPU has.
+6. Avoid texture packs that clearly require more VRAM than your GPU has.
 
-> **Note:** > In-game VRAM indicators are useful references, but not always exact limits. Evaluate together with real stutter, frametime, and monitoring data.
+> **Note:** In-game VRAM indicators are useful references, but they are not always exact limits. Evaluate them together with frame times, stutter, and monitoring data.
 
 ---
 
-## 5. SSD, asset streaming, and shader compilation
+## Storage and shader compilation
 
 ### Signs
 
-- Short freezes on first visit to new areas/effects/cutscenes.
-- Uneven frametime after a game or GPU driver update.
-- High disk activity during world streaming.
-- Game installed on a slow HDD or nearly full SSD.
+- Short freezes occur when entering new areas or triggering new effects.
+- Frame times become uneven after a game or GPU-driver update.
+- Disk activity is high during world streaming.
+- The game is installed on a slow HDD or nearly full SSD.
 
 ### What to do
 
-1. Install modern games on SSD when possible.
-2. Keep free space available on SSD.
-3. Let shader compilation finish if the game performs it on first launch.
-4. Avoid game downloads, torrents, cloud sync, and updates while playing.
-5. Check drive health via vendor utility or SMART monitoring.
+1. Install modern games on an SSD when possible.
+2. Keep enough free space on the SSD.
+3. Let shader compilation finish on first launch.
+4. Avoid downloads, torrents, cloud sync, and updates while playing.
+5. Check drive health with the manufacturer utility or SMART monitoring.
 
-> **Tip:** > Not every stutter is fixed by Windows tweaks. Some issues are in the game itself, its engine, a patch, or shader compilation behavior.
+> **Tip:** Not every stutter is fixed by Windows tweaks. Some issues are caused by the game itself, its engine, a patch, or shader compilation behavior.
 
 ---
 
-## 6. Overheating and throttling
+## Overheating and throttling
 
 ### Signs
 
 - Performance drops after the game runs for a while.
-- CPU/GPU temperature rises and clocks begin to fall.
-- Fans spin fast and the case gets hot.
-- Performance temporarily improves after cleaning or opening the side panel.
+- CPU or GPU temperature rises and clocks begin to fall.
+- Fans become loud and the case gets hot.
+- Performance temporarily improves after cleaning dust or opening the side panel.
 
 ### What to do
 
 1. Check temperatures and clocks in HWiNFO or MSI Afterburner.
 2. Clean dust from filters, fans, and heatsinks.
-3. Ensure case airflow provides proper intake and exhaust.
-4. Check CPU cooler mounting and thermal paste condition if suspected.
-5. Tune a reasonable fan curve.
-6. On laptops, use a hard surface, keep air intakes clear, and play on AC power.
+3. Ensure the case has proper intake and exhaust airflow.
+4. Check CPU cooler mounting and thermal paste if overheating persists.
+5. Configure a reasonable fan curve.
+6. On laptops, use a hard surface, keep air intakes clear, and play while connected to AC power.
 
-> **Important:** > High temperature does not always mean a fault. Evaluate real clocks, power limits, throttling, noise, and stability together.
+> **Important:** High temperature does not always mean a fault. Evaluate clocks, power limits, throttling, noise, and stability together.
 
 ---
 
-## 7. System instability
+## System instability
 
 ### Signs
 
-- Game or driver crashes.
-- BSOD, reboots, black screens.
-- Visual artifacts.
-- Archive extraction or game install errors.
-- WHEA errors in Event Viewer.
-- Rare freezes after enabling XMP/EXPO, PBO, Curve Optimizer, undervolt, or GPU OC.
+- Games or drivers crash.
+- You see BSODs, reboots, or black screens.
+- Visual artifacts appear.
+- Archive extraction or game installation fails.
+- WHEA errors appear in Event Viewer.
+- Freezes started after enabling XMP, EXPO, PBO, Curve Optimizer, undervolting, or GPU overclocking.
 
 ### What to do
 
-1. Return CPU/GPU/RAM overclocks to stock.
-2. Verify stability without tweaks.
+1. Return CPU, GPU, and RAM overclocks to stock settings.
+2. Test stability without tweaks.
 3. Open `Event Viewer → Windows Logs → System` and check WHEA entries.
 4. Verify temperatures and power delivery.
-5. After each change, test in real games and stress tests.
+5. Test each change in real games and stress tests.
 
-> **Warning:** > вЂњWorks on desktopвЂќ does not mean вЂњstable in gamesвЂќ.
-> Rare memory errors or Curve Optimizer instability can appear only under specific load patterns.
+> **Warning:** “Works on the desktop” does not mean “stable in games.” Rare memory errors or Curve Optimizer instability can appear only under specific load patterns.
 
 ---
 
 ## Diagnostic workflow
 
-Use this order:
-
-1. Remove the FPS cap and V-Sync, then record FPS, 1% low, frametime, and temperatures.
-2. Check GPU busy time, not only the Task Manager percentage.
-3. If GPU busy is near 99% — start with graphics, resolution, and VRAM.
-4. If GPU busy is lower, check CPU cores/threads, RAM, background processes, and CPU temperature.
-5. For stutters, check RAM, VRAM, SSD, shader compilation, and background downloads.
+1. Remove the FPS cap and V-Sync, then record FPS, 1% lows, frame times, and temperatures.
+2. Check GPU busy time, not only Task Manager percentages.
+3. If GPU busy time is near 99%, start with graphics settings, resolution, and VRAM.
+4. If GPU usage is lower, check CPU cores, RAM, background processes, and CPU temperature.
+5. For stuttering, check RAM, VRAM, SSD, shader compilation, and background downloads.
 6. If performance degrades over time, check thermals.
-7. For crashes and WHEA, remove overclocks and investigate instability instead of applying new FPS tweaks.
+7. For crashes or WHEA errors, remove overclocks and investigate stability before applying FPS tweaks.
 
 ---
 
-## Summary
+## Next steps
 
-Do not apply every tweak from the guide at once. First find the real root cause, then go to the relevant section:
-
-- [BIOS and hardware](https://h4zvenn.github.io/gaming-pc-guide/docs/03-bios-and-hardware.html)
-- [Drivers and updates](https://h4zvenn.github.io/gaming-pc-guide/docs/04-drivers-and-updates.html)
-- [Windows 11](https://h4zvenn.github.io/gaming-pc-guide/docs/05-windows-11.html)
-- [GPU settings](https://h4zvenn.github.io/gaming-pc-guide/docs/06-gpu-settings.html)
-- [Temperatures and stability](https://h4zvenn.github.io/gaming-pc-guide/docs/10-temperatures-stability.html)
+- [BIOS and Hardware](03-bios-and-hardware.html)
+- [Drivers and Updates](04-drivers-and-updates.html)
+- [Windows 11 Core](05-windows-11.html)
+- [GPU Settings](06-gpu-settings.html)
+- [Temperatures and Stability](10-temperatures-stability.html)
