@@ -1,6 +1,6 @@
 ﻿# Windows 11 Gaming PC Optimization Guide
 
-Evidence-based guide for optimizing Windows 11 gaming performance. Find your bottleneck, apply one change at a time, benchmark results, keep what works.
+Evidence-based guide for optimizing Windows 11 gaming performance. Find your bottleneck, apply one change at a time, benchmark results, and keep what works.
 
 **No** custom Windows builds • **No** mass service disabling • **No** "FPS boost" scripts
 
@@ -12,7 +12,7 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 
 ### 3-Step Optimization Process
 
-1. **Baseline** — Create restore point, record FPS/frametime/temps → [Preparation Guide](docs/01-before-you-start.md)
+1. **Baseline** — Create a restore point, record FPS, frametime, and temperatures → [Preparation Guide](docs/01-before-you-start.md)
 2. **Diagnose** — Identify your actual bottleneck (CPU/GPU/RAM/thermal) → [Find Bottleneck](docs/02-find-the-bottleneck.md)
 3. **Optimize** — Change one setting, benchmark, keep or rollback → [Benchmark Templates](docs/16-benchmark-templates.md)
 
@@ -99,3 +99,4 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 ---
 
 `Last Updated: 2026-10-30` • `Target: Windows 11 (22H2+)` • [Report Issue](https://github.com/h4zvenn/gaming-pc-guide/issues) • [Discussions](https://github.com/h4zvenn/gaming-pc-guide/discussions)
+```
