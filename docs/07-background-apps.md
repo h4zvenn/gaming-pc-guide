@@ -1,6 +1,10 @@
 ---
 layout: doc
-title: "07-background-apps"
+title: "07. Background Apps and Startup"
+description: "Find heavy background apps, review startup entries, reduce overlays and downloads, and avoid unsafe process termination."
+lang: en
+translation_key: background-apps
+permalink: /docs/07-background-apps.html
 ---
 
 # 07. Background Apps and Startup
@@ -16,52 +20,47 @@ Background apps can consume:
 - VRAM and GPU resources;
 - internet bandwidth;
 - SSD/HDD activity;
-- attention via notifications, overlays, and popups.
+- attention through notifications, overlays, and popups.
 
-This is especially noticeable on PCs with limited RAM, weaker CPUs, slower storage, or while streaming/recording at the same time.
+This is especially noticeable on PCs with limited RAM, weaker CPUs, slower storage, or while streaming or recording at the same time.
 
 ### Pre-game quick shutdown list
 
 | App type | Action before launch |
 | --- | --- |
-| Browser video/streams | Close |
-| Downloads/cloud sync | Pause |
+| Browser video or streams | Close |
+| Downloads and cloud sync | Pause |
 | Extra overlays | Disable |
-| Recording/stream tools | Keep only one if needed |
+| Recording or streaming tools | Keep only one, if needed |
 
 ---
 
-## 1. How to find heavy apps
+## 1. Find heavy apps
 
 ### Using Task Manager
 
 1. Press `Ctrl + Shift + Esc`.
-2. Open `Processes` tab.
-3. Click a column to sort by:
-   - CPU;
-   - Memory;
-   - Disk;
-   - Network;
-   - GPU.
+2. Open the `Processes` tab.
+3. Sort by CPU, Memory, Disk, Network, or GPU.
 4. Identify which app creates the load.
 
-Do not end a process if you do not know what it is. First right-click → `Open file location`, or search the app name.
+Do not end a process if you do not know what it is. First right-click it and select `Open file location`, or search for the app name.
 
-### PowerShell: processes with highest total CPU time
+### Processes with the highest total CPU time
 
 ```powershell
 Get-Process |
-Sort-Object CPU -Descending |
-Select-Object -First 20 Name, Id, CPU, WorkingSet64
+  Sort-Object CPU -Descending |
+  Select-Object -First 20 Name, Id, CPU, WorkingSet64
 ```
 
-### PowerShell: most memory-heavy processes right now
+### Processes using the most memory right now
 
 ```powershell
 Get-Process |
-Sort-Object WorkingSet64 -Descending |
-Select-Object -First 20 Name, Id,
-@{Name='RAM_MB';Expression={[math]::Round($_.WorkingSet64 / 1MB, 0)}}
+  Sort-Object WorkingSet64 -Descending |
+  Select-Object -First 20 Name, Id,
+  @{Name = 'RAM_MB'; Expression = { [math]::Round($_.WorkingSet64 / 1MB, 0) }}
 ```
 
 > [!NOTE]
@@ -77,45 +76,56 @@ Open:
 Task Manager → Startup apps
 ```
 
-Disable apps that should not launch with Windows every boot.
+Disable apps that should not launch with Windows on every boot.
 
 ### Usually safe to disable if not always needed
 
-- game launchers;
-- Discord, Telegram, Teams, and other messengers;
-- cloud clients;
-- Adobe/Google/Office updaters;
-- RGB software;
-- recording/streaming apps;
-- Spotify and similar apps;
-- browser helper apps;
-- automatic software updaters;
-- third-party вЂњgame boosterвЂќ and вЂњoptimizerвЂќ apps.
+- Game launchers.
+- Discord, Telegram, Teams, and other messengers.
+- Cloud clients.
+- Adobe, Google, and Office updaters.
+- RGB software.
+- Recording or streaming apps.
+- Spotify and similar apps.
+- Browser helper apps.
+- Automatic software updaters.
+- Third-party “game booster” and “optimizer” apps.
 
 ### Do not disable blindly
 
-- laptop power management apps;
-- touchpad/hotkey/camera/audio driver components;
-- fan mode control utilities;
-- mouse/keyboard profile drivers/tools if you use them;
-- security software if it is your only active antivirus;
-- critical corporate/VPN clients required for work.
+- Laptop power-management apps.
+- Touchpad, hotkey, camera, and audio driver components.
+- Fan-control utilities.
+- Mouse or keyboard profile tools, if you use them.
+- Security software, if it is your only active antivirus.
+- Critical corporate or VPN clients required for work.
 
-### Check startup entries with PowerShell
+### Check startup entries
+
+Before changing anything, record which applications currently start with Windows.
 
 ```powershell
+Write-Host "`n===== STARTUP ITEMS ====="
+
+Write-Host "`n--- Current User Registry ---"
 Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -ErrorAction SilentlyContinue |
   Select-Object * -ExcludeProperty PS* |
   Format-List
 
+Write-Host "`n--- WMI Startup Commands ---"
 Get-CimInstance Win32_StartupCommand |
   Select-Object Name, Command, Location |
   Format-List
+
+Write-Host "`n--- Startup Folder ---"
+Get-ChildItem "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup" -ErrorAction SilentlyContinue |
+  Select-Object Name, FullName |
+  Format-List
 ```
 
-### Disable a startup entry
+### Disable unnecessary startup apps
 
-This does not uninstall the application; it only prevents it from starting with Windows.
+This does not uninstall an application; it only prevents it from starting with Windows.
 
 ```powershell
 $run = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run'
@@ -124,14 +134,16 @@ $disable = @(
   'Discord',
   'RiotClient',
   'RobloxPlayerBeta'
+  # 'Steam',
+  # 'LGHUB'
 )
 
 foreach ($name in $disable) {
   if (Get-ItemProperty -Path $run -Name $name -ErrorAction SilentlyContinue) {
     Remove-ItemProperty -Path $run -Name $name
-    Write-Host "Disabled: $name"
+    Write-Host "DISABLED: $name"
   } else {
-    Write-Host "Not found: $name"
+    Write-Host "NOT FOUND: $name"
   }
 }
 ```
@@ -148,43 +160,57 @@ foreach ($name in $disable) {
 | NVIDIA | Do not disable |
 
 > [!TIP]
-> Disabling startup does not uninstall the app. You can always launch it manually or re-enable startup later.
+> Disabling startup does not uninstall the app. You can launch it manually or re-enable startup later.
+
+### Verify startup changes
+
+```powershell
+Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -ErrorAction SilentlyContinue |
+  Select-Object * -ExcludeProperty PS* |
+  Format-List
+```
+
+### Related services
+
+Startup apps and services are related, but they are not the same thing. Do not disable Windows services only to reduce startup load.
+
+For safe service checks and rollback instructions, see [Services and security](08-services-and-security.md).
 
 ---
 
-## 3. Check startup via PowerShell
+## 3. Check startup through PowerShell
 
 ```powershell
 Get-CimInstance Win32_StartupCommand |
-Select-Object Name, Command, Location, User
+  Select-Object Name, Command, Location, User
 ```
 
 This command shows what Windows tries to launch at sign-in.
 
-### What to do with results
+### What to do with the results
 
 1. Search unknown app names.
-2. If app is not needed at startup, disable it in Task Manager.
-3. If app looks suspicious, verify file path and run security checks.
-4. Do not manually delete registry startup keys if normal startup disable is sufficient.
+2. If an app is not needed at startup, disable it in Task Manager.
+3. If an app looks suspicious, verify its file path and run security checks.
+4. Do not manually delete registry startup keys if normal startup disabling is sufficient.
 
 ---
 
 ## 4. Browser
 
-Modern browsers can consume significant RAM, CPU, GPU, and network—especially with video playback, streams, dozens of tabs, and many extensions.
+Modern browsers can consume significant RAM, CPU, GPU, and network resources—especially with video playback, streams, many tabs, and extensions.
 
 Before gaming:
 
-- close tabs with YouTube/Twitch/movies/ads;
-- disable unnecessary extensions;
-- finish downloads;
-- if RAM is limited, fully close browser process, not only window;
-- check if browser remains running in background after closing.
+- Close tabs with YouTube, Twitch, movies, or ads.
+- Disable unnecessary extensions.
+- Finish downloads.
+- If RAM is limited, fully close the browser process, not only its window.
+- Check whether the browser remains running in the background after closing.
 
 ### What not to do
 
-Do not disable browser hardware acceleration вЂњfor FPSвЂќ without reason. It can reduce or shift load to GPU depending on case; test only for specific browser/video/overlay issues.
+Do not disable browser hardware acceleration “for FPS” without reason. It can reduce or shift load to the GPU depending on the case. Test it only for a specific browser, video, or overlay issue.
 
 ---
 
@@ -192,42 +218,42 @@ Do not disable browser hardware acceleration вЂњfor FPSвЂќ without reason.
 
 While gaming, close or pause:
 
-- game downloads in Steam, Epic Games, Battle.net, and similar launchers;
-- torrents;
-- Windows Update if it is actively downloading;
-- sync in OneDrive, Google Drive, Dropbox, and other cloud services;
-- cloud backup jobs;
-- high-bitrate streaming/video on other devices if your connection is limited.
+- Game downloads in Steam, Epic Games, Battle.net, and similar launchers.
+- Torrents.
+- Windows Update, if it is actively downloading.
+- Sync in OneDrive, Google Drive, Dropbox, and other cloud services.
+- Cloud backup jobs.
+- High-bitrate streaming or video on other devices, if your connection is limited.
 
 ### Why it matters
 
 Downloads can:
 
-- saturate bandwidth and worsen ping;
-- increase SSD load;
-- consume CPU for file verification/decompression;
-- cause stutters on weaker systems.
+- Saturate bandwidth and worsen ping.
+- Increase SSD load.
+- Consume CPU for file verification or decompression.
+- Cause stutters on weaker systems.
 
 > [!NOTE]
-> If the issue is only ping or packet loss, do not try to fix it by disabling Windows services. First check downloads, Wi-Fi/cable, router, ISP, and game server status.
+> If the issue is only ping or packet loss, do not try to fix it by disabling Windows services. First check downloads, Wi-Fi or cable, router, ISP, and game-server status.
 
 ---
 
 ## 6. Overlays
 
-Overlay means UI on top of the game: FPS counter, chat, recording, notifications, browser, or store.
+An overlay is UI displayed on top of a game: FPS counter, chat, recording, notifications, browser, or store.
 
 Common overlays:
 
-- Steam Overlay;
-- Discord Overlay;
-- NVIDIA Overlay;
-- AMD Overlay;
-- Xbox Game Bar;
-- Overwolf;
-- MSI Afterburner + RTSS;
-- peripheral vendor overlays;
-- OBS/screen recording overlays.
+- Steam Overlay.
+- Discord Overlay.
+- NVIDIA Overlay.
+- AMD Overlay.
+- Xbox Game Bar.
+- Overwolf.
+- MSI Afterburner + RTSS.
+- Peripheral vendor overlays.
+- OBS or screen-recording overlays.
 
 ### How to test
 
@@ -236,8 +262,8 @@ If stutters, crashes, or launch issues appear:
 1. Disable one overlay.
 2. Restart the game.
 3. Test the same scene.
-4. If no difference, re-enable it if needed.
-5. Repeat with next overlay.
+4. If there is no difference, re-enable it if needed.
+5. Repeat with the next overlay.
 
 > [!IMPORTANT]
 > Do not run multiple recording tools and multiple FPS overlays at the same time. They can conflict.
@@ -246,61 +272,61 @@ If stutters, crashes, or launch issues appear:
 
 ## 7. RGB software and peripheral utilities
 
-RGB/peripheral tools can be useful for:
+RGB and peripheral tools can be useful for:
 
-- mouse DPI and polling rate;
-- macros;
-- keyboard profiles;
-- lighting;
-- fan curves;
-- monitoring.
+- Mouse DPI and polling rate.
+- Macros.
+- Keyboard profiles.
+- Lighting.
+- Fan curves.
+- Monitoring.
 
-But some tools continuously consume CPU/RAM and run extra services, overlays, and telemetry.
+But some tools continuously consume CPU and RAM and run extra services, overlays, and telemetry.
 
 ### Correct approach
 
-1. Save device profile to onboard mouse/keyboard memory if available.
-2. Check whether app can be removed from startup without losing needed features.
-3. Do not uninstall fan-control utility until you confirm fan behavior remains correct without it.
+1. Save the device profile to onboard mouse or keyboard memory, if available.
+2. Check whether the app can be removed from startup without losing needed features.
+3. Do not uninstall a fan-control utility until you confirm that fan behavior remains correct without it.
 4. If multiple RGB suites from different vendors are installed, keep only the minimal set you need.
 
 ---
 
 ## 8. Recording, streaming, and virtual cameras
 
-OBS, Discord stream, NVIDIA ShadowPlay/Instant Replay, AMD ReLive, Xbox Game Bar, and similar apps can use CPU, GPU, VRAM, SSD, and network resources.
+OBS, Discord streaming, NVIDIA ShadowPlay or Instant Replay, AMD ReLive, Xbox Game Bar, and similar apps can use CPU, GPU, VRAM, SSD, and network resources.
 
 ### Decide what you need before gaming
 
 - Need recording? Keep one recording method enabled.
-- Need streaming? Use a dedicated OBS profile and test load.
-- No recording needed? Disable Instant Replay/Replay Buffer and extra overlays.
-- Not using virtual camera? Close it with the parent app.
+- Need streaming? Use a dedicated OBS profile and test its load.
+- No recording needed? Disable Instant Replay, Replay Buffer, and extra overlays.
+- Not using a virtual camera? Close it together with its parent app.
 
 ### What to monitor
 
-During stream/recording, watch:
+During streaming or recording, watch:
 
-- dropped frames in OBS;
-- GPU usage;
-- VRAM usage;
-- CPU load;
-- SSD write speed;
-- temperatures and clocks.
+- Dropped frames in OBS.
+- GPU usage.
+- VRAM usage.
+- CPU load.
+- SSD write speed.
+- Temperatures and clocks.
 
 ---
 
-## 9. What to do before launching a game
+## 9. Before launching a game
 
 Quick sequence:
 
 1. Finish downloads and updates.
 2. Close browser video and unnecessary tabs.
-3. Pause cloud sync if actively running.
-4. Keep only required messenger/voice chat.
+3. Pause cloud sync if it is actively running.
+4. Keep only the required messenger or voice chat.
 5. Disable unnecessary overlays.
-6. Close heavy work apps: video editing, Photoshop, IDEs, VMs.
-7. Verify recording/streaming is off if not needed.
+6. Close heavy work apps: video editing, Photoshop, IDEs, and virtual machines.
+7. Verify recording or streaming is off if it is not needed.
 8. Launch the game.
 
 ---
@@ -309,16 +335,16 @@ Quick sequence:
 
 Do not randomly terminate:
 
-- `explorer.exe`;
-- Windows processes with unknown purpose;
-- driver-related processes;
-- audio services;
-- security processes;
-- network components;
-- anti-cheat processes while gaming;
-- system processes named `Service Host` / `svchost.exe`.
+- `explorer.exe`.
+- Windows processes with unknown purpose.
+- Driver-related processes.
+- Audio services.
+- Security processes.
+- Network components.
+- Anti-cheat processes while gaming.
+- System processes named `Service Host` or `svchost.exe`.
 
-If a process constantly creates load, first identify which application owns it. See: [Services and security](08-services-and-security.md).
+If a process constantly creates load, first identify which application owns it. See [Services and security](08-services-and-security.md).
 
 ---
 
@@ -327,8 +353,8 @@ If a process constantly creates load, first identify which application owns it. 
 - [ ] Unnecessary startup apps are disabled.
 - [ ] Browser video and heavy apps are closed before gaming.
 - [ ] Downloads and cloud sync are paused.
-- [ ] Multiple overlays/recorders are not running simultaneously.
-- [ ] RGB/peripheral software runs only when needed.
+- [ ] Multiple overlays or recorders are not running simultaneously.
+- [ ] RGB and peripheral software runs only when needed.
 - [ ] No random termination of system processes.
 - [ ] All changes are validated in-game.
 
@@ -336,6 +362,6 @@ If a process constantly creates load, first identify which application owns it. 
 
 ## Summary
 
-Background optimization is not about вЂњkilling everything in Task Manager.вЂќ Disable only what you understand, do not use, and can safely start later manually. Most useful actions are clean startup, paused downloads, closed video browser tabs, and minimal overlays.
+Background optimization is not about “killing everything in Task Manager.” Disable only what you understand, do not use, and can safely start later manually. The most useful actions are clean startup, paused downloads, closed video browser tabs, and minimal overlays.
 
 Next step: [Services and security](08-services-and-security.md).

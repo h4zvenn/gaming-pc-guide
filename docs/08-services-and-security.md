@@ -1,11 +1,15 @@
 ---
 layout: doc
-title: "08-services-and-security"
+title: "08. Services and Security"
+description: "Review third-party services safely, avoid mass service disabling, and preserve Windows security and rollback options."
+lang: en
+translation_key: services-and-security
+permalink: /docs/08-services-and-security.html
 ---
 
 # 08. Services and Security
 
-> Disabling services is one of the most overrated and risky вЂњoptimizationвЂќ methods. Most services consume almost nothing while idle, and mass disabling can break networking, audio, updates, anti-cheat, app installation, and Windows security.
+> Disabling services is one of the most overrated and risky “optimization” methods. Most services consume almost nothing while idle, and mass disabling can break networking, audio, updates, anti-cheat, app installation, and Windows security.
 
 ## Core rule
 
@@ -22,45 +26,45 @@ Do not disable a service until you can answer three questions:
 
 | You see | First action |
 | --- | --- |
-| High CPU/disk usage | Find process owner before touching services |
-| Update-related load | Pause/schedule updates, do not disable services |
-| Unknown service name | Research origin and file path first |
+| High CPU/disk usage | Find the process owner before touching services |
+| Update-related load | Pause or schedule updates; do not disable services |
+| Unknown service name | Research its origin and file path first |
 
-Third-party tools that apply service, registry, or debloat changes — for example BoosterX background services, Hone registry optimizations, GTtwick, Sparkle, RyTuneX, Exoptimizer, and BRUTAL-FPS process tuning — must follow the same guardrails described here: one area at a time, keep a rollback path, and do not blanket-disable critical services or security protections.
+Third-party tools that apply service, registry, or debloat changes — for example BoosterX background services, Hone registry optimizations, GTtwick, Sparkle, RyTuneX, Exoptimizer, and BRUTAL-FPS process tuning — must follow the same guardrails: one area at a time, keep a rollback path, and do not blanket-disable critical services or security protections.
 
 ---
 
-## 1. Why вЂњdisable 100 servicesвЂќ is a bad idea
+## 1. Why “disable 100 services” is a bad idea
 
-Prebuilt debloat scripts, videos, and вЂњunnecessary servicesвЂќ lists often ignore:
+Prebuilt debloat scripts, videos, and “unnecessary services” lists often ignore:
 
 - Windows version;
 - desktop vs laptop usage;
 - installed drivers and peripherals;
-- VPN, printers, Bluetooth, Wi-Fi;
+- VPN, printers, Bluetooth, and Wi-Fi;
 - anti-cheat and game launchers;
-- Microsoft Store/Xbox features;
-- corporate software and remote access needs.
+- Microsoft Store, Xbox, and Game Pass features;
+- corporate software and remote-access needs.
 
 A service that is unnecessary for one user may be critical for another.
 
 ### Possible consequences
 
-- loss of internet, DNS, or DHCP;
-- no sound or microphone;
-- Bluetooth/Wi-Fi connection failure;
-- game/anti-cheat launch failure;
-- driver installation issues;
-- broken Windows updates;
-- Microsoft Store, Game Pass, or Xbox features stop working;
-- Event Viewer errors;
-- reduced system security.
+- Loss of internet, DNS, or DHCP.
+- No sound or microphone.
+- Bluetooth or Wi-Fi connection failure.
+- Game or anti-cheat launch failure.
+- Driver installation issues.
+- Broken Windows updates.
+- Microsoft Store, Game Pass, or Xbox features stop working.
+- Event Viewer errors.
+- Reduced system security.
 
 ---
 
-## 2. What you should not disable blindly
+## 2. What not to disable blindly
 
-Below are critical Windows components. Do not disable them without an exact documented reason.
+These Windows components are critical. Do not disable them without an exact, documented reason.
 
 ### System and software installation
 
@@ -82,8 +86,8 @@ Below are critical Windows components. Do not disable them without an exact docu
 - Network Location Awareness
 - Network List Service
 - Network Connections
-- WLAN AutoConfig (if you use Wi-Fi)
-- Bluetooth Support Service (if you use Bluetooth)
+- WLAN AutoConfig, if you use Wi-Fi
+- Bluetooth Support Service, if you use Bluetooth
 
 ### Audio and devices
 
@@ -107,9 +111,9 @@ BITS (Background Intelligent Transfer Service) is an update-delivery component, 
 
 ---
 
-## 3. Correct way to identify the real load source
+## 3. Identify the real load source
 
-If CPU/disk/RAM/network usage is high, do not jump straight into `services.msc`.
+If CPU, disk, RAM, or network usage is high, do not jump straight into `services.msc`.
 
 ### Step 1. Find the process
 
@@ -127,14 +131,14 @@ Sort by:
 - Network;
 - GPU.
 
-### Step 2. Identify process owner
+### Step 2. Identify the process owner
 
 - Right-click the process.
 - Select `Open file location`.
 - Open `Properties` → `Digital Signatures`.
-- Identify app name and verify if it is needed.
+- Identify the application and decide whether it is needed.
 
-### Step 3. Find related service
+### Step 3. Find the related service
 
 In Task Manager, open:
 
@@ -148,18 +152,18 @@ Or:
 Win + R → services.msc
 ```
 
-Do not change startup type before understanding service relation to app or driver.
+Do not change a startup type before understanding its relation to an app or driver.
 
-### Step 4. Fix root cause
+### Step 4. Fix the root cause
 
 Instead of disabling a system service:
 
-- close the program;
-- disable its startup;
-- turn off unnecessary feature inside app settings;
-- update/reinstall problematic app;
-- uninstall it if unused;
-- schedule sync/scans for non-gaming time.
+- Close the program.
+- Disable its startup.
+- Turn off the unnecessary feature inside the app.
+- Update or reinstall the problematic app.
+- Uninstall it if unused.
+- Schedule sync or scans for non-gaming time.
 
 ---
 
@@ -171,11 +175,11 @@ Seeing many `Service Host` / `svchost.exe` processes in Task Manager is normal. 
 
 1. Expand the `Service Host` group in Task Manager.
 2. Check which exact service is inside.
-3. Determine cause: update, indexing, sync, network, driver error.
+3. Determine the cause: update, indexing, sync, network, or driver error.
 4. Do not delete or block `svchost.exe`.
 
 > [!WARNING]
-> `svchost.exe` is a core Windows process. Deleting/blocking/"optimizing" it with third-party scripts can damage the system.
+> `svchost.exe` is a core Windows process. Deleting, blocking, or “optimizing” it with third-party scripts can damage the system.
 
 ---
 
@@ -183,28 +187,28 @@ Seeing many `Service Host` / `svchost.exe` processes in Task Manager is normal. 
 
 Defender provides built-in malware protection.
 
-### What to do if scans interfere
+### If scans interfere with gaming
 
 Do not disable Defender permanently. Better options:
 
-- wait for one-time scan to finish;
-- do not run manual full scan during gaming;
-- check for suspicious app causing constant scanning;
-- update protection signatures;
-- add exclusions only for trusted folders and only if you understand the risk.
+- Wait for a one-time scan to finish.
+- Do not run a manual full scan during gaming.
+- Check whether a suspicious app causes constant scanning.
+- Update protection signatures.
+- Add exclusions only for trusted folders and only if you understand the risk.
 
 ### About exclusions
 
-An exclusion means Defender will skip scanning that file/folder. Do not exclude:
+An exclusion means Defender skips scanning that file or folder. Do not exclude:
 
-- full system drive `C:`;
-- `Downloads` folder;
-- unknown repositories/scripts;
-- pirated software;
-- browser folders;
-- everything вЂњfor performance.вЂќ
+- The full system drive `C:`.
+- The `Downloads` folder.
+- Unknown repositories or scripts.
+- Pirated software.
+- Browser folders.
+- Everything “for performance”.
 
-If a trusted game/tool truly conflicts with scanning, use the minimal required exclusion and prefer developer recommendations.
+If a trusted game or tool truly conflicts with scanning, use the minimal required exclusion and prefer developer recommendations.
 
 ---
 
@@ -223,7 +227,7 @@ Instead of disabling services:
 5. Reboot if Windows requires it.
 
 > [!NOTE]
-> Temporary update pause is normal. Permanently disabled Windows Update creates security risk and long-term compatibility issues.
+> A temporary update pause is normal. Permanently disabled Windows Update creates security risk and long-term compatibility issues.
 
 ---
 
@@ -239,14 +243,14 @@ Firewall controls network connections. Disabling it is not a way to reduce ping 
 
 If a game cannot connect:
 
-- check Firewall rules;
-- allow specific trusted app;
-- check router, VPN, antivirus, and game server status;
-- do not disable protection globally.
+- Check Firewall rules.
+- Allow only a specific trusted app.
+- Check router, VPN, antivirus, and game-server status.
+- Do not disable protection globally.
 
 ### SmartScreen
 
-SmartScreen warns about suspicious files/sites. Do not disable it just to run unknown `.exe`, `.bat`, `.reg`, or PowerShell scripts.
+SmartScreen warns about suspicious files and sites. Do not disable it just to run unknown `.exe`, `.bat`, `.reg`, or PowerShell scripts.
 
 ---
 
@@ -256,27 +260,27 @@ SmartScreen warns about suspicious files/sites. Do not disable it just to run un
 
 ```powershell
 Get-Service |
-Where-Object Status -eq 'Running' |
-Sort-Object DisplayName |
-Select-Object Status, Name, DisplayName
+  Where-Object Status -eq 'Running' |
+  Sort-Object DisplayName |
+  Select-Object Status, Name, DisplayName
 ```
 
-### Find service by partial name
+### Find a service by partial name
 
 Example for the word `Update`:
 
 ```powershell
 Get-Service *Update* |
-Select-Object Status, Name, DisplayName
+  Select-Object Status, Name, DisplayName
 ```
 
 ### View services set to automatic startup
 
 ```powershell
 Get-CimInstance Win32_Service |
-Where-Object StartMode -eq 'Auto' |
-Sort-Object DisplayName |
-Select-Object Name, DisplayName, State, StartMode
+  Where-Object StartMode -eq 'Auto' |
+  Sort-Object DisplayName |
+  Select-Object Name, DisplayName, State, StartMode
 ```
 
 > [!NOTE]
@@ -284,65 +288,7 @@ Select-Object Name, DisplayName, State, StartMode
 
 ---
 
-## 9. If you need to disable a third-party service
-
-Sometimes a third-party app installs an unnecessary service: updater, telemetry agent, RGB suite, trial antivirus, or old launcher.
-
-Safe sequence:
-
-1. Verify service is not part of a required driver or app.
-2. Close the app.
-3. Disable app startup.
-4. Check whether app has built-in startup/service option.
-5. If app is unnecessary, uninstall it via:
-
-    ```text
-    Settings → Apps → Installed apps
-    ```
-
-6. Reboot and verify system behavior.
-
-Do not manually remove services via registry/commands when normal app uninstall is sufficient.
-
----
-
-## 10. Prebuilt debloat scripts and вЂњoptimizersвЂќ
-
-Be especially careful with files like:
-
-```text
-.bat
-.cmd
-.ps1
-.reg
-.exe
-```
-
-that promise:
-
-- вЂњ+500 FPSвЂќ;
-- вЂњdisable all telemetryвЂќ;
-- вЂњreduce input lag with one clickвЂќ;
-- вЂњremove Windows bloat without side effectsвЂќ;
-- вЂњdisable 200 unnecessary servicesвЂќ;
-- вЂњfix pingвЂќ;
-- вЂњoptimize timers/HPET/BCDвЂќ.
-
-Before running any script:
-
-1. Open it in Notepad or VS Code.
-2. Read every command.
-3. Verify author and source repository.
-4. Create a restore point.
-5. Do not run as administrator if you do not understand what it changes.
-6. Do not run scripts from archives, Discord, YouTube descriptions, or unknown websites without review.
-
-> [!IMPORTANT]
-> If a script cannot be read and understood, it cannot be run safely.
-
----
-
-### Practical service review
+## 9. Third-party service review
 
 Review only third-party services. Do not disable system services from copied lists.
 
@@ -353,12 +299,18 @@ Get-CimInstance Win32_Service |
   Format-Table -AutoSize
 ```
 
+Before changing a service, record its current `StartType`. If something stops working, restore the original setting.
+
 ### Safe candidates
 
 | Service | Recommended state | When |
 | --- | --- | --- |
 | `XboxService` | `Manual` | Xbox Game Bar is not used |
 | `LGHUBUpdaterService` | `Manual` | Constant Logitech background updates are not needed |
+| Discord System Helper | Leave as `Manual` | It is usually not running by default |
+| NVIDIA FrameView SDK | Leave as `Manual` | Needed only for FrameView |
+
+Example:
 
 ```powershell
 Set-Service -Name XboxService -StartupType Manual
@@ -373,42 +325,98 @@ Stop-Service -Name LGHUBUpdaterService -ErrorAction SilentlyContinue
 | Service | Reason |
 | --- | --- |
 | `NvContainerLocalSystem` | Required by NVIDIA App and driver components |
-| `Steam Client Service` | Required for Steam functionality |
-| Windows Update | Security and stability |
-| Microsoft Defender | Malware protection |
-| Audio services | Required for sound |
+| Steam Client Service | Required for normal Steam operation |
+| Windows Update | Security and system updates |
+| Microsoft Defender | Antimalware protection |
+| AudioSrv | Required for sound |
+| AudioEndpointBuilder | Required for audio devices |
+| Bluetooth Support Service | Required for Bluetooth headphones, mice, and controllers |
 | WLAN AutoConfig | Required for Wi-Fi |
 
 ### Restore a service
+
+If something stops working, restore the previous startup type:
 
 ```powershell
 Set-Service -Name 'SERVICE_NAME' -StartupType Automatic
 Start-Service -Name 'SERVICE_NAME'
 ```
 
-### Third-party service audit
+Example for Xbox:
 
 ```powershell
-Get-CimInstance Win32_Service |
-  Where-Object { $_.PathName -and $_.PathName -notmatch 'Windows|Microsoft' } |
-  Select-Object Name, DisplayName, State, StartMode, PathName |
+Set-Service -Name XboxService -StartupType Automatic
+Start-Service XboxService
+```
+
+### Verify service changes
+
+```powershell
+Get-Service XboxService, LGHUBUpdaterService -ErrorAction SilentlyContinue |
+  Select-Object Name, Status, StartType |
   Format-Table -AutoSize
 ```
 
+### Service startup types
+
+| Type | Meaning |
+| --- | --- |
+| Automatic | Starts with Windows |
+| Manual | Starts only when required |
+| Disabled | Never starts; use only if you are certain |
+
+---
+
+## 10. Prebuilt debloat scripts and “optimizers”
+
+Be especially careful with files like:
+
+```text
+.bat
+.cmd
+.ps1
+.reg
+.exe
+```
+
+that promise:
+
+- “+500 FPS”.
+- “Disable all telemetry”.
+- “Reduce input lag with one click”.
+- “Remove Windows bloat without side effects”.
+- “Disable 200 unnecessary services”.
+- “Fix ping”.
+- “Optimize timers/HPET/BCD”.
+
+Before running any script:
+
+1. Open it in Notepad or VS Code.
+2. Read every command.
+3. Verify the author and source repository.
+4. Create a restore point.
+5. Do not run it as administrator if you do not understand what it changes.
+6. Do not run scripts from archives, Discord, YouTube descriptions, or unknown websites without review.
+
+> [!IMPORTANT]
+> If a script cannot be read and understood, it cannot be run safely.
+
+---
+
 ## Checklist
 
-- [ ] Windows services are not disabled вЂњby list.вЂќ
+- [ ] Windows services are not disabled “by list”.
 - [ ] Under load, a specific process and owner are identified first.
-- [ ] Unnecessary third-party program is disabled from startup or uninstalled safely.
+- [ ] An unnecessary third-party program is disabled from startup or uninstalled safely.
 - [ ] Defender, Firewall, UAC, Windows Update, and network services stay enabled.
 - [ ] `svchost.exe` and other system processes are not removed.
-- [ ] Unknown BAT/REG/PowerShell scripts are not applied.
-- [ ] Restore point is created before major changes.
+- [ ] Unknown BAT, REG, or PowerShell scripts are not applied.
+- [ ] A restore point is created before major changes.
 
 ---
 
 ## Summary
 
-Services are not the place for mass вЂњoptimization.вЂќ If there is background load, identify the specific program and remove root cause: configure it, disable startup, or uninstall it. This preserves FPS, stability, anti-cheat compatibility, networking, and Windows security.
+Services are not the place for mass “optimization.” If there is background load, identify the specific program and remove the root cause: configure it, disable startup, or uninstall it. This preserves FPS, stability, anti-cheat compatibility, networking, and Windows security.
 
-Next step: [PowerShell: diagnostics and checks](09-powershell-diagnostics.md).
+Next step: [PowerShell diagnostics and checks](09-powershell-diagnostics.md).

@@ -93,8 +93,8 @@ permalink: /ru/
 - [04. Драйверы и обновления — EN]({{ '/docs/04-drivers-and-updates.html' | relative_url }}) — работа с драйверами и обновлениями.
 - [05. Настройки Windows 11 — EN]({{ '/docs/05-windows-11.html' | relative_url }}) — параметры операционной системы.
 - [06. Настройки видеокарты — EN]({{ '/docs/06-gpu-settings.html' | relative_url }}) — графика, синхронизация и задержка.
-- [07. Фоновые приложения — EN]({{ '/docs/07-background-apps.html' | relative_url }}) — проверка фоновой активности.
-- [08. Службы и безопасность — EN]({{ '/docs/08-services-and-security.html' | relative_url }}) — системные службы и ограничения изменений.
+- [07. Фоновые приложения]({{ '/ru/docs/07-background-apps.html' | relative_url }}) — проверка фоновой активности.
+- [08. Службы и безопасность]({{ '/ru/docs/08-services-and-security.html' | relative_url }}) — системные службы и ограничения изменений.
 
 ### Справочник и стартовые настройки
 
