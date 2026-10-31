@@ -386,4 +386,4 @@ Use PowerShell primarily for diagnostics: [PowerShell: checks and diagnostics](h
 
 Optimization is a sequential process: measure → find bottleneck → change one setting → test → keep or rollback. If there is no specific issue, do not chase risky tweaks: stable system, up-to-date drivers, proper cooling, and clean background already provide most of the result.
 
-Back to main page: [README](https://h4zvenn.github.io/gaming-pc-guide/docs/../README.html).
+Back to main page: [Home](/).

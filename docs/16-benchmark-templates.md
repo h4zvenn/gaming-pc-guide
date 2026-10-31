@@ -194,4 +194,4 @@ Third-party tool entries live in [18 Optimization tools evidence](https://h4zven
 - [ ] Temperatures and noise remain acceptable.
 - [ ] The change has a documented rollback path.
 
-Back to main guide: [README](https://h4zvenn.github.io/gaming-pc-guide/docs/../README.html).
+Back to main guide: [Home](/).

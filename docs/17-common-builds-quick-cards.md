@@ -120,4 +120,4 @@ permalink: /docs/17-common-builds-quick-cards.html
 - [ ] No new crashes/WHEA/artifacts.
 - [ ] Keep only measurable gains.
 
-Back to main guide: [README](https://h4zvenn.github.io/gaming-pc-guide/docs/../README.html).
+Back to main guide: [Home](/).
