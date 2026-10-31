@@ -7,73 +7,63 @@ description: "Create a restore point, record baseline performance, and prepare W
 permalink: /docs/01-before-you-start.html
 ---
 
-> Do not start with disabling services, registry edits, or overclocking.
-> First, ensure rollback options exist, verify your current PC state, and record baseline results.
+> Do not start by disabling services, editing the registry, or overclocking. First create rollback options, check the current state of the PC, and record baseline results.
 
 ## What to do first
 
 Before optimization:
 
-- Create a Windows restore point
-- Check temperatures and clocks
-- Verify monitor refresh rate is correct
-- Record current FPS, 1% low, and frametime
-- Check free SSD space
-- Confirm system stability before tuning
+- Create a Windows restore point.
+- Check temperatures and clocks.
+- Verify the monitor refresh rate.
+- Record current FPS, 1% lows, and frame times.
+- Check free SSD space.
+- Confirm that the system is stable before tuning.
 
-### Quick win table
-
-| If you only have 10 minutes | Do this first |
+| If you have only 10 minutes | Do this first |
 | --- | --- |
-| You did not benchmark yet | Record baseline FPS + 1% low |
-| You are not sure about system state | Create restore point + check temps |
-| Game feels choppy | Verify monitor refresh rate + close heavy background apps |
+| You have not benchmarked yet | Record baseline FPS and 1% lows |
+| You are unsure about system state | Create a restore point and check temperatures |
+| The game feels choppy | Verify monitor refresh rate and close heavy background apps |
 
-> **Important:** > Change only one setting at a time.
->
-> If you apply many tweaks at once, you cannot tell what actually helped and what caused issues.
+> **Important:** Change only one setting at a time. If you apply many tweaks at once, you cannot tell what helped and what caused issues.
 
 ---
 
-## 1. Create a restore point
+## Create a restore point
 
-A restore point helps roll back system settings, drivers, and some Windows changes if optimization causes errors, stutter, or app launch issues.
-
-### How to create it
+A restore point can roll back system settings, drivers, and some Windows changes if optimization causes errors, stutter, or app-launch issues.
 
 1. Press `Win`.
-2. Search for: `Create a restore point`.
+2. Search for `Create a restore point`.
 3. Open the matching result.
 4. Select the system drive, usually `C:`.
-5. If protection is off, click `Configure` → `Turn on system protection`.
-6. Click `Create`.
-7. Name the point, for example:
+5. If protection is off, select `Configure` → `Turn on system protection`.
+6. Select `Create`.
+7. Name the point:
 
-    ```text
-    Before gaming optimization
-    ```
+   ```text
+   Before gaming optimization
+   ```
 
-8. Wait for the success message.
+8. Wait for the confirmation message.
 
-> **Note:** > A restore point is not a backup of personal files.
-> It is mainly for rolling back system changes.
->
-> If BitLocker is enabled, save the recovery key before changing BIOS, TPM, Secure Boot, or boot-order settings. A restore point does not replace that key.
+> **Note:** A restore point is not a backup of personal files. It is mainly for rolling back system changes.
+
+If BitLocker is enabled, save the recovery key before changing BIOS, TPM, Secure Boot, or boot-order settings. A restore point does not replace that key.
 
 ---
 
-## 2. Check monitor refresh rate
+## Check monitor refresh rate
 
-Even a powerful PC will not feel smooth on a 144/165/240 Hz monitor if Windows is set to 60 Hz.
-
-### How to verify
+Even a powerful PC will not feel smooth on a 144, 165, or 240 Hz monitor if Windows is set to 60 Hz.
 
 1. Open `Settings`.
-2. Go to: `System → Display → Advanced display`.
+2. Go to `System → Display → Advanced display`.
 3. Select the correct monitor if you use multiple displays.
 4. Set the highest stable refresh rate.
 
-Examples:
+Common values:
 
 ```text
 60 Hz
@@ -84,22 +74,17 @@ Examples:
 360 Hz
 ```
 
-> **Warning:** > Do not select a refresh rate your monitor/cable cannot handle stably.
-> If screen blackout, artifacts, or signal loss appears, revert to a known stable value.
+> **Warning:** Do not select a refresh rate that your monitor or cable cannot handle stably. If the screen goes black, artifacts appear, or the signal is lost, return to a known stable value.
 
 ---
 
-## 3. Free up SSD space
+## Check SSD free space
 
-An overfilled system drive can hurt update installation, page file behavior, game loading, and overall responsiveness.
+An overfilled system drive can affect Windows updates, page-file behavior, game loading, and overall responsiveness.
 
-### Recommendation
+Keep enough free space for updates, the page file, and game installations. A practical starting point is 15–20% free space on the system drive, but the exact requirement depends on the SSD model, firmware, and workload.
 
-Keep enough free space for updates, the page file, and game installs. A common starting point is 15–20% on the system drive, but the real limit depends on the SSD model, firmware, and workload. Watch for sustained write-speed drops and rising latency instead of treating one percentage as universal.
-
-### Check using PowerShell
-
-Open Windows Terminal or PowerShell and run:
+Check drive space:
 
 ```powershell
 Get-PSDrive -PSProvider FileSystem |
@@ -108,69 +93,68 @@ Select-Object Name,
 @{Name='FreeGB';Expression={[math]::Round($_.Free / 1GB, 1)}}
 ```
 
-### Output meaning
+| Column | Meaning |
+| --- | --- |
+| `Name` | Drive letter |
+| `UsedGB` | Used space |
+| `FreeGB` | Free space |
 
-- `Name` — drive letter
-- `UsedGB` — used space
-- `FreeGB` — free space
-
-> **Tip:** > Avoid questionable вЂњregistry cleanersвЂќ just to free space.
-> Remove unused games, temporary files, old downloads, and software you do not use.
+> **Tip:** Avoid questionable registry cleaners just to free space. Remove unused games, temporary files, old downloads, and software you no longer use.
 
 ---
 
-## 4. Record baseline results
+## Record baseline results
 
-Before optimization, you need a clear picture of current behavior.
+Before optimization, record how the system performs now.
 
 ### What to record
 
 - Average FPS
-- 1% low
-- Frametime
+- 1% lows
+- Frame times
 - GPU usage
 - CPU usage
 - RAM and VRAM usage
 - CPU and GPU temperatures
 - CPU and GPU clocks
 
-### Tools you can use
+### Tools
 
 - Built-in game benchmark
-- MSI Afterburner + RivaTuner Statistics Server
+- MSI Afterburner with RivaTuner Statistics Server
 - HWiNFO
 - CapFrameX
-- NVIDIA App / AMD Software overlay
+- NVIDIA App or AMD Software overlay
 
-### Correct test method
+### Test method
 
-1. Use one game or one benchmark.
-2. Do not change resolution, graphics settings, or driver between runs.
+1. Use one game or benchmark.
+2. Do not change resolution, graphics settings, or drivers between runs.
 3. Test the same scene.
 4. Warm up for 5–10 minutes, then run at least 3 passes.
-5. Report the median and the min–max range, not only the average or the best run.
-6. See [16 Benchmark templates](https://h4zvenn.github.io/gaming-pc-guide/docs/16-benchmark-templates.html) for metric definitions and the full protocol.
+5. Report the median and minimum–maximum range, not only the best run.
 
-Sample note:
+See [Benchmark Templates](16-benchmark-templates.html) for metric definitions and the full testing protocol.
+
+### Baseline note template
 
 ```text
-Date: 22.08.2026
-Game / benchmark: __________
-Resolution: __________
-Graphics settings: __________
-Average FPS: __________
-1% low: __________
-CPU temperature: __________
-GPU temperature: __________
+Date:
+Game / benchmark:
+Resolution:
+Graphics settings:
+Average FPS:
+1% low:
+CPU temperature:
+GPU temperature:
 Change: Before optimization
 ```
 
-> **Important:** > Average FPS is not the only metric.
-> If average FPS barely changes but 1% low improves and frametime is smoother, the optimization may still be useful.
+> **Important:** Average FPS is not the only metric. If average FPS barely changes but 1% lows improve and frame times become smoother, the change may still be useful.
 
 ---
 
-## 5. Check basic PC info
+## Check basic PC information
 
 ### Processor
 
@@ -201,38 +185,29 @@ Select-Object Manufacturer, PartNumber, Capacity, Speed, ConfiguredClockSpeed
 powercfg /getactivescheme
 ```
 
-> **Note:** > Commands in this section are diagnostic only; they do not change Windows settings.
-> On GitHub, code blocks can be copied with the **Copy** button.
+These commands are diagnostic only; they do not change Windows settings.
 
 ---
 
-## 6. Check for obvious system issues
+## Check for obvious issues
 
-Before fine-tuning, fix real hardware/software problems first.
+Before fine-tuning, fix real hardware or software problems.
 
 Check that:
 
-- Monitor is connected to the discrete GPU, not motherboard video output
-- CPU/case fans are working
-- GPU receives proper power
-- SSD is not nearly full
-- There is no severe overheating or throttling
-- There are no constant crashes, BSODs, or random reboots
-- No heavy downloads/streams/updates/VMs are running during tests
-- Windows is set to the actual monitor refresh rate
+- The monitor is connected to the discrete GPU, not the motherboard video output.
+- CPU and case fans are working.
+- The GPU receives proper power.
+- The SSD is not nearly full.
+- There is no severe overheating or throttling.
+- There are no constant crashes, BSODs, or random reboots.
+- No heavy downloads, streams, updates, or virtual machines are running during tests.
+- Windows uses the actual monitor refresh rate.
 
-If the PC is unstable at stock settings, do not proceed with PBO, Curve Optimizer, XMP/EXPO, undervolt, or manual overclocking. Find and fix root cause first.
+If the PC is unstable at stock settings, do not proceed with PBO, Curve Optimizer, XMP/EXPO, undervolting, or manual overclocking. Find and fix the root cause first.
 
 ---
 
-## Summary
+## Next step
 
-You now have:
-
-- A restore point
-- Baseline performance metrics
-- Component information
-- Visibility into temperatures and likely issues
-- A way to compare each change reliably
-
-Next step: [Find the bottleneck: CPU, GPU, RAM, VRAM, SSD, or thermals](https://h4zvenn.github.io/gaming-pc-guide/docs/02-find-the-bottleneck.html).
+[Find the Bottleneck](02-find-the-bottleneck.html)
