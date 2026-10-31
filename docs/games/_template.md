@@ -1,98 +1,138 @@
 ---
 layout: doc
-title: "_template"
+title: "Game Template"
+description: "Template for creating consistent game-specific optimization guides."
+lang: en
+translation_key: game-template
+permalink: /docs/games/template.html
 ---
 
-> Copy this file to `docs/games/<game-slug>.md` and fill in every section. Do not duplicate common base content — link to it.
+> Copy this file to `docs/games/<game-slug>.md` and fill in every section. Do not duplicate common base content; link to it.
 
 ## Applicability
 
-- **Game:** `<Game Name>`
-- **Platform:** Steam / Epic / Battle.net / Standalone / Microsoft Store
-- **Engine:** `<Engine name and version if known>`
-- **Anti-cheat:** VAC / Vanguard / BattlEye / Easy Anti-Cheat / None / Custom
-- **Game version tested:** <patch/version>
-- **Date checked:** YYYY-MM-DD
-- **Status:** draft | needs-verification | verified | deprecated
+| Item | Value |
+| --- | --- |
+| Game | `<Game Name>` |
+| Platform | Steam, Epic Games, Battle.net, standalone, or Microsoft Store |
+| Engine | `<Engine name and version, if known>` |
+| Anti-cheat | VAC, Vanguard, BattlEye, Easy Anti-Cheat, none, or custom |
+| Game version tested | `<patch or version>` |
+| Date checked | `YYYY-MM-DD` |
+| Status | `draft`, `needs-verification`, `verified`, or `deprecated` |
 
-## Quick Start
+## Before tuning
 
-1. Complete the common base: [Preparation](https://h4zvenn.github.io/gaming-pc-guide/docs/../01-before-you-start.html) → [Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/../02-find-the-bottleneck.html) → [BIOS/Hardware](https://h4zvenn.github.io/gaming-pc-guide/docs/../03-bios-and-hardware.html) → [Drivers](https://h4zvenn.github.io/gaming-pc-guide/docs/../04-drivers-and-updates.html) → [Windows](https://h4zvenn.github.io/gaming-pc-guide/docs/../05-windows-11.html) → [GPU](https://h4zvenn.github.io/gaming-pc-guide/docs/../06-gpu-settings.html) → [Background](https://h4zvenn.github.io/gaming-pc-guide/docs/../07-background-apps.html) → [Security/Services](https://h4zvenn.github.io/gaming-pc-guide/docs/../08-services-and-security.html) → [Diagnostics](https://h4zvenn.github.io/gaming-pc-guide/docs/../09-powershell-diagnostics.html) → [Thermals/Stability](https://h4zvenn.github.io/gaming-pc-guide/docs/../10-temperatures-stability.html).
-2. Apply only the game-specific items below that match your symptom.
-3. Validate with the [Benchmark template](https://h4zvenn.github.io/gaming-pc-guide/docs/../16-benchmark-templates.html).
-4. Keep only what improves your metrics without instability.
+Complete the general preparation flow first:
 
-## Requirements & Compatibility
+1. [Before You Start](../01-before-you-start.html)
+2. [Find the Bottleneck](../02-find-the-bottleneck.html)
+3. [BIOS & Hardware](../03-bios-and-hardware.html)
+4. [Drivers & Updates](../04-drivers-and-updates.html)
+5. [Windows 11 Core](../05-windows-11.html)
+6. [GPU Settings](../06-gpu-settings.html)
+7. [Background Apps](../07-background-apps.html)
+8. [Services & Security](../08-services-and-security.html)
+9. [PowerShell Diagnostics](../09-powershell-diagnostics.html)
+10. [Temperatures & Stability](../10-temperatures-stability.html)
 
-- **Anti-cheat constraints:** `what the anti-cheat forbids/requires; e.g., no file modifications, no overlay injection, no unverified launch options, Trusted Mode requirements`
-- **OS / API requirements:** `Windows 10/11, DirectX 11/12/Vulkan, specific build if relevant`
-- **Known incompatibilities:** `overlays, injectors, specific drivers, OS features that break the game`
+Apply only the game-specific items below that match your symptom. Validate every change with the [Benchmark Templates](../16-benchmark-templates.html).
 
-## Graphics Settings — Tradeoffs
+---
+
+## Requirements and compatibility
+
+- **Anti-cheat constraints:** What the anti-cheat forbids or requires, such as no file modifications, no overlay injection, no unverified launch options, or Trusted Mode requirements.
+- **OS and API requirements:** Windows 10 or 11, DirectX 11, DirectX 12, Vulkan, or a specific build if relevant.
+- **Known incompatibilities:** Overlays, injectors, specific drivers, or OS features that break the game.
+
+---
+
+## Graphics settings
+
+Only list settings that exist in the game. Remove rows that do not apply.
 
 | Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
 | --- | --- | --- | --- | --- |
-| Resolution | | | | Native |
-| Render scale | | | | 100% |
-| Upscaler (DLSS/FSR/XeSS) | | | | Quality → Balanced |
-| Anti-aliasing | | | | |
-| Shadows | | | | |
-| Reflections / RT | | | | |
-| Ambient occlusion | | | | |
-| Volumetrics / fog | | | | |
-| Particles / effects | | | | |
-| Texture quality / VRAM | | | | |
-| View distance / LOD | | | | |
+| Resolution | Internal rendering resolution | GPU | Sharpness | Native |
+| Render scale | Internal resolution multiplier | GPU | Sharpness | 100% |
+| Upscaler | DLSS, FSR, or XeSS | GPU | Sharpness and FPS | Quality, then Balanced |
+| Anti-aliasing | Edge smoothing | GPU | Jagged edges | Test |
+| Shadows | Shadow quality and distance | GPU/CPU | Visibility | Test |
+| Reflections or ray tracing | Reflective surfaces and lighting | GPU | Visual fidelity | Test |
+| Ambient occlusion | Contact shadows | GPU | Depth | Test |
+| Volumetrics or fog | Atmospheric effects | GPU | Atmosphere | Test |
+| Particles or effects | Explosions, smoke, and effects | GPU/CPU | Effect detail | Test |
+| Texture quality | Surface detail and VRAM use | GPU/VRAM | Surface clarity | Test |
+| View distance or LOD | Object and terrain draw distance | CPU/GPU | Visibility | Test |
 
-> Only list settings that exist in this game. Remove rows that do not apply.
+---
 
-## FPS Cap, Sync & Latency Reduction
+## FPS cap, sync, and latency
 
-- **In-game FPS limiter:** `available? behaviour?`
-- **V-Sync:** `in-game / driver / both?`
-- **VRR (G-SYNC / FreeSync):** `supported? how to enable?`
-- **NVIDIA Reflex / AMD Anti-Lag / Intel Low Latency:** `supported in-game? driver fallback?`
-- **Frame Generation:** `supported? base FPS requirement?`
-- **Recommended sync profile:** `link to GPU guide; game-specific tuning only`
+- **In-game FPS limiter:** Available or unavailable; describe its behavior.
+- **V-Sync:** In-game, driver-level, or both.
+- **VRR:** G-SYNC or FreeSync support and setup.
+- **NVIDIA Reflex, AMD Anti-Lag, or Intel low latency:** In-game support or driver fallback.
+- **Frame Generation:** Support, base-FPS requirement, and latency trade-offs.
+- **Recommended sync profile:** Link to the GPU guide and describe only game-specific tuning.
 
-## Configs & Launch Options
+---
 
-- **Config location:** `path or registry`
-- **Verified launch options:** `only options confirmed for current patch`
-- **Do not use:** `deprecated / harmful / copied from other games`
+## Configuration and launch options
 
-## Common Issues & Diagnosis
+- **Config location:** Configuration file path or registry location.
+- **Verified launch options:** Only options confirmed for the current game patch.
+- **Do not use:** Deprecated, harmful, or copied launch options from other games.
+
+---
+
+## Common issues
 
 | Symptom | First check | Link |
 | --- | --- | --- |
-| Low FPS | | [Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/../02-find-the-bottleneck.html) |
-| Stutter / bad frametime | | [Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/../02-find-the-bottleneck.html) |
-| Input latency | | [GPU settings](https://h4zvenn.github.io/gaming-pc-guide/docs/../06-gpu-settings.html) |
-| Network latency / packet loss | | [Network diagnostics](https://h4zvenn.github.io/gaming-pc-guide/docs/../09-powershell-diagnostics.html#network) |
-| Crashes / launches fail | | [Troubleshooting](https://h4zvenn.github.io/gaming-pc-guide/docs/../15-troubleshooting-decision-trees.html) |
+| Low FPS | Identify GPU or CPU bottleneck | [Find the Bottleneck](../02-find-the-bottleneck.html) |
+| Stutter or bad frame times | Check shaders, storage, VRAM, and background load | [Find the Bottleneck](../02-find-the-bottleneck.html) |
+| Input latency | Check FPS cap, V-Sync, Reflex, Anti-Lag, and overlays | [GPU Settings](../06-gpu-settings.html) |
+| Network latency or packet loss | Check downloads, Ethernet, router, ISP, and server region | [PowerShell Diagnostics](../09-powershell-diagnostics.html#network) |
+| Crashes or launch failure | Check anti-cheat, game files, drivers, and recent changes | [Troubleshooting Trees](../15-troubleshooting-decision-trees.html) |
 
-> Add game-specific failure modes (shader compilation stutter, asset streaming, specific anti-cheat launch failures).
+Add game-specific failure modes, such as shader-compilation stutter, asset-streaming issues, or anti-cheat launch failures.
 
-## Benchmark Scenario
+---
 
-- **Scene:** `workshop map / demo file / practice range / fixed route`
-- **Warm-up:** `seconds/minutes`
-- **Runs:** в‰Ґ3
-- **Metrics:** avg FPS, 1% low, 0.1% low, p99 frametime, GPU busy, CPU core saturation, temps, WHEA
-- **Tools:** CapFrameX / PresentMon / HWiNFO / in-game benchmark
+## Benchmark scenario
+
+| Item | Recommendation |
+| --- | --- |
+| Scene | Workshop map, demo file, practice range, or fixed route |
+| Warm-up | Specify minutes |
+| Runs | At least 3 |
+| Metrics | Average FPS, 1% lows, 0.1% lows, P99 frame time, GPU busy time, CPU core saturation, temperatures, WHEA errors |
+| Tools | CapFrameX, PresentMon, HWiNFO, or an in-game benchmark |
+
+---
 
 ## Rollback
 
-1. Restore game config / launch options.
-2. Revert driver / Windows / BIOS changes made for this game.
-3. Re-run benchmark scenario to confirm baseline.
+1. Restore the game configuration and launch options.
+2. Revert driver, Windows, or BIOS changes made for this game.
+3. Re-run the benchmark scenario to confirm baseline performance.
+
+---
 
 ## Sources
 
-- Primary: `official patch notes, developer blog, vendor docs, support KB`
-- Secondary: `technical publications, vendor-adjacent testing`
-- Community: `forums, Reddit, videos — hypothesis only`
+- **Primary:** Official patch notes, developer blogs, vendor documentation, and support articles.
+- **Secondary:** Technical publications and vendor-adjacent testing resources.
+- **Community:** Forums, Reddit, and videos; use only as hypotheses to test.
 
-> Mark each recommendation with: `verified` | `needs-verification` | `deprecated` and the date.
+Mark each recommendation as `verified`, `needs-verification`, or `deprecated`, and record the date checked.
 
-Back to main guide: [Home]({{ '/' | relative_url }}).
+---
+
+## Related guides
+
+- [Game Guides](README.html)
+- [Benchmark Templates](../16-benchmark-templates.html)
+- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
