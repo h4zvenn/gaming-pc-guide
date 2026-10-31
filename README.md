@@ -2,116 +2,122 @@
 
 **Find the bottleneck. Change one setting. Measure the result.**
 
-A practical guide to improving gaming performance on Windows 11 — without custom Windows builds, random “FPS boost” scripts, or blindly disabling services.
+A practical, data-driven guide to improving gaming performance on Windows 11 — without custom Windows builds, random “FPS boost” scripts, or blindly disabling system services.
 
 [![Read Online](https://img.shields.io/badge/Read_Online-h4zvenn.github.io-3b82f6?style=for-the-badge&logo=github)](https://h4zvenn.github.io/gaming-pc-guide/)
+[![GitHub stars](https://img.shields.io/github/stars/h4zvenn/gaming-pc-guide?style=for-the-badge&color=3b82f6)](https://github.com/h4zvenn/gaming-pc-guide/stargazers)
 [![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
 [![Русская версия](https://img.shields.io/badge/Русская_версия-In_Progress-f59e0b?style=for-the-badge)](https://h4zvenn.github.io/gaming-pc-guide/ru/)
 
 ---
 
-## 🚀 Start here
-
-### 1. Prepare
-
-Create a restore point and record your current FPS, frame times, and temperatures.
-
-→ [Before You Start](docs/01-before-you-start.md)
-
-### 2. Find the bottleneck
-
-Identify whether your CPU, GPU, RAM, storage, or temperatures are limiting performance.
-
-→ [Find the Bottleneck](docs/02-find-the-bottleneck.md)
-
-### 3. Optimize and test
-
-Change one setting, benchmark the result, and keep only what helps.
-
-→ [Benchmark Templates](docs/16-benchmark-templates.md)
+> **Golden Rule of Optimization:** Always measure performance before and after every change. If a setting does not measurably improve frame times or stability, revert it.
 
 ---
 
-## 🧭 Choose your problem
+## 🚀 Quick Start Pipeline
 
-| Problem | Start here |
+```text
+[1. Restore Point] ──► [2. Benchmark Baseline] ──► [3. Find Bottleneck] ──► [4. Test One Setting]
+```
+
+1. **Prepare** — create a Windows restore point and record baseline FPS, 1% lows, frame times, and temperatures.  
+   → [Before You Start](docs/01-before-you-start.md)
+
+2. **Diagnose** — identify whether CPU, GPU, RAM, storage, or thermal limits are capping performance.  
+   → [Find the Bottleneck](docs/02-find-the-bottleneck.md)
+
+3. **Verify** — apply one tweak at a time and measure it with a repeatable benchmark.  
+   → [Benchmark Templates](docs/16-benchmark-templates.md)
+
+---
+
+## 🧭 Target Your Issue
+
+| Problem | Recommended starting point |
 | --- | --- |
-| Low FPS or stuttering | [Find the Bottleneck](docs/02-find-the-bottleneck.md) |
-| Input lag or delayed controls | [GPU Settings](docs/06-gpu-settings.md) |
-| High temperatures or throttling | [Temperatures & Stability](docs/10-temperatures-stability.md) |
-| Crashes, freezes, or instability | [Troubleshooting Trees](docs/15-troubleshooting-decision-trees.md) |
-| High ping or network spikes | [PowerShell Diagnostics](docs/09-powershell-diagnostics.md) |
-| Low disk space or unwanted software | [Disk Cleanup](docs/19-ai-software-and-disk-cleanup.md) |
+| **Low FPS or micro-stutters** | [Find the Bottleneck](docs/02-find-the-bottleneck.md) |
+| **Input lag or sluggish controls** | [GPU Settings & Reflex](docs/06-gpu-settings.md) |
+| **Thermal throttling or loud fans** | [Temperatures & Stability](docs/10-temperatures-stability.md) |
+| **Crashes, BSODs, or game freezes** | [Troubleshooting Trees](docs/15-troubleshooting-decision-trees.md) |
+| **Network spikes and high latency** | [PowerShell Diagnostics](docs/09-powershell-diagnostics.md) |
+| **High disk usage or bloatware** | [AI Software & Disk Cleanup](docs/19-ai-software-and-disk-cleanup.md) |
 
 ---
 
-## 🎮 Game guides
+## 🎮 Game-Specific Guides
 
-| Game | Status | Focus |
+| Game | Status | Optimization focus |
 | --- | :---: | --- |
-| [Counter-Strike 2](docs/games/cs2.md) | ✅ Live | VAC safety, Source 2 settings, Reflex, launch options |
-| [Minecraft Java](docs/games/minecraft-java.md) | 🟡 Draft | JVM flags, performance mods, chunk rendering |
-| [VALORANT](docs/games/valorant.md) | 🟡 Draft | Vanguard compatibility, Reflex, competitive settings |
-| [PUBG](docs/games/pubg.md) | 🟡 Draft | BattlEye, DX11/DX12, texture streaming |
-| [World of Tanks](docs/games/world-of-tanks.md) | 🟡 Draft | Mod Hub safety, SD/HD client optimization |
+| **[Counter-Strike 2](docs/games/cs2.md)** | ✅ Live | VAC safety, Source 2 settings, Reflex, launch options |
+| **[Minecraft Java](docs/games/minecraft-java.md)** | 🟡 Draft | JVM flags, Sodium/Iris mods, chunk render profiling |
+| **[VALORANT](docs/games/valorant.md)** | 🟡 Draft | Vanguard compatibility, Reflex, competitive latency |
+| **[PUBG: Battlegrounds](docs/games/pubg.md)** | 🟡 Draft | Anti-cheat compatibility, DX11 Enhanced vs DX12 |
+| **[World of Tanks](docs/games/world-of-tanks.md)** | 🟡 Draft | Mod Hub safety, SD vs HD client optimization |
 
 ---
 
-## 📚 All guides
+## 📚 Complete Guide Directory
 
-### System optimization
+<details open>
+<summary><b>⚙️ Core System Optimization</b></summary>
 
-- [Before You Start](docs/01-before-you-start.md)
-- [Find the Bottleneck](docs/02-find-the-bottleneck.md)
-- [BIOS & Hardware](docs/03-bios-and-hardware.md)
-- [Drivers & Updates](docs/04-drivers-and-updates.md)
-- [Windows 11 Core](docs/05-windows-11.md)
-- [GPU Settings](docs/06-gpu-settings.md)
-- [Background Apps](docs/07-background-apps.md)
-- [Services & Security](docs/08-services-and-security.md)
-- [PowerShell Diagnostics](docs/09-powershell-diagnostics.md)
-- [Temperatures & Stability](docs/10-temperatures-stability.md)
+- [01. Before You Start](docs/01-before-you-start.md)
+- [02. Find the Bottleneck](docs/02-find-the-bottleneck.md)
+- [03. BIOS & Hardware Baseline](docs/03-bios-and-hardware.md)
+- [04. Drivers & Clean Updates](docs/04-drivers-and-updates.md)
+- [05. Windows 11 Core](docs/05-windows-11.md)
+- [06. GPU Control Panel Settings](docs/06-gpu-settings.md)
+- [07. Background Apps & Telemetry](docs/07-background-apps.md)
+- [08. Services & Windows Security](docs/08-services-and-security.md)
+- [09. PowerShell Diagnostics](docs/09-powershell-diagnostics.md)
+- [10. Temperatures & Stability Testing](docs/10-temperatures-stability.md)
 
-### Safety and troubleshooting
+</details>
 
-- [What Not To Do](docs/11-what-not-to-do.md)
-- [FAQ](docs/12-faq.md)
-- [Security Hardening](docs/13-security-hardening-baseline.md)
-- [Quick-Start Presets](docs/14-quick-start-presets.md)
-- [Troubleshooting Trees](docs/15-troubleshooting-decision-trees.md)
+<details>
+<summary><b>🛡️ Safety & Troubleshooting</b></summary>
 
-### Testing and cleanup
+- [11. Dangerous Tweaks: What NOT To Do](docs/11-what-not-to-do.md)
+- [12. Frequently Asked Questions](docs/12-faq.md)
+- [13. Security Hardening Baseline](docs/13-security-hardening-baseline.md)
+- [14. Quick-Start Presets](docs/14-quick-start-presets.md)
+- [15. Step-by-Step Decision Trees](docs/15-troubleshooting-decision-trees.md)
 
-- [Benchmark Templates](docs/16-benchmark-templates.md)
-- [Common Builds](docs/17-common-builds-quick-cards.md)
-- [Optimization Tools](docs/18-optimization-tools-evidence.md)
-- [AI Software & Disk Cleanup](docs/19-ai-software-and-disk-cleanup.md)
+</details>
 
----
+<details>
+<summary><b>📊 Testing, Cleanup & Verification</b></summary>
 
-## 🛡️ Safety rules
+- [16. Benchmark & Log Templates](docs/16-benchmark-templates.md)
+- [17. Common Hardware Build Cards](docs/17-common-builds-quick-cards.md)
+- [18. Optimization Tools Evidence](docs/18-optimization-tools-evidence.md)
+- [19. AI Software & Deep Disk Cleanup](docs/19-ai-software-and-disk-cleanup.md)
 
-- Create a restore point before system changes.
-- Change one setting at a time.
-- Benchmark before and after.
-- Do not blindly disable services.
-- Do not run registry scripts from random videos.
-- Do not trust one-click tools promising huge FPS gains.
-
-**If you cannot measure it, you cannot know whether it helped.**
+</details>
 
 ---
 
-## 📌 Project
+## 🛡️ Core Safety Principles
 
-- **Website:** [h4zvenn.github.io/gaming-pc-guide](https://h4zvenn.github.io/gaming-pc-guide/)
-- **Russian version:** [/ru](https://h4zvenn.github.io/gaming-pc-guide/ru/)
-- **Issues:** [GitHub Issues](https://github.com/h4zvenn/gaming-pc-guide/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/h4zvenn/gaming-pc-guide/discussions)
-- **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
+> **Warning:** Never run raw `.bat` or `.ps1` scripts from YouTube descriptions, Discord messages, or untrusted forums.
+
+- **Always create a system restore point** before changing Windows services or the registry.
+- **Isolate variables:** change exactly one setting at a time.
+- **Trust objective data:** 1% low FPS and frame times matter more than how a game “feels”.
+- **Keep security intact:** do not disable Windows Security or anti-malware features for marginal gains.
+
+---
+
+## 🔗 Project Links
+
+- **Live documentation:** [h4zvenn.github.io/gaming-pc-guide](https://h4zvenn.github.io/gaming-pc-guide/)
+- **Russian translation:** [h4zvenn.github.io/gaming-pc-guide/ru/](https://h4zvenn.github.io/gaming-pc-guide/ru/)
+- **Report an issue:** [GitHub Issues](https://github.com/h4zvenn/gaming-pc-guide/issues)
+- **Community discussions:** [GitHub Discussions](https://github.com/h4zvenn/gaming-pc-guide/discussions)
+- **Contribution guidelines:** [CONTRIBUTING.md](CONTRIBUTING.md)
 - **Changelog:** [CHANGELOG.md](CHANGELOG.md)
-- **License:** [MIT](LICENSE)
 
 ---
 
-`Windows 11 22H2+` · `19 system guides + game guides` · `Last updated: 2026-11-01`
+<sub>`Windows 11 22H2 / 23H2 / 24H2` · `19 core guides + game profiles` · `MIT License`</sub>
