@@ -7,143 +7,198 @@ translation_key: ai-software-and-disk-cleanup
 permalink: /docs/19-ai-software-and-disk-cleanup.html
 ---
 
-## Applicability
+Use this page to find unused AI tools, inspect large folders, and clean only safe caches. Do not delete application folders automatically.
 
-Use this page to remove unused AI tools, clean safe caches, and identify large files.
+> **Important:** Create a restore point first. Do not remove developer tools such as Node.js, Python, Git, Visual Studio, or project folders.
 
-## Quick Start
+## Quick start
 
 1. Create a restore point.
 2. Run the AI software audit.
-3. Remove only tools you do not use.
-4. Clean safe caches.
-5. Verify free space and remaining software.
+3. Identify tools you do not use.
+4. Uninstall them through their official uninstaller or Windows Settings.
+5. Clean only safe caches.
+6. Verify free space and that required applications still work.
 
-## 1. Audit AI software
+---
+
+## Audit AI software
+
+This command only displays installed applications, CLI tools, and common data folders. It does not delete anything.
 
 ```powershell
 Write-Host "`n===== AI SOFTWARE AUDIT ====="
 
-Get-ItemProperty HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*, HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*, HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* -ErrorAction SilentlyContinue |
-  Where-Object { $_.DisplayName -match 'Claude|Anthropic|ChatGPT|OpenAI|Codex|Copilot|Cursor|Windsurf|Ollama|LM Studio|Jan|AnythingLLM|Continue|Perplexity|Gemini|Aider' } |
-  Select-Object DisplayName, DisplayVersion, InstallLocation, UninstallString |
-  Format-List
+Get-ItemProperty `
+  HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*, `
+  HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*, `
+  HKLM:\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* `
+  -ErrorAction SilentlyContinue |
+Where-Object {
+  $_.DisplayName -match 'Claude|Anthropic|ChatGPT|OpenAI|Codex|Copilot|Cursor|Windsurf|Ollama|LM Studio|Jan|AnythingLLM|Continue|Perplexity|Gemini|Aider'
+} |
+Select-Object DisplayName, DisplayVersion, InstallLocation, UninstallString |
+Format-List
 
-foreach ($c in 'claude','claude-unlimited','cu','codex','copilot','cursor','ollama','lms','gemini','aider','openai') {
-  $cmd = Get-Command $c -ErrorAction SilentlyContinue
-  if ($cmd) { Write-Host "FOUND: $c -> $($cmd.Source)" }
+foreach ($command in 'claude', 'claude-unlimited', 'cu', 'codex', 'copilot', 'cursor', 'ollama', 'lms', 'gemini', 'aider', 'openai') {
+    $found = Get-Command $command -ErrorAction SilentlyContinue
+    if ($found) {
+        Write-Host "Found: $command -> $($found.Source)"
+    }
 }
 
 $paths = @(
-  "$env:USERPROFILE\.claude",
-  "$env:USERPROFILE\.codex",
-  "$env:USERPROFILE\.ollama",
-  "$env:USERPROFILE\.lmstudio",
-  "$env:USERPROFILE\.continue",
-  "$env:USERPROFILE\.aider",
-  "$env:LOCALAPPDATA\Ollama",
-  "$env:LOCALAPPDATA\Programs\Ollama",
-  "$env:LOCALAPPDATA\Programs\LM Studio"
+    "$env:USERPROFILE\.claude",
+    "$env:USERPROFILE\.codex",
+    "$env:USERPROFILE\.ollama",
+    "$env:USERPROFILE\.lmstudio",
+    "$env:USERPROFILE\.continue",
+    "$env:USERPROFILE\.aider",
+    "$env:LOCALAPPDATA\Ollama",
+    "$env:LOCALAPPDATA\Programs\Ollama",
+    "$env:LOCALAPPDATA\Programs\LM Studio"
 )
 
-foreach ($p in $paths) {
-  if (Test-Path -LiteralPath $p) { Write-Host "FOUND: $p" }
+foreach ($path in $paths) {
+    if (Test-Path -LiteralPath $path) {
+        Write-Host "Found: $path"
+    }
 }
 ```
 
-## 2. Remove unused AI tools
+---
 
-> Keep GitHub Copilot CLI if you use it. Do not remove developer tools such as Node.js, Python, Git, or Visual Studio.
+## Remove unused AI tools
+
+Remove only tools you have identified and no longer use.
+
+Preferred order:
+
+1. Close the application normally.
+2. Uninstall it from `Settings → Apps → Installed apps`.
+3. Use the application’s official uninstaller if Windows does not list it.
+4. Remove its remaining data folder only after confirming that you do not need its settings, models, or local data.
+
+Example for Ollama, only if you no longer use it:
 
 ```powershell
-Get-Process | Where-Object { $_.ProcessName -match 'claude|ollama|aider|continue' } |
-  Stop-Process -Force -ErrorAction SilentlyContinue
+$uninstaller = "$env:LOCALAPPDATA\Programs\Ollama\unins000.exe"
 
-$ollamaUninstaller = "$env:LOCALAPPDATA\Programs\Ollama\unins000.exe"
-if (Test-Path $ollamaUninstaller) {
-  Start-Process $ollamaUninstaller -Wait
-}
-
-Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages" -Directory -ErrorAction SilentlyContinue |
-  Where-Object { $_.Name -match 'ClaudeCode|Anthropic' } |
-  Remove-Item -Recurse -Force
-
-$paths = @(
-  "$env:USERPROFILE\.claude",
-  "$env:USERPROFILE\.codex",
-  "$env:USERPROFILE\.ollama",
-  "$env:USERPROFILE\.lmstudio",
-  "$env:USERPROFILE\.continue",
-  "$env:USERPROFILE\.aider",
-  "$env:USERPROFILE\.local\bin\claude.exe",
-  "$env:USERPROFILE\.local\bin\aider.exe",
-  "$env:LOCALAPPDATA\Ollama",
-  "$env:LOCALAPPDATA\Programs\Ollama",
-  "$env:LOCALAPPDATA\Programs\LM Studio"
-)
-
-foreach ($p in $paths) {
-  if (Test-Path -LiteralPath $p) {
-    Remove-Item -LiteralPath $p -Recurse -Force
-    Write-Host "Removed: $p"
-  }
+if (Test-Path -LiteralPath $uninstaller) {
+    Start-Process -FilePath $uninstaller -Wait
 }
 ```
 
-## 3. Analyze disk usage
+After uninstalling, check whether a data folder remains:
 
 ```powershell
-Write-Host "`n===== DISK USAGE ====="
+Test-Path "$env:USERPROFILE\.ollama"
+```
 
-Get-PSDrive -PSProvider FileSystem | Where-Object { $_.Used -ne $null } |
-  Select-Object Name,
-    @{n='Used GB';e={[math]::Round($_.Used/1GB,1)}},
-    @{n='Free GB';e={[math]::Round($_.Free/1GB,1)}} |
-  Format-Table -AutoSize
+Delete it manually only if you are certain that its models and settings are no longer needed.
 
-Write-Host "`n===== LARGE PROFILE FOLDERS ====="
+> **Warning:** Do not run a script that force-stops processes and recursively deletes multiple user folders. A single wrong path can remove configurations, local models, project data, or development tools.
 
+---
+
+## Analyze disk usage
+
+Check drive space:
+
+```powershell
+Get-PSDrive -PSProvider FileSystem |
+Where-Object { $null -ne $_.Used } |
+Select-Object Name,
+@{Name = 'UsedGB'; Expression = { [math]::Round($_.Used / 1GB, 1) }},
+@{Name = 'FreeGB'; Expression = { [math]::Round($_.Free / 1GB, 1) }} |
+Format-Table -AutoSize
+```
+
+Find the largest folders in your user profile:
+
+```powershell
 Get-ChildItem $env:USERPROFILE -Directory -Force -ErrorAction SilentlyContinue |
-  ForEach-Object {
-    $size = (Get-ChildItem $_.FullName -Recurse -Force -ErrorAction SilentlyContinue |
-      Where-Object { -not $_.PSIsContainer } | Measure-Object -Property Length -Sum).Sum
-    [PSCustomObject]@{ SizeGB = [math]::Round($size/1GB,2); Folder = $_.FullName }
-  } | Sort-Object SizeGB -Descending | Select-Object -First 20 |
-  Format-Table -AutoSize
+ForEach-Object {
+    $size = (
+        Get-ChildItem $_.FullName -Recurse -Force -ErrorAction SilentlyContinue |
+        Where-Object { -not $_.PSIsContainer } |
+        Measure-Object -Property Length -Sum
+    ).Sum
+
+    [PSCustomObject]@{
+        SizeGB = [math]::Round($size / 1GB, 2)
+        Folder = $_.FullName
+    }
+} |
+Sort-Object SizeGB -Descending |
+Select-Object -First 20 |
+Format-Table -AutoSize
 ```
 
-## 4. Clean safe caches
+This scan can take several minutes on large profiles.
+
+---
+
+## Clean safe caches
+
+Close the related application before clearing its cache.
 
 ```powershell
 Remove-Item "$env:LOCALAPPDATA\Temp\*" -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item "$env:WINDIR\Temp\*" -Recurse -Force -ErrorAction SilentlyContinue
+```
 
+Graphics shader caches can be cleared if games regenerate them:
+
+```powershell
 Remove-Item "$env:LOCALAPPDATA\NVIDIA\DXCache\*" -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item "$env:LOCALAPPDATA\NVIDIA\GLCache\*" -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item "$env:LOCALAPPDATA\D3DSCache\*" -Recurse -Force -ErrorAction SilentlyContinue
+```
 
+Browser caches can be cleared, but the browser must be closed:
+
+```powershell
 Remove-Item "$env:LOCALAPPDATA\Microsoft\Edge\User Data\Default\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item "$env:LOCALAPPDATA\Microsoft\Edge\User Data\Default\Code Cache\*" -Recurse -Force -ErrorAction SilentlyContinue
+```
 
+Empty the Recycle Bin only after checking it:
+
+```powershell
 Clear-RecycleBin -Force -ErrorAction SilentlyContinue
 ```
 
-## 5. Clean game launcher caches
+> **Note:** Clearing shader caches can cause longer initial loading or shader compilation after the next game launch.
+
+---
+
+## Game launcher caches
+
+Close Discord or Roblox before clearing their caches.
 
 ```powershell
 Remove-Item "$env:LOCALAPPDATA\Roblox\*" -Recurse -Force -ErrorAction SilentlyContinue
+```
 
+```powershell
 Remove-Item "$env:LOCALAPPDATA\Discord\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item "$env:LOCALAPPDATA\Discord\Code Cache\*" -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item "$env:APPDATA\discord\Cache\*" -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item "$env:APPDATA\discord\Code Cache\*" -Recurse -Force -ErrorAction SilentlyContinue
+```
 
+Clear the npm cache only if you use Node.js and understand the effect:
+
+```powershell
 if (Get-Command npm -ErrorAction SilentlyContinue) {
-  npm cache clean --force
+    npm cache clean --force
 }
 ```
 
-## 6. What not to delete
+---
+
+## Do not delete
 
 | Path | Reason |
 | --- | --- |
@@ -151,18 +206,23 @@ if (Get-Command npm -ErrorAction SilentlyContinue) {
 | `C:\ProgramData\Package Cache` | Required by many installers |
 | `C:\pagefile.sys` | Required for system stability |
 | `C:\Program Files (x86)\Steam\steamapps\common` | Contains installed Steam games |
-| `.rustup`, `.cargo` | Rust toolchain and build cache |
+| `.rustup` and `.cargo` | Rust toolchain and build cache |
 | `node_modules` inside active projects | Required to run the project |
+| Project folders | May contain source code, local settings, and unsaved work |
+
+---
 
 ## Checklist
 
-- [ ] Restore point created
-- [ ] AI software audit completed
-- [ ] Unused AI tools removed
-- [ ] Safe caches cleaned
-- [ ] Free space verified
-- [ ] Required applications still work
+- [ ] Restore point created.
+- [ ] AI software audit completed.
+- [ ] Only unused tools were uninstalled.
+- [ ] Safe caches were cleaned.
+- [ ] Free space was verified.
+- [ ] Required applications still work.
 
-## Summary
+---
 
-Remove only applications you do not use. Clean caches rather than deleting program folders manually. Keep NVIDIA, Steam, Windows security, and required development tools intact.
+## Home
+
+[Home](../index.html)
