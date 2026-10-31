@@ -34,3 +34,7 @@ _site/
 
 # VS Code
 .vscode/
+
+# Local link-check diagnostics
+check-links.ps1
+link-check-results.csv
