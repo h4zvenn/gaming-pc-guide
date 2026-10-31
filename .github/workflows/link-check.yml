@@ -1,0 +1,67 @@
+name: Link Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    name: Check built site links
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build Jekyll site
+        run: bundle exec jekyll build
+
+      - name: Upload built site
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: built-site
+          path: _site/
+          if-no-files-found: error
+
+      - name: Check links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: true
+          format: markdown
+          args: >-
+            --no-progress
+            --verbose
+            --max-concurrency 4
+            --max-retries 2
+            --retry-wait-time 5
+            --timeout 30
+            --exclude '^mailto:'
+            --exclude '^https://github\.com/h4zvenn/gaming-pc-guide/(issues|discussions)'
+            './_site/**/*.html'
+
+      - name: Upload link-check report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: lychee/out.md
+          if-no-files-found: ignore
