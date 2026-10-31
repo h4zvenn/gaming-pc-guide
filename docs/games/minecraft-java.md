@@ -167,6 +167,6 @@ See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
 
 ## Related guides
 
-- [Game Guides](README.html)
+- [Game Guides](index.html)
 - [Benchmark Templates](../16-benchmark-templates.html)
 - [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
