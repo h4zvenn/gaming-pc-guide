@@ -1,99 +1,160 @@
 ---
 layout: doc
-title: "valorant"
+title: "VALORANT"
 description: "VALORANT settings, Vanguard compatibility, latency, and competitive performance guidance."
 lang: en
 translation_key: game-valorant
 permalink: /docs/games/valorant.html
 ---
 
-> Pilot expansion. Fill after source audit and template agreement.
+> Improve VALORANT performance by reducing input latency, stabilizing frame times, and testing graphics settings one at a time. Do not modify Vanguard, game files, or use unapproved third-party software.
 
 ## Applicability
 
-- **Game:** VALORANT
-- **Platform:** Riot Client
-- **Engine:** Unreal Engine 4
-- **Anti-cheat:** Vanguard (kernel-mode)
-- **Game version tested:** needs-verification
-- **Date checked:** 2026-10-30
-- **Status:** draft
+| Item | Value |
+| --- | --- |
+| Game | VALORANT |
+| Platform | Riot Client |
+| Engine | Unreal Engine 4 |
+| Anti-cheat | Riot Vanguard |
+| Status | Needs verification per game patch |
 
-## Quick Start
+## Before tuning
 
-1. Common base first (see [CS2 Quick Start](https://h4zvenn.github.io/gaming-pc-guide/docs/games/cs2.html#quick-start)).
-2. Vanguard requires TPM 2.0 + Secure Boot on Windows 11 — verify before BIOS changes.
-3. Apply only VALORANT-specific items below.
-4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates.html' | relative_url }}).
+Complete the general preparation flow first:
 
-## Requirements & Compatibility
+1. [Before You Start](../01-before-you-start.html)
+2. [Find the Bottleneck](../02-find-the-bottleneck.html)
+3. [Drivers & Updates](../04-drivers-and-updates.html)
+4. [Windows 11 Core](../05-windows-11.html)
+5. [GPU Settings](../06-gpu-settings.html)
+6. [Background Apps](../07-background-apps.html)
+7. [Temperatures & Stability](../10-temperatures-stability.html)
 
-- **Anti-cheat constraints:** Vanguard runs at kernel level. Do not disable, modify, or block its services. No file modifications, no unsigned driver injection, no test-signed drivers. TPM 2.0 + Secure Boot mandatory on Windows 11.
-- **OS / API requirements:** Windows 10 1909+ / Windows 11; DirectX 11.
-- **Known incompatibilities:** Some overlays and monitoring tools conflict with Vanguard. Test clean first.
+Do not change VALORANT settings until drivers, temperatures, background load, and monitor refresh rate are checked.
 
-## Graphics Settings — Tradeoffs
+---
 
-| Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
-| --- | --- | --- | --- | --- |
-| Resolution | | | | Native |
-| Render scale | | | | 100% |
-| Limit FPS | In-game cap | | | Test |
-| V-Sync | | | | Off for competitive |
-| Multithreaded Rendering | | CPU | | On |
-| Material Quality | | GPU | | Low / Medium |
-| Texture Quality | | GPU/VRAM | | Low / Medium |
-| Detail Quality | | GPU | | Low |
-| UI Quality | | GPU | | Low |
-| Vignette | | GPU | | Off |
-| Bloom | | GPU | | Off |
-| Distortion | | GPU | | Off |
-| First Person Shadows | | GPU | | Off |
+## Vanguard compatibility
 
-> Verify setting names in current patch.
+Vanguard is Riot’s kernel-level anti-cheat. Do not disable, modify, or block its services.
 
-## FPS Cap, Sync & Latency Reduction
+- Do not modify game files.
+- Do not use injectors, cheats, unsigned drivers, or test-signed drivers.
+- Do not disable Vanguard services.
+- If Vanguard reports an error, follow the official Riot support guidance for that specific error code.
+- Some overlays and monitoring tools can conflict with Vanguard. Test with them disabled.
 
-- **In-game FPS limiter:** Available (`Limit FPS` in Video settings).
-- **V-Sync:** In-game + driver. Competitive: off.
-- **VRR:** Supported. Test with V-Sync off (driver) + cap inside VRR range.
-- **NVIDIA Reflex:** Supported in-game (`Reflex Low Latency` → On / On+Boost).
-- **AMD Anti-Lag:** Driver fallback if Reflex unavailable.
-- **Raw Input Buffer:** In-game option (mouse raw input). Test.
+On Windows 11, VALORANT and Vanguard may require TPM 2.0 and Secure Boot. Check Riot’s current system requirements before changing BIOS, TPM, Secure Boot, or boot-order settings. Save your BitLocker recovery key before making such changes.
 
-## Configs & Launch Options
+---
 
-- **Config location:** `%LOCALAPPDATA%\VALORANT\Saved\Config\` (client settings).
-- **Verified launch options:** Few/no documented launch options. Prefer in-game settings.
-- **Do not use:** Copied launch options from other games; `-high`, `-threads` etc. not documented for VALORANT.
+## Graphics settings
 
-## Common Issues & Diagnosis
+Start with these values, then change one setting at a time.
 
-| Symptom | First check | Link |
+| Setting | Recommended start | Why |
 | --- | --- | --- |
-| Vanguard error / not initialized | Secure Boot + TPM 2.0 enabled, Vanguard service running | — |
-| "VAN" error codes | Riot support KB for specific code | — |
-| Low FPS, GPU not saturated | CPU-bound: lower Material/Texture/Detail, enable Multithreaded Rendering | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
-| Input latency | Reflex On+Boost, Raw Input Buffer on, cap FPS | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings.html) |
-| Network spikes | Ethernet, Riot server region, background downloads | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics.html#network) |
+| Resolution | Native | Best clarity and predictable scaling |
+| Render Scale | 100% | Avoids blur from internal upscaling |
+| Limit FPS | Test a stable cap | Improves frame-time consistency |
+| V-Sync | Off | Avoids added latency; use VRR separately if supported |
+| Multithreaded Rendering | On | Can improve CPU utilization |
+| Material Quality | Low to Medium | Reduces GPU load |
+| Texture Quality | Low to Medium | Depends on available VRAM |
+| Detail Quality | Low | Reduces GPU load |
+| UI Quality | Low | Reduces GPU load |
+| Vignette | Off | Removes a visual effect with no gameplay benefit |
+| Bloom | Off | Reduces GPU load |
+| Distortion | Off | Reduces GPU load |
+| First Person Shadows | Off | Reduces GPU load |
 
-## Benchmark Scenario
+If FPS is low, reduce settings in this order:
 
-- **Scene:** Range (fixed bot count, fixed route) or custom game with bots.
-- **Warm-up:** 3–5 minutes.
-- **Runs:** в‰Ґ3.
-- **Metrics:** avg FPS, 1% low, p99 frametime, GPU busy, CPU core saturation, temps.
+1. Detail Quality
+2. Material Quality
+3. Texture Quality
+4. Vignette, Bloom, and Distortion
+5. First Person Shadows
+
+---
+
+## FPS cap and latency
+
+Use the in-game FPS limiter before external limiters.
+
+A practical starting point is a cap slightly above your monitor refresh rate. If frame delivery is unstable, test a cap at a level your system can sustain during fights.
+
+For NVIDIA GPUs that support Reflex:
+
+- Enable Reflex Low Latency in-game.
+- Test both `On` and `On + Boost`.
+- Do not force NVIDIA Low Latency Mode globally at the same time.
+
+For AMD GPUs:
+
+- Test AMD Anti-Lag in a per-game driver profile.
+- Do not enable multiple latency-related driver features at once.
+
+For VRR monitors:
+
+- Enable G-SYNC or FreeSync in the GPU control panel and monitor OSD.
+- Keep in-game V-Sync disabled unless you need to tune VRR behavior.
+- Set an FPS cap within the VRR range if frame pacing is inconsistent.
+
+Test Raw Input Buffer separately. Keep it only if mouse behavior and frame times remain stable.
+
+---
+
+## Launch options
+
+VALORANT has few documented launch options. Prefer in-game settings.
+
+Do not copy launch options from other games, especially `-high`, `-threads`, or legacy Unreal Engine options. Add one option at a time only if it is documented by Riot or another reliable source.
+
+---
+
+## Common issues
+
+| Symptom | First check |
+| --- | --- |
+| Vanguard error or initialization failure | Check Riot status, Vanguard services, TPM 2.0, and Secure Boot requirements |
+| VAN error code | Search the exact code in official Riot support documentation |
+| Low FPS with GPU not saturated | Check CPU-bound settings, background apps, and per-core usage |
+| High input latency | Enable Reflex, disable V-Sync, remove overlays, test an FPS cap |
+| Network spikes | Pause downloads, use Ethernet, check Riot server region and routing |
+| Crash after changing settings | Return Video settings to defaults and remove custom launch options |
+
+---
+
+## Benchmark scenario
+
+Use one repeatable scenario for every test.
+
+| Item | Recommendation |
+| --- | --- |
+| Scene | The Range with a fixed bot count and route, or a custom game with bots |
+| Warm-up | 3–5 minutes |
+| Runs | At least 3 |
+| Metrics | Average FPS, 1% lows, 0.1% lows, frame times, GPU busy time, temperatures |
+| Controls | Same map, settings, driver, overlays, and background load |
+
+See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
+
+---
 
 ## Rollback
 
 1. Reset in-game Video settings to defaults.
-2. Remove any launch options in Riot Client.
-3. If driver changed: rollback driver.
+2. Remove custom launch options in Riot Client.
+3. Return Reflex, Anti-Lag, and VRR settings to their previous values.
+4. If issues began after a driver update, roll back to the previous stable driver.
+5. Reboot and repeat the benchmark scenario.
 
-## Sources
+---
 
-- Primary: Riot VALORANT patch notes, Vanguard FAQ, NVIDIA/AMD Reflex docs.
-- Secondary: —
-- Community: —
+## Related guides
 
-Back to main guide: [README]({{ '/' | relative_url }}).
+- [Game Guides](README.html)
+- [Benchmark Templates](../16-benchmark-templates.html)
+- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)

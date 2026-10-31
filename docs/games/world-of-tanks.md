@@ -1,97 +1,156 @@
 ---
 layout: doc
-title: "world-of-tanks"
+title: "World of Tanks"
 description: "World of Tanks settings, Mod Hub safety, client options, and performance testing."
 lang: en
 translation_key: game-world-of-tanks
 permalink: /docs/games/world-of-tanks.html
 ---
 
-> Pilot expansion. Fill after source audit and template agreement.
+> Improve World of Tanks performance by finding the CPU or GPU bottleneck, reducing stutter, and testing graphics settings one at a time. Use only mods allowed by Wargaming’s current policy.
 
 ## Applicability
 
-- **Game:** World of Tanks
-- **Platform:** Wargaming Game Center / Steam
-- **Engine:** Core (BigWorld) → moving to newer render pipeline
-- **Anti-cheat:** Wargaming anti-cheat (client integrity + server-side)
-- **Game version tested:** needs-verification
-- **Date checked:** 2026-10-30
-- **Status:** draft
+| Item | Value |
+| --- | --- |
+| Game | World of Tanks |
+| Platform | Wargaming Game Center or Steam |
+| Engine | Core engine |
+| Anti-cheat | Wargaming client-integrity and server-side checks |
+| Status | Needs verification per game patch |
 
-## Quick Start
+## Before tuning
 
-1. Common base first (see [CS2 Quick Start](https://h4zvenn.github.io/gaming-pc-guide/docs/games/cs2.html#quick-start)).
-2. Mods only from officially allowed sources (Wargaming Mod Hub). XVM and others — verify current policy.
-3. Apply only WoT-specific items below.
-4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates.html' | relative_url }}).
+Complete the general preparation flow first:
 
-## Requirements & Compatibility
+1. [Before You Start](../01-before-you-start.html)
+2. [Find the Bottleneck](../02-find-the-bottleneck.html)
+3. [Drivers & Updates](../04-drivers-and-updates.html)
+4. [Windows 11 Core](../05-windows-11.html)
+5. [GPU Settings](../06-gpu-settings.html)
+6. [Background Apps](../07-background-apps.html)
+7. [Temperatures & Stability](../10-temperatures-stability.html)
 
-- **Anti-cheat constraints:** Client integrity checks. Only mods from official Mod Hub allowed. XVM / custom configs — verify current policy before use. No file modifications outside allowed folders.
-- **OS / API requirements:** Windows 10 1809+ / Windows 11; DirectX 11 (SD/HD client).
-- **Known incompatibilities:** Some overlays and injectors trigger integrity failures. Test clean.
+Do not install mods or change graphics settings until drivers, temperatures, background load, and monitor refresh rate are checked.
 
-## Graphics Settings — Tradeoffs
+---
 
-| Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
-| --- | --- | --- | --- | --- |
-| Render Scale | Internal resolution | GPU | Sharpness | 100% |
-| Graphics Preset | Bundled preset | GPU/CPU | Overall | Medium / High |
-| Anti-Aliasing | | GPU | Edges | MSAA 2Г— / 4Г— |
-| Texture Quality | | GPU/VRAM | Detail | High |
-| Shadow Quality | | GPU | Shadows | Medium |
-| Water Quality | | GPU | Water | Medium |
-| Particle Quality | | GPU/CPU | Explosions, smoke | Medium |
-| Grass / Vegetation | | GPU/CPU | Foliage | Medium |
-| Post-Processing | | GPU | Bloom, DOF | Off / Low |
-| Motion Blur | | GPU | Motion | Off |
-| Flare / Lens Effects | | GPU | Visual | Off |
+## Mods and integrity
 
-> SD vs HD client may have different setting names.
+Use only mods from the official [Wargaming Mod Hub](https://modhub.wargaming.com/).
 
-## FPS Cap, Sync & Latency Reduction
+- Check the current Wargaming mod policy before installing XVM or other interface mods.
+- Do not use mods from unknown websites, Discord channels, or file-sharing services.
+- Do not modify game files outside allowed mod folders.
+- Do not copy another player’s `engine_config.xml` or other configuration files.
+- If the game reports an integrity-check failure, remove mods and verify game files through Wargaming Game Center or Steam.
 
-- **In-game FPS limiter:** Available in Graphics settings.
-- **V-Sync:** In-game + driver.
-- **VRR:** Supported. Test with V-Sync off (driver) + cap inside VRR range.
-- **NVIDIA Reflex / AMD Anti-Lag:** Not supported natively.
-- **Latency reduction:** High FPS + low render scale + minimal post-processing.
+Some overlays, injectors, and monitoring tools can trigger integrity issues. Test the game with them disabled.
 
-## Configs & Launch Options
+---
 
-- **Config location:** `%APPDATA%\Wargaming.net\WorldOfTanks\` (`preferences.xml`, `engine_config.xml`).
-- **Launch options (WGC / Steam):** Few documented. Prefer in-game settings.
-- **Mods:** Only from [Wargaming Mod Hub](https://modhub.wargaming.com/). XVM — verify current policy.
-- **Do not use:** Copied `engine_config.xml` from other players; unverified mods.
+## Graphics settings
 
-## Common Issues & Diagnosis
+Start with these values, then change one setting at a time.
 
-| Symptom | First check | Link |
+| Setting | Recommended start | Why |
 | --- | --- | --- |
-| "Game integrity check failed" | Remove mods, verify files via WGC/Steam | — |
-| Low FPS, GPU-bound | Lower Render Scale, Particle Quality, Water, Post-Processing | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
-| Low FPS, CPU-bound | Lower Grass, View Distance, Shadows | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
-| Stutter in battle | Texture streaming, SSD space, background downloads | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
-| High ping / packet loss | Server region, Ethernet, background traffic | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics.html#network) |
+| Render Scale | 100% | Avoids blur from internal upscaling |
+| Graphics Preset | Medium or High | Starting point depends on GPU performance |
+| Anti-Aliasing | 2x MSAA | Balance between edge quality and GPU cost |
+| Texture Quality | High | Usually has a larger visual impact than FPS impact if VRAM is sufficient |
+| Shadow Quality | Medium | Major GPU cost |
+| Water Quality | Medium | Reduces GPU load |
+| Particle Quality | Medium | Reduces GPU and CPU load from explosions and smoke |
+| Grass and Vegetation | Medium | Can affect CPU and GPU load |
+| Post-Processing | Off or Low | Reduces GPU load |
+| Motion Blur | Off | Improves visual clarity |
+| Flare and Lens Effects | Off | Reduces GPU load |
 
-## Benchmark Scenario
+If FPS is low, reduce settings in this order:
 
-- **Scene:** Replay file (fixed battle, fixed camera) or Training Room (fixed route).
-- **Warm-up:** 3–5 minutes.
-- **Runs:** в‰Ґ3.
-- **Metrics:** avg FPS, 1% low, p99 frametime, GPU busy, CPU core saturation, temps.
+1. Shadow Quality
+2. Particle Quality
+3. Water Quality
+4. Grass and Vegetation
+5. Post-Processing
+6. Anti-Aliasing
+
+Keep Texture Quality higher if you have enough VRAM; it usually affects visual quality more than FPS.
+
+---
+
+## FPS cap and VRR
+
+Use the in-game FPS limiter before external limiters.
+
+A practical starting point is a cap slightly above your monitor refresh rate. If frame delivery is unstable, test a cap at a level your system can sustain during combat.
+
+For VRR monitors:
+
+- Enable G-SYNC or FreeSync in the GPU control panel and monitor OSD.
+- Keep in-game V-Sync disabled unless you need to tune VRR behavior.
+- Set an FPS cap within the VRR range if frame pacing is inconsistent.
+
+World of Tanks does not have native NVIDIA Reflex or AMD Anti-Lag support. Test driver-level latency options only in a per-game profile if you use those GPUs.
+
+---
+
+## Configuration files
+
+World of Tanks configuration files are commonly located in:
+
+```text
+%APPDATA%\Wargaming.net\WorldOfTanks\
+```
+
+Back up `preferences.xml` before manually editing it. Prefer changing settings in-game unless you have a specific reason to edit configuration files.
+
+Do not copy configuration files from other players. They can contain settings that do not match your hardware, client version, or Wargaming policy.
+
+---
+
+## Common issues
+
+| Symptom | First check |
+| --- | --- |
+| Game integrity check failed | Remove mods and verify game files |
+| Low FPS with GPU busy time near 100% | Lower Render Scale, Particle Quality, Water Quality, and Post-Processing |
+| Low FPS with high CPU usage | Lower Grass, View Distance, and Shadow Quality |
+| Stutter during battle | Check SSD free space, texture streaming, and background downloads |
+| High ping or packet loss | Pause downloads, use Ethernet, check server region and routing |
+| Crash after changing settings | Reset graphics settings and remove recently added mods |
+
+---
+
+## Benchmark scenario
+
+Use one repeatable scenario for every test.
+
+| Item | Recommendation |
+| --- | --- |
+| Scene | Training Room with a fixed route, or a replay with a fixed battle and camera path |
+| Warm-up | 3–5 minutes |
+| Runs | At least 3 |
+| Metrics | Average FPS, 1% lows, 0.1% lows, frame times, GPU busy time, temperatures |
+| Controls | Same map, settings, mods, driver, overlays, and background load |
+
+See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
+
+---
 
 ## Rollback
 
-1. Reset in-game Graphics to defaults.
-2. Remove mods, verify game files.
-3. Restore `preferences.xml` from backup.
+1. Reset in-game graphics settings to defaults.
+2. Remove recently added mods.
+3. Verify game files through Wargaming Game Center or Steam.
+4. Restore `preferences.xml` from a backup, if you modified it.
+5. Reboot and repeat the benchmark scenario.
 
-## Sources
+---
 
-- Primary: World of Tanks patch notes, Wargaming Mod Hub policy, NVIDIA/AMD driver notes for WoT.
-- Secondary: —
-- Community: —
+## Related guides
 
-Back to main guide: [README]({{ '/' | relative_url }}).
+- [Game Guides](README.html)
+- [Benchmark Templates](../16-benchmark-templates.html)
+- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)

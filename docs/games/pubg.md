@@ -1,102 +1,169 @@
 ---
 layout: doc
-title: "pubg"
+title: "PUBG: BATTLEGROUNDS"
 description: "PUBG settings, anti-cheat considerations, graphics options, and performance testing."
 lang: en
 translation_key: game-pubg
 permalink: /docs/games/pubg.html
 ---
 
-> Pilot expansion. Fill after source audit and template agreement.
+> Improve PUBG performance by finding the CPU or GPU bottleneck, reducing stutter, and testing graphics settings one at a time. Do not modify game files or use unapproved third-party software.
 
 ## Applicability
 
-- **Game:** PUBG: BATTLEGROUNDS
-- **Platform:** Steam
-- **Engine:** Unreal Engine 4
-- **Anti-cheat:** BattlEye
-- **Game version tested:** needs-verification
-- **Date checked:** 2026-10-30
-- **Status:** draft
+| Item | Value |
+| --- | --- |
+| Game | PUBG: BATTLEGROUNDS |
+| Platform | Steam |
+| Engine | Unreal Engine 4 |
+| Anti-cheat | BattlEye |
+| Status | Needs verification per game patch |
 
-## Quick Start
+## Before tuning
 
-1. Common base first (see [CS2 Quick Start](https://h4zvenn.github.io/gaming-pc-guide/docs/games/cs2.html#quick-start)).
-2. BattlEye: do not modify game files, do not inject, do not disable its service.
-3. Apply only PUBG-specific items below.
-4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates.html' | relative_url }}).
+Complete the general preparation flow first:
 
-## Requirements & Compatibility
+1. [Before You Start](../01-before-you-start.html)
+2. [Find the Bottleneck](../02-find-the-bottleneck.html)
+3. [Drivers & Updates](../04-drivers-and-updates.html)
+4. [Windows 11 Core](../05-windows-11.html)
+5. [GPU Settings](../06-gpu-settings.html)
+6. [Background Apps](../07-background-apps.html)
+7. [Temperatures & Stability](../10-temperatures-stability.html)
 
-- **Anti-cheat constraints:** BattlEye kernel driver. No file modifications, no overlay injection, no unsigned drivers. Replay system may conflict with some overlays.
-- **OS / API requirements:** Windows 10 1809+ / Windows 11; DirectX 11 (default) / DirectX 12 (optional, `-d3d12`).
-- **Known incompatibilities:** ReShade and some injectors blocked. Discord/Steam/NVIDIA overlays may cause crashes — test clean.
+Do not change PUBG settings until drivers, temperatures, background load, and monitor refresh rate are checked.
 
-## Graphics Settings — Tradeoffs
+---
 
-| Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
-| --- | --- | --- | --- | --- |
-| Resolution | | | | Native |
-| Render Scale | | GPU | | 100% |
-| FPS Cap | | | | Test |
-| V-Sync | | | | Off |
-| Anti-Aliasing | | GPU | | Medium / High |
-| Post-Processing | | GPU | | Low / Very Low |
-| Shadows | | GPU | | Low / Medium |
-| Textures | | GPU/VRAM | | Medium / High |
-| Effects | | GPU | | Low / Medium |
-| Foliage | | GPU/CPU | | Low / Medium |
-| View Distance | | CPU/GPU | | Medium / High |
-| Motion Blur | | GPU | | Off |
+## Anti-cheat compatibility
 
-> Verify setting names in current patch. DX11 vs DX12 behaviour may differ.
+BattlEye protects the game process and may block software that injects code or modifies game files.
 
-## FPS Cap, Sync & Latency Reduction
+- Do not modify game files.
+- Do not use injectors, cheats, or unapproved overlays.
+- Do not disable BattlEye services.
+- If BattlEye fails to initialize, verify game files in Steam and reinstall BattlEye through its official installer if prompted.
+- Some overlays or screen-capture tools can cause conflicts. Test with them disabled.
 
-- **In-game FPS limiter:** Available (`FPS Cap` in Graphics settings).
-- **V-Sync:** In-game + driver.
-- **VRR:** Supported. Test with V-Sync off (driver) + cap inside VRR range.
-- **NVIDIA Reflex:** Not supported.
-- **AMD Anti-Lag / Intel Low Latency:** Driver-level only.
-- **DX11 vs DX12:** Test both (`-d3d12` launch option for DX12). DX12 may improve CPU scaling on some configs.
+---
 
-## Configs & Launch Options
+## Graphics settings
 
-- **Config location:** `%LOCALAPPDATA%\TslGame\Saved\Config\WindowsNoEditor\` (`GameUserSettings.ini`).
-- **Verified launch options (current patch):**
-  - `-USEALLAVAILABLECORES` — attempt to use all cores (test).
-  - `-d3d12` — force DirectX 12 (test stability).
-  - `-novid` — skip intro.
-- **Do not use:** `-high`, `-malloc=system`, `-sm4`, `-nomansky`, legacy UE4 options copied from other games.
+Start with these values, then change one setting at a time.
 
-## Common Issues & Diagnosis
-
-| Symptom | First check | Link |
+| Setting | Recommended start | Why |
 | --- | --- | --- |
-| BattlEye initialization failed | Verify game files, reinstall BattlEye via launcher | — |
-| Low FPS, CPU-bound | Lower View Distance, Foliage, Effects; test DX12 | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
-| Stutter on new areas | Texture streaming, SSD space, shader cache | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
-| Input latency | FPS cap, disable V-Sync, test DX12 | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings.html) |
-| Network desync / high ping | Region selection, Ethernet, background traffic | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics.html#network) |
+| Resolution | Native | Best clarity and predictable scaling |
+| Render Scale | 100% | Avoids blur from internal upscaling |
+| FPS Cap | Test a stable cap | Improves frame-time consistency |
+| V-Sync | Off | Avoids added latency; use VRR separately if supported |
+| Anti-Aliasing | Medium | Balance between edge quality and GPU cost |
+| Post-Processing | Low | Reduces GPU load |
+| Shadows | Low to Medium | Major GPU cost |
+| Textures | Medium to High | Depends on available VRAM |
+| Effects | Low to Medium | Reduces GPU load during fights |
+| Foliage | Low to Medium | Reduces GPU and CPU load |
+| View Distance | Medium to High | Can affect visibility; test the FPS cost |
+| Motion Blur | Off | Improves visual clarity |
 
-## Benchmark Scenario
+If FPS is low, reduce settings in this order:
 
-- **Scene:** Replay file (fixed timestamp, fixed camera route) or Training Mode (fixed bot route).
-- **Warm-up:** 3–5 minutes (asset streaming).
-- **Runs:** в‰Ґ3.
-- **Metrics:** avg FPS, 1% low, p99 frametime, GPU busy, CPU core saturation, temps.
+1. Shadows
+2. Effects
+3. Foliage
+4. Post-Processing
+5. Anti-Aliasing
+6. View Distance
+
+Keep textures higher if you have enough VRAM; they usually affect visual quality more than FPS.
+
+---
+
+## FPS cap and latency
+
+Use the in-game FPS limiter before external limiters.
+
+A practical starting point is a cap slightly above your monitor refresh rate. If frame delivery is unstable, test a cap at a level your system can sustain in demanding areas.
+
+For VRR monitors:
+
+- Enable G-SYNC or FreeSync in the GPU control panel and monitor OSD.
+- Keep in-game V-Sync disabled unless you need to tune VRR behavior.
+- Set an FPS cap within the VRR range if frame pacing is inconsistent.
+
+PUBG does not have native NVIDIA Reflex support. Test AMD Anti-Lag or Intel low-latency options only in a per-game driver profile if you use those GPUs.
+
+---
+
+## DirectX 11 and DirectX 12
+
+Use DirectX 11 as the default renderer. Test DirectX 12 only if you have a specific performance or stability reason.
+
+To test DirectX 12, add this launch option in Steam:
+
+```text
+-d3d12
+```
+
+Test both APIs with the same settings, map, and benchmark scenario. DirectX 12 may behave differently depending on CPU, GPU, driver, and game patch.
+
+Do not copy legacy Unreal Engine 4 launch options from old guides.
+
+---
+
+## Config location
+
+PUBG settings are stored in:
+
+```text
+%LOCALAPPDATA%\TslGame\Saved\Config\WindowsNoEditor\GameUserSettings.ini
+```
+
+Back up this file before manually editing it. Prefer changing settings in-game unless you have a specific reason to edit the configuration file.
+
+---
+
+## Common issues
+
+| Symptom | First check |
+| --- | --- |
+| BattlEye initialization failed | Verify game files in Steam and reinstall BattlEye if prompted |
+| Low FPS with high CPU usage | Lower View Distance, Foliage, and Effects |
+| Low FPS with GPU busy time near 100% | Lower Shadows, Effects, Post-Processing, and Anti-Aliasing |
+| Stutter in new areas | Check SSD free space, texture streaming, and shader cache |
+| High ping or packet loss | Pause downloads, use Ethernet, check router and server region |
+| Crash after changing renderer | Remove `-d3d12` and return to DirectX 11 |
+
+---
+
+## Benchmark scenario
+
+Use one repeatable scenario for every test.
+
+| Item | Recommendation |
+| --- | --- |
+| Scene | Training Mode with a fixed route, or a replay with a fixed timestamp and camera path |
+| Warm-up | 3–5 minutes |
+| Runs | At least 3 |
+| Metrics | Average FPS, 1% lows, 0.1% lows, frame times, GPU busy time, temperatures |
+| Controls | Same map, settings, driver, overlays, and background load |
+
+See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
+
+---
 
 ## Rollback
 
-1. Reset in-game Graphics to defaults.
-2. Remove launch options in Steam.
-3. Restore `GameUserSettings.ini` from backup.
-4. If DX12 tested: remove `-d3d12`.
+1. Reset in-game graphics settings to defaults.
+2. Remove custom Steam launch options.
+3. Restore `GameUserSettings.ini` from a backup, if you modified it.
+4. Remove `-d3d12` if you tested DirectX 12.
+5. Reboot and repeat the benchmark scenario.
 
-## Sources
+---
 
-- Primary: PUBG patch notes, BattlEye FAQ, NVIDIA/AMD driver notes for PUBG.
-- Secondary: —
-- Community: —
+## Related guides
 
-Back to main guide: [README]({{ '/' | relative_url }}).
+- [Game Guides](README.html)
+- [Benchmark Templates](../16-benchmark-templates.html)
+- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
