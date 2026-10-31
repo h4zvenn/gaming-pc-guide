@@ -1,97 +1,81 @@
 ---
 layout: doc
-title: "06-gpu-settings"
+title: "GPU Settings"
 description: "Configure NVIDIA, AMD, and Intel graphics settings for performance, latency, and visual quality."
 lang: en
 translation_key: gpu-settings
 permalink: /docs/06-gpu-settings.html
 ---
 
-# 06. GPU Settings
+# GPU Settings
 
-> Configure the graphics driver per game/application profile. Do not change everything globally: one game may benefit while another gets bugs, image degradation, or instability.
+Configure graphics driver settings per game, not globally. One game may benefit from a setting while another gets bugs, image degradation, or instability.
 
 ## Core principle
 
-1. First tune graphics, FPS limit, latency, and scaling **inside the game**.
-2. Then create a game profile in NVIDIA, AMD, or Intel panel.
+1. Tune resolution, graphics quality, FPS cap, latency, and upscaling inside the game first.
+2. Create a profile for that game in the NVIDIA, AMD, or Intel control panel.
 3. Change one setting at a time.
-4. Validate FPS, 1% low, frametime, image quality, and stability.
+4. Measure FPS, 1% lows, frame times, image quality, and stability.
 
-> **Important:** > Driver panel does not create performance out of nowhere. It helps use available GPU power correctly, reduce latency in suitable scenarios, and avoid conflicting settings.
+> **Important:** A driver panel does not create performance from nothing. It helps use available GPU power correctly, reduce latency in suitable scenarios, and avoid conflicting settings.
 
-### Fast setup order (per game)
+---
+
+## Fast setup order
 
 | Order | Action |
 | --- | --- |
-| 1 | Set in-game resolution/quality |
-| 2 | Pick upscaler mode (Quality → Balanced → Performance) |
-| 3 | Set FPS cap for stable frametime |
-| 4 | Tune VRR/V-Sync behavior |
+| 1 | Set in-game resolution and quality |
+| 2 | Choose an upscaler mode: Quality, Balanced, or Performance |
+| 3 | Set an FPS cap for stable frame times |
+| 4 | Tune VRR and V-Sync behavior |
 | 5 | Apply only one driver tweak at a time |
 
 ---
 
-### Full startup audit
-
-```powershell
-Write-Host "`n===== STARTUP AUDIT ====="
-
-Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -ErrorAction SilentlyContinue |
-  Select-Object * -ExcludeProperty PS* |
-  Format-List
-
-Get-CimInstance Win32_StartupCommand |
-  Select-Object Name, Command, Location |
-  Format-List
-
-Get-ChildItem "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup" -ErrorAction SilentlyContinue |
-  Select-Object Name, FullName |
-  Format-List
-```
-
-## 1. General settings for any GPU
+## Settings for any GPU
 
 ### Resolution and render scale
 
 - Native monitor resolution usually gives the sharpest image.
-- Lowering resolution or render scale reduces GPU load and may increase FPS.
-- If the game supports DLSS, FSR, or XeSS, compare `Quality`, `Balanced`, and `Performance` first.
-- Do not pick the most aggressive scaling mode without need: FPS may rise, but image quality can noticeably drop.
+- Lowering resolution or render scale reduces GPU load and can increase FPS.
+- If the game supports DLSS, FSR, or XeSS, compare Quality, Balanced, and Performance modes first.
+- Avoid the most aggressive scaling mode unless you need the extra FPS; image quality can drop noticeably.
 
 ### Textures and VRAM
 
-Texture settings are often limited by VRAM capacity.
+Texture quality is often limited by VRAM capacity.
 
-- If VRAM is nearly full and stutter appears, reduce textures.
-- Do not use heavy texture packs beyond your GPU capability.
-- High textures do not always reduce FPS heavily, but can cause issues when VRAM is insufficient.
+- If VRAM is nearly full and stutter appears, reduce texture quality.
+- Do not use texture packs that exceed your GPU’s VRAM capacity.
+- High textures do not always reduce average FPS, but they can cause stutter when VRAM is insufficient.
 
-### Most GPU-heavy settings
+### GPU-heavy settings
 
-When GPU-bound, test these first:
+If the system is GPU-bound, test these settings first:
 
 - Ray tracing
 - Path tracing
-- Resolution / render scale
+- Resolution or render scale
 - Shadows
 - Reflections
-- Volumetric lighting / fog
+- Volumetric lighting and fog
 - Ambient occlusion
 - Draw distance
 - Hair, grass, particle, and water quality
 
-You do not have to set everything to Low. Find balance: reduce options with large FPS cost and small visible quality difference.
+You do not need to set everything to Low. Reduce settings that cost a lot of FPS but have a small visible impact.
 
 ---
 
-## 2. FPS limit
+## FPS cap
 
-Frame limiting can improve frametime consistency and reduce heat, noise, and power usage.
+Frame limiting can improve frame-time consistency and reduce heat, noise, and power consumption.
 
 ### Where to cap FPS
 
-Typical priority:
+Use this priority:
 
 1. In-game FPS limiter.
 2. GPU driver limiter.
@@ -99,232 +83,226 @@ Typical priority:
 
 ### How to choose a value
 
-- If FPS is unstable, cap to a value the system can sustain in heavy scenes.
-- If using VRR, tune cap after VRR and V-Sync are configured for your monitor.
-- Do not set cap above CPU/GPU capability only for bigger overlay numbers.
+- If FPS is unstable, cap it to a value the system can sustain in demanding scenes.
+- If you use VRR, tune the FPS cap after configuring VRR and V-Sync.
+- Do not set a cap above what the system can maintain just to see a higher number in an overlay.
 
 Example:
 
 ```text
-System outputs 180–260 FPS but often drops to 165 FPS.
-A 165 or 170 FPS cap may provide smoother frametime than uncapped fluctuation.
+The system produces 180–260 FPS but often drops to 165 FPS.
+A 165 or 170 FPS cap may provide smoother frame times than uncapped fluctuations.
 ```
 
-> **Note:** > There is no universal вЂњperfect FPS cap.вЂќ It depends on monitor refresh rate, VRR, game behavior, system performance, and personal feel.
+> **Note:** There is no universal perfect FPS cap. It depends on monitor refresh rate, VRR, game behavior, system performance, and personal preference.
 
 ---
 
-## 3. V-Sync, VRR, G-SYNC, and FreeSync
+## V-Sync, VRR, G-SYNC, and FreeSync
 
-### What is V-Sync
+### V-Sync
 
-V-Sync synchronizes frame output with monitor refresh rate and can remove tearing. In some scenarios it also increases latency and limits FPS.
+V-Sync synchronizes frame output with the monitor refresh rate. It can remove tearing, but may increase latency and limit FPS.
 
-### What is VRR
+### VRR
 
-VRR means variable refresh rate. It may be branded as:
+VRR means Variable Refresh Rate. It may be branded as:
 
-- NVIDIA G-SYNC / G-SYNC Compatible
+- NVIDIA G-SYNC or G-SYNC Compatible
 - AMD FreeSync
 - Adaptive-Sync
 
-It helps smooth motion when FPS varies within monitor VRR range.
+VRR helps smooth motion when FPS varies within the monitor’s VRR range.
 
-### Correct approach
+### How to test
 
-- Verify VRR is enabled in monitor OSD.
-- Verify settings in driver panel.
-- Test game with V-Sync on and off.
-- With VRR, tune FPS cap + V-Sync for your use case instead of copying random settings.
-
-#### Two starting profiles to test
+- Enable VRR in the monitor’s on-screen display.
+- Enable the corresponding setting in the GPU driver.
+- Test the game with V-Sync on and off.
+- Tune the FPS cap and V-Sync combination for your monitor and game.
 
 | Goal | V-Sync | VRR | FPS cap | What to compare |
 | --- | --- | --- | --- | --- |
-| Lowest latency | Off | Off | Test uncapped against a sustainable cap | p99 frametime, tearing, subjective input feel |
-| Smoothest motion | On in driver, off in game if the game has its own option | On | Slightly below the monitorвЂ™s maximum refresh | Frametime, VRR range, flicker, subjective smoothness |
+| Lowest latency | Off | Off | Test uncapped against a sustainable cap | P99 frame time, tearing, subjective input feel |
+| Smoothest motion | On in the driver; off in game if the game has its own option | On | Slightly below the monitor’s maximum refresh rate | Frame time, VRR range, flicker, subjective smoothness |
 
-These are test starting points, not universal settings. Confirm the monitorвЂ™s VRR range and the current driver behavior before keeping a profile.
+These are starting points, not universal settings. Confirm your monitor’s VRR range and current driver behavior before keeping a profile.
 
-> **Warning:** > V-Sync/VRR/FPS-cap settings affect smoothness, tearing, and latency at the same time. There is no single best mode for every monitor and every game.
+> **Warning:** V-Sync, VRR, and FPS-cap settings affect smoothness, tearing, and latency at the same time. There is no single best mode for every monitor and game.
 
 ---
 
-## 4. NVIDIA
+## NVIDIA
 
-Configure settings in NVIDIA App or NVIDIA Control Panel per game.
+Configure settings in the NVIDIA App or NVIDIA Control Panel using a per-game profile.
 
 ### Power management mode
 
-Globally, keep default in most cases.
+Keep the default setting in most cases.
 
-For a specific game with clock/power-saving behavior issues, you can test:
+For a specific game with clock or power-saving issues, test:
 
 ```text
-Power management mode → Prefer maximum performance
+Power management mode: Prefer maximum performance
 ```
 
 Possible effects:
 
-- GPU holds higher clocks more aggressively in-game;
-- power/temperature/noise may increase;
-- some games may show no difference.
+- The GPU may hold higher clocks more aggressively.
+- Power consumption, temperature, and noise can increase.
+- Some games may show no difference.
 
 ### NVIDIA Reflex
 
-If the game supports NVIDIA Reflex, enable Reflex **inside the game**.
+If the game supports NVIDIA Reflex, enable it inside the game.
 
-Reflex lets the game manage render queue for lower system latency. This is usually preferable to forcing Low Latency Mode in driver.
+Reflex lets the game manage the render queue for lower system latency. This is usually preferable to forcing Low Latency Mode in the driver.
 
-Do not enable Reflex and a forced driver Low Latency Mode at the same time without an A/B test. The combination can behave differently by game, and a subjective вЂњsnappierвЂќ feeling is not a latency measurement.
+Do not enable Reflex and forced driver Low Latency Mode at the same time without an A/B test. Their combination can behave differently by game, and a subjective “snappier” feeling is not a latency measurement.
 
 ### Low Latency Mode
 
-If a game does not have Reflex, test Low Latency Mode in the driver profile.
+If a game does not support Reflex, test Low Latency Mode in the driver profile.
 
-Modes can differ by driver version, but generally:
+| Mode | Behavior |
+| --- | --- |
+| Off | Default render-queue behavior |
+| On | Limits pre-rendered frames |
+| Ultra | More aggressively minimizes the render queue |
 
-- `Off` — default queue behavior;
-- `On` — limits pre-rendered frames;
-- `Ultra` — more aggressive queue minimization.
+Do not enable Low Latency Mode globally for all applications. Test it per game.
 
-Do not enable Low Latency Mode globally for all apps. Test per game.
+### Texture filtering quality
 
-### Texture filtering - Quality
+In the game profile, test texture filtering quality.
 
-In game profile, test texture filtering quality mode.
+- `Quality` is a reasonable default.
+- Performance-oriented modes may give a small gain on weaker GPUs, but can reduce image quality.
 
-- `Quality` — reasonable default.
-- Performance-priority mode can give a small gain on weak GPUs, but may degrade image quality.
+Do not change this without comparing both image quality and FPS.
 
-Do not change this without comparing image and FPS.
+### What not to force globally
 
-### What not to force-enable
+Without a specific reason, do not force these settings for all applications:
 
-Without a specific reason, do not force via driver:
-
-- anti-aliasing overriding game settings;
-- DSR/DLDSR;
-- scaling and sharpening;
-- global V-Sync for all programs;
-- global maximum performance mode;
-- global Low Latency Mode.
+- Anti-aliasing overrides
+- DSR or DLDSR
+- Scaling and sharpening
+- Global V-Sync
+- Global maximum performance mode
+- Global Low Latency Mode
 
 ---
 
-## 5. AMD Radeon
+## AMD Radeon
 
-Tune per-game profile in AMD Software: Adrenalin Edition.
+Tune settings per game in AMD Software: Adrenalin Edition.
 
 ### Radeon Anti-Lag
 
-Can reduce latency in suitable scenarios. Enable per game and test result.
+Anti-Lag can reduce latency in suitable scenarios. Enable it per game and test the result.
 
-If game has its own latency-reduction tech, try in-game option first.
+If the game has its own latency-reduction feature, try the in-game option first.
 
 ### Radeon Chill
 
-Chill can cap FPS and reduce power usage. Useful for quieter operation or efficiency, but not always ideal for maximum responsiveness.
+Radeon Chill can cap FPS and reduce power consumption. It is useful for quieter operation or better efficiency, but is not always ideal for maximum responsiveness.
 
 ### Enhanced Sync
 
-Enhanced Sync can reduce tearing in some scenarios, but behavior differs by game. Test together with VRR and FPS cap.
+Enhanced Sync can reduce tearing in some scenarios, but behavior differs by game. Test it together with VRR and an FPS cap.
 
 ### Radeon Super Resolution and scaling
 
-Use RSR/external scaling when a game lacks built-in FSR/DLSS/XeSS or when external method gives acceptable image quality.
+Use RSR or external scaling when a game lacks built-in FSR, DLSS, or XeSS, or when the external method gives acceptable image quality.
 
-Prefer built-in game upscaler when possible: it usually handles rendering/UI specifics better.
+Prefer the game’s built-in upscaler when possible, because it usually handles rendering and UI details better.
 
 ### Do not enable everything at once
 
-Do not activate Anti-Lag, Chill, Enhanced Sync, external scaling, and frame limiters all at once. Otherwise it is hard to understand what affects result and where conflict appears.
+Do not activate Anti-Lag, Chill, Enhanced Sync, external scaling, and frame limiters all at once. Otherwise it becomes difficult to identify which setting helps and which causes a conflict.
 
 ---
 
-## 6. Intel Arc and integrated Intel Graphics
+## Intel Arc and integrated graphics
 
-Use Intel Graphics Software and create per-game profile.
+Use Intel Graphics Software and create a per-game profile.
 
-### Recommendations
-
-- Keep driver on a current stable version.
-- For each game, start with its own scaling/latency settings.
-- If a specific game has issues, check driver known issues and test game API options: DirectX 11, DirectX 12, or Vulkan (if available).
-- On laptops, consider hybrid graphics settings in Windows and vendor utility.
+- Keep the driver on a current stable version.
+- Start with the game’s own scaling and latency settings.
+- If a specific game has issues, check known driver issues and test DirectX 11, DirectX 12, or Vulkan where available.
+- On laptops, review hybrid-graphics settings in Windows and the laptop vendor utility.
 
 ---
 
-## 7. Upscalers and Frame Generation
+## Upscalers and Frame Generation
 
 ### DLSS, FSR, and XeSS
 
-These upscaling technologies can increase FPS by rendering internally at lower resolution.
+These upscaling technologies can increase FPS by rendering internally at a lower resolution.
 
-Recommended test order:
+Test in this order:
 
-1. Native resolution.
-2. `Quality`.
-3. `Balanced`.
-4. `Performance` if FPS is still insufficient.
+1. Native resolution
+2. Quality
+3. Balanced
+4. Performance, if FPS is still insufficient
 
 Compare:
 
-- FPS and 1% low;
-- fine-detail sharpness;
-- motion quality;
-- artifacts on thin objects, foliage, hair, and UI.
+- FPS and 1% lows
+- Fine-detail sharpness
+- Motion quality
+- Artifacts on thin objects, foliage, hair, and UI
 
 ### Frame Generation
 
-Frame generation can increase displayed FPS, but it does not replace sufficient base FPS. Its effect on latency must be measured with a suitable tool; do not judge it only by the FPS counter.
+Frame Generation can increase displayed FPS, but it does not replace sufficient base performance. Its effect on latency must be measured with suitable hardware or software; do not judge it only by the FPS counter.
 
-Before enabling:
+Before enabling Frame Generation:
 
-- achieve solid native/base FPS;
-- enable available in-game latency reduction;
-- evaluate image quality and responsiveness personally;
-- do not judge only by FPS overlay number.
+- Achieve solid native or base FPS.
+- Enable available in-game latency reduction.
+- Evaluate image quality and responsiveness yourself.
+- Do not judge the result only by the FPS overlay.
 
-> **Important:** > Frame Generation is mainly useful for visual smoothness in compatible games. It does not fix CPU limit, stutter, overheating, or instability.
+> **Important:** Frame Generation is mainly useful for visual smoothness in compatible games. It does not fix a CPU bottleneck, stutter, overheating, or instability.
 
 ---
 
-## 8. GPU issue diagnostics
+## GPU issue diagnostics
 
 If you have stutter, crashes, or clock drops, check:
 
-- GPU temperature;
-- GPU hotspot and memory temperature (if sensors available);
-- clock behavior and power limit;
-- VRAM usage;
-- driver version;
-- overclock/undervolt status;
-- GPU power delivery;
-- overlays, recording, browser video;
-- stability in another game/benchmark.
+- GPU temperature
+- GPU hotspot and memory temperature, if sensors are available
+- Clock behavior and power limits
+- VRAM usage
+- Driver version
+- Overclock or undervolt status
+- GPU power delivery
+- Overlays, recording software, and browser video
+- Stability in another game or benchmark
 
-For artifacts, black screens, and crashes, return GPU to stock settings first. Do not try to fix unstable undervolt with new Windows tweaks.
+For artifacts, black screens, or crashes, return the GPU to stock settings first. Do not try to fix an unstable undervolt with new Windows tweaks.
 
 ---
 
 ## Checklist
 
 - [ ] Graphics are tuned in-game first.
-- [ ] Driver profile is used per specific application.
-- [ ] Reasonable FPS cap is selected.
-- [ ] VRR/V-Sync tested on specific monitor and game.
-- [ ] Reflex is enabled in-game when NVIDIA Reflex support exists.
-- [ ] AMD features are enabled one by one and validated.
-- [ ] Textures match VRAM capacity.
-- [ ] Upscaler is chosen by FPS/quality balance, not peak number only.
-- [ ] Frame Generation is not used as substitute for solid baseline performance.
-- [ ] No unstable overclock, overheating, or conflicting overlays.
+- [ ] Driver settings use a per-game profile.
+- [ ] A reasonable FPS cap is selected.
+- [ ] VRR and V-Sync are tested on the specific monitor and game.
+- [ ] Reflex is enabled in-game when supported.
+- [ ] AMD features are enabled one at a time and validated.
+- [ ] Texture quality matches available VRAM.
+- [ ] The upscaler is chosen based on FPS and image quality, not only the FPS number.
+- [ ] Frame Generation is not used as a substitute for solid base performance.
+- [ ] There is no unstable overclock, overheating, or conflicting overlay.
 
 ---
 
-## Summary
+## Next step
 
-Best GPU settings are not maximum number of enabled features, but a clear per-game profile. First determine whether system is GPU-bound or CPU-bound, then tune resolution, heavy effects, FPS cap, VRR/V-Sync, and upscaling technologies. Evaluate not only average FPS, but also frametime, 1% low, image quality, and latency.
-
-Next step: [Background apps and startup](https://h4zvenn.github.io/gaming-pc-guide/docs/07-background-apps.html).
+[Background Apps and Startup](07-background-apps.html)
