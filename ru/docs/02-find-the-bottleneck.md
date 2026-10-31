@@ -1,4 +1,4 @@
----
+﻿---
 layout: doc
 title: "Поиск узкого места"
 description: "Определи, что ограничивает производительность игрового ПК: процессор, видеокарта, память, накопитель или температуры."
@@ -11,7 +11,7 @@ permalink: /ru/docs/02-find-the-bottleneck.html
 
 > **Status:** Translation in progress.  
 > The authoritative English version is available here:  
-> [Find the Bottleneck](/docs/02-find-the-bottleneck.html)
+> [Find the Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/02-find-the-bottleneck.html)
 
 ## Что вы узнаете
 
@@ -21,4 +21,4 @@ permalink: /ru/docs/02-find-the-bottleneck.html
 
 ## Содержимое перевода
 
-<!-- Перевод статьи будет здесь -->
+Перевод статьи будет добавлен позже.
