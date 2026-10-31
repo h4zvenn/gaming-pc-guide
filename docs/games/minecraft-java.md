@@ -19,7 +19,7 @@ title: "minecraft-java"
 
 ## Quick Start
 
-1. Common base first (see [CS2 Quick Start](cs2.md#quick-start)).
+1. Common base first (see [CS2 Quick Start](https://h4zvenn.github.io/gaming-pc-guide/docs/cs2.html#quick-start)).
 2. No kernel anti-cheat in singleplayer; server rules apply for multiplayer.
 3. Java runtime and launch arguments matter — test, do not copy "magic flags".
 4. Apply only Minecraft-specific items below.

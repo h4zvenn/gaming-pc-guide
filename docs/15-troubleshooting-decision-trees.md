@@ -142,4 +142,4 @@ flowchart TD
 - Do not apply unknown scripts.
 - Do not stack multiple changes without testing.
 
-Next step: [16 Benchmark templates](16-benchmark-templates.md).
+Next step: [16 Benchmark templates](https://h4zvenn.github.io/gaming-pc-guide/docs/16-benchmark-templates.html).

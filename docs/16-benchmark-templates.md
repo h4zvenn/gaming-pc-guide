@@ -174,7 +174,7 @@ For every recommendation, record:
 
 Do not publish вЂњup to +X% FPSвЂќ without your own reproducible measurement. Do not present a patch-specific behavior as a permanent rule.
 
-Third-party tool entries live in [18 Optimization tools evidence](18-optimization-tools-evidence.md).
+Third-party tool entries live in [18 Optimization tools evidence](https://h4zvenn.github.io/gaming-pc-guide/docs/18-optimization-tools-evidence.html).
 
 ---
 
@@ -190,4 +190,4 @@ Third-party tool entries live in [18 Optimization tools evidence](18-optimizatio
 - [ ] Temperatures and noise remain acceptable.
 - [ ] The change has a documented rollback path.
 
-Back to main guide: [README](../README.md).
+Back to main guide: [README](https://h4zvenn.github.io/gaming-pc-guide/docs/../README.html).

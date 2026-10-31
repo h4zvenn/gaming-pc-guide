@@ -327,4 +327,4 @@ For artifacts, black screens, and crashes, return GPU to stock settings first. D
 
 Best GPU settings are not maximum number of enabled features, but a clear per-game profile. First determine whether system is GPU-bound or CPU-bound, then tune resolution, heavy effects, FPS cap, VRR/V-Sync, and upscaling technologies. Evaluate not only average FPS, but also frametime, 1% low, image quality, and latency.
 
-Next step: [Background apps and startup](07-background-apps.md).
+Next step: [Background apps and startup](https://h4zvenn.github.io/gaming-pc-guide/docs/07-background-apps.html).

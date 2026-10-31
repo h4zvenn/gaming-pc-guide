@@ -153,7 +153,7 @@ Before optimization, you need a clear picture of current behavior.
 3. Test the same scene.
 4. Warm up for 5–10 minutes, then run at least 3 passes.
 5. Report the median and the min–max range, not only the average or the best run.
-6. See [16 Benchmark templates](16-benchmark-templates.md) for metric definitions and the full protocol.
+6. See [16 Benchmark templates](https://h4zvenn.github.io/gaming-pc-guide/docs/16-benchmark-templates.html) for metric definitions and the full protocol.
 
 Sample note:
 
@@ -241,4 +241,4 @@ You now have:
 - Visibility into temperatures and likely issues
 - A way to compare each change reliably
 
-Next step: [Find the bottleneck: CPU, GPU, RAM, VRAM, SSD, or thermals](02-find-the-bottleneck.md).
+Next step: [Find the bottleneck: CPU, GPU, RAM, VRAM, SSD, or thermals](https://h4zvenn.github.io/gaming-pc-guide/docs/02-find-the-bottleneck.html).

@@ -277,8 +277,8 @@ Use this order:
 
 Do not apply every tweak from the guide at once. First find the real root cause, then go to the relevant section:
 
-- [BIOS and hardware](03-bios-and-hardware.md)
-- [Drivers and updates](04-drivers-and-updates.md)
-- [Windows 11](05-windows-11.md)
-- [GPU settings](06-gpu-settings.md)
-- [Temperatures and stability](10-temperatures-stability.md)
+- [BIOS and hardware](https://h4zvenn.github.io/gaming-pc-guide/docs/03-bios-and-hardware.html)
+- [Drivers and updates](https://h4zvenn.github.io/gaming-pc-guide/docs/04-drivers-and-updates.html)
+- [Windows 11](https://h4zvenn.github.io/gaming-pc-guide/docs/05-windows-11.html)
+- [GPU settings](https://h4zvenn.github.io/gaming-pc-guide/docs/06-gpu-settings.html)
+- [Temperatures and stability](https://h4zvenn.github.io/gaming-pc-guide/docs/10-temperatures-stability.html)

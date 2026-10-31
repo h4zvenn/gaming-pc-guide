@@ -35,4 +35,4 @@ title: "18-optimization-tools-evidence"
 
 - Do not cite a tool number without the corresponding evidence layer.
 
-Back to main guide: [README](../README.md).
+Back to main guide: [README](https://h4zvenn.github.io/gaming-pc-guide/docs/../README.html).

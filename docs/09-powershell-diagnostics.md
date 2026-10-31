@@ -146,7 +146,7 @@ Disable startup items via:
 Task Manager -> Startup apps -> Disable
 ```
 
-Related guide: [Background apps and startup](07-background-apps.md).
+Related guide: [Background apps and startup](https://h4zvenn.github.io/gaming-pc-guide/docs/07-background-apps.html).
 
 ---
 
@@ -208,7 +208,7 @@ Get-Service *audio* |
 Select-Object Status, Name, DisplayName
 ```
 
-Related guide: [Services and security](08-services-and-security.md).
+Related guide: [Services and security](https://h4zvenn.github.io/gaming-pc-guide/docs/08-services-and-security.html).
 
 ---
 
@@ -329,4 +329,4 @@ driverquery /v /fo csv | Out-File -Encoding utf8 "$env:USERPROFILE\Desktop\drive
 - [ ] Results are validated in-game (FPS, 1% low, frametime, stability).
 - [ ] Unknown processes/services are not modified blindly.
 
-Next step: [Temperatures, stability, and maintenance](10-temperatures-stability.md).
+Next step: [Temperatures, stability, and maintenance](https://h4zvenn.github.io/gaming-pc-guide/docs/10-temperatures-stability.html).

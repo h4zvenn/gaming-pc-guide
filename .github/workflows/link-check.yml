@@ -53,6 +53,7 @@ jobs:
             --retry-wait-time 5
             --timeout 30
             --exclude '^mailto:'
+            --exclude '^https://modhub\.wargaming\.com/'
             --exclude '^https://github\.com/h4zvenn/gaming-pc-guide/(issues|discussions)'
             './site-check/gaming-pc-guide/**/*.html'
 

@@ -19,7 +19,7 @@ title: "valorant"
 
 ## Quick Start
 
-1. Common base first (see [CS2 Quick Start](cs2.md#quick-start)).
+1. Common base first (see [CS2 Quick Start](https://h4zvenn.github.io/gaming-pc-guide/docs/cs2.html#quick-start)).
 2. Vanguard requires TPM 2.0 + Secure Boot on Windows 11 — verify before BIOS changes.
 3. Apply only VALORANT-specific items below.
 4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates.html' | relative_url }}).

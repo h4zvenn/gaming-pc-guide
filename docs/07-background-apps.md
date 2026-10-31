@@ -174,7 +174,7 @@ Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -ErrorAct
 
 Startup apps and services are related, but they are not the same thing. Do not disable Windows services only to reduce startup load.
 
-For safe service checks and rollback instructions, see [Services and security](08-services-and-security.md).
+For safe service checks and rollback instructions, see [Services and security](https://h4zvenn.github.io/gaming-pc-guide/docs/08-services-and-security.html).
 
 ---
 
@@ -344,7 +344,7 @@ Do not randomly terminate:
 - Anti-cheat processes while gaming.
 - System processes named `Service Host` or `svchost.exe`.
 
-If a process constantly creates load, first identify which application owns it. See [Services and security](08-services-and-security.md).
+If a process constantly creates load, first identify which application owns it. See [Services and security](https://h4zvenn.github.io/gaming-pc-guide/docs/08-services-and-security.html).
 
 ---
 
@@ -364,4 +364,4 @@ If a process constantly creates load, first identify which application owns it. 
 
 Background optimization is not about “killing everything in Task Manager.” Disable only what you understand, do not use, and can safely start later manually. The most useful actions are clean startup, paused downloads, closed video browser tabs, and minimal overlays.
 
-Next step: [Services and security](08-services-and-security.md).
+Next step: [Services and security](https://h4zvenn.github.io/gaming-pc-guide/docs/08-services-and-security.html).

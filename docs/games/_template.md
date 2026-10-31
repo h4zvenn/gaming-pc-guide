@@ -19,9 +19,9 @@ title: "_template"
 
 ## Quick Start
 
-1. Complete the common base: [Preparation](../01-before-you-start.md) → [Bottleneck](../02-find-the-bottleneck.md) → [BIOS/Hardware](../03-bios-and-hardware.md) → [Drivers](../04-drivers-and-updates.md) → [Windows](../05-windows-11.md) → [GPU](../06-gpu-settings.md) → [Background](../07-background-apps.md) → [Security/Services](../08-services-and-security.md) → [Diagnostics](../09-powershell-diagnostics.md) → [Thermals/Stability](../10-temperatures-stability.md).
+1. Complete the common base: [Preparation](https://h4zvenn.github.io/gaming-pc-guide/docs/../01-before-you-start.html) → [Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/../02-find-the-bottleneck.html) → [BIOS/Hardware](https://h4zvenn.github.io/gaming-pc-guide/docs/../03-bios-and-hardware.html) → [Drivers](https://h4zvenn.github.io/gaming-pc-guide/docs/../04-drivers-and-updates.html) → [Windows](https://h4zvenn.github.io/gaming-pc-guide/docs/../05-windows-11.html) → [GPU](https://h4zvenn.github.io/gaming-pc-guide/docs/../06-gpu-settings.html) → [Background](https://h4zvenn.github.io/gaming-pc-guide/docs/../07-background-apps.html) → [Security/Services](https://h4zvenn.github.io/gaming-pc-guide/docs/../08-services-and-security.html) → [Diagnostics](https://h4zvenn.github.io/gaming-pc-guide/docs/../09-powershell-diagnostics.html) → [Thermals/Stability](https://h4zvenn.github.io/gaming-pc-guide/docs/../10-temperatures-stability.html).
 2. Apply only the game-specific items below that match your symptom.
-3. Validate with the [Benchmark template](../16-benchmark-templates.md).
+3. Validate with the [Benchmark template](https://h4zvenn.github.io/gaming-pc-guide/docs/../16-benchmark-templates.html).
 4. Keep only what improves your metrics without instability.
 
 ## Requirements & Compatibility
@@ -67,11 +67,11 @@ title: "_template"
 
 | Symptom | First check | Link |
 | --- | --- | --- |
-| Low FPS | | [Bottleneck](../02-find-the-bottleneck.md) |
-| Stutter / bad frametime | | [Bottleneck](../02-find-the-bottleneck.md) |
-| Input latency | | [GPU settings](../06-gpu-settings.md) |
-| Network latency / packet loss | | [Network diagnostics](../09-powershell-diagnostics.md#9-network) |
-| Crashes / launches fail | | [Troubleshooting](../15-troubleshooting-decision-trees.md) |
+| Low FPS | | [Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/../02-find-the-bottleneck.html) |
+| Stutter / bad frametime | | [Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/../02-find-the-bottleneck.html) |
+| Input latency | | [GPU settings](https://h4zvenn.github.io/gaming-pc-guide/docs/../06-gpu-settings.html) |
+| Network latency / packet loss | | [Network diagnostics](https://h4zvenn.github.io/gaming-pc-guide/docs/../09-powershell-diagnostics.html#9-network) |
+| Crashes / launches fail | | [Troubleshooting](https://h4zvenn.github.io/gaming-pc-guide/docs/../15-troubleshooting-decision-trees.html) |
 
 > Add game-specific failure modes (shader compilation stutter, asset streaming, specific anti-cheat launch failures).
 
@@ -97,4 +97,4 @@ title: "_template"
 
 > Mark each recommendation with: `verified` | `needs-verification` | `deprecated` and the date.
 
-Back to main guide: [README](../../README.md).
+Back to main guide: [README](https://h4zvenn.github.io/gaming-pc-guide/docs/../../README.html).
