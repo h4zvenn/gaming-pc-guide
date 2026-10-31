@@ -5,11 +5,8 @@
 A practical guide to improving gaming performance on Windows 11 — without custom Windows builds, random “FPS boost” scripts, or blindly disabling services.
 
 [![Read Online](https://img.shields.io/badge/Read_Online-h4zvenn.github.io-3b82f6?style=for-the-badge&logo=github)](https://h4zvenn.github.io/gaming-pc-guide/)
-[![Windows 11](https://img.shields.io/badge/Platform-Windows_11-0078D4?style=for-the-badge&logo=windows11)](https://h4zvenn.github.io/gaming-pc-guide/)
 [![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
 [![Русская версия](https://img.shields.io/badge/Русская_версия-In_Progress-f59e0b?style=for-the-badge)](https://h4zvenn.github.io/gaming-pc-guide/ru/)
-
-**English** · [Русский](https://h4zvenn.github.io/gaming-pc-guide/ru/)
 
 ---
 
