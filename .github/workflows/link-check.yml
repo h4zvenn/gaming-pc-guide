@@ -33,13 +33,10 @@ jobs:
       - name: Build Jekyll site
         run: bundle exec jekyll build
 
-      - name: Upload built site
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: built-site
-          path: _site/
-          if-no-files-found: error
+      - name: Prepare site for root-relative links
+        run: |
+          mkdir -p site-check/gaming-pc-guide
+          cp -a _site/. site-check/gaming-pc-guide/
 
       - name: Check links
         id: lychee
@@ -50,13 +47,14 @@ jobs:
           args: >-
             --no-progress
             --verbose
+            --root-dir ./site-check
             --max-concurrency 4
             --max-retries 2
             --retry-wait-time 5
             --timeout 30
             --exclude '^mailto:'
             --exclude '^https://github\.com/h4zvenn/gaming-pc-guide/(issues|discussions)'
-            './_site/**/*.html'
+            './site-check/gaming-pc-guide/**/*.html'
 
       - name: Upload link-check report
         if: always()
