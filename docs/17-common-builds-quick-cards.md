@@ -1,13 +1,11 @@
 ---
 layout: doc
-title: "17-common-builds-quick-cards"
+title: "Common Builds"
 description: "Reference starting points for common NVIDIA, AMD, and Intel gaming PC configurations."
 lang: en
 translation_key: common-builds-quick-cards
 permalink: /docs/17-common-builds-quick-cards.html
 ---
-
-# 17. Common Builds Quick Cards (NVIDIA / AMD / Intel)
 
 > Start fast with safe defaults. Then benchmark and tune per game.
 

@@ -1,13 +1,11 @@
 ---
 layout: doc
-title: "09-powershell-diagnostics"
+title: "PowerShell Diagnostics"
 description: "Use safe PowerShell commands to inspect hardware, services, network status, and system errors."
 lang: en
 translation_key: powershell-diagnostics
 permalink: /docs/09-powershell-diagnostics.html
 ---
-
-# 09. PowerShell: Checks and Diagnostics
 
 > Use PowerShell to inspect your system, not to run random "one-click FPS" scripts.
 

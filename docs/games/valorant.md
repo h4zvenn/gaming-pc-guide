@@ -7,8 +7,6 @@ translation_key: game-valorant
 permalink: /docs/games/valorant.html
 ---
 
-# VALORANT — Game Page (Stub)
-
 > Pilot expansion. Fill after source audit and template agreement.
 
 ## Applicability

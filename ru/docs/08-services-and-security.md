@@ -7,8 +7,6 @@ translation_key: services-and-security
 permalink: /ru/docs/08-services-and-security.html
 ---
 
-# Службы и безопасность
-
 > Перед изменением службы запиши её изначальный `StartType`. Если что-то перестанет работать, верни настройку обратно.
 
 ## Посмотреть сторонние службы

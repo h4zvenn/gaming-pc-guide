@@ -7,8 +7,6 @@ translation_key: find-the-bottleneck
 permalink: /docs/02-find-the-bottleneck.html
 ---
 
-# Find the Bottleneck
-
 Before changing BIOS options, Windows settings, or driver parameters, identify what actually limits performance: CPU, GPU, memory, storage, thermals, or background load.
 
 A bottleneck is the component or condition that prevents your PC from delivering higher FPS or smoother frame times at a specific moment.

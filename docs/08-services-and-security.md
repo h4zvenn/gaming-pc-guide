@@ -1,13 +1,11 @@
 ---
 layout: doc
-title: "08. Services and Security"
+title: "Services & Security"
 description: "Review third-party services safely, avoid mass service disabling, and preserve Windows security and rollback options."
 lang: en
 translation_key: services-and-security
 permalink: /docs/08-services-and-security.html
 ---
-
-# 08. Services and Security
 
 > Disabling services is one of the most overrated and risky “optimization” methods. Most services consume almost nothing while idle, and mass disabling can break networking, audio, updates, anti-cheat, app installation, and Windows security.
 

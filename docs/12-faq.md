@@ -1,13 +1,11 @@
 ---
 layout: doc
-title: "12-faq"
+title: "FAQ"
 description: "Answers to common questions about Windows 11 gaming optimization, performance testing, and safe changes."
 lang: en
 translation_key: faq
 permalink: /docs/12-faq.html
 ---
-
-# 12. FAQ
 
 > Short answers to common questions about Windows and gaming PC optimization. If an answer depends on hardware, Windows version, or a specific game, test on your own system.
 

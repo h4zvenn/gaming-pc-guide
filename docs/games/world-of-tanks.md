@@ -7,8 +7,6 @@ translation_key: game-world-of-tanks
 permalink: /docs/games/world-of-tanks.html
 ---
 
-# World of Tanks — Game Page (Stub)
-
 > Pilot expansion. Fill after source audit and template agreement.
 
 ## Applicability

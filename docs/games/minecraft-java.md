@@ -7,8 +7,6 @@ translation_key: game-minecraft-java
 permalink: /docs/games/minecraft-java.html
 ---
 
-# Minecraft Java Edition — Game Page (Stub)
-
 > Pilot expansion. Fill after source audit and template agreement. **Java and Bedrock are separate pages.**
 
 ## Applicability

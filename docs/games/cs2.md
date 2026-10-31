@@ -7,8 +7,6 @@ translation_key: game-cs2
 permalink: /docs/games/cs2.html
 ---
 
-# Counter-Strike 2 (CS2) — Comprehensive Optimization Guide
-
 > Complete guide for maximum Counter-Strike 2 performance optimization on Source 2. Eliminating micro-stutters, reducing input lag, fine-tuning network settings, and securing a stable 1% Low FPS floor.
 
 ## Applicability

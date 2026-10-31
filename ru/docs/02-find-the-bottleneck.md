@@ -7,8 +7,6 @@ translation_key: find-the-bottleneck
 permalink: /ru/docs/02-find-the-bottleneck.html
 ---
 
-# Поиск узкого места
-
 > **Status:** Translation in progress.  
 > The authoritative English version is available here:  
 > [Find the Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/02-find-the-bottleneck.html)

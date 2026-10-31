@@ -7,8 +7,6 @@ translation_key: bios-and-hardware
 permalink: /docs/03-bios-and-hardware.html
 ---
 
-# BIOS & Hardware
-
 BIOS settings and correct hardware configuration can noticeably affect stability, boot time, 1% lows, and gaming performance. Incorrect settings can also cause crashes, WHEA errors, and boot failures.
 
 > **Important:** Do not update the BIOS or change voltages “just because.” First confirm that you need the change and understand the rollback path.

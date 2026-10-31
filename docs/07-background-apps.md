@@ -1,13 +1,11 @@
 ---
 layout: doc
-title: "07. Background Apps and Startup"
+title: "Background Apps"
 description: "Find heavy background apps, review startup entries, reduce overlays and downloads, and avoid unsafe process termination."
 lang: en
 translation_key: background-apps
 permalink: /docs/07-background-apps.html
 ---
-
-# 07. Background Apps and Startup
 
 > The safest way to reduce unnecessary load is to remove unneeded startup apps and close heavy tasks before gaming. Do not randomly kill system processes or disable Windows services.
 

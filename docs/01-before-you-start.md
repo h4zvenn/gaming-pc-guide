@@ -1,13 +1,11 @@
 ---
 layout: doc
-title: "Preparation Before Optimization"
+title: "Before You Start"
 lang: en
 translation_key: before-you-start
 description: "Create a restore point, record baseline performance, and prepare Windows 11 before optimization."
 permalink: /docs/01-before-you-start.html
 ---
-
-# 01. Preparation Before Optimization
 
 > Do not start with disabling services, registry edits, or overclocking.
 > First, ensure rollback options exist, verify your current PC state, and record baseline results.

@@ -1,13 +1,11 @@
 ---
 layout: doc
-title: "11-what-not-to-do"
+title: "What Not To Do"
 description: "Avoid risky debloat scripts, registry hacks, RAM cleaners, and blanket service disabling."
 lang: en
 translation_key: what-not-to-do
 permalink: /docs/11-what-not-to-do.html
 ---
-
-# 11. What Not to Do
 
 > Around Windows вЂњoptimizationвЂќ there are many tips promising huge FPS gains with one command. In most cases, they either provide no measurable result or create stability, security, anti-cheat, update, and driver issues.
 

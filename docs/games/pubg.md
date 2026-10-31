@@ -7,8 +7,6 @@ translation_key: game-pubg
 permalink: /docs/games/pubg.html
 ---
 
-# PUBG: BATTLEGROUNDS — Game Page (Stub)
-
 > Pilot expansion. Fill after source audit and template agreement.
 
 ## Applicability

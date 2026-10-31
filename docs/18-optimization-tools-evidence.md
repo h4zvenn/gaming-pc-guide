@@ -1,13 +1,11 @@
 ---
 layout: doc
-title: "18-optimization-tools-evidence"
+title: "Optimization Tools"
 description: "Evaluate third-party optimization tools based on evidence, risks, and measurable results."
 lang: en
 translation_key: optimization-tools-evidence
 permalink: /docs/18-optimization-tools-evidence.html
 ---
-
-# 18. Third-Party Optimization Tools: Evidence
 
 > A third-party tool can publish a claim, publish documentation, and publish code. Independent testing confirms the effect. The guide needs all three layers before citing an FPS or latency number.
 

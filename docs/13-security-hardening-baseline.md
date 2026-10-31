@@ -1,13 +1,11 @@
 ---
 layout: doc
-title: "13-security-hardening-baseline"
+title: "Security Hardening"
 description: "Maintain a safe Windows security baseline while optimizing a gaming PC."
 lang: en
 translation_key: security-hardening-baseline
 permalink: /docs/13-security-hardening-baseline.html
 ---
-
-# 13) Security Hardening Baseline (Gaming PC, Windows 11)
 
 > Goal: improve real security with minimal FPS impact and keep system compatibility for games, anti-cheat, and updates.
 

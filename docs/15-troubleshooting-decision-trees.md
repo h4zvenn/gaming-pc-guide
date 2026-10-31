@@ -7,8 +7,6 @@ translation_key: troubleshooting-decision-trees
 permalink: /docs/15-troubleshooting-decision-trees.html
 ---
 
-# Troubleshooting Trees
-
 Find the symptom, follow one decision tree, and test one fix at a time.
 
 ## How to use

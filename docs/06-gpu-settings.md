@@ -7,8 +7,6 @@ translation_key: gpu-settings
 permalink: /docs/06-gpu-settings.html
 ---
 
-# GPU Settings
-
 Configure graphics driver settings per game, not globally. One game may benefit from a setting while another gets bugs, image degradation, or instability.
 
 ## Core principle

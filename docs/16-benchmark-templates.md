@@ -7,8 +7,6 @@ translation_key: benchmark-templates
 permalink: /docs/16-benchmark-templates.html
 ---
 
-# Benchmark Templates
-
 If it is not measured, it is not optimization.
 
 Use the same game build, settings, scene, and measurement method before and after every change. A tweak is proven only when the result is repeatable.
