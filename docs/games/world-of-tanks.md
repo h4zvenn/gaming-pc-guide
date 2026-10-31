@@ -73,7 +73,7 @@ permalink: /docs/games/world-of-tanks.html
 | Low FPS, GPU-bound | Lower Render Scale, Particle Quality, Water, Post-Processing | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
 | Low FPS, CPU-bound | Lower Grass, View Distance, Shadows | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
 | Stutter in battle | Texture streaming, SSD space, background downloads | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
-| High ping / packet loss | Server region, Ethernet, background traffic | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics.html#9-network) |
+| High ping / packet loss | Server region, Ethernet, background traffic | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics.html#network) |
 
 ## Benchmark Scenario
 

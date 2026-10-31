@@ -68,7 +68,7 @@ title: "_template"
 | Low FPS | | [Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/../02-find-the-bottleneck.html) |
 | Stutter / bad frametime | | [Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/../02-find-the-bottleneck.html) |
 | Input latency | | [GPU settings](https://h4zvenn.github.io/gaming-pc-guide/docs/../06-gpu-settings.html) |
-| Network latency / packet loss | | [Network diagnostics](https://h4zvenn.github.io/gaming-pc-guide/docs/../09-powershell-diagnostics.html#9-network) |
+| Network latency / packet loss | | [Network diagnostics](https://h4zvenn.github.io/gaming-pc-guide/docs/../09-powershell-diagnostics.html#network) |
 | Crashes / launches fail | | [Troubleshooting](https://h4zvenn.github.io/gaming-pc-guide/docs/../15-troubleshooting-decision-trees.html) |
 
 > Add game-specific failure modes (shader compilation stutter, asset streaming, specific anti-cheat launch failures).

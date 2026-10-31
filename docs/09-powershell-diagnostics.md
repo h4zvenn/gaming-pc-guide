@@ -7,22 +7,22 @@ translation_key: powershell-diagnostics
 permalink: /docs/09-powershell-diagnostics.html
 ---
 
-> Use PowerShell to inspect your system, not to run random "one-click FPS" scripts.
+> Use PowerShell to inspect your system, not to run random “one-click FPS” scripts.
 
 ## Quick diagnostic flow
 
 | If you need to check | Go here |
 | --- | --- |
-| Basic hardware info | Sections 1-4 |
-| Startup/background load | Sections 6-7 |
-| Services status | Section 8 |
-| Network/ping basics | Section 9 |
-| Suspected Windows corruption | Section 10 |
-| WHEA and hardware errors | Section 11 |
+| Basic hardware information | CPU, GPU, RAM, drives |
+| Startup and background load | Startup apps and processes |
+| Services status | Services |
+| Network and ping basics | Network |
+| Suspected Windows corruption | System file integrity |
+| WHEA and hardware errors | Event logs and WHEA |
 
 ---
 
-## How to open PowerShell
+## Open PowerShell
 
 ### Normal mode
 
@@ -30,21 +30,21 @@ permalink: /docs/09-powershell-diagnostics.html
 2. Type `Windows Terminal` or `PowerShell`.
 3. Open it.
 
-Most commands in this guide do not require admin rights.
+Most commands in this guide do not require administrator rights.
 
-### Run as administrator
+### Administrator mode
 
-Only when explicitly required.
+Use it only when explicitly required:
 
 1. Press `Win`.
 2. Type `Windows Terminal`.
-3. Right-click -> `Run as administrator`.
+3. Right-click and select `Run as administrator`.
 
-> **Warning:** > Do not run unknown commands as administrator.
+> **Warning:** Do not run unknown commands as administrator.
 
 ---
 
-## 1. CPU information
+## CPU information
 
 ```powershell
 Get-CimInstance Win32_Processor |
@@ -52,11 +52,11 @@ Select-Object Name, Manufacturer, NumberOfCores, NumberOfLogicalProcessors,
 CurrentClockSpeed, MaxClockSpeed
 ```
 
-Shows CPU model, cores/threads, and reported clocks.
+This shows the CPU model, core and thread count, and reported clocks.
 
 ---
 
-## 2. GPU and driver information
+## GPU and driver information
 
 ```powershell
 Get-CimInstance Win32_VideoController |
@@ -64,15 +64,15 @@ Select-Object Name, VideoProcessor, DriverVersion, DriverDate,
 CurrentHorizontalResolution, CurrentVerticalResolution, CurrentRefreshRate
 ```
 
-If refresh rate looks wrong, verify in:
+If the refresh rate looks wrong, verify it in:
 
 ```text
-Settings -> System -> Display -> Advanced display
+Settings → System → Display → Advanced display
 ```
 
 ---
 
-## 3. RAM information
+## RAM information
 
 ```powershell
 Get-CimInstance Win32_PhysicalMemory |
@@ -91,7 +91,7 @@ Total RAM in GB:
 
 ---
 
-## 4. Drives and free space
+## Drives and free space
 
 ### Free space
 
@@ -112,7 +112,7 @@ OperationalStatus, Size
 
 ---
 
-## 5. Power plan
+## Power plan
 
 Current plan:
 
@@ -126,7 +126,7 @@ All plans:
 powercfg /list
 ```
 
-Energy report (admin):
+Energy report, administrator required:
 
 ```powershell
 powercfg /energy
@@ -134,24 +134,24 @@ powercfg /energy
 
 ---
 
-## 6. Startup apps
+## Startup apps
 
 ```powershell
 Get-CimInstance Win32_StartupCommand |
 Select-Object Name, Command, Location, User
 ```
 
-Disable startup items via:
+Disable startup items in:
 
 ```text
-Task Manager -> Startup apps -> Disable
+Task Manager → Startup apps → Disable
 ```
 
-Related guide: [Background apps and startup](https://h4zvenn.github.io/gaming-pc-guide/docs/07-background-apps.html).
+See [Background Apps](07-background-apps.html).
 
 ---
 
-## 7. Processes
+## Processes
 
 Top cumulative CPU time:
 
@@ -170,18 +170,18 @@ Select-Object -First 20 Name, Id,
 @{Name='RAM_MB';Expression={[math]::Round($_.WorkingSet64 / 1MB, 0)}}
 ```
 
-Find by name (example Discord):
+Find a process by name, for example Discord:
 
 ```powershell
 Get-Process *discord* -ErrorAction SilentlyContinue |
 Select-Object Name, Id, CPU, WorkingSet64
 ```
 
-> **Warning:** > Do not kill unknown/system processes blindly.
+> **Warning:** Do not kill unknown or system processes blindly.
 
 ---
 
-## 8. Services
+## Services
 
 Running services:
 
@@ -201,20 +201,20 @@ Sort-Object DisplayName |
 Select-Object Name, DisplayName, State, StartMode
 ```
 
-Find a service (example audio):
+Find services by partial name, for example audio:
 
 ```powershell
 Get-Service *audio* |
 Select-Object Status, Name, DisplayName
 ```
 
-Related guide: [Services and security](https://h4zvenn.github.io/gaming-pc-guide/docs/08-services-and-security.html).
+See [Services & Security](08-services-and-security.html).
 
 ---
 
-## 9. Network
+## Network
 
-IP and adapter config:
+IP and adapter configuration:
 
 ```powershell
 Get-NetIPConfiguration
@@ -233,7 +233,7 @@ DNS test:
 Resolve-DnsName microsoft.com
 ```
 
-Basic latency test:
+Basic connectivity test:
 
 ```powershell
 Test-Connection 1.1.1.1 -Count 10
@@ -243,25 +243,20 @@ Test-Connection 1.1.1.1 -Count 10
 
 To measure latency to the server you actually play on:
 
-1. Identify the game server region or address from launcher/game logs.
-2. Run a short 5–10 minute latency and loss test toward that host.
-3. Record min/avg/max latency and packet loss.
+1. Identify the game-server region or address from the launcher or game logs.
+2. Run a short 5–10 minute latency and packet-loss test toward that host.
+3. Record minimum, average, and maximum latency, plus packet loss.
 4. Repeat on Wi-Fi and Ethernet if you want to separate wireless noise from real network latency.
 
-> **Important:** > The `1.1.1.1` test is not your game server ping; it is only a baseline connectivity check.
-> `Test-Connection` uses ICMP, which some servers and firewalls block. A failed ping does not automatically prove a bad game connection.
+> **Important:** A `1.1.1.1` test is not your game-server ping; it is only a baseline connectivity check. `Test-Connection` uses ICMP, which some servers and firewalls block. A failed ping does not automatically prove a bad game connection.
 
-### Network load during play
-
-Before measuring, pause downloads, cloud sync, torrents, and streaming. Network saturation can be reported as high latency and be unrelated to routing or ISP problems.
-
-> **Note:** > For real gameplay networking, use the game server host or region data rather than the `1.1.1.1` baseline.
+Before measuring, pause downloads, cloud sync, torrents, and streaming. Network saturation can appear as high latency and may be unrelated to routing or ISP problems.
 
 ---
 
-## 10. System file integrity (admin only)
+## System file integrity
 
-Use only for suspected Windows corruption. Both commands can take a long time and require an administrator terminal.
+Use this only for suspected Windows corruption. Both commands can take a long time and require an administrator terminal.
 
 DISM repairs the Windows component store. SFC checks and replaces protected system files using that store. If the store itself is damaged, SFC may be unable to repair anything, so the more reliable repair order is DISM first, then SFC.
 
@@ -273,7 +268,7 @@ DISM /Online /Cleanup-Image /RestoreHealth
 sfc /scannow
 ```
 
-Order:
+Repair order:
 
 1. Run `DISM /Online /Cleanup-Image /RestoreHealth`.
 2. Wait for it to finish and read the result.
@@ -281,15 +276,13 @@ Order:
 4. Reboot.
 5. If problems persist, repeat the sequence and check the CBS log.
 
-> **Note:** > Some Microsoft support pages describe SFC first as a quick check. That order can still be useful for diagnosis, but it does not repair a damaged component store. Use DISM first when the goal is repair.
->
-> Sources: [Repair a Windows image](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image), [System File Checker](https://support.microsoft.com/en-us/windows/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system-files-79aa86cb-ca52-166a-92a3-966e85d4094e).
+Microsoft documents `sfc /scannow` as a quick check-and-repair option, while `DISM /Cleanup-Image` is the more extensive option for repairing the component store. [Microsoft Learn](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image)
 
 ---
 
-## 11. Event logs and WHEA
+## Event logs and WHEA
 
-WHEA check:
+Check recent WHEA events:
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -299,19 +292,19 @@ Get-WinEvent -FilterHashtable @{
 Select-Object TimeCreated, Id, LevelDisplayName, Message
 ```
 
-If WHEA appears after OC/undervolt/XMP/PBO/CO, revert to stable settings and retest.
+If WHEA errors appear after overclocking, undervolting, XMP/EXPO, PBO, or Curve Optimizer, revert to stable settings and retest.
 
 ---
 
-## 12. Export diagnostics
+## Export diagnostics
 
-System info to desktop:
+Save system information to the desktop:
 
 ```powershell
 systeminfo | Out-File -Encoding utf8 "$env:USERPROFILE\Desktop\systeminfo.txt"
 ```
 
-Driver list to CSV:
+Save the driver list to CSV:
 
 ```powershell
 driverquery /v /fo csv | Out-File -Encoding utf8 "$env:USERPROFILE\Desktop\drivers.csv"
@@ -321,9 +314,13 @@ driverquery /v /fo csv | Out-File -Encoding utf8 "$env:USERPROFILE\Desktop\drive
 
 ## Checklist
 
-- [ ] Commands are used with clear purpose.
-- [ ] Admin mode is used only when required.
-- [ ] Results are validated in-game (FPS, 1% low, frametime, stability).
-- [ ] Unknown processes/services are not modified blindly.
+- [ ] Commands are used with a clear purpose.
+- [ ] Administrator mode is used only when required.
+- [ ] Results are validated in-game: FPS, 1% lows, frame times, and stability.
+- [ ] Unknown processes and services are not modified blindly.
 
-Next step: [Temperatures, stability, and maintenance](https://h4zvenn.github.io/gaming-pc-guide/docs/10-temperatures-stability.html).
+---
+
+## Next step
+
+[Temperatures, Stability & Maintenance](10-temperatures-stability.html)
