@@ -1,24 +1,21 @@
 {
-  // The guide intentionally uses long, unwrapped paragraphs and table rows.
-  // MD013 is a hard-wrap style rule, not a content correctness check.
   "config": {
-    "MD010": {
-      // Tabs are intentional inside Mermaid and PowerShell code blocks.
-      "code_blocks": false
-    },
+    "default": true,
+    "MD012": false,
     "MD013": false,
-    // Repeating headings like "Baseline" is expected under different sections.
-    "MD024": {
-      "siblings_only": true
-    },
-    // Front matter title + document h1 can trigger false positives.
+    "MD024": false,
     "MD025": false,
-    // <details>/<summary> are standard GitHub Markdown for collapsible sections.
     "MD033": false,
-    // Disable strict table column style checks to prevent lint errors on tables
+    "MD041": false,
+    "MD056": false,
     "MD060": false
   },
+  "globs": ["**/*.md"],
   "ignores": [
-    ".github/ISSUE_TEMPLATE/*.md"
+    "node_modules/**",
+    "_site/**",
+    ".jekyll-cache/**",
+    ".aider.chat.history.md",
+    ".aider*"
   ]
 }

@@ -99,4 +99,3 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 ---
 
 `Last Updated: 2026-10-30` • `Target: Windows 11 (22H2+)` • [Report Issue](https://github.com/h4zvenn/gaming-pc-guide/issues) • [Discussions](https://github.com/h4zvenn/gaming-pc-guide/discussions)
-```

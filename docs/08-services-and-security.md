@@ -342,6 +342,59 @@ Before running any script:
 
 ---
 
+### Practical service review
+
+Review only third-party services. Do not disable system services from copied lists.
+
+```powershell
+Get-CimInstance Win32_Service |
+  Where-Object { $_.PathName -and $_.PathName -notmatch 'Windows|Microsoft' } |
+  Select-Object Name, DisplayName, State, StartMode, PathName |
+  Format-Table -AutoSize
+```
+
+### Safe candidates
+
+| Service | Recommended state | When |
+|---|---|---|
+| `XboxService` | `Manual` | Xbox Game Bar is not used |
+| `LGHUBUpdaterService` | `Manual` | Constant Logitech background updates are not needed |
+
+```powershell
+Set-Service -Name XboxService -StartupType Manual
+Stop-Service -Name XboxService -ErrorAction SilentlyContinue
+
+Set-Service -Name LGHUBUpdaterService -StartupType Manual
+Stop-Service -Name LGHUBUpdaterService -ErrorAction SilentlyContinue
+```
+
+### Services to leave alone
+
+| Service | Reason |
+|---|---|
+| `NvContainerLocalSystem` | Required by NVIDIA App and driver components |
+| `Steam Client Service` | Required for Steam functionality |
+| Windows Update | Security and stability |
+| Microsoft Defender | Malware protection |
+| Audio services | Required for sound |
+| WLAN AutoConfig | Required for Wi-Fi |
+
+### Restore a service
+
+```powershell
+Set-Service -Name 'SERVICE_NAME' -StartupType Automatic
+Start-Service -Name 'SERVICE_NAME'
+```
+
+### Third-party service audit
+
+```powershell
+Get-CimInstance Win32_Service |
+  Where-Object { $_.PathName -and $_.PathName -notmatch 'Windows|Microsoft' } |
+  Select-Object Name, DisplayName, State, StartMode, PathName |
+  Format-Table -AutoSize
+```
+
 ## Checklist
 
 - [ ] Windows services are not disabled вЂњby list.вЂќ

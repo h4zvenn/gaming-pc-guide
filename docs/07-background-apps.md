@@ -101,6 +101,53 @@ Disable apps that should not launch with Windows every boot.
 - security software if it is your only active antivirus;
 - critical corporate/VPN clients required for work.
 
+### Check startup entries with PowerShell
+
+```powershell
+Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -ErrorAction SilentlyContinue |
+  Select-Object * -ExcludeProperty PS* |
+  Format-List
+
+Get-CimInstance Win32_StartupCommand |
+  Select-Object Name, Command, Location |
+  Format-List
+```
+
+### Disable a startup entry
+
+This does not uninstall the application; it only prevents it from starting with Windows.
+
+```powershell
+$run = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run'
+
+$disable = @(
+  'Discord',
+  'RiotClient',
+  'RobloxPlayerBeta'
+)
+
+foreach ($name in $disable) {
+  if (Get-ItemProperty -Path $run -Name $name -ErrorAction SilentlyContinue) {
+    Remove-ItemProperty -Path $run -Name $name
+    Write-Host "Disabled: $name"
+  } else {
+    Write-Host "Not found: $name"
+  }
+}
+```
+
+### Recommended startup policy
+
+| Application | Recommendation |
+|---|---|
+| Discord | Disable unless you need it immediately |
+| Riot Client | Disable unless you play Riot games daily |
+| Roblox | Disable |
+| Steam | Optional |
+| Logitech G HUB | Optional |
+| NVIDIA | Do not disable |
+
+
 > [!TIP]
 > Disabling startup does not uninstall the app. You can always launch it manually or re-enable startup later.
 

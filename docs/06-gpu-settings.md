@@ -29,6 +29,26 @@ title: "06-gpu-settings"
 
 ---
 
+### Full startup audit
+
+```powershell
+Write-Host "`n===== STARTUP AUDIT ====="
+
+Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -ErrorAction SilentlyContinue |
+  Select-Object * -ExcludeProperty PS* |
+  Format-List
+
+Get-CimInstance Win32_StartupCommand |
+  Select-Object Name, Command, Location |
+  Format-List
+
+Get-ChildItem "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup" -ErrorAction SilentlyContinue |
+  Select-Object Name, FullName |
+  Format-List
+```
+
+
+
 ## 1. General settings for any GPU
 
 ### Resolution and render scale
