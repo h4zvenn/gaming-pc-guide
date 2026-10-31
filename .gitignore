@@ -5,7 +5,7 @@
 *.userosscache
 *.sln.docstates
 
-# Build output (if any tooling is added later)
+# Build output
 bin/
 obj/
 out/
@@ -18,12 +18,19 @@ Thumbs.db
 # Logs
 *.log
 
-# Node / package managers (future-proof)
+# Node / package managers
 node_modules/
 
-# Python caches (future-proof)
+# Python caches
 __pycache__/
 *.pyc
+
+# AI assistant history
 .aider*
 
+# Jekyll
 _site/
+.jekyll-cache/
+
+# VS Code
+.vscode/
