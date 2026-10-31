@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "11-what-not-to-do"
+description: "Avoid risky debloat scripts, registry hacks, RAM cleaners, and blanket service disabling."
+lang: en
+translation_key: what-not-to-do
+permalink: /docs/11-what-not-to-do.html
 ---
 
 # 11. What Not to Do

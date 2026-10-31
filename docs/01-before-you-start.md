@@ -3,6 +3,8 @@ layout: doc
 title: "Preparation Before Optimization"
 lang: en
 translation_key: before-you-start
+description: "Create a restore point, record baseline performance, and prepare Windows 11 before optimization."
+permalink: /docs/01-before-you-start.html
 ---
 
 # 01. Preparation Before Optimization

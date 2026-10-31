@@ -1,3 +1,12 @@
+---
+layout: doc
+title: "19. AI Software and Disk Cleanup"
+description: "Remove unused AI tools and reclaim disk space without breaking required applications."
+lang: en
+translation_key: ai-software-and-disk-cleanup
+permalink: /docs/19-ai-software-and-disk-cleanup.html
+---
+
 # 19. AI Software and Disk Cleanup
 
 ## Applicability

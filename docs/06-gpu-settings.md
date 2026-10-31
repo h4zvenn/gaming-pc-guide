@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "06-gpu-settings"
+description: "Configure NVIDIA, AMD, and Intel graphics settings for performance, latency, and visual quality."
+lang: en
+translation_key: gpu-settings
+permalink: /docs/06-gpu-settings.html
 ---
 
 # 06. GPU Settings

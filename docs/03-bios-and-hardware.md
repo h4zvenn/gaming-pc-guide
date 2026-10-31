@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "03-bios-and-hardware"
+description: "Review BIOS and hardware settings that affect gaming performance, stability, and memory configuration."
+lang: en
+translation_key: bios-and-hardware
+permalink: /docs/03-bios-and-hardware.html
 ---
 
 # 03. BIOS and Hardware

@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "pubg"
+description: "PUBG settings, anti-cheat considerations, graphics options, and performance testing."
+lang: en
+translation_key: game-pubg
+permalink: /docs/games/pubg.html
 ---
 
 # PUBG: BATTLEGROUNDS — Game Page (Stub)

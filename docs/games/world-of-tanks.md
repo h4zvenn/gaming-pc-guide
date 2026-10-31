@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "world-of-tanks"
+description: "World of Tanks settings, Mod Hub safety, client options, and performance testing."
+lang: en
+translation_key: game-world-of-tanks
+permalink: /docs/games/world-of-tanks.html
 ---
 
 # World of Tanks — Game Page (Stub)

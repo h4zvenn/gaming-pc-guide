@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "13-security-hardening-baseline"
+description: "Maintain a safe Windows security baseline while optimizing a gaming PC."
+lang: en
+translation_key: security-hardening-baseline
+permalink: /docs/13-security-hardening-baseline.html
 ---
 
 # 13) Security Hardening Baseline (Gaming PC, Windows 11)

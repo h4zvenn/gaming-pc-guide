@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "18-optimization-tools-evidence"
+description: "Evaluate third-party optimization tools based on evidence, risks, and measurable results."
+lang: en
+translation_key: optimization-tools-evidence
+permalink: /docs/18-optimization-tools-evidence.html
 ---
 
 # 18. Third-Party Optimization Tools: Evidence

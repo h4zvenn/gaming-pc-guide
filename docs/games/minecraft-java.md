@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "minecraft-java"
+description: "Minecraft Java performance settings, JVM options, mods, and testing guidance."
+lang: en
+translation_key: game-minecraft-java
+permalink: /docs/games/minecraft-java.html
 ---
 
 # Minecraft Java Edition — Game Page (Stub)

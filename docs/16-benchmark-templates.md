@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "16-benchmark-templates"
+description: "Measure performance changes with repeatable tests and record results before and after optimization."
+lang: en
+translation_key: benchmark-templates
+permalink: /docs/16-benchmark-templates.html
 ---
 
 # 16. Benchmark Templates and Measurement Rules

@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "10-temperatures-stability"
+description: "Check temperatures, throttling, cooling, and system stability before changing performance settings."
+lang: en
+translation_key: temperatures-stability
+permalink: /docs/10-temperatures-stability.html
 ---
 
 # 10. Temperatures, Stability, and Maintenance

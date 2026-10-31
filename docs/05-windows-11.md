@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "05-windows-11"
+description: "Review Windows 11 settings that affect gaming, background activity, power, and system behavior."
+lang: en
+translation_key: windows-11
+permalink: /docs/05-windows-11.html
 ---
 
 # 05. Windows 11 Tuning

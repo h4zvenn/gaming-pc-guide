@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "cs2"
+description: "Counter-Strike 2 settings, latency, FPS caps, configuration, and testing guidance."
+lang: en
+translation_key: game-cs2
+permalink: /docs/games/cs2.html
 ---
 
 # Counter-Strike 2 (CS2) — Comprehensive Optimization Guide

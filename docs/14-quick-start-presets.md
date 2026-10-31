@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "14-quick-start-presets"
+description: "Starting optimization checklists for common gaming PC configurations."
+lang: en
+translation_key: quick-start-presets
+permalink: /docs/14-quick-start-presets.html
 ---
 
 # 14. Quick-Start Presets by PC Tier

@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "valorant"
+description: "VALORANT settings, Vanguard compatibility, latency, and competitive performance guidance."
+lang: en
+translation_key: game-valorant
+permalink: /docs/games/valorant.html
 ---
 
 # VALORANT — Game Page (Stub)

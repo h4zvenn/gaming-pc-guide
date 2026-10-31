@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "02-find-the-bottleneck"
+description: "Identify whether CPU, GPU, memory, storage, thermals, or background activity limits gaming performance."
+lang: en
+translation_key: find-the-bottleneck
+permalink: /docs/02-find-the-bottleneck.html
 ---
 
 # 02. Finding the Bottleneck

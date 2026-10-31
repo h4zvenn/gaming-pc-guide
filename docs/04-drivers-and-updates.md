@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "04-drivers-and-updates"
+description: "Manage chipset, GPU, and peripheral drivers safely without unnecessary clean installations."
+lang: en
+translation_key: drivers-and-updates
+permalink: /docs/04-drivers-and-updates.html
 ---
 
 # 04. Drivers and Updates

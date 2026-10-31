@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: "15-troubleshooting-decision-trees"
+description: "Structured troubleshooting paths for crashes, freezes, network issues, and unstable performance."
+lang: en
+translation_key: troubleshooting-decision-trees
+permalink: /docs/15-troubleshooting-decision-trees.html
 ---
 
 # 15. Troubleshooting Decision Trees
