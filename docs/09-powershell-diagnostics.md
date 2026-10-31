@@ -244,7 +244,7 @@ Test-Connection 1.1.1.1 -Count 10
 To measure latency to the server you actually play on:
 
 1. Identify the game server region or address from launcher/game logs.
-2. Run a short 5вЂ“10 minute latency and loss test toward that host.
+2. Run a short 5–10 minute latency and loss test toward that host.
 3. Record min/avg/max latency and packet loss.
 4. Repeat on Wi-Fi and Ethernet if you want to separate wireless noise from real network latency.
 

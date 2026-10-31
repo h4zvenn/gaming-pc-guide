@@ -45,7 +45,7 @@ This is especially noticeable on PCs with limited RAM, weaker CPUs, slower stora
    - GPU.
 4. Identify which app creates the load.
 
-Do not end a process if you do not know what it is. First right-click в†’ `Open file location`, or search the app name.
+Do not end a process if you do not know what it is. First right-click → `Open file location`, or search the app name.
 
 ### PowerShell: processes with highest total CPU time
 
@@ -74,7 +74,7 @@ Select-Object -First 20 Name, Id,
 Open:
 
 ```text
-Task Manager в†’ Startup apps
+Task Manager → Startup apps
 ```
 
 Disable apps that should not launch with Windows every boot.
@@ -172,7 +172,7 @@ This command shows what Windows tries to launch at sign-in.
 
 ## 4. Browser
 
-Modern browsers can consume significant RAM, CPU, GPU, and networkвЂ”especially with video playback, streams, dozens of tabs, and many extensions.
+Modern browsers can consume significant RAM, CPU, GPU, and network—especially with video playback, streams, dozens of tabs, and many extensions.
 
 Before gaming:
 

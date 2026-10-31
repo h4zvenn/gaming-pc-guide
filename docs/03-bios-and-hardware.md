@@ -136,8 +136,8 @@ What to do:
 On modern systems with a compatible CPU, GPU, motherboard, and driver, these are usually worth testing:
 
 ```text
-Above 4G Decoding в†’ Enabled
-Resizable BAR / Re-Size BAR в†’ Enabled
+Above 4G Decoding → Enabled
+Resizable BAR / Re-Size BAR → Enabled
 ```
 
 On AMD this may be called **Smart Access Memory**.
@@ -205,9 +205,9 @@ This is an optional advanced step, mostly relevant for some AMD Ryzen setups.
 
 ### What these settings mean
 
-- **PBO (Precision Boost Overdrive)** вЂ” changes power/current limits that govern automatic boost behavior.
-- **Curve Optimizer (CO)** вЂ” adjusts the voltage/frequency curve. Negative values can reduce required voltage and sometimes improve boost, but too much can cause errors.
-- **Manual all-core overclock** вЂ” locks/sets all-core frequency manually. On modern CPUs this can reduce automatic single-thread boost behavior.
+- **PBO (Precision Boost Overdrive)** — changes power/current limits that govern automatic boost behavior.
+- **Curve Optimizer (CO)** — adjusts the voltage/frequency curve. Negative values can reduce required voltage and sometimes improve boost, but too much can cause errors.
+- **Manual all-core overclock** — locks/sets all-core frequency manually. On modern CPUs this can reduce automatic single-thread boost behavior.
 
 ### Safe approach
 
@@ -222,7 +222,7 @@ This is an optional advanced step, mostly relevant for some AMD Ryzen setups.
 
 1. Press `Win`.
 2. Open `Event Viewer`.
-3. Go to `Windows Logs в†’ System`.
+3. Go to `Windows Logs → System`.
 4. Find events with source `WHEA-Logger`.
 
 > [!IMPORTANT]
@@ -260,9 +260,9 @@ Can be configured in BIOS, motherboard vendor software, or reliable monitoring t
 
 Principle:
 
-- at low temperature вЂ” moderate fan speed and low noise;
-- as temperature rises вЂ” smooth fan ramp;
-- avoid sharp jumps every 1вЂ“2 В°C to prevent constant speed oscillation.
+- at low temperature — moderate fan speed and low noise;
+- as temperature rises — smooth fan ramp;
+- avoid sharp jumps every 1–2 В°C to prevent constant speed oscillation.
 
 ---
 

@@ -21,7 +21,7 @@ title: "14-quick-start-presets"
 
 ---
 
-## Preset A вЂ” Entry-level / older gaming PC
+## Preset A — Entry-level / older gaming PC
 
 ### Goal
 
@@ -46,7 +46,7 @@ Improve smoothness and 1% low without risky tuning.
 
 ---
 
-## Preset B вЂ” Mid-range gaming PC
+## Preset B — Mid-range gaming PC
 
 ### Goal
 
@@ -70,7 +70,7 @@ Balance visual quality and stable high FPS.
 
 ---
 
-## Preset C вЂ” High-end / high-refresh target
+## Preset C — High-end / high-refresh target
 
 ### Goal
 
@@ -94,7 +94,7 @@ Maximize consistency at high FPS (165вЂ“360 Hz class).
 
 ---
 
-## Preset D вЂ” Gaming laptop (performance + thermals)
+## Preset D — Gaming laptop (performance + thermals)
 
 ### Goal
 

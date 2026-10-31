@@ -51,8 +51,8 @@ For modern compatible CPU/GPU/motherboard combinations, usually yes.
 Enable in BIOS:
 
 ```text
-Above 4G Decoding в†’ Enabled
-Resizable BAR / Re-Size BAR в†’ Enabled
+Above 4G Decoding → Enabled
+Resizable BAR / Re-Size BAR → Enabled
 ```
 
 On AMD it may also be called Smart Access Memory.
@@ -91,7 +91,7 @@ For most gaming PCs: yes.
 Open:
 
 ```text
-Settings в†’ Gaming в†’ Game Mode в†’ On
+Settings → Gaming → Game Mode → On
 ```
 
 Disable only for troubleshooting if a specific game consistently performs worse with Game Mode enabled.
@@ -105,7 +105,7 @@ Test it.
 Open:
 
 ```text
-Settings в†’ System в†’ Display в†’ Graphics в†’ Change default graphics settings
+Settings → System → Display → Graphics → Change default graphics settings
 ```
 
 Enable HAGS, reboot, and compare FPS, 1% low, frametime, and stability in your games. Some systems improve, others show no change or issues. Keep it only if the result is repeatable; otherwise disable it and reboot again.
@@ -138,7 +138,7 @@ powercfg /getactivescheme
 
 This is mostly a usability preference, not a major FPS method.
 
-On modern PCs, disabling desktop animations rarely has significant in-game impact. If you prefer simpler UI, disable themвЂ”but do not expect major gains.
+On modern PCs, disabling desktop animations rarely has significant in-game impact. If you prefer simpler UI, disable them—but do not expect major gains.
 
 ---
 
@@ -237,7 +237,7 @@ Use the one supported by game that gives best image/FPS balance on your GPU.
 Start with:
 
 ```text
-Quality в†’ Balanced в†’ Performance
+Quality → Balanced → Performance
 ```
 
 Compare not only FPS, but also sharpness, motion quality, artifacts, and 1% low.
@@ -291,7 +291,7 @@ Instead of one вЂњcorrect number,вЂќ evaluate:
 - crashes;
 - FPS degradation after long sessions.
 
-If performance is stable, no errors appear, and components do not hit critical limitsвЂ”high but expected load temperature is not always a problem.
+If performance is stable, no errors appear, and components do not hit critical limits—high but expected load temperature is not always a problem.
 
 ---
 
@@ -380,6 +380,6 @@ Use PowerShell primarily for diagnostics: [PowerShell: checks and diagnostics](0
 
 ## Summary
 
-Optimization is a sequential process: measure в†’ find bottleneck в†’ change one setting в†’ test в†’ keep or rollback. If there is no specific issue, do not chase risky tweaks: stable system, up-to-date drivers, proper cooling, and clean background already provide most of the result.
+Optimization is a sequential process: measure → find bottleneck → change one setting → test → keep or rollback. If there is no specific issue, do not chase risky tweaks: stable system, up-to-date drivers, proper cooling, and clean background already provide most of the result.
 
 Back to main page: [README](../README.md).

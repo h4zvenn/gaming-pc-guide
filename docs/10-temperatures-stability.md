@@ -38,7 +38,7 @@ During gaming or benchmarking, track:
 
 | Symptom | First check |
 | --- | --- |
-| FPS drops over time | CPU/GPU temp + clocks after 30вЂ“60 min |
+| FPS drops over time | CPU/GPU temp + clocks after 30–60 min |
 | Fans suddenly loud | Thermal limit / fan curve / dust filters |
 | Random stutter under load | Hotspot/VRAM temp + power limit behavior |
 
@@ -50,7 +50,7 @@ Throttling is clock/performance reduction to stay within thermal, power, or othe
 
 ### Typical signs
 
-- FPS drops after 10вЂ“60 minutes of gaming;
+- FPS drops after 10–60 minutes of gaming;
 - temperature rises while CPU/GPU clocks decrease;
 - fans become very loud;
 - performance worsens in a hot room;
@@ -157,8 +157,8 @@ NVMe SSD can heat up during game installs, archive extraction, large copies, and
 
 Good airflow usually follows a simple pattern:
 
-- front/bottom case area вЂ” cool air intake;
-- rear/top area вЂ” hot air exhaust.
+- front/bottom case area — cool air intake;
+- rear/top area — hot air exhaust.
 
 ### Basic recommendations
 

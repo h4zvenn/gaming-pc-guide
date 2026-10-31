@@ -26,7 +26,7 @@ Do not disable a service until you can answer three questions:
 | Update-related load | Pause/schedule updates, do not disable services |
 | Unknown service name | Research origin and file path first |
 
-Third-party tools that apply service, registry, or debloat changes вЂ” for example BoosterX background services, Hone registry optimizations, GTtwick, Sparkle, RyTuneX, Exoptimizer, and BRUTAL-FPS process tuning вЂ” must follow the same guardrails described here: one area at a time, keep a rollback path, and do not blanket-disable critical services or security protections.
+Third-party tools that apply service, registry, or debloat changes — for example BoosterX background services, Hone registry optimizations, GTtwick, Sparkle, RyTuneX, Exoptimizer, and BRUTAL-FPS process tuning — must follow the same guardrails described here: one area at a time, keep a rollback path, and do not blanket-disable critical services or security protections.
 
 ---
 
@@ -116,7 +116,7 @@ If CPU/disk/RAM/network usage is high, do not jump straight into `services.msc`.
 Open:
 
 ```text
-Ctrl + Shift + Esc в†’ Task Manager в†’ Processes
+Ctrl + Shift + Esc → Task Manager → Processes
 ```
 
 Sort by:
@@ -131,7 +131,7 @@ Sort by:
 
 - Right-click the process.
 - Select `Open file location`.
-- Open `Properties` в†’ `Digital Signatures`.
+- Open `Properties` → `Digital Signatures`.
 - Identify app name and verify if it is needed.
 
 ### Step 3. Find related service
@@ -145,7 +145,7 @@ Services
 Or:
 
 ```text
-Win + R в†’ services.msc
+Win + R → services.msc
 ```
 
 Do not change startup type before understanding service relation to app or driver.
@@ -216,7 +216,7 @@ Windows Update and BITS handle updates, including security and driver updates.
 
 Instead of disabling services:
 
-1. Open `Settings в†’ Windows Update`.
+1. Open `Settings → Windows Update`.
 2. Pause updates briefly if needed.
 3. Configure active hours.
 4. Let updates complete after gaming.
@@ -297,7 +297,7 @@ Safe sequence:
 5. If app is unnecessary, uninstall it via:
 
     ```text
-    Settings в†’ Apps в†’ Installed apps
+    Settings → Apps → Installed apps
     ```
 
 6. Reboot and verify system behavior.

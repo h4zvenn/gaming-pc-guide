@@ -22,7 +22,7 @@ title: "06-gpu-settings"
 | Order | Action |
 | --- | --- |
 | 1 | Set in-game resolution/quality |
-| 2 | Pick upscaler mode (Quality в†’ Balanced в†’ Performance) |
+| 2 | Pick upscaler mode (Quality → Balanced → Performance) |
 | 3 | Set FPS cap for stable frametime |
 | 4 | Tune VRR/V-Sync behavior |
 | 5 | Apply only one driver tweak at a time |
@@ -103,7 +103,7 @@ Typical priority:
 Example:
 
 ```text
-System outputs 180вЂ“260 FPS but often drops to 165 FPS.
+System outputs 180–260 FPS but often drops to 165 FPS.
 A 165 or 170 FPS cap may provide smoother frametime than uncapped fluctuation.
 ```
 
@@ -160,7 +160,7 @@ Globally, keep default in most cases.
 For a specific game with clock/power-saving behavior issues, you can test:
 
 ```text
-Power management mode в†’ Prefer maximum performance
+Power management mode → Prefer maximum performance
 ```
 
 Possible effects:
@@ -183,9 +183,9 @@ If a game does not have Reflex, test Low Latency Mode in the driver profile.
 
 Modes can differ by driver version, but generally:
 
-- `Off` вЂ” default queue behavior;
-- `On` вЂ” limits pre-rendered frames;
-- `Ultra` вЂ” more aggressive queue minimization.
+- `Off` — default queue behavior;
+- `On` — limits pre-rendered frames;
+- `Ultra` — more aggressive queue minimization.
 
 Do not enable Low Latency Mode globally for all apps. Test per game.
 
@@ -193,7 +193,7 @@ Do not enable Low Latency Mode globally for all apps. Test per game.
 
 In game profile, test texture filtering quality mode.
 
-- `Quality` вЂ” reasonable default.
+- `Quality` — reasonable default.
 - Performance-priority mode can give a small gain on weak GPUs, but may degrade image quality.
 
 Do not change this without comparing image and FPS.

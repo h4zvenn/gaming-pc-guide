@@ -5,7 +5,7 @@ title: "_template"
 
 # Game Page Template
 
-> Copy this file to `docs/games/<game-slug>.md` and fill in every section. Do not duplicate common base content вЂ” link to it.
+> Copy this file to `docs/games/<game-slug>.md` and fill in every section. Do not duplicate common base content — link to it.
 
 ## Applicability
 
@@ -19,7 +19,7 @@ title: "_template"
 
 ## Quick Start
 
-1. Complete the common base: [Preparation](../01-before-you-start.md) в†’ [Bottleneck](../02-find-the-bottleneck.md) в†’ [BIOS/Hardware](../03-bios-and-hardware.md) в†’ [Drivers](../04-drivers-and-updates.md) в†’ [Windows](../05-windows-11.md) в†’ [GPU](../06-gpu-settings.md) в†’ [Background](../07-background-apps.md) в†’ [Security/Services](../08-services-and-security.md) в†’ [Diagnostics](../09-powershell-diagnostics.md) в†’ [Thermals/Stability](../10-temperatures-stability.md).
+1. Complete the common base: [Preparation](../01-before-you-start.md) → [Bottleneck](../02-find-the-bottleneck.md) → [BIOS/Hardware](../03-bios-and-hardware.md) → [Drivers](../04-drivers-and-updates.md) → [Windows](../05-windows-11.md) → [GPU](../06-gpu-settings.md) → [Background](../07-background-apps.md) → [Security/Services](../08-services-and-security.md) → [Diagnostics](../09-powershell-diagnostics.md) → [Thermals/Stability](../10-temperatures-stability.md).
 2. Apply only the game-specific items below that match your symptom.
 3. Validate with the [Benchmark template](../16-benchmark-templates.md).
 4. Keep only what improves your metrics without instability.
@@ -30,13 +30,13 @@ title: "_template"
 - **OS / API requirements:** `Windows 10/11, DirectX 11/12/Vulkan, specific build if relevant`
 - **Known incompatibilities:** `overlays, injectors, specific drivers, OS features that break the game`
 
-## Graphics Settings вЂ” Tradeoffs
+## Graphics Settings — Tradeoffs
 
 | Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
 | --- | --- | --- | --- | --- |
 | Resolution | | | | Native |
 | Render scale | | | | 100% |
-| Upscaler (DLSS/FSR/XeSS) | | | | Quality в†’ Balanced |
+| Upscaler (DLSS/FSR/XeSS) | | | | Quality → Balanced |
 | Anti-aliasing | | | | |
 | Shadows | | | | |
 | Reflections / RT | | | | |
@@ -93,7 +93,7 @@ title: "_template"
 
 - Primary: `official patch notes, developer blog, vendor docs, support KB`
 - Secondary: `technical publications, vendor-adjacent testing`
-- Community: `forums, Reddit, videos вЂ” hypothesis only`
+- Community: `forums, Reddit, videos — hypothesis only`
 
 > Mark each recommendation with: `verified` | `needs-verification` | `deprecated` and the date.
 

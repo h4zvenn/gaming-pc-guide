@@ -52,7 +52,7 @@ If your system is already configured and stable, you do not need to reinstall ev
 Open:
 
 ```text
-Settings в†’ Windows Update
+Settings → Windows Update
 ```
 
 Click:
@@ -169,7 +169,7 @@ Clean install is needed only for symptoms like:
 
 For NVIDIA, choose clean installation option if available in installer. For AMD, use Factory Reset only if you understand that driver settings will be reset.
 
-### DDU вЂ” only when truly needed
+### DDU — only when truly needed
 
 Display Driver Uninstaller fully removes GPU drivers. It can help with severe conflicts, but it is not required before every update.
 
@@ -251,7 +251,7 @@ Before updating SSD firmware:
 1. Press `Win + X`.
 2. Open `Device Manager`.
 3. Check for devices with yellow warning icons.
-4. Open target device properties в†’ `Driver` tab.
+4. Open target device properties → `Driver` tab.
 
 ### GPU information via PowerShell
 

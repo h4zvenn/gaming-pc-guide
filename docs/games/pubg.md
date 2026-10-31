@@ -3,7 +3,7 @@ layout: doc
 title: "pubg"
 ---
 
-# PUBG: BATTLEGROUNDS вЂ” Game Page (Stub)
+# PUBG: BATTLEGROUNDS — Game Page (Stub)
 
 > Pilot expansion. Fill after source audit and template agreement.
 
@@ -28,9 +28,9 @@ title: "pubg"
 
 - **Anti-cheat constraints:** BattlEye kernel driver. No file modifications, no overlay injection, no unsigned drivers. Replay system may conflict with some overlays.
 - **OS / API requirements:** Windows 10 1809+ / Windows 11; DirectX 11 (default) / DirectX 12 (optional, `-d3d12`).
-- **Known incompatibilities:** ReShade and some injectors blocked. Discord/Steam/NVIDIA overlays may cause crashes вЂ” test clean.
+- **Known incompatibilities:** ReShade and some injectors blocked. Discord/Steam/NVIDIA overlays may cause crashes — test clean.
 
-## Graphics Settings вЂ” Tradeoffs
+## Graphics Settings — Tradeoffs
 
 | Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
 | --- | --- | --- | --- | --- |
@@ -62,16 +62,16 @@ title: "pubg"
 
 - **Config location:** `%LOCALAPPDATA%\TslGame\Saved\Config\WindowsNoEditor\` (`GameUserSettings.ini`).
 - **Verified launch options (current patch):**
-  - `-USEALLAVAILABLECORES` вЂ” attempt to use all cores (test).
-  - `-d3d12` вЂ” force DirectX 12 (test stability).
-  - `-novid` вЂ” skip intro.
+  - `-USEALLAVAILABLECORES` — attempt to use all cores (test).
+  - `-d3d12` — force DirectX 12 (test stability).
+  - `-novid` — skip intro.
 - **Do not use:** `-high`, `-malloc=system`, `-sm4`, `-nomansky`, legacy UE4 options copied from other games.
 
 ## Common Issues & Diagnosis
 
 | Symptom | First check | Link |
 | --- | --- | --- |
-| BattlEye initialization failed | Verify game files, reinstall BattlEye via launcher | вЂ” |
+| BattlEye initialization failed | Verify game files, reinstall BattlEye via launcher | — |
 | Low FPS, CPU-bound | Lower View Distance, Foliage, Effects; test DX12 | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
 | Stutter on new areas | Texture streaming, SSD space, shader cache | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
 | Input latency | FPS cap, disable V-Sync, test DX12 | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings.html) |
@@ -80,7 +80,7 @@ title: "pubg"
 ## Benchmark Scenario
 
 - **Scene:** Replay file (fixed timestamp, fixed camera route) or Training Mode (fixed bot route).
-- **Warm-up:** 3вЂ“5 minutes (asset streaming).
+- **Warm-up:** 3–5 minutes (asset streaming).
 - **Runs:** в‰Ґ3.
 - **Metrics:** avg FPS, 1% low, p99 frametime, GPU busy, CPU core saturation, temps.
 
@@ -94,7 +94,7 @@ title: "pubg"
 ## Sources
 
 - Primary: PUBG patch notes, BattlEye FAQ, NVIDIA/AMD driver notes for PUBG.
-- Secondary: вЂ”
-- Community: вЂ”
+- Secondary: —
+- Community: —
 
 Back to main guide: [README]({{ '/' | relative_url }}).

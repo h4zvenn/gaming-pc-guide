@@ -21,7 +21,7 @@ If a tweak:
 do not apply it on your main PC.
 
 > [!IMPORTANT]
-> Good optimization means measurable results, stability, and rollback capabilityвЂ”not maximum number of disabled features.
+> Good optimization means measurable results, stability, and rollback capability—not maximum number of disabled features.
 
 ---
 
@@ -170,7 +170,7 @@ Page file is used by Windows and some applications. Fully disabling it can cause
 For most users, best option is:
 
 ```text
-Page file в†’ Automatically manage paging file size
+Page file → Automatically manage paging file size
 ```
 
 Change manually only for a specific problem with clear understanding of consequences.

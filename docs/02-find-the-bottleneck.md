@@ -63,10 +63,10 @@ During testing, monitor:
 
 | Symptom | Possible cause | Check first |
 | --- | --- | --- |
-| GPU busy stays around 95вЂ“99% with no cap, FPS is too low | GPU limit | Resolution, render scale, RT, shadows, upscaler, GPU temp |
+| GPU busy stays around 95–99% with no cap, FPS is too low | GPU limit | Resolution, render scale, RT, shadows, upscaler, GPU temp |
 | GPU not saturated, FPS does not increase, one CPU core near 100% | CPU limit | CPU-related settings, background tasks, RAM, CPU temp |
 | Average FPS looks fine but hard stutter appears | RAM/VRAM, SSD, shaders, background load, instability | Frametime, memory usage, background downloads, WHEA, temps |
-| FPS drops gradually after 20вЂ“60 minutes | Thermal or memory saturation | Temps, clocks, VRAM/RAM usage, fan behavior |
+| FPS drops gradually after 20–60 minutes | Thermal or memory saturation | Temps, clocks, VRAM/RAM usage, fan behavior |
 | Camera movement feels jerky | Uneven frametime, shader compilation, data streaming | Frametime, SSD, VRAM, background apps |
 | PC freezes/reboots or game crashes | Unstable OC, driver issue, RAM, power, thermals | Stock settings, event logs, temperatures |
 
@@ -76,7 +76,7 @@ During testing, monitor:
 
 ### Typical signs
 
-GPU usage is usually around 95вЂ“99%, and changing resolution/graphics has a clear FPS impact.
+GPU usage is usually around 95–99%, and changing resolution/graphics has a clear FPS impact.
 
 Signs:
 
@@ -138,7 +138,7 @@ This often happens:
 
 ### Important nuance
 
-Total CPU usage at 30вЂ“50% does not rule out a CPU bottleneck. A game may be blocked by one busy thread while other cores are lightly used.
+Total CPU usage at 30–50% does not rule out a CPU bottleneck. A game may be blocked by one busy thread while other cores are lightly used.
 
 ---
 
@@ -249,7 +249,7 @@ Do not use вЂњRAM cleanersвЂќ or forced memory cleanup tools. They can evi
 
 1. Return CPU/GPU/RAM overclocks to stock.
 2. Verify stability without tweaks.
-3. Open `Event Viewer в†’ Windows Logs в†’ System` and check WHEA entries.
+3. Open `Event Viewer → Windows Logs → System` and check WHEA entries.
 4. Verify temperatures and power delivery.
 5. After each change, test in real games and stress tests.
 
@@ -265,7 +265,7 @@ Use this order:
 
 1. Remove the FPS cap and V-Sync, then record FPS, 1% low, frametime, and temperatures.
 2. Check GPU busy time, not only the Task Manager percentage.
-3. If GPU busy is near 99% вЂ” start with graphics, resolution, and VRAM.
+3. If GPU busy is near 99% — start with graphics, resolution, and VRAM.
 4. If GPU busy is lower, check CPU cores/threads, RAM, background processes, and CPU temperature.
 5. For stutters, check RAM, VRAM, SSD, shader compilation, and background downloads.
 6. If performance degrades over time, check thermals.
