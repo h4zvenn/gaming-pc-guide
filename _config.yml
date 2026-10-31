@@ -4,9 +4,26 @@ baseurl: "/gaming-pc-guide"
 url: "https://h4zvenn.github.io"
 markdown: kramdown
 
+lang: en
+
 defaults:
   - scope:
+      path: ""
+    values:
+      lang: en
+
+  - scope:
       path: "docs"
+    values:
+      layout: doc
+
+  - scope:
+      path: "ru"
+    values:
+      lang: ru
+
+  - scope:
+      path: "ru/docs"
     values:
       layout: doc
 

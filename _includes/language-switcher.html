@@ -1,0 +1,26 @@
+{% assign current_lang = page.lang | default: 'en' %}
+{% assign english_url = '/' %}
+{% assign russian_url = '/ru/' %}
+
+{% if page.translation_key %}
+  {% assign translations = site.pages | where: 'translation_key', page.translation_key %}
+  {% for translated_page in translations %}
+    {% if translated_page.lang == 'en' %}
+      {% assign english_url = translated_page.url %}
+    {% elsif translated_page.lang == 'ru' %}
+      {% assign russian_url = translated_page.url %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<nav class="language-switcher" aria-label="Language">
+  <a href="{{ english_url | relative_url }}"
+     lang="en"
+     hreflang="en"
+     {% if current_lang == 'en' %}aria-current="true"{% endif %}>EN</a>
+  <span aria-hidden="true"> / </span>
+  <a href="{{ russian_url | relative_url }}"
+     lang="ru"
+     hreflang="ru"
+     {% if current_lang == 'ru' %}aria-current="true"{% endif %}>RU</a>
+</nav>

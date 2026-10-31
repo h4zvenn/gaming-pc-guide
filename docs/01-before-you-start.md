@@ -1,6 +1,8 @@
 ﻿---
 layout: doc
-title: "01-before-you-start"
+title: "Preparation Before Optimization"
+lang: en
+translation_key: before-you-start
 ---
 
 # 01. Preparation Before Optimization

@@ -1,87 +1,570 @@
+{% assign current_lang = page.lang | default: 'en' %}
+{% assign home_url = '/' %}
+{% assign english_url = '/' %}
+{% assign russian_url = '/ru/' %}
+
+{% assign site_name = site.title %}
+{% assign navigation_label = 'Main navigation' %}
+{% assign skip_label = 'Skip to content' %}
+{% assign home_label = 'Home' %}
+{% assign issues_label = 'Report an issue' %}
+{% assign discussions_label = 'Discussions' %}
+{% assign footer_text = 'Find the bottleneck. Change one setting. Measure the result.' %}
+{% assign fallback_label = 'English version — translation is not available yet' %}
+
+{% if current_lang == 'ru' %}
+  {% assign home_url = '/ru/' %}
+  {% assign site_name = 'Оптимизация игрового ПК на Windows 11' %}
+  {% assign navigation_label = 'Основная навигация' %}
+  {% assign skip_label = 'Перейти к содержимому' %}
+  {% assign home_label = 'Главная' %}
+  {% assign issues_label = 'Сообщить об ошибке' %}
+  {% assign discussions_label = 'Обсуждения' %}
+  {% assign footer_text = 'Найди узкое место. Измени одну настройку. Измерь результат.' %}
+  {% assign fallback_label = 'Английская версия — перевод пока недоступен' %}
+{% endif %}
+
+{% if page.translation_key %}
+  {% assign translations = site.pages | where: 'translation_key', page.translation_key %}
+  {% for translated_page in translations %}
+    {% if translated_page.lang == 'en' %}
+      {% assign english_url = translated_page.url %}
+    {% elsif translated_page.lang == 'ru' %}
+      {% assign russian_url = translated_page.url %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% assign navigation_items = '01-before-you-start|Start|Начать;02-find-the-bottleneck|Bottleneck|Узкое место;06-gpu-settings|GPU|Видеокарта;15-troubleshooting-decision-trees|Troubleshoot|Проблемы;16-benchmark-templates|Benchmark|Тестирование' | split: ';' %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ current_lang | escape }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="color-scheme" content="light dark">
+  <title>{% if page.title %}{{ page.title | escape }} — {% endif %}{{ site_name | escape }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #1f2328; background: #ffffff; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    .site-header { border-bottom: 1px solid #d0d7de; padding: 12px 0; background: #f6f8fa; }
-    .site-header .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-    .site-title { font-size: 1.1rem; font-weight: 600; color: #1f2328; text-decoration: none; }
-    .site-nav { display: flex; gap: 12px; flex-wrap: wrap; }
-    .site-nav a { color: #0969da; text-decoration: none; font-size: 0.9rem; }
-    .site-nav a:hover { text-decoration: underline; }
-    .site-main { padding: 32px 0 48px; }
-    .doc-content { max-width: 760px; }
-    .doc-content h1 { font-size: 1.8rem; margin-top: 0; }
-    .doc-content h2 { font-size: 1.4rem; margin-top: 2rem; border-bottom: 1px solid #d0d7de; padding-bottom: 0.3rem; }
-    .doc-content h3 { font-size: 1.15rem; margin-top: 1.5rem; }
-    .doc-content p { margin: 0.8rem 0; }
-    .doc-content ul, .doc-content ol { padding-left: 1.5rem; }
-    .doc-content li { margin: 0.3rem 0; }
-    .doc-content table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
-    .doc-content th, .doc-content td { border: 1px solid #d0d7de; padding: 6px 10px; text-align: left; }
-    .doc-content th { background: #f6f8fa; font-weight: 600; }
-    .doc-content code { background: #f6f8fa; padding: 2px 5px; border-radius: 3px; font-size: 0.85em; font-family: "SFMono-Regular", Consolas, monospace; }
-    .doc-content pre { background: #f6f8fa; padding: 12px; border-radius: 6px; overflow-x: auto; }
-    .doc-content pre code { background: none; padding: 0; }
-    .doc-content a { color: #0969da; }
-    .doc-content img { max-width: 100%; }
-    .doc { display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
-    .doc-sidebar { font-size: 0.85rem; }
-    .doc-sidebar h3 { font-size: 0.8rem; text-transform: uppercase; color: #57606a; margin: 1rem 0 0.3rem; }
-    .doc-sidebar ul { list-style: none; padding: 0; margin: 0; }
-    .doc-sidebar li { margin: 0.15rem 0; }
-    .doc-sidebar a { color: #57606a; text-decoration: none; }
-    .doc-sidebar a:hover { color: #0969da; text-decoration: underline; }
-    .hero { margin-bottom: 2rem; }
-    .hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-    .hero p { font-size: 1.1rem; color: #57606a; max-width: 640px; }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 1.5rem 0; }
-    .step { border: 1px solid #d0d7de; border-radius: 6px; padding: 16px; }
-    .step h3 { margin-top: 0; font-size: 1rem; }
-    .step p { font-size: 0.9rem; color: #57606a; margin: 0.5rem 0 0; }
-    .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 1rem 0; }
-    .card { border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; }
-    .card h4 { margin: 0 0 4px; font-size: 0.95rem; }
-    .card p { margin: 0; font-size: 0.85rem; color: #57606a; }
-    .card a { text-decoration: none; color: inherit; }
-    .card:hover { border-color: #0969da; }
-    .site-footer { border-top: 1px solid #d0d7de; padding: 20px 0; font-size: 0.85rem; color: #57606a; }
-    .site-footer a { color: #0969da; }
-    @media (max-width: 768px) {
-      .doc { grid-template-columns: 1fr; }
-      .doc-sidebar { border-bottom: 1px solid #d0d7de; padding-bottom: 16px; margin-bottom: 16px; }
-      .site-nav { gap: 8px; }
-      .site-nav a { font-size: 0.8rem; }
-      .hero h1 { font-size: 1.5rem; }
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-soft: #edf2f8;
+      --text: #182230;
+      --muted: #526174;
+      --border: #d8e0eb;
+      --accent: #175cce;
+      --accent-soft: #e9f0ff;
+      --code-bg: #edf2f8;
+      --radius: 14px;
+      --shadow: 0 8px 28px rgb(25 40 65 / 5%);
     }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1118;
+        --surface: #151c27;
+        --surface-soft: #1d2735;
+        --text: #e6edf5;
+        --muted: #a4b2c5;
+        --border: #303e51;
+        --accent: #8bb8ff;
+        --accent-soft: #1b3152;
+        --code-bg: #101721;
+        --shadow: none;
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      overflow-wrap: break-word;
+    }
+
+    a {
+      color: var(--accent);
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 3px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+      z-index: 100;
+      padding: 10px 16px;
+      color: var(--text);
+      background: var(--surface);
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      transform: translateY(-180%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      padding: 18px 0;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .site-title {
+      max-width: 700px;
+      color: var(--text);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 750;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+
+    .language-switcher {
+      display: inline-flex;
+      flex-shrink: 0;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg);
+    }
+
+    .language-switcher a {
+      padding: 5px 11px;
+      border-radius: 7px;
+      font-size: 0.85rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .language-switcher a[aria-current="true"] {
+      color: var(--text);
+      background: var(--accent-soft);
+    }
+
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .site-nav a {
+      padding: 7px 11px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .site-main {
+      flex: 1;
+      padding: 36px 0 56px;
+    }
+
+    .hero {
+      padding: clamp(24px, 5vw, 48px);
+      margin-bottom: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(
+        135deg,
+        var(--surface),
+        var(--accent-soft)
+      );
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: 0 0 18px;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      line-height: 1.3;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .steps,
+    .card-grid {
+      display: grid;
+      gap: 16px;
+      margin: 20px 0 28px;
+    }
+
+    .steps {
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+
+    .card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .step,
+    .card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .step h3,
+    .card h4 {
+      margin: 0 0 10px;
+    }
+
+    .step p,
+    .card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .card:hover {
+      border-color: var(--accent);
+    }
+
+    .doc {
+      display: grid;
+      grid-template-columns: 230px minmax(0, 1fr);
+      align-items: start;
+      gap: 28px;
+    }
+
+    .doc-sidebar {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      font-size: 0.88rem;
+    }
+
+    .doc-sidebar h3 {
+      margin: 22px 0 8px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .doc-sidebar h3:first-child {
+      margin-top: 0;
+    }
+
+    .doc-sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .doc-sidebar li {
+      margin: 3px 0;
+    }
+
+    .doc-sidebar a {
+      display: block;
+      padding: 5px 7px;
+      border-radius: 6px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .doc-sidebar a:hover {
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .doc-content {
+      min-width: 0;
+      padding: clamp(20px, 3vw, 36px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .doc-content h1 {
+      margin-top: 0;
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
+      letter-spacing: -0.03em;
+    }
+
+    .doc-content h2 {
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.4rem;
+    }
+
+    .doc-content h3 {
+      margin-top: 1.6rem;
+      font-size: 1.15rem;
+    }
+
+    .doc-content ul,
+    .doc-content ol {
+      padding-left: 1.5rem;
+    }
+
+    .doc-content li {
+      margin: 0.35rem 0;
+    }
+
+    table {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      margin: 20px 0;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th,
+    td {
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--surface-soft);
+      font-weight: 650;
+    }
+
+    code {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background: var(--code-bg);
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 0.88em;
+    }
+
+    pre {
+      max-width: 100%;
+      padding: 18px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--code-bg);
+    }
+
+    pre code {
+      padding: 0;
+      background: none;
+      overflow-wrap: normal;
+    }
+
+    blockquote {
+      margin: 20px 0;
+      padding: 10px 18px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      background: var(--accent-soft);
+    }
+
+    hr {
+      margin: 30px 0;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .site-footer {
+      padding: 26px 0;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .site-footer p {
+      margin: 6px 0;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+    }
+
+    @media (max-width: 850px) {
+      .doc {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .doc-sidebar {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+    }
+
     @media (max-width: 480px) {
-      .container { padding: 0 14px; }
-      .site-header .container { flex-direction: column; align-items: flex-start; }
+      .container {
+        padding: 0 16px;
+      }
+
+      .header-top {
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .site-title {
+        font-size: 1rem;
+      }
+
+      .language-switcher a {
+        padding: 5px 8px;
+      }
+
+      .site-nav a {
+        padding: 6px 8px;
+        font-size: 0.84rem;
+      }
+
+      .site-main {
+        padding-top: 22px;
+      }
+
+      .steps,
+      .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
   </style>
 </head>
+
 <body>
+  <a class="skip-link" href="#main-content">{{ skip_label }}</a>
+
   <header class="site-header">
     <div class="container">
-      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/docs/01-before-you-start.html' | relative_url }}">Start</a>
-        <a href="{{ '/docs/02-find-the-bottleneck.html' | relative_url }}">Bottleneck</a>
-        <a href="{{ '/docs/06-gpu-settings.html' | relative_url }}">GPU</a>
-        <a href="{{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}">Troubleshoot</a>
-        <a href="{{ '/docs/16-benchmark-templates.html' | relative_url }}">Benchmark</a>
+      <div class="header-top">
+        <a class="site-title" href="{{ home_url | relative_url }}">
+          {{ site_name | escape }}
+        </a>
+
+        <nav class="language-switcher" aria-label="Language">
+          <a href="{{ english_url | relative_url }}"
+             lang="en"
+             hreflang="en"
+             {% if current_lang == 'en' %}aria-current="true"{% endif %}>EN</a>
+          <a href="{{ russian_url | relative_url }}"
+             lang="ru"
+             hreflang="ru"
+             {% if current_lang == 'ru' %}aria-current="true"{% endif %}>RU</a>
+        </nav>
+      </div>
+
+      <nav class="site-nav" aria-label="{{ navigation_label }}">
+        <a href="{{ home_url | relative_url }}"
+           {% if page.url == home_url %}aria-current="page"{% endif %}>
+          {{ home_label }}
+        </a>
+
+        {% for item in navigation_items %}
+          {% assign fields = item | split: '|' %}
+          {% assign target_url = '/docs/' | append: fields[0] | append: '.html' %}
+          {% assign link_label = fields[1] %}
+          {% assign english_fallback = false %}
+
+          {% if current_lang == 'ru' %}
+            {% assign link_label = fields[2] %}
+            {% assign russian_candidate = '/ru' | append: target_url %}
+            {% assign russian_page = site.pages | where: 'url', russian_candidate | first %}
+
+            {% if russian_page %}
+              {% assign target_url = russian_page.url %}
+            {% else %}
+              {% assign english_fallback = true %}
+            {% endif %}
+          {% endif %}
+
+          <a href="{{ target_url | relative_url }}"
+             {% if page.url == target_url %}aria-current="page"{% endif %}
+             {% if english_fallback %}hreflang="en" title="{{ fallback_label }}"{% endif %}>
+            {{ link_label }}{% if english_fallback %} (EN){% endif %}
+          </a>
+        {% endfor %}
       </nav>
     </div>
   </header>
 
-  <main class="site-main">
+  <main id="main-content" class="site-main" tabindex="-1">
     <div class="container">
       {{ content }}
     </div>
@@ -89,8 +572,13 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>Windows 11 Gaming PC Optimization Guide · MIT License</p>
-      <p><a href="https://github.com/h4zvenn/gaming-pc-guide">GitHub</a> · <a href="https://github.com/h4zvenn/gaming-pc-guide/issues">Issues</a> · <a href="https://github.com/h4zvenn/gaming-pc-guide/discussions">Discussions</a></p>
+      <p>{{ footer_text }}</p>
+      <p>{{ site_name | escape }} · MIT License</p>
+      <div class="footer-links">
+        <a href="https://github.com/h4zvenn/gaming-pc-guide">GitHub</a>
+        <a href="https://github.com/h4zvenn/gaming-pc-guide/issues">{{ issues_label }}</a>
+        <a href="https://github.com/h4zvenn/gaming-pc-guide/discussions">{{ discussions_label }}</a>
+      </div>
     </div>
   </footer>
 </body>
