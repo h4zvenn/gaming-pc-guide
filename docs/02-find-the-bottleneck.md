@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "02-find-the-bottleneck"
 ---

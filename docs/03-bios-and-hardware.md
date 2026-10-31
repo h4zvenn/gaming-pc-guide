@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "03-bios-and-hardware"
 ---

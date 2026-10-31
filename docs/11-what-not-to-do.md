@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "11-what-not-to-do"
 ---

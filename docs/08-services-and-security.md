@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "08-services-and-security"
 ---

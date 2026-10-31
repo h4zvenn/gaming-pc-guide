@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "16-benchmark-templates"
 ---

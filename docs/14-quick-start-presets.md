@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "14-quick-start-presets"
 ---

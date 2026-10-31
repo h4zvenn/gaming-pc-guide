@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "09-powershell-diagnostics"
 ---

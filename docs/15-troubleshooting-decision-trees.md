@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "15-troubleshooting-decision-trees"
 ---

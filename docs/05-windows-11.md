@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "05-windows-11"
 ---

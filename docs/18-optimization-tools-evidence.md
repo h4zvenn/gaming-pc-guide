@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "18-optimization-tools-evidence"
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "17-common-builds-quick-cards"
 ---

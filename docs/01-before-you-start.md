@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "Preparation Before Optimization"
 lang: en

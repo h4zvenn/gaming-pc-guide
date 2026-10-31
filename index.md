@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 title: "Home"
 description: "A practical guide to optimizing a gaming PC on Windows 11: preparation, bottleneck diagnosis, system settings, and measured testing."

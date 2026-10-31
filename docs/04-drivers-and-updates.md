@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "04-drivers-and-updates"
 ---

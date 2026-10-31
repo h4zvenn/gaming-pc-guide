@@ -1,4 +1,4 @@
-﻿---
+---
 layout: doc
 title: "07-background-apps"
 ---

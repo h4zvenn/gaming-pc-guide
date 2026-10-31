@@ -1,4 +1,4 @@
-﻿# Windows 11 Gaming PC Optimization Guide
+# Windows 11 Gaming PC Optimization Guide
 
 Evidence-based guide for optimizing Windows 11 gaming performance. Find your bottleneck, apply one change at a time, benchmark results, and keep only what works.
 

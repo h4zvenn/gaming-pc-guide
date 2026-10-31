@@ -82,7 +82,7 @@ permalink: /ru/
 ### Подготовка и диагностика
 
 - [01. Подготовка перед оптимизацией — RU]({{ '/ru/docs/01-before-you-start.html' | relative_url }}) — возможность отката, исходные показатели и проверка системы.
-- [02. Поиск узкого места — EN]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) — определение ограничений производительности.
+- [02. Поиск узкого места]({{ '/ru/docs/02-find-the-bottleneck.html' | relative_url }}) — определение ограничений производительности.
 - [09. Диагностика через PowerShell — EN]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) — сведения о системе и диагностические проверки.
 - [10. Температуры и стабильность — EN]({{ '/docs/10-temperatures-stability.html' | relative_url }}) — перегрев и нестабильность.
 - [15. Пошаговый поиск неисправностей — EN]({{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}) — разбор распространённых проблем.
