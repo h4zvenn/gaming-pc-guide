@@ -15,14 +15,13 @@ permalink: /
   <p><a href="#problems">Choose a problem</a> · <a href="#all-guides">Browse all 19 guides</a></p>
 </div>
 
-> The English version is the source version.
-> The Russian translation is being expanded; links marked **RU** open translated pages.
+> The English version is the source version.  
+> The Russian translation is being expanded; links marked **RU** open translated pages.  
 > Use the EN / RU switch in the site header.
 
 ## Three steps instead of dozens of random tweaks
 
-Do not apply every guide in sequence.
-Choose the route that matches your problem and measure the result.
+Do not apply every guide in sequence. Choose the route that matches your problem and measure the result.
 
 <div class="steps">
   <div class="step">
@@ -44,22 +43,20 @@ Choose the route that matches your problem and measure the result.
 
 <h2 id="problems">What is the problem?</h2>
 
-Choose the closest symptom.
-These are diagnostic routes, not guaranteed fixes.
+Choose the closest symptom. These are diagnostic routes, not guaranteed fixes.
 
 | Problem | Start here | Check next |
 | --- | --- | --- |
-| Low FPS | [Find the bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings.html) |
-| Stuttering and uneven frame times | [Find the bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) | [Temperatures and stability]({{ site.baseurl }}/docs/10-temperatures-stability.html) |
-| Input lag | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings.html) | [System diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics.html) |
-| High ping or network instability | [System diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics.html) | [Troubleshooting]({{ site.baseurl }}/docs/15-troubleshooting-decision-trees.html) |
-| Crashes, freezes, or restarts | [Troubleshooting]({{ site.baseurl }}/docs/15-troubleshooting-decision-trees.html) | [Stability]({{ site.baseurl }}/docs/10-temperatures-stability.html) |
-| Low disk space or unwanted software | [Disk cleanup]({{ site.baseurl }}/docs/19-ai-software-and-disk-cleanup.html) | [Background apps]({{ site.baseurl }}/docs/07-background-apps.html) |
+| Low FPS | [Find the bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) | [GPU settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) |
+| Stuttering and uneven frame times | [Find the bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) | [Temperatures and stability]({{ '/docs/10-temperatures-stability.html' | relative_url }}) |
+| Input lag | [GPU settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) | [System diagnostics]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) |
+| High ping or network instability | [System diagnostics]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) | [Troubleshooting]({{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}) |
+| Crashes, freezes, or restarts | [Troubleshooting]({{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}) | [Stability]({{ '/docs/10-temperatures-stability.html' | relative_url }}) |
+| Low disk space or unwanted software | [Disk cleanup]({{ '/docs/19-ai-software-and-disk-cleanup.html' | relative_url }}) | [Background apps]({{ '/docs/07-background-apps.html' | relative_url }}) |
 
 ## Game guides
 
-Use the system guides for general issues.
-Use a game guide for game-specific settings and testing.
+Use the system guides for general issues. Use a game guide for game-specific settings, anti-cheat considerations, and testing.
 
 <div class="card-grid">
   <div class="card">
@@ -69,15 +66,14 @@ Use a game guide for game-specific settings and testing.
   </div>
   <div class="card">
     <h3>More games</h3>
-    <p>Planned: VALORANT, PUBG, Minecraft Java, and World of Tanks.</p>
-    <p>Drafts will not be presented as finished guides.</p>
+    <p>Guides are available for Minecraft Java, VALORANT, PUBG, and World of Tanks.</p>
+    <p><a href="{{ '/docs/games/index.html' | relative_url }}">Open game guides →</a></p>
   </div>
 </div>
 
 <h2 id="all-guides">All 19 guides</h2>
 
-Guides are grouped by task.
-The numbering matches the guide files.
+Guides are grouped by task. The numbering matches the guide files.
 
 ### Preparation and diagnostics
 
@@ -108,7 +104,7 @@ The numbering matches the guide files.
 - [16. Benchmark templates]({{ '/docs/16-benchmark-templates.html' | relative_url }}) — record results and compare changes.
 - [17. Common builds and quick cards]({{ '/docs/17-common-builds-quick-cards.html' | relative_url }}) — reference points for different builds.
 - [18. Optimization tools and evidence]({{ '/docs/18-optimization-tools-evidence.html' | relative_url }}) — evaluate third-party tools.
-- [19. AI software and disk cleanup]({{ '/docs/19-ai-software-and-disk-cleanup.html' | relative_url }}) — remove unused software and reclaim disk space.
+- [19. Disk cleanup]({{ '/docs/19-ai-software-and-disk-cleanup.html' | relative_url }}) — remove unused software and reclaim disk space.
 
 ## How to use this guide
 
