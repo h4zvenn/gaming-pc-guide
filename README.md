@@ -11,30 +11,26 @@ A practical, data-driven guide to improving gaming performance on Windows 11 —
 
 ---
 
-> **Golden Rule of Optimization:** Always measure performance before and after every change. If a setting does not measurably improve frame times or stability, revert it.
+> **Golden Rule:** Measure before and after every change. If a setting does not improve frame times or stability, revert it.
 
 ---
 
-## 🚀 Quick Start Pipeline
+## 🚀 Quick Start
 
-```text
-[1. Restore Point] ──► [2. Benchmark Baseline] ──► [3. Find Bottleneck] ──► [4. Test One Setting]
-```
-
-1. **Prepare** — create a Windows restore point and record baseline FPS, 1% lows, frame times, and temperatures.  
+1. **Prepare** — create a restore point and record baseline FPS, 1% lows, frame times, and temperatures.  
    → [Before You Start](docs/01-before-you-start.md)
 
-2. **Diagnose** — identify whether CPU, GPU, RAM, storage, or thermal limits are capping performance.  
+2. **Diagnose** — find whether CPU, GPU, RAM, storage, or thermals are limiting performance.  
    → [Find the Bottleneck](docs/02-find-the-bottleneck.md)
 
-3. **Verify** — apply one tweak at a time and measure it with a repeatable benchmark.  
+3. **Test one change** — apply a single tweak, benchmark it, then keep or revert it.  
    → [Benchmark Templates](docs/16-benchmark-templates.md)
 
 ---
 
-## 🧭 Target Your Issue
+## 🧭 Choose Your Problem
 
-| Problem | Recommended starting point |
+| Problem | Start here |
 | --- | --- |
 | **Low FPS or micro-stutters** | [Find the Bottleneck](docs/02-find-the-bottleneck.md) |
 | **Input lag or sluggish controls** | [GPU Settings & Reflex](docs/06-gpu-settings.md) |
@@ -45,21 +41,21 @@ A practical, data-driven guide to improving gaming performance on Windows 11 —
 
 ---
 
-## 🎮 Game-Specific Guides
+## 🎮 Game Guides
 
-| Game | Status | Optimization focus |
+| Game | Status | Focus |
 | --- | :---: | --- |
 | **[Counter-Strike 2](docs/games/cs2.md)** | ✅ Live | VAC safety, Source 2 settings, Reflex, launch options |
-| **[Minecraft Java](docs/games/minecraft-java.md)** | 🟡 Draft | JVM flags, Sodium/Iris mods, chunk render profiling |
+| **[Minecraft Java](docs/games/minecraft-java.md)** | 🟡 Draft | JVM flags, Sodium/Iris mods, chunk rendering |
 | **[VALORANT](docs/games/valorant.md)** | 🟡 Draft | Vanguard compatibility, Reflex, competitive latency |
 | **[PUBG: Battlegrounds](docs/games/pubg.md)** | 🟡 Draft | Anti-cheat compatibility, DX11 Enhanced vs DX12 |
 | **[World of Tanks](docs/games/world-of-tanks.md)** | 🟡 Draft | Mod Hub safety, SD vs HD client optimization |
 
 ---
 
-## 📚 Complete Guide Directory
+## 📚 Full Guide Directory
 
-<details open>
+<details>
 <summary><b>⚙️ Core System Optimization</b></summary>
 
 - [01. Before You Start](docs/01-before-you-start.md)
@@ -98,26 +94,29 @@ A practical, data-driven guide to improving gaming performance on Windows 11 —
 
 ---
 
-## 🛡️ Core Safety Principles
+## 🛡️ Safety Rules
 
-> **Warning:** Never run raw `.bat` or `.ps1` scripts from YouTube descriptions, Discord messages, or untrusted forums.
+- Create a restore point before system-level changes.
+- Change one setting at a time.
+- Benchmark before and after.
+- Do not blindly disable Windows services.
+- Do not run `.bat` or `.ps1` scripts from untrusted sources.
+- Do not disable Windows Security for marginal FPS gains.
 
-- **Always create a system restore point** before changing Windows services or the registry.
-- **Isolate variables:** change exactly one setting at a time.
-- **Trust objective data:** 1% low FPS and frame times matter more than how a game “feels”.
-- **Keep security intact:** do not disable Windows Security or anti-malware features for marginal gains.
-
----
-
-## 🔗 Project Links
-
-- **Live documentation:** [h4zvenn.github.io/gaming-pc-guide](https://h4zvenn.github.io/gaming-pc-guide/)
-- **Russian translation:** [h4zvenn.github.io/gaming-pc-guide/ru/](https://h4zvenn.github.io/gaming-pc-guide/ru/)
-- **Report an issue:** [GitHub Issues](https://github.com/h4zvenn/gaming-pc-guide/issues)
-- **Community discussions:** [GitHub Discussions](https://github.com/h4zvenn/gaming-pc-guide/discussions)
-- **Contribution guidelines:** [CONTRIBUTING.md](CONTRIBUTING.md)
-- **Changelog:** [CHANGELOG.md](CHANGELOG.md)
+**If you cannot measure it, you cannot know whether it helped.**
 
 ---
 
-<sub>`Windows 11 22H2 / 23H2 / 24H2` · `19 core guides + game profiles` · `MIT License`</sub>
+## 📌 Project
+
+**Website:** [h4zvenn.github.io/gaming-pc-guide](https://h4zvenn.github.io/gaming-pc-guide/)  
+**Russian version:** [/ru](https://h4zvenn.github.io/gaming-pc-guide/ru/)  
+**Report an issue:** [GitHub Issues](https://github.com/h4zvenn/gaming-pc-guide/issues)  
+**Community:** [GitHub Discussions](https://github.com/h4zvenn/gaming-pc-guide/discussions)  
+**Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)  
+**Changelog:** [CHANGELOG.md](CHANGELOG.md)  
+**License:** [MIT](LICENSE)
+
+---
+
+<sub>Made for players who want stable, measurable improvements — not placebo tweaks.</sub>
