@@ -23,7 +23,7 @@ title: "minecraft-java"
 2. No kernel anti-cheat in singleplayer; server rules apply for multiplayer.
 3. Java runtime and launch arguments matter вЂ” test, do not copy "magic flags".
 4. Apply only Minecraft-specific items below.
-5. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates/' | relative_url }}).
+5. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates.html' | relative_url }}).
 
 ## Requirements & Compatibility
 
@@ -74,9 +74,9 @@ title: "minecraft-java"
 
 | Symptom | First check | Link |
 | --- | --- | --- |
-| Low FPS, high CPU | Lower Render/Simulation Distance, disable shaders, test Sodium/Lithium | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
-| Stutter every few seconds | GC spikes: check RAM allocation, try `-Xms=Xmx`, test G1GC/ZGC | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
-| Chunk load stutter | Pre-generate chunks (Chunky), lower Render Distance, SSD | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
+| Low FPS, high CPU | Lower Render/Simulation Distance, disable shaders, test Sodium/Lithium | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
+| Stutter every few seconds | GC spikes: check RAM allocation, try `-Xms=Xmx`, test G1GC/ZGC | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
+| Chunk load stutter | Pre-generate chunks (Chunky), lower Render Distance, SSD | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
 | Shader compile lag | Iris/OptiFine shader cache, pre-compile | вЂ” |
 | Mod crash / incompatibility | Check mod loader version (Forge/Fabric/NeoForge) matches Minecraft version; read mod changelogs | вЂ” |
 

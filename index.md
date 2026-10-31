@@ -14,17 +14,17 @@ title: Home
   <div class="step">
     <h3>1. Prepare</h3>
     <p>Create a restore point, record baseline FPS, 1% low, frametime, and temperatures.</p>
-    <p><a href="{{ '/docs/01-before-you-start/' | relative_url }}">Preparation →</a></p>
+    <p><a href="{{ '/docs/01-before-you-start.html' | relative_url }}">Preparation →</a></p>
   </div>
   <div class="step">
     <h3>2. Find bottleneck</h3>
     <p>Identify whether CPU, GPU, RAM, VRAM, SSD, thermals, or background apps limit performance.</p>
-    <p><a href="{{ '/docs/02-find-the-bottleneck/' | relative_url }}">Find the bottleneck →</a></p>
+    <p><a href="{{ '/docs/02-find-the-bottleneck.html' | relative_url }}">Find the bottleneck →</a></p>
   </div>
   <div class="step">
     <h3>3. Change &amp; verify</h3>
     <p>Apply one targeted tweak, then compare metrics with a repeatable benchmark.</p>
-    <p><a href="{{ '/docs/16-benchmark-templates/' | relative_url }}">Benchmark templates →</a></p>
+    <p><a href="{{ '/docs/16-benchmark-templates.html' | relative_url }}">Benchmark templates →</a></p>
   </div>
 </div>
 
@@ -32,19 +32,19 @@ title: Home
 
 | Symptom | Start with |
 | --- | --- |
-| Low FPS | [Find bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) → [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings/) |
-| Stutter / bad frametime | [Find bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) → [Temperatures]({{ site.baseurl }}/docs/10-temperatures-stability/) |
-| Input lag | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings/) → [Diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics/) |
-| Network lag / ping | [Diagnostics / network]({{ site.baseurl }}/docs/09-powershell-diagnostics/#9-network) |
-| Crash / freeze | [Troubleshooting trees]({{ site.baseurl }}/docs/15-troubleshooting-decision-trees/) |
+| Low FPS | [Find bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) → [GPU settings]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
+| Stutter / bad frametime | [Find bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) → [Temperatures]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
+| Input lag | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings.html) → [Diagnostics]({{ site.baseurl }}/docs/06-gpu-settings.html) |
+| Network lag / ping | [Diagnostics / network]({{ site.baseurl }}/docs/09-powershell-diagnostics.html#9-network) |
+| Crash / freeze | [Troubleshooting trees]({{ site.baseurl }}/docs/15-troubleshooting-decision-trees.html) |
 
-- Need to remove unused AI tools or free disk space → [AI Software and Disk Cleanup]({{ '/docs/19-ai-software-and-disk-cleanup/' | relative_url }})
+- Need to remove unused AI tools or free disk space → [AI Software and Disk Cleanup]({{ '/docs/19-ai-software-and-disk-cleanup.html' | relative_url }})
 
 ## Available game guides
 
 <div class="card-grid">
   <div class="card">
-    <h4><a href="{{ '/docs/games/cs2/' | relative_url }}">Counter-Strike 2</a></h4>
+    <h4><a href="{{ '/docs/games/cs2.html' | relative_url }}">Counter-Strike 2</a></h4>
     <p>Pilot page — VAC, Source 2, Reflex, FPS cap, launch options.</p>
   </div>
 </div>
@@ -55,13 +55,13 @@ Planned: VALORANT, PUBG, Minecraft Java, World of Tanks.
 
 See the documentation sidebar or browse all sections:
 
-- [Preparation]({{ '/docs/01-before-you-start/' | relative_url }}) · [Find bottleneck]({{ '/docs/02-find-the-bottleneck/' | relative_url }}) · [BIOS / Hardware]({{ '/docs/03-bios-and-hardware/' | relative_url }})
-- [Drivers]({{ '/docs/04-drivers-and-updates/' | relative_url }}) · [Windows 11]({{ '/docs/05-windows-11/' | relative_url }}) · [GPU settings]({{ '/docs/06-gpu-settings/' | relative_url }})
-- [Background apps]({{ '/docs/07-background-apps/' | relative_url }}) · [Services / Security]({{ '/docs/08-services-and-security/' | relative_url }}) · [Diagnostics]({{ '/docs/09-powershell-diagnostics/' | relative_url }})
-- [Temperatures]({{ '/docs/10-temperatures-stability/' | relative_url }}) · [What not to do]({{ '/docs/11-what-not-to-do/' | relative_url }}) · [FAQ]({{ '/docs/12-faq/' | relative_url }})
-- [Security baseline]({{ '/docs/13-security-hardening-baseline/' | relative_url }}) · [Presets]({{ '/docs/14-quick-start-presets/' | relative_url }}) · [Troubleshooting]({{ '/docs/15-troubleshooting-decision-trees/' | relative_url }})
-- [Benchmark templates]({{ '/docs/16-benchmark-templates/' | relative_url }}) · [Build cards]({{ '/docs/17-common-builds-quick-cards/' | relative_url }}) · [Tools evidence]({{ '/docs/18-optimization-tools-evidence/' | relative_url }})
-- [AI Software and Disk Cleanup]({{ '/docs/19-ai-software-and-disk-cleanup/' | relative_url }})
+- [Preparation]({{ '/docs/01-before-you-start.html' | relative_url }}) · [Find bottleneck]({{ '/docs/01-before-you-start.html' | relative_url }}) · [BIOS / Hardware]({{ '/docs/01-before-you-start.html' | relative_url }})
+- [Drivers]({{ '/docs/04-drivers-and-updates.html' | relative_url }}) · [Windows 11]({{ '/docs/04-drivers-and-updates.html' | relative_url }}) · [GPU settings]({{ '/docs/04-drivers-and-updates.html' | relative_url }})
+- [Background apps]({{ '/docs/07-background-apps.html' | relative_url }}) · [Services / Security]({{ '/docs/07-background-apps.html' | relative_url }}) · [Diagnostics]({{ '/docs/07-background-apps.html' | relative_url }})
+- [Temperatures]({{ '/docs/10-temperatures-stability.html' | relative_url }}) · [What not to do]({{ '/docs/10-temperatures-stability.html' | relative_url }}) · [FAQ]({{ '/docs/10-temperatures-stability.html' | relative_url }})
+- [Security baseline]({{ '/docs/13-security-hardening-baseline.html' | relative_url }}) · [Presets]({{ '/docs/13-security-hardening-baseline.html' | relative_url }}) · [Troubleshooting]({{ '/docs/13-security-hardening-baseline.html' | relative_url }})
+- [Benchmark templates]({{ '/docs/16-benchmark-templates.html' | relative_url }}) · [Build cards]({{ '/docs/16-benchmark-templates.html' | relative_url }}) · [Tools evidence]({{ '/docs/16-benchmark-templates.html' | relative_url }})
+- [AI Software and Disk Cleanup]({{ '/docs/19-ai-software-and-disk-cleanup.html' | relative_url }})
 
 ## Principles
 

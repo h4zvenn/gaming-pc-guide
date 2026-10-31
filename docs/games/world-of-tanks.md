@@ -22,7 +22,7 @@ title: "world-of-tanks"
 1. Common base first (see [CS2 Quick Start](cs2.md#quick-start)).
 2. Mods only from officially allowed sources (Wargaming Mod Hub). XVM and others вЂ” verify current policy.
 3. Apply only WoT-specific items below.
-4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates/' | relative_url }}).
+4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates.html' | relative_url }}).
 
 ## Requirements & Compatibility
 
@@ -68,10 +68,10 @@ title: "world-of-tanks"
 | Symptom | First check | Link |
 | --- | --- | --- |
 | "Game integrity check failed" | Remove mods, verify files via WGC/Steam | вЂ” |
-| Low FPS, GPU-bound | Lower Render Scale, Particle Quality, Water, Post-Processing | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
-| Low FPS, CPU-bound | Lower Grass, View Distance, Shadows | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
-| Stutter in battle | Texture streaming, SSD space, background downloads | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
-| High ping / packet loss | Server region, Ethernet, background traffic | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics/#9-network) |
+| Low FPS, GPU-bound | Lower Render Scale, Particle Quality, Water, Post-Processing | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
+| Low FPS, CPU-bound | Lower Grass, View Distance, Shadows | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
+| Stutter in battle | Texture streaming, SSD space, background downloads | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
+| High ping / packet loss | Server region, Ethernet, background traffic | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics.html#9-network) |
 
 ## Benchmark Scenario
 

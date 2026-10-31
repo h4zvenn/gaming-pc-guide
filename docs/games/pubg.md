@@ -22,7 +22,7 @@ title: "pubg"
 1. Common base first (see [CS2 Quick Start](cs2.md#quick-start)).
 2. BattlEye: do not modify game files, do not inject, do not disable its service.
 3. Apply only PUBG-specific items below.
-4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates/' | relative_url }}).
+4. Validate with [Benchmark template]({{ '/docs/16-benchmark-templates.html' | relative_url }}).
 
 ## Requirements & Compatibility
 
@@ -72,10 +72,10 @@ title: "pubg"
 | Symptom | First check | Link |
 | --- | --- | --- |
 | BattlEye initialization failed | Verify game files, reinstall BattlEye via launcher | вЂ” |
-| Low FPS, CPU-bound | Lower View Distance, Foliage, Effects; test DX12 | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
-| Stutter on new areas | Texture streaming, SSD space, shader cache | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
-| Input latency | FPS cap, disable V-Sync, test DX12 | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings/) |
-| Network desync / high ping | Region selection, Ethernet, background traffic | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics/#9-network) |
+| Low FPS, CPU-bound | Lower View Distance, Foliage, Effects; test DX12 | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
+| Stutter on new areas | Texture streaming, SSD space, shader cache | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck.html) |
+| Input latency | FPS cap, disable V-Sync, test DX12 | [GPU settings]({{ site.baseurl }}/docs/06-gpu-settings.html) |
+| Network desync / high ping | Region selection, Ethernet, background traffic | [Network diagnostics]({{ site.baseurl }}/docs/09-powershell-diagnostics.html#9-network) |
 
 ## Benchmark Scenario
 
