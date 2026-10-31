@@ -13,7 +13,7 @@ permalink: /docs/17-common-builds-quick-cards.html
 
 1. Pick your platform card.
 2. Apply baseline settings only.
-3. Run benchmark from [16 Benchmark templates](https://h4zvenn.github.io/gaming-pc-guide/docs/16-benchmark-templates.html).
+3. Run a benchmark using [Benchmark Templates](16-benchmark-templates.html).
 4. Tune one setting at a time.
 
 ---
@@ -24,24 +24,24 @@ permalink: /docs/17-common-builds-quick-cards.html
 
 | Area | Recommended start |
 | --- | --- |
-| Windows | Game Mode On, correct refresh rate, clean startup |
-| Driver | Stable Game Ready / Studio based on workload |
-| In-game | Set graphics first, then FPS cap |
-| Latency | Prefer in-game NVIDIA Reflex if available |
-| Sync | Tune VRR + V-Sync per game |
+| Windows | Game Mode on, correct refresh rate, clean startup |
+| Driver | Stable Game Ready or Studio driver, based on workload |
+| In-game | Set graphics first, then an FPS cap |
+| Latency | Prefer in-game NVIDIA Reflex, if available |
+| Sync | Tune VRR and V-Sync per game |
 
-### First 5 tweaks to test
+### First five tweaks to test
 
-1. DLSS mode: Quality -> Balanced.
-2. FPS cap near stable floor.
+1. Change DLSS mode from Quality to Balanced.
+2. Set an FPS cap near the stable minimum FPS.
 3. Disable extra overlays.
-4. Test HAGS on/off.
-5. If needed, power mode per-game (`Prefer maximum performance`).
+4. Test HAGS on and off.
+5. If needed, set per-game power mode to `Prefer maximum performance`.
 
 ### Avoid by default
 
 - Global forced Low Latency Mode for all apps.
-- Global max performance for desktop use.
+- Global maximum performance mode for desktop use.
 - Random registry or BCD tweaks.
 
 ---
@@ -52,70 +52,74 @@ permalink: /docs/17-common-builds-quick-cards.html
 
 | Area | Recommended start |
 | --- | --- |
-| Windows | Game Mode On, correct refresh rate, clean startup |
+| Windows | Game Mode on, correct refresh rate, clean startup |
 | Driver | Stable Adrenalin release |
-| In-game | Set graphics first, then FPS cap |
-| Latency | Try in-game latency option first, then Anti-Lag |
-| Sync | Tune FreeSync/VRR + frame cap |
+| In-game | Set graphics first, then an FPS cap |
+| Latency | Try the in-game latency option first, then Anti-Lag |
+| Sync | Tune FreeSync/VRR and the frame cap |
 
-### First 5 tweaks to test
+### First five tweaks to test
 
-1. FSR/XeSS (if available) Quality -> Balanced.
-2. Anti-Lag per game profile.
-3. FPS cap for stable frametime.
-4. Enhanced Sync test with your monitor.
+1. Change FSR or XeSS, if available, from Quality to Balanced.
+2. Enable Anti-Lag in a per-game profile.
+3. Set an FPS cap for stable frame times.
+4. Test Enhanced Sync with your monitor.
 5. Remove overlay stacking.
 
 ### Avoid by default
 
-- Enabling Anti-Lag + Chill + multiple sync tweaks at once.
-- Blind undervolt curves from other users.
+- Enabling Anti-Lag, Chill, and multiple sync tweaks at once.
+- Blindly copying undervolt curves from other users.
 
 ---
 
-## Intel Arc / iGPU quick card
+## Intel Arc and iGPU quick card
 
 ### Baseline
 
 | Area | Recommended start |
 | --- | --- |
-| Windows | Game Mode On, high-performance GPU assignment |
+| Windows | Game Mode on, high-performance GPU assignment |
 | Driver | Latest stable Intel graphics driver |
-| API | Test DX11 vs DX12 vs Vulkan when game supports it |
-| In-game | Conservative settings + stable FPS cap |
+| API | Test DX11, DX12, and Vulkan when the game supports them |
+| In-game | Conservative settings and a stable FPS cap |
 | Laptop | AC power and vendor performance profile |
 
-### First 5 tweaks to test
+### First five tweaks to test
 
-1. API switch (DX11/DX12/Vulkan).
-2. In-game upscaler mode.
-3. FPS cap for consistency.
-4. Background app cleanup.
-5. Overlay minimization.
+1. Switch API between DX11, DX12, and Vulkan.
+2. Change the in-game upscaler mode.
+3. Set an FPS cap for consistency.
+4. Clean up background apps.
+5. Minimize overlays.
 
 ### Avoid by default
 
-- Mixing many system-level tweaks before API/driver checks.
+- Applying many system-level tweaks before checking API and driver behavior.
 - Assuming one API is always best for every game.
 
 ---
 
-## Mixed audience presets (fast picks)
+## Fast picks
 
 | Goal | Start here |
 | --- | --- |
-| More FPS quickly | Lower GPU-heavy settings + upscaler + FPS cap |
-| Better smoothness | Improve 1% low via background cleanup + thermals |
-| Lower latency feel | In-game latency tech + stable FPS range |
-| Better stability | Stock clocks + driver sanity + WHEA check |
+| More FPS quickly | Lower GPU-heavy settings, use an upscaler, set an FPS cap |
+| Better smoothness | Improve 1% lows through background cleanup and thermals |
+| Lower perceived latency | Use in-game latency technology and a stable FPS range |
+| Better stability | Return to stock clocks, verify drivers, check WHEA errors |
 
 ---
 
-## Validation mini-checklist
+## Validation checklist
 
-- [ ] Same test scene before/after.
-- [ ] Track avg FPS + 1% low + frametime.
-- [ ] No new crashes/WHEA/artifacts.
-- [ ] Keep only measurable gains.
+- [ ] The same test scene is used before and after.
+- [ ] Average FPS, 1% lows, and frame times are tracked.
+- [ ] No new crashes, WHEA errors, or artifacts appear.
+- [ ] Only measurable gains are kept.
 
-Back to main guide: [Home](../).
+---
+
+## Next step
+
+[Optimization Tools Evidence](18-optimization-tools-evidence.html)
