@@ -11,8 +11,6 @@ Use a preset to get reliable results without random tweaking. Pick the closest h
 
 > **Important:** Use one preset at a time. Do not mix presets in one session. A preset is an ordered checklist, not a batch script.
 
----
-
 ## How to use a preset
 
 1. Choose the preset that matches your PC and problem.
@@ -20,8 +18,6 @@ Use a preset to get reliable results without random tweaking. Pick the closest h
 3. Test it with the same scene and settings.
 4. Record the result using [Benchmark Templates](16-benchmark-templates.html).
 5. Keep the change only if it improves performance or stability without side effects.
-
----
 
 ## Choose a preset
 
@@ -34,7 +30,7 @@ Use a preset to get reliable results without random tweaking. Pick the closest h
 
 ---
 
-## Entry-level PC
+## Entry-Level PC
 
 **Goal:** improve smoothness and 1% lows without risky tuning.
 
@@ -51,7 +47,7 @@ Use a preset to get reliable results without random tweaking. Pick the closest h
 
 ---
 
-## Mid-range PC
+## Mid-Range PC
 
 **Goal:** balance visual quality and stable high FPS.
 
@@ -68,7 +64,7 @@ Use a preset to get reliable results without random tweaking. Pick the closest h
 
 ---
 
-## High-refresh PC
+## High-Refresh PC
 
 **Goal:** maintain consistent performance at high FPS targets, such as 165–360 Hz.
 
@@ -85,7 +81,7 @@ Use a preset to get reliable results without random tweaking. Pick the closest h
 
 ---
 
-## Gaming laptop
+## Gaming Laptop
 
 **Goal:** keep stable FPS while controlling heat and noise.
 
@@ -112,9 +108,6 @@ Use a preset to get reliable results without random tweaking. Pick the closest h
 
 ---
 
-## Next steps
+## Next step
 
-- [Find the Bottleneck](02-find-the-bottleneck.html)
-- [Benchmark Templates](16-benchmark-templates.html)
-- [Temperatures & Stability](10-temperatures-stability.html)
-- [Troubleshooting Decision Trees](15-troubleshooting-decision-trees.html)
+[Troubleshooting Decision Trees](15-troubleshooting-decision-trees.html)
