@@ -1,64 +1,68 @@
 ---
 layout: doc
-title: "16-benchmark-templates"
+title: "Benchmark Templates"
 description: "Measure performance changes with repeatable tests and record results before and after optimization."
 lang: en
 translation_key: benchmark-templates
 permalink: /docs/16-benchmark-templates.html
 ---
 
-# 16. Benchmark Templates and Measurement Rules
+# Benchmark Templates
 
-> If it is not measured, it is not optimization.
+If it is not measured, it is not optimization.
 
-## 1. Define the metrics before testing
+Use the same game build, settings, scene, and measurement method before and after every change. A tweak is proven only when the result is repeatable.
 
-A number without a definition is not evidence. Record which tool produced each metric and how that tool defines it.
+> **Important:** Do not compare 1% low values produced by different tools or definitions. Choose one tool, one version, and one metric definition for the entire comparison.
 
-| Metric | Working definition | Notes |
+---
+
+## Metrics to record
+
+| Metric | Definition | Notes |
 | --- | --- | --- |
 | Average FPS | Frames rendered divided by capture duration | Do not average per-second FPS values from different runs |
-| 1% low | FPS derived from the 99th percentile frametime: `1000 / P99(frametime_ms)` | Some tools report the mean of the slowest 1% of frames instead; state which definition was used |
-| 0.1% low | Same calculation at the 99.9th frametime percentile | More sensitive to single long frames |
-| p99 frametime | 99th percentile frame time in milliseconds | Keep it in ms; do not convert back to FPS |
-| GPU busy | Time the GPU is busy processing frames | Prefer PresentMon or CapFrameX over a Task Manager percentage |
-| CPU core saturation | A specific core/thread staying near 100% | Total CPU usage can look low while one game thread is saturated |
-
-> **Important:** > Do not compare 1% low values produced by different tools or different definitions. Pick one tool, one version, and one definition for the whole comparison.
+| 1% low | FPS calculated from the 99th-percentile frame time: `1000 / P99(frame time in ms)` | Some tools report the mean of the slowest 1% of frames instead; record which definition you use |
+| 0.1% low | Same calculation at the 99.9th-percentile frame time | More sensitive to single long frames |
+| P99 frame time | 99th-percentile frame time in milliseconds | Keep it in milliseconds; do not convert it back to FPS |
+| GPU busy | Time the GPU spends processing frames | Prefer PresentMon or CapFrameX over Task Manager usage |
+| CPU core saturation | A specific core or thread staying near 100% | Total CPU usage can look low while one game thread is saturated |
 
 ---
 
-## 2. Fix the test conditions
+## Test conditions
 
-Before the first run, write down:
+Write down these details before the first run:
 
-- game build/patch and server region;
-- GPU driver version and Windows build;
-- resolution, render scale, graphics preset, and every changed setting;
-- FPS cap and V-Sync/VRR state;
-- overlays, recording, and monitoring tools;
-- power plan and laptop performance profile;
-- ambient temperature and whether the system was cold or warm.
+- Game build, patch, and server region
+- GPU driver version and Windows build
+- Resolution, render scale, graphics preset, and every changed setting
+- FPS cap, V-Sync, and VRR state
+- Overlays, recording software, and monitoring tools
+- Power plan or laptop performance profile
+- Whether the system was cold or already warmed up
 
-If any of these change between runs, the comparison is invalid.
+If any of these conditions change between runs, the comparison is invalid.
 
 ---
 
-## 3. Run protocol
+## Run protocol
 
 1. Use the same scene, route, replay, or demo for every run.
 2. Warm up for 5–10 minutes so shaders and caches settle.
-3. Run at least 3 passes; use 5 for noisy scenes or crowded multiplayer maps.
-4. Keep raw frametime logs, not only the summary screen.
-5. Report the median and the min–max range. Do not report only the best run.
-6. If the first run is visibly different because of shader compilation, mark it and exclude it consistently from both baseline and test.
-7. Do not change more than one experimental variable between baseline and test.
+3. Run at least 3 passes; use 5 passes for noisy scenes or crowded multiplayer maps.
+4. Keep raw frame-time logs, not only the summary screen.
+5. Report the median and the minimum–maximum range, not only the best run.
+6. If the first run differs because of shader compilation, exclude it consistently from both baseline and test runs.
+7. Change only one setting between the baseline and test runs.
 
-> **Note:** > A single 5-minute run is a smoke test, not proof. Stability claims need a longer session and a separate check for WHEA, crashes, and driver resets.
+> **Note:** A single 5-minute run is a smoke test, not proof. Stability claims require a longer session and separate checks for WHEA errors, crashes, and driver resets.
 
 ---
 
-## 4. Template A — Quick A/B test (single tweak)
+## Quick A/B test
+
+Use this template when testing one tweak.
 
 ```text
 Game / patch:
@@ -67,127 +71,134 @@ Resolution / preset:
 FPS cap / V-Sync / VRR:
 GPU driver / Windows build:
 Tool and version:
-Metric definition (1% low):
+1% low definition:
 
 Tweak tested:
-Baseline runs (median):
-  Avg FPS:
-  1% low:
-  0.1% low:
-  p99 frametime:
-  GPU busy:
-  CPU core saturation:
-  CPU temp / GPU temp:
 
-After runs (median):
-  Avg FPS:
+Baseline median:
+  Average FPS:
   1% low:
   0.1% low:
-  p99 frametime:
+  P99 frame time:
   GPU busy:
   CPU core saturation:
-  CPU temp / GPU temp:
+  CPU temperature:
+  GPU temperature:
+
+Test median:
+  Average FPS:
+  1% low:
+  0.1% low:
+  P99 frame time:
+  GPU busy:
+  CPU core saturation:
+  CPU temperature:
+  GPU temperature:
 
 Run-to-run spread:
-New crashes / WHEA / artifacts:
-Verdict (Keep / Rollback / Inconclusive):
+New crashes / WHEA errors / artifacts:
+Verdict: Keep / Rollback / Inconclusive
 Reason:
 ```
 
 ---
 
-## 5. Template B — Multi-run table
+## Multi-run results
 
-| Run | Avg FPS | 1% low | 0.1% low | p99 frametime | CPU Temp | GPU Temp | Notes |
+Use this table for baseline and test runs.
+
+| Run | Avg FPS | 1% low | 0.1% low | P99 frame time | CPU temp | GPU temp | Notes |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| Baseline #1 | | | | | | | |
-| Baseline #2 | | | | | | | |
-| Baseline #3 | | | | | | | |
-| Tweak #1 | | | | | | | |
-| Tweak #2 | | | | | | | |
-| Tweak #3 | | | | | | | |
+| Baseline 1 | | | | | | | |
+| Baseline 2 | | | | | | | |
+| Baseline 3 | | | | | | | |
+| Test 1 | | | | | | | |
+| Test 2 | | | | | | | |
+| Test 3 | | | | | | | |
 
-> **Tip:** > Report the median of each column and the range. A change that is smaller than the baseline range is not proven.
+> **Tip:** Report the median of each column and the run-to-run range. A change smaller than the baseline range is not a proven improvement.
 
 ---
 
-## 6. Template C — Session stability (30–60 minutes)
+## Long-session stability
 
-Use this when FPS drops over time.
+Use this template when checking whether performance drops over time.
 
-| Time mark | Avg FPS | 1% low | CPU Clock | GPU Clock | CPU Temp | GPU Temp | Stutter? |
+| Time | Avg FPS | 1% low | CPU clock | GPU clock | CPU temp | GPU temp | Stutter |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
 | 0–5 min | | | | | | | |
 | 15–20 min | | | | | | | |
 | 30–35 min | | | | | | | |
 | 45–50 min | | | | | | | |
 
-Also record WHEA events and driver resets for the whole session.
+Also record WHEA events, driver resets, crashes, and visual artifacts for the entire session.
 
 ---
 
-## 7. Template D — Input-latency and sync A/B
+## Input latency and sync
 
-For Reflex/Anti-Lag/V-Sync/VRR/FPS-cap combinations.
+Use this template for Reflex, Anti-Lag, V-Sync, VRR, and FPS-cap comparisons.
 
-| Setup | Avg FPS | 1% low | p99 frametime | Tearing (yes/no) | Subjective input score (1–5) | Keep? |
+| Setup | Avg FPS | 1% low | P99 frame time | Tearing | Subjective input score | Keep |
 | --- | ---: | ---: | ---: | --- | ---: | --- |
 | Base | | | | | | |
-| + Reflex/Anti-Lag | | | | | | |
-| + FPS cap | | | | | | |
-| + V-Sync/VRR tune | | | | | | |
+| Reflex or Anti-Lag | | | | | | |
+| FPS cap | | | | | | |
+| V-Sync or VRR tuning | | | | | | |
 
-> **Important:** > Input latency in milliseconds requires a tool such as LDAT or NVIDIA Reflex Analyzer. Without one, mark the result as subjective and do not publish a millisecond claim.
+> **Important:** Input latency in milliseconds requires hardware such as LDAT or NVIDIA Reflex Analyzer. Without it, mark the result as subjective and do not publish a millisecond claim.
 
 For a subjective comparison, hide which configuration is active, alternate A/B/A/B, and use the same scene. A 1–5 score is a preference, not a measurement.
 
 ---
 
-## 8. Verdict rules
+## Verdict rules
 
-| Result pattern | Decision |
+| Result | Decision |
 | --- | --- |
-| Improvement is inside the run-to-run range | Inconclusive; do not keep it as a proven gain |
-| Avg FPS +2, 1% low в€’10, more stutter | Rollback |
-| Avg FPS unchanged, 1% low better, frametime smoother | Keep only if the change is repeatable |
-| Better FPS but crashes/WHEA/artifacts | Rollback immediately |
-| Better only in a benchmark, worse in the real game | Prefer the real-game result |
-| No change, but the setting is required for a feature you use | Keep for functionality, not as a performance claim |
+| Improvement is inside the run-to-run range | Inconclusive; do not treat it as a proven gain |
+| Average FPS improves, but 1% lows or stutter worsen | Roll back |
+| Average FPS is unchanged, but 1% lows and frame times improve | Keep only if the result is repeatable |
+| FPS improves, but crashes, WHEA errors, or artifacts appear | Roll back immediately |
+| Result is better in a benchmark but worse in the real game | Prefer the real-game result |
+| No performance change, but the setting is required for a feature | Keep it for functionality, not as a performance claim |
 
 ---
 
-## 9. Source and evidence policy
+## Evidence policy
 
-Use three levels:
+Use these source levels:
 
-1. **Primary:** Microsoft Learn/Support, NVIDIA/AMD/Intel documentation, game developer/publisher support and patch notes, motherboard/SSD vendor manuals.
-2. **Secondary:** established technical publications and vendor-adjacent testing resources. Mark them as secondary.
-3. **Community:** forums, Reddit, YouTube, and screenshots. Use only as a hypothesis to test, never as proof.
+1. **Primary:** Microsoft Learn or Support, NVIDIA, AMD, Intel, game developer or publisher documentation, patch notes, and hardware vendor manuals.
+2. **Secondary:** established technical publications and vendor-adjacent testing resources.
+3. **Community:** forums, Reddit, YouTube, and screenshots. Use them only as hypotheses to test, never as proof.
 
 For every recommendation, record:
 
-- source link and access date;
-- software, driver, Windows, or game version;
-- applicability (desktop/laptop, GPU vendor, VRR, anti-cheat, game patch);
-- rollback path;
-- status: `verified`, `needs-verification`, or `deprecated`.
+- Source link and access date
+- Software, driver, Windows, or game version
+- Applicability: desktop or laptop, GPU vendor, VRR, anti-cheat, game patch
+- Rollback path
+- Status: `verified`, `needs verification`, or `deprecated`
 
-Do not publish вЂњup to +X% FPSвЂќ without your own reproducible measurement. Do not present a patch-specific behavior as a permanent rule.
+Do not publish “up to +X% FPS” claims without your own reproducible measurement. Do not present patch-specific behavior as a permanent rule.
 
-Third-party tool entries live in [18 Optimization tools evidence](https://h4zvenn.github.io/gaming-pc-guide/docs/18-optimization-tools-evidence.html).
+Third-party tools are covered in [Optimization Tools Evidence](18-optimization-tools-evidence.html).
 
 ---
 
-## 10. вЂњKeep or rollbackвЂќ checklist
+## Keep or rollback checklist
 
-- [ ] Metrics and tool definitions are written down.
+- [ ] Metrics and tool definitions are recorded.
 - [ ] The same scene, patch, driver, settings, and overlays were used.
 - [ ] At least 3 runs per configuration were captured.
 - [ ] Median and range are reported, not only the best result.
-- [ ] 1% low did not regress beyond the run-to-run range.
-- [ ] Frametime and subjective smoothness are reported separately.
-- [ ] No crash, WHEA, BSOD, driver reset, or artifact appeared.
+- [ ] 1% lows did not regress beyond the run-to-run range.
+- [ ] Frame times and subjective smoothness are reported separately.
+- [ ] No crash, WHEA error, BSOD, driver reset, or artifact appeared.
 - [ ] Temperatures and noise remain acceptable.
 - [ ] The change has a documented rollback path.
+
+---
 
 Back to main guide: [Home](../).
