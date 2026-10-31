@@ -1,112 +1,204 @@
 ---
 layout: doc
-title: "cs2"
+title: "Counter-Strike 2"
 description: "Counter-Strike 2 settings, latency, FPS caps, configuration, and testing guidance."
 lang: en
 translation_key: game-cs2
 permalink: /docs/games/cs2.html
 ---
 
-> Complete guide for maximum Counter-Strike 2 performance optimization on Source 2. Eliminating micro-stutters, reducing input lag, fine-tuning network settings, and securing a stable 1% Low FPS floor.
+> Complete guide for improving Counter-Strike 2 performance on Source 2: reduce stutter, improve frame-time consistency, and establish a stable FPS floor. Test every change on your own system.
 
 ## Applicability
 
-- **Game:** Counter-Strike 2
-- **Platform:** Steam
-- **Engine:** Source 2 (DirectX 11 / Vulkan)
-- **Anti-cheat:** VAC + Trusted Mode
-- **Game version tested:** current-patch (2026)
-- **Date checked:** 2026-10-30
-- **Status:** verified
+| Item | Value |
+| --- | --- |
+| Game | Counter-Strike 2 |
+| Platform | Steam |
+| Engine | Source 2 |
+| APIs | DirectX 11 and Vulkan |
+| Anti-cheat | VAC |
+| Status | Needs verification per game patch |
 
-## Quick Start
+## Before tuning
 
-Before tuning CS2, verify your system configuration in this order:
+Complete the general preparation flow first:
 
-1. **System Preparation:** [Before You Start]({{ '/docs/01-before-you-start.html' | relative_url }}) → [Find the Bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }})
-2. **Hardware & OS:** [BIOS Setup]({{ '/docs/03-bios-and-hardware.html' | relative_url }}) → [Drivers & Updates]({{ '/docs/04-drivers-and-updates.html' | relative_url }}) → [Windows 11 Tweaks]({{ '/docs/05-windows-11.html' | relative_url }})
-3. **Graphics & Background:** [GPU Settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) → [Background Apps]({{ '/docs/07-background-apps.html' | relative_url }}) → [Services & Security]({{ '/docs/08-services-and-security.html' | relative_url }})
-4. **Diagnostics & Stability:** [PowerShell Diagnostics]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) → [Temperatures & Stability]({{ '/docs/10-temperatures-stability.html' | relative_url }})
-5. **CS2 Validation:** Apply the settings below and measure performance with the [Benchmark Template]({{ '/docs/16-benchmark-templates.html' | relative_url }}).
+1. [Before You Start](../01-before-you-start.html)
+2. [Find the Bottleneck](../02-find-the-bottleneck.html)
+3. [BIOS & Hardware](../03-bios-and-hardware.html)
+4. [Drivers & Updates](../04-drivers-and-updates.html)
+5. [Windows 11 Core](../05-windows-11.html)
+6. [GPU Settings](../06-gpu-settings.html)
+7. [Background Apps](../07-background-apps.html)
+8. [Temperatures & Stability](../10-temperatures-stability.html)
 
-## Requirements & Compatibility
+Do not change CS2 settings until the system is stable and the monitor refresh rate, drivers, temperatures, and background load are checked.
 
-- **Anti-cheat constraints:** VAC + Trusted Mode strictly block third-party code injection. Do not modify core game files or use unapproved external overlays. The `-allow_third_party_software` parameter lowers your Trust Factor — use it at your own risk.
-- **OS / API:** Windows 10 (1909+) / Windows 11; **DirectX 11** is strongly recommended (Vulkan is recommended only for older AMD CPUs paired with powerful GPUs, but can induce stutter during initial shader compilation).
-- **Incompatibilities:** Discord Overlay, Xbox Game Bar, NVIDIA GeForce Experience Overlay, and RivaTuner Statistics Server (RTSS) may cause cursor issues, frame stutters, and FPS drops. Disable them during initial troubleshooting.
+---
 
-## Graphics Settings — Tradeoffs & Competitive Baseline
+## Compatibility
 
-> Graphics settings in CS2 impact not only FPS, but also player model visibility through Source 2 lighting and shadow mechanics.
+- VAC can flag unauthorized third-party software that interacts with the game process.
+- Do not modify core game files or use unapproved external tools.
+- Avoid third-party overlays during troubleshooting, especially Discord Overlay, Xbox Game Bar, NVIDIA Overlay, and RTSS.
+- If you use `-allow_third_party_software`, understand that it can affect Trust Factor and is not required for normal optimization.
 
-| Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
-| --- | --- | --- | --- | --- |
-| Resolution | Native or custom 4:3 / 16:9 | GPU | Sharpness / FOV | Native (or 1280x960 stretched) |
-| Display Mode | Fullscreen / Windowed | OS/GPU | Input latency | Exclusive Fullscreen |
-| Boost Player Contrast | Highlights models | CPU | Visibility | Enabled |
-| Wait for V-Sync | Frame synchronization | GPU | Input lag | Disabled |
-| Multisampling Anti-Aliasing | Edge smoothing | GPU | Jagged edges | 4x MSAA (or 2x for weak GPU) |
-| Global Shadow Quality | Shadow distance / map | GPU/CPU | Shadow detail | High (Critical for info!) |
-| Model / Texture Detail | Texture filtering | VRAM | Surface clarity | Medium |
-| Shader Detail | Surface effects / water | GPU | Visual effects | Low |
-| Particle Detail | Smokes, Molotovs, blood | CPU/GPU | Explosion detail | Low |
-| Ambient Occlusion | Contact shadows | GPU | Depth perception | Disabled |
-| High Dynamic Range | Lighting range | GPU | Brightness | Quality / Performance |
-| FidelityFX Super Resolution | AMD Upscaling | GPU | Blur vs FPS | Disabled (Native) |
-| NVIDIA Reflex Low Latency | Sub-frame latency reduction | CPU/GPU | Input lag | On + Boost |
+Use DirectX 11 as the default renderer. Test Vulkan only if you have a specific compatibility or performance reason; shader compilation and stutter behavior can differ between systems.
 
-## FPS Cap, Sync & Latency Reduction
+---
 
-- **In-game FPS limiter:** Use the `fps_max` console command (e.g., `fps_max 400` or cap to your monitor's refresh rate if your frame delivery is erratic). In-game capping is vastly superior to external limiters.
-- **NVIDIA Reflex:** Set to **`On + Boost`** whenever using an RTX/GTX GPU. This reduces input latency by 15–30% in CPU-bound scenarios.
-- **G-SYNC / FreeSync:** Enable in your GPU Control Panel and monitor OSD. Keep in-game V-Sync **Disabled** when utilizing VRR.
+## Graphics settings
 
-## Configs & Launch Options
+Graphics settings affect FPS, visual clarity, and model visibility. Start with a stable baseline, then change one setting at a time.
 
-- **Config location:** `.../steamapps/common/Counter-Strike 2/game/csgo/cfg/` (`autoexec.cfg`).
-- **Verified launch options:**
-  - `-novid` — skips the Valve intro sequence.
-  - `-high` — sets high process priority (beneficial on older CPUs; test carefully on modern architectures with E-cores).
-  - `-threads <N>` — forces the process to utilize specific physical CPU threads.
-  - `-nojoy` — disables joystick/controller input polling to free CPU cycles.
-- **Recommended Autoexec Network Variables:**
-  - `rate 786432` (maximum bandwidth allocation for sub-tick rate data).
-  - `cl_cmdrate 127`, `cl_updaterate 127` (server tick synchronization).
-
-## Common Issues & Diagnosis
-
-| Symptom | First check | Link |
+| Setting | Recommended start | Why |
 | --- | --- | --- |
-| Low FPS, GPU busy at 95-99% | Lower Shader Detail, Shadow Quality, disable MSAA | [Bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) |
-| Low FPS, single CPU core at 100% | Lower Particle Detail, terminate background processes | [Bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) |
-| Micro-stutter on new maps | Shader pre-compilation, verify game files, move to NVMe SSD | [Bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) |
-| Heavy input latency / sluggish mouse | Enable Reflex On+Boost, disable V-Sync and third-party overlays | [GPU settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) |
-| Packet loss / sub-tick delay | Check telemetry overlay, switch to Ethernet, check bufferbloat | [Diagnostics]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) |
-| Crash on launch / "VAC unable to verify" | Verify file integrity in Steam, disable third-party hooks | [Troubleshooting]({{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}) |
+| Resolution | Native resolution | Best clarity; lower only if you need more FPS |
+| Display mode | Fullscreen | Usually the most predictable presentation mode |
+| Boost Player Contrast | Enabled | Can improve player-model visibility |
+| Wait for V-Sync | Disabled | Avoids added latency; use VRR separately if supported |
+| Multisampling Anti-Aliasing | 2x MSAA to start | Balance between edge quality and GPU cost |
+| Global Shadow Quality | High | Shadows can provide useful gameplay information |
+| Model / Texture Detail | Medium | Reasonable VRAM and visual-quality balance |
+| Shader Detail | Low | Reduces GPU load with limited competitive impact |
+| Particle Detail | Low | Reduces CPU and GPU load from effects |
+| Ambient Occlusion | Disabled | Saves GPU resources |
+| FidelityFX Super Resolution | Disabled | Use native rendering unless you need more FPS |
+| NVIDIA Reflex | Enabled + Boost, if supported | Can reduce system latency on supported NVIDIA GPUs |
 
-> **Source 2 Shader Note:** Shaders compile dynamically during your first few matches. If you experience stutters after a GPU driver update, complete 1 full Deathmatch game to allow the disk shader cache to build.
+If FPS is low, reduce settings in this order:
 
-## Benchmark Scenario
+1. Shader Detail
+2. Particle Detail
+3. Ambient Occlusion
+4. MSAA
+5. Shadow Quality
 
-- **Scene:** Steam Workshop map `Aim Botz` (fixed bot count) OR a recorded `.dem` competitive replay played via `playdemo`.
-- **Warm-up:** 5 minutes (mandatory warm-up to pre-load shader cache and stream map assets into memory).
-- **Runs:** Minimum of 3 runs (recording Average FPS, 1% Low, and 0.1% Low metrics).
-- **Tools:** CapFrameX 1.8+, PresentMon, or HWiNFO64.
-- **Control Variables:** Identical resolution, identical graphics settings, no background browser or chat apps running.
+Keep Shadow Quality higher if you rely on shadow information, but test the FPS cost in your usual maps.
 
-## Rollback Procedure
+---
 
-1. Delete or rename `autoexec.cfg` and restore default parameters in `video.txt`.
-2. Clear all custom launch options in Steam properties.
-3. If issues started after a driver update, perform a clean rollback using Display Driver Uninstaller (DDU).
-4. Reboot your system and rerun the benchmark scenario to confirm baseline performance.
+## FPS cap and latency
 
-## Sources
+Use the in-game FPS limiter before external limiters.
 
-- Primary: Valve CS2 Official Patch Notes, NVIDIA Reflex Developer Documentation, AMD Anti-Lag guides.
-- Secondary: Blur Busters (Display Latency & VRR Methodology), CapFrameX metric validation docs.
-- Community: Competitive hardware benchmarking analytics (r/GlobalOffensive, HLTV technical analysis).
+A practical starting point is a cap slightly above your monitor refresh rate, for example:
 
-> Mark each recommendation with: `verified` | `needs-verification` | `deprecated` and the date.
+```text
+fps_max 400
+```
 
-Back to main guide: [README]({{ '/' | relative_url }}).
+If frame delivery is unstable, test a cap near a sustainable FPS level instead of leaving it unlimited. The best cap depends on your CPU, GPU, monitor, and the map.
+
+For NVIDIA GPUs that support Reflex:
+
+- Enable Reflex in-game.
+- Test both `On` and `On + Boost`.
+- Do not force NVIDIA Low Latency Mode globally at the same time.
+
+For VRR monitors:
+
+- Enable G-SYNC or FreeSync in the GPU control panel and monitor OSD.
+- Keep in-game V-Sync disabled unless you need to tune VRR behavior for a specific monitor.
+- Use an FPS cap within the VRR range if frame pacing is inconsistent.
+
+---
+
+## Launch options
+
+Config location:
+
+```text
+...\steamapps\common\Counter-Strike 2\game\csgo\cfg\
+```
+
+Common launch options:
+
+| Option | Purpose | Recommendation |
+| --- | --- | --- |
+| `-novid` | Skips the intro video | Safe |
+| `-nojoy` | Disables joystick input polling | Optional |
+| `-high` | Requests high process priority | Test only; not universally beneficial |
+| `-threads <N>` | Forces a thread count | Avoid unless you have a specific reason |
+
+Do not copy a full launch-options string from a video or forum post. Add one option at a time and test it.
+
+---
+
+## Network settings
+
+CS2 handles most network behavior automatically. Do not copy old CS:GO network commands without understanding them.
+
+If you experience packet loss or high ping:
+
+1. Pause downloads, cloud sync, torrents, and streaming.
+2. Use Ethernet if possible.
+3. Restart the router if the issue is local.
+4. Test another server region.
+5. Measure latency to the server region you actually play on.
+
+See [PowerShell Diagnostics](../09-powershell-diagnostics.html#network) for basic connectivity checks.
+
+---
+
+## Common issues
+
+| Symptom | First check |
+| --- | --- |
+| Low FPS with GPU busy time at 95–99% | Reduce shader, particle, MSAA, or shadow settings |
+| Low FPS with one CPU core saturated | Close background apps and reduce CPU-heavy settings |
+| Stutter on new maps | Allow shader compilation, verify game files, use an SSD |
+| Sluggish mouse or high latency | Enable Reflex, disable V-Sync, remove overlays |
+| Packet loss or high ping | Check downloads, Ethernet, router, ISP, and server region |
+| Crash on launch or VAC error | Verify game files in Steam and remove unapproved third-party software |
+
+Source 2 compiles shaders dynamically during early gameplay. After a GPU driver update or major setting change, play a complete practice or Deathmatch session before benchmarking.
+
+---
+
+## Benchmark scenario
+
+Use one repeatable scenario for every test.
+
+| Item | Recommendation |
+| --- | --- |
+| Scene | Aim Botz workshop map or a recorded competitive demo |
+| Warm-up | 5 minutes |
+| Runs | At least 3 |
+| Metrics | Average FPS, 1% lows, 0.1% lows, frame times |
+| Tools | CapFrameX, PresentMon, or HWiNFO |
+| Controls | Same resolution, settings, driver, overlays, and background load |
+
+See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
+
+---
+
+## Rollback
+
+1. Remove or rename `autoexec.cfg`.
+2. Remove custom Steam launch options.
+3. Return changed in-game settings to their previous values.
+4. If issues began after a driver update, roll back to the previous stable driver before considering a clean installation.
+5. Reboot and repeat the benchmark scenario.
+
+---
+
+## Evidence status
+
+| Recommendation | Status |
+| --- | --- |
+| Use native resolution and fullscreen | Verified |
+| Disable V-Sync for lower latency | Verified |
+| Use in-game FPS limiter before external limiters | Needs verification per system |
+| Enable Reflex on supported NVIDIA GPUs | Needs verification per system |
+| Use `-high` or `-threads` | Needs verification; not universally beneficial |
+| Change `rate`, `cl_cmdrate`, or `cl_updaterate` | Deprecated; do not copy old CS:GO values |
+
+---
+
+## Related guides
+
+- [Game Guides](README.html)
+- [Benchmark Templates](../16-benchmark-templates.html)
+- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
