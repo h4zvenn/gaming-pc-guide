@@ -19,7 +19,7 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 ### 🎯 Fast Problem Solver
 
 | Issue | Recommended Solution Path |
-|:---|:---|
+| :--- | :--- |
 | **Low FPS / Stutter** | [Bottleneck](docs/02-find-the-bottleneck.md) → [GPU Settings](docs/06-gpu-settings.md) → [Thermals](docs/10-temperatures-stability.md) |
 | **Input Lag / Delay** | [GPU Settings](docs/06-gpu-settings.md) → [Diagnostics](docs/09-powershell-diagnostics.md) |
 | **High Ping / Network Spikes** | [Network Diagnostics](docs/09-powershell-diagnostics.md#9-network) |
@@ -30,7 +30,7 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 ## 🎮 Game-Specific Guides
 
 | Game | Status | Key Topics Covered |
-|:---|:---:|:---|
+| :--- | :---: | :--- |
 | [Counter-Strike 2](docs/games/cs2.md) | ✅ **Live** | VAC safety, Source 2 tweaks, NVIDIA Reflex, launch options |
 | [Minecraft Java](docs/games/minecraft-java.md) | 🟡 Draft | JVM flags, performance mods, chunk render optimization |
 | [VALORANT](docs/games/valorant.md) | 🟡 Draft | Vanguard compatibility, Reflex, competitive settings |
@@ -48,30 +48,30 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 
 ### 🔍 Core Diagnostics
 
-* [01 — Preparation](docs/01-before-you-start.md) — Restore point setup, baseline metrics, refresh rate verification
-* [02 — Find Bottleneck](docs/02-find-the-bottleneck.md) — Step-by-step CPU, GPU, RAM, VRAM, and thermal limit detection
-* [09 — Diagnostics](docs/09-powershell-diagnostics.md) — Safe PowerShell commands for hardware, network, and WHEA errors
-* [10 — Thermals & Stability](docs/10-temperatures-stability.md) — Thermal throttling detection, airflow, stress testing
-* [15 — Troubleshooting](docs/15-troubleshooting-decision-trees.md) — Decision trees for system instability and crashes
+- [01 — Preparation](docs/01-before-you-start.md) — Restore point setup, baseline metrics, refresh rate verification
+- [02 — Find Bottleneck](docs/02-find-the-bottleneck.md) — Step-by-step CPU, GPU, RAM, VRAM, and thermal limit detection
+- [09 — Diagnostics](docs/09-powershell-diagnostics.md) — Safe PowerShell commands for hardware, network, and WHEA errors
+- [10 — Thermals & Stability](docs/10-temperatures-stability.md) — Thermal throttling detection, airflow, stress testing
+- [15 — Troubleshooting](docs/15-troubleshooting-decision-trees.md) — Decision trees for system instability and crashes
 
 ### ⚙️ System Optimization
 
-* [03 — BIOS & Hardware](docs/03-bios-and-hardware.md) — XMP/EXPO, ReBAR, PBO, and PCIe configurations
-* [04 — Drivers & Updates](docs/04-drivers-and-updates.md) — Chipset drivers, GPU clean installation (DDU)
-* [05 — Windows 11 Core](docs/05-windows-11.md) — Game Mode, Power Plans, HAGS, and overlay management
-* [06 — GPU Settings](docs/06-gpu-settings.md) — NVIDIA/AMD/Intel control panels, Reflex, V-Sync, DLSS/FSR
-* [07 — Background Apps](docs/07-background-apps.md) — Taming browsers, sync apps, and background processes
-* [08 — Services & Security](docs/08-services-and-security.md) — Safe service practices, Defender & Firewall tuning
-* [11 — What NOT to Do](docs/11-what-not-to-do.md) — Debunking debloat scripts, RAM cleaners, and registry hacks
-* [12 — FAQ](docs/12-faq.md) — Frequently asked questions and common myths
+- [03 — BIOS & Hardware](docs/03-bios-and-hardware.md) — XMP/EXPO, ReBAR, PBO, and PCIe configurations
+- [04 — Drivers & Updates](docs/04-drivers-and-updates.md) — Chipset drivers, GPU clean installation (DDU)
+- [05 — Windows 11 Core](docs/05-windows-11.md) — Game Mode, Power Plans, HAGS, and overlay management
+- [06 — GPU Settings](docs/06-gpu-settings.md) — NVIDIA/AMD/Intel control panels, Reflex, V-Sync, DLSS/FSR
+- [07 — Background Apps](docs/07-background-apps.md) — Taming browsers, sync apps, and background processes
+- [08 — Services & Security](docs/08-services-and-security.md) — Safe service practices, Defender & Firewall tuning
+- [11 — What NOT to Do](docs/11-what-not-to-do.md) — Debunking debloat scripts, RAM cleaners, and registry hacks
+- [12 — FAQ](docs/12-faq.md) — Frequently asked questions and common myths
 
 ### 📊 Validation, Templates & Tools
 
-* [13 — Security Baseline](docs/13-security-hardening-baseline.md) — Safe default baseline for system protection
-* [14 — Quick Presets](docs/14-quick-start-presets.md) — Ready-to-use optimization presets for different PC tiers
-* [16 — Benchmark Templates](docs/16-benchmark-templates.md) — Repeatable testing methodology and metric logs
-* [17 — Build Cards](docs/17-common-builds-quick-cards.md) — Optimal starting configurations for NVIDIA/AMD/Intel builds
-* [18 — Tools Evidence](docs/18-optimization-tools-evidence.md) — Objective analysis of popular third-party optimizers
+- [13 — Security Baseline](docs/13-security-hardening-baseline.md) — Safe default baseline for system protection
+- [14 — Quick Presets](docs/14-quick-start-presets.md) — Ready-to-use optimization presets for different PC tiers
+- [16 — Benchmark Templates](docs/16-benchmark-templates.md) — Repeatable testing methodology and metric logs
+- [17 — Build Cards](docs/17-common-builds-quick-cards.md) — Optimal starting configurations for NVIDIA/AMD/Intel builds
+- [18 — Tools Evidence](docs/18-optimization-tools-evidence.md) — Objective analysis of popular third-party optimizers
 
 </details>
 
@@ -92,9 +92,9 @@ Evidence-based guide for optimizing Windows 11 gaming performance. Find your bot
 
 ## 🤝 Project Info & Resources
 
-* **Contributing:** Want to add benchmarks or guides? Please review [CONTRIBUTING.md](CONTRIBUTING.md) first.
-* **Changelog:** See [CHANGELOG.md](CHANGELOG.md) for version history and updates.
-* **License:** Distributed under the [MIT License](LICENSE).
+- **Contributing:** Want to add benchmarks or guides? Please review [CONTRIBUTING.md](CONTRIBUTING.md) first.
+- **Changelog:** See [CHANGELOG.md](CHANGELOG.md) for version history and updates.
+- **License:** Distributed under the [MIT License](LICENSE).
 
 ---
 

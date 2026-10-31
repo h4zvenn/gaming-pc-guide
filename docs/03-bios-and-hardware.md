@@ -18,7 +18,7 @@ title: "03-bios-and-hardware"
 ### Fast safe BIOS path
 
 | If you are unsure | Do this |
-|---|---|
+| --- | --- |
 | New to BIOS tuning | Keep voltages on `Auto`, enable only XMP/EXPO + ReBAR |
 | System already stable | Change one option at a time and benchmark |
 | Boot problems after tuning | Revert to defaults and validate stock stability |

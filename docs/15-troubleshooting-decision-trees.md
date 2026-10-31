@@ -40,7 +40,7 @@ flowchart TD
 Quick actions table:
 
 | Signal | First fix |
-|---|---|
+| --- | --- |
 | GPU busy 95-99% with no cap, low FPS | Reduce GPU-heavy settings first |
 | GPU not saturated, one CPU core maxed | Reduce CPU-heavy settings + background load |
 | Normal average FPS, bad 1% low | Check RAM/VRAM/SSD + shader/loading stutter |
@@ -64,7 +64,7 @@ flowchart TD
 Quick actions table:
 
 | Symptom pattern | Likely cause |
-|---|---|
+| --- | --- |
 | Gets worse over time | Thermal saturation |
 | Spikes on new zones | Shader compile / storage streaming |
 | Spikes with Discord/recording | Overlay/capture overhead |
@@ -88,7 +88,7 @@ flowchart TD
 Quick actions table:
 
 | If this happened afterвЂ¦ | Do this first |
-|---|---|
+| --- | --- |
 | Curve Optimizer / PBO tweak | Revert and test stock |
 | GPU undervolt | Relax curve or return default |
 | Driver update | Roll back first; clean install only if rollback fails |
@@ -110,7 +110,7 @@ flowchart TD
 Quick actions table:
 
 | Network issue | First check |
-|---|---|
+| --- | --- |
 | Sudden ping spikes | Background downloads/updates |
 | Random packet loss | Wi-Fi quality / cable / router |
 | Region-specific lag | Server-side routing/load |

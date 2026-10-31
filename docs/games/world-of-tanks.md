@@ -33,7 +33,7 @@ title: "world-of-tanks"
 ## Graphics Settings вЂ” Tradeoffs
 
 | Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Render Scale | Internal resolution | GPU | Sharpness | 100% |
 | Graphics Preset | Bundled preset | GPU/CPU | Overall | Medium / High |
 | Anti-Aliasing | | GPU | Edges | MSAA 2Г— / 4Г— |
@@ -66,7 +66,7 @@ title: "world-of-tanks"
 ## Common Issues & Diagnosis
 
 | Symptom | First check | Link |
-|---|---|---|
+| --- | --- | --- |
 | "Game integrity check failed" | Remove mods, verify files via WGC/Steam | вЂ” |
 | Low FPS, GPU-bound | Lower Render Scale, Particle Quality, Water, Post-Processing | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
 | Low FPS, CPU-bound | Lower Grass, View Distance, Shadows | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |

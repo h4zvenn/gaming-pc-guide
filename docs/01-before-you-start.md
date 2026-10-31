@@ -22,7 +22,7 @@ Before optimization:
 ### Quick win table
 
 | If you only have 10 minutes | Do this first |
-|---|---|
+| --- | --- |
 | You did not benchmark yet | Record baseline FPS + 1% low |
 | You are not sure about system state | Create restore point + check temps |
 | Game feels choppy | Verify monitor refresh rate + close heavy background apps |

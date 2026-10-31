@@ -35,7 +35,7 @@ title: "minecraft-java"
 ## Graphics Settings вЂ” Tradeoffs
 
 | Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Render Distance | Chunk load radius | CPU/GPU/RAM | Visibility | 12вЂ“16 chunks |
 | Simulation Distance | Entity/tick radius | CPU | Farms, redstone | в‰¤ Render Distance |
 | Graphics (Fast/Fancy) | Leaves, clouds, particles | GPU | Visual fidelity | Fast for FPS |
@@ -73,7 +73,7 @@ title: "minecraft-java"
 ## Common Issues & Diagnosis
 
 | Symptom | First check | Link |
-|---|---|---|
+| --- | --- | --- |
 | Low FPS, high CPU | Lower Render/Simulation Distance, disable shaders, test Sodium/Lithium | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
 | Stutter every few seconds | GC spikes: check RAM allocation, try `-Xms=Xmx`, test G1GC/ZGC | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
 | Chunk load stutter | Pre-generate chunks (Chunky), lower Render Distance, SSD | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |

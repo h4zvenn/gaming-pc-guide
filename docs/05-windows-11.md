@@ -17,7 +17,7 @@ title: "05-windows-11"
 ### 5-minute Windows gaming pass
 
 | Check | Target |
-|---|---|
+| --- | --- |
 | Game Mode | On |
 | Monitor refresh rate | Correct max stable value |
 | Startup load | Unneeded apps disabled |

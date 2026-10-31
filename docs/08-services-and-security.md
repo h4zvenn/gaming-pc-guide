@@ -21,7 +21,7 @@ Do not disable a service until you can answer three questions:
 ### Safe decision matrix
 
 | You see | First action |
-|---|---|
+| --- | --- |
 | High CPU/disk usage | Find process owner before touching services |
 | Update-related load | Pause/schedule updates, do not disable services |
 | Unknown service name | Research origin and file path first |
@@ -356,7 +356,7 @@ Get-CimInstance Win32_Service |
 ### Safe candidates
 
 | Service | Recommended state | When |
-|---|---|---|
+| --- | --- | --- |
 | `XboxService` | `Manual` | Xbox Game Bar is not used |
 | `LGHUBUpdaterService` | `Manual` | Constant Logitech background updates are not needed |
 
@@ -371,7 +371,7 @@ Stop-Service -Name LGHUBUpdaterService -ErrorAction SilentlyContinue
 ### Services to leave alone
 
 | Service | Reason |
-|---|---|
+| --- | --- |
 | `NvContainerLocalSystem` | Required by NVIDIA App and driver components |
 | `Steam Client Service` | Required for Steam functionality |
 | Windows Update | Security and stability |

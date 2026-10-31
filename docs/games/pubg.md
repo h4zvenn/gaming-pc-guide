@@ -33,7 +33,7 @@ title: "pubg"
 ## Graphics Settings вЂ” Tradeoffs
 
 | Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Resolution | | | | Native |
 | Render Scale | | GPU | | 100% |
 | FPS Cap | | | | Test |
@@ -70,7 +70,7 @@ title: "pubg"
 ## Common Issues & Diagnosis
 
 | Symptom | First check | Link |
-|---|---|---|
+| --- | --- | --- |
 | BattlEye initialization failed | Verify game files, reinstall BattlEye via launcher | вЂ” |
 | Low FPS, CPU-bound | Lower View Distance, Foliage, Effects; test DX12 | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |
 | Stutter on new areas | Texture streaming, SSD space, shader cache | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |

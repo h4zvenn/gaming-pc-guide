@@ -20,7 +20,7 @@ title: "06-gpu-settings"
 ### Fast setup order (per game)
 
 | Order | Action |
-|---|---|
+| --- | --- |
 | 1 | Set in-game resolution/quality |
 | 2 | Pick upscaler mode (Quality в†’ Balanced в†’ Performance) |
 | 3 | Set FPS cap for stable frametime |
@@ -46,8 +46,6 @@ Get-ChildItem "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup" -Erro
   Select-Object Name, FullName |
   Format-List
 ```
-
-
 
 ## 1. General settings for any GPU
 
@@ -140,7 +138,7 @@ It helps smooth motion when FPS varies within monitor VRR range.
 #### Two starting profiles to test
 
 | Goal | V-Sync | VRR | FPS cap | What to compare |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Lowest latency | Off | Off | Test uncapped against a sustainable cap | p99 frametime, tearing, subjective input feel |
 | Smoothest motion | On in driver, off in game if the game has its own option | On | Slightly below the monitorвЂ™s maximum refresh | Frametime, VRR range, flicker, subjective smoothness |
 

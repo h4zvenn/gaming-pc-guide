@@ -21,7 +21,7 @@ title: "17-common-builds-quick-cards"
 ### Baseline
 
 | Area | Recommended start |
-|---|---|
+| --- | --- |
 | Windows | Game Mode On, correct refresh rate, clean startup |
 | Driver | Stable Game Ready / Studio based on workload |
 | In-game | Set graphics first, then FPS cap |
@@ -49,7 +49,7 @@ title: "17-common-builds-quick-cards"
 ### Baseline
 
 | Area | Recommended start |
-|---|---|
+| --- | --- |
 | Windows | Game Mode On, correct refresh rate, clean startup |
 | Driver | Stable Adrenalin release |
 | In-game | Set graphics first, then FPS cap |
@@ -76,7 +76,7 @@ title: "17-common-builds-quick-cards"
 ### Baseline
 
 | Area | Recommended start |
-|---|---|
+| --- | --- |
 | Windows | Game Mode On, high-performance GPU assignment |
 | Driver | Latest stable Intel graphics driver |
 | API | Test DX11 vs DX12 vs Vulkan when game supports it |
@@ -101,7 +101,7 @@ title: "17-common-builds-quick-cards"
 ## Mixed audience presets (fast picks)
 
 | Goal | Start here |
-|---|---|
+| --- | --- |
 | More FPS quickly | Lower GPU-heavy settings + upscaler + FPS cap |
 | Better smoothness | Improve 1% low via background cleanup + thermals |
 | Lower latency feel | In-game latency tech + stable FPS range |

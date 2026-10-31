@@ -33,7 +33,7 @@ title: "_template"
 ## Graphics Settings вЂ” Tradeoffs
 
 | Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Resolution | | | | Native |
 | Render scale | | | | 100% |
 | Upscaler (DLSS/FSR/XeSS) | | | | Quality в†’ Balanced |
@@ -66,7 +66,7 @@ title: "_template"
 ## Common Issues & Diagnosis
 
 | Symptom | First check | Link |
-|---|---|---|
+| --- | --- | --- |
 | Low FPS | | [Bottleneck](../02-find-the-bottleneck.md) |
 | Stutter / bad frametime | | [Bottleneck](../02-find-the-bottleneck.md) |
 | Input latency | | [GPU settings](../06-gpu-settings.md) |

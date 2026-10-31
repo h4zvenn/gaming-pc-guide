@@ -30,7 +30,7 @@ Improve smoothness and 1% low without risky tuning.
 ### Apply in this order
 
 | Step | Action | Why |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Set correct monitor refresh rate | Avoid fake 60 Hz bottleneck |
 | 2 | Close browser video/downloads/overlays | Free CPU/RAM/GPU headroom |
 | 3 | Enable Game Mode | May help Windows prioritize gameplay; effect varies |
@@ -55,7 +55,7 @@ Balance visual quality and stable high FPS.
 ### Apply in this order
 
 | Step | Action | Why |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Check XMP/EXPO is enabled and stable (see [03](03-bios-and-hardware.md)) | Avoid JEDEC baseline in CPU-limited scenes |
 | 2 | Enable Above 4G + ReBAR (if supported) | Potential uplift in some titles |
 | 3 | Update chipset + stable GPU driver | Better compatibility/perf consistency |
@@ -79,7 +79,7 @@ Maximize consistency at high FPS (165вЂ“360 Hz class).
 ### Apply in this order
 
 | Step | Action | Why |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Confirm CPU/GPU clocks are stable under load | Remove hidden throttling |
 | 2 | Tune FPS cap around real stable range | Smoother frametime than uncapped spikes |
 | 3 | Tune VRR + V-Sync behavior per game | Better smoothness/latency balance |
@@ -103,7 +103,7 @@ Keep stable FPS while controlling heat and noise.
 ### Apply in this order
 
 | Step | Action | Why |
-|---|---|---|
+| --- | --- | --- |
 | 1 | Play on AC power, performance profile on | Prevent battery power limits |
 | 2 | Force game to high-performance GPU | Avoid iGPU bottleneck |
 | 3 | Clean startup/background load | Preserve thermal budget |
@@ -121,7 +121,7 @@ Keep stable FPS while controlling heat and noise.
 ## Fast вЂњwhat preset should I choose?вЂќ
 
 | If your problem isвЂ¦ | Start with |
-|---|---|
+| --- | --- |
 | Low FPS in heavy scenes | Preset A or B |
 | Stutter after long sessions | Preset D or C |
 | Random crashes after tuning | Stop presets, run [10 Temperatures and stability](10-temperatures-stability.md) |

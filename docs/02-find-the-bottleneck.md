@@ -52,7 +52,7 @@ During testing, monitor:
 ### Fast diagnosis cheat sheet
 
 | You see this | Try this first |
-|---|---|
+| --- | --- |
 | Low FPS + GPU ~99% | Reduce GPU-heavy settings, test upscaler |
 | FPS wonвЂ™t scale + one CPU thread maxed | Reduce CPU-heavy options, close background apps |
 | Stutter with okay average FPS | Check VRAM/RAM/SSD + overlays/downloads |
@@ -62,7 +62,7 @@ During testing, monitor:
 ## Quick diagnostic table
 
 | Symptom | Possible cause | Check first |
-|---|---|---|
+| --- | --- | --- |
 | GPU busy stays around 95вЂ“99% with no cap, FPS is too low | GPU limit | Resolution, render scale, RT, shadows, upscaler, GPU temp |
 | GPU not saturated, FPS does not increase, one CPU core near 100% | CPU limit | CPU-related settings, background tasks, RAM, CPU temp |
 | Average FPS looks fine but hard stutter appears | RAM/VRAM, SSD, shaders, background load, instability | Frametime, memory usage, background downloads, WHEA, temps |

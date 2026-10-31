@@ -23,7 +23,7 @@ This is especially noticeable on PCs with limited RAM, weaker CPUs, slower stora
 ### Pre-game quick shutdown list
 
 | App type | Action before launch |
-|---|---|
+| --- | --- |
 | Browser video/streams | Close |
 | Downloads/cloud sync | Pause |
 | Extra overlays | Disable |
@@ -139,14 +139,13 @@ foreach ($name in $disable) {
 ### Recommended startup policy
 
 | Application | Recommendation |
-|---|---|
+| --- | --- |
 | Discord | Disable unless you need it immediately |
 | Riot Client | Disable unless you play Riot games daily |
 | Roblox | Disable |
 | Steam | Optional |
 | Logitech G HUB | Optional |
 | NVIDIA | Do not disable |
-
 
 > [!TIP]
 > Disabling startup does not uninstall the app. You can always launch it manually or re-enable startup later.

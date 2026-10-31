@@ -12,7 +12,7 @@ title: "16-benchmark-templates"
 A number without a definition is not evidence. Record which tool produced each metric and how that tool defines it.
 
 | Metric | Working definition | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Average FPS | Frames rendered divided by capture duration | Do not average per-second FPS values from different runs |
 | 1% low | FPS derived from the 99th percentile frametime: `1000 / P99(frametime_ms)` | Some tools report the mean of the slowest 1% of frames instead; state which definition was used |
 | 0.1% low | Same calculation at the 99.9th frametime percentile | More sensitive to single long frames |
@@ -97,13 +97,13 @@ Reason:
 ## 5. Template B вЂ” Multi-run table
 
 | Run | Avg FPS | 1% low | 0.1% low | p99 frametime | CPU Temp | GPU Temp | Notes |
-|---|---:|---:|---:|---:|---:|---:|---|
-| Baseline #1 |  |  |  |  |  |  |  |
-| Baseline #2 |  |  |  |  |  |  |  |
-| Baseline #3 |  |  |  |  |  |  |  |
-| Tweak #1 |  |  |  |  |  |  |  |
-| Tweak #2 |  |  |  |  |  |  |  |
-| Tweak #3 |  |  |  |  |  |  |  |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| Baseline #1 | | | | | | | |
+| Baseline #2 | | | | | | | |
+| Baseline #3 | | | | | | | |
+| Tweak #1 | | | | | | | |
+| Tweak #2 | | | | | | | |
+| Tweak #3 | | | | | | | |
 
 > [!TIP]
 > Report the median of each column and the range. A change that is smaller than the baseline range is not proven.
@@ -115,11 +115,11 @@ Reason:
 Use this when FPS drops over time.
 
 | Time mark | Avg FPS | 1% low | CPU Clock | GPU Clock | CPU Temp | GPU Temp | Stutter? |
-|---|---:|---:|---:|---:|---:|---:|---|
-| 0вЂ“5 min |  |  |  |  |  |  |  |
-| 15вЂ“20 min |  |  |  |  |  |  |  |
-| 30вЂ“35 min |  |  |  |  |  |  |  |
-| 45вЂ“50 min |  |  |  |  |  |  |  |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
+| 0вЂ“5 min | | | | | | | |
+| 15вЂ“20 min | | | | | | | |
+| 30вЂ“35 min | | | | | | | |
+| 45вЂ“50 min | | | | | | | |
 
 Also record WHEA events and driver resets for the whole session.
 
@@ -130,11 +130,11 @@ Also record WHEA events and driver resets for the whole session.
 For Reflex/Anti-Lag/V-Sync/VRR/FPS-cap combinations.
 
 | Setup | Avg FPS | 1% low | p99 frametime | Tearing (yes/no) | Subjective input score (1вЂ“5) | Keep? |
-|---|---:|---:|---:|---|---:|---|
-| Base |  |  |  |  |  |  |
-| + Reflex/Anti-Lag |  |  |  |  |  |  |
-| + FPS cap |  |  |  |  |  |  |
-| + V-Sync/VRR tune |  |  |  |  |  |  |
+| --- | ---: | ---: | ---: | --- | ---: | --- |
+| Base | | | | | | |
+| + Reflex/Anti-Lag | | | | | | |
+| + FPS cap | | | | | | |
+| + V-Sync/VRR tune | | | | | | |
 
 > [!IMPORTANT]
 > Input latency in milliseconds requires a tool such as LDAT or NVIDIA Reflex Analyzer. Without one, mark the result as subjective and do not publish a millisecond claim.
@@ -146,7 +146,7 @@ For a subjective comparison, hide which configuration is active, alternate A/B/A
 ## 8. Verdict rules
 
 | Result pattern | Decision |
-|---|---|
+| --- | --- |
 | Improvement is inside the run-to-run range | Inconclusive; do not keep it as a proven gain |
 | Avg FPS +2, 1% low в€’10, more stutter | Rollback |
 | Avg FPS unchanged, 1% low better, frametime smoother | Keep only if the change is repeatable |

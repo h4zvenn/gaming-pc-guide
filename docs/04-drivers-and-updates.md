@@ -40,7 +40,7 @@ If your system is already configured and stable, you do not need to reinstall ev
 ### Fast update strategy
 
 | Situation | Best move |
-|---|---|
+| --- | --- |
 | Fresh Windows install | Follow full update order top-to-bottom |
 | Stable existing setup | Update only component with known issue/fix |
 | New game has launch issues | Try latest stable GPU driver first |

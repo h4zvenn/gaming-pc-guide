@@ -33,7 +33,7 @@ title: "valorant"
 ## Graphics Settings вЂ” Tradeoffs
 
 | Setting | What it does | GPU/CPU cost | Visual impact | Recommended start |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Resolution | | | | Native |
 | Render scale | | | | 100% |
 | Limit FPS | In-game cap | | | Test |
@@ -68,7 +68,7 @@ title: "valorant"
 ## Common Issues & Diagnosis
 
 | Symptom | First check | Link |
-|---|---|---|
+| --- | --- | --- |
 | Vanguard error / not initialized | Secure Boot + TPM 2.0 enabled, Vanguard service running | вЂ” |
 | "VAN" error codes | Riot support KB for specific code | вЂ” |
 | Low FPS, GPU not saturated | CPU-bound: lower Material/Texture/Detail, enable Multithreaded Rendering | [Bottleneck]({{ site.baseurl }}/docs/02-find-the-bottleneck/) |

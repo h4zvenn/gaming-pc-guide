@@ -139,7 +139,7 @@ if (Get-Command npm -ErrorAction SilentlyContinue) {
 ## 6. What not to delete
 
 | Path | Reason |
-|---|---|
+| --- | --- |
 | `C:\Windows\Installer` | Required for repairing and uninstalling programs |
 | `C:\ProgramData\Package Cache` | Required by many installers |
 | `C:\pagefile.sys` | Required for system stability |

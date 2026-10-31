@@ -10,7 +10,7 @@ title: "18-optimization-tools-evidence"
 ## 1. How to read the tool entries
 
 | Layer | Question |
-|---|---|
+| --- | --- |
 | Claimed by developer | What does the tool advertise? |
 | Confirmed by docs or code | What does official documentation or source code show? |
 | Confirmed by test | What did independent measurement show? |

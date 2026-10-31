@@ -10,7 +10,7 @@ title: "09-powershell-diagnostics"
 ## Quick diagnostic flow
 
 | If you need to check | Go here |
-|---|---|
+| --- | --- |
 | Basic hardware info | Sections 1-4 |
 | Startup/background load | Sections 6-7 |
 | Services status | Section 8 |

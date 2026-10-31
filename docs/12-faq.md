@@ -10,7 +10,7 @@ title: "12-faq"
 ## Start here if you are in a hurry
 
 | You wantвЂ¦ | Go to |
-|---|---|
+| --- | --- |
 | Fast FPS gains safely | [14 Quick-start presets](14-quick-start-presets.md) |
 | Fix stutter/crash quickly | [15 Troubleshooting decision trees](15-troubleshooting-decision-trees.md) |
 | Prove tweaks actually work | [16 Benchmark templates](16-benchmark-templates.md) |

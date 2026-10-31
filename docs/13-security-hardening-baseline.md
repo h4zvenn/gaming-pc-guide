@@ -19,7 +19,7 @@ title: "13-security-hardening-baseline"
 ### Fast security baseline (gaming-safe)
 
 | Control | Recommended state |
-|---|---|
+| --- | --- |
 | Defender | Enabled |
 | Firewall | Enabled |
 | Windows Update | Enabled (scheduled) |

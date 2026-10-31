@@ -37,7 +37,7 @@ During gaming or benchmarking, track:
 ### Fast thermal triage
 
 | Symptom | First check |
-|---|---|
+| --- | --- |
 | FPS drops over time | CPU/GPU temp + clocks after 30вЂ“60 min |
 | Fans suddenly loud | Thermal limit / fan curve / dust filters |
 | Random stutter under load | Hotspot/VRAM temp + power limit behavior |
