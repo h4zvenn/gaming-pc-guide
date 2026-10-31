@@ -2,6 +2,66 @@
 
 All notable changes to this project are documented in this file.
 
+## v1.2.0 - 2026-11-01
+
+### Added
+
+- Contribution guidelines with documentation style, Markdown rules, link conventions, local checks, and pull-request checklist.
+- MIT License.
+- Security policy with vulnerability reporting, in-scope topics, and safe contribution expectations.
+- Completed changelog history for earlier project versions.
+
+### Changed
+
+- Cleaned up core documentation pages:
+  - `docs/01-before-you-start.md`
+  - `docs/05-windows-11.md`
+  - `docs/07-background-apps.md`
+  - `docs/08-services-and-security.md`
+  - `docs/09-powershell-diagnostics.md`
+  - `docs/10-temperatures-stability.md`
+  - `docs/11-what-not-to-do.md`
+  - `docs/12-faq.md`
+  - `docs/13-security-hardening-baseline.md`
+  - `docs/14-quick-start-presets.md`
+  - `docs/15-troubleshooting-decision-trees.md`
+  - `docs/16-benchmark-templates.md`
+  - `docs/17-common-builds-quick-cards.md`
+  - `docs/18-optimization-tools-evidence.md`
+  - `docs/19-ai-software-and-disk-cleanup.md`
+- Removed duplicated top-level headings rendered by Jekyll front matter.
+- Removed numbered headings and redundant explanations.
+- Standardized quote blocks, lists, tables, and code-block formatting.
+- Replaced absolute internal links with relative `.html` links.
+- Added explicit `Next step` navigation between guide pages.
+- Improved FAQ navigation by linking it to the Security Hardening Baseline.
+- Simplified Quick-Start Presets navigation to point to Troubleshooting Decision Trees.
+- Updated Benchmark Templates navigation to point to Common Builds Quick Cards.
+- Updated Common Builds navigation to point to Optimization Tools Evidence.
+- Updated Optimization Tools navigation to point to Disk Cleanup.
+- Made Disk Cleanup safer by removing automatic process termination and bulk folder deletion.
+- Changed AI-tool removal guidance to use official uninstallers and explicit manual cleanup.
+- Separated cache-cleaning commands into safer, clearly scoped examples.
+- Improved CONTRIBUTING.md with safer contribution rules and repository checks.
+
+### Fixed
+
+- Fixed broken internal anchor references to the PowerShell diagnostics network section.
+- Added a stable `#network` anchor to `docs/09-powershell-diagnostics.md`.
+- Fixed malformed quotation marks and corrupted characters in documentation.
+- Fixed broken blockquote formatting across multiple guides.
+- Fixed incorrect or inconsistent internal links.
+- Corrected table formatting in benchmark templates.
+- Removed unsafe blanket deletion commands from the disk-cleanup workflow.
+
+### Security
+
+- Added `SECURITY.md` with reporting guidance for unsafe recommendations and supply-chain risks.
+- Strengthened guidance against disabling Defender, Firewall, UAC, Windows Update, and virtualization-based security.
+- Removed destructive automation patterns that could delete user data or required development tools.
+
+---
+
 ## v1.1.0 - 2026-10-30
 
 ### Added
@@ -71,3 +131,45 @@ All notable changes to this project are documented in this file.
 
 - Replaced multiple issue templates with one unified issue template.
 - Removed redundant structural complexity for easier maintenance.
+
+---
+
+## v0.9.0 - 2026-10-29
+
+### Added
+
+- Initial English documentation structure for Windows 11 gaming optimization.
+- Core guides covering preparation, bottleneck analysis, BIOS and hardware, drivers, Windows 11, GPU settings, background apps, services, PowerShell diagnostics, temperatures, and stability.
+- PowerShell-based diagnostic commands for hardware, startup, processes, services, network, and event logs.
+- Safety guidance against mass service disabling, unknown scripts, RAM cleaners, and random registry edits.
+
+### Changed
+
+- Standardized documentation structure and navigation.
+- Improved readability of optimization recommendations.
+- Added practical checklists and rollback guidance.
+
+---
+
+## v0.8.0 - 2026-10-28
+
+### Added
+
+- Initial Jekyll documentation site.
+- Base layout and navigation for guide pages.
+- Initial README with project overview and optimization principles.
+
+### Changed
+
+- Organized optimization content into standalone documentation pages.
+- Separated general Windows optimization from game-specific guidance.
+
+---
+
+## v0.1.0 - 2026-10-27
+
+### Added
+
+- Initial repository setup.
+- Initial optimization notes and draft documentation.
+- Basic project configuration.
