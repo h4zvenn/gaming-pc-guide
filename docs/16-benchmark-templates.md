@@ -13,8 +13,6 @@ Use the same game build, settings, scene, and measurement method before and afte
 
 > **Important:** Do not compare 1% low values produced by different tools or definitions. Choose one tool, one version, and one metric definition for the entire comparison.
 
----
-
 ## Metrics to record
 
 | Metric | Definition | Notes |
@@ -168,8 +166,8 @@ For a subjective comparison, hide which configuration is active, alternate A/B/A
 Use these source levels:
 
 1. **Primary:** Microsoft Learn or Support, NVIDIA, AMD, Intel, game developer or publisher documentation, patch notes, and hardware vendor manuals.
-2. **Secondary:** established technical publications and vendor-adjacent testing resources.
-3. **Community:** forums, Reddit, YouTube, and screenshots. Use them only as hypotheses to test, never as proof.
+2. **Secondary:** Established technical publications and vendor-adjacent testing resources.
+3. **Community:** Forums, Reddit, YouTube, and screenshots. Use them only as hypotheses to test, never as proof.
 
 For every recommendation, record:
 
@@ -199,4 +197,6 @@ Third-party tools are covered in [Optimization Tools Evidence](18-optimization-t
 
 ---
 
-Back to main guide: [Home](../).
+## Next step
+
+[Common Builds Quick Cards](17-common-builds-quick-cards.html)
