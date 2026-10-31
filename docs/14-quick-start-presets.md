@@ -1,143 +1,122 @@
 ---
 layout: doc
-title: "14-quick-start-presets"
+title: "Quick-Start Presets"
 description: "Starting optimization checklists for common gaming PC configurations."
 lang: en
 translation_key: quick-start-presets
 permalink: /docs/14-quick-start-presets.html
 ---
 
-# 14. Quick-Start Presets by PC Tier
+# Quick-Start Presets
 
-> Want fast results without random tweaking? Pick your tier, follow one preset, benchmark, then adjust.
+Use a preset to get reliable results without random tweaking. Pick the closest hardware tier, apply one change at a time, benchmark it, and keep only what improves FPS, 1% lows, or frame-time consistency.
 
-## How to use presets
-
-1. Pick the closest hardware tier.
-2. Apply only the listed steps.
-3. Benchmark with the template from [16 Benchmark templates](https://h4zvenn.github.io/gaming-pc-guide/docs/16-benchmark-templates.html).
-4. Keep only changes that improve FPS/1% low/frametime without instability.
-
-> **Important:** > One preset at a time. Do not mix all presets in one session.
->
-> A preset is an ordered checklist, not a batch script. Apply one row, verify it in the same scene, then continue. If a row changes several inseparable settings, treat the whole row as one experiment and record it.
+> **Important:** Use one preset at a time. Do not mix presets in one session. A preset is an ordered checklist, not a batch script.
 
 ---
 
-## Preset A — Entry-level / older gaming PC
+## How to use a preset
 
-### Goal
-
-Improve smoothness and 1% low without risky tuning.
-
-### Apply in this order
-
-| Step | Action | Why |
-| --- | --- | --- |
-| 1 | Set correct monitor refresh rate | Avoid fake 60 Hz bottleneck |
-| 2 | Close browser video/downloads/overlays | Free CPU/RAM/GPU headroom |
-| 3 | Enable Game Mode | May help Windows prioritize gameplay; effect varies |
-| 4 | Set in-game FPS cap to stable floor | Better frametime consistency |
-| 5 | Lower heavy GPU options first (RT, shadows, reflections) | Usually a large FPS gain per visual cost in GPU-bound scenes; verify in your game |
-| 6 | Use DLSS/FSR/XeSS Quality/Balanced | FPS gain with an image-quality tradeoff; compare |
-
-### Do not do in this preset
-
-- No manual RAM timing tweaks.
-- No aggressive undervolt.
-- No service disabling.
+1. Choose the preset that matches your PC and problem.
+2. Apply one step.
+3. Test it with the same scene and settings.
+4. Record the result using [Benchmark Templates](16-benchmark-templates.html).
+5. Keep the change only if it improves performance or stability without side effects.
 
 ---
 
-## Preset B — Mid-range gaming PC
+## Choose a preset
 
-### Goal
-
-Balance visual quality and stable high FPS.
-
-### Apply in this order
-
-| Step | Action | Why |
-| --- | --- | --- |
-| 1 | Check XMP/EXPO is enabled and stable (see [03](https://h4zvenn.github.io/gaming-pc-guide/docs/03-bios-and-hardware.html)) | Avoid JEDEC baseline in CPU-limited scenes |
-| 2 | Enable Above 4G + ReBAR (if supported) | Potential uplift in some titles |
-| 3 | Update chipset + stable GPU driver | Better compatibility/perf consistency |
-| 4 | Test HAGS and Windowed Optimizations | Keep whichever performs better |
-| 5 | Tune per-game GPU profile | Avoid global conflicts |
-| 6 | Validate thermals under long session | Prevent performance drop over time |
-
-### Do not do in this preset
-
-- No global вЂњmax performanceвЂќ for all apps.
-- No all-in-one optimizer scripts.
-
----
-
-## Preset C — High-end / high-refresh target
-
-### Goal
-
-Maximize consistency at high FPS (165вЂ“360 Hz class).
-
-### Apply in this order
-
-| Step | Action | Why |
-| --- | --- | --- |
-| 1 | Confirm CPU/GPU clocks are stable under load | Remove hidden throttling |
-| 2 | Tune FPS cap around real stable range | Smoother frametime than uncapped spikes |
-| 3 | Tune VRR + V-Sync behavior per game | Better smoothness/latency balance |
-| 4 | Use low-latency in-game options (Reflex/Anti-Lag) | May reduce latency; measure it or treat the result as subjective |
-| 5 | Remove overlay stacking | Reduce capture/overlay conflicts |
-| 6 | Run WHEA check after tweaks | Catch hidden instability early |
-
-### Do not do in this preset
-
-- No copied CO/PBO values from random videos.
-- No stability assumptions from one benchmark pass.
-
----
-
-## Preset D — Gaming laptop (performance + thermals)
-
-### Goal
-
-Keep stable FPS while controlling heat and noise.
-
-### Apply in this order
-
-| Step | Action | Why |
-| --- | --- | --- |
-| 1 | Play on AC power, performance profile on | Prevent battery power limits |
-| 2 | Force game to high-performance GPU | Avoid iGPU bottleneck |
-| 3 | Clean startup/background load | Preserve thermal budget |
-| 4 | Cap FPS to sustainable level | Lower heat spikes |
-| 5 | Check intake vents and surface | Prevent thermal choking |
-| 6 | Validate temps after 30вЂ“60 min session | Detect thermal fade |
-
-### Do not do in this preset
-
-- No gaming on soft surfaces.
-- No blind fan-service removal.
-
----
-
-## Fast вЂњwhat preset should I choose?вЂќ
-
-| If your problem isвЂ¦ | Start with |
+| If your main problem is… | Start with |
 | --- | --- |
-| Low FPS in heavy scenes | Preset A or B |
-| Stutter after long sessions | Preset D or C |
-| Random crashes after tuning | Stop presets, run [10 Temperatures and stability](https://h4zvenn.github.io/gaming-pc-guide/docs/10-temperatures-stability.html) |
-| Unclear bottleneck | Start from [02 Find the bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/02-find-the-bottleneck.html) |
+| Low FPS in demanding scenes | [Entry-Level PC](#entry-level-pc) or [Mid-Range PC](#mid-range-pc) |
+| Stutter after long sessions | [Gaming Laptop](#gaming-laptop) or [High-Refresh PC](#high-refresh-pc) |
+| Random crashes after tuning | Stop preset changes and use [Temperatures & Stability](10-temperatures-stability.html) |
+| Unclear bottleneck | Start with [Find the Bottleneck](02-find-the-bottleneck.html) |
+
+---
+
+## Entry-level PC
+
+**Goal:** improve smoothness and 1% lows without risky tuning.
+
+| Step | Action | Why |
+| --- | --- | --- |
+| 1 | Set the correct monitor refresh rate | Avoid an unnecessary 60 Hz limit |
+| 2 | Close browser video, downloads, and overlays | Free CPU, RAM, and GPU resources |
+| 3 | Enable Game Mode | May help Windows prioritize the game; results vary |
+| 4 | Set an in-game FPS cap to a stable level | Improves frame-time consistency |
+| 5 | Lower heavy GPU settings first: ray tracing, shadows, reflections | Usually provides the largest FPS gain per visual cost |
+| 6 | Test DLSS, FSR, or XeSS in Quality or Balanced mode | Increases FPS with an image-quality trade-off |
+
+**Avoid:** manual RAM timing changes, aggressive undervolting, and disabling services.
+
+---
+
+## Mid-range PC
+
+**Goal:** balance visual quality and stable high FPS.
+
+| Step | Action | Why |
+| --- | --- | --- |
+| 1 | Check that XMP or EXPO is enabled and stable | Avoid running RAM at default JEDEC speeds |
+| 2 | Enable Above 4G Decoding and Resizable BAR if supported | Can improve performance in some games |
+| 3 | Update chipset drivers and install a stable GPU driver | Improves compatibility and consistency |
+| 4 | Test HAGS and Optimizations for Windowed Games | Keep the configuration that performs better |
+| 5 | Create a per-game GPU profile | Avoid conflicts from global settings |
+| 6 | Check thermals during a longer session | Prevent performance drops over time |
+
+**Avoid:** setting every application to maximum performance and using all-in-one optimizer scripts.
+
+---
+
+## High-refresh PC
+
+**Goal:** maintain consistent performance at high FPS targets, such as 165–360 Hz.
+
+| Step | Action | Why |
+| --- | --- | --- |
+| 1 | Confirm CPU and GPU clocks remain stable under load | Detect hidden throttling |
+| 2 | Set an FPS cap within the system’s stable range | Produces more consistent frame times than uncapped spikes |
+| 3 | Tune VRR and V-Sync behavior per game | Balances smoothness and latency |
+| 4 | Test low-latency options such as Reflex or Anti-Lag | Can reduce latency; measure the result or treat it as subjective |
+| 5 | Remove overlapping overlays | Reduce capture and overlay conflicts |
+| 6 | Check Event Viewer for WHEA errors after testing | Detect instability early |
+
+**Avoid:** copying PBO or Curve Optimizer values from random videos and assuming stability from one benchmark run.
+
+---
+
+## Gaming laptop
+
+**Goal:** keep stable FPS while controlling heat and noise.
+
+| Step | Action | Why |
+| --- | --- | --- |
+| 1 | Play while connected to AC power and select the performance profile | Prevent battery-related power limits |
+| 2 | Force the game to use the discrete GPU | Avoid an integrated-GPU bottleneck |
+| 3 | Clean startup apps and background load | Preserve thermal headroom |
+| 4 | Cap FPS to a sustainable level | Reduce heat spikes |
+| 5 | Keep air intakes clear and use a hard surface | Prevent thermal throttling |
+| 6 | Check temperatures after a 30–60 minute session | Detect thermal fade |
+
+**Avoid:** gaming on soft surfaces and removing fan or cooling services without understanding the consequences.
 
 ---
 
 ## Validation checklist
 
-- [ ] Used one preset only.
-- [ ] Measured before/after with same scene.
-- [ ] Compared FPS + 1% low + frametime.
-- [ ] No new crashes/WHEA/BSOD.
+- [ ] Used only one preset.
+- [ ] Measured before and after using the same scene.
+- [ ] Compared FPS, 1% lows, and frame times.
+- [ ] No new crashes, WHEA errors, or BSODs appeared.
 - [ ] Rolled back changes that made results worse.
 
-Next step: [15 Troubleshooting decision trees](https://h4zvenn.github.io/gaming-pc-guide/docs/15-troubleshooting-decision-trees.html).
+---
+
+## Next steps
+
+- [Find the Bottleneck](02-find-the-bottleneck.html)
+- [Benchmark Templates](16-benchmark-templates.html)
+- [Temperatures & Stability](10-temperatures-stability.html)
+- [Troubleshooting Decision Trees](15-troubleshooting-decision-trees.html)
