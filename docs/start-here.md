@@ -26,6 +26,8 @@ Choose the route that matches the symptom. Diagnose before changing settings, th
 
 For the full measurement process, use [Benchmark Templates](16-benchmark-templates.html). For system and game guide lists, see [Windows optimization](index.html) and [Game optimization](games/index.html).
 
+To collect basic hardware, process, network, or security details before asking for help, use the [read-only diagnostics menu](09-powershell-diagnostics.html).
+
 ## Safety
 
 - Do not disable Defender, Firewall, Windows Update, or anti-cheat protections to improve FPS.

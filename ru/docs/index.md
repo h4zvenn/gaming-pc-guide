@@ -15,7 +15,7 @@ permalink: /ru/docs/
 | --- | --- | --- |
 | [Подготовка перед оптимизацией](01-before-you-start.html) | Создай возможность отката и запиши исходные показатели. | 🟡 In progress |
 | [Поиск узкого места](02-find-the-bottleneck.html) | Определи компонент или условие, ограничивающее производительность. | 🟡 In progress |
-| [Диагностика PowerShell](09-powershell-diagnostics.html) | Собери сведения о системе и сети. | 🟢 Available |
+| [Диагностика PowerShell — EN](../../docs/09-powershell-diagnostics.html) | Меню проверок без изменений и команды для ручной диагностики. | 🟢 Available |
 | [Температуры и стабильность](10-temperatures-stability.html) | Проверь охлаждение, троттлинг и нестабильность. | 🟡 In progress |
 | [Деревья поиска неисправностей](15-troubleshooting-decision-trees.html) | Следуй диагностическим маршрутам по симптомам. | 🟡 In progress |
 

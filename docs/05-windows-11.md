@@ -72,17 +72,7 @@ For laptops:
 - Select a performance mode in Windows and, if available, in the laptop vendor utility.
 - Remember that a higher power mode increases heat, noise, and battery usage.
 
-Check the active power plan:
-
-```powershell
-powercfg /getactivescheme
-```
-
-List available plans:
-
-```powershell
-powercfg /list
-```
+Use the [read-only diagnostics menu](09-powershell-diagnostics.html) to inspect the active and available power plans.
 
 > **Note:** Ultimate Performance does not guarantee higher FPS. On modern PCs, it may provide little or no gain while increasing idle power consumption and temperature. Test it instead of choosing it by name.
 
@@ -316,30 +306,9 @@ Microsoft recommends keeping memory integrity enabled unless there is a specific
 
 ---
 
-## Useful diagnostic commands
+## Useful diagnostics
 
-### Current power plan
-
-```powershell
-powercfg /getactivescheme
-```
-
-### Startup list
-
-```powershell
-Get-CimInstance Win32_StartupCommand |
-Select-Object Name, Command, Location, User
-```
-
-### Processes using the most CPU time
-
-```powershell
-Get-Process |
-Sort-Object CPU -Descending |
-Select-Object -First 20 Name, Id, CPU, WorkingSet64
-```
-
-These commands do not change Windows; they only display information.
+Use the [read-only diagnostics menu](09-powershell-diagnostics.html) to inspect power plans, startup entries, and processes without changing Windows. Individual commands are kept in the diagnostics guide.
 
 ---
 

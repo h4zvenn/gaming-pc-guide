@@ -26,6 +26,8 @@ permalink: /ru/docs/start-here.html
 
 Полный протокол тестирования — в [шаблонах бенчмарков](16-benchmark-templates.html). Списки руководств: [Windows — RU](index.html) и [игры — RU](games/index.html).
 
+Чтобы собрать сведения об оборудовании, процессах, сети или безопасности перед обращением за помощью, используй [меню диагностики — EN](../../docs/09-powershell-diagnostics.html).
+
 ## Безопасность
 
 - Не отключай Defender, Firewall, Windows Update или защиту античита ради FPS.

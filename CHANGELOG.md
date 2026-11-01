@@ -2,6 +2,19 @@
 
 All notable changes to this project are documented in this file.
 
+## Unreleased
+
+### Added
+
+- Read-only Windows diagnostics menu with hardware, process, service, network, security, and event checks.
+- Optional, explicitly confirmed local diagnostic report export.
+- GitHub Actions workflow that creates a GitHub Release from a matching version-tagged changelog entry.
+
+### Changed
+
+- Consolidated repeated read-only PowerShell examples into the diagnostics guide and linked to its menu from related English and Russian pages.
+- Improved README quick-start and linked the diagnostics menu and GitHub Releases.
+
 ## v1.2.0 - 2026-11-01
 
 ### Added

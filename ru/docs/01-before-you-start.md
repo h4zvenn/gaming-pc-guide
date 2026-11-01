@@ -106,22 +106,7 @@ permalink: /ru/docs/01-before-you-start.html
 Следи за устойчивым падением скорости записи и ростом задержек,
 а не считай один процент универсальным требованием.
 
-### Проверка через PowerShell
-
-Открой Windows Terminal или PowerShell и выполни:
-
-```powershell
-Get-PSDrive -PSProvider FileSystem |
-Select-Object Name,
-@{Name='UsedGB';Expression={[math]::Round($_.Used / 1GB, 1)}},
-@{Name='FreeGB';Expression={[math]::Round($_.Free / 1GB, 1)}}
-```
-
-### Что означают столбцы
-
-- `Name` — буква диска.
-- `UsedGB` — занятое место.
-- `FreeGB` — свободное место.
+Проверить занятое и свободное место можно через [меню диагностики](09-powershell-diagnostics.html). Оно только показывает сведения и не удаляет файлы.
 
 > Совет: не используй сомнительные «чистильщики реестра» ради освобождения места.
 > Удали ненужные игры, временные файлы, старые загрузки и неиспользуемые программы.
@@ -184,37 +169,7 @@ Select-Object Name,
 
 ## 5. Проверь основные сведения о ПК
 
-### Процессор
-
-```powershell
-Get-CimInstance Win32_Processor |
-Select-Object Name, NumberOfCores, NumberOfLogicalProcessors,
-CurrentClockSpeed, MaxClockSpeed
-```
-
-### Видеокарта и драйвер
-
-```powershell
-Get-CimInstance Win32_VideoController |
-Select-Object Name, DriverVersion, CurrentHorizontalResolution,
-CurrentVerticalResolution, CurrentRefreshRate
-```
-
-### Оперативная память
-
-```powershell
-Get-CimInstance Win32_PhysicalMemory |
-Select-Object Manufacturer, PartNumber, Capacity, Speed, ConfiguredClockSpeed
-```
-
-### Активная схема электропитания
-
-```powershell
-powercfg /getactivescheme
-```
-
-> Примечание: команды в этом разделе предназначены для диагностики.
-> Они не изменяют настройки Windows.
+Используй [меню диагностики без изменений](09-powershell-diagnostics.html), чтобы посмотреть сведения о процессоре, видеокарте, памяти, дисках, BIOS, Windows и схеме электропитания. Меню не меняет настройки. Отдельные команды PowerShell оставлены в главе диагностики.
 
 ---
 

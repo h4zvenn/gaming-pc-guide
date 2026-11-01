@@ -231,34 +231,7 @@ SmartScreen warns about suspicious files and sites. Do not disable it just to ru
 
 ## Safe service checks
 
-### Running services
-
-```powershell
-Get-Service |
-Where-Object Status -eq 'Running' |
-Sort-Object DisplayName |
-Select-Object Status, Name, DisplayName
-```
-
-### Find services by partial name
-
-Example for `Update`:
-
-```powershell
-Get-Service *Update* |
-Select-Object Status, Name, DisplayName
-```
-
-### Services set to automatic startup
-
-```powershell
-Get-CimInstance Win32_Service |
-Where-Object StartMode -eq 'Auto' |
-Sort-Object DisplayName |
-Select-Object Name, DisplayName, State, StartMode
-```
-
-These commands are read-only; they do not change Windows configuration.
+Use option 3 in the [read-only diagnostics guide](09-powershell-diagnostics.html) to review running and third-party services. It only displays information. The manual PowerShell examples remain in that guide.
 
 ---
 
@@ -266,12 +239,7 @@ These commands are read-only; they do not change Windows configuration.
 
 Review only third-party services. Do not disable system services from copied lists.
 
-```powershell
-Get-CimInstance Win32_Service |
-Where-Object { $_.PathName -and $_.PathName -notmatch 'Windows|Microsoft' } |
-Select-Object Name, DisplayName, State, StartMode, PathName |
-Format-Table -AutoSize
-```
+Use the third-party services check in the [read-only diagnostics menu](09-powershell-diagnostics.html) to inspect service names, paths, and startup states.
 
 Before changing a service, record its current `StartType`. If something stops working, restore the original setting.
 

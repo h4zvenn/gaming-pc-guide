@@ -287,15 +287,7 @@ Check:
 
 WHEA errors are Windows hardware error reports. They may relate to the CPU, RAM, PBO, Curve Optimizer, undervolting, PCIe, GPU, or another component.
 
-Check recent WHEA events:
-
-```powershell
-Get-WinEvent -FilterHashtable @{
-    LogName = 'System'
-    ProviderName = 'Microsoft-Windows-WHEA-Logger'
-} -MaxEvents 20 |
-Select-Object TimeCreated, Id, LevelDisplayName, Message
-```
+Use option 6 in the [read-only diagnostics menu](09-powershell-diagnostics.html) to inspect recent WHEA and critical system events.
 
 What to do:
 

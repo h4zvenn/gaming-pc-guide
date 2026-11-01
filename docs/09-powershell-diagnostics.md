@@ -10,6 +10,12 @@ permalink: /docs/09-powershell-diagnostics.html
 
 > Use PowerShell to inspect your system, not to run random “one-click FPS” scripts.
 
+## Optional read-only menu
+
+If you prefer a menu to entering commands, download [GamingPCGuide-Diagnostics.bat](https://raw.githubusercontent.com/h4zvenn/gaming-pc-guide/main/tools/GamingPCGuide-Diagnostics.bat) and [GamingPCGuide-Diagnostics.ps1](https://raw.githubusercontent.com/h4zvenn/gaming-pc-guide/main/tools/GamingPCGuide-Diagnostics.ps1) into the same folder, then run the BAT file. The menu groups the read-only checks below and does not require administrator rights. It never changes settings. Saving a local report is optional and requires confirmation. Some results may include device names, network details, usernames, or file paths; review them before sharing.
+
+The network options perform DNS and ICMP checks, including an optional test of a game-server hostname or IP address. A server may block ICMP, so a failed ping is not proof of a game connection problem. The launcher uses the current PowerShell execution policy and does not bypass it. If Windows blocks the downloaded script, inspect its source first; do not weaken the policy. On a personal PC, you can unblock only the reviewed files through their individual **Properties → Unblock** setting. On a managed PC, ask your administrator or use the manual commands below. Service changes, Windows repairs, cache cleanup, and other actions that modify the system are intentionally not automated. The command examples in this guide remain available as a manual reference.
+
 ## Quick diagnostic flow
 
 | If you need to check | Go here |

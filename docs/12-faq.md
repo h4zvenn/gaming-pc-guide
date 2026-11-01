@@ -112,11 +112,7 @@ Not necessarily.
 
 For desktops, `Best performance` or a verified `High performance` plan is usually enough. `Ultimate Performance` may barely affect FPS while increasing idle power draw and heat.
 
-Check the active plan:
-
-```powershell
-powercfg /getactivescheme
-```
+Use the [read-only diagnostics menu](09-powershell-diagnostics.html) to inspect the active power plan. The manual PowerShell command is kept in the diagnostics guide.
 
 ### Should I disable Windows visual effects?
 
@@ -268,15 +264,7 @@ WHEA errors are Windows hardware error reports.
 
 Recurring WHEA errors after overclocking, Curve Optimizer, XMP/EXPO, or undervolting indicate instability. Relax the settings or return to stock.
 
-Check recent events:
-
-```powershell
-Get-WinEvent -FilterHashtable @{
-    LogName = 'System'
-    ProviderName = 'Microsoft-Windows-WHEA-Logger'
-} -MaxEvents 20 |
-Select-Object TimeCreated, Id, LevelDisplayName, Message
-```
+Use option 6 in the [read-only diagnostics menu](09-powershell-diagnostics.html) to inspect recent WHEA and critical system events.
 
 ### Should I undervolt my GPU?
 

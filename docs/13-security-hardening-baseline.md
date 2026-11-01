@@ -34,11 +34,7 @@ permalink: /docs/13-security-hardening-baseline.html
 - Keep UAC enabled at the default level or higher.
 - Avoid daily use of a full administrator account when possible.
 
-Quick check:
-
-```powershell
-whoami /groups
-```
+Use option 5 in the [read-only diagnostics guide](09-powershell-diagnostics.html) to review account groups and security status.
 
 ---
 
@@ -52,14 +48,6 @@ Keep enabled:
 
 Add targeted exclusions only for a specific game folder or process if there is a verified false positive or a measurable issue.
 
-Check status:
-
-```powershell
-Get-MpComputerStatus |
-Select-Object AMServiceEnabled, RealTimeProtectionEnabled, IoavProtectionEnabled,
-AntispywareEnabled, AntivirusEnabled, TamperProtectionSource
-```
-
 ---
 
 ## Firewall baseline
@@ -67,13 +55,6 @@ AntispywareEnabled, AntivirusEnabled, TamperProtectionSource
 - Keep Windows Defender Firewall enabled for Domain, Private, and Public profiles.
 - Do not disable the firewall globally for multiplayer troubleshooting.
 - Create narrow inbound rules only when a game or server tool requires them.
-
-Check profiles:
-
-```powershell
-Get-NetFirewallProfile |
-Select-Object Name, Enabled, DefaultInboundAction, DefaultOutboundAction
-```
 
 ---
 
@@ -84,12 +65,7 @@ Select-Object Name, Enabled, DefaultInboundAction, DefaultOutboundAction
 - Update GPU, chipset, and network drivers from vendor sites only.
 - Update motherboard BIOS or SSD firmware only when the changelog is relevant or fixes a known issue.
 
-Check the update service:
-
-```powershell
-Get-Service wuauserv |
-Select-Object Name, Status, StartType
-```
+The same diagnostics menu also checks Defender, firewall profiles, and the Windows Update service without changing them.
 
 ---
 
@@ -133,18 +109,7 @@ After any optimization session, verify that:
 - The Windows Update service is not disabled.
 - No unknown startup items, services, or scheduled tasks were added.
 
-Quick checks:
-
-```powershell
-Get-CimInstance Win32_StartupCommand |
-Select-Object Name, Command, Location
-```
-
-```powershell
-Get-ScheduledTask |
-Where-Object { $_.State -eq 'Ready' -or $_.State -eq 'Running' } |
-Select-Object TaskName, TaskPath, State
-```
+Use option 5 in the [diagnostics menu](09-powershell-diagnostics.html) to review startup entries and scheduled tasks. It does not disable or modify them.
 
 ---
 

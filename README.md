@@ -13,6 +13,7 @@ Find the real bottleneck. Change one setting. Measure the result.
 
 [**Read the guide**](https://h4zvenn.github.io/gaming-pc-guide/) ·
 [**Game guides**](https://h4zvenn.github.io/gaming-pc-guide/docs/games/) ·
+[**Releases**](https://github.com/h4zvenn/gaming-pc-guide/releases) ·
 [**Report an issue**](https://github.com/h4zvenn/gaming-pc-guide/issues)
 
 </div>
@@ -21,9 +22,9 @@ Find the real bottleneck. Change one setting. Measure the result.
 
 ## ✨ What is this?
 
-Most “FPS optimization” advice is random: disable services, edit the registry, install a debloat script, hope for the best.
+Gaming optimization advice ranges from measured fixes to one-size-fits-all tweaks. This project focuses on changes you can test:
 
-This project takes a different approach:
+The method is simple:
 
 - Find the actual bottleneck.
 - Change one setting at a time.
@@ -33,12 +34,17 @@ This project takes a different approach:
 
 No “FPS boost” scripts. No mass service disabling. No universal BIOS presets.
 
+For a quick system check, use the [read-only Windows diagnostics menu](https://github.com/h4zvenn/gaming-pc-guide/tree/main/tools). It never changes settings; exporting a local report is optional and requires confirmation. Review results for private device names or file paths before sharing them.
+
 ## 🚀 Quick start
 
-1. [Create a restore point](https://h4zvenn.github.io/gaming-pc-guide/docs/01-before-you-start.html)
-2. [Find your bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/02-find-the-bottleneck.html)
-3. [Choose one relevant setting](https://h4zvenn.github.io/gaming-pc-guide/docs/)
-4. [Benchmark the result](https://h4zvenn.github.io/gaming-pc-guide/docs/16-benchmark-templates.html)
+[![01 Prepare](https://img.shields.io/badge/01-Prepare-3b82f6?style=for-the-badge)](https://h4zvenn.github.io/gaming-pc-guide/docs/01-before-you-start.html) Create a restore point and record your baseline.
+
+[![02 Diagnose](https://img.shields.io/badge/02-Diagnose-0ea5e9?style=for-the-badge)](https://h4zvenn.github.io/gaming-pc-guide/docs/02-find-the-bottleneck.html) Find the component or setting causing the problem.
+
+[![03 Choose](https://img.shields.io/badge/03-Choose-f59e0b?style=for-the-badge)](https://h4zvenn.github.io/gaming-pc-guide/docs/) Find a guide for the issue you diagnosed.
+
+[![04 Verify](https://img.shields.io/badge/04-Verify-22c55e?style=for-the-badge)](https://h4zvenn.github.io/gaming-pc-guide/docs/16-benchmark-templates.html) Benchmark the result and keep or revert the change.
 
 > **Rule:** if you cannot measure it, you cannot confidently say it helped.
 
@@ -67,7 +73,8 @@ No “FPS boost” scripts. No mass service disabling. No universal BIOS presets
 
 ---
 
-## 📚 Core guides
+<details>
+<summary><strong>📚 Core guides (19)</strong></summary>
 
 ### Preparation and diagnostics
 
@@ -99,6 +106,8 @@ No “FPS boost” scripts. No mass service disabling. No universal BIOS presets
 - [17 · Common Builds](https://h4zvenn.github.io/gaming-pc-guide/docs/17-common-builds-quick-cards.html)
 - [18 · Optimization Tools](https://h4zvenn.github.io/gaming-pc-guide/docs/18-optimization-tools-evidence.html)
 - [19 · Disk Cleanup](https://h4zvenn.github.io/gaming-pc-guide/docs/19-ai-software-and-disk-cleanup.html)
+
+</details>
 
 ---
 

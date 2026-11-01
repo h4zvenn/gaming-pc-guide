@@ -28,6 +28,7 @@ A contribution should meet these requirements:
 - Scripts or tweaks that blindly disable system security or services.
 - Recommendations to disable Defender, Firewall, UAC, Windows Update, or VBS by default.
 - Copy-paste registry packs, unknown executables, or unverified `.bat`, `.cmd`, `.ps1`, or `.reg` files.
+- Any new automation must state its permissions and effects, avoid changing system settings by default, and provide a clear confirmation and rollback path for changes.
 - Claims such as “+500 FPS” or “universal best settings.”
 
 ## Documentation style
@@ -145,6 +146,21 @@ Run the link checker:
 ```bash
 powershell -ExecutionPolicy Bypass -File .\check-links.ps1
 ```
+
+## Releases
+
+Releases are published automatically when a version tag is pushed.
+
+1. Move the completed `Unreleased` notes in `CHANGELOG.md` to a heading matching the release tag, such as `## v1.3.0 - YYYY-MM-DD`.
+2. Commit the changelog update and all release changes.
+3. Create and push the matching tag:
+
+   ```powershell
+   git tag v1.3.0
+   git push origin v1.3.0
+   ```
+
+The release workflow verifies that the changelog contains the exact tag heading and uses that section as the GitHub Release notes. It does not build or attach binaries.
 
 Before committing, remove generated output:
 

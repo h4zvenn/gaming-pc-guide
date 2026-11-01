@@ -85,14 +85,7 @@ An overfilled system drive can affect Windows updates, page-file behavior, game 
 
 Keep enough free space for updates, the page file, and game installations. A practical starting point is 15–20% free space on the system drive, but the exact requirement depends on the SSD model, firmware, and workload.
 
-Check drive space:
-
-```powershell
-Get-PSDrive -PSProvider FileSystem |
-Select-Object Name,
-@{Name='UsedGB';Expression={[math]::Round($_.Used / 1GB, 1)}},
-@{Name='FreeGB';Expression={[math]::Round($_.Free / 1GB, 1)}}
-```
+Use the [read-only diagnostics menu](09-powershell-diagnostics.html) to view drive capacity and free space.
 
 | Column | Meaning |
 | --- | --- |
@@ -157,36 +150,7 @@ Change: Before optimization
 
 ## Check basic PC information
 
-### Processor
-
-```powershell
-Get-CimInstance Win32_Processor |
-Select-Object Name, NumberOfCores, NumberOfLogicalProcessors,
-CurrentClockSpeed, MaxClockSpeed
-```
-
-### GPU and driver
-
-```powershell
-Get-CimInstance Win32_VideoController |
-Select-Object Name, DriverVersion, CurrentHorizontalResolution,
-CurrentVerticalResolution, CurrentRefreshRate
-```
-
-### Memory
-
-```powershell
-Get-CimInstance Win32_PhysicalMemory |
-Select-Object Manufacturer, PartNumber, Capacity, Speed, ConfiguredClockSpeed
-```
-
-### Active power plan
-
-```powershell
-powercfg /getactivescheme
-```
-
-These commands are diagnostic only; they do not change Windows settings.
+Use the [read-only diagnostics menu](09-powershell-diagnostics.html) to view CPU, GPU, memory, drive, BIOS, Windows, and power-plan information. It does not change settings. The full PowerShell commands remain in the diagnostics guide if you prefer to inspect or run them individually.
 
 ---
 

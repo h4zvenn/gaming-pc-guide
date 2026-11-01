@@ -15,7 +15,7 @@ Use the guide for the problem you have. Start with diagnosis, make one relevant 
 | --- | --- | --- |
 | [Before You Start](01-before-you-start.html) | Create rollback options and record a baseline. | 🟡 In progress |
 | [Find the Bottleneck](02-find-the-bottleneck.html) | Identify the component or condition limiting performance. | 🟡 In progress |
-| [PowerShell Diagnostics](09-powershell-diagnostics.html) | Collect system and connectivity information. | 🟡 In progress |
+| [PowerShell Diagnostics](09-powershell-diagnostics.html) | Use the read-only menu or individual commands to inspect system and connectivity. | 🟡 In progress |
 | [Temperatures and Stability](10-temperatures-stability.html) | Check cooling, throttling, and instability. | 🟡 In progress |
 | [Troubleshooting Trees](15-troubleshooting-decision-trees.html) | Follow symptom-based diagnostic paths. | 🟡 In progress |
 

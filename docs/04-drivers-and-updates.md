@@ -250,21 +250,7 @@ Before updating SSD firmware:
 3. Check for devices with yellow warning icons.
 4. Open target device properties → `Driver` tab.
 
-### GPU information via PowerShell
-
-```powershell
-Get-CimInstance Win32_VideoController |
-Select-Object Name, DriverVersion, DriverDate, VideoProcessor
-```
-
-### Windows version
-
-```powershell
-Get-ComputerInfo |
-Select-Object WindowsProductName, WindowsVersion, OsBuildNumber
-```
-
-> **Note:** These commands only display information and do not modify system settings.
+For the GPU driver version and Windows build, use the [read-only diagnostics menu](09-powershell-diagnostics.html). The individual PowerShell commands are kept in the diagnostics guide.
 
 ---
 
