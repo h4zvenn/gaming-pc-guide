@@ -846,3 +846,43 @@
       color: var(--muted);
       font-size: 0.88rem;
     }
+.search-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+}
+
+.search-form input {
+  width: 100%;
+  max-width: 36rem;
+  padding: 0.7rem 0.9rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font: inherit;
+}
+
+.search-form input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.search-status {
+  color: var(--muted);
+}
+
+.search-results {
+  padding: 0;
+  list-style: none;
+}
+
+.search-results li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-results p {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+}

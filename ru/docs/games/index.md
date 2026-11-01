@@ -13,11 +13,11 @@ permalink: /ru/docs/games/
 
 | Игра | Руководство | Статус |
 | --- | --- | --- |
-| Counter-Strike 2 | [CS2 — EN](cs2.html) | ⚪ Planned |
-| Minecraft: Java Edition | [Minecraft Java — EN](minecraft-java.html) | ⚪ Planned |
-| PUBG: BATTLEGROUNDS | [PUBG — EN](pubg.html) | ⚪ Planned |
-| VALORANT | [VALORANT — EN](valorant.html) | ⚪ Planned |
-| World of Tanks | [World of Tanks — EN](world-of-tanks.html) | ⚪ Planned |
+| Counter-Strike 2 | [CS2](cs2.html) | 🟡 In progress |
+| Minecraft: Java Edition | [Minecraft Java](minecraft-java.html) | 🟡 In progress |
+| PUBG: BATTLEGROUNDS | [PUBG](pubg.html) | 🟡 In progress |
+| VALORANT | [VALORANT](valorant.html) | 🟡 In progress |
+| World of Tanks | [World of Tanks](world-of-tanks.html) | 🟡 In progress |
 
 ## Безопасность и тестирование
 

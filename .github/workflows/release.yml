@@ -11,6 +11,7 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    environment: release
     steps:
       - name: Checkout tagged revision
         uses: actions/checkout@v7
@@ -59,7 +60,17 @@ jobs:
           Path("release-notes.md").write_text(notes + "\n", encoding="utf-8")
           PY
 
+      - name: Package diagnostics tools
+        run: |
+          set -euo pipefail
+          zip_name="GamingPCGuide-Diagnostics-${GITHUB_REF_NAME}.zip"
+          (cd tools && zip -r "../${zip_name}" . -x '*.log' '*.txt')
+          sha256sum "${zip_name}" > "${zip_name}.sha256"
+
       - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" --verify-tag --title "$GITHUB_REF_NAME" --notes-file release-notes.md
+        run: |
+          gh release create "$GITHUB_REF_NAME" --verify-tag --title "$GITHUB_REF_NAME" --notes-file release-notes.md \
+            "GamingPCGuide-Diagnostics-${GITHUB_REF_NAME}.zip" \
+            "GamingPCGuide-Diagnostics-${GITHUB_REF_NAME}.zip.sha256"

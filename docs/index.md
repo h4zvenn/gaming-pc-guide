@@ -45,6 +45,15 @@ Start with the [Ultimate PC Gaming Optimization Guide 2026](ultimate-pc-gaming-g
 | [Optimization Tools](18-optimization-tools-evidence.html) | Evaluate tools using traceable evidence. | 🟡 In progress |
 | [Software and Disk Cleanup](19-ai-software-and-disk-cleanup.html) | Remove selected apps and reclaim disk space safely. | 🟡 In progress |
 
+## Platform-specific and advanced
+
+| Guide | Description | Status |
+| --- | --- | --- |
+| [Network, Wi-Fi, and Online Latency](20-network-and-wifi.html) | Separate network problems from PC performance problems. | Available |
+| [Laptops and Handhelds](21-laptops-and-handhelds.html) | Check power, cooling, and graphics switching. | Available |
+| [Streaming and Game Capture](22-streaming-and-capture.html) | Measure encoder and capture impact. | Available |
+| [Overclocking and Undervolting](23-overclocking-and-undervolting.html) | Optional, cautious tuning with rollback. | Available |
+
 ## Hardware-specific guides
 
 | Guide | Description | Status |

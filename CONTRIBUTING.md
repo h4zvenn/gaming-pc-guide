@@ -160,7 +160,7 @@ Releases are published automatically when a valid version tag is pushed. This im
    git push origin v1.3.0
    ```
 
-The release workflow validates the version-tag format, requires one matching changelog heading, and uses only that section as the GitHub Release notes. It does not build or attach binaries. If publication must require human approval, configure a GitHub Environment with required reviewers and gate the release job on that environment before pushing any version tags.
+The release workflow validates the version-tag format, requires one matching changelog heading, and uses only that section as the GitHub Release notes. It attaches only the contents of the `tools/` folder as `GamingPCGuide-Diagnostics-<tag>.zip` with a `.sha256` checksum. The release job uses the `release` GitHub Environment. To require human approval, add required reviewers to that environment in repository Settings before pushing version tags.
 
 Before committing, remove generated output:
 

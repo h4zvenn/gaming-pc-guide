@@ -18,6 +18,9 @@ permalink: /ru/docs/start-here.html
 | Высокая температура | [Температуры и стабильность](10-temperatures-stability.html) | [BIOS и оборудование — EN](../../docs/03-bios-and-hardware.html) |
 | Вылеты или зависания | [Деревья поиска неисправностей](15-troubleshooting-decision-trees.html) | [Драйверы и обновления — EN](../../docs/04-drivers-and-updates.html) |
 | Задержка управления | [Настройки видеокарты](06-gpu-settings.html) | [Диагностика PowerShell — EN](../../docs/09-powershell-diagnostics.html) |
+| Скачки пинга, откаты, разрывы соединения | [Сеть, Wi-Fi и онлайн-задержка](20-network-and-wifi.html) | [Шаблоны бенчмарков](16-benchmark-templates.html) |
+| Ноутбук или портативный ПК работает медленнее ожидаемого | [Ноутбуки и портативные ПК](21-laptops-and-handhelds.html) | [Температуры и стабильность](10-temperatures-stability.html) |
+| Запись или стрим снижает FPS | [Стриминг и запись игры](22-streaming-and-capture.html) | [Шаблоны бенчмарков](16-benchmark-templates.html) |
 | Не знаю, с чего начать | [Подготовка перед оптимизацией](01-before-you-start.html) | [Стартовые наборы — EN](../../docs/14-quick-start-presets.html) |
 
 ## Перед изменениями

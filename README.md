@@ -14,6 +14,7 @@ Find the real bottleneck. Change one setting. Measure the result.
 [**2026 optimization guide**](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/ultimate-pc-gaming-guide-2026.html) ·
 [**Home page**](https://h4zvenn.github.io/gaming-pc-optimization-guide/) ·
 [**Game guides**](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/games/) ·
+[**Search**](https://h4zvenn.github.io/gaming-pc-optimization-guide/search/) ·
 [**Releases**](https://github.com/h4zvenn/gaming-pc-optimization-guide/releases) ·
 [**Report an issue**](https://github.com/h4zvenn/gaming-pc-optimization-guide/issues)
 
@@ -37,7 +38,7 @@ No “FPS boost” scripts. No mass service disabling. No universal BIOS presets
 
 Windows 11 is the primary operating system covered. Windows 10 is treated as a legacy platform because Microsoft ended standard support on October 14, 2025. OS-, vendor-, and game-specific advice is identified rather than presented as universal.
 
-For a quick system check, use the [read-only Windows diagnostics menu](https://github.com/h4zvenn/gaming-pc-optimization-guide/tree/main/tools). It never changes settings. You can export selected sections to a local report after reviewing the data notice and confirming; reports are not uploaded. Review the file for device names, network details, usernames, startup commands, and paths before sharing.
+For a quick system check, use the [read-only Windows diagnostics menu](https://github.com/h4zvenn/gaming-pc-optimization-guide/tree/main/tools), also attached as a zip with a checksum to each [release](https://github.com/h4zvenn/gaming-pc-optimization-guide/releases). It never changes settings. You can export selected sections to a local report after reviewing the data notice and confirming; reports are not uploaded. Review the file for device names, network details, usernames, startup commands, and paths before sharing.
 
 ## 🚀 Quick start
 

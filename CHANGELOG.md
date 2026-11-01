@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+### Added
+
+- Guides for network and Wi-Fi, laptops and handhelds, streaming and capture, and cautious overclocking and undervolting in English and Russian.
+- Client-side site search with a generated index and Search link in the navigation.
+- Russian translations for the common builds, optimization tools, disk cleanup, and all five game guides.
+- Releases now attach the `tools/` folder as a zip with a SHA-256 checksum; the release job uses the `release` environment for optional approval.
+
 ### Changed
 
 - Updated the Pages base URL, links, and link-check paths for the renamed gaming-pc-optimization-guide repository.
