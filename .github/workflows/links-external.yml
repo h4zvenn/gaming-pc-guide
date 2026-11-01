@@ -1,0 +1,41 @@
+name: links-external
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  external-link-check:
+    name: Check links in Markdown sources
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          fail: false
+          format: markdown
+          args: >-
+            --no-progress
+            --verbose
+            --max-concurrency 4
+            --max-retries 2
+            --retry-wait-time 5
+            --timeout 30
+            './**/*.md'
+
+      - name: Upload link-check report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: external-link-check-report
+          path: lychee/out.md
+          if-no-files-found: ignore
