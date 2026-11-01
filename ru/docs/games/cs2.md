@@ -1,15 +1,15 @@
-﻿---
+---
 layout: doc
 title: "Counter-Strike 2"
 description: "Настройки CS2, задержка, FPS и тестирование."
 lang: ru
-translation_key: cs2
-permalink: /ru/docs/cs2.html
+translation_key: game-cs2
+permalink: /ru/docs/games/cs2.html
 ---
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [Counter-Strike 2](https://h4zvenn.github.io/gaming-pc-guide/docs/cs2.html)
+> [Counter-Strike 2](https://h4zvenn.github.io/gaming-pc-guide/docs/games/cs2.html)
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/cs2.html
 
 Пока используй английскую версию:
 
-- [Counter-Strike 2 — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/cs2.html)
+- [Counter-Strike 2 — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/cs2.html)
 
 ## Принципы проекта
 

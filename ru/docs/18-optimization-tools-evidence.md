@@ -1,9 +1,9 @@
-﻿---
+---
 layout: doc
 title: "Инструменты оптимизации"
 description: "Как оценивать сторонние программы для оптимизации Windows."
 lang: ru
-translation_key: 18-optimization-tools-evidence
+translation_key: optimization-tools-evidence
 permalink: /ru/docs/18-optimization-tools-evidence.html
 ---
 

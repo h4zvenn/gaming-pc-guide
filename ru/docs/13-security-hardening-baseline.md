@@ -1,9 +1,9 @@
-﻿---
+---
 layout: doc
 title: "Базовая настройка безопасности"
 description: "Базовые настройки безопасности Windows без ущерба для удобства."
 lang: ru
-translation_key: 13-security-hardening-baseline
+translation_key: security-hardening-baseline
 permalink: /ru/docs/13-security-hardening-baseline.html
 ---
 

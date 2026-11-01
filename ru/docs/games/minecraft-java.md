@@ -1,15 +1,15 @@
-﻿---
+---
 layout: doc
 title: "Minecraft Java Edition"
 description: "Настройки Minecraft Java для производительности и стабильности."
 lang: ru
-translation_key: minecraft-java
-permalink: /ru/docs/minecraft-java.html
+translation_key: game-minecraft-java
+permalink: /ru/docs/games/minecraft-java.html
 ---
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [Minecraft Java Edition](https://h4zvenn.github.io/gaming-pc-guide/docs/minecraft-java.html)
+> [Minecraft Java Edition](https://h4zvenn.github.io/gaming-pc-guide/docs/games/minecraft-java.html)
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/minecraft-java.html
 
 Пока используй английскую версию:
 
-- [Minecraft Java Edition — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/minecraft-java.html)
+- [Minecraft Java Edition — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/minecraft-java.html)
 
 ## Принципы проекта
 

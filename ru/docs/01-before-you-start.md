@@ -1,6 +1,7 @@
 ---
 layout: doc
 title: "Подготовка перед оптимизацией"
+description: "Создай возможность отката, запиши исходные показатели и проверь игровой ПК на Windows 11 перед настройкой."
 lang: ru
 translation_key: before-you-start
 permalink: /ru/docs/01-before-you-start.html

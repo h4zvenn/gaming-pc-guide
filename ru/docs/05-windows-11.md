@@ -1,9 +1,9 @@
-﻿---
+---
 layout: doc
 title: "Настройки Windows 11"
 description: "Практичные настройки Windows 11 для игровой системы."
 lang: ru
-translation_key: 05-windows-11
+translation_key: windows-11
 permalink: /ru/docs/05-windows-11.html
 ---
 

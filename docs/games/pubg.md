@@ -6,8 +6,6 @@ lang: en
 translation_key: game-pubg
 permalink: /docs/games/pubg.html
 ---
-
-
 > Improve PUBG performance by finding the CPU or GPU bottleneck, reducing stutter, and testing graphics settings one at a time. Do not modify game files or use unapproved third-party software.
 
 ## Applicability
@@ -152,6 +150,12 @@ Use one repeatable scenario for every test.
 See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
 
 ---
+
+## Verification
+
+Record the game version and test date. Use the same map or training route, renderer, graphics settings, driver, overlays, and background load for at least three runs. Compare average FPS, 1% lows, frame times, GPU busy time, temperatures, and crashes.
+
+Renderer and graphics recommendations can change with game patches; verify current in-game options and anti-cheat requirements before applying them.
 
 ## Rollback
 

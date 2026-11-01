@@ -232,7 +232,7 @@ Do not use RAM cleaners or forced memory-cleanup tools. They can evict useful ca
 
 ## Diagnostic workflow
 
-1. Remove the FPS cap and V-Sync, then record FPS, 1% lows, frame times, and temperatures.
+1. Record your FPS cap and V-Sync state. If temperatures and power use are safe, temporarily disable the cap or V-Sync for a short diagnostic run, then restore both settings.
 2. Check GPU busy time, not only Task Manager percentages.
 3. If GPU busy time is near 99%, start with graphics settings, resolution, and VRAM.
 4. If GPU usage is lower, check CPU cores, RAM, background processes, and CPU temperature.
@@ -242,6 +242,17 @@ Do not use RAM cleaners or forced memory-cleanup tools. They can evict useful ca
 
 ---
 
-## Next step
+## Verify the result
 
-[BIOS & Hardware](03-bios-and-hardware.html)
+Repeat the same game scene at least three times. Record GPU busy time, per-core CPU load, frame times, temperatures, and the original cap/V-Sync settings. A single utilization percentage does not prove a bottleneck.
+
+## Rollback
+
+Restore the original FPS cap and V-Sync state immediately after the short diagnostic run. If a temperature or thermal-limit warning appears, stop the test and let the system cool before continuing.
+
+## Related guides
+
+- [GPU Settings](06-gpu-settings.html)
+- [Temperatures and Stability](10-temperatures-stability.html)
+- [Benchmark Templates](16-benchmark-templates.html)
+- [BIOS and Hardware](03-bios-and-hardware.html)

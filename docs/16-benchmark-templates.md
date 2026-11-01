@@ -188,7 +188,7 @@ Third-party tools are covered in [Optimization Tools Evidence](18-optimization-t
 
 ---
 
-## Keep or rollback checklist
+## Verify the result
 
 - [ ] Metrics and tool definitions are recorded.
 - [ ] The same scene, patch, driver, settings, and overlays were used.
@@ -200,8 +200,14 @@ Third-party tools are covered in [Optimization Tools Evidence](18-optimization-t
 - [ ] Temperatures and noise remain acceptable.
 - [ ] The change has a documented rollback path.
 
----
+Report a gain only when the change exceeds the run-to-run spread and remains stable in the real game.
 
-## Next step
+## Rollback
 
-[Common Builds](17-common-builds-quick-cards.html)
+Restore the baseline setting when performance regresses, the comparison is inconclusive, or crashes, WHEA errors, driver resets, artifacts, or thermal warnings appear. If the result is inconclusive, repeat the test instead of stacking another change.
+
+## Related guides
+
+- [Find the Bottleneck](02-find-the-bottleneck.html)
+- [Temperatures and Stability](10-temperatures-stability.html)
+- [Common Builds](17-common-builds-quick-cards.html)

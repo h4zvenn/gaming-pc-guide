@@ -1,7 +1,11 @@
 {% assign current_lang = page.lang | default: 'en' %}
-{% assign english_url = '/' %}
+{% assign english_url = page.url %}
 {% assign russian_url = '/ru/' %}
 
+{% if current_lang == 'ru' %}
+  {% assign english_url = '/' %}
+  {% assign russian_url = page.url %}
+{% endif %}
 
 {% if page.translation_key %}
   {% assign translations = site.pages | where: 'translation_key', page.translation_key %}

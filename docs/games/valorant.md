@@ -6,8 +6,6 @@ lang: en
 translation_key: game-valorant
 permalink: /docs/games/valorant.html
 ---
-
-
 > Improve VALORANT performance by reducing input latency, stabilizing frame times, and testing graphics settings one at a time. Do not modify Vanguard, game files, or use unapproved third-party software.
 
 ## Applicability
@@ -143,6 +141,12 @@ Use one repeatable scenario for every test.
 See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
 
 ---
+
+## Verification
+
+Record the game version and test date. Use the same map or Range route, settings, driver, overlays, and background load for at least three runs. Compare frame times, FPS, temperatures, and stability; record subjective input feel separately from measured latency.
+
+Confirm current Riot guidance for Vanguard, Secure Boot, TPM, and any patch-sensitive settings before changing system security options.
 
 ## Rollback
 

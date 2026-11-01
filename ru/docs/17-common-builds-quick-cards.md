@@ -1,9 +1,9 @@
-﻿---
+---
 layout: doc
 title: "Типовые сборки"
 description: "Ориентиры и стартовые настройки для распространённых конфигураций."
 lang: ru
-translation_key: 17-common-builds-quick-cards
+translation_key: common-builds-quick-cards
 permalink: /ru/docs/17-common-builds-quick-cards.html
 ---
 

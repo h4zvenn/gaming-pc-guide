@@ -1,27 +1,26 @@
-﻿---
+---
 layout: doc
 title: "Руководства по играм"
-description: "Руководства по оптимизации популярных игр."
+description: "Статус переводов руководств по настройке популярных игр."
 lang: ru
-translation_key: 
+translation_key: game-guides
 permalink: /ru/docs/games/
 ---
 
-> **Статус:** перевод в процессе.  
-> Авторитетная английская версия доступна здесь:  
-> [Game Guides](https://h4zvenn.github.io/gaming-pc-guide/docs/games/)
+Выбирай руководство после проверки общих настроек системы. Рекомендации могут меняться после обновлений игр.
 
-## Что будет в этом разделе
+## Игры
 
-Этот раздел будет переведён позже.
+| Игра | Руководство | Статус |
+| --- | --- | --- |
+| Counter-Strike 2 | [CS2 — EN](cs2.html) | ⚪ Planned |
+| Minecraft: Java Edition | [Minecraft Java — EN](minecraft-java.html) | ⚪ Planned |
+| PUBG: BATTLEGROUNDS | [PUBG — EN](pubg.html) | ⚪ Planned |
+| VALORANT | [VALORANT — EN](valorant.html) | ⚪ Planned |
+| World of Tanks | [World of Tanks — EN](world-of-tanks.html) | ⚪ Planned |
 
-Пока используй английскую версию:
+## Безопасность и тестирование
 
-- [Game Guides — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/)
-
-## Принципы проекта
-
-- Меняй только одну настройку за раз.
-- Записывай результаты до и после изменения.
-- Не используй сомнительные оптимизаторы и скрипты.
-- Сохраняй возможность отката.
+1. Используй [страницу начала — EN](../start-here.html), чтобы выбрать маршрут диагностики.
+2. Не изменяй защищённые процессы и файлы игры; соблюдай правила античита.
+3. Сравнивай результаты на одинаковых версии игры, сцене и настройках по [шаблонам бенчмарков — EN](../../../docs/16-benchmark-templates.html).

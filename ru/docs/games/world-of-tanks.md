@@ -1,15 +1,15 @@
-﻿---
+---
 layout: doc
 title: "World of Tanks"
 description: "Настройки World of Tanks, Mod Hub и производительность."
 lang: ru
-translation_key: world-of-tanks
-permalink: /ru/docs/world-of-tanks.html
+translation_key: game-world-of-tanks
+permalink: /ru/docs/games/world-of-tanks.html
 ---
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [World of Tanks](https://h4zvenn.github.io/gaming-pc-guide/docs/world-of-tanks.html)
+> [World of Tanks](https://h4zvenn.github.io/gaming-pc-guide/docs/games/world-of-tanks.html)
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/world-of-tanks.html
 
 Пока используй английскую версию:
 
-- [World of Tanks — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/world-of-tanks.html)
+- [World of Tanks — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/world-of-tanks.html)
 
 ## Принципы проекта
 
