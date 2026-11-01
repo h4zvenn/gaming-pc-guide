@@ -1,37 +1,50 @@
 # Copilot Instructions
 
+You are assisting with a static Jekyll documentation site about Windows gaming PC optimization.
 
-## Project rules
+## Project structure
 
+- `docs/` contains the main documentation.
+- `docs/games/` contains game-specific guides.
+- `index.md` is the site landing page.
+- `_config.yml` contains Jekyll configuration.
+- `.markdownlint-cli2.jsonc` contains Markdown linting rules.
 
-- Keep all content in English for consistency.
-- Follow the flat `docs/01–19.md` structure; game pages live in `docs/games/` and link to the common base.
-- Do not duplicate content from `docs/01–19` in game pages — link instead.
-- Every recommendation must include: problem/goal, applicability, expected effect, risks, verification, rollback.
-- No universal registry/HPET/BCD tweaks, no disabling protection, no mass service disables.
-- When adding or substantially revising a recommendation, add an evidence tag: `verified`, `needs-verification`, or `deprecated`, plus an ISO date.
-- Do not retrofit evidence tags to unchanged legacy content in the same commit.
-- Run `markdownlint-cli2@0.13.0` and `lychee --offline` before committing.
-- Preserve uncommitted changes; do not commit/push without direction.
+## Documentation style
 
+- Use clear, practical, evidence-based advice.
+- Prefer step-by-step instructions.
+- Use tables for settings, comparisons, and checklists.
+- Use code blocks for commands, paths, and configuration examples.
+- Avoid unsupported claims and do not recommend risky system changes.
+- Keep security and stability in mind.
 
-## Documentation standards
+## Markdown rules
 
+- Use ATX headings: `#`, `##`, `###`.
+- Use dashes for unordered lists.
+- Use two spaces for nested list indentation.
+- Use at most one consecutive blank line.
+- End every file with a single newline.
+- Separate tables and lists with blank lines.
+- Do not add unnecessary HTML unless needed for Jekyll layout.
 
-- Use relative links between internal pages, for example `[GPU Settings](06-gpu-settings.html)`.
-- Do not use absolute internal URLs such as `https://h4zvenn.github.io/gaming-pc-guide/...`.
-- Keep one `# H1` implied by front matter `title`; do not repeat the page title as an H1 in the body.
-- Use unnumbered Markdown headings.
-- End every guide with a `## Next step` section and a relative link to the next guide.
-- Keep warning, note, tip, and important callouts concise and actionable.
-- Prefer reversible changes: startup settings, per-game profiles, vendor utilities, and documented rollback paths.
+## Commands
 
+Run Markdown linting:
 
-## Safety boundaries
+```powershell
+npx markdownlint-cli2
+```
 
+Run link checks:
 
-- Do not recommend custom Windows builds, driver packs, RAM cleaners, or one-click optimizers.
-- Do not recommend disabling Defender, Firewall, UAC, Windows Update, Core Isolation, VBS, or critical system services.
-- Do not provide copy-paste overclocking, undervolting, PBO, Curve Optimizer, RAM timing, or voltage values as universal settings.
-- Treat BIOS changes, SSD firmware, GPU driver clean installs, and DDU as conditional maintenance steps, not routine optimization.
-- Require a baseline measurement and repeatable test before recommending that a user keeps a change.
+```powershell
+powershell -ExecutionPolicy Bypass -File .\check-links.ps1
+```
+
+Build the site:
+
+```powershell
+bundle exec jekyll build
+```
