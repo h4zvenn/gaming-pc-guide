@@ -1,15 +1,15 @@
-﻿---
+---
 layout: doc
 title: "VALORANT"
 description: "Настройки VALORANT, Vanguard и задержка управления."
 lang: ru
-translation_key: valorant
-permalink: /ru/docs/valorant.html
+translation_key: game-valorant
+permalink: /ru/docs/games/valorant.html
 ---
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [VALORANT](https://h4zvenn.github.io/gaming-pc-guide/docs/valorant.html)
+> [VALORANT](https://h4zvenn.github.io/gaming-pc-guide/docs/games/valorant.html)
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/valorant.html
 
 Пока используй английскую версию:
 
-- [VALORANT — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/valorant.html)
+- [VALORANT — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/valorant.html)
 
 ## Принципы проекта
 

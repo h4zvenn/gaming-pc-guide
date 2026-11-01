@@ -1,9 +1,9 @@
-﻿---
+---
 layout: doc
 title: "Драйверы и обновления"
 description: "Как обновлять драйверы и Windows без ненужного риска."
 lang: ru
-translation_key: 04-drivers-and-updates
+translation_key: drivers-and-updates
 permalink: /ru/docs/04-drivers-and-updates.html
 ---
 

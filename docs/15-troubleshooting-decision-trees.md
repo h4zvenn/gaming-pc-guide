@@ -22,20 +22,15 @@ Find the symptom, follow one decision tree, and test one fix at a time.
 
 ## Low FPS
 
-```mermaid
-flowchart TD
-    A[Low FPS] --> B{FPS cap and V-Sync disabled?}
-    B -- No --> B1[Remove FPS cap and V-Sync, then re-test]
-    B1 --> B
-    B -- Yes --> C{Is GPU busy time 95–99%?}
-    C -- Yes --> D[GPU-bound: reduce ray tracing, shadows, or reflections]
-    D --> E[Test DLSS, FSR, or XeSS in Quality or Balanced mode]
-    E --> F[Set a realistic FPS cap]
-    C -- No --> G{Is one CPU core saturated?}
-    G -- Yes --> H[CPU-bound: reduce draw distance, crowd density, or physics]
-    H --> I[Close background apps and overlays]
-    G -- No --> J[Check RAM, VRAM, SSD space, temperatures, and throttling]
-```
+1. **Is an FPS cap or V-Sync limiting the test?**
+   - **Yes:** Record the current settings. If temperatures and power are normal, temporarily remove one limit for a short diagnostic run, then restore it.
+   - **No:** Continue to the GPU check.
+2. **Is GPU busy time 95–99% during the uncapped run?**
+   - **Yes:** Treat it as a likely GPU limit. Reduce one demanding graphics setting and compare; then test an upscaler if available.
+   - **No:** Check CPU core activity.
+3. **Is one CPU core or thread near full use while GPU busy time stays lower?**
+   - **Yes:** Treat it as a likely CPU limit. Check background activity and reduce CPU-heavy settings such as draw distance, crowd density, or physics.
+   - **No:** Check RAM, VRAM, SSD activity/free space, temperatures, clocks, and throttling before changing settings.
 
 > **Important:** Measure the first branch with the FPS cap removed and V-Sync disabled. A capped or V-Sync-limited GPU can show low usage even when it is still the limiting component. Prefer GPU busy time from PresentMon or CapFrameX over Task Manager percentages.
 
@@ -49,17 +44,15 @@ flowchart TD
 
 ## Stutter and bad frame times
 
-```mermaid
-flowchart TD
-    A[Stutter or bad frame times] --> B{Does it appear after 20–60 minutes?}
-    B -- Yes --> C[Check temperatures, clocks, and throttling]
-    C --> D[Improve airflow or adjust the fan curve]
-    B -- No --> E{Does it happen in new areas or during camera movement?}
-    E -- Yes --> F[Check shader compilation, asset streaming, and VRAM]
-    F --> G[Lower texture quality or render scale]
-    E -- No --> H[Check overlay conflicts and background downloads]
-    H --> I[Test with minimal overlays]
-```
+1. **Does stutter appear after 20–60 minutes?**
+   - **Yes:** Compare temperatures, clocks, and thermal-limit indicators at the start and end of the session. Check cooling before changing game settings.
+   - **No:** Continue to the scene-change check.
+2. **Does it happen in new areas, after an update, or during camera movement?**
+   - **Yes:** Check shader compilation, asset streaming, VRAM use, and SSD activity. Lower texture quality only if VRAM pressure is observed.
+   - **No:** Continue to the background-activity check.
+3. **Does it coincide with recording, browser video, downloads, or overlays?**
+   - **Yes:** Pause downloads and test with one overlay disabled at a time.
+   - **No:** Capture frame times and use [Find the Bottleneck](02-find-the-bottleneck.html) to identify the limiting component.
 
 | Pattern | Likely cause |
 | --- | --- |
@@ -71,17 +64,15 @@ flowchart TD
 
 ## Crashes and black screens
 
-```mermaid
-flowchart TD
-    A[Crash or black screen] --> B{Was overclocking, undervolting, or XMP/EXPO changed recently?}
-    B -- Yes --> C[Revert the latest change to stock]
-    C --> D[Re-test the game and check WHEA errors]
-    B -- No --> E{Was the GPU driver recently updated?}
-    E -- Yes --> F[Roll back to the previous known-stable driver]
-    F --> F1[Use a clean driver install only if rollback fails]
-    E -- No --> G[Check PSU cables, temperatures, hotspot, and RAM stability]
-    G --> H[Run a stress test and a long gaming session]
-```
+1. **Did the crash begin after changing CPU, GPU, or memory tuning?**
+   - **Yes:** Revert the latest change to stock, then re-test and check for WHEA errors.
+   - **No:** Check the driver history.
+2. **Did the problem begin after a GPU driver update?**
+   - **Yes:** Roll back to the last stable driver first. Use a clean install only if rollback does not resolve the issue.
+   - **No:** Check temperatures, GPU power connections, RAM stability, and the Windows System event log.
+3. **Does the system shut down, smell hot, or show artifacts at stock settings?**
+   - **Yes:** Stop testing and seek hardware service.
+   - **No:** Run targeted stability tests, then a long gaming session.
 
 | If this started after… | Do this first |
 | --- | --- |
@@ -93,15 +84,15 @@ flowchart TD
 
 ## High ping and packet loss
 
-```mermaid
-flowchart TD
-    A[High ping or packet loss] --> B{Are downloads or updates running?}
-    B -- Yes --> C[Pause downloads and cloud sync]
-    B -- No --> D{Is Wi-Fi weak or unstable?}
-    D -- Yes --> E[Test Ethernet or use a better Wi-Fi channel]
-    D -- No --> F[Restart the router and check ISP status]
-    F --> G[Compare another server or region]
-```
+1. **Are downloads, updates, or cloud sync active?**
+   - **Yes:** Pause them and re-test the same game server.
+   - **No:** Check the local network connection.
+2. **Is Wi-Fi signal weak or unstable?**
+   - **Yes:** Test Ethernet or improve the Wi-Fi connection, then compare again.
+   - **No:** Check router status and compare a second server region.
+3. **Does the issue occur only on one server or region?**
+   - **Yes:** Check the game's server status or routing before changing Windows settings.
+   - **No:** Compare another device on the same connection and contact the ISP if local packet loss persists.
 
 | Network issue | First check |
 | --- | --- |
@@ -115,15 +106,15 @@ flowchart TD
 
 ## No measurable improvement
 
-```mermaid
-flowchart TD
-    A[No measurable improvement] --> B{Were many settings changed at once?}
-    B -- Yes --> C[Roll back and re-test one change at a time]
-    B -- No --> D{Was the bottleneck identified correctly?}
-    D -- No --> E[Run bottleneck diagnostics again]
-    D -- Yes --> F[Keep only changes with a measurable gain]
-    F --> G[Document baseline and final results]
-```
+1. **Did you change multiple settings at once?**
+   - **Yes:** Restore the baseline and test one change at a time.
+   - **No:** Confirm the same game build, scene, settings, and measurement tool were used.
+2. **Does the measured result exceed the baseline run-to-run variation?**
+   - **No:** Mark it inconclusive and repeat the test; do not claim a gain.
+   - **Yes:** Keep the change only if stability, frame times, and image quality also meet your goal.
+3. **Is the original bottleneck still unclear?**
+   - **Yes:** Repeat [Find the Bottleneck](02-find-the-bottleneck.html) before trying another tweak.
+   - **No:** Record the final result and rollback path.
 
 ---
 
@@ -134,8 +125,17 @@ flowchart TD
 - Do not stack multiple changes without testing.
 - Do not treat a subjective feeling as proof of lower latency.
 
----
+## Verify the result
 
-## Next step
+After each branch, repeat the same game scene and check whether the symptom changed. Record the setting, game build, driver version, frame times, temperatures, and any errors. Stop if a thermal warning, artifact, or new stability issue appears.
 
-[Benchmark Templates](16-benchmark-templates.html)
+## Rollback
+
+Undo the latest change before following another branch if it worsens performance, causes a crash, or changes the symptom unexpectedly. Return CPU, GPU, and memory tuning to stock when troubleshooting instability.
+
+## Related guides
+
+- [Benchmark Templates](16-benchmark-templates.html)
+- [Find the Bottleneck](02-find-the-bottleneck.html)
+- [Temperatures and Stability](10-temperatures-stability.html)
+- [Drivers and Updates](04-drivers-and-updates.html)

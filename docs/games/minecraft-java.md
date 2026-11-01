@@ -6,8 +6,6 @@ lang: en
 translation_key: game-minecraft-java
 permalink: /docs/games/minecraft-java.html
 ---
-
-
 > Improve Minecraft Java performance by reducing chunk-loading stutter, managing RAM allocation, and testing mods one at a time. Java and Bedrock are separate editions and require different guidance.
 
 ## Applicability
@@ -156,6 +154,12 @@ Use the same world, seed, coordinates, time, weather, and settings for every run
 See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
 
 ---
+
+## Verification
+
+Record the Minecraft version, mod loader, mod list, Java runtime, and test date. Compare the same world, seed, coordinates, time, weather, render distance, and shader settings for at least three runs. Check frame times and memory use as well as FPS.
+
+Use the vanilla baseline first and confirm server rules before testing client mods.
 
 ## Rollback
 

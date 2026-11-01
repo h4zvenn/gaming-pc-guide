@@ -1,145 +1,37 @@
 ---
 layout: default
-title: "Home"
-description: "A practical guide to optimizing a gaming PC on Windows 11: preparation, bottleneck diagnosis, system settings, and measured testing."
+title: "Windows 11 Gaming PC Optimization Guide"
+description: "Safe, practical Windows 11 gaming PC guidance for finding performance problems and verifying changes."
 lang: en
 translation_key: home
 permalink: /
 ---
 
 <div class="hero">
-  <p class="hero-eyebrow">Windows 11 gaming optimization</p>
-  <h1>Fewer tweaks.<br>Measurable results.</h1>
+  <p class="hero-eyebrow">Windows 11 gaming PC guide</p>
+  <h1>Find the cause. Change one thing. Measure the result.</h1>
   <p class="hero-subtitle">
-    Prepare your system, find the real bottleneck, and verify every change with a repeatable test.
+    Practical guidance for PC gamers who want to diagnose performance problems without risky tweaks or unsupported FPS promises.
   </p>
   <div class="hero-actions">
-    <a class="button button-primary" href="{{ '/docs/01-before-you-start.html' | relative_url }}">
-      Start optimization
-    </a>
-    <a class="button button-secondary" href="{{ '/docs/games/index.html' | relative_url }}">
-      Browse game guides
-    </a>
+    <a class="button button-primary" href="{{ '/docs/start-here.html' | relative_url }}">Start with your problem</a>
+    <a class="button button-secondary" href="{{ '/docs/' | relative_url }}">Browse Windows guides</a>
   </div>
 </div>
 
-> The English version is the source version.  
-> The Russian translation is being expanded; links marked **RU** open translated pages.  
-> Use the EN / RU switch in the site header.
+## Windows optimization
 
-## Three steps instead of dozens of random tweaks
+Diagnose first and keep only changes that improve a repeatable test.
 
-Do not apply every guide in sequence. Choose the route that matches your problem and measure the result.
+- [Start here]({{ '/docs/start-here.html' | relative_url }}) — choose a route by symptom.
+- [Windows guide index]({{ '/docs/' | relative_url }}) — browse system, stability, and testing guides.
+- [Find the bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) — identify the limit before tuning.
 
-<div class="steps">
-  <div class="step">
-    <h3>1. Prepare the system</h3>
-    <p>Check that you can roll back, review display settings, and record your starting performance results.</p>
-    <p><a href="{{ '/docs/01-before-you-start.html' | relative_url }}">Preparation →</a></p>
-  </div>
-  <div class="step">
-    <h3>2. Find the limitation</h3>
-    <p>Identify what is limiting performance: CPU, GPU, memory, storage, temperatures, or background activity.</p>
-    <p><a href="{{ '/docs/02-find-the-bottleneck.html' | relative_url }}">Find the bottleneck →</a></p>
-  </div>
-  <div class="step">
-    <h3>3. Change and verify</h3>
-    <p>Apply one change, repeat the same test, and compare results. Keep the change or roll it back.</p>
-    <p><a href="{{ '/docs/16-benchmark-templates.html' | relative_url }}">Benchmark templates →</a></p>
-  </div>
-</div>
+## Game optimization
 
-<h2 id="problems">What is the problem?</h2>
+Use game-specific settings only when they are compatible with the current game version and anti-cheat rules.
 
-Choose the closest symptom. These are diagnostic routes, not guaranteed fixes.
+- [Game guide index]({{ '/docs/games/' | relative_url }}) — browse current game guides and their status.
+- [Counter-Strike 2]({{ '/docs/games/cs2.html' | relative_url }}) — settings, latency, and repeatable testing.
 
-| Problem | Start here | Check next |
-| --- | --- | --- |
-| Low FPS | [Find the bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) | [GPU settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) |
-| Stuttering and uneven frame times | [Find the bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) | [Temperatures and stability]({{ '/docs/10-temperatures-stability.html' | relative_url }}) |
-| Input lag | [GPU settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) | [System diagnostics]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) |
-| High ping or network instability | [System diagnostics]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) | [Troubleshooting]({{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}) |
-| Crashes, freezes, or restarts | [Troubleshooting]({{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}) | [Stability]({{ '/docs/10-temperatures-stability.html' | relative_url }}) |
-| Low disk space or unwanted software | [Disk cleanup]({{ '/docs/19-ai-software-and-disk-cleanup.html' | relative_url }}) | [Background apps]({{ '/docs/07-background-apps.html' | relative_url }}) |
-
-## Game guides
-
-Use the system guides for general issues. Use a game guide for game-specific settings, anti-cheat considerations, and testing.
-
-<div class="card-grid">
-  <div class="card">
-    <h3>Counter-Strike 2</h3>
-    <p>Graphics settings, latency, FPS caps, configuration, and a repeatable testing scenario.</p>
-    <p><a href="{{ '/docs/games/cs2.html' | relative_url }}">Open the CS2 guide →</a></p>
-  </div>
-  <div class="card">
-    <h3>More games</h3>
-    <p>Guides are available for Minecraft Java, VALORANT, PUBG, and World of Tanks.</p>
-    <p><a href="{{ '/docs/games/index.html' | relative_url }}">Open game guides →</a></p>
-  </div>
-</div>
-
-<h2 id="all-guides">All 19 guides</h2>
-
-Guides are grouped by task. The numbering matches the guide files.
-
-### Preparation and diagnostics
-
-- [01. Before You Start]({{ '/docs/01-before-you-start.html' | relative_url }}) — rollback options, baseline measurements, and system checks.
-- [02. Find the Bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) — identify performance limitations.
-- [09. PowerShell Diagnostics]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) — system information and diagnostic checks.
-- [10. Temperatures & Stability]({{ '/docs/10-temperatures-stability.html' | relative_url }}) — overheating and instability checks.
-- [15. Troubleshooting Trees]({{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}) — structured troubleshooting for common issues.
-
-### Windows, hardware, and graphics
-
-- [03. BIOS & Hardware]({{ '/docs/03-bios-and-hardware.html' | relative_url }}) — hardware configuration and BIOS settings.
-- [04. Drivers & Updates]({{ '/docs/04-drivers-and-updates.html' | relative_url }}) — driver and update practices.
-- [05. Windows 11 Core]({{ '/docs/05-windows-11.html' | relative_url }}) — operating system settings.
-- [06. GPU Settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) — graphics, synchronization, and latency.
-- [07. Background Apps]({{ '/docs/07-background-apps.html' | relative_url }}) — check background activity.
-- [08. Services & Security]({{ '/docs/08-services-and-security.html' | relative_url }}) — system services and limits of safe changes.
-
-### Reference and starting points
-
-- [11. What Not To Do]({{ '/docs/11-what-not-to-do.html' | relative_url }}) — questionable methods and risky changes.
-- [12. FAQ]({{ '/docs/12-faq.html' | relative_url }}) — common questions and explanations.
-- [13. Security Hardening]({{ '/docs/13-security-hardening-baseline.html' | relative_url }}) — core protection settings.
-- [14. Quick-Start Presets]({{ '/docs/14-quick-start-presets.html' | relative_url }}) — starting points for different PC configurations.
-
-### Testing, tools, and cleanup
-
-- [16. Benchmark Templates]({{ '/docs/16-benchmark-templates.html' | relative_url }}) — record results and compare changes.
-- [17. Common Builds]({{ '/docs/17-common-builds-quick-cards.html' | relative_url }}) — reference points for different builds.
-- [18. Optimization Tools]({{ '/docs/18-optimization-tools-evidence.html' | relative_url }}) — evaluate third-party tools.
-- [19. Disk Cleanup]({{ '/docs/19-ai-software-and-disk-cleanup.html' | relative_url }}) — remove unused software and reclaim disk space.
-
-## How to use this guide
-
-1. Record your starting settings and performance results.
-2. Choose a change related to the observed problem.
-3. Read its limitations and rollback instructions.
-4. Change one setting.
-5. Repeat the test under the same conditions.
-6. Record the result and decision: keep or roll back.
-
-Example log entry:
-
-```text
-Game and test scene:
-Starting settings:
-Change applied:
-Result before:
-Result after:
-Side effects:
-Decision: keep / roll back
-```
-
-## Project principles
-
-- Diagnosis matters more than the number of tweaks applied.
-- Measurements matter more than promises.
-- Change one setting at a time.
-- Do not use universal BIOS presets for every PC.
-- Do not mass-disable services or system protections.
-- Keep a rollback path for every change.
+This site favors documented settings and measurable tests over “FPS boost” scripts, mass service disabling, registry hacks, or claims of guaranteed gains.

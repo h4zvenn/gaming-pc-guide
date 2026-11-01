@@ -46,6 +46,20 @@ Useful tools:
 
 ---
 
+## Practical temperature thresholds
+
+There is no single safe temperature for every CPU, GPU, hotspot sensor, or SSD. Look up the maximum operating temperature for the exact component in its manufacturer specifications. Use **within 5°C of that published limit for five minutes during a gaming load** as a conservative investigation trigger, not as a universal damage threshold.
+
+| Component | Trigger to investigate | First actions |
+| --- | --- | --- |
+| CPU | Temperature remains within 5°C of the model's `Tjunction max`/maximum operating temperature, or a thermal-throttling flag appears during a game. | Check cooler/fan operation and mounting, airflow, BIOS tuning, and CPU clocks. Return CPU tuning to stock if the trigger followed a change. |
+| GPU | Temperature remains within 5°C of the card's documented thermal target, or the driver/monitoring tool reports thermal limiting with falling clocks. Check core and hotspot separately. | Check GPU fans, dust, case exhaust, power/clock behavior, and any overclock or undervolt. Return tuning to stock before adjusting Windows. |
+| SSD | Reported temperature remains within 5°C of the drive's maximum operating temperature, or SMART/monitoring reports thermal throttling. | Check the drive specification, M.2 heatsink and thermal-pad contact, and airflow. Stop sustained write testing until it cools. |
+
+If a sensor reaches its published maximum, a thermal-protection flag stays active, or the PC shuts down, stop the test and let the component cool. Do not rely on an arbitrary internet temperature chart; check [Intel ARK](https://ark.intel.com/), the exact [AMD processor specifications](https://www.amd.com/en/products/processors/desktops/ryzen.html), and the GPU or SSD manufacturer's page for the installed model. A high temperature without throttling or instability does not by itself prove a fault.
+
+---
+
 ## Throttling
 
 Throttling is a reduction in clock speed or performance to stay within thermal, power, or current limits.
@@ -349,8 +363,18 @@ Back up important data before further diagnostics.
 - [ ] No WHEA errors, crashes, BSODs, or artifacts appear after tuning.
 - [ ] Settings are reverted to stock when fault symptoms appear.
 
----
+## Verify the result
 
-## Next step
+Log the exact sensor names, component models, room conditions, game or test, driver/BIOS settings, and elapsed time. Compare temperatures, clocks, and throttling indicators at the start and after at least 30 minutes of the same workload. Use the manufacturer limit for the exact part, not a generic chart.
 
-[What Not To Do](11-what-not-to-do.html)
+## Rollback
+
+Return the latest CPU, GPU, or memory tuning change to its saved value or stock defaults if temperatures approach the model-specific limit, throttling appears, or stability worsens. Stop the test if a thermal-protection flag remains active or the PC shuts down; do not continue stress testing until the cause is addressed.
+
+## Related guides
+
+- [Find the Bottleneck](02-find-the-bottleneck.html)
+- [BIOS and Hardware](03-bios-and-hardware.html)
+- [AMD CPU settings](hardware/amd-cpu.html)
+- [Intel CPU settings](hardware/intel-cpu.html)
+- [What Not To Do](11-what-not-to-do.html)

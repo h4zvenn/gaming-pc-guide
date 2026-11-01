@@ -19,34 +19,30 @@ permalink: /docs/18-optimization-tools-evidence.html
 
 ---
 
-## Evidence review
+## Current review status
 
-### Commercial boosters
+This page does not currently document a reproducible, source-backed review of a named third-party optimization tool. It therefore endorses no booster, debloat utility, registry tweaker, or “FPS optimizer,” and makes no FPS-gain claim.
 
-- Independent FPS-gain claims could not be confirmed.
-- Official documentation states that results depend on hardware, drivers, game settings, and the actual performance limit.
-- Rollback paths were documented.
+## What evidence a tool review needs
 
-### Open-source tweak tools
+| Review area | Minimum evidence |
+| --- | --- |
+| Publisher and distribution | Identifiable publisher, official download, version, date, and license |
+| Actions performed | Documentation or source code showing each service, registry, driver, security, or scheduled-task change |
+| Performance claim | Repeatable before/after test on the same game, build, scene, settings, and measurement tool |
+| Safety | Effects on Windows Update, Defender, Firewall, anti-cheat, drivers, backups, and restore options |
+| Rollback | Documented way to restore every changed setting, including when the tool fails partway through |
 
-- Documentation and source code were available.
-- Automated tests for tuning logic were mostly absent.
-- Service, registry, and debloat surfaces are safety-relevant.
-
----
-
-## Gaps
-
-- Independent test evidence for closed-source commercial boosters is missing.
-- Open-source tweak tools lack automated tests for tuning logic.
+If any action or rollback cannot be verified, do not run the tool on a gaming PC. Prefer built-in Windows settings and official vendor utilities for a specific task.
 
 ---
 
-## How to use tools
+## Safer alternatives
 
-- Treat third-party tools as proposed optimizations, not guaranteed fixes.
-- Apply the same standard: claim, documentation or code, test, license, safety, and rollback.
-- Do not cite a tool’s FPS or latency number without the corresponding evidence layer.
+- Diagnose the bottleneck with [Find the Bottleneck](02-find-the-bottleneck.html).
+- Change supported in-game, Windows, or driver settings directly and one at a time.
+- Record results using [Benchmark Templates](16-benchmark-templates.html).
+- Never disable Defender, Firewall, Windows Update, or anti-cheat protections for a performance claim.
 
 ---
 

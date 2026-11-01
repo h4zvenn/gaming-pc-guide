@@ -2,15 +2,29 @@
 {% assign home_url = '/' %}
 {% assign english_url = '/' %}
 {% assign russian_url = '/ru/' %}
+{% assign russian_home_url = '/ru/' %}
+{% assign start_url = '/docs/start-here.html' %}
+{% assign windows_url = '/docs/' %}
+{% assign games_url = '/docs/games/' %}
 
 {% assign site_name = site.title | default: 'Gaming PC Guide' %}
 {% assign navigation_label = 'Main navigation' %}
 {% assign skip_label = 'Skip to content' %}
 {% assign home_label = 'Home' %}
+{% assign start_label = 'Start here' %}
+{% assign windows_label = 'Windows' %}
+{% assign games_label = 'Games' %}
+{% assign language_label = 'Русский' %}
+{% assign menu_label = 'Menu' %}
+{% assign copy_label = 'Copy' %}
+{% assign copied_label = 'Copied' %}
+{% assign copy_failed_label = 'Copy failed' %}
 {% assign issues_label = 'Report an issue' %}
 {% assign discussions_label = 'Discussions' %}
 {% assign footer_text = 'Find the bottleneck. Change one setting. Measure the result.' %}
 {% assign fallback_label = 'English version — translation is not available yet' %}
+{% assign breadcrumb_section = 'Windows' %}
+{% assign breadcrumb_section_url = '/docs/' %}
 
 {% if current_lang == 'ru' %}
 {% assign home_url = '/ru/' %}
@@ -18,10 +32,27 @@
 {% assign navigation_label = 'Основная навигация' %}
 {% assign skip_label = 'Перейти к содержимому' %}
 {% assign home_label = 'Главная' %}
+{% assign start_url = '/ru/docs/start-here.html' %}
+{% assign windows_url = '/ru/docs/' %}
+{% assign games_url = '/ru/docs/games/' %}
+{% assign start_label = 'Начать' %}
+{% assign windows_label = 'Windows' %}
+{% assign games_label = 'Игры' %}
+{% assign menu_label = 'Меню' %}
+{% assign copy_label = 'Копировать' %}
+{% assign copied_label = 'Скопировано' %}
+{% assign copy_failed_label = 'Не удалось скопировать' %}
 {% assign issues_label = 'Сообщить об ошибке' %}
 {% assign discussions_label = 'Обсуждения' %}
 {% assign footer_text = 'Найди узкое место. Измени одну настройку. Измерь результат.' %}
 {% assign fallback_label = 'Английская версия — перевод пока недоступен' %}
+{% assign breadcrumb_section = 'Windows' %}
+{% assign breadcrumb_section_url = '/ru/docs/' %}
+{% endif %}
+
+{% if page.url contains '/games/' %}
+{% assign breadcrumb_section = games_label %}
+{% assign breadcrumb_section_url = games_url %}
 {% endif %}
 
 {% if page.translation_key %}
@@ -35,8 +66,6 @@
 {% endfor %}
 {% endif %}
 
-{% assign navigation_items = '01-before-you-start|Start|Начать;02-find-the-bottleneck|Bottleneck|Узкое место;06-gpu-settings|GPU|Видеокарта;15-troubleshooting-decision-trees|Troubleshoot|Проблемы;16-benchmark-templates|Benchmark|Тестирование' | split: ';' %}
-
 <!DOCTYPE html>
 <html lang="{{ current_lang | escape }}">
 
@@ -46,20 +75,81 @@
   <meta name="color-scheme" content="dark">
   <title>{% if page.title %}{{ page.title | escape }} — {% endif %}{{ site_name | escape }}</title>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="{% if page.layout == 'doc' %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site_name | escape }}">
+  <meta property="og:title" content="{{ page.title | default: site_name | escape }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:locale" content="{% if current_lang == 'ru' %}ru_RU{% else %}en_US{% endif %}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page.title | default: site_name | escape }}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description | escape }}">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": {{ site_name | jsonify }},
+      "url": {{ home_url | absolute_url | jsonify }}
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": {{ home_label | jsonify }},
+          "item": {{ home_url | absolute_url | jsonify }}
+        }
+        {% if page.url != home_url %},
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ breadcrumb_section | jsonify }},
+          "item": {{ breadcrumb_section_url | absolute_url | jsonify }}
+        }
+        {% if page.url != windows_url and page.url != games_url %},
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ page.title | default: site_name | jsonify }},
+          "item": {{ page.url | absolute_url | jsonify }}
+        }
+        {% endif %}
+        {% endif %}
+      ]
+    }
+  </script>
+  {% if page.layout == 'doc' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.description | default: site.description | jsonify }},
+      "inLanguage": {{ current_lang | jsonify }},
+      "mainEntityOfPage": {{ page.url | absolute_url | jsonify }}
+    }
+  </script>
+  {% endif %}
 
   <style>
     :root {
       color-scheme: dark;
       --bg: #0b0f14;
       --surface: #111823;
-      --surface-soft: #16202e;
+      --surface-2: #16202e;
       --text: #e6edf3;
       --muted: #9fb0c3;
       --border: #223044;
       --accent: #3b82f6;
       --accent-hover: #60a5fa;
-      --accent-soft: #16283f;
-      --code-bg: #0f1722;
+      --accent-soft: #16202e;
+      --code-bg: #111823;
       --success: #22c55e;
       --warning: #f59e0b;
       --danger: #ef4444;
@@ -84,11 +174,9 @@
       flex-direction: column;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 16px;
-      line-height: 1.7;
+      line-height: 1.6;
       color: var(--text);
-      background:
-        radial-gradient(900px 500px at 80% -10%, rgb(59 130 246 / 8%), transparent),
-        var(--bg);
+      background: var(--bg);
       overflow-wrap: break-word;
     }
 
@@ -190,7 +278,7 @@
 
     .language-switcher a:hover {
       color: var(--text);
-      background: var(--surface-soft);
+      background: var(--surface-2);
     }
 
     .language-switcher a[aria-current="true"] {
@@ -203,6 +291,28 @@
       flex-wrap: wrap;
       gap: 6px;
       margin-top: 16px;
+    }
+
+    .site-nav a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .site-nav-menu > summary {
+      display: none;
+    }
+
+    .site-nav-toggle {
+      width: fit-content;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      background: var(--surface);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 650;
     }
 
     .site-nav a {
@@ -222,6 +332,31 @@
     .site-main {
       flex: 1;
       padding: 48px 0 64px;
+    }
+
+    .breadcrumbs {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .breadcrumbs ol {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .breadcrumbs li + li::before {
+      content: "/";
+      margin-right: 8px;
+      color: var(--muted);
+    }
+
+    .breadcrumbs [aria-current="page"] {
+      color: var(--text);
     }
 
     .hero {
@@ -273,13 +408,13 @@
     }
 
     .button-primary {
-      color: #ffffff;
+      color: var(--text);
       background: var(--accent);
       border: 1px solid var(--accent);
     }
 
     .button-primary:hover {
-      color: #ffffff;
+      color: var(--text);
       background: var(--accent-hover);
       border-color: var(--accent-hover);
       text-decoration: none;
@@ -293,7 +428,7 @@
 
     .button-secondary:hover {
       color: var(--text);
-      background: var(--surface-soft);
+      background: var(--surface-2);
       border-color: var(--accent);
       text-decoration: none;
     }
@@ -333,7 +468,7 @@
       border-radius: var(--radius);
       background: var(--surface);
       box-shadow: var(--shadow);
-      transition: border-color 0.15s ease, transform 0.15s ease;
+      transition: border-color 0.15s ease;
     }
 
     .step h3,
@@ -355,17 +490,21 @@
 
     .card:hover {
       border-color: var(--accent);
-      transform: translateY(-2px);
     }
 
     .doc {
       display: grid;
-      grid-template-columns: 230px minmax(0, 1fr);
+      grid-template-columns: minmax(0, 80ch) 230px;
       align-items: start;
+      justify-content: space-between;
       gap: 28px;
     }
 
     .doc-sidebar {
+      position: sticky;
+      top: 110px;
+      max-height: calc(100vh - 130px);
+      overflow-y: auto;
       padding: 18px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -373,29 +512,60 @@
       font-size: 0.88rem;
     }
 
-    .doc-sidebar h3 {
-      margin: 22px 0 8px;
+    .page-navigation {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      max-width: calc(80ch + 258px);
+      margin: 24px 0 0;
+    }
+
+    .page-navigation-link {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface);
+      text-decoration: none;
+    }
+
+    .page-navigation-link span {
       color: var(--muted);
-      font-size: 0.76rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      font-size: 0.82rem;
     }
 
-    .doc-sidebar h3:first-child {
-      margin-top: 0;
+    .page-navigation-link strong {
+      overflow-wrap: anywhere;
     }
 
-    .doc-sidebar ul {
+    .page-navigation-next {
+      text-align: right;
+    }
+
+    .doc-toc > summary {
+      color: var(--muted);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .doc-toc ol {
       list-style: none;
+      margin: 12px 0 0;
       padding: 0;
-      margin: 0;
     }
 
-    .doc-sidebar li {
+    .doc-toc li {
       margin: 3px 0;
     }
 
-    .doc-sidebar a {
+    .doc-toc .toc-subitem {
+      padding-left: 14px;
+    }
+
+    .doc-toc a {
       display: block;
       padding: 5px 7px;
       border-radius: 6px;
@@ -403,13 +573,14 @@
       text-decoration: none;
     }
 
-    .doc-sidebar a:hover {
+    .doc-toc a:hover {
       color: var(--text);
       background: var(--accent-soft);
     }
 
     .doc-content {
       min-width: 0;
+      max-width: 80ch;
       padding: clamp(20px, 3vw, 36px);
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -444,7 +615,7 @@
     }
 
     .doc-content strong {
-      color: #ffffff;
+      color: var(--text);
     }
 
     table {
@@ -466,7 +637,7 @@
     }
 
     th {
-      background: var(--surface-soft);
+      background: var(--surface-2);
       font-weight: 650;
     }
 
@@ -479,25 +650,45 @@
       border-radius: 5px;
       background: var(--code-bg);
       border: 1px solid var(--border);
-      color: #dbeafe;
+      color: var(--text);
       font-family: "Cascadia Code", "JetBrains Mono", Consolas, monospace;
       font-size: 0.88em;
     }
 
     pre {
+      position: relative;
       max-width: 100%;
-      padding: 18px;
+      padding: 48px 18px 18px;
       overflow-x: auto;
       border: 1px solid var(--border);
       border-radius: 10px;
       background: var(--code-bg);
     }
 
+    .copy-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      min-height: 36px;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--text);
+      background: var(--surface);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.8rem;
+    }
+
+    .copy-button:hover {
+      border-color: var(--accent);
+    }
+
     pre code {
       padding: 0;
       background: none;
       border: none;
-      color: #e5edf8;
+      color: var(--text);
       overflow-wrap: normal;
     }
 
@@ -506,7 +697,7 @@
       padding: 12px 18px;
       border-left: 4px solid var(--accent);
       border-radius: 0 10px 10px 0;
-      background: var(--surface-soft);
+      background: var(--surface-2);
       color: var(--text);
     }
 
@@ -526,7 +717,7 @@
       border: 1px solid var(--border);
       border-left: 4px solid var(--accent);
       border-radius: 10px;
-      background: var(--surface-soft);
+      background: var(--surface-2);
     }
 
     .callout p {
@@ -537,12 +728,16 @@
       border-left-color: var(--accent);
     }
 
+    .callout-note {
+      border-left-color: var(--accent);
+    }
+
     .callout-tip {
       border-left-color: var(--success);
     }
 
     .callout-important {
-      border-left-color: #8b5cf6;
+      border-left-color: var(--accent);
     }
 
     .callout-warning {
@@ -577,8 +772,13 @@
       }
 
       .doc-sidebar {
-        max-height: 300px;
-        overflow-y: auto;
+        position: static;
+        max-height: none;
+        grid-row: 2;
+      }
+
+      .doc-content {
+        grid-row: 1;
       }
     }
 
@@ -600,8 +800,35 @@
         align-items: stretch;
       }
 
+      .site-nav-menu > summary {
+        display: inline-flex;
+        margin-top: 12px;
+        list-style: none;
+      }
+
+      .site-nav-menu > summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .site-nav-menu:not([open]) .site-nav {
+        display: none;
+      }
+
+      .site-nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+
       .button {
         width: 100%;
+      }
+
+      .page-navigation {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .page-navigation-next {
+        text-align: left;
       }
     }
 
@@ -653,34 +880,16 @@
         {% include language-switcher.html %}
       </div>
 
-      <nav class="site-nav" aria-label="{{ navigation_label }}">
-        <a href="{{ home_url | relative_url }}" {% if page.url==home_url %}aria-current="page" {% endif %}>
-          {{ home_label }}
-        </a>
-
-        {% for item in navigation_items %}
-        {% assign fields = item | split: '|' %}
-        {% assign target_url = '/docs/' | append: fields[0] | append: '.html' %}
-        {% assign link_label = fields[1] %}
-        {% assign english_fallback = false %}
-
-        {% if current_lang == 'ru' %}
-        {% assign link_label = fields[2] %}
-        {% assign russian_candidate = '/ru' | append: target_url %}
-        {% assign russian_page = site.pages | where: 'url', russian_candidate | first %}
-
-        {% if russian_page %}
-        {% assign target_url = russian_page.url %}
-        {% else %}
-        {% assign english_fallback = true %}
-        {% endif %}
-        {% endif %}
-
-        <a href="{{ target_url | relative_url }}" {% if page.url==target_url %}aria-current="page" {% endif %} {% if english_fallback %}hreflang="en" title="{{ fallback_label }}" {% endif %}>
-          {{ link_label }}{% if english_fallback %} (EN){% endif %}
-        </a>
-        {% endfor %}
-      </nav>
+      <details class="site-nav-menu" open>
+        <summary class="site-nav-toggle" aria-controls="site-navigation">{{ menu_label }}</summary>
+        <nav id="site-navigation" class="site-nav" aria-label="{{ navigation_label }}">
+          <a href="{{ home_url | relative_url }}" {% if page.url == home_url %}aria-current="page"{% endif %}>{{ home_label }}</a>
+          <a href="{{ start_url | relative_url }}" {% if page.url == start_url %}aria-current="page"{% endif %} {% if current_lang == 'ru' %}hreflang="ru"{% endif %}>{{ start_label }}</a>
+          <a href="{{ windows_url | relative_url }}" {% if page.url == windows_url %}aria-current="page"{% endif %}>{{ windows_label }}</a>
+          <a href="{{ games_url | relative_url }}" {% if page.url == games_url %}aria-current="page"{% endif %}>{{ games_label }}</a>
+          <a href="{{ russian_home_url | relative_url }}" lang="ru" hreflang="ru" {% if current_lang == 'ru' %}aria-current="page"{% endif %}>{{ language_label }}</a>
+        </nav>
+      </details>
     </div>
   </header>
 
@@ -701,6 +910,56 @@
       </div>
     </div>
   </footer>
+  <script>
+    (() => {
+      const content = document.querySelector('.doc-content');
+      const toc = document.querySelector('#table-of-contents');
+      if (content && toc) {
+        content.querySelectorAll('h2, h3').forEach((heading, index) => {
+          if (!heading.id) {
+            heading.id = `section-${index + 1}`;
+          }
+          const item = document.createElement('li');
+          if (heading.tagName === 'H3') {
+            item.classList.add('toc-subitem');
+          }
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = heading.textContent.trim();
+          item.appendChild(link);
+          toc.appendChild(item);
+        });
+        if (toc.children.length === 0) {
+          toc.closest('.doc-sidebar').hidden = true;
+        }
+      }
+
+      const labels = {
+        copy: '{{ copy_label }}',
+        copied: '{{ copied_label }}',
+        failed: '{{ copy_failed_label }}'
+      };
+
+      document.querySelectorAll('main pre > code').forEach((code) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'copy-button';
+        button.textContent = labels.copy;
+        button.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(code.innerText);
+            button.textContent = labels.copied;
+          } catch {
+            button.textContent = labels.failed;
+          }
+          window.setTimeout(() => {
+            button.textContent = labels.copy;
+          }, 2000);
+        });
+        code.parentElement.appendChild(button);
+      });
+    })();
+  </script>
 </body>
 
 </html>

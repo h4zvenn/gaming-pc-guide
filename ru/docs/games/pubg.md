@@ -1,15 +1,15 @@
-﻿---
+---
 layout: doc
 title: "PUBG: BATTLEGROUNDS"
 description: "Настройки PUBG, BattlEye и тестирование производительности."
 lang: ru
-translation_key: pubg
-permalink: /ru/docs/pubg.html
+translation_key: game-pubg
+permalink: /ru/docs/games/pubg.html
 ---
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [PUBG: BATTLEGROUNDS](https://h4zvenn.github.io/gaming-pc-guide/docs/pubg.html)
+> [PUBG: BATTLEGROUNDS](https://h4zvenn.github.io/gaming-pc-guide/docs/games/pubg.html)
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/pubg.html
 
 Пока используй английскую версию:
 
-- [PUBG: BATTLEGROUNDS — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/pubg.html)
+- [PUBG: BATTLEGROUNDS — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/pubg.html)
 
 ## Принципы проекта
 

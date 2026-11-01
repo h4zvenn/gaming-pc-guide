@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://h4zvenn.github.io/gaming-pc-guide/sitemap.xml

@@ -6,8 +6,6 @@ lang: en
 translation_key: game-cs2
 permalink: /docs/games/cs2.html
 ---
-
-
 > Complete guide for improving Counter-Strike 2 performance on Source 2: reduce stutter, improve frame-time consistency, and establish a stable FPS floor. Test every change on your own system.
 
 ## Applicability
@@ -45,7 +43,7 @@ Do not change CS2 settings until the system is stable and the monitor refresh ra
 - Avoid third-party overlays during troubleshooting, especially Discord Overlay, Xbox Game Bar, NVIDIA Overlay, and RTSS.
 - If you use `-allow_third_party_software`, understand that it can affect Trust Factor and is not required for normal optimization.
 
-Use DirectX 11 as the default renderer. Test Vulkan only if you have a specific compatibility or performance reason; shader compilation and stutter behavior can differ between systems.
+Use the renderer selected by the current game client by default. Test another available renderer only for a specific compatibility or performance reason; shader compilation and stutter behavior can differ between systems and patches.
 
 ---
 
@@ -185,16 +183,11 @@ See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
 
 ---
 
-## Evidence status
+## Verification
 
-| Recommendation | Status |
-| --- | --- |
-| Use native resolution and fullscreen | Verified |
-| Disable V-Sync for lower latency | Verified |
-| Use in-game FPS limiter before external limiters | Needs verification per system |
-| Enable Reflex on supported NVIDIA GPUs | Needs verification per system |
-| Use `-high` or `-threads` | Needs verification; not universally beneficial |
-| Change `rate`, `cl_cmdrate`, or `cl_updaterate` | Deprecated; do not copy old CS:GO values |
+Record the game version and test date. Use the same map or demo, resolution, settings, driver, overlays, and background load for at least three runs. Compare FPS, 1% lows, frame times, temperatures, and stability; do not treat unverified launch options or old CS:GO commands as recommendations.
+
+The settings above are cautious starting points, not patch-certified results. Confirm current menu options and official compatibility guidance before applying patch-sensitive recommendations.
 
 ---
 

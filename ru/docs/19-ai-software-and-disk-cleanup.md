@@ -1,9 +1,9 @@
-﻿---
+---
 layout: doc
 title: "Очистка диска и удаление ПО"
 description: "Как освободить место и удалить неиспользуемые программы."
 lang: ru
-translation_key: 19-ai-software-and-disk-cleanup
+translation_key: ai-software-and-disk-cleanup
 permalink: /ru/docs/19-ai-software-and-disk-cleanup.html
 ---
 

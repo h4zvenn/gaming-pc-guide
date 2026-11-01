@@ -1,9 +1,9 @@
-﻿---
+---
 layout: doc
 title: "BIOS и оборудование"
 description: "Базовая проверка оборудования, памяти, BIOS и настроек платформы."
 lang: ru
-translation_key: 03-bios-and-hardware
+translation_key: bios-and-hardware
 permalink: /ru/docs/03-bios-and-hardware.html
 ---
 
