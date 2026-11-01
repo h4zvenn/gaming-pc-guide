@@ -17,7 +17,7 @@
       --warning: #f59e0b;
       --danger: #ef4444;
       --radius: 14px;
-      --shadow: 0 10px 30px rgb(0 0 0 / 25%);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 
     *,
@@ -92,7 +92,7 @@
 
     .site-header {
       padding: 18px 0;
-      background: rgb(17 24 35 / 92%);
+      background: rgba(17, 24, 35, 0.92);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(10px);
       position: sticky;
@@ -691,7 +691,7 @@
     }
 
     tbody tr:nth-child(even) td {
-      background: rgb(22 32 46 / 45%);
+      background: rgba(22, 32, 46, 0.45);
     }
 
     code {
