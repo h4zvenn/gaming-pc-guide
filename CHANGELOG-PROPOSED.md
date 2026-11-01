@@ -8,13 +8,15 @@
 - Added five vendor-specific GPU and CPU setup guides.
 - Added generated sitemap and crawler instructions, plus canonical, social-sharing, and structured-data metadata.
 - Added responsive navigation, article breadcrumbs and table of contents, localized copy buttons, and mobile-friendly layouts.
-- Added automatic previous/next navigation for system and game articles.
+- Added automatic previous/next navigation for system articles only.
 - Expanded the link checker to validate local links, image/source targets, and fragment identifiers.
 - Added substantive Russian translations for PowerShell diagnostics, GPU settings, temperature and stability, what-not-to-do, FAQ, quick-start presets, troubleshooting, and benchmark guides.
 
 ### Changed
 
 - Applied the requested neutral dark and PC-blue palette, consistent 16px/1.6 typography, 80ch article width, and styles for notes, warnings, danger callouts, tables, code, and navigation.
+- Moved the shared stylesheet from the HTML layout into `assets/css/style.scss`; centered the desktop article and table-of-contents columns with a consistent gap.
+- Removed unrelated next/previous game links from game-specific articles.
 - Normalized the five English game guides with explicit, repeatable verification sections and current-version review cautions.
 - Corrected CS2 rendering guidance to defer to the current client default and removed unsupported “Verified” evidence labels.
 - Aligned breadcrumb structured data with the visible breadcrumb path.

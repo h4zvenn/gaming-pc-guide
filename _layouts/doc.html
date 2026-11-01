@@ -50,22 +50,17 @@ layout: default
   </aside>
 </article>
 
+{% unless page.url contains '/games/' %}
 {% assign navigation_pages = site.pages | where: 'lang', page.lang | sort: 'url' %}
 {% assign previous_page = nil %}
 {% assign next_page = nil %}
 {% assign current_page_seen = false %}
 {% for navigation_page in navigation_pages %}
 {% assign include_navigation_page = false %}
-{% if page.url contains '/games/' %}
-{% if navigation_page.url contains '/games/' and navigation_page.url != '/docs/games/' and navigation_page.url != '/ru/docs/games/' and navigation_page.url contains '.html' and navigation_page.url != '/docs/games/template.html' %}
-{% assign include_navigation_page = true %}
-{% endif %}
-{% else %}
 {% if navigation_page.url contains '/docs/' and navigation_page.url != '/docs/' and navigation_page.url != '/ru/docs/' and navigation_page.url contains '.html' %}
 {% unless navigation_page.url contains '/games/' %}
 {% assign include_navigation_page = true %}
 {% endunless %}
-{% endif %}
 {% endif %}
 {% if include_navigation_page %}
 {% if navigation_page.url == page.url %}
@@ -77,6 +72,7 @@ layout: default
 {% endif %}
 {% endif %}
 {% endfor %}
+{% endunless %}
 
 {% if current_page_seen %}
 {% if previous_page or next_page %}
