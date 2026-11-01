@@ -357,7 +357,8 @@
 
     .doc {
       display: grid;
-      grid-template-columns: minmax(0, 80ch) 230px;
+      grid-template-columns: 240px minmax(0, 80ch) 230px;
+      grid-template-areas: "nav content toc";
       align-items: start;
       gap: 28px;
       width: fit-content;
@@ -365,7 +366,55 @@
       margin-inline: auto;
     }
 
+    .doc-nav {
+      grid-area: nav;
+      position: sticky;
+      top: 110px;
+      max-height: calc(100vh - 130px);
+      overflow-y: auto;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      font-size: 0.88rem;
+    }
+
+    .doc-nav h3 {
+      margin: 0 0 10px;
+      font-size: 0.9rem;
+    }
+
+    .doc-nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .doc-nav li {
+      margin: 2px 0;
+    }
+
+    .doc-nav li a {
+      display: block;
+      padding: 5px 8px;
+      border-radius: 6px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .doc-nav li a:hover {
+      color: var(--text);
+      background: var(--surface-2);
+    }
+
+    .doc-nav li a[aria-current="page"] {
+      color: var(--text);
+      background: var(--surface-2);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+
     .doc-sidebar {
+      grid-area: toc;
       position: sticky;
       top: 110px;
       max-height: calc(100vh - 130px);
@@ -444,6 +493,7 @@
     }
 
     .doc-content {
+      grid-area: content;
       min-width: 0;
       max-width: 80ch;
       padding: clamp(20px, 3vw, 36px);
@@ -631,20 +681,28 @@
       gap: 8px 18px;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 1280px) {
       .doc {
-        width: 100%;
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: 240px minmax(0, 80ch);
+        grid-template-areas: "nav toc" "nav content";
       }
 
       .doc-sidebar {
         position: static;
         max-height: none;
-        grid-row: 2;
+      }
+    }
+
+    @media (max-width: 850px) {
+      .doc {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "toc" "content" "nav";
       }
 
-      .doc-content {
-        grid-row: 1;
+      .doc-nav {
+        position: static;
+        max-height: none;
       }
     }
 

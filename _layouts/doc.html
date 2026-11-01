@@ -34,7 +34,27 @@ layout: default
   </ol>
 </nav>
 
+{% assign nav_pages = site.pages | where: 'lang', page.lang | sort: 'url' %}
 <article class="doc">
+  <aside class="doc-nav">
+    <nav aria-label="{% if page.lang == 'ru' %}Разделы{% else %}Guides{% endif %}">
+      <h3><a href="{{ breadcrumb_section_url | relative_url }}">{{ breadcrumb_section }}</a></h3>
+      <ul>
+        {% for nav_page in nav_pages %}
+        {% if nav_page.url contains '.html' and nav_page.url contains breadcrumb_section_url and nav_page.url != '/docs/games/template.html' %}
+        {% assign nav_is_game = false %}
+        {% if nav_page.url contains '/games/' %}{% assign nav_is_game = true %}{% endif %}
+        {% assign here_is_game = false %}
+        {% if page.url contains '/games/' %}{% assign here_is_game = true %}{% endif %}
+        {% if nav_is_game == here_is_game %}
+        <li><a href="{{ nav_page.url | relative_url }}"{% if nav_page.url == page.url %} aria-current="page"{% endif %}>{{ nav_page.title | escape }}</a></li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </aside>
+
   <div class="doc-content">
     <h1>{{ page.title }}</h1>
     {{ content }}
