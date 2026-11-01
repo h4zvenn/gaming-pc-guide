@@ -25,7 +25,7 @@ Complete the general preparation flow first:
 1. [Before You Start](../01-before-you-start.html)
 2. [Find the Bottleneck](../02-find-the-bottleneck.html)
 3. [Drivers & Updates](../04-drivers-and-updates.html)
-4. [Windows 11 Core](../05-windows-11.html)
+4. [Windows 11 Gaming Settings](../05-windows-11.html)
 5. [Background Apps](../07-background-apps.html)
 6. [Temperatures & Stability](../10-temperatures-stability.html)
 

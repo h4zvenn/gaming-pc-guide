@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Windows 11 Gaming PC Optimization Guide"
-description: "Safe, practical Windows 11 gaming PC guidance for finding performance problems and verifying changes."
+title: "Ultimate PC Gaming Optimization Guide 2026"
+description: "A universal, evidence-based guide to diagnosing gaming PC issues across hardware, games, and Windows versions."
 lang: en
 translation_key: home
 permalink: /
@@ -9,11 +9,11 @@ permalink: /
 
 <section class="home-hero">
   <div class="home-hero-text">
-    <p class="hero-eyebrow">Windows 11 gaming PC guide</p>
-    <h1>Find the cause. Change one thing. Measure the result.</h1>
-    <p class="hero-subtitle">Practical diagnostics for PC gamers: no risky tweaks, no guaranteed-FPS promises, every change verified with a repeatable test.</p>
+    <p class="hero-eyebrow">Ultimate PC Gaming Optimization Guide 2026</p>
+    <h1>Optimize the PC you have. Prove what actually helps.</h1>
+    <p class="hero-subtitle">A hardware-agnostic guide for desktops and gaming laptops, any GPU vendor, and different game workloads. Diagnose first, change one relevant setting, and measure the result.</p>
     <div class="hero-actions">
-      <a class="button button-primary" href="{{ '/docs/start-here.html' | relative_url }}">Start optimization</a>
+      <a class="button button-primary" href="{{ '/docs/ultimate-pc-gaming-guide-2026.html' | relative_url }}">Read the complete guide</a>
       <a class="button button-secondary" href="{{ '/docs/games/' | relative_url }}">Browse game guides</a>
     </div>
   </div>
@@ -23,6 +23,8 @@ permalink: /
     <li><strong>Repeat the test</strong><span>Keep the change only if the result is measurable.</span></li>
   </ol>
 </section>
+
+<p class="home-note">Windows 11 is the primary OS covered. Windows 10 is documented separately as a legacy OS because Microsoft ended standard support on October 14, 2025. Advice is labeled when it depends on an OS version, GPU vendor, game, or hardware feature.</p>
 
 <h2 class="home-heading">What is your problem?</h2>
 
@@ -40,8 +42,10 @@ permalink: /
     <h2>Windows guides</h2>
     <ul class="link-list">
       <li><a href="{{ '/docs/start-here.html' | relative_url }}">Start here</a><span>Choose a route by symptom</span></li>
+      <li><a href="{{ '/docs/ultimate-pc-gaming-guide-2026.html' | relative_url }}">Complete optimization guide</a><span>Universal workflow and safe priorities</span></li>
       <li><a href="{{ '/docs/03-bios-and-hardware.html' | relative_url }}">BIOS &amp; hardware</a><span>Platform-wide checks</span></li>
       <li><a href="{{ '/docs/04-drivers-and-updates.html' | relative_url }}">Drivers &amp; updates</a><span>Install and roll back safely</span></li>
+      <li><a href="{{ '/docs/windows-10-legacy.html' | relative_url }}">Windows 10 legacy notes</a><span>Support status and version-specific cautions</span></li>
       <li><a href="{{ '/docs/16-benchmark-templates.html' | relative_url }}">Benchmark templates</a><span>Repeatable testing protocol</span></li>
       <li><a href="{{ '/docs/' | relative_url }}">All Windows guides</a><span>Full index</span></li>
     </ul>

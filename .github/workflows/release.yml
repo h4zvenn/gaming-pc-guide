@@ -1,0 +1,65 @@
+name: Create GitHub Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tagged revision
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Prepare release notes from changelog
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+          import sys
+          from pathlib import Path
+
+          tag = os.environ["RELEASE_TAG"]
+          semver = re.compile(
+              r"v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"
+              r"(?:-(?:0|[1-9]\d*|\d*[A-Za-z-][0-9A-Za-z-]*)"
+              r"(?:\.(?:0|[1-9]\d*|\d*[A-Za-z-][0-9A-Za-z-]*))*)?"
+              r"(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
+          )
+          if not semver.fullmatch(tag):
+              sys.exit(f"Invalid release tag: {tag}")
+
+          changelog = Path("CHANGELOG.md").read_text(encoding="utf-8")
+          lines = changelog.splitlines()
+          heading = re.compile(rf"^## {re.escape(tag)}(?:\s+-\s+.*)?$")
+
+          matches = [index for index, line in enumerate(lines) if heading.fullmatch(line)]
+          if len(matches) != 1:
+              if not matches:
+                  sys.exit(f"CHANGELOG.md has no heading for {tag}")
+              sys.exit(f"CHANGELOG.md has multiple headings for {tag}")
+
+          index = matches[0]
+          end = next(
+              (position for position in range(index + 1, len(lines))
+               if lines[position].startswith("## ")),
+              len(lines),
+          )
+          notes = "\n".join(lines[index + 1:end]).strip()
+          if not notes:
+              sys.exit(f"No release notes found under {lines[index]}")
+          Path("release-notes.md").write_text(notes + "\n", encoding="utf-8")
+          PY
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" --verify-tag --title "$GITHUB_REF_NAME" --notes-file release-notes.md

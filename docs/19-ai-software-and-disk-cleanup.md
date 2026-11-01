@@ -103,16 +103,7 @@ Delete it manually only if you are certain that its models and settings are no l
 
 ## Analyze disk usage
 
-Check drive space:
-
-```powershell
-Get-PSDrive -PSProvider FileSystem |
-Where-Object { $null -ne $_.Used } |
-Select-Object Name,
-@{Name = 'UsedGB'; Expression = { [math]::Round($_.Used / 1GB, 1) }},
-@{Name = 'FreeGB'; Expression = { [math]::Round($_.Free / 1GB, 1) }} |
-Format-Table -AutoSize
-```
+Use the [read-only diagnostics menu](09-powershell-diagnostics.html) to view drive capacity and free space. The larger folder scan below is separate because it can take several minutes and traverses files in your user profile.
 
 Find the largest folders in your user profile:
 

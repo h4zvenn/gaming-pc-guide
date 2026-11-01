@@ -35,16 +35,7 @@ permalink: /ru/docs/08-services-and-security.html
 
 ## 1. Посмотреть сторонние службы
 
-Открой Windows Terminal или PowerShell и выполни:
-
-```powershell
-Get-CimInstance Win32_Service |
-    Where-Object { $_.PathName -and $_.PathName -notmatch 'Windows|Microsoft' } |
-    Select-Object Name, DisplayName, State, StartMode, PathName |
-    Format-Table -AutoSize
-```
-
-Скрипт только показывает службы. Он ничего не изменяет.
+Чтобы посмотреть имена, пути и типы запуска служб через меню, используй пункт 3 в [диагностическом руководстве](09-powershell-diagnostics.html). Проверка только показывает сведения и ничего не изменяет. Ручные команды приведены в английской главе диагностики.
 
 ### На что смотреть
 

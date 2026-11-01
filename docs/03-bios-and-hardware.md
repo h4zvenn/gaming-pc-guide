@@ -100,14 +100,7 @@ Select the profile recommended for your RAM kit, usually `Profile 1`.
 
 ### Verify in Windows
 
-Open PowerShell:
-
-```powershell
-Get-CimInstance Win32_PhysicalMemory |
-Select-Object Manufacturer, PartNumber, Capacity, Speed, ConfiguredClockSpeed
-```
-
-Check `ConfiguredClockSpeed`.
+Use the [read-only diagnostics menu](09-powershell-diagnostics.html) to inspect the memory modules and their configured speeds. The manual command is also available in the diagnostics guide.
 
 > **Note:** In CPU-Z and similar tools, DRAM frequency can appear at roughly half of the advertised value because DDR means Double Data Rate. For example, about 3000 MHz DRAM corresponds to DDR5-6000.
 

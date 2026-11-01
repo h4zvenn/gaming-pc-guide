@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🎮 Gaming PC Guide
+# 🎮 Ultimate PC Gaming Optimization Guide 2026
 
-**A practical, evidence-based guide to optimizing Windows 11 for gaming.**
+**A universal, evidence-based guide to optimizing gaming PCs across hardware and games.**
 
 Find the real bottleneck. Change one setting. Measure the result.
 
@@ -11,8 +11,10 @@ Find the real bottleneck. Change one setting. Measure the result.
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/h4zvenn/gaming-pc-guide/pulls)
 
-[**Read the guide**](https://h4zvenn.github.io/gaming-pc-guide/) ·
+[**2026 optimization guide**](https://h4zvenn.github.io/gaming-pc-guide/docs/ultimate-pc-gaming-guide-2026.html) ·
+[**Home page**](https://h4zvenn.github.io/gaming-pc-guide/) ·
 [**Game guides**](https://h4zvenn.github.io/gaming-pc-guide/docs/games/) ·
+[**Releases**](https://github.com/h4zvenn/gaming-pc-guide/releases) ·
 [**Report an issue**](https://github.com/h4zvenn/gaming-pc-guide/issues)
 
 </div>
@@ -21,9 +23,9 @@ Find the real bottleneck. Change one setting. Measure the result.
 
 ## ✨ What is this?
 
-Most “FPS optimization” advice is random: disable services, edit the registry, install a debloat script, hope for the best.
+Gaming optimization advice ranges from measured fixes to one-size-fits-all tweaks. This project focuses on changes you can test across desktops and gaming laptops, CPU/GPU vendors, and different game workloads:
 
-This project takes a different approach:
+The method is simple:
 
 - Find the actual bottleneck.
 - Change one setting at a time.
@@ -33,12 +35,19 @@ This project takes a different approach:
 
 No “FPS boost” scripts. No mass service disabling. No universal BIOS presets.
 
+Windows 11 is the primary operating system covered. Windows 10 is treated as a legacy platform because Microsoft ended standard support on October 14, 2025. OS-, vendor-, and game-specific advice is identified rather than presented as universal.
+
+For a quick system check, use the [read-only Windows diagnostics menu](https://github.com/h4zvenn/gaming-pc-guide/tree/main/tools). It never changes settings. You can export selected sections to a local report after reviewing the data notice and confirming; reports are not uploaded. Review the file for device names, network details, usernames, startup commands, and paths before sharing.
+
 ## 🚀 Quick start
 
-1. [Create a restore point](https://h4zvenn.github.io/gaming-pc-guide/docs/01-before-you-start.html)
-2. [Find your bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/02-find-the-bottleneck.html)
-3. [Choose one relevant setting](https://h4zvenn.github.io/gaming-pc-guide/docs/)
-4. [Benchmark the result](https://h4zvenn.github.io/gaming-pc-guide/docs/16-benchmark-templates.html)
+[![01 Prepare](https://img.shields.io/badge/01-Prepare-3b82f6?style=for-the-badge)](https://h4zvenn.github.io/gaming-pc-guide/docs/01-before-you-start.html) Create a restore point and record your baseline.
+
+[![02 Diagnose](https://img.shields.io/badge/02-Diagnose-0ea5e9?style=for-the-badge)](https://h4zvenn.github.io/gaming-pc-guide/docs/02-find-the-bottleneck.html) Find the component or setting causing the problem.
+
+[![03 Choose](https://img.shields.io/badge/03-Choose-f59e0b?style=for-the-badge)](https://h4zvenn.github.io/gaming-pc-guide/docs/) Find a guide for the issue you diagnosed.
+
+[![04 Verify](https://img.shields.io/badge/04-Verify-22c55e?style=for-the-badge)](https://h4zvenn.github.io/gaming-pc-guide/docs/16-benchmark-templates.html) Benchmark the result and keep or revert the change.
 
 > **Rule:** if you cannot measure it, you cannot confidently say it helped.
 
@@ -47,7 +56,7 @@ No “FPS boost” scripts. No mass service disabling. No universal BIOS presets
 | Area | What you get |
 | --- | --- |
 | 🩺 **Diagnostics** | CPU, GPU, RAM, storage, temperatures, background load |
-| ⚙️ **Windows 11** | Practical system settings without risky tweaks |
+| ⚙️ **Windows and hardware** | Windows 11 guidance, Windows 10 legacy notes, and settings for different PC components |
 | 🎨 **GPU settings** | NVIDIA, AMD, VRR, latency and graphics options |
 | 🧪 **Benchmarking** | Repeatable FPS, frame-time and stability testing |
 | 🎮 **Game guides** | CS2, VALORANT, PUBG, Minecraft Java, World of Tanks |
@@ -67,7 +76,13 @@ No “FPS boost” scripts. No mass service disabling. No universal BIOS presets
 
 ---
 
-## 📚 Core guides
+<details>
+<summary><strong>📚 Guide library</strong></summary>
+
+### Universal workflow
+
+- [Ultimate PC Gaming Optimization Guide 2026](https://h4zvenn.github.io/gaming-pc-guide/docs/ultimate-pc-gaming-guide-2026.html)
+- [Windows 10 Legacy Notes](https://h4zvenn.github.io/gaming-pc-guide/docs/windows-10-legacy.html)
 
 ### Preparation and diagnostics
 
@@ -81,7 +96,7 @@ No “FPS boost” scripts. No mass service disabling. No universal BIOS presets
 
 - [03 · BIOS & Hardware](https://h4zvenn.github.io/gaming-pc-guide/docs/03-bios-and-hardware.html)
 - [04 · Drivers & Updates](https://h4zvenn.github.io/gaming-pc-guide/docs/04-drivers-and-updates.html)
-- [05 · Windows 11 Core](https://h4zvenn.github.io/gaming-pc-guide/docs/05-windows-11.html)
+- [05 · Windows 11 Gaming Settings](https://h4zvenn.github.io/gaming-pc-guide/docs/05-windows-11.html)
 - [06 · GPU Settings](https://h4zvenn.github.io/gaming-pc-guide/docs/06-gpu-settings.html)
 - [07 · Background Apps](https://h4zvenn.github.io/gaming-pc-guide/docs/07-background-apps.html)
 - [08 · Services & Security](https://h4zvenn.github.io/gaming-pc-guide/docs/08-services-and-security.html)
@@ -100,6 +115,8 @@ No “FPS boost” scripts. No mass service disabling. No universal BIOS presets
 - [18 · Optimization Tools](https://h4zvenn.github.io/gaming-pc-guide/docs/18-optimization-tools-evidence.html)
 - [19 · Disk Cleanup](https://h4zvenn.github.io/gaming-pc-guide/docs/19-ai-software-and-disk-cleanup.html)
 
+</details>
+
 ---
 
 ## 🌍 Languages
@@ -107,7 +124,7 @@ No “FPS boost” scripts. No mass service disabling. No universal BIOS presets
 | Language | Status |
 | --- | --- |
 | 🇬🇧 English | Source version |
-| 🇷🇺 Russian | Partial translation in progress |
+| 🇷🇺 Russian | Most core guides translated; 8 pages remain stubs |
 
 [Read in Russian →](https://h4zvenn.github.io/gaming-pc-guide/ru/)
 

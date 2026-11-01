@@ -43,24 +43,7 @@ This is especially noticeable on PCs with limited RAM, weaker CPUs, slower stora
 
 Do not end a process if you do not know what it is. First right-click it and select `Open file location`, or search for the app name.
 
-### Processes with the highest total CPU time
-
-```powershell
-Get-Process |
-Sort-Object CPU -Descending |
-Select-Object -First 20 Name, Id, CPU, WorkingSet64
-```
-
-### Processes using the most memory
-
-```powershell
-Get-Process |
-Sort-Object WorkingSet64 -Descending |
-Select-Object -First 20 Name, Id,
-@{Name = 'RAM_MB'; Expression = { [math]::Round($_.WorkingSet64 / 1MB, 0) }}
-```
-
-> **Note:** `CPU` in PowerShell is cumulative CPU time since process start, not current usage percentage. For real-time load, use Task Manager or HWiNFO.
+For a menu-based view of processes and startup entries, use option 2 in the [read-only diagnostics guide](09-powershell-diagnostics.html). The command-line examples remain available there; PowerShell's `CPU` value is cumulative CPU time, not current usage percentage. For real-time load, use Task Manager or HWiNFO.
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Оптимизация игрового ПК на Windows 11"
-description: "Безопасные практические рекомендации для диагностики проблем с играми на Windows 11 и проверки изменений."
+title: "Универсальная оптимизация игрового ПК — 2026"
+description: "Практическое руководство по диагностике игрового ПК с разным оборудованием, играми и версиями Windows."
 lang: ru
 translation_key: home
 permalink: /ru/
@@ -9,11 +9,11 @@ permalink: /ru/
 
 <section class="home-hero">
   <div class="home-hero-text">
-    <p class="hero-eyebrow">Руководство по игровым ПК на Windows 11</p>
-    <h1>Найди причину. Измени одно. Проверь результат.</h1>
-    <p class="hero-subtitle">Практическая диагностика для геймеров: без рискованных твиков и обещаний гарантированного FPS, каждое изменение проверяется повторяемым тестом.</p>
+    <p class="hero-eyebrow">Универсальное руководство по оптимизации игрового ПК — 2026</p>
+    <h1>Настрой свой ПК. Проверь, что действительно помогает.</h1>
+    <p class="hero-subtitle">Руководство для настольных ПК и игровых ноутбуков, видеокарт разных производителей и разных игровых нагрузок. Сначала диагностика, затем одно уместное изменение и повторный замер.</p>
     <div class="hero-actions">
-      <a class="button button-primary" href="{{ '/ru/docs/start-here.html' | relative_url }}">Начать оптимизацию</a>
+      <a class="button button-primary" href="{{ '/ru/docs/ultimate-pc-gaming-guide-2026.html' | relative_url }}">Открыть полное руководство</a>
       <a class="button button-secondary" href="{{ '/ru/docs/games/' | relative_url }}">Руководства по играм</a>
     </div>
   </div>
@@ -23,6 +23,8 @@ permalink: /ru/
     <li><strong>Повтори тест</strong><span>Оставь изменение, только если результат измерим.</span></li>
   </ol>
 </section>
+
+<p class="home-note">Основная ОС в руководстве — Windows 11. Windows 10 вынесена в отдельный legacy-раздел: стандартная поддержка Microsoft завершилась 14 октября 2025 года. Советы помечаются, если зависят от версии ОС, производителя видеокарты, игры или возможностей оборудования.</p>
 
 <h2 class="home-heading">В чём проблема?</h2>
 
@@ -40,9 +42,11 @@ permalink: /ru/
     <h2>Руководства Windows</h2>
     <ul class="link-list">
       <li><a href="{{ '/ru/docs/start-here.html' | relative_url }}">С чего начать</a><span>Маршрут по симптому</span></li>
+      <li><a href="{{ '/ru/docs/ultimate-pc-gaming-guide-2026.html' | relative_url }}">Полное руководство по оптимизации</a><span>Универсальный порядок действий и приоритеты</span></li>
       <li><a href="{{ '/ru/docs/06-gpu-settings.html' | relative_url }}">Настройки видеокарты</a><span>NVIDIA, AMD, Intel</span></li>
       <li><a href="{{ '/ru/docs/10-temperatures-stability.html' | relative_url }}">Температуры и стабильность</a><span>Троттлинг и охлаждение</span></li>
       <li><a href="{{ '/ru/docs/16-benchmark-templates.html' | relative_url }}">Шаблоны бенчмарков</a><span>Протокол тестирования</span></li>
+      <li><a href="{{ '/ru/docs/windows-10-legacy.html' | relative_url }}">Windows 10 — legacy</a><span>Статус поддержки и ограничения</span></li>
       <li><a href="{{ '/ru/docs/' | relative_url }}">Все руководства Windows</a><span>Полный список</span></li>
     </ul>
   </section>

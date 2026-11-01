@@ -1,13 +1,15 @@
 ---
 layout: doc
-title: "Windows 11 Core"
-description: "Review Windows 11 settings that affect gaming, background activity, power, and system behavior."
+title: "Windows 11 Gaming Settings"
+description: "Review Windows 11 settings for gaming, display, background activity, and power; not every option applies to Windows 10."
 lang: en
 translation_key: windows-11
 permalink: /docs/05-windows-11.html
 ---
 
 > The goal of Windows tuning is to reduce real background load, choose correct gaming options, and keep the system stable and secure. You do not need to disable dozens of services, Defender, or updates for questionable “FPS tweaks.”
+
+This page covers Windows 11-specific menus and behavior. Windows 10 reached end of support on October 14, 2025; see [Windows 10 legacy notes](windows-10-legacy.html). Do not assume every setting below exists or behaves identically on older builds.
 
 ## Principles
 
@@ -72,17 +74,7 @@ For laptops:
 - Select a performance mode in Windows and, if available, in the laptop vendor utility.
 - Remember that a higher power mode increases heat, noise, and battery usage.
 
-Check the active power plan:
-
-```powershell
-powercfg /getactivescheme
-```
-
-List available plans:
-
-```powershell
-powercfg /list
-```
+Use the [read-only diagnostics menu](09-powershell-diagnostics.html) to inspect the active and available power plans.
 
 > **Note:** Ultimate Performance does not guarantee higher FPS. On modern PCs, it may provide little or no gain while increasing idle power consumption and temperature. Test it instead of choosing it by name.
 
@@ -316,30 +308,9 @@ Microsoft recommends keeping memory integrity enabled unless there is a specific
 
 ---
 
-## Useful diagnostic commands
+## Useful diagnostics
 
-### Current power plan
-
-```powershell
-powercfg /getactivescheme
-```
-
-### Startup list
-
-```powershell
-Get-CimInstance Win32_StartupCommand |
-Select-Object Name, Command, Location, User
-```
-
-### Processes using the most CPU time
-
-```powershell
-Get-Process |
-Sort-Object CPU -Descending |
-Select-Object -First 20 Name, Id, CPU, WorkingSet64
-```
-
-These commands do not change Windows; they only display information.
+Use the [read-only diagnostics menu](09-powershell-diagnostics.html) to inspect power plans, startup entries, and processes without changing Windows. Individual commands are kept in the diagnostics guide.
 
 ---
 
