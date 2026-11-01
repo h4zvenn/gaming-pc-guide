@@ -4,6 +4,8 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+## v1.3.0 - 2026-11-01
+
 ### Added
 
 - Read-only Windows diagnostics menu with hardware, process, service, network, security, and event checks.
