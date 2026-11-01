@@ -4,6 +4,8 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+## v1.4.0 - 2026-11-01
+
 ### Added
 
 - Guides for network and Wi-Fi, laptops and handhelds, streaming and capture, and cautious overclocking and undervolting in English and Russian.
