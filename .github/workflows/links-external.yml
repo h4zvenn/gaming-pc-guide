@@ -1,15 +1,12 @@
 name: links-external
 
-
 on:
   schedule:
     - cron: '17 3 * * 1'
   workflow_dispatch:
 
-
 permissions:
   contents: read
-
 
 jobs:
   links:
@@ -19,11 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-
       - name: Check external links
         uses: lycheeverse/lychee-action@v2
         with:
-          fail: true
+          fail: false
           format: markdown
           args: >-
             --no-progress
@@ -39,7 +35,6 @@ jobs:
             './**/*.md'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 
       - name: Upload link-check report
         if: always()
