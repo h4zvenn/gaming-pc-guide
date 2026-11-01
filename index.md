@@ -7,13 +7,20 @@ translation_key: home
 permalink: /
 ---
 
-
 <div class="hero">
-  <h1>Fewer random tweaks. More measurable results.</h1>
-  <p>A practical guide to optimizing a gaming PC on Windows 11: prepare your system, find the actual bottleneck, and verify every change with a repeatable test.</p>
-  <p>No custom Windows builds, mass service disabling, or “FPS boost” scripts.</p>
-  <p><a href="{{ '/docs/01-before-you-start.html' | relative_url }}">Start with preparation →</a></p>
-  <p><a href="#problems">Choose a problem</a> · <a href="#all-guides">Browse all 19 guides</a></p>
+  <p class="hero-eyebrow">Windows 11 gaming optimization</p>
+  <h1>Fewer tweaks.<br>Measurable results.</h1>
+  <p class="hero-subtitle">
+    Prepare your system, find the real bottleneck, and verify every change with a repeatable test.
+  </p>
+  <div class="hero-actions">
+    <a class="button button-primary" href="{{ '/docs/01-before-you-start.html' | relative_url }}">
+      Start optimization
+    </a>
+    <a class="button button-secondary" href="{{ '/docs/games/index.html' | relative_url }}">
+      Browse game guides
+    </a>
+  </div>
 </div>
 
 > The English version is the source version.  

@@ -3,8 +3,6 @@
 {% assign english_url = '/' %}
 {% assign russian_url = '/ru/' %}
 
-
-
 {% assign site_name = site.title | default: 'Gaming PC Guide' %}
 {% assign navigation_label = 'Main navigation' %}
 {% assign skip_label = 'Skip to content' %}
@@ -13,8 +11,6 @@
 {% assign discussions_label = 'Discussions' %}
 {% assign footer_text = 'Find the bottleneck. Change one setting. Measure the result.' %}
 {% assign fallback_label = 'English version — translation is not available yet' %}
-
-
 
 {% if current_lang == 'ru' %}
 {% assign home_url = '/ru/' %}
@@ -28,8 +24,6 @@
 {% assign fallback_label = 'Английская версия — перевод пока недоступен' %}
 {% endif %}
 
-
-
 {% if page.translation_key %}
 {% assign translations = site.pages | where: 'translation_key', page.translation_key %}
 {% for translated_page in translations %}
@@ -41,11 +35,8 @@
 {% endfor %}
 {% endif %}
 
+{% assign navigation_items = '01-before-you-start|Start|Начать;02-find-the-bottleneck|Bottleneck|Узкое место;06-gpu-settings|GPU|Видеокарта;15-troubleshooting-decision-trees|Troubleshoot|Проблемы;16-benchmark-templates|Benchmark|Тестирование' | split: ';' %}
 
-
-{% assign navigation_items = '01-before-you-start|Start|Начать;02-find-the-bottleneck|Bottleneck|Узкое
-место;06-gpu-settings|GPU|Видеокарта;15-troubleshooting-decision-trees|Troubleshoot|Проблемы;16-benchmark-templates|Benchmark|Тестирование'
-| split: ';' %}
 <!DOCTYPE html>
 <html lang="{{ current_lang | escape }}">
 
@@ -55,8 +46,6 @@
   <meta name="color-scheme" content="dark">
   <title>{% if page.title %}{{ page.title | escape }} — {% endif %}{{ site_name | escape }}</title>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
-
-
 
   <style>
     :root {
@@ -78,29 +67,22 @@
       --shadow: 0 10px 30px rgb(0 0 0 / 25%);
     }
 
-
-
     *,
     *::before,
     *::after {
       box-sizing: border-box;
     }
 
-
-
     html {
       scroll-padding-top: 24px;
     }
-
-
 
     body {
       margin: 0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       font-size: 16px;
       line-height: 1.7;
       color: var(--text);
@@ -110,21 +92,15 @@
       overflow-wrap: break-word;
     }
 
-
-
     a {
       color: var(--accent);
       text-underline-offset: 3px;
     }
 
-
-
     a:hover {
       color: var(--accent-hover);
       text-decoration: underline;
     }
-
-
 
     a:focus-visible {
       outline: 3px solid var(--accent);
@@ -132,15 +108,11 @@
       border-radius: 3px;
     }
 
-
-
     img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
     }
-
-
 
     .container {
       width: 100%;
@@ -148,8 +120,6 @@
       margin: 0 auto;
       padding: 0 24px;
     }
-
-
 
     .skip-link {
       position: absolute;
@@ -164,13 +134,9 @@
       transform: translateY(-180%);
     }
 
-
-
     .skip-link:focus {
       transform: translateY(0);
     }
-
-
 
     .site-header {
       padding: 18px 0;
@@ -182,16 +148,12 @@
       z-index: 20;
     }
 
-
-
     .header-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
-
-
 
     .site-title {
       max-width: 700px;
@@ -202,14 +164,10 @@
       text-decoration: none;
     }
 
-
-
     .site-title:hover {
       color: var(--accent-hover);
       text-decoration: none;
     }
-
-
 
     .language-switcher {
       display: inline-flex;
@@ -221,8 +179,6 @@
       background: var(--bg);
     }
 
-
-
     .language-switcher a {
       padding: 5px 11px;
       border-radius: 7px;
@@ -232,21 +188,15 @@
       text-decoration: none;
     }
 
-
-
     .language-switcher a:hover {
       color: var(--text);
       background: var(--surface-soft);
     }
 
-
-
     .language-switcher a[aria-current="true"] {
       color: var(--text);
       background: var(--accent-soft);
     }
-
-
 
     .site-nav {
       display: flex;
@@ -254,8 +204,6 @@
       gap: 6px;
       margin-top: 16px;
     }
-
-
 
     .site-nav a {
       padding: 7px 11px;
@@ -265,54 +213,90 @@
       text-decoration: none;
     }
 
-
-
     .site-nav a:hover,
     .site-nav a[aria-current="page"] {
       color: var(--text);
       background: var(--accent-soft);
     }
 
-
-
     .site-main {
       flex: 1;
-      padding: 36px 0 56px;
+      padding: 48px 0 64px;
     }
-
-
 
     .hero {
-      padding: clamp(24px, 5vw, 48px);
-      margin-bottom: 28px;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      background:
-        linear-gradient(135deg, rgb(59 130 246 / 10%), transparent),
-        var(--surface);
-      box-shadow: var(--shadow);
+      max-width: 860px;
+      margin: 0 auto 48px;
     }
 
-
+    .hero-eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
 
     .hero h1 {
-      max-width: 850px;
-      margin: 0 0 18px;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      line-height: 1.18;
-      letter-spacing: -0.035em;
+      margin: 0 0 20px;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      color: var(--text);
     }
 
-
-
-    .hero p {
-      max-width: 760px;
-      margin: 0;
+    .hero-subtitle {
+      max-width: 620px;
+      margin: 0 0 32px;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.12rem;
+      line-height: 1.65;
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 650;
+      text-decoration: none;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+
+    .button-primary {
+      color: #ffffff;
+      background: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .button-primary:hover {
+      color: #ffffff;
+      background: var(--accent-hover);
+      border-color: var(--accent-hover);
+      text-decoration: none;
+    }
+
+    .button-secondary {
+      color: var(--text);
+      background: transparent;
+      border: 1px solid var(--border);
+    }
+
+    .button-secondary:hover {
+      color: var(--text);
+      background: var(--surface-soft);
+      border-color: var(--accent);
+      text-decoration: none;
+    }
 
     h1,
     h2,
@@ -322,14 +306,10 @@
       color: var(--text);
     }
 
-
-
     h2 {
       margin-top: 2rem;
       letter-spacing: -0.02em;
     }
-
-
 
     .steps,
     .card-grid {
@@ -338,19 +318,13 @@
       margin: 20px 0 28px;
     }
 
-
-
     .steps {
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
 
-
-
     .card-grid {
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     }
-
-
 
     .step,
     .card {
@@ -362,14 +336,10 @@
       transition: border-color 0.15s ease, transform 0.15s ease;
     }
 
-
-
     .step h3,
     .card h4 {
       margin: 0 0 10px;
     }
-
-
 
     .step p,
     .card p {
@@ -378,21 +348,15 @@
       font-size: 0.95rem;
     }
 
-
-
     .card a {
       color: var(--accent);
       text-decoration: none;
     }
 
-
-
     .card:hover {
       border-color: var(--accent);
       transform: translateY(-2px);
     }
-
-
 
     .doc {
       display: grid;
@@ -400,8 +364,6 @@
       align-items: start;
       gap: 28px;
     }
-
-
 
     .doc-sidebar {
       padding: 18px;
@@ -411,8 +373,6 @@
       font-size: 0.88rem;
     }
 
-
-
     .doc-sidebar h3 {
       margin: 22px 0 8px;
       color: var(--muted);
@@ -421,13 +381,9 @@
       text-transform: uppercase;
     }
 
-
-
     .doc-sidebar h3:first-child {
       margin-top: 0;
     }
-
-
 
     .doc-sidebar ul {
       list-style: none;
@@ -435,13 +391,9 @@
       margin: 0;
     }
 
-
-
     .doc-sidebar li {
       margin: 3px 0;
     }
-
-
 
     .doc-sidebar a {
       display: block;
@@ -451,14 +403,10 @@
       text-decoration: none;
     }
 
-
-
     .doc-sidebar a:hover {
       color: var(--text);
       background: var(--accent-soft);
     }
-
-
 
     .doc-content {
       min-width: 0;
@@ -469,15 +417,11 @@
       box-shadow: var(--shadow);
     }
 
-
-
     .doc-content h1 {
       margin-top: 0;
       font-size: clamp(1.7rem, 3vw, 2.3rem);
       letter-spacing: -0.03em;
     }
-
-
 
     .doc-content h2 {
       padding-bottom: 10px;
@@ -485,33 +429,23 @@
       font-size: 1.4rem;
     }
 
-
-
     .doc-content h3 {
       margin-top: 1.6rem;
       font-size: 1.15rem;
     }
-
-
 
     .doc-content ul,
     .doc-content ol {
       padding-left: 1.5rem;
     }
 
-
-
     .doc-content li {
       margin: 0.35rem 0;
     }
 
-
-
     .doc-content strong {
       color: #ffffff;
     }
-
-
 
     table {
       display: block;
@@ -523,8 +457,6 @@
       font-size: 0.9rem;
     }
 
-
-
     th,
     td {
       padding: 11px 14px;
@@ -533,20 +465,14 @@
       vertical-align: top;
     }
 
-
-
     th {
       background: var(--surface-soft);
       font-weight: 650;
     }
 
-
-
     tbody tr:nth-child(even) td {
       background: rgb(22 32 46 / 45%);
     }
-
-
 
     code {
       padding: 2px 5px;
@@ -558,8 +484,6 @@
       font-size: 0.88em;
     }
 
-
-
     pre {
       max-width: 100%;
       padding: 18px;
@@ -569,8 +493,6 @@
       background: var(--code-bg);
     }
 
-
-
     pre code {
       padding: 0;
       background: none;
@@ -578,8 +500,6 @@
       color: #e5edf8;
       overflow-wrap: normal;
     }
-
-
 
     blockquote {
       margin: 20px 0;
@@ -590,21 +510,15 @@
       color: var(--text);
     }
 
-
-
     blockquote p {
       margin: 0;
     }
-
-
 
     hr {
       margin: 30px 0;
       border: 0;
       border-top: 1px solid var(--border);
     }
-
-
 
     .callout {
       margin: 20px 0;
@@ -615,43 +529,29 @@
       background: var(--surface-soft);
     }
 
-
-
     .callout p {
       margin: 0;
     }
-
-
 
     .callout-info {
       border-left-color: var(--accent);
     }
 
-
-
     .callout-tip {
       border-left-color: var(--success);
     }
-
-
 
     .callout-important {
       border-left-color: #8b5cf6;
     }
 
-
-
     .callout-warning {
       border-left-color: var(--warning);
     }
 
-
-
     .callout-danger {
       border-left-color: var(--danger);
     }
-
-
 
     .site-footer {
       padding: 26px 0;
@@ -661,13 +561,9 @@
       font-size: 0.88rem;
     }
 
-
-
     .site-footer p {
       margin: 6px 0;
     }
-
-
 
     .footer-links {
       display: flex;
@@ -675,14 +571,10 @@
       gap: 8px 18px;
     }
 
-
-
     @media (max-width: 850px) {
       .doc {
         grid-template-columns: minmax(0, 1fr);
       }
-
-
 
       .doc-sidebar {
         max-height: 300px;
@@ -690,46 +582,55 @@
       }
     }
 
+    @media (max-width: 640px) {
+      .hero {
+        margin-bottom: 32px;
+      }
 
+      .hero h1 {
+        font-size: clamp(2rem, 8vw, 2.6rem);
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
 
     @media (max-width: 480px) {
       .container {
         padding: 0 16px;
       }
 
-
-
       .header-top {
         align-items: flex-start;
         gap: 12px;
       }
 
-
-
       .site-title {
         font-size: 1rem;
       }
 
-
-
       .language-switcher a {
         padding: 5px 8px;
       }
-
-
 
       .site-nav a {
         padding: 6px 8px;
         font-size: 0.84rem;
       }
 
-
-
       .site-main {
         padding-top: 22px;
       }
-
-
 
       .steps,
       .card-grid {
@@ -739,12 +640,8 @@
   </style>
 </head>
 
-
-
 <body>
   <a class="skip-link" href="#main-content">{{ skip_label }}</a>
-
-
 
   <header class="site-header">
     <div class="container">
@@ -753,19 +650,13 @@
           {{ site_name | escape }}
         </a>
 
-
-
         {% include language-switcher.html %}
       </div>
-
-
 
       <nav class="site-nav" aria-label="{{ navigation_label }}">
         <a href="{{ home_url | relative_url }}" {% if page.url==home_url %}aria-current="page" {% endif %}>
           {{ home_label }}
         </a>
-
-
 
         {% for item in navigation_items %}
         {% assign fields = item | split: '|' %}
@@ -773,14 +664,10 @@
         {% assign link_label = fields[1] %}
         {% assign english_fallback = false %}
 
-
-
         {% if current_lang == 'ru' %}
         {% assign link_label = fields[2] %}
         {% assign russian_candidate = '/ru' | append: target_url %}
         {% assign russian_page = site.pages | where: 'url', russian_candidate | first %}
-
-
 
         {% if russian_page %}
         {% assign target_url = russian_page.url %}
@@ -789,10 +676,7 @@
         {% endif %}
         {% endif %}
 
-
-
-        <a href="{{ target_url | relative_url }}" {% if page.url==target_url %}aria-current="page" {% endif %} {% if
-          english_fallback %}hreflang="en" title="{{ fallback_label }}" {% endif %}>
+        <a href="{{ target_url | relative_url }}" {% if page.url==target_url %}aria-current="page" {% endif %} {% if english_fallback %}hreflang="en" title="{{ fallback_label }}" {% endif %}>
           {{ link_label }}{% if english_fallback %} (EN){% endif %}
         </a>
         {% endfor %}
@@ -800,15 +684,11 @@
     </div>
   </header>
 
-
-
   <main id="main-content" class="site-main" tabindex="-1">
     <div class="container">
       {{ content }}
     </div>
   </main>
-
-
 
   <footer class="site-footer">
     <div class="container">
