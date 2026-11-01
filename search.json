@@ -4,14 +4,18 @@ permalink: /search.json
 sitemap: false
 ---
 [
-{% assign indexed = site.pages | where_exp: 'p', "p.title and p.lang and p.url != '/search.json'" %}
-{% for p in indexed %}{% unless p.search_exclude %}
+{%- assign first_item = true -%}
+{%- for p in site.pages -%}
+{%- if p.title and p.lang and p.search_exclude != true -%}
+{%- unless first_item %},{% endunless -%}
+{%- assign first_item = false %}
   {
     "title": {{ p.title | jsonify }},
     "description": {{ p.description | default: '' | jsonify }},
     "lang": {{ p.lang | jsonify }},
     "url": {{ p.url | relative_url | jsonify }},
     "text": {{ p.content | markdownify | strip_html | normalize_whitespace | truncate: 3000 | jsonify }}
-  }{% unless forloop.last %},{% endunless %}
-{% endunless %}{% endfor %}
+  }
+{%- endif -%}
+{%- endfor %}
 ]
