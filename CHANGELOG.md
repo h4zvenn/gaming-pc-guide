@@ -4,6 +4,10 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+### Changed
+
+- Updated the Pages base URL, links, and link-check paths for the renamed gaming-pc-optimization-guide repository.
+
 ## v1.3.0 - 2026-11-01
 
 ### Added

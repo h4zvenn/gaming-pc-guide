@@ -9,7 +9,7 @@ permalink: /ru/docs/19-ai-software-and-disk-cleanup.html
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [Очистка диска и удаление ПО](https://h4zvenn.github.io/gaming-pc-guide/docs/19-ai-software-and-disk-cleanup.html)
+> [Очистка диска и удаление ПО](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/19-ai-software-and-disk-cleanup.html)
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/19-ai-software-and-disk-cleanup.html
 
 Пока используй английскую версию:
 
-- [Очистка диска и удаление ПО — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/19-ai-software-and-disk-cleanup.html)
+- [Очистка диска и удаление ПО — EN](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/19-ai-software-and-disk-cleanup.html)
 
 ## Принципы проекта
 

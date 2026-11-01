@@ -10,7 +10,7 @@ permalink: /ru/docs/02-find-the-bottleneck.html
 
 > **Status:** Translation complete.  
 > The authoritative English version is available here:  
-> [Find the Bottleneck](https://h4zvenn.github.io/gaming-pc-guide/docs/02-find-the-bottleneck.html)
+> [Find the Bottleneck](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/02-find-the-bottleneck.html)
 
 ## Что вы узнаете
 

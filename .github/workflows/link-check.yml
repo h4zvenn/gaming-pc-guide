@@ -42,8 +42,8 @@ jobs:
 
       - name: Prepare site for root-relative links
         run: |
-          mkdir -p site-check/gaming-pc-guide
-          cp -a _site/. site-check/gaming-pc-guide/
+          mkdir -p site-check/gaming-pc-optimization-guide
+          cp -a _site/. site-check/gaming-pc-optimization-guide/
 
 
       - name: Check links
@@ -62,8 +62,8 @@ jobs:
             --timeout 30
             --exclude '^mailto:'
             --exclude '^https://modhub\.wargaming\.com/'
-            --exclude '^https://github\.com/h4zvenn/gaming-pc-guide/(issues|discussions)'
-            './site-check/gaming-pc-guide/**/*.html'
+            --exclude '^https://github\.com/h4zvenn/gaming-pc-optimization-guide/(issues|discussions)'
+            './site-check/gaming-pc-optimization-guide/**/*.html'
 
 
       - name: Upload link-check report

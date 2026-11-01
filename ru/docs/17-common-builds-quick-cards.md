@@ -9,7 +9,7 @@ permalink: /ru/docs/17-common-builds-quick-cards.html
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [Типовые сборки](https://h4zvenn.github.io/gaming-pc-guide/docs/17-common-builds-quick-cards.html)
+> [Типовые сборки](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/17-common-builds-quick-cards.html)
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/17-common-builds-quick-cards.html
 
 Пока используй английскую версию:
 
-- [Типовые сборки — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/17-common-builds-quick-cards.html)
+- [Типовые сборки — EN](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/17-common-builds-quick-cards.html)
 
 ## Принципы проекта
 

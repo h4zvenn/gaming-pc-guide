@@ -9,7 +9,7 @@ permalink: /ru/docs/18-optimization-tools-evidence.html
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [Инструменты оптимизации](https://h4zvenn.github.io/gaming-pc-guide/docs/18-optimization-tools-evidence.html)
+> [Инструменты оптимизации](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/18-optimization-tools-evidence.html)
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/18-optimization-tools-evidence.html
 
 Пока используй английскую версию:
 
-- [Инструменты оптимизации — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/18-optimization-tools-evidence.html)
+- [Инструменты оптимизации — EN](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/18-optimization-tools-evidence.html)
 
 ## Принципы проекта
 
