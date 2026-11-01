@@ -1,13 +1,15 @@
 ---
 layout: doc
 title: "Start Here"
-description: "Choose a safe, measurable troubleshooting route for common Windows 11 gaming PC problems."
+description: "Choose a safe, measurable troubleshooting route for common gaming PC problems across hardware and games."
 lang: en
 translation_key: start-here
 permalink: /docs/start-here.html
 ---
 
 Choose the route that matches the symptom. Diagnose before changing settings, then measure one change at a time.
+
+For the complete cross-hardware workflow, start with the [Ultimate PC Gaming Optimization Guide 2026](ultimate-pc-gaming-guide-2026.html). It explains what applies broadly and what depends on Windows, GPU vendor, game, or hardware. Windows 11 is the primary OS; see [Windows 10 legacy notes](windows-10-legacy.html) for its support status and version-specific limitations.
 
 | Problem | Start here | Then |
 | --- | --- | --- |

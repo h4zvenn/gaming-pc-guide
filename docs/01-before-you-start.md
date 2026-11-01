@@ -3,7 +3,7 @@ layout: doc
 title: "Before You Start"
 lang: en
 translation_key: before-you-start
-description: "Create a restore point, record baseline performance, and prepare Windows 11 before optimization."
+description: "Create rollback options, record baseline performance, and prepare a Windows gaming PC before optimization."
 permalink: /docs/01-before-you-start.html
 ---
 

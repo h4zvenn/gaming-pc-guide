@@ -1,13 +1,15 @@
 ---
 layout: doc
-title: "Windows 11 Core"
-description: "Review Windows 11 settings that affect gaming, background activity, power, and system behavior."
+title: "Windows 11 Gaming Settings"
+description: "Review Windows 11 settings for gaming, display, background activity, and power; not every option applies to Windows 10."
 lang: en
 translation_key: windows-11
 permalink: /docs/05-windows-11.html
 ---
 
 > The goal of Windows tuning is to reduce real background load, choose correct gaming options, and keep the system stable and secure. You do not need to disable dozens of services, Defender, or updates for questionable “FPS tweaks.”
+
+This page covers Windows 11-specific menus and behavior. Windows 10 reached end of support on October 14, 2025; see [Windows 10 legacy notes](windows-10-legacy.html). Do not assume every setting below exists or behaves identically on older builds.
 
 ## Principles
 

@@ -1,18 +1,19 @@
 ---
 layout: doc
-title: "Windows Optimization Guides"
-description: "A task-focused index of practical Windows 11 gaming PC diagnostics, settings, stability, and testing guides."
+title: "Windows and PC Gaming Guides"
+description: "An index of the universal PC gaming optimization workflow, Windows settings, hardware guidance, stability, and testing."
 lang: en
 translation_key: system-guides
 permalink: /docs/
 ---
 
-Use the guide for the problem you have. Start with diagnosis, make one relevant change, and verify the result before keeping it.
+Start with the [Ultimate PC Gaming Optimization Guide 2026](ultimate-pc-gaming-guide-2026.html) for the universal workflow, then choose the task guide for your problem. Windows 11 is the primary OS; [Windows 10 is documented as a legacy platform](windows-10-legacy.html).
 
 ## Preparation and diagnosis
 
 | Guide | Description | Status |
 | --- | --- | --- |
+| [Ultimate PC Gaming Optimization Guide 2026](ultimate-pc-gaming-guide-2026.html) | Hardware-agnostic workflow; distinguishes shared principles from OS-, GPU-, and game-specific advice. | 🟢 Available |
 | [Before You Start](01-before-you-start.html) | Create rollback options and record a baseline. | 🟡 In progress |
 | [Find the Bottleneck](02-find-the-bottleneck.html) | Identify the component or condition limiting performance. | 🟡 In progress |
 | [PowerShell Diagnostics](09-powershell-diagnostics.html) | Use the read-only menu or individual commands to inspect system and connectivity. | 🟡 In progress |
@@ -26,6 +27,7 @@ Use the guide for the problem you have. Start with diagnosis, make one relevant 
 | [BIOS and Hardware](03-bios-and-hardware.html) | Review platform settings and hardware checks safely. | 🟡 In progress |
 | [Drivers and Updates](04-drivers-and-updates.html) | Update, verify, and roll back drivers. | 🟡 In progress |
 | [Windows 11](05-windows-11.html) | Review Windows gaming and display settings. | 🟡 In progress |
+| [Windows 10 Legacy Notes](windows-10-legacy.html) | Review support status and Windows-version differences. | 🟢 Available |
 | [GPU Settings](06-gpu-settings.html) | Tune graphics, synchronization, and latency per game. | 🟡 In progress |
 | [Background Apps](07-background-apps.html) | Find and control unwanted background activity. | 🟡 In progress |
 | [Services and Security](08-services-and-security.html) | Keep Windows services and protections safe. | 🟡 In progress |

@@ -300,4 +300,4 @@ A stable baseline is more important than chasing every new version. Use official
 
 ## Next step
 
-[Windows 11 Core](05-windows-11.html)
+[Windows 11 Gaming Settings](05-windows-11.html)

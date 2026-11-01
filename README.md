@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🎮 Gaming PC Guide
+# 🎮 Ultimate PC Gaming Optimization Guide 2026
 
-**A practical, evidence-based guide to optimizing Windows 11 for gaming.**
+**A universal, evidence-based guide to optimizing gaming PCs across hardware and games.**
 
 Find the real bottleneck. Change one setting. Measure the result.
 
@@ -11,7 +11,8 @@ Find the real bottleneck. Change one setting. Measure the result.
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/h4zvenn/gaming-pc-guide/pulls)
 
-[**Read the guide**](https://h4zvenn.github.io/gaming-pc-guide/) ·
+[**2026 optimization guide**](https://h4zvenn.github.io/gaming-pc-guide/docs/ultimate-pc-gaming-guide-2026.html) ·
+[**Home page**](https://h4zvenn.github.io/gaming-pc-guide/) ·
 [**Game guides**](https://h4zvenn.github.io/gaming-pc-guide/docs/games/) ·
 [**Releases**](https://github.com/h4zvenn/gaming-pc-guide/releases) ·
 [**Report an issue**](https://github.com/h4zvenn/gaming-pc-guide/issues)
@@ -22,7 +23,7 @@ Find the real bottleneck. Change one setting. Measure the result.
 
 ## ✨ What is this?
 
-Gaming optimization advice ranges from measured fixes to one-size-fits-all tweaks. This project focuses on changes you can test:
+Gaming optimization advice ranges from measured fixes to one-size-fits-all tweaks. This project focuses on changes you can test across desktops and gaming laptops, CPU/GPU vendors, and different game workloads:
 
 The method is simple:
 
@@ -33,6 +34,8 @@ The method is simple:
 - Roll back changes that do not.
 
 No “FPS boost” scripts. No mass service disabling. No universal BIOS presets.
+
+Windows 11 is the primary operating system covered. Windows 10 is treated as a legacy platform because Microsoft ended standard support on October 14, 2025. OS-, vendor-, and game-specific advice is identified rather than presented as universal.
 
 For a quick system check, use the [read-only Windows diagnostics menu](https://github.com/h4zvenn/gaming-pc-guide/tree/main/tools). It never changes settings. You can export selected sections to a local report after reviewing the data notice and confirming; reports are not uploaded. Review the file for device names, network details, usernames, startup commands, and paths before sharing.
 
@@ -53,7 +56,7 @@ For a quick system check, use the [read-only Windows diagnostics menu](https://g
 | Area | What you get |
 | --- | --- |
 | 🩺 **Diagnostics** | CPU, GPU, RAM, storage, temperatures, background load |
-| ⚙️ **Windows 11** | Practical system settings without risky tweaks |
+| ⚙️ **Windows and hardware** | Windows 11 guidance, Windows 10 legacy notes, and settings for different PC components |
 | 🎨 **GPU settings** | NVIDIA, AMD, VRR, latency and graphics options |
 | 🧪 **Benchmarking** | Repeatable FPS, frame-time and stability testing |
 | 🎮 **Game guides** | CS2, VALORANT, PUBG, Minecraft Java, World of Tanks |
@@ -74,7 +77,12 @@ For a quick system check, use the [read-only Windows diagnostics menu](https://g
 ---
 
 <details>
-<summary><strong>📚 Core guides (19)</strong></summary>
+<summary><strong>📚 Guide library</strong></summary>
+
+### Universal workflow
+
+- [Ultimate PC Gaming Optimization Guide 2026](https://h4zvenn.github.io/gaming-pc-guide/docs/ultimate-pc-gaming-guide-2026.html)
+- [Windows 10 Legacy Notes](https://h4zvenn.github.io/gaming-pc-guide/docs/windows-10-legacy.html)
 
 ### Preparation and diagnostics
 
@@ -88,7 +96,7 @@ For a quick system check, use the [read-only Windows diagnostics menu](https://g
 
 - [03 · BIOS & Hardware](https://h4zvenn.github.io/gaming-pc-guide/docs/03-bios-and-hardware.html)
 - [04 · Drivers & Updates](https://h4zvenn.github.io/gaming-pc-guide/docs/04-drivers-and-updates.html)
-- [05 · Windows 11 Core](https://h4zvenn.github.io/gaming-pc-guide/docs/05-windows-11.html)
+- [05 · Windows 11 Gaming Settings](https://h4zvenn.github.io/gaming-pc-guide/docs/05-windows-11.html)
 - [06 · GPU Settings](https://h4zvenn.github.io/gaming-pc-guide/docs/06-gpu-settings.html)
 - [07 · Background Apps](https://h4zvenn.github.io/gaming-pc-guide/docs/07-background-apps.html)
 - [08 · Services & Security](https://h4zvenn.github.io/gaming-pc-guide/docs/08-services-and-security.html)
