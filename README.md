@@ -111,49 +111,6 @@ No “FPS boost” scripts. No mass service disabling. No universal BIOS presets
 
 [Read in Russian →](https://h4zvenn.github.io/gaming-pc-guide/ru/)
 
-## 🛠️ Local development
-
-### Requirements
-
-- Ruby
-- Bundler
-- Jekyll
-
-### Run locally
-
-```powershell
-bundle install
-bundle exec jekyll serve
-```
-
-Open:
-
-```text
-http://localhost:4000/gaming-pc-guide/
-```
-
-### Lint Markdown
-
-```powershell
-npx markdownlint-cli2
-```
-
-## 🤝 Contributing
-
-Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) for the project’s contribution guidelines.
-
-- Fix typos or unclear explanations.
-- Add benchmarks or evidence.
-- Improve game-specific guides.
-- Report outdated settings or broken links.
-
-Please do not submit:
-
-- Cheats or injectors.
-- Unverified “FPS boost” scripts.
-- Mass service-disabling presets.
-- Registry tweaks without a clear explanation and rollback path.
-
 ## 📄 License
 
 Released under the [MIT License](LICENSE).
