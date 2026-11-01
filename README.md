@@ -34,7 +34,7 @@ The method is simple:
 
 No “FPS boost” scripts. No mass service disabling. No universal BIOS presets.
 
-For a quick system check, use the [read-only Windows diagnostics menu](https://github.com/h4zvenn/gaming-pc-guide/tree/main/tools). It never changes settings; exporting a local report is optional and requires confirmation. Review results for private device names or file paths before sharing them.
+For a quick system check, use the [read-only Windows diagnostics menu](https://github.com/h4zvenn/gaming-pc-guide/tree/main/tools). It never changes settings. You can export selected sections to a local report after reviewing the data notice and confirming; reports are not uploaded. Review the file for device names, network details, usernames, startup commands, and paths before sharing.
 
 ## 🚀 Quick start
 
@@ -116,7 +116,7 @@ For a quick system check, use the [read-only Windows diagnostics menu](https://g
 | Language | Status |
 | --- | --- |
 | 🇬🇧 English | Source version |
-| 🇷🇺 Russian | Partial translation in progress |
+| 🇷🇺 Russian | Most core guides translated; 8 pages remain stubs |
 
 [Read in Russian →](https://h4zvenn.github.io/gaming-pc-guide/ru/)
 

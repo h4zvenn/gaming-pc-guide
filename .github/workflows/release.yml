@@ -28,27 +28,35 @@ jobs:
           from pathlib import Path
 
           tag = os.environ["RELEASE_TAG"]
-          if not re.fullmatch(r"v\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?", tag):
+          semver = re.compile(
+              r"v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)"
+              r"(?:-(?:0|[1-9]\d*|\d*[A-Za-z-][0-9A-Za-z-]*)"
+              r"(?:\.(?:0|[1-9]\d*|\d*[A-Za-z-][0-9A-Za-z-]*))*)?"
+              r"(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?"
+          )
+          if not semver.fullmatch(tag):
               sys.exit(f"Invalid release tag: {tag}")
 
           changelog = Path("CHANGELOG.md").read_text(encoding="utf-8")
           lines = changelog.splitlines()
           heading = re.compile(rf"^## {re.escape(tag)}(?:\s+-\s+.*)?$")
 
-          for index, line in enumerate(lines):
-              if heading.fullmatch(line):
-                  end = next(
-                      (position for position in range(index + 1, len(lines))
-                       if lines[position].startswith("## ")),
-                      len(lines),
-                  )
-                  notes = "\n".join(lines[index + 1:end]).strip()
-                  if not notes:
-                      sys.exit(f"No release notes found under {line}")
-                  Path("release-notes.md").write_text(notes + "\n", encoding="utf-8")
-                  break
-          else:
-              sys.exit(f"CHANGELOG.md has no heading for {tag}")
+          matches = [index for index, line in enumerate(lines) if heading.fullmatch(line)]
+          if len(matches) != 1:
+              if not matches:
+                  sys.exit(f"CHANGELOG.md has no heading for {tag}")
+              sys.exit(f"CHANGELOG.md has multiple headings for {tag}")
+
+          index = matches[0]
+          end = next(
+              (position for position in range(index + 1, len(lines))
+               if lines[position].startswith("## ")),
+              len(lines),
+          )
+          notes = "\n".join(lines[index + 1:end]).strip()
+          if not notes:
+              sys.exit(f"No release notes found under {lines[index]}")
+          Path("release-notes.md").write_text(notes + "\n", encoding="utf-8")
           PY
 
       - name: Publish GitHub Release

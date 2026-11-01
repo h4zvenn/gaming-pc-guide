@@ -149,7 +149,7 @@ powershell -ExecutionPolicy Bypass -File .\check-links.ps1
 
 ## Releases
 
-Releases are published automatically when a version tag is pushed.
+Releases are published automatically when a valid version tag is pushed. This immediately creates a public GitHub Release; anyone with permission to push a matching tag can trigger publication, and the workflow currently has no manual approval gate.
 
 1. Move the completed `Unreleased` notes in `CHANGELOG.md` to a heading matching the release tag, such as `## v1.3.0 - YYYY-MM-DD`.
 2. Commit the changelog update and all release changes.
@@ -160,7 +160,7 @@ Releases are published automatically when a version tag is pushed.
    git push origin v1.3.0
    ```
 
-The release workflow verifies that the changelog contains the exact tag heading and uses that section as the GitHub Release notes. It does not build or attach binaries.
+The release workflow validates the version-tag format, requires one matching changelog heading, and uses only that section as the GitHub Release notes. It does not build or attach binaries. If publication must require human approval, configure a GitHub Environment with required reviewers and gate the release job on that environment before pushing any version tags.
 
 Before committing, remove generated output:
 

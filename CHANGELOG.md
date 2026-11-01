@@ -7,13 +7,15 @@ All notable changes to this project are documented in this file.
 ### Added
 
 - Read-only Windows diagnostics menu with hardware, process, service, network, security, and event checks.
-- Optional, explicitly confirmed local diagnostic report export.
+- Selectable diagnostic report sections, a check-result summary, and an explicitly confirmed local export.
 - GitHub Actions workflow that creates a GitHub Release from a matching version-tagged changelog entry.
+- Russian translations for the BIOS and hardware, drivers and updates, Windows 11, and security baseline guides.
 
 ### Changed
 
 - Consolidated repeated read-only PowerShell examples into the diagnostics guide and linked to its menu from related English and Russian pages.
 - Improved README quick-start and linked the diagnostics menu and GitHub Releases.
+- Documented that version tags publish releases immediately and require matching changelog notes.
 
 ## v1.2.0 - 2026-11-01
 

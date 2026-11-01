@@ -1,4 +1,9 @@
+param(
+    [switch]$SelfTest
+)
+
 $ErrorActionPreference = 'Stop'
+$script:CheckResults = New-Object 'System.Collections.Generic.List[object]'
 
 function Invoke-Check {
     param(
@@ -12,17 +17,38 @@ function Invoke-Check {
         $results = @(& $Query)
         if ($results.Count -eq 0) {
             Write-Host 'No data returned.' -ForegroundColor DarkGray
+            $script:CheckResults.Add([pscustomobject]@{
+                Name = $Title
+                Status = 'No data'
+                Details = 'The check returned no results.'
+            })
             return
         }
 
         $results | Format-Table -AutoSize -Wrap | Out-Host
+        $script:CheckResults.Add([pscustomobject]@{
+            Name = $Title
+            Status = 'Passed'
+            Details = "$($results.Count) result(s) returned."
+        })
     }
     catch {
-        if ($_.Exception.Message -like '*No events were found*') {
+        if ($_.FullyQualifiedErrorId -like '*NoMatchingEventsFound*' -or
+            $_.Exception.Message -like '*No events were found*') {
             Write-Host 'No matching events were found.' -ForegroundColor DarkGray
+            $script:CheckResults.Add([pscustomobject]@{
+                Name = $Title
+                Status = 'No data'
+                Details = 'No matching events were found.'
+            })
         }
         else {
             Write-Host "Check could not be completed: $($_.Exception.Message)" -ForegroundColor Yellow
+            $script:CheckResults.Add([pscustomobject]@{
+                Name = $Title
+                Status = 'Failed'
+                Details = $_.Exception.Message
+            })
         }
     }
 }
@@ -69,15 +95,12 @@ function Show-Hardware {
                 @{Name = 'FreeGB'; Expression = { [math]::Round($_.Free / 1GB, 1) }}
     }
 
-    if (Get-Command Get-PhysicalDisk -ErrorAction SilentlyContinue) {
-        Invoke-Check 'Physical disks' {
+    Invoke-Check 'Physical disks' {
+        if (Get-Command Get-PhysicalDisk -ErrorAction SilentlyContinue) {
             Get-PhysicalDisk |
                 Select-Object FriendlyName, MediaType, BusType, HealthStatus, OperationalStatus,
                     @{Name = 'SizeGB'; Expression = { [math]::Round($_.Size / 1GB, 1) }}
         }
-    }
-    else {
-        Write-Host "`nPhysical disk details are unavailable on this system." -ForegroundColor DarkGray
     }
 
     Invoke-Check 'Active power plan' {
@@ -235,18 +258,99 @@ function Pause-Menu {
     [void](Read-Host "`nPress Enter to return to the menu")
 }
 
+function Reset-CheckResults {
+    $script:CheckResults.Clear()
+}
+
+function Show-RunSummary {
+    $passed = @($script:CheckResults | Where-Object Status -eq 'Passed').Count
+    $noData = @($script:CheckResults | Where-Object Status -eq 'No data').Count
+    $failed = @($script:CheckResults | Where-Object Status -eq 'Failed').Count
+
+    Write-Host "`n--- Check summary ---" -ForegroundColor Cyan
+    Write-Host "Completed with data: $passed; no data: $noData; errors: $failed."
+
+    foreach ($result in $script:CheckResults | Where-Object Status -eq 'Passed') {
+        Write-Host "Completed: $($result.Name)" -ForegroundColor Green
+    }
+
+    foreach ($result in $script:CheckResults | Where-Object Status -ne 'Passed') {
+        $color = if ($result.Status -eq 'Failed') { 'Yellow' } else { 'DarkGray' }
+        Write-Host "$($result.Status): $($result.Name) - $($result.Details)" -ForegroundColor $color
+    }
+}
+
+function Invoke-SelectedChecks {
+    param([string[]]$Sections)
+
+    foreach ($section in $Sections) {
+        switch ($section) {
+            '1' { Show-Hardware }
+            '2' { Show-BackgroundLoad }
+            '3' { Show-Services }
+            '4' { Show-Network }
+            '5' { Show-Security }
+            '6' { Show-HardwareEvents }
+        }
+    }
+
+    Show-RunSummary
+}
+
 function Invoke-AllChecks {
-    Show-Hardware
-    Show-BackgroundLoad
-    Show-Services
-    Show-Network
-    Show-Security
-    Show-HardwareEvents
+    Invoke-SelectedChecks @('1', '2', '3', '4', '5', '6')
 }
 
 function Export-DiagnosticReport {
-    Write-Host "`nThe report may contain device names, network details, usernames, startup commands, and file paths." -ForegroundColor Yellow
-    Write-Host 'Review it before sharing. The report is not uploaded anywhere.'
+    $sections = [ordered]@{
+        '1' = 'System overview'
+        '2' = 'Processes and startup applications'
+        '3' = 'Services'
+        '4' = 'Network and connectivity'
+        '5' = 'Security status and scheduled tasks'
+        '6' = 'Hardware and system events'
+    }
+    $dataDescriptions = @{
+        '1' = 'Hardware may include device models, Windows build, memory details, drive status, and power plans.'
+        '2' = 'Process and startup data may include process names, IDs, memory use, usernames, startup commands, and file paths.'
+        '3' = 'Service data may include service names, status, startup type, and executable paths.'
+        '4' = 'Network data may include private IP addresses, gateways, DNS servers, adapter names, and connectivity results.'
+        '5' = 'Security data may include protection status, account group names, startup entries, and scheduled-task names.'
+        '6' = 'Event data may include timestamps, event sources, IDs, and shortened system event messages.'
+    }
+
+    Write-Host "`nChoose report sections by number, separated by commas, or A for all:" -ForegroundColor Cyan
+    foreach ($key in $sections.Keys) {
+        Write-Host "$key. $($sections[$key])"
+    }
+    Write-Host '0. Cancel'
+    $selection = (Read-Host 'Sections').Trim().ToUpperInvariant()
+    if ($selection -eq '0') {
+        Write-Host 'Report export cancelled.' -ForegroundColor DarkGray
+        return
+    }
+
+    if ($selection -eq 'A') {
+        $selected = @($sections.Keys)
+    }
+    else {
+        $selected = @($selection -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ })
+        if ($selected.Count -eq 0 -or @($selected | Where-Object { -not $sections.Contains($_) }).Count -gt 0) {
+            Write-Host 'Invalid section selection. Choose listed numbers, comma-separated, or A.' -ForegroundColor Yellow
+            return
+        }
+        $selected = @($selected | Select-Object -Unique)
+    }
+
+    Write-Host "`nSelected sections:" -ForegroundColor Cyan
+    foreach ($key in $selected) {
+        Write-Host "- $($sections[$key])"
+    }
+    Write-Host "`nThe report may include:" -ForegroundColor Yellow
+    foreach ($key in $selected) {
+        Write-Host "- $($dataDescriptions[$key])"
+    }
+    Write-Host 'Only selected checks are included. Review the local report before sharing; it is not uploaded anywhere.'
     $confirmation = Read-Host 'Create a local report on your Desktop? Type YES to continue'
     if ($confirmation -cne 'YES') {
         Write-Host 'Report export cancelled.' -ForegroundColor DarkGray
@@ -265,8 +369,10 @@ function Export-DiagnosticReport {
         try {
             Write-Host 'Gaming PC Guide - Read-only diagnostic report'
             Write-Host "Created: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz')"
+            Write-Host "Included sections: $(($selected | ForEach-Object { $sections[$_] }) -join ', ')"
             Write-Host 'No system settings were changed.'
-            Invoke-AllChecks
+            Reset-CheckResults
+            Invoke-SelectedChecks $selected
         }
         finally {
             Stop-Transcript | Out-Null
@@ -277,6 +383,22 @@ function Export-DiagnosticReport {
     catch {
         Write-Host "Could not create the report: $($_.Exception.Message)" -ForegroundColor Red
     }
+}
+
+if ($SelfTest) {
+    Reset-CheckResults
+    Invoke-Check 'Self-test with no data' { @() }
+    Invoke-Check 'Self-test with error' { throw 'Synthetic self-test error.' }
+    Show-RunSummary
+
+    if ($script:CheckResults.Count -ne 2 -or
+        $script:CheckResults[0].Status -ne 'No data' -or
+        $script:CheckResults[1].Status -ne 'Failed') {
+        throw 'Diagnostic self-test failed.'
+    }
+
+    Write-Host 'Diagnostic self-test passed.' -ForegroundColor Green
+    exit 0
 }
 
 while ($true) {
@@ -292,19 +414,19 @@ while ($true) {
     Write-Host '6. WHEA and recent critical system events'
     Write-Host '7. Run all checks'
     Write-Host '8. Test a game-server hostname or IP (DNS + ICMP)'
-    Write-Host '9. Export all checks to a local text report (asks for confirmation)'
+    Write-Host '9. Export selected checks to a local text report (asks for confirmation)'
     Write-Host '0. Exit'
 
     $choice = Read-Host "`nSelect an option"
     switch ($choice) {
-        '1' { Show-Hardware; Pause-Menu }
-        '2' { Show-BackgroundLoad; Pause-Menu }
-        '3' { Show-Services; Pause-Menu }
-        '4' { Show-Network; Pause-Menu }
-        '5' { Show-Security; Pause-Menu }
-        '6' { Show-HardwareEvents; Pause-Menu }
-        '7' { Invoke-AllChecks; Pause-Menu }
-        '8' { Show-CustomNetworkTarget; Pause-Menu }
+        '1' { Reset-CheckResults; Show-Hardware; Show-RunSummary; Pause-Menu }
+        '2' { Reset-CheckResults; Show-BackgroundLoad; Show-RunSummary; Pause-Menu }
+        '3' { Reset-CheckResults; Show-Services; Show-RunSummary; Pause-Menu }
+        '4' { Reset-CheckResults; Show-Network; Show-RunSummary; Pause-Menu }
+        '5' { Reset-CheckResults; Show-Security; Show-RunSummary; Pause-Menu }
+        '6' { Reset-CheckResults; Show-HardwareEvents; Show-RunSummary; Pause-Menu }
+        '7' { Reset-CheckResults; Invoke-AllChecks; Pause-Menu }
+        '8' { Reset-CheckResults; Show-CustomNetworkTarget; Show-RunSummary; Pause-Menu }
         '9' { Export-DiagnosticReport; Pause-Menu }
         '0' { break }
         default {
