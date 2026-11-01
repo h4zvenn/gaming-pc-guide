@@ -9,7 +9,7 @@ permalink: /ru/docs/games/pubg.html
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [PUBG: BATTLEGROUNDS](https://h4zvenn.github.io/gaming-pc-guide/docs/games/pubg.html)
+> [PUBG: BATTLEGROUNDS]({{ '/docs/games/pubg.html' | relative_url }})
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/games/pubg.html
 
 Пока используй английскую версию:
 
-- [PUBG: BATTLEGROUNDS — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/pubg.html)
+- [PUBG: BATTLEGROUNDS — EN]({{ '/docs/games/pubg.html' | relative_url }})
 
 ## Принципы проекта
 

@@ -113,21 +113,21 @@ No page was marked `outdated` without evidence of a specific obsolete instructio
 - [Temperatures & Stability](docs/10-temperatures-stability.md#cpu-temperature) and [GPU temperature](docs/10-temperatures-stability.md#gpu-temperature) identify symptoms but do not give concrete, model-specific thresholds or a method for looking up manufacturer limits. Add threshold interpretation and actions without implying one universal safe temperature.
 - [Optimization Tools](docs/18-optimization-tools-evidence.md#current-review-status) reported independent and official evidence without named tools, sources, citations, or a review date. The unsupported evidence claims have since been removed.
 - [Counter-Strike 2](docs/games/cs2.md) marks its settings as patch-sensitive; do not label it “Ready” in the index without an update/verification date.
-- The link checker strips URL fragments at [check-links.ps1:23](check-links.ps1#L23) and checks only `href` attributes at [check-links.ps1:65](check-links.ps1#L65); it does not verify anchor IDs or image `src` targets. Its passing result is not proof that all anchors and images work.
+- The link checker strips URL fragments at `check-links.ps1:23` and checks only `href` attributes at `check-links.ps1:65`; it does not verify anchor IDs or image `src` targets. Its passing result is not proof that all anchors and images work.
 - Twenty-one Russian Markdown pages had a UTF-8 BOM before the opening front-matter delimiter. Jekyll copied these pages as raw `.md` files instead of rendering them; remove the BOM so their declared permalinks and layouts take effect.
 - Russian guide translation keys used numbered filenames instead of the English keys, and all five Russian game stubs pointed outside `/docs/games/`. This prevented language pairing and linked to nonexistent routes; match the English keys and correct the game permalinks.
 - No confirmed recommendation to disable Defender, Windows Update, or anti-cheat protections was found in the reviewed pages. Continue rejecting registry hacks, mass service disabling, and unverified “FPS boost” tools.
 
 ## Navigation issues
 
-- [The shared header](_layouts/default.html#L38) links to five individual guides, not the requested Home / Start here / Windows / Games / Русский destinations.
-- [The shared header](_layouts/default.html#L656) wraps links on small screens but has no open/close mobile menu.
+- The shared header (`_layouts/default.html`) links to five individual guides, not the requested Home / Start here / Windows / Games / Русский destinations.
+- The shared header (`_layouts/default.html`) wraps links on small screens but has no open/close mobile menu.
 - [The document layout](_layouts/doc.html) has a large static English-only sidebar; Russian readers are sent to English guide URLs when the corresponding Russian page is a stub.
 - There is no system-guide index or Start Here page; both home pages carry long duplicated lists instead.
 
 ## SEO and technical issues
 
-- [_layouts/default.html:47](../_layouts/default.html#L47) and [line 48](../_layouts/default.html#L48) output title and description only; canonical, Open Graph, Twitter Card, and JSON-LD metadata are absent.
+- `_layouts/default.html` lines 47–48 output title and description only; canonical, Open Graph, Twitter Card, and JSON-LD metadata are absent.
 - `robots.txt` and a generated `sitemap.xml` are absent; `Gemfile` contains only Jekyll and `_config.yml` configures no plugins.
 - [ru/docs/01-before-you-start.md](ru/docs/01-before-you-start.md) has no description metadata, so its page uses the generic site description.
 - The missing Russian system index and the empty `translation_key` on the Russian game index weakened navigation and language pairing; both have since been corrected.
@@ -170,3 +170,4 @@ No page was marked `outdated` without evidence of a specific obsolete instructio
 - Content audit found no published Markdown links ending in `.md`, no image references needing alt text, no commented-out HTML code in layouts/includes/docs, and no separate assets directory to prune. Russian placeholder pages remain outside this pass because localization was explicitly out of scope.
 - Current generated-site checks cover one H1 and unique metadata per page, parseable JSON-LD, a valid sitemap, and local paths/fragments. Game-specific recommendations remain marked for patch review rather than asserted as currently verified.
 - Responsive browser checks at mobile and desktop widths confirmed no horizontal overflow; the mobile menu toggles closed and open. Generated pages show the exact dark background palette and previous/next links for article sequences.
+- In response to layout feedback, moved shared CSS from the HTML layout to `assets/css/style.scss`, centered the article/TOC grid with a consistent 28px gap, and restricted previous/next navigation to system articles (not game guides).

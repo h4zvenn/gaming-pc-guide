@@ -9,7 +9,7 @@ permalink: /ru/docs/games/world-of-tanks.html
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [World of Tanks](https://h4zvenn.github.io/gaming-pc-guide/docs/games/world-of-tanks.html)
+> [World of Tanks]({{ '/docs/games/world-of-tanks.html' | relative_url }})
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/games/world-of-tanks.html
 
 Пока используй английскую версию:
 
-- [World of Tanks — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/world-of-tanks.html)
+- [World of Tanks — EN]({{ '/docs/games/world-of-tanks.html' | relative_url }})
 
 ## Принципы проекта
 

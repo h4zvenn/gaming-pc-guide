@@ -7,14 +7,17 @@
 - Added English and Russian Start Here pages, focused guide indexes, and shorter home-page navigation.
 - Added five vendor-specific GPU and CPU setup guides.
 - Added generated sitemap and crawler instructions, plus canonical, social-sharing, and structured-data metadata.
-- Added responsive navigation, article breadcrumbs and table of contents, localized copy buttons, and mobile-friendly layouts.
-- Added automatic previous/next navigation for system and game articles.
+- Added article breadcrumbs, table of contents, a left page-list sidebar, and localized copy buttons.
+- Redesigned the home pages (compact hero, problem tiles, guide lists) with a desktop-only layout (no viewport meta, media queries, or mobile menu) and an English-only main header; the EN/RU switcher stays in the header and each Russian doc links to its English original.
+- Added automatic previous/next navigation for system articles only.
 - Expanded the link checker to validate local links, image/source targets, and fragment identifiers.
 - Added substantive Russian translations for PowerShell diagnostics, GPU settings, temperature and stability, what-not-to-do, FAQ, quick-start presets, troubleshooting, and benchmark guides.
 
 ### Changed
 
 - Applied the requested neutral dark and PC-blue palette, consistent 16px/1.6 typography, 80ch article width, and styles for notes, warnings, danger callouts, tables, code, and navigation.
+- Moved the shared stylesheet from the HTML layout into `assets/css/style.scss`; centered the desktop article and table-of-contents columns with a consistent gap.
+- Removed unrelated next/previous game links from game-specific articles.
 - Normalized the five English game guides with explicit, repeatable verification sections and current-version review cautions.
 - Corrected CS2 rendering guidance to defer to the current client default and removed unsupported “Verified” evidence labels.
 - Aligned breadcrumb structured data with the visible breadcrumb path.

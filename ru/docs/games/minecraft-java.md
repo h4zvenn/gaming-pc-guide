@@ -9,7 +9,7 @@ permalink: /ru/docs/games/minecraft-java.html
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [Minecraft Java Edition](https://h4zvenn.github.io/gaming-pc-guide/docs/games/minecraft-java.html)
+> [Minecraft Java Edition]({{ '/docs/games/minecraft-java.html' | relative_url }})
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/games/minecraft-java.html
 
 Пока используй английскую версию:
 
-- [Minecraft Java Edition — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/minecraft-java.html)
+- [Minecraft Java Edition — EN]({{ '/docs/games/minecraft-java.html' | relative_url }})
 
 ## Принципы проекта
 

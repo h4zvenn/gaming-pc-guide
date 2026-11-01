@@ -9,7 +9,7 @@ permalink: /ru/docs/games/valorant.html
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [VALORANT](https://h4zvenn.github.io/gaming-pc-guide/docs/games/valorant.html)
+> [VALORANT]({{ '/docs/games/valorant.html' | relative_url }})
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/games/valorant.html
 
 Пока используй английскую версию:
 
-- [VALORANT — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/valorant.html)
+- [VALORANT — EN]({{ '/docs/games/valorant.html' | relative_url }})
 
 ## Принципы проекта
 
