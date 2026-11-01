@@ -62,7 +62,7 @@ See all game guides in the [Game Guides index](docs/games/index.html).
 
 - [01. Before You Start](docs/01-before-you-start.md)
 - [02. Find the Bottleneck](docs/02-find-the-bottleneck.md)
-- [03. BIOS & Hardware Baseline](docs/03-bios-and-hardware.md)
+- [03. BIOS & Hardware](docs/03-bios-and-hardware.md)
 - [04. Drivers & Clean Updates](docs/04-drivers-and-updates.md)
 - [05. Windows 11 Core](docs/05-windows-11.md)
 - [06. GPU Control Panel Settings](docs/06-gpu-settings.md)

@@ -7,6 +7,7 @@ translation_key: quick-start-presets
 permalink: /docs/14-quick-start-presets.html
 ---
 
+
 Use a preset to get reliable results without random tweaking. Pick the closest hardware tier, apply one change at a time, benchmark it, and keep only what improves FPS, 1% lows, or frame-time consistency.
 
 > **Important:** Use one preset at a time. Do not mix presets in one session. A preset is an ordered checklist, not a batch script.
@@ -110,4 +111,4 @@ Use a preset to get reliable results without random tweaking. Pick the closest h
 
 ## Next step
 
-[Troubleshooting Decision Trees](15-troubleshooting-decision-trees.html)
+[Troubleshooting Trees](15-troubleshooting-decision-trees.html)

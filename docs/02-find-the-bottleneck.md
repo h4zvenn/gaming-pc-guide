@@ -181,7 +181,7 @@ Do not use RAM cleaners or forced memory-cleanup tools. They can evict useful ca
 4. Avoid downloads, torrents, cloud sync, and updates while playing.
 5. Check drive health with the manufacturer utility or SMART monitoring.
 
-> **Tip:** Not every stutter is fixed by Windows tweaks. Some issues are caused by the game itself, its engine, a patch, or shader compilation behavior.
+> **Tip:** Not every stutter is fixed by Windows tweaks. Some issues are caused by the game itself, its engine, a patch, or shader-compilation behavior.
 
 ---
 
@@ -242,10 +242,6 @@ Do not use RAM cleaners or forced memory-cleanup tools. They can evict useful ca
 
 ---
 
-## Next steps
+## Next step
 
-- [BIOS and Hardware](03-bios-and-hardware.html)
-- [Drivers and Updates](04-drivers-and-updates.html)
-- [Windows 11 Core](05-windows-11.html)
-- [GPU Settings](06-gpu-settings.html)
-- [Temperatures and Stability](10-temperatures-stability.html)
+[BIOS & Hardware](03-bios-and-hardware.html)

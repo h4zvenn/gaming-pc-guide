@@ -348,7 +348,7 @@ These commands do not change Windows; they only display information.
 - [ ] Game Mode is enabled.
 - [ ] A suitable power mode is selected.
 - [ ] The game is assigned to the high-performance GPU, if the system has multiple GPUs.
-- [ ] HAGS and Optimizations for Windowed Games are tested.
+- [ ] HAGS and Optimizations for windowed games are tested.
 - [ ] The correct monitor refresh rate is set.
 - [ ] Unnecessary notifications are disabled.
 - [ ] Only required overlays remain active.

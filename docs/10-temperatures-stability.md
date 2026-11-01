@@ -7,6 +7,7 @@ translation_key: temperatures-stability
 permalink: /docs/10-temperatures-stability.html
 ---
 
+
 > High FPS is pointless if the PC overheats, throttles, crashes, or reports WHEA errors. Stability and consistent frame times matter more than a few extra frames from aggressive overclocking.
 
 Do not compare temperatures between different CPUs and GPUs directly. Different models use different sensors, limits, power behavior, and boost algorithms. Focus on throttling, clock drops, noise, and stability.

@@ -1,18 +1,22 @@
 name: Deploy Jekyll site to GitHub Pages
 
+
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+
 concurrency:
   group: pages
   cancel-in-progress: true
+
 
 jobs:
   build:
@@ -20,28 +24,28 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
           bundler-cache: true
 
+
       - name: Install dependencies
-        run: |
-          cat > Gemfile <<'EOF'
-          source "https://rubygems.org"
-          gem "jekyll", "~> 4.3"
-          EOF
-          bundle install
+        run: bundle install
+
 
       - name: Build site
         run: bundle exec jekyll build --trace
         env:
           JEKYLL_ENV: production
 
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./_site
+
 
   deploy:
     needs: build

@@ -7,6 +7,7 @@ translation_key: benchmark-templates
 permalink: /docs/16-benchmark-templates.html
 ---
 
+
 If it is not measured, it is not optimization.
 
 Use the same game build, settings, scene, and measurement method before and after every change. A tweak is proven only when the result is repeatable.
@@ -69,7 +70,9 @@ GPU driver / Windows build:
 Tool and version:
 1% low definition:
 
+
 Tweak tested:
+
 
 Baseline median:
   Average FPS:
@@ -81,6 +84,7 @@ Baseline median:
   CPU temperature:
   GPU temperature:
 
+
 Test median:
   Average FPS:
   1% low:
@@ -90,6 +94,7 @@ Test median:
   CPU core saturation:
   CPU temperature:
   GPU temperature:
+
 
 Run-to-run spread:
 New crashes / WHEA errors / artifacts:
@@ -199,4 +204,4 @@ Third-party tools are covered in [Optimization Tools Evidence](18-optimization-t
 
 ## Next step
 
-[Common Builds Quick Cards](17-common-builds-quick-cards.html)
+[Common Builds](17-common-builds-quick-cards.html)

@@ -15,7 +15,10 @@ All notable changes to this project are documented in this file.
 
 - Cleaned up core documentation pages:
   - `docs/01-before-you-start.md`
+  - `docs/03-bios-and-hardware.md`
+  - `docs/04-drivers-and-updates.md`
   - `docs/05-windows-11.md`
+  - `docs/06-gpu-settings.md`
   - `docs/07-background-apps.md`
   - `docs/08-services-and-security.md`
   - `docs/09-powershell-diagnostics.md`
@@ -34,6 +37,7 @@ All notable changes to this project are documented in this file.
 - Standardized quote blocks, lists, tables, and code-block formatting.
 - Replaced absolute internal links with relative `.html` links.
 - Added explicit `Next step` navigation between guide pages.
+- Standardized guide titles across the home page, sidebar, and guide front matter.
 - Improved FAQ navigation by linking it to the Security Hardening Baseline.
 - Simplified Quick-Start Presets navigation to point to Troubleshooting Decision Trees.
 - Updated Benchmark Templates navigation to point to Common Builds Quick Cards.
@@ -53,6 +57,8 @@ All notable changes to this project are documented in this file.
 - Fixed incorrect or inconsistent internal links.
 - Corrected table formatting in benchmark templates.
 - Removed unsafe blanket deletion commands from the disk-cleanup workflow.
+- Removed registry-deletion automation from the Background Apps guide.
+- Clarified optional service changes and rollback guidance in Services & Security.
 
 ### Security
 

@@ -7,6 +7,7 @@ translation_key: security-hardening-baseline
 permalink: /docs/13-security-hardening-baseline.html
 ---
 
+
 > Goal: maintain real security with minimal FPS impact while preserving compatibility for games, anti-cheat, and updates.
 
 ## Principles

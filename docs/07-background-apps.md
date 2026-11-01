@@ -7,6 +7,7 @@ translation_key: background-apps
 permalink: /docs/07-background-apps.html
 ---
 
+
 > The safest way to reduce unnecessary load is to remove unneeded startup apps and close heavy tasks before gaming. Do not randomly kill system processes or disable Windows services.
 
 ## What affects gaming
@@ -97,45 +98,15 @@ Disable these only if you do not need them immediately after boot:
 - Security software, if it is your only active antivirus
 - Critical corporate or VPN clients required for work
 
-### Review startup entries
+### Disable a startup entry
 
-```powershell
-Get-CimInstance Win32_StartupCommand |
-Select-Object Name, Command, Location, User
-```
+Prefer Task Manager first:
 
-This command shows what Windows tries to launch at sign-in.
+1. Open `Task Manager → Startup apps`.
+2. Select the application.
+3. Select `Disable`.
 
-What to do with the results:
-
-1. Search unknown app names.
-2. If an app is not needed at startup, disable it in Task Manager.
-3. If an app looks suspicious, verify its file path and run security checks.
-4. Do not manually delete registry startup keys if normal startup disabling is enough.
-
-### Disable a current-user startup entry
-
-This does not uninstall an application; it only prevents it from starting with Windows.
-
-```powershell
-$run = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run'
-
-$disable = @(
-    'Discord',
-    'RiotClient',
-    'RobloxPlayerBeta'
-)
-
-foreach ($name in $disable) {
-    if (Get-ItemProperty -Path $run -Name $name -ErrorAction SilentlyContinue) {
-        Remove-ItemProperty -Path $run -Name $name
-        Write-Host "Disabled: $name"
-    }
-    else {
-        Write-Host "Not found: $name"
-    }
-}
-```
+This does not uninstall the application; it only prevents it from launching automatically at sign-in.
 
 | Application | Recommendation |
 | --- | --- |
@@ -148,13 +119,15 @@ foreach ($name in $disable) {
 
 > **Tip:** Disabling startup does not uninstall the app. You can launch it manually or re-enable startup later.
 
-Verify the remaining startup entries:
+If a startup entry is not visible in Task Manager but exists in the current user’s Run key, inspect it before changing anything:
 
 ```powershell
 Get-ItemProperty 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Run' -ErrorAction SilentlyContinue |
 Select-Object * -ExcludeProperty PS* |
 Format-List
 ```
+
+Do not manually delete registry startup keys unless you understand the entry and have confirmed that Task Manager cannot disable it.
 
 Startup apps and services are related, but they are not the same thing. Do not disable Windows services only to reduce startup load. See [Services & Security](08-services-and-security.html).
 
@@ -306,10 +279,4 @@ If a process constantly creates load, first identify which application owns it. 
 - [ ] Multiple overlays or recorders are not running simultaneously.
 - [ ] RGB and peripheral software runs only when needed.
 - [ ] No random termination of system processes.
-- [ ] All changes are validated in-game.
-
----
-
-## Next step
-
-[Services & Security](08-services-and-security.html)
+- [ ] All changes are validated

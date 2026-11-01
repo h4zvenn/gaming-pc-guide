@@ -7,6 +7,7 @@ translation_key: game-guides
 permalink: /docs/games/index.html
 ---
 
+
 > Game-specific guides build on the general optimization baseline. Complete the core guides first, then apply only the settings relevant to your game.
 
 ## Available guides
@@ -50,6 +51,6 @@ See [Benchmark Templates](../16-benchmark-templates.html) for the full testing p
 
 ## Related guides
 
-- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
+- [Troubleshooting Trees](../15-troubleshooting-decision-trees.html)
 - [Security & Services](../08-services-and-security.html)
 - [Home](../../index.html)

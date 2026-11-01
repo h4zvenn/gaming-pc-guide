@@ -7,6 +7,7 @@ translation_key: faq
 permalink: /docs/12-faq.html
 ---
 
+
 > Short answers to common questions about Windows and gaming PC optimization. If an answer depends on hardware, Windows version, or a specific game, test on your own system.
 
 ## Start here
@@ -327,4 +328,4 @@ Use PowerShell primarily for diagnostics. See [PowerShell Diagnostics](09-powers
 
 ## Next step
 
-[Security Hardening Baseline](13-security-hardening-baseline.html)
+[Security Hardening](13-security-hardening-baseline.html)

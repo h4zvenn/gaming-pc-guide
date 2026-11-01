@@ -7,6 +7,7 @@ translation_key: game-valorant
 permalink: /docs/games/valorant.html
 ---
 
+
 > Improve VALORANT performance by reducing input latency, stabilizing frame times, and testing graphics settings one at a time. Do not modify Vanguard, game files, or use unapproved third-party software.
 
 ## Applicability
@@ -157,4 +158,4 @@ See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
 
 - [Game Guides](index.html)
 - [Benchmark Templates](../16-benchmark-templates.html)
-- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
+- [Troubleshooting Trees](../15-troubleshooting-decision-trees.html)

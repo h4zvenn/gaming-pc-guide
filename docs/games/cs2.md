@@ -7,6 +7,7 @@ translation_key: game-cs2
 permalink: /docs/games/cs2.html
 ---
 
+
 > Complete guide for improving Counter-Strike 2 performance on Source 2: reduce stutter, improve frame-time consistency, and establish a stable FPS floor. Test every change on your own system.
 
 ## Applicability
@@ -83,7 +84,7 @@ Keep Shadow Quality higher if you rely on shadow information, but test the FPS c
 
 Use the in-game FPS limiter before external limiters.
 
-A practical starting point is a cap slightly above your monitor refresh rate, for example:
+A high ceiling such as `fps_max 400` is a common CS2 starting point because it usually does not restrict performance on modern hardware:
 
 ```text
 fps_max 400
@@ -201,4 +202,4 @@ See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
 
 - [Game Guides](index.html)
 - [Benchmark Templates](../16-benchmark-templates.html)
-- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
+- [Troubleshooting Trees](../15-troubleshooting-decision-trees.html)

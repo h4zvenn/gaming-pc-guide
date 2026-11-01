@@ -303,4 +303,4 @@ For artifacts, black screens, or crashes, return the GPU to stock settings first
 
 ## Next step
 
-[Background Apps and Startup](07-background-apps.html)
+[Background Apps](07-background-apps.html)

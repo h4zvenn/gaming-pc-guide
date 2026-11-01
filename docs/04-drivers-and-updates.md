@@ -7,7 +7,8 @@ translation_key: drivers-and-updates
 permalink: /docs/04-drivers-and-updates.html
 ---
 
-> Drivers and updates do not provide вЂњmagic FPS,вЂќ but they ensure compatibility, stability, bug fixes, and proper hardware behavior. Always start with official sources, not driver packs, вЂњboosters,вЂќ or random links.
+
+> Drivers and updates do not provide “magic FPS,” but they ensure compatibility, stability, bug fixes, and proper hardware behavior. Always start with official sources, not driver packs, “boosters,” or random links.
 
 ## Core rule
 
@@ -20,7 +21,7 @@ Download drivers only from official websites:
 - Microsoft
 - SSD, Wi-Fi adapter, or peripheral vendor
 
-> **Warning:** > Do not use Driver Booster, DriverPack, вЂњauto-updaters,вЂќ or repackaged driver websites. They may install incorrect versions, adware, or unstable components.
+> **Warning:** Do not use Driver Booster, DriverPack, “auto-updaters,” or repackaged driver websites. They may install incorrect versions, adware, or unstable components.
 
 ---
 
@@ -75,7 +76,7 @@ Check version and source before installing, especially if:
 - the update is offered as an Optional driver update;
 - you recently had graphics driver issues.
 
-> **Note:** > Do not permanently disable Windows Update for вЂњoptimization.вЂќ Updates include security, stability, and compatibility fixes. Optional driver updates from Windows Update are not always preferred over vendor drivers; review the source before applying, especially when the current GPU or chipset driver is stable.
+> **Note:** Do not permanently disable Windows Update for “optimization.” Updates include security, stability, and compatibility fixes. Optional driver updates from Windows Update are not always preferred over vendor drivers; review the source before applying, especially when the current GPU or chipset driver is stable.
 
 ---
 
@@ -96,7 +97,7 @@ Chipset driver is important for proper power management, PCIe, USB, controller b
 4. Finish installation.
 5. Reboot the PC.
 
-> **Tip:** > On laptops, check the vendor support page first. It may provide adapted drivers for power behavior, graphics switching, hotkeys, or cooling modes.
+> **Tip:** On laptops, check the vendor support page first. It may provide adapted drivers for power behavior, graphics switching, hotkeys, or cooling modes.
 
 ---
 
@@ -124,7 +125,7 @@ Pick the driver for your Radeon series and Windows version.
 
 Use Intel Graphics Software or official Intel Download Center.
 
-On laptops, if brightness, hybrid graphics, or sleep issues appear, try the laptop vendorвЂ™s driver first.
+On laptops, if brightness, hybrid graphics, or sleep issues appear, try the laptop vendor’s driver first.
 
 ---
 
@@ -147,7 +148,7 @@ Stay on current version if:
 - newer releases are known problematic on your configuration;
 - PC is used for critical work where stability matters more than novelty.
 
-> **Important:** > Newer does not always mean faster in every game. Compare performance in your own titles and roll back to a known stable version if needed.
+> **Important:** Newer does not always mean faster in every game. Compare performance in your own titles and roll back to a known stable version if needed.
 
 ---
 
@@ -161,7 +162,7 @@ Clean install is needed only for symptoms like:
 - black screens or artifacts after update;
 - driver control panel settings behave incorrectly;
 - game fails to launch due to legacy component conflicts;
-- you switched GPU vendor (AMD в†” NVIDIA в†” Intel).
+- you switched GPU vendor (AMD ↔ NVIDIA ↔ Intel).
 
 ### Try simple method first
 
@@ -179,7 +180,7 @@ If using DDU:
 4. Do not use it for routine updates without actual problem.
 5. Install driver from official source after cleanup.
 
-> **Warning:** > Do not run DDU monthly вЂњfor FPS.вЂќ Frequent full driver removal is not optimization.
+> **Warning:** Do not run DDU monthly “for FPS.” Frequent full driver removal is not optimization.
 
 ### How to roll back a GPU driver
 
@@ -210,7 +211,7 @@ For example:
 - If you do not use RGB lighting, heavy RGB suites are optional.
 - If vendor software constantly loads CPU/RAM or causes errors, disable its startup first without removing required driver components.
 
-> **Tip:** > Driver and vendor utility are not the same thing. Network/audio drivers are often required; large overlay/telemetry/lighting suites may be optional.
+> **Tip:** Driver and vendor utility are not the same thing. Network/audio drivers are often required; large overlay/telemetry/lighting suites may be optional.
 
 ---
 
@@ -263,18 +264,18 @@ Get-ComputerInfo |
 Select-Object WindowsProductName, WindowsVersion, OsBuildNumber
 ```
 
-> **Note:** > These commands only display information and do not modify system settings.
+> **Note:** These commands only display information and do not modify system settings.
 
 ---
 
 ## 9. Optional vendor software
 
-Before installing, ask: вЂњWhat exact benefit do I get from this app?вЂќ
+Before installing, ask: “What exact benefit do I get from this app?”
 
 Often optional:
 
 - automatic driver updaters;
-- вЂњgaming optimizersвЂќ;
+- “gaming optimizers”;
 - duplicate overlays;
 - RAM cleaning tools;
 - always-on telemetry utilities;
@@ -309,6 +310,8 @@ Do not uninstall software until you understand its role. Disable startup first a
 
 ## Summary
 
-A stable baseline is more important than chasing every new version. Use official drivers, update components intentionally, perform clean installs only when needed, and keep the system free from unnecessary вЂњhelperвЂќ tools.
+A stable baseline is more important than chasing every new version. Use official drivers, update components intentionally, perform clean installs only when needed, and keep the system free from unnecessary “helper” tools.
 
-Next step: [Windows 11 tuning](https://h4zvenn.github.io/gaming-pc-guide/docs/05-windows-11.html).
+## Next step
+
+[Windows 11 Core](05-windows-11.html)

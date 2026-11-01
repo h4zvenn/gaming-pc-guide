@@ -7,6 +7,7 @@ translation_key: game-template
 permalink: /docs/games/template.html
 ---
 
+
 > Copy this file to `docs/games/<game-slug>.md` and fill in every section. Do not duplicate common base content; link to it.
 
 ## Applicability
@@ -135,4 +136,4 @@ Mark each recommendation as `verified`, `needs-verification`, or `deprecated`, a
 
 - [Game Guides](index.html)
 - [Benchmark Templates](../16-benchmark-templates.html)
-- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
+- [Troubleshooting Trees](../15-troubleshooting-decision-trees.html)

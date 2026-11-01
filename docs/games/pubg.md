@@ -7,6 +7,7 @@ translation_key: game-pubg
 permalink: /docs/games/pubg.html
 ---
 
+
 > Improve PUBG performance by finding the CPU or GPU bottleneck, reducing stutter, and testing graphics settings one at a time. Do not modify game files or use unapproved third-party software.
 
 ## Applicability
@@ -166,4 +167,4 @@ See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
 
 - [Game Guides](index.html)
 - [Benchmark Templates](../16-benchmark-templates.html)
-- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
+- [Troubleshooting Trees](../15-troubleshooting-decision-trees.html)

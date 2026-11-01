@@ -1,18 +1,22 @@
 name: Deploy Jekyll site to Pages
 
+
 on:
   push:
     branches: ["main"]
   workflow_dispatch:
+
 
 permissions:
   contents: read
   pages: write
   id-token: write
 
+
 concurrency:
   group: "pages"
   cancel-in-progress: false
+
 
 jobs:
   build:
@@ -21,9 +25,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v6
+
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
@@ -31,8 +37,10 @@ jobs:
           source: ./
           destination: ./_site
 
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
+
 
   deploy:
     environment:

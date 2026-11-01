@@ -7,6 +7,7 @@ description: "Create a restore point, record baseline performance, and prepare W
 permalink: /docs/01-before-you-start.html
 ---
 
+
 > Do not start by disabling services, editing the registry, or overclocking. First create rollback options, check the current state of the PC, and record baseline results.
 
 ## What to do first

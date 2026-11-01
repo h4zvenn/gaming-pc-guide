@@ -1,5 +1,6 @@
 name: Link Check
 
+
 on:
   push:
     branches:
@@ -11,8 +12,10 @@ on:
     - cron: "0 6 * * 1"
   workflow_dispatch:
 
+
 permissions:
   contents: read
+
 
 jobs:
   link-check:
@@ -20,9 +23,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -30,13 +35,16 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+
       - name: Build Jekyll site
         run: bundle exec jekyll build
+
 
       - name: Prepare site for root-relative links
         run: |
           mkdir -p site-check/gaming-pc-guide
           cp -a _site/. site-check/gaming-pc-guide/
+
 
       - name: Check links
         id: lychee
@@ -56,6 +64,7 @@ jobs:
             --exclude '^https://modhub\.wargaming\.com/'
             --exclude '^https://github\.com/h4zvenn/gaming-pc-guide/(issues|discussions)'
             './site-check/gaming-pc-guide/**/*.html'
+
 
       - name: Upload link-check report
         if: always()

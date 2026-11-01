@@ -7,6 +7,7 @@ translation_key: common-builds-quick-cards
 permalink: /docs/17-common-builds-quick-cards.html
 ---
 
+
 > Start fast with safe defaults. Then benchmark and tune per game.
 
 ## How to use quick cards

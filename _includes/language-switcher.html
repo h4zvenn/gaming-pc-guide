@@ -2,6 +2,7 @@
 {% assign english_url = '/' %}
 {% assign russian_url = '/ru/' %}
 
+
 {% if page.translation_key %}
   {% assign translations = site.pages | where: 'translation_key', page.translation_key %}
   {% for translated_page in translations %}
@@ -12,6 +13,7 @@
     {% endif %}
   {% endfor %}
 {% endif %}
+
 
 <nav class="language-switcher" aria-label="Language">
   <a href="{{ english_url | relative_url }}"

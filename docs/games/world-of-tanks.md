@@ -7,6 +7,7 @@ translation_key: game-world-of-tanks
 permalink: /docs/games/world-of-tanks.html
 ---
 
+
 > Improve World of Tanks performance by finding the CPU or GPU bottleneck, reducing stutter, and testing graphics settings one at a time. Use only mods allowed by Wargaming’s current policy.
 
 ## Applicability
@@ -153,4 +154,4 @@ See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
 
 - [Game Guides](index.html)
 - [Benchmark Templates](../16-benchmark-templates.html)
-- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
+- [Troubleshooting Trees](../15-troubleshooting-decision-trees.html)

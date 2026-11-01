@@ -7,6 +7,7 @@ translation_key: powershell-diagnostics
 permalink: /docs/09-powershell-diagnostics.html
 ---
 
+
 > Use PowerShell to inspect your system, not to run random “one-click FPS” scripts.
 
 ## Quick diagnostic flow
@@ -323,4 +324,4 @@ driverquery /v /fo csv | Out-File -Encoding utf8 "$env:USERPROFILE\Desktop\drive
 
 ## Next step
 
-[Temperatures, Stability & Maintenance](10-temperatures-stability.html)
+[Temperatures & Stability](10-temperatures-stability.html)

@@ -7,6 +7,7 @@ translation_key: services-and-security
 permalink: /docs/08-services-and-security.html
 ---
 
+
 > Disabling services is one of the most overrated and risky “optimization” methods. Most services consume almost nothing while idle, and mass disabling can break networking, audio, updates, anti-cheat, app installation, and Windows security.
 
 ## Core rule
@@ -278,20 +279,25 @@ Before changing a service, record its current `StartType`. If something stops wo
 
 | Service | Recommended state | When |
 | --- | --- | --- |
-| `XboxService` | `Manual` | Xbox Game Bar is not used |
+| `XboxService` | `Manual`, only after testing | Xbox Game Bar, Game Pass, or Xbox features are not used |
 | `LGHUBUpdaterService` | `Manual` | Constant Logitech background updates are not needed |
 | Discord System Helper | Leave as `Manual` | It is usually not running by default |
 | NVIDIA FrameView SDK | Leave as `Manual` | Needed only for FrameView |
+
+### Optional advanced change
+
+Only change a third-party service if you have identified a real issue, recorded its current startup type, and know how to restore it.
+
+Run PowerShell as Administrator only after creating a restore point.
 
 Example:
 
 ```powershell
 Set-Service -Name XboxService -StartupType Manual
 Stop-Service -Name XboxService -ErrorAction SilentlyContinue
-
-Set-Service -Name LGHUBUpdaterService -StartupType Manual
-Stop-Service -Name LGHUBUpdaterService -ErrorAction SilentlyContinue
 ```
+
+Do not apply service changes in bulk. Change one service, reboot or test the affected feature, and keep a rollback command ready.
 
 ### Services to leave alone
 

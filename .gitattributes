@@ -1,9 +1,22 @@
 ﻿# Normalize text files to LF in the repository
 * text=auto eol=lf
 
+
 # Keep Windows PowerShell scripts with CRLF
 *.ps1 text eol=crlf
+
 
 # Windows batch files must keep CRLF
 *.bat text eol=crlf
 *.cmd text eol=crlf
+
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.woff binary
+*.woff2 binary

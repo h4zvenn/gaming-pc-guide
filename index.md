@@ -7,6 +7,7 @@ translation_key: home
 permalink: /
 ---
 
+
 <div class="hero">
   <h1>Fewer random tweaks. More measurable results.</h1>
   <p>A practical guide to optimizing a gaming PC on Windows 11: prepare your system, find the actual bottleneck, and verify every change with a repeatable test.</p>
@@ -77,34 +78,34 @@ Guides are grouped by task. The numbering matches the guide files.
 
 ### Preparation and diagnostics
 
-- [01. Before you start]({{ '/docs/01-before-you-start.html' | relative_url }}) — rollback options, baseline measurements, and system checks.
-- [02. Find the bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) — identify performance limitations.
-- [09. PowerShell diagnostics]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) — system information and diagnostic checks.
-- [10. Temperatures and stability]({{ '/docs/10-temperatures-stability.html' | relative_url }}) — overheating and instability checks.
-- [15. Troubleshooting decision trees]({{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}) — structured troubleshooting for common issues.
+- [01. Before You Start]({{ '/docs/01-before-you-start.html' | relative_url }}) — rollback options, baseline measurements, and system checks.
+- [02. Find the Bottleneck]({{ '/docs/02-find-the-bottleneck.html' | relative_url }}) — identify performance limitations.
+- [09. PowerShell Diagnostics]({{ '/docs/09-powershell-diagnostics.html' | relative_url }}) — system information and diagnostic checks.
+- [10. Temperatures & Stability]({{ '/docs/10-temperatures-stability.html' | relative_url }}) — overheating and instability checks.
+- [15. Troubleshooting Trees]({{ '/docs/15-troubleshooting-decision-trees.html' | relative_url }}) — structured troubleshooting for common issues.
 
 ### Windows, hardware, and graphics
 
-- [03. BIOS and hardware]({{ '/docs/03-bios-and-hardware.html' | relative_url }}) — hardware configuration and BIOS settings.
-- [04. Drivers and updates]({{ '/docs/04-drivers-and-updates.html' | relative_url }}) — driver and update practices.
-- [05. Windows 11 settings]({{ '/docs/05-windows-11.html' | relative_url }}) — operating system settings.
-- [06. GPU settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) — graphics, synchronization, and latency.
-- [07. Background apps]({{ '/docs/07-background-apps.html' | relative_url }}) — check background activity.
-- [08. Services and security]({{ '/docs/08-services-and-security.html' | relative_url }}) — system services and limits of safe changes.
+- [03. BIOS & Hardware]({{ '/docs/03-bios-and-hardware.html' | relative_url }}) — hardware configuration and BIOS settings.
+- [04. Drivers & Updates]({{ '/docs/04-drivers-and-updates.html' | relative_url }}) — driver and update practices.
+- [05. Windows 11 Core]({{ '/docs/05-windows-11.html' | relative_url }}) — operating system settings.
+- [06. GPU Settings]({{ '/docs/06-gpu-settings.html' | relative_url }}) — graphics, synchronization, and latency.
+- [07. Background Apps]({{ '/docs/07-background-apps.html' | relative_url }}) — check background activity.
+- [08. Services & Security]({{ '/docs/08-services-and-security.html' | relative_url }}) — system services and limits of safe changes.
 
 ### Reference and starting points
 
-- [11. What not to do]({{ '/docs/11-what-not-to-do.html' | relative_url }}) — questionable methods and risky changes.
+- [11. What Not To Do]({{ '/docs/11-what-not-to-do.html' | relative_url }}) — questionable methods and risky changes.
 - [12. FAQ]({{ '/docs/12-faq.html' | relative_url }}) — common questions and explanations.
-- [13. Security hardening baseline]({{ '/docs/13-security-hardening-baseline.html' | relative_url }}) — core protection settings.
-- [14. Quick-start presets]({{ '/docs/14-quick-start-presets.html' | relative_url }}) — starting points for different PC configurations.
+- [13. Security Hardening]({{ '/docs/13-security-hardening-baseline.html' | relative_url }}) — core protection settings.
+- [14. Quick-Start Presets]({{ '/docs/14-quick-start-presets.html' | relative_url }}) — starting points for different PC configurations.
 
 ### Testing, tools, and cleanup
 
-- [16. Benchmark templates]({{ '/docs/16-benchmark-templates.html' | relative_url }}) — record results and compare changes.
-- [17. Common builds and quick cards]({{ '/docs/17-common-builds-quick-cards.html' | relative_url }}) — reference points for different builds.
-- [18. Optimization tools and evidence]({{ '/docs/18-optimization-tools-evidence.html' | relative_url }}) — evaluate third-party tools.
-- [19. Disk cleanup]({{ '/docs/19-ai-software-and-disk-cleanup.html' | relative_url }}) — remove unused software and reclaim disk space.
+- [16. Benchmark Templates]({{ '/docs/16-benchmark-templates.html' | relative_url }}) — record results and compare changes.
+- [17. Common Builds]({{ '/docs/17-common-builds-quick-cards.html' | relative_url }}) — reference points for different builds.
+- [18. Optimization Tools]({{ '/docs/18-optimization-tools-evidence.html' | relative_url }}) — evaluate third-party tools.
+- [19. Disk Cleanup]({{ '/docs/19-ai-software-and-disk-cleanup.html' | relative_url }}) — remove unused software and reclaim disk space.
 
 ## How to use this guide
 

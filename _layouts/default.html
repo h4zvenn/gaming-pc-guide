@@ -4,7 +4,8 @@
 {% assign russian_url = '/ru/' %}
 
 
-{% assign site_name = site.title %}
+
+{% assign site_name = site.title | default: 'Gaming PC Guide' %}
 {% assign navigation_label = 'Main navigation' %}
 {% assign skip_label = 'Skip to content' %}
 {% assign home_label = 'Home' %}
@@ -14,40 +15,47 @@
 {% assign fallback_label = 'English version — translation is not available yet' %}
 
 
+
 {% if current_lang == 'ru' %}
-  {% assign home_url = '/ru/' %}
-  {% assign site_name = 'Оптимизация игрового ПК на Windows 11' %}
-  {% assign navigation_label = 'Основная навигация' %}
-  {% assign skip_label = 'Перейти к содержимому' %}
-  {% assign home_label = 'Главная' %}
-  {% assign issues_label = 'Сообщить об ошибке' %}
-  {% assign discussions_label = 'Обсуждения' %}
-  {% assign footer_text = 'Найди узкое место. Измени одну настройку. Измерь результат.' %}
-  {% assign fallback_label = 'Английская версия — перевод пока недоступен' %}
+{% assign home_url = '/ru/' %}
+{% assign site_name = 'Оптимизация игрового ПК на Windows 11' %}
+{% assign navigation_label = 'Основная навигация' %}
+{% assign skip_label = 'Перейти к содержимому' %}
+{% assign home_label = 'Главная' %}
+{% assign issues_label = 'Сообщить об ошибке' %}
+{% assign discussions_label = 'Обсуждения' %}
+{% assign footer_text = 'Найди узкое место. Измени одну настройку. Измерь результат.' %}
+{% assign fallback_label = 'Английская версия — перевод пока недоступен' %}
 {% endif %}
+
 
 
 {% if page.translation_key %}
-  {% assign translations = site.pages | where: 'translation_key', page.translation_key %}
-  {% for translated_page in translations %}
-    {% if translated_page.lang == 'en' %}
-      {% assign english_url = translated_page.url %}
-    {% elsif translated_page.lang == 'ru' %}
-      {% assign russian_url = translated_page.url %}
-    {% endif %}
-  {% endfor %}
+{% assign translations = site.pages | where: 'translation_key', page.translation_key %}
+{% for translated_page in translations %}
+{% if translated_page.lang == 'en' %}
+{% assign english_url = translated_page.url %}
+{% elsif translated_page.lang == 'ru' %}
+{% assign russian_url = translated_page.url %}
+{% endif %}
+{% endfor %}
 {% endif %}
 
 
-{% assign navigation_items = '01-before-you-start|Start|Начать;02-find-the-bottleneck|Bottleneck|Узкое место;06-gpu-settings|GPU|Видеокарта;15-troubleshooting-decision-trees|Troubleshoot|Проблемы;16-benchmark-templates|Benchmark|Тестирование' | split: ';' %}
+
+{% assign navigation_items = '01-before-you-start|Start|Начать;02-find-the-bottleneck|Bottleneck|Узкое
+место;06-gpu-settings|GPU|Видеокарта;15-troubleshooting-decision-trees|Troubleshoot|Проблемы;16-benchmark-templates|Benchmark|Тестирование'
+| split: ';' %}
 <!DOCTYPE html>
 <html lang="{{ current_lang | escape }}">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <title>{% if page.title %}{{ page.title | escape }} — {% endif %}{{ site_name | escape }}</title>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
+
 
 
   <style>
@@ -71,6 +79,7 @@
     }
 
 
+
     *,
     *::before,
     *::after {
@@ -78,9 +87,11 @@
     }
 
 
+
     html {
       scroll-padding-top: 24px;
     }
+
 
 
     body {
@@ -100,16 +111,19 @@
     }
 
 
+
     a {
       color: var(--accent);
       text-underline-offset: 3px;
     }
 
 
+
     a:hover {
       color: var(--accent-hover);
       text-decoration: underline;
     }
+
 
 
     a:focus-visible {
@@ -119,11 +133,13 @@
     }
 
 
+
     img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
     }
+
 
 
     .container {
@@ -132,6 +148,7 @@
       margin: 0 auto;
       padding: 0 24px;
     }
+
 
 
     .skip-link {
@@ -148,9 +165,11 @@
     }
 
 
+
     .skip-link:focus {
       transform: translateY(0);
     }
+
 
 
     .site-header {
@@ -164,12 +183,14 @@
     }
 
 
+
     .header-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
+
 
 
     .site-title {
@@ -182,10 +203,12 @@
     }
 
 
+
     .site-title:hover {
       color: var(--accent-hover);
       text-decoration: none;
     }
+
 
 
     .language-switcher {
@@ -199,6 +222,7 @@
     }
 
 
+
     .language-switcher a {
       padding: 5px 11px;
       border-radius: 7px;
@@ -209,10 +233,12 @@
     }
 
 
+
     .language-switcher a:hover {
       color: var(--text);
       background: var(--surface-soft);
     }
+
 
 
     .language-switcher a[aria-current="true"] {
@@ -221,12 +247,14 @@
     }
 
 
+
     .site-nav {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
       margin-top: 16px;
     }
+
 
 
     .site-nav a {
@@ -238,6 +266,7 @@
     }
 
 
+
     .site-nav a:hover,
     .site-nav a[aria-current="page"] {
       color: var(--text);
@@ -245,10 +274,12 @@
     }
 
 
+
     .site-main {
       flex: 1;
       padding: 36px 0 56px;
     }
+
 
 
     .hero {
@@ -263,6 +294,7 @@
     }
 
 
+
     .hero h1 {
       max-width: 850px;
       margin: 0 0 18px;
@@ -272,12 +304,14 @@
     }
 
 
+
     .hero p {
       max-width: 760px;
       margin: 0;
       color: var(--muted);
       font-size: 1.08rem;
     }
+
 
 
     h1,
@@ -289,10 +323,12 @@
     }
 
 
+
     h2 {
       margin-top: 2rem;
       letter-spacing: -0.02em;
     }
+
 
 
     .steps,
@@ -303,14 +339,17 @@
     }
 
 
+
     .steps {
       grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
 
 
+
     .card-grid {
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     }
+
 
 
     .step,
@@ -324,10 +363,12 @@
     }
 
 
+
     .step h3,
     .card h4 {
       margin: 0 0 10px;
     }
+
 
 
     .step p,
@@ -338,10 +379,12 @@
     }
 
 
+
     .card a {
       color: var(--accent);
       text-decoration: none;
     }
+
 
 
     .card:hover {
@@ -350,12 +393,14 @@
     }
 
 
+
     .doc {
       display: grid;
       grid-template-columns: 230px minmax(0, 1fr);
       align-items: start;
       gap: 28px;
     }
+
 
 
     .doc-sidebar {
@@ -367,6 +412,7 @@
     }
 
 
+
     .doc-sidebar h3 {
       margin: 22px 0 8px;
       color: var(--muted);
@@ -376,9 +422,11 @@
     }
 
 
+
     .doc-sidebar h3:first-child {
       margin-top: 0;
     }
+
 
 
     .doc-sidebar ul {
@@ -388,9 +436,11 @@
     }
 
 
+
     .doc-sidebar li {
       margin: 3px 0;
     }
+
 
 
     .doc-sidebar a {
@@ -402,10 +452,12 @@
     }
 
 
+
     .doc-sidebar a:hover {
       color: var(--text);
       background: var(--accent-soft);
     }
+
 
 
     .doc-content {
@@ -418,11 +470,13 @@
     }
 
 
+
     .doc-content h1 {
       margin-top: 0;
       font-size: clamp(1.7rem, 3vw, 2.3rem);
       letter-spacing: -0.03em;
     }
+
 
 
     .doc-content h2 {
@@ -432,10 +486,12 @@
     }
 
 
+
     .doc-content h3 {
       margin-top: 1.6rem;
       font-size: 1.15rem;
     }
+
 
 
     .doc-content ul,
@@ -444,14 +500,17 @@
     }
 
 
+
     .doc-content li {
       margin: 0.35rem 0;
     }
 
 
+
     .doc-content strong {
       color: #ffffff;
     }
+
 
 
     table {
@@ -465,6 +524,7 @@
     }
 
 
+
     th,
     td {
       padding: 11px 14px;
@@ -474,15 +534,18 @@
     }
 
 
+
     th {
       background: var(--surface-soft);
       font-weight: 650;
     }
 
 
+
     tbody tr:nth-child(even) td {
       background: rgb(22 32 46 / 45%);
     }
+
 
 
     code {
@@ -496,6 +559,7 @@
     }
 
 
+
     pre {
       max-width: 100%;
       padding: 18px;
@@ -506,6 +570,7 @@
     }
 
 
+
     pre code {
       padding: 0;
       background: none;
@@ -513,6 +578,7 @@
       color: #e5edf8;
       overflow-wrap: normal;
     }
+
 
 
     blockquote {
@@ -525,9 +591,11 @@
     }
 
 
+
     blockquote p {
       margin: 0;
     }
+
 
 
     hr {
@@ -535,6 +603,7 @@
       border: 0;
       border-top: 1px solid var(--border);
     }
+
 
 
     .callout {
@@ -547,9 +616,11 @@
     }
 
 
+
     .callout p {
       margin: 0;
     }
+
 
 
     .callout-info {
@@ -557,9 +628,11 @@
     }
 
 
+
     .callout-tip {
       border-left-color: var(--success);
     }
+
 
 
     .callout-important {
@@ -567,14 +640,17 @@
     }
 
 
+
     .callout-warning {
       border-left-color: var(--warning);
     }
 
 
+
     .callout-danger {
       border-left-color: var(--danger);
     }
+
 
 
     .site-footer {
@@ -586,9 +662,11 @@
     }
 
 
+
     .site-footer p {
       margin: 6px 0;
     }
+
 
 
     .footer-links {
@@ -598,10 +676,12 @@
     }
 
 
+
     @media (max-width: 850px) {
       .doc {
         grid-template-columns: minmax(0, 1fr);
       }
+
 
 
       .doc-sidebar {
@@ -611,10 +691,12 @@
     }
 
 
+
     @media (max-width: 480px) {
       .container {
         padding: 0 16px;
       }
+
 
 
       .header-top {
@@ -623,14 +705,17 @@
       }
 
 
+
       .site-title {
         font-size: 1rem;
       }
 
 
+
       .language-switcher a {
         padding: 5px 8px;
       }
+
 
 
       .site-nav a {
@@ -639,9 +724,11 @@
       }
 
 
+
       .site-main {
         padding-top: 22px;
       }
+
 
 
       .steps,
@@ -653,8 +740,10 @@
 </head>
 
 
+
 <body>
   <a class="skip-link" href="#main-content">{{ skip_label }}</a>
+
 
 
   <header class="site-header">
@@ -665,56 +754,52 @@
         </a>
 
 
-        <nav class="language-switcher" aria-label="Language">
-          <a href="{{ english_url | relative_url }}"
-             lang="en"
-             hreflang="en"
-             {% if current_lang == 'en' %}aria-current="true"{% endif %}>EN</a>
-          <a href="{{ russian_url | relative_url }}"
-             lang="ru"
-             hreflang="ru"
-             {% if current_lang == 'ru' %}aria-current="true"{% endif %}>RU</a>
-        </nav>
+
+        {% include language-switcher.html %}
       </div>
 
 
+
       <nav class="site-nav" aria-label="{{ navigation_label }}">
-        <a href="{{ home_url | relative_url }}"
-           {% if page.url == home_url %}aria-current="page"{% endif %}>
+        <a href="{{ home_url | relative_url }}" {% if page.url==home_url %}aria-current="page" {% endif %}>
           {{ home_label }}
         </a>
 
 
+
         {% for item in navigation_items %}
-          {% assign fields = item | split: '|' %}
-          {% assign target_url = '/docs/' | append: fields[0] | append: '.html' %}
-          {% assign link_label = fields[1] %}
-          {% assign english_fallback = false %}
+        {% assign fields = item | split: '|' %}
+        {% assign target_url = '/docs/' | append: fields[0] | append: '.html' %}
+        {% assign link_label = fields[1] %}
+        {% assign english_fallback = false %}
 
 
-          {% if current_lang == 'ru' %}
-            {% assign link_label = fields[2] %}
-            {% assign russian_candidate = '/ru' | append: target_url %}
-            {% assign russian_page = site.pages | where: 'url', russian_candidate | first %}
+
+        {% if current_lang == 'ru' %}
+        {% assign link_label = fields[2] %}
+        {% assign russian_candidate = '/ru' | append: target_url %}
+        {% assign russian_page = site.pages | where: 'url', russian_candidate | first %}
 
 
-            {% if russian_page %}
-              {% assign target_url = russian_page.url %}
-            {% else %}
-              {% assign english_fallback = true %}
-            {% endif %}
-          {% endif %}
+
+        {% if russian_page %}
+        {% assign target_url = russian_page.url %}
+        {% else %}
+        {% assign english_fallback = true %}
+        {% endif %}
+        {% endif %}
 
 
-          <a href="{{ target_url | relative_url }}"
-             {% if page.url == target_url %}aria-current="page"{% endif %}
-             {% if english_fallback %}hreflang="en" title="{{ fallback_label }}"{% endif %}>
-            {{ link_label }}{% if english_fallback %} (EN){% endif %}
-          </a>
+
+        <a href="{{ target_url | relative_url }}" {% if page.url==target_url %}aria-current="page" {% endif %} {% if
+          english_fallback %}hreflang="en" title="{{ fallback_label }}" {% endif %}>
+          {{ link_label }}{% if english_fallback %} (EN){% endif %}
+        </a>
         {% endfor %}
       </nav>
     </div>
   </header>
+
 
 
   <main id="main-content" class="site-main" tabindex="-1">
@@ -722,6 +807,7 @@
       {{ content }}
     </div>
   </main>
+
 
 
   <footer class="site-footer">
@@ -736,4 +822,5 @@
     </div>
   </footer>
 </body>
+
 </html>

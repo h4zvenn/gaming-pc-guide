@@ -7,6 +7,7 @@ translation_key: game-minecraft-java
 permalink: /docs/games/minecraft-java.html
 ---
 
+
 > Improve Minecraft Java performance by reducing chunk-loading stutter, managing RAM allocation, and testing mods one at a time. Java and Bedrock are separate editions and require different guidance.
 
 ## Applicability
@@ -169,4 +170,4 @@ See [Benchmark Templates](../16-benchmark-templates.html) for the full protocol.
 
 - [Game Guides](index.html)
 - [Benchmark Templates](../16-benchmark-templates.html)
-- [Troubleshooting Decision Trees](../15-troubleshooting-decision-trees.html)
+- [Troubleshooting Trees](../15-troubleshooting-decision-trees.html)
