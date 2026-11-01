@@ -8,7 +8,7 @@
 - Added five vendor-specific GPU and CPU setup guides.
 - Added generated sitemap and crawler instructions, plus canonical, social-sharing, and structured-data metadata.
 - Added article breadcrumbs, table of contents, a left page-list sidebar, and localized copy buttons.
-- Redesigned the home pages (compact hero, problem tiles, guide lists) and made the site desktop-only by request: the mobile menu, viewport meta tag, and responsive media queries were removed, so phones show the scaled desktop layout.
+- Redesigned the home pages (compact hero, problem tiles, guide lists) with a desktop-only layout (no viewport meta, media queries, or mobile menu) and an English-only main header; the EN/RU switcher stays in the header and each Russian doc links to its English original.
 - Added automatic previous/next navigation for system articles only.
 - Expanded the link checker to validate local links, image/source targets, and fragment identifiers.
 - Added substantive Russian translations for PowerShell diagnostics, GPU settings, temperature and stability, what-not-to-do, FAQ, quick-start presets, troubleshooting, and benchmark guides.

@@ -13,8 +13,8 @@ permalink: /ru/
     <h1>Найди причину. Измени одно. Проверь результат.</h1>
     <p class="hero-subtitle">Практическая диагностика для геймеров: без рискованных твиков и обещаний гарантированного FPS, каждое изменение проверяется повторяемым тестом.</p>
     <div class="hero-actions">
-      <a class="button button-primary" href="{{ '/ru/docs/start-here.html' | relative_url }}">Начать с проблемы</a>
-      <a class="button button-secondary" href="{{ '/ru/docs/' | relative_url }}">Все руководства</a>
+      <a class="button button-primary" href="{{ '/ru/docs/start-here.html' | relative_url }}">Начать оптимизацию</a>
+      <a class="button button-secondary" href="{{ '/ru/docs/games/' | relative_url }}">Руководства по играм</a>
     </div>
   </div>
   <ol class="home-method">

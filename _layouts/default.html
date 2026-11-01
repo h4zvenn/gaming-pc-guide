@@ -2,7 +2,6 @@
 {% assign home_url = '/' %}
 {% assign english_url = '/' %}
 {% assign russian_url = '/ru/' %}
-{% assign russian_home_url = '/ru/' %}
 {% assign start_url = '/docs/start-here.html' %}
 {% assign windows_url = '/docs/' %}
 {% assign games_url = '/docs/games/' %}
@@ -14,8 +13,6 @@
 {% assign start_label = 'Start here' %}
 {% assign windows_label = 'Windows' %}
 {% assign games_label = 'Games' %}
-{% assign language_label = 'Русский' %}
-{% assign menu_label = 'Menu' %}
 {% assign copy_label = 'Copy' %}
 {% assign copied_label = 'Copied' %}
 {% assign copy_failed_label = 'Copy failed' %}
@@ -29,16 +26,9 @@
 {% if current_lang == 'ru' %}
 {% assign home_url = '/ru/' %}
 {% assign site_name = 'Оптимизация игрового ПК на Windows 11' %}
-{% assign navigation_label = 'Основная навигация' %}
-{% assign skip_label = 'Перейти к содержимому' %}
-{% assign home_label = 'Главная' %}
 {% assign start_url = '/ru/docs/start-here.html' %}
 {% assign windows_url = '/ru/docs/' %}
 {% assign games_url = '/ru/docs/games/' %}
-{% assign start_label = 'Начать' %}
-{% assign windows_label = 'Windows' %}
-{% assign games_label = 'Игры' %}
-{% assign menu_label = 'Меню' %}
 {% assign copy_label = 'Копировать' %}
 {% assign copied_label = 'Скопировано' %}
 {% assign copy_failed_label = 'Не удалось скопировать' %}
@@ -158,7 +148,6 @@
           <a href="{{ start_url | relative_url }}" {% if page.url == start_url %}aria-current="page"{% endif %} {% if current_lang == 'ru' %}hreflang="ru"{% endif %}>{{ start_label }}</a>
           <a href="{{ windows_url | relative_url }}" {% if page.url == windows_url %}aria-current="page"{% endif %}>{{ windows_label }}</a>
           <a href="{{ games_url | relative_url }}" {% if page.url == games_url %}aria-current="page"{% endif %}>{{ games_label }}</a>
-          <a href="{{ russian_home_url | relative_url }}" lang="ru" hreflang="ru" {% if current_lang == 'ru' %}aria-current="page"{% endif %}>{{ language_label }}</a>
         </nav>
       </div>
     </div>

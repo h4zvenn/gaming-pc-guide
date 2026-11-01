@@ -13,8 +13,8 @@ permalink: /
     <h1>Find the cause. Change one thing. Measure the result.</h1>
     <p class="hero-subtitle">Practical diagnostics for PC gamers: no risky tweaks, no guaranteed-FPS promises, every change verified with a repeatable test.</p>
     <div class="hero-actions">
-      <a class="button button-primary" href="{{ '/docs/start-here.html' | relative_url }}">Start with your problem</a>
-      <a class="button button-secondary" href="{{ '/docs/' | relative_url }}">Browse all guides</a>
+      <a class="button button-primary" href="{{ '/docs/start-here.html' | relative_url }}">Start optimization</a>
+      <a class="button button-secondary" href="{{ '/docs/games/' | relative_url }}">Browse game guides</a>
     </div>
   </div>
   <ol class="home-method">

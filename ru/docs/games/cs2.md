@@ -9,7 +9,7 @@ permalink: /ru/docs/games/cs2.html
 
 > **Статус:** перевод в процессе.  
 > Авторитетная английская версия доступна здесь:  
-> [Counter-Strike 2](https://h4zvenn.github.io/gaming-pc-guide/docs/games/cs2.html)
+> [Counter-Strike 2]({{ '/docs/games/cs2.html' | relative_url }})
 
 ## Что будет в этом разделе
 
@@ -17,7 +17,7 @@ permalink: /ru/docs/games/cs2.html
 
 Пока используй английскую версию:
 
-- [Counter-Strike 2 — EN](https://h4zvenn.github.io/gaming-pc-guide/docs/games/cs2.html)
+- [Counter-Strike 2 — EN]({{ '/docs/games/cs2.html' | relative_url }})
 
 ## Принципы проекта
 

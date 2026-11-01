@@ -814,3 +814,35 @@
       flex-wrap: wrap;
       gap: 8px 18px;
     }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      text-decoration: none;
+    }
+
+    .back-to-top:hover {
+      color: var(--text);
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .doc-nav h3 + ul {
+      margin-bottom: 16px;
+    }
+
+    .doc-nav h3 ~ h3 {
+      margin-top: 8px;
+    }
+
+    .original-link {
+      max-width: 80ch;
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
