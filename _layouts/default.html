@@ -142,14 +142,11 @@
         {% include language-switcher.html %}
       </div>
 
-      <div>
-        <nav id="site-navigation" class="site-nav" aria-label="{{ navigation_label }}">
-          <a href="{{ home_url | relative_url }}" {% if page.url == home_url %}aria-current="page"{% endif %}>{{ home_label }}</a>
-          <a href="{{ start_url | relative_url }}" {% if page.url == start_url %}aria-current="page"{% endif %} {% if current_lang == 'ru' %}hreflang="ru"{% endif %}>{{ start_label }}</a>
-          <a href="{{ windows_url | relative_url }}" {% if page.url == windows_url %}aria-current="page"{% endif %}>{{ windows_label }}</a>
-          <a href="{{ games_url | relative_url }}" {% if page.url == games_url %}aria-current="page"{% endif %}>{{ games_label }}</a>
-        </nav>
-      </div>
+      <nav id="site-navigation" class="site-nav" aria-label="{{ navigation_label }}">
+        <a href="{{ start_url | relative_url }}" {% if page.url == start_url %}aria-current="page"{% endif %} {% if current_lang == 'ru' %}hreflang="ru"{% endif %}>{{ start_label }}</a>
+        <a href="{{ windows_url | relative_url }}" {% if page.url == windows_url %}aria-current="page"{% endif %}>{{ windows_label }}</a>
+        <a href="{{ games_url | relative_url }}" {% if page.url == games_url %}aria-current="page"{% endif %}>{{ games_label }}</a>
+      </nav>
     </div>
   </header>
 
