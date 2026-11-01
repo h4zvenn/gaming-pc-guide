@@ -71,9 +71,8 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <title>{% if page.title %}{{ page.title | escape }} — {% endif %}{{ site_name | escape }}</title>
+  <title>{% if page.title and page.title != site_name %}{{ page.title | escape }} — {% endif %}{{ site_name | escape }}</title>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <meta property="og:type" content="{% if page.layout == 'doc' %}article{% else %}website{% endif %}">
@@ -153,8 +152,7 @@
         {% include language-switcher.html %}
       </div>
 
-      <details class="site-nav-menu" open>
-        <summary class="site-nav-toggle" aria-controls="site-navigation">{{ menu_label }}</summary>
+      <div>
         <nav id="site-navigation" class="site-nav" aria-label="{{ navigation_label }}">
           <a href="{{ home_url | relative_url }}" {% if page.url == home_url %}aria-current="page"{% endif %}>{{ home_label }}</a>
           <a href="{{ start_url | relative_url }}" {% if page.url == start_url %}aria-current="page"{% endif %} {% if current_lang == 'ru' %}hreflang="ru"{% endif %}>{{ start_label }}</a>
@@ -162,7 +160,7 @@
           <a href="{{ games_url | relative_url }}" {% if page.url == games_url %}aria-current="page"{% endif %}>{{ games_label }}</a>
           <a href="{{ russian_home_url | relative_url }}" lang="ru" hreflang="ru" {% if current_lang == 'ru' %}aria-current="page"{% endif %}>{{ language_label }}</a>
         </nav>
-      </details>
+      </div>
     </div>
   </header>
 
