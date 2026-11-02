@@ -26,7 +26,7 @@ Windows 11 is the primary operating system covered. Windows 10 is treated as a l
 
 | 01 Prepare | 02 Diagnose | 03 Choose | 04 Verify |
 | --- | --- | --- | --- |
-| Create a restore point and record your baseline. | Find the component or setting causing the problem. | Pick the guide for the issue you diagnosed. | Benchmark the result. Keep or revert the change. |
+| Create a restore point and record your baseline.<br>[**Before You Start →**](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/01-before-you-start.html) | Find the component or setting causing the problem.<br>[**Find the Bottleneck →**](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/02-find-the-bottleneck.html) | Pick the guide for the issue you diagnosed.<br>[**Quick-Start Presets →**](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/14-quick-start-presets.html) | Benchmark the result. Keep or revert the change.<br>[**Benchmark Templates →**](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/16-benchmark-templates.html) |
 
 > **Rule:** If you cannot measure it, you cannot confidently say it helped.
 
