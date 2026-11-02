@@ -7,7 +7,7 @@ Find the real bottleneck. Change one setting. Measure the result.
 
 <br>
 
-<a href="https://jekyllrb.com/"><img src="https://img.shields.io/badge/Jekyll-4.x-CC0000?style=flat-square&logo=jekyll&logoColor=white" alt="Jekyll"></a> <a href="https://h4zvenn.github.io/gaming-pc-optimization-guide/"><img src="https://img.shields.io/badge/GitHub%20Pages-Live-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub Pages"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2ea44f?style=flat-square" alt="License: MIT"></a> <a href="https://github.com/h4zvenn/gaming-pc-optimization-guide/pulls"><img src="https://img.shields.io/badge/PRs-welcome-ff6b35?style=flat-square" alt="PRs Welcome"></a> <a href="https://discord.gg/jPYsHSapHx"><img src="https://img.shields.io/badge/Discord-Join-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"></a>
+<a href="https://h4zvenn.github.io/gaming-pc-optimization-guide/"><img src="https://img.shields.io/badge/GitHub%20Pages-Live-181717?style=flat-square&logo=github&logoColor=white" alt="GitHub Pages"></a> <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2ea44f?style=flat-square" alt="License: MIT"></a> <a href="https://github.com/h4zvenn/gaming-pc-optimization-guide/pulls"><img src="https://img.shields.io/badge/PRs-welcome-ff6b35?style=flat-square" alt="PRs Welcome"></a>
 
 <br><br>
 
