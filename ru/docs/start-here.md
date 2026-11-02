@@ -21,6 +21,7 @@ permalink: /ru/docs/start-here.html
 | Скачки пинга, откаты, разрывы соединения | [Сеть, Wi-Fi и онлайн-задержка](20-network-and-wifi.html) | [Шаблоны бенчмарков](16-benchmark-templates.html) |
 | Ноутбук или портативный ПК работает медленнее ожидаемого | [Ноутбуки и портативные ПК](21-laptops-and-handhelds.html) | [Температуры и стабильность](10-temperatures-stability.html) |
 | Запись или стрим снижает FPS | [Стриминг и запись игры](22-streaming-and-capture.html) | [Шаблоны бенчмарков](16-benchmark-templates.html) |
+| Хочу проверить безопасное обратимое изменение | [Практические безопасные процедуры оптимизации](24-safe-optimization-playbook.html) | [Шаблоны бенчмарков](16-benchmark-templates.html) |
 | Не знаю, с чего начать | [Подготовка перед оптимизацией](01-before-you-start.html) | [Стартовые наборы — EN](../../docs/14-quick-start-presets.html) |
 
 ## Перед изменениями

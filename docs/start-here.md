@@ -21,6 +21,7 @@ For the complete cross-hardware workflow, start with the [Ultimate PC Gaming Opt
 | Ping spikes, rubber-banding, disconnects | [Network, Wi-Fi, and online latency](20-network-and-wifi.html) | [Benchmark templates](16-benchmark-templates.html) |
 | Laptop or handheld runs slower than expected | [Laptops and handhelds](21-laptops-and-handhelds.html) | [Temperatures and stability](10-temperatures-stability.html) |
 | Recording or streaming costs FPS | [Streaming and capture](22-streaming-and-capture.html) | [Benchmark templates](16-benchmark-templates.html) |
+| I want to test a safe, reversible change | [Safe Optimization Playbook](24-safe-optimization-playbook.html) | [Benchmark templates](16-benchmark-templates.html) |
 | I do not know where to start | [Before you start](01-before-you-start.html) | [Quick-start presets](14-quick-start-presets.html) |
 
 ## Before you change anything

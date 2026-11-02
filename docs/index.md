@@ -44,6 +44,7 @@ Start with the [Ultimate PC Gaming Optimization Guide 2026](ultimate-pc-gaming-g
 | [Common Builds](17-common-builds-quick-cards.html) | Compare common hardware configurations. | 🟡 In progress |
 | [Optimization Tools](18-optimization-tools-evidence.html) | Evaluate tools using traceable evidence. | 🟡 In progress |
 | [Software and Disk Cleanup](19-ai-software-and-disk-cleanup.html) | Remove selected apps and reclaim disk space safely. | 🟡 In progress |
+| [Safe Optimization Playbook](24-safe-optimization-playbook.html) | Follow manual procedures with compatibility, risk, rollback, and validation details. | Available |
 
 ## Platform-specific and advanced
 

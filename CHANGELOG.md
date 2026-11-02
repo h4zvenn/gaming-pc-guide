@@ -4,6 +4,10 @@ All notable changes to this project are documented in this file.
 
 ## Unreleased
 
+### Added
+
+- Bilingual safe optimization playbook with manual procedure cards, compatibility and risk notes, rollback steps, and repeatable validation guidance.
+
 ## v1.4.0 - 2026-11-01
 
 ### Added
