@@ -4,7 +4,7 @@ A universal, evidence-based guide to optimizing gaming PCs across hardware and g
 
 Find the real bottleneck. Change one setting. Measure the result.
 
-[**📖 Main guide**](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/ultimate-pc-gaming-guide-2026.html) • [**🏠 Website**](https://h4zvenn.github.io/gaming-pc-optimization-guide/) • [**🎯 Game guides**](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/games/) • [**🔎 Search**](https://h4zvenn.github.io/gaming-pc-optimization-guide/search/) • [**📦 Releases**](https://github.com/h4zvenn/gaming-pc-optimization-guide/releases) • [**🐞 Report an issue**](https://github.com/h4zvenn/gaming-pc-optimization-guide/issues)
+[**📖 Main guide**](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/ultimate-pc-gaming-guide-2026.html) • [**💬 Discord**](https://discord.gg/U7uGQzK48F) • [**🎯 Game guides**](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/games/) • [**🔎 Search**](https://h4zvenn.github.io/gaming-pc-optimization-guide/search/) • [**📦 Releases**](https://github.com/h4zvenn/gaming-pc-optimization-guide/releases) • [**🐞 Report an issue**](https://github.com/h4zvenn/gaming-pc-optimization-guide/issues)
 
 ## ✨ What is this?
 
