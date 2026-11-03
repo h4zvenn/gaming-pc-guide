@@ -159,7 +159,12 @@
     (() => {
       const content = document.querySelector('.doc-content');
       const toc = document.querySelector('#table-of-contents');
-      if (content && toc) {
+      
+      // Check if TOC is disabled for this page using data attribute or class
+      const docElement = document.querySelector('.doc');
+      const tocDisabled = docElement && docElement.classList.contains('toc-disabled');
+      
+      if (content && toc && !tocDisabled) {
         content.querySelectorAll('h2, h3').forEach((heading, index) => {
           if (!heading.id) {
             heading.id = `section-${index + 1}`;
@@ -176,6 +181,12 @@
         });
         if (toc.children.length === 0) {
           toc.closest('.doc-sidebar').hidden = true;
+        }
+      } else if (tocDisabled) {
+        // If TOC is disabled, hide the sidebar
+        const docSidebar = document.querySelector('.doc-sidebar');
+        if (docSidebar) {
+          docSidebar.hidden = true;
         }
       }
 

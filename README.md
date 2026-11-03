@@ -43,19 +43,6 @@ Most "FPS boost" advice is copied from forum to forum and never tested. This pro
 
 ## 🧭 What's inside
 
-| Area | What you get | Start here |
-| :--- | :--- | :--- |
-| 🩺 **Diagnostics** | CPU, GPU, RAM, storage, temperatures, background load | [Find the Bottleneck](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/02-find-the-bottleneck.html) |
-| ⚙️ **Windows & hardware** | Windows 11 guidance, Windows 10 legacy notes, BIOS and component settings | [Windows 11 Gaming Settings](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/05-windows-11.html) |
-| 🎨 **GPU settings** | NVIDIA, AMD, VRR, latency and graphics options | [GPU Settings](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/06-gpu-settings.html) |
-| 🌐 **Network & laptops** | Wi-Fi and latency, laptops and handhelds, streaming and capture | [Network & Wi-Fi](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/20-network-and-wifi.html) |
-| 🧪 **Benchmarking** | Repeatable FPS, frame-time and stability testing | [Benchmark Templates](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/16-benchmark-templates.html) |
-| 🎮 **Game guides** | CS2, VALORANT, PUBG, Minecraft Java, World of Tanks | [Game guides](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/games/) |
-| 🛡️ **Safety** | Rollback paths, security basics and what not to do | [What Not To Do](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/11-what-not-to-do.html) |
-| 🧰 **Tools** | Read-only Windows diagnostics menu (never changes settings) | [Tools](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/tools.html) |
-
-## 📚 Guide library
-
 <details>
 <summary><b>Click to expand guide library</b></summary>
 
@@ -66,7 +53,7 @@ Most "FPS boost" advice is copied from forum to forum and never tested. This pro
 | 🏁 **Start and overview** | [Start Here](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/start-here.html)<br>[Ultimate PC Gaming Optimization Guide 2026](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/ultimate-pc-gaming-guide-2026.html)<br>[Windows 10 Legacy Notes](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/windows-10-legacy.html) |
 | 🔬 **Preparation and diagnostics** | [01 · Before You Start](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/01-before-you-start.html)<br>[02 · Find the Bottleneck](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/02-find-the-bottleneck.html)<br>[09 · PowerShell Diagnostics](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/09-powershell-diagnostics.html)<br>[10 · Temperatures & Stability](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/10-temperatures-stability.html)<br>[15 · Troubleshooting Trees](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/15-troubleshooting-decision-trees.html) |
 | 🖥️ **Windows, hardware and graphics** | [03 · BIOS & Hardware](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/03-bios-and-hardware.html)<br>[04 · Drivers & Updates](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/04-drivers-and-updates.html)<br>[05 · Windows 11 Gaming Settings](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/05-windows-11.html)<br>[06 · GPU Settings](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/06-gpu-settings.html)<br>[07 · Background Apps](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/07-background-apps.html)<br>[08 · Services & Security](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/08-services-and-security.html) |
-| 🔧 **Vendor hardware guides** | [AMD](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/hardware/amd.html)<br>[AMD CPU](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/hardware/amd-cpu.html)<br>[Intel CPU](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/hardware/intel-cpu.html)<br>[Intel GPU](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/hardware/intel-gpu.html)<br>[NVIDIA](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/hardware/nvidia.html) |
+| 🧩 **Vendor hardware guides** | [AMD](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/hardware/amd.html)<br>[AMD CPU](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/hardware/amd-cpu.html)<br>[Intel CPU](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/hardware/intel-cpu.html)<br>[Intel GPU](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/hardware/intel-gpu.html)<br>[NVIDIA](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/hardware/nvidia.html) |
 | 📌 **Reference and starting points** | [11 · What Not To Do](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/11-what-not-to-do.html)<br>[12 · FAQ](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/12-faq.html)<br>[13 · Security Hardening](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/13-security-hardening-baseline.html)<br>[14 · Quick-Start Presets](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/14-quick-start-presets.html)<br>[Glossary](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/glossary.html) |
 | 📊 **Testing, tools and cleanup** | [16 · Benchmark Templates](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/16-benchmark-templates.html)<br>[17 · Common Builds & Quick Cards](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/17-common-builds-quick-cards.html)<br>[18 · Optimization Tools (Evidence)](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/18-optimization-tools-evidence.html)<br>[19 · AI Software & Disk Cleanup](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/19-ai-software-and-disk-cleanup.html)<br>[Tools](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/tools.html) |
 | 🧩 **Special cases and advanced** | [20 · Network & Wi-Fi](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/20-network-and-wifi.html)<br>[21 · Laptops & Handhelds](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/21-laptops-and-handhelds.html)<br>[22 · Streaming & Capture](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/22-streaming-and-capture.html)<br>[23 · Overclocking & Undervolting](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/23-overclocking-and-undervolting.html)<br>[24 · Safe Optimization Playbook](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/24-safe-optimization-playbook.html) |
@@ -208,5 +195,4 @@ Found a mistake? [Open an issue](https://github.com/h4zvenn/gaming-pc-optimizati
 Released under the [MIT License](LICENSE).
 
 ---
-
 <p align="center"><b>Find the bottleneck. Change one setting. Measure the result.</b></p>

@@ -5,6 +5,7 @@ description: "A universal, evidence-based workflow for improving gaming PC perfo
 lang: en
 translation_key: ultimate-pc-gaming-guide-2026
 permalink: /docs/ultimate-pc-gaming-guide-2026.html
+toc_disabled: true
 ---
 
 This is a practical starting point for gaming desktops and laptops, AMD, Intel, and NVIDIA hardware, and different game types. “Universal” means a consistent way to diagnose and test—not one set of switches that improves every PC.

@@ -54,7 +54,7 @@ layout: default
 <p class="original-link"><a href="{{ en_original.url | relative_url }}" hreflang="en" lang="en">Read the English original</a></p>
 {% endif %}
 {% endif %}
-<article class="doc">
+<article class="doc{% if page.toc_disabled %} toc-disabled{% endif %}">
   <aside class="doc-nav">
     <nav aria-label="{% if page.lang == 'ru' %}Разделы{% else %}Guides{% endif %}">
       <h3><a href="{{ windows_index | relative_url }}">{{ nav_windows_label }}</a></h3>
@@ -86,6 +86,7 @@ layout: default
     <a class="back-to-top" href="#main-content">{% if page.lang == 'ru' %}Наверх{% else %}Back to top{% endif %}</a>
   </div>
 
+  {% unless page.toc_disabled %}
   <aside class="doc-sidebar">
     <details class="doc-toc" open>
       <summary>{{ toc_label }}</summary>
@@ -94,6 +95,7 @@ layout: default
       </nav>
     </details>
   </aside>
+  {% endunless %}
 </article>
 
 {% unless page.url contains '/games/' %}
