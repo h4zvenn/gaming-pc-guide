@@ -15,10 +15,10 @@ This page would contain the search functionality for the documentation.
 
 The documentation is organized in several sections:
 
-- [Start here](/docs/start-here.html) - Get started with optimization
-- [Windows guides](/docs/) - System and hardware optimization
-- [Game guides](/docs/games/) - Game-specific settings and tips
-- [Downloads](/downloads/) - Ready-to-use configurations and templates
+- [Start here]({{ '/docs/start-here.html' | relative_url }}) - Get started with optimization
+- [Windows guides]({{ '/docs/' | relative_url }}) - System and hardware optimization
+- [Game guides]({{ '/docs/games/' | relative_url }}) - Game-specific settings and tips
+- [Downloads]({{ '/downloads/' | relative_url }}) - Ready-to-use configurations and templates
 
 ## Navigation tips
 
