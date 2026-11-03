@@ -1,7 +1,7 @@
 ---
 title: System Utilities
 layout: doc
-permalink: /docs/tools/
+permalink: /docs/tools.html
 ---
 
 # System Utilities
