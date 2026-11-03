@@ -1,32 +1,32 @@
 ---
-layout: default
+layout: doc
 title: "Поиск"
-description: "Поиск по руководствам по ключевому слову."
+description: "Поиск в документации"
 lang: ru
 translation_key: search
 permalink: /ru/search/
-search_exclude: true
 ---
 
-<h1>Поиск по руководствам</h1>
+# Поиск
 
-<form class="search-form" role="search" onsubmit="return false">
-  <label for="search-input">Ключевое слово</label>
-  <input id="search-input" type="search" autocomplete="off" placeholder="фризы, пинг, XMP, CS2…" disabled>
-</form>
+На этой странице будет функционал поиска по документации.
 
-<p id="search-status" class="search-status" aria-live="polite">Загрузка индекса…</p>
-<ul id="search-results" class="search-results"></ul>
-<noscript><p>Для поиска нужен JavaScript. Открой <a href="{{ '/ru/docs/' | relative_url }}">список руководств</a>.</p></noscript>
+## Как использовать этот сайт
 
-<script>
-  window.searchConfig = {
-    lang: 'ru',
-    index: '{{ "/search.json" | relative_url }}',
-    ready: 'Введи не менее 2 символов.',
-    none: 'Ничего не найдено.',
-    count: ' результатов.',
-    failed: 'Не удалось загрузить индекс поиска.'
-  };
-</script>
-<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
+Документация организована в несколько разделов:
+
+- [Начните здесь](/ru/docs/start-here.html) - Начало работы с оптимизацией
+- [Руководства Windows](/ru/docs/) - Оптимизация системы и оборудования  
+- [Руководства по играм](/ru/docs/games/) - Игровые настройки и советы
+- [Загрузки](/downloads/) - Готовые конфигурации и шаблоны
+
+## Советы по навигации
+
+- Используйте главное меню для перехода между разделами
+- Используйте строку поиска для нахождения конкретных тем
+- Нажимайте ссылки "Наверх" для быстрого возвращения к заголовкам разделов
+- Переключайте боковую панель оглавления, чтобы увидеть структуру страницы
+
+## Обратная связь
+
+Если у вас есть предложения по улучшению этой документации, пожалуйста, [сообщите об ошибке](https://github.com/h4zvenn/gaming-pc-optimization-guide/issues) или присоединитесь к нашим [обсуждениям](https://github.com/h4zvenn/gaming-pc-optimization-guide/discussions).

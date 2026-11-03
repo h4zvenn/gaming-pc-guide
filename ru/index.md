@@ -52,6 +52,14 @@ permalink: /ru/
     </ul>
   </section>
   <section>
+    <h2>Загрузки</h2>
+    <ul class="link-list">
+      <li><a href="{{ '/downloads/checklists/safe-optimization-checklist.html' | relative_url }}">Чек-лист оптимизации</a><span>Комплексный чек-лист для безопасной оптимизации</span></li>
+      <li><a href="{{ '/downloads/templates/performance-comparison-template.html' | relative_url }}">Шаблон сравнения</a><span>Шаблон для записи изменений производительности</span></li>
+      <li><a href="{{ '/downloads/configs/cs2-verified-configurations.html' | relative_url }}">Конфигурации CS2</a><span>Проверенные настройки для Counter-Strike 2</span></li>
+    </ul>
+  </section>
+  <section>
     <h2>Игры</h2>
     <ul class="link-list">
       <li><a href="{{ '/ru/docs/games/' | relative_url }}">Руководства по играм</a><span>Список и статусы переводов</span></li>

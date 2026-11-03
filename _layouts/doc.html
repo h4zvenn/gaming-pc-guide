@@ -80,7 +80,9 @@ layout: default
   </aside>
   <div class="doc-content">
     <h1>{{ page.title }}</h1>
-    {{ content }}
+    {% include search.html %}
+
+{{ content }}
     <a class="back-to-top" href="#main-content">{% if page.lang == 'ru' %}Наверх{% else %}Back to top{% endif %}</a>
   </div>
 

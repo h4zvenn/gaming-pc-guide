@@ -1,0 +1,30 @@
+<!-- Search functionality -->
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Search documentation..." autocomplete="off">
+  <button id="search-button" aria-label="Search">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"></circle>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+    </svg>
+  </button>
+</div>
+
+<div id="search-results" class="search-results"></div>
+
+<script>
+// Simple search functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  
+  // This would be replaced with a more sophisticated search implementation
+  // For now, it just shows a message about search functionality
+  searchInput.addEventListener('input', function() {
+    if (this.value.length > 2) {
+      searchResults.innerHTML = '<p>Search results would appear here. <br>Currently using static search index.</p>';
+    } else {
+      searchResults.innerHTML = '';
+    }
+  });
+});
+</script>

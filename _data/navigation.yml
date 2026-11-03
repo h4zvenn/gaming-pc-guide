@@ -1,0 +1,31 @@
+# Main navigation structure
+main:
+  - title: "Home"
+    url: "/"
+    icon: "home"
+    
+  - title: "Guides"
+    url: "/docs/"
+    icon: "book"
+    
+  - title: "Downloads"
+    url: "/downloads/"
+    icon: "download"
+    
+  - title: "Games"
+    url: "/docs/games/"
+    icon: "controller"
+    
+  - title: "Hardware"
+    url: "/docs/hardware/"
+    icon: "cpu"
+
+# Language switcher
+languages:
+  - code: "en"
+    name: "English"
+    url: "/"
+    
+  - code: "ru"
+    name: "Русский"
+    url: "/ru/"

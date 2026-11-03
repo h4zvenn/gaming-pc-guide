@@ -1,32 +1,11 @@
-{% assign current_lang = page.lang | default: 'en' %}
-{% assign english_url = page.url %}
-{% assign russian_url = '/ru/' %}
-
-{% if current_lang == 'ru' %}
-  {% assign english_url = '/' %}
-  {% assign russian_url = page.url %}
-{% endif %}
-
-{% if page.translation_key %}
-  {% assign translations = site.pages | where: 'translation_key', page.translation_key %}
-  {% for translated_page in translations %}
-    {% if translated_page.lang == 'en' %}
-      {% assign english_url = translated_page.url %}
-    {% elsif translated_page.lang == 'ru' %}
-      {% assign russian_url = translated_page.url %}
+<div class="language-switcher">
+  {% for lang in site.data.navigation.languages %}
+    {% if lang.code == page.lang %}
+      <span class="current-lang">{{ lang.name }}</span>
+    {% else %}
+      <a href="{{ lang.url | relative_url }}" class="lang-link">
+        {{ lang.name }}
+      </a>
     {% endif %}
   {% endfor %}
-{% endif %}
-
-
-<nav class="language-switcher" aria-label="Language">
-  <a href="{{ english_url | relative_url }}"
-     lang="en"
-     hreflang="en"
-     {% if current_lang == 'en' %}aria-current="true"{% endif %}>EN</a>
-  <span aria-hidden="true"> / </span>
-  <a href="{{ russian_url | relative_url }}"
-     lang="ru"
-     hreflang="ru"
-     {% if current_lang == 'ru' %}aria-current="true"{% endif %}>RU</a>
-</nav>
+</div>

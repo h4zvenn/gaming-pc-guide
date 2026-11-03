@@ -1,0 +1,55 @@
+<header class="site-header">
+  <div class="header-container">
+    <div class="site-title">
+      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </div>
+    
+    <!-- Mobile menu button -->
+    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+    
+    <!-- Desktop navigation -->
+    <nav class="site-nav desktop-nav">
+      <ul>
+        {% for item in site.data.navigation.main %}
+          <li>
+            <a href="{{ item.url | relative_url }}" 
+               class="{% if page.url == item.url %}active{% endif %}">
+              {{ item.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    
+    <!-- Language switcher -->
+    <div class="language-switcher">
+      {% for lang in site.data.navigation.languages %}
+        {% if lang.code == page.lang %}
+          <span class="current-lang">{{ lang.name }}</span>
+        {% else %}
+          <a href="{{ lang.url | relative_url }}" class="lang-link">
+            {{ lang.name }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</header>
+
+<!-- Mobile navigation -->
+<nav class="site-nav mobile-nav">
+  <ul>
+    {% for item in site.data.navigation.main %}
+      <li>
+        <a href="{{ item.url | relative_url }}" 
+           class="{% if page.url == item.url %}active{% endif %}">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

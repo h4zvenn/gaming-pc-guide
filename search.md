@@ -1,32 +1,32 @@
 ---
-layout: default
+layout: doc
 title: "Search"
-description: "Search the guides by keyword."
+description: "Search documentation"
 lang: en
 translation_key: search
 permalink: /search/
-search_exclude: true
 ---
 
-<h1>Search the guides</h1>
+# Search
 
-<form class="search-form" role="search" onsubmit="return false">
-  <label for="search-input">Keyword</label>
-  <input id="search-input" type="search" autocomplete="off" placeholder="stutter, ping, XMP, CS2…" disabled>
-</form>
+This page would contain the search functionality for the documentation.
 
-<p id="search-status" class="search-status" aria-live="polite">Loading index…</p>
-<ul id="search-results" class="search-results"></ul>
-<noscript><p>Search needs JavaScript. Browse the <a href="{{ '/docs/' | relative_url }}">guide index</a> instead.</p></noscript>
+## How to use this site
 
-<script>
-  window.searchConfig = {
-    lang: 'en',
-    index: '{{ "/search.json" | relative_url }}',
-    ready: 'Type at least 2 characters.',
-    none: 'No results.',
-    count: ' result(s).',
-    failed: 'The search index could not be loaded.'
-  };
-</script>
-<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>
+The documentation is organized in several sections:
+
+- [Start here](/docs/start-here.html) - Get started with optimization
+- [Windows guides](/docs/) - System and hardware optimization
+- [Game guides](/docs/games/) - Game-specific settings and tips
+- [Downloads](/downloads/) - Ready-to-use configurations and templates
+
+## Navigation tips
+
+- Use the main navigation menu to browse different sections
+- Use the search bar to find specific topics
+- Click on "Back to top" links to quickly return to section headers
+- Toggle the table of contents sidebar to see page structure
+
+## Feedback
+
+If you have suggestions for improving this documentation, please [report an issue](https://github.com/h4zvenn/gaming-pc-optimization-guide/issues) or join our [discussions](https://github.com/h4zvenn/gaming-pc-optimization-guide/discussions).
