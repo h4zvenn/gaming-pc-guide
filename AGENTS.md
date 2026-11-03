@@ -36,7 +36,7 @@ powershell -ExecutionPolicy Bypass -File .\check-links.ps1
 
 - `docs/` - English guides (Jekyll pages)
 - `ru/` - Russian translation
-- `tools/` - Read-only diagnostics scripts 
+- `tools/` - Read-only diagnostics scripts
 - `search/` - Site search page
 - `assets/` - Site assets
 - `downloads/` - Downloadable files
@@ -44,6 +44,7 @@ powershell -ExecutionPolicy Bypass -File .\check-links.ps1
 ## Diagnostics Tool
 
 The repository includes a read-only PowerShell diagnostics tool in the `tools/` directory:
+
 - `GamingPCGuide-Diagnostics.ps1` - Main PowerShell script
 - `GamingPCGuide-Diagnostics.bat` - Batch wrapper for the PowerShell script
 
@@ -52,11 +53,13 @@ The diagnostics tool is designed to be safe and never changes system settings. I
 ## Special Considerations
 
 ### Development Environment
+
 - Uses Ruby with Jekyll (version ~4.3)
 - Requires `bundle install` to install dependencies
 - Uses npm for markdown linting
 
 ### Contributing Guidelines
+
 - All content must be in English
 - Changes should be measurable, safe, and reversible
 - Must include rollback steps for risky changes
@@ -64,6 +67,7 @@ The diagnostics tool is designed to be safe and never changes system settings. I
 - Includes evidence (benchmarks, sources, screenshots) for claims
 
 ### Release Process
+
 - Releases are published automatically when a valid version tag is pushed
 - The release workflow validates the version-tag format and requires matching changelog notes
 - Release attaches only contents of `tools/` folder as `GamingPCGuide-Diagnostics-<tag>.zip` with SHA-256 checksum
@@ -71,6 +75,7 @@ The diagnostics tool is designed to be safe and never changes system settings. I
 ## Testing
 
 When working with documentation or code:
+
 1. Always build the site locally to verify changes render correctly
 2. Run markdown linting before committing
 3. Test diagnostics scripts in a non-production environment
@@ -90,6 +95,7 @@ When working with documentation or code:
    Markdown-проверку, используемую в CI.
 
 Правила исправления:
+
 - Сохраняй смысл текста, ссылки и оформление сайта.
 - Не отключай линтер, отдельные правила или проверку файлов
   только ради успешного результата.
