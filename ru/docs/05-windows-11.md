@@ -278,7 +278,7 @@ HDR может улучшить изображение в подходящих �
 
 Некоторые из этих функций могут влиять на производительность в отдельных конфигурациях, но отключение снижает безопасность и может повлиять на совместимость. Сначала выяви конкретную проблему, создай точку восстановления и оцени компромисс.
 
-Microsoft рекомендует оставлять целостность памяти включённой, если нет конкретной и понятной причины поступить иначе. См. [Microsoft Learn](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity).
+Microsoft рекомендует оставлять целостность памяти включённой, если нет конкретной и понятной причины поступить иначе. См. [Microsoft Learn](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?view=windows-11).
 
 > **Предупреждение:** не запускай `.reg`, `.bat` или PowerShell-скрипты, которые массово отключают защиту и системные функции. Большее число отключённых компонентов не означает лучшую оптимизацию.
 
