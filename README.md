@@ -4,7 +4,15 @@ A universal, evidence-based guide to optimizing gaming PCs across hardware and g
 
 Find the real bottleneck. Change one setting. Measure the result.
 
-[📖 Main guide](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/ultimate-pc-gaming-guide-2026.html) • [💬 Discord](https://discord.gg/U7uGQzK48F) • [🎯 Game guides](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/games/) • [🔎 Search](https://h4zvenn.github.io/gaming-pc-optimization-guide/search/) • [📦 Releases](https://github.com/h4zvenn/gaming-pc-optimization-guide/releases) • [🐞 Report an issue](https://github.com/h4zvenn/gaming-pc-optimization-guide/issues)
+<p align="center">
+  <a href="https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/ultimate-pc-gaming-guide-2026.html"><img src="https://img.shields.io/badge/📖_Main_guide-2563eb?style=for-the-badge" alt="Main guide"></a>
+  <a href="https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/games/"><img src="https://img.shields.io/badge/🎯_Game_guides-16a34a?style=for-the-badge" alt="Game guides"></a>
+  <a href="https://h4zvenn.github.io/gaming-pc-optimization-guide/search/"><img src="https://img.shields.io/badge/🔍_Search-7c3aed?style=for-the-badge" alt="Search"></a>
+  <br>
+  <a href="https://discord.gg/U7uGQzK48F"><img src="https://img.shields.io/badge/💬_Discord-5865f2?style=for-the-badge" alt="Discord"></a>
+  <a href="https://github.com/h4zvenn/gaming-pc-optimization-guide/releases"><img src="https://img.shields.io/badge/📦_Releases-ea580c?style=for-the-badge" alt="Releases"></a>
+  <a href="https://github.com/h4zvenn/gaming-pc-optimization-guide/issues"><img src="https://img.shields.io/badge/🐛_Issues-dc2626?style=for-the-badge" alt="Report an issue"></a>
+</p>
 
 ## ✨ What is this?
 
@@ -66,7 +74,7 @@ A read-only Windows diagnostics menu is available in the tools folder. It is als
 To verify the download, run:
 
 ```powershell
-Get-FileHash .\gaming-diagnostics.zip -Algorithm SHA256
+Get-FileHash .\\gaming-diagnostics.zip -Algorithm SHA256
 ```
 
 Compare the result with the checksum published in the release notes.
