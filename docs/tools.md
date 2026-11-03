@@ -12,14 +12,14 @@ This section contains useful system utilities for diagnosing and optimizing gami
 
 [RAMMap](https://learn.microsoft.com/en-us/sysinternals/downloads/rammap) is a powerful tool from Microsoft Sysinternals that shows how physical memory is being used in your system. It's useful for diagnosing memory issues and understanding which processes consume the most memory.
 
-### Key Features:
+### Key Features
 
 - Shows memory distribution by types (Free, Standby, Modified, Active, etc.)
 - Displays memory cache contents
 - Identifies processes using memory in various categories
 - Includes tools to clear memory caches
 
-### Usage Recommendations:
+### Usage Recommendations
 
 1. Run RAMMap as Administrator
 2. Examine the "Memory Addresses" tab to understand memory usage
@@ -30,21 +30,21 @@ This section contains useful system utilities for diagnosing and optimizing gami
 
 Mem Reduct is a free utility that helps free physical memory by removing unnecessary data from caches and freeing memory for other processes.
 
-### Key Features:
+### Key Features
 
 - Automatic memory freeing
 - Real-time user interface view
 - Notifications about freed memory amount
 - Support for various automation levels
 
-### Usage Recommendations:
+### Usage Recommendations
 
 1. Run Mem Reduct in the background
 2. Monitor the interface for updates
 3. Set up desired auto-launch parameters
 4. Review cleaning policies when encountering memory issues
 
-## Additional Utilities:
+## Additional Utilities
 
 For more optimization tools, consider:
 
@@ -54,9 +54,9 @@ For more optimization tools, consider:
 
 These utilities can be useful for performance troubleshooting.
 
-## Where to find these utilities:
+## Where to find these utilities
 
 - **RAMMap**: Available from [Microsoft Sysinternals](https://learn.microsoft.com/en-us/sysinternals/downloads/rammap)
 - **Mem Reduct**: Available at [https://www.memreduct.com/](https://www.memreduct.com/)
 
-Both tools can help diagnose memory usage and identify bottlenecks in your gaming PC's performance.
+Both tools can help diagnose memory usage and identify bottlenecks in your gaming PC's performance
