@@ -1,0 +1,40 @@
+name: ✨ Suggest an improvement
+description: Propose new content or a better explanation
+title: "[Improvement] "
+labels: ["enhancement"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or file
+      description: Where the improvement belongs. Leave empty for a new page.
+      placeholder: docs/03-bios-and-hardware.md
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What should be improved or added?
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it needed?
+      description: Who benefits and what problem does it solve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: draft
+    attributes:
+      label: Suggested content
+      description: Optional draft text.
+
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Can you help?
+      options:
+        - label: I can write a draft and open a pull request.
+        - label: I can provide benchmarks or screenshots.

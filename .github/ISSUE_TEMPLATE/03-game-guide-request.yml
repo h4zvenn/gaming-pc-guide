@@ -1,0 +1,63 @@
+name: 🎯 Request a game guide
+description: Ask for a new per-game optimization guide
+title: "[Game] "
+labels: ["game-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Existing guides: Counter-Strike 2, VALORANT, PUBG, Minecraft Java, World of Tanks.
+
+  - type: input
+    id: game
+    attributes:
+      label: Game name
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Game type
+      options:
+        - Competitive shooter or esports
+        - Open-world or AAA
+        - Survival or sandbox
+        - Strategy or MMO
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: bottleneck
+    attributes:
+      label: What usually limits performance?
+      options:
+        - CPU
+        - GPU
+        - VRAM or RAM
+        - Storage or loading
+        - Network
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: problems
+    attributes:
+      label: Common problems players have
+      description: Stutters, low 1% lows, crashes, input lag, etc.
+
+  - type: textarea
+    id: links
+    attributes:
+      label: Useful links
+      description: Official settings docs, config file locations, trusted tests.
+
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Can you help?
+      options:
+        - label: I can provide benchmarks for this game.
+        - label: I can write a draft using the game template.

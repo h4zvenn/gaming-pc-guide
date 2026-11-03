@@ -1,0 +1,62 @@
+name: 🐞 Report a mistake
+description: Wrong info, broken link, typo or outdated advice in the guide
+title: "[Mistake] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep the guide accurate.
+        For help with your own PC, ask in [Discord](https://discord.gg/U7uGQzK48F) instead.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of mistake is it?
+      options:
+        - Wrong or misleading information
+        - Outdated advice
+        - Broken link
+        - Typo or formatting
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: Page or file
+      description: Link to the page on the site, or the file path in the repository.
+      placeholder: https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/06-gpu-settings.html
+    validations:
+      required: true
+
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong?
+      description: Quote the sentence or describe the section.
+    validations:
+      required: true
+
+  - type: textarea
+    id: fix
+    attributes:
+      label: What should it say?
+      description: Your suggested correction, if you have one.
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Source or evidence
+      description: Link to official documentation, a benchmark, or your own measurement.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked that this is not already reported.
+          required: true
+        - label: I did not include passwords, keys, serial numbers or other private data.
+          required: true

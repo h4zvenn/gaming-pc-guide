@@ -1,0 +1,64 @@
+name: 🧰 Diagnostics tool problem
+description: A bug or question about the read-only diagnostics tool
+title: "[Tool] "
+labels: ["tool"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The tool is read-only and never changes settings.
+        Do not paste full reports. They can contain device names, network details, usernames and file paths.
+
+  - type: input
+    id: version
+    attributes:
+      label: Tool version
+      description: Release tag or the zip you downloaded.
+      placeholder: v1.2.0
+    validations:
+      required: true
+
+  - type: input
+    id: system
+    attributes:
+      label: Windows and PowerShell version
+      placeholder: Windows 11 24H2, PowerShell 5.1
+    validations:
+      required: true
+
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1.
+        2.
+        3.
+
+  - type: textarea
+    id: output
+    attributes:
+      label: Error output
+      description: Paste only the error text, with private data removed.
+      render: shell
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I verified the download checksum.
+        - label: I removed private data from anything I pasted.
+          required: true

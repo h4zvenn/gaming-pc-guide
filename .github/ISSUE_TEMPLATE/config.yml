@@ -1,5 +1,9 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
-  - name: Questions and help
-    url: https://github.com/h4zvenn/gaming-pc-optimization-guide/discussions
-    about: Ask questions about the guide and share your results.
+  - name: 💬 Need help with your own PC?
+    url: https://discord.gg/U7uGQzK48F
+    about: Ask in Discord. Issues are for problems with the guide itself, not for individual PC support.
+  - name: 🔒 Report a security vulnerability
+    url: https://github.com/h4zvenn/gaming-pc-optimization-guide/security/policy
+    about: Please do not open a public issue for security problems.
+ 

@@ -1,0 +1,93 @@
+name: 📊 Submit a benchmark
+description: Share before/after results for a single change
+title: "[Benchmark] "
+labels: ["benchmark"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use the [Benchmark Templates](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/16-benchmark-templates.html).
+        Test **one change at a time**, use the same scene, and average at least three runs.
+
+  - type: input
+    id: change
+    attributes:
+      label: What did you change?
+      placeholder: Enabled Resizable BAR
+    validations:
+      required: true
+
+  - type: input
+    id: game
+    attributes:
+      label: Game or app, version, and test scene
+      placeholder: Cyberpunk 2077 2.3, built-in benchmark
+    validations:
+      required: true
+
+  - type: input
+    id: settings
+    attributes:
+      label: Resolution and graphics preset
+      placeholder: 1440p, High, DLSS Quality
+    validations:
+      required: true
+
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware
+      description: CPU, GPU, RAM (size, speed, channels), storage.
+      placeholder: |
+        CPU:
+        GPU:
+        RAM:
+        Storage:
+    validations:
+      required: true
+
+  - type: input
+    id: software
+    attributes:
+      label: OS and driver versions
+      placeholder: Windows 11 24H2, NVIDIA 5xx.xx
+    validations:
+      required: true
+
+  - type: input
+    id: before
+    attributes:
+      label: Before (avg FPS / 1% low / 0.1% low)
+      placeholder: 142 / 98 / 71
+    validations:
+      required: true
+
+  - type: input
+    id: after
+    attributes:
+      label: After (avg FPS / 1% low / 0.1% low)
+      placeholder: 151 / 110 / 84
+    validations:
+      required: true
+
+  - type: input
+    id: tool
+    attributes:
+      label: Measurement tool and number of runs
+      placeholder: CapFrameX, 3 runs each
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes and evidence
+      description: Screenshots, frame-time graphs, anything unusual (thermals, background load).
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I changed only one setting between the two tests.
+          required: true
+        - label: I removed device names, serial numbers and other private data from screenshots.
+          required: true
