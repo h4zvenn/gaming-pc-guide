@@ -7,8 +7,6 @@ translation_key: downloads
 permalink: /downloads/
 ---
 
-# Downloads
-
 This section contains downloadable resources to help you optimize your gaming PC. All materials are designed to be safe, tested, and useful for users following the optimization methodology outlined in this guide.
 
 ## Checklists
