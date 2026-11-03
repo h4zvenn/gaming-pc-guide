@@ -283,7 +283,7 @@ Repair order:
 4. Reboot.
 5. If problems persist, repeat the sequence and check the CBS log.
 
-Microsoft documents `sfc /scannow` as a quick check-and-repair option, while `DISM /Cleanup-Image` is the more extensive option for repairing the component store. [Microsoft Learn](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image)
+Microsoft documents `sfc /scannow` as a quick check-and-repair option, while `DISM /Cleanup-Image` is the more extensive option for repairing the component store. [Microsoft Learn](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image?view=windows-11)
 
 ---
 
