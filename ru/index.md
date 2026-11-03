@@ -45,6 +45,7 @@ permalink: /ru/
       <li><a href="{{ '/ru/docs/ultimate-pc-gaming-guide-2026.html' | relative_url }}">Полное руководство по оптимизации</a><span>Универсальный порядок действий и приоритеты</span></li>
       <li><a href="{{ '/ru/docs/06-gpu-settings.html' | relative_url }}">Настройки видеокарты</a><span>NVIDIA, AMD, Intel</span></li>
       <li><a href="{{ '/ru/docs/10-temperatures-stability.html' | relative_url }}">Температуры и стабильность</a><span>Троттлинг и охлаждение</span></li>
+      <li><a href="{{ '/ru/docs/tools.html' | relative_url }}">Системные утилиты</a><span>Инструменты для диагностики памяти</span></li>
       <li><a href="{{ '/ru/docs/16-benchmark-templates.html' | relative_url }}">Шаблоны бенчмарков</a><span>Протокол тестирования</span></li>
       <li><a href="{{ '/ru/docs/windows-10-legacy.html' | relative_url }}">Windows 10 — legacy</a><span>Статус поддержки и ограничения</span></li>
       <li><a href="{{ '/ru/docs/' | relative_url }}">Все руководства Windows</a><span>Полный список</span></li>

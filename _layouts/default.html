@@ -149,6 +149,7 @@
       <nav id="site-navigation" class="site-nav" aria-label="{{ navigation_label }}">
         <a href="{{ start_url | relative_url }}" {% if page.url == start_url %}aria-current="page"{% endif %} {% if current_lang == 'ru' %}hreflang="ru"{% endif %}>{{ start_label }}</a>
         <a href="{{ windows_url | relative_url }}" {% if page.url == windows_url %}aria-current="page"{% endif %}>{{ windows_label }}</a>
+        <a href="{{ '/docs/tools.html' | relative_url }}" {% if page.url == '/docs/tools.html' or page.url == '/ru/docs/tools.html' %}aria-current="page"{% endif %}>System utilities</a>
         <a href="{{ games_url | relative_url }}" {% if page.url == games_url %}aria-current="page"{% endif %}>{{ games_label }}</a>
         <a href="{{ search_url | relative_url }}" {% if page.url == search_url %}aria-current="page"{% endif %}>{{ search_label }}</a>
       </nav>

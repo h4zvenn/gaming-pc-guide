@@ -45,6 +45,7 @@ permalink: /
       <li><a href="{{ '/docs/ultimate-pc-gaming-guide-2026.html' | relative_url }}">Complete optimization guide</a><span>Universal workflow and safe priorities</span></li>
       <li><a href="{{ '/docs/03-bios-and-hardware.html' | relative_url }}">BIOS &amp; hardware</a><span>Platform-wide checks</span></li>
       <li><a href="{{ '/docs/04-drivers-and-updates.html' | relative_url }}">Drivers &amp; updates</a><span>Install and roll back safely</span></li>
+      <li><a href="{{ '/docs/tools.html' | relative_url }}">System utilities</a><span>Tools for memory diagnostics</span></li>
       <li><a href="{{ '/docs/windows-10-legacy.html' | relative_url }}">Windows 10 legacy notes</a><span>Support status and version-specific cautions</span></li>
       <li><a href="{{ '/docs/16-benchmark-templates.html' | relative_url }}">Benchmark templates</a><span>Repeatable testing protocol</span></li>
       <li><a href="{{ '/docs/' | relative_url }}">All Windows guides</a><span>Full index</span></li>
