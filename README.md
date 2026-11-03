@@ -74,6 +74,11 @@ Windows 11 is the primary operating system covered. Windows 10 is treated as a l
 
 ## 🎯 Game guides
 
+<details>
+<summary><b>Click to expand game guides</b></summary>
+
+<br>
+
 | Game | Guide |
 | :--- | :--- |
 | Counter-Strike 2 | [Open guide](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/games/cs2.html) |
@@ -83,6 +88,8 @@ Windows 11 is the primary operating system covered. Windows 10 is treated as a l
 | World of Tanks | [Open guide](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/games/world-of-tanks.html) |
 
 Want a guide for another game? [Open a request](https://github.com/h4zvenn/gaming-pc-optimization-guide/issues) or read the [Contributing](#-contributing) section.
+
+</details>
 
 ## 🛠️ Diagnostics tool
 
