@@ -9,21 +9,25 @@ This is a Jekyll-based static site generator for the "Ultimate PC Gaming Optimiz
 ## Key Commands & Workflows
 
 ### Build the Site
+
 ```bash
 bundle exec jekyll build
 ```
 
 ### Run Local Development Server
+
 ```bash
 bundle exec jekyll serve
 ```
 
 ### Lint Markdown Files
+
 ```bash
 npx markdownlint-cli2 "docs/**/*.md"
 ```
 
 ### Check Links
+
 ```bash
 powershell -ExecutionPolicy Bypass -File .\check-links.ps1
 ```
