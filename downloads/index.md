@@ -12,19 +12,23 @@ permalink: /downloads/
 This section contains downloadable resources to help you optimize your gaming PC. All materials are designed to be safe, tested, and useful for users following the optimization methodology outlined in this guide.
 
 ## Checklists
+
 Checklists for various optimization tasks to ensure you don't miss any important steps.
 
 - [Safe Optimization Checklist](checklists/safe-optimization-checklist.html) - Comprehensive checklist for safely optimizing your gaming PC
 
 ## Templates
+
 Templates for recording and comparing performance changes.
 
 - [Performance Comparison Template](templates/performance-comparison-template.html) - Template for recording and comparing performance changes
 
 ## Configurations
+
 Verified game configurations tested on real hardware.
 
 - [CS2 Verified Configurations](configs/cs2-verified-configurations.html) - Tested game settings for Counter-Strike 2
+- [CS2 Autoexec Configuration](configs/cs2-autoexec.cfg) - Ready-to-use autoexec.cfg file for Counter-Strike 2
 
 ## How to Use These Resources
 

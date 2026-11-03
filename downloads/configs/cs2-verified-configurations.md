@@ -10,6 +10,7 @@ permalink: /downloads/configs/cs2-verified-configurations.html
 # Counter-Strike 2 Verified Configurations
 
 ## System Requirements
+
 | Component | Minimum | Recommended |
 |-----------|---------|-------------|
 | CPU | Intel i5-10400F or AMD Ryzen 5 3600 | Intel i7-12700K or AMD Ryzen 7 5800X |
@@ -20,6 +21,7 @@ permalink: /downloads/configs/cs2-verified-configurations.html
 ## Verified Settings
 
 ### Graphics Quality
+
 | Setting | Value | Notes |
 |---------|-------|-------|
 | Texture Quality | High | Recommended for visual quality |
@@ -28,6 +30,7 @@ permalink: /downloads/configs/cs2-verified-configurations.html
 | Particle Quality | High | No significant performance impact |
 
 ### Advanced Settings
+
 | Setting | Value | Notes |
 |---------|-------|-------|
 | V-Sync | Disabled | For lowest input latency |
@@ -36,6 +39,7 @@ permalink: /downloads/configs/cs2-verified-configurations.html
 | Motion Blur | Disabled | Improves visual quality but adds latency |
 
 ### Performance Settings
+
 | Setting | Value | Notes |
 |---------|-------|-------|
 | Resolution | 1920x1080 | Optimal balance of performance and quality |
@@ -44,6 +48,7 @@ permalink: /downloads/configs/cs2-verified-configurations.html
 | Lighting Quality | Medium | Visual improvement with minimal impact |
 
 ## Test Results
+
 | Configuration | Average FPS | 1% Low | P99 Frame Time | Notes |
 |---------------|-------------|--------|----------------|-------|
 | Basic Settings | 200-250 FPS | 4ms | 8ms | Good for competitive play |
@@ -51,6 +56,7 @@ permalink: /downloads/configs/cs2-verified-configurations.html
 | Ultra Quality | 80-110 FPS | 12ms | 20ms | Best visual quality but lower performance |
 
 ## Recommendations
+
 1. Start with basic settings for competitive play
 2. Gradually increase quality settings while monitoring performance
 3. Disable V-Sync for lowest input latency
@@ -58,6 +64,7 @@ permalink: /downloads/configs/cs2-verified-configurations.html
 5. Test different configurations to find the optimal balance for your system
 
 This configuration was tested on a system with:
+
 - Intel i7-12700K CPU
 - NVIDIA RTX 3070 GPU  
 - 32 GB DDR4 RAM
