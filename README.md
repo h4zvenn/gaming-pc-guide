@@ -14,7 +14,9 @@ A universal, evidence-based guide to optimizing gaming PCs across hardware and g
 
 ## ✨ What is this?
 
-Windows 11 is the primary operating system covered. Windows 10 is treated as a legacy platform because Microsoft ended standard support on October 14, 2025. See <a href="https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/windows-10-legacy.html">Windows 10 Legacy Notes</a>. OS-, vendor-, and game-specific advice is clearly labeled instead of being presented as universal.
+An open-source, evidence-based guide to optimizing gaming PCs. It covers desktops and gaming laptops, NVIDIA, AMD and Intel hardware, and several popular games. This repository holds the source of the [guide website](https://h4zvenn.github.io/gaming-pc-optimization-guide/): step-by-step guides, benchmark templates, per-game pages and a read-only diagnostics tool.
+
+Most "FPS boost" advice is copied from forum to forum and never tested. This project does the opposite: every change has to be measurable, reversible and labeled by what it applies to (OS, vendor or game).
 
 ### The method
 
