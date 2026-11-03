@@ -491,13 +491,38 @@
 
     .doc {
       display: grid;
-      grid-template-columns: 240px minmax(0, 80ch) 230px;
+      grid-template-columns: minmax(240px, 1fr) minmax(0, 80ch) minmax(230px, 1fr);
       grid-template-areas: "nav content toc";
       align-items: start;
       gap: 28px;
       width: fit-content;
       max-width: 100%;
       margin-inline: auto;
+    }
+    
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 1024px) {
+      .doc {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "content"
+          "nav"
+          "toc";
+      }
+      
+      .doc-nav {
+        position: relative;
+        top: auto;
+        max-height: none;
+        margin-bottom: 24px;
+      }
+      
+      .doc-sidebar {
+        position: relative;
+        top: auto;
+        max-height: none;
+        margin-top: 24px;
+      }
     }
 
     .doc-nav {
@@ -510,41 +535,47 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: var(--surface);
-      font-size: 0.88rem;
-    }
-
-    .doc-nav h3 {
-      margin: 0 0 10px;
       font-size: 0.9rem;
     }
-
+    
+    .doc-nav h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    
     .doc-nav ul {
       margin: 0;
       padding: 0;
       list-style: none;
     }
-
+    
     .doc-nav li {
-      margin: 2px 0;
+      margin: 4px 0;
     }
-
+    
     .doc-nav li a {
       display: block;
-      padding: 5px 8px;
+      padding: 8px 12px;
       border-radius: 6px;
       color: var(--muted);
       text-decoration: none;
+      transition: all 0.2s ease;
     }
-
+    
     .doc-nav li a:hover {
       color: var(--text);
       background: var(--surface-2);
+      text-decoration: none;
     }
-
+    
     .doc-nav li a[aria-current="page"] {
       color: var(--text);
-      background: var(--surface-2);
+      background: var(--accent-soft);
       box-shadow: inset 3px 0 0 var(--accent);
+      font-weight: 600;
     }
 
     .doc-sidebar {
@@ -557,7 +588,55 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       background: var(--surface);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
+    }
+    
+    .doc-sidebar h3 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+    }
+    
+    .doc-toc > summary {
+      color: var(--muted);
+      font-weight: 700;
+      cursor: pointer;
+      padding: 8px 0;
+      list-style: none;
+    }
+    
+    .doc-toc > summary::-webkit-details-marker {
+      display: none;
+    }
+    
+    .doc-toc ol {
+      list-style: none;
+      margin: 12px 0 0;
+      padding: 0;
+    }
+    
+    .doc-toc li {
+      margin: 6px 0;
+    }
+    
+    .doc-toc .toc-subitem {
+      padding-left: 14px;
+    }
+    
+    .doc-toc a {
+      display: block;
+      padding: 6px 10px;
+      border-radius: 6px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    
+    .doc-toc a:hover {
+      color: var(--text);
+      background: var(--accent-soft);
     }
 
     .page-navigation {
@@ -636,22 +715,23 @@
       background: var(--surface);
       box-shadow: var(--shadow);
     }
-
+    
     .doc-content h1 {
       margin-top: 0;
       font-size: clamp(1.7rem, 3vw, 2.3rem);
       letter-spacing: -0.03em;
     }
-
+    
     .doc-content h2 {
       padding-bottom: 10px;
       border-bottom: 1px solid var(--border);
       font-size: 1.4rem;
+      margin-top: 2rem;
     }
-
+    
     .doc-content h3 {
       margin-top: 1.6rem;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
     }
 
     .doc-content ul,
@@ -795,6 +875,54 @@
 
     .callout-danger {
       border-left-color: var(--danger);
+    }
+    
+    /* Improved responsive behavior */
+    @media (max-width: 768px) {
+      .doc {
+        gap: 16px;
+        padding: 0 12px;
+      }
+      
+      .doc-content {
+        padding: 16px;
+      }
+      
+      .doc-nav,
+      .doc-sidebar {
+        padding: 14px;
+      }
+      
+      .home-hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px;
+      }
+      
+      .doc-content h2 {
+        font-size: 1.3rem;
+      }
+      
+      .doc-content h3 {
+        font-size: 1.15rem;
+      }
+    }
+    
+    /* Better spacing and typography */
+    .doc-content {
+      line-height: 1.7;
+    }
+    
+    .doc-content p {
+      margin: 1rem 0;
+      color: var(--text);
+    }
+    
+    .doc-content blockquote {
+      margin: 1.5rem 0;
+      padding: 16px 20px;
+      border-left-width: 4px;
+      border-radius: 0 8px 8px 0;
     }
 
     .site-footer {
