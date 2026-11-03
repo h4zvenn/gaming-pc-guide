@@ -18,7 +18,7 @@
 
     // Inline HTML is allowed only for these tags (README, Jekyll).
     "MD033": {
-      "allowed_elements": ["a", "b", "br", "details", "div", "h1", "h2", "h3", "h4", "h5", "h6", "img", "li", "ol", "p", "section", "span", "strong", "ul"]
+      "allowed_elements": ["a", "b", "br", "details", "div", "h1", "h2", "h3", "h4", "h5", "h6", "img", "li", "ol", "p", "section", "span", "strong", "ul", "summary"]
     },
 
     // First line does not have to be a heading (front matter).
