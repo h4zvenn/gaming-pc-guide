@@ -136,7 +136,7 @@ gaming-pc-optimization-guide/
 | Language | Status | Link |
 | :--- | :--- | :--- |
 | **English** | ✅ Source version | [Read](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/ultimate-pc-gaming-guide-2026.html) |
-| **Русский** | 🚧 Translation in progress | [Читать](https://h4zvenn.github.io/gaming-pc-optimization-guide/ru/) |
+| **Russian** | 🚧 Translation in progress | [Прочитать](https://h4zvenn.github.io/gaming-pc-optimization-guide/ru/) |
 
 ## ❓ FAQ
 

@@ -1,80 +1,78 @@
 ---
 layout: doc
 title: "Sources and Evidence"
-description: "Primary and secondary sources for recommendations, with guidelines for working with evidence."
+description: "Where recommendations come from, how sources are ranked, and how claims are labeled."
 lang: en
 translation_key: sources
 permalink: /docs/sources.html
+last_checked: 2026-11-03
+applicable_to: All guides in this project
 ---
 
-## Primary Sources
+Every recommendation should trace back to something you can check: official documentation, a repeatable measurement, or a clearly labeled community report. This page explains how sources are ranked and where to find the main ones.
 
-### Vendor Documentation
+For how tests are run and compared, see [Methodology](methodology.html) and [Benchmark templates](16-benchmark-templates.html).
 
-- Official GPU driver documentation (NVIDIA, AMD, Intel)
-- CPU manufacturer specifications (Intel, AMD)
-- Motherboard manual and BIOS documentation
-- Operating system release notes and technical documentation
+## How sources are ranked
 
-### Game Developer Resources
+| Tier | Source type | How it is used |
+| --- | --- | --- |
+| 1 | Official vendor and OS documentation, release notes, specifications | Can support a recommendation on its own |
+| 2 | Repeatable measurements with documented method (frame-time capture, logs) | Supports a recommendation if the method and hardware are stated |
+| 3 | Independent reviews and technical articles with test data | Supports a recommendation together with a Tier 1 or 2 source |
+| 4 | Forums, videos, social media, user guides | A lead to investigate. Never evidence by itself |
 
-- Official game patch notes and developer blogs
-- In-game settings documentation
-- Community forums and technical discussions
-- Official anti-cheat documentation and guidelines
+A claim that rests only on Tier 4 is either tested first or left out.
 
-### Technical Publications
+## Main official sources
 
-- Hardware review sites with benchmark data
-- Professional gaming and performance optimization articles
-- Academic papers on computer performance and optimization
-- Industry whitepapers and technical reports
+### Windows
 
-## Secondary Sources
+- [Windows documentation on Microsoft Learn](https://learn.microsoft.com/en-us/windows/)
+- [Windows release health](https://learn.microsoft.com/en-us/windows/release-health/) for known issues and update status
+- [Windows 10 lifecycle](https://learn.microsoft.com/en-us/lifecycle/products/windows-10-home-and-pro) for the end of support (October 14, 2025)
+- [Sysinternals documentation](https://learn.microsoft.com/en-us/sysinternals/) for RAMMap, Process Explorer and related tools
 
-### Community Resources
+### GPU drivers and software
 
-- Gaming forums (Reddit, Steam Community)
-- Technical discussion boards
-- YouTube channels and streaming content
-- User-generated guides and tutorials
+- [NVIDIA drivers](https://www.nvidia.com/en-us/drivers/)
+- [AMD drivers and support](https://www.amd.com/en/support/download/drivers.html)
+- [Intel graphics downloads](https://www.intel.com/content/www/us/en/download-center/home.html)
 
-### Testing Tools and Benchmarks
+### Measurement tools
 
-- Professional benchmarking software documentation
-- Hardware monitoring tools' technical specifications
-- Performance analysis utilities and their methodologies
+- [PresentMon](https://github.com/GameTechDev/PresentMon) for frame-time capture
+- [CapFrameX](https://www.capframex.com/) for frame-time analysis
+- See [System utilities](tools.html) for the full list of tools used in this guide
 
-## Working with Evidence
+### Motherboard, CPU and game sources
 
-### Credibility Guidelines
+- The motherboard manual and BIOS release notes for your exact board
+- CPU manufacturer specification pages (Intel ARK, AMD product pages)
+- Official patch notes, settings documentation and anti-cheat rules for each game. Each [game guide](games/index.html) links its own sources
 
-- Prioritize official vendor sources over third-party interpretations
-- Cross-reference multiple sources when possible
-- Check for publication dates and relevance to current hardware/software
-- Distinguish between verified facts and unverified claims
+## Claim labels
 
-### Documentation Practices
+Guides label claims by how well they are supported:
 
-- Include specific URLs and citations for all referenced information
-- Note the date when information was last checked or verified
-- Update references when new information becomes available
-- Clearly mark outdated or deprecated recommendations
+| Label | Meaning |
+| --- | --- |
+| **Documented** | Stated in official documentation (Tier 1) |
+| **Measured** | Shown by a repeatable test with method and hardware stated (Tier 2) |
+| **Community-reported** | Seen in forums or videos, not verified here |
+| **Unverified** | No source found. Test it yourself before keeping the change |
 
-### Verification Requirements
+Vendor-, OS- and game-specific advice is labeled as such instead of being presented as universal.
 
-- Each recommendation should have at least one primary source
-- Test results should be repeatable with documented methodology
-- Data should be presented in a way that allows others to verify conclusions
-- When multiple sources conflict, explain the reasoning for the chosen approach
+## Working with evidence
 
-## Source Attribution
+1. **Prefer the original source.** Read the vendor page, not a video about it.
+2. **Check the date and version.** Advice for an older driver, Windows build or game patch may no longer apply.
+3. **Cross-check.** Important claims need a second source, or your own measurement.
+4. **Separate fact from opinion.** "The setting does X" is documentation. "It feels smoother" is a report.
+5. **Explain conflicts.** When two sources disagree, the guide states which one it follows and why.
+6. **Keep the date.** Pages carry a `last_checked` date. Outdated advice is marked or removed.
 
-All recommendations include:
+## When you find a problem
 
-1. Primary source documentation
-2. Date of last verification
-3. Relevance to current hardware and software versions
-4. Limitations or conditions under which the recommendation applies
-
-This approach ensures that all optimization advice is grounded in reliable information and can be validated by users.
+If a source is outdated, a link is broken, or a claim has no evidence, [report a mistake](https://github.com/h4zvenn/gaming-pc-optimization-guide/issues/new/choose) and include a link to the better source. Pull requests that add or replace sources are welcome. See the [Contributing](https://github.com/h4zvenn/gaming-pc-optimization-guide#-contributing) section.
