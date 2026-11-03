@@ -5,6 +5,8 @@ description: "Identify whether CPU, GPU, memory, storage, thermals, or backgroun
 lang: en
 translation_key: find-the-bottleneck
 permalink: /docs/02-find-the-bottleneck.html
+last_checked: 2026-11-03
+applicable_to: Windows 11, Windows 10 (legacy), NVIDIA, AMD, Intel GPU and CPU
 ---
 
 Before changing BIOS options, Windows settings, or driver parameters, identify what actually limits performance: CPU, GPU, memory, storage, thermals, or background load.

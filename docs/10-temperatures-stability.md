@@ -5,6 +5,8 @@ description: "Check temperatures, throttling, cooling, and system stability befo
 lang: en
 translation_key: temperatures-stability
 permalink: /docs/10-temperatures-stability.html
+last_checked: 2026-11-03
+applicable_to: Windows 11, Windows 10 (legacy), NVIDIA, AMD, Intel GPU and CPU
 ---
 
 

@@ -5,6 +5,8 @@ description: "Measure performance changes with repeatable tests and record resul
 lang: en
 translation_key: benchmark-templates
 permalink: /docs/16-benchmark-templates.html
+last_checked: 2026-11-03
+applicable_to: Windows 11, Windows 10 (legacy), NVIDIA, AMD, Intel GPU and CPU
 ---
 
 

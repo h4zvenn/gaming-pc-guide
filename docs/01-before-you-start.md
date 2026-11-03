@@ -5,6 +5,8 @@ lang: en
 translation_key: before-you-start
 description: "Create rollback options, record baseline performance, and prepare a Windows gaming PC before optimization."
 permalink: /docs/01-before-you-start.html
+last_checked: 2026-11-03
+applicable_to: Windows 11, Windows 10 (legacy), NVIDIA, AMD, Intel GPU and CPU
 ---
 
 

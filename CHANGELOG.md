@@ -6,6 +6,14 @@ All notable changes to this project are documented in this file.
 
 ### Added
 
+- Added English and Russian Start Here pages, focused guide indexes, and shorter home-page navigation.
+- Added five vendor-specific GPU and CPU setup guides.
+- Added generated sitemap and crawler instructions, plus canonical, social-sharing, and structured-data metadata.
+- Added article breadcrumbs, table of contents, a left page-list sidebar, and localized copy buttons.
+- Redesigned the home pages (compact hero, problem tiles, guide lists) with a desktop-only layout (no viewport meta, media queries, or mobile menu) and an English-only main header; the EN/RU switcher stays in the header and each Russian doc links to its English original.
+- Added automatic previous/next navigation for system articles only.
+- Expanded the link checker to validate local links, image/source targets, and fragment identifiers.
+- Added substantive Russian translations for PowerShell diagnostics, GPU settings, temperature and stability, what-not-to-do, FAQ, quick-start presets, troubleshooting, and benchmark guides.
 - Bilingual safe optimization playbook with manual procedure cards, compatibility and risk notes, rollback steps, and repeatable validation guidance.
 
 ## v1.4.0 - 2026-11-01
@@ -19,6 +27,17 @@ All notable changes to this project are documented in this file.
 
 ### Changed
 
+- Applied the requested neutral dark and PC-blue palette, consistent 16px/1.6 typography, 80ch article width, and styles for notes, warnings, danger callouts, tables, code, and navigation.
+- Moved the shared stylesheet from the HTML layout into `assets/css/style.scss`; centered the desktop article and table-of-contents columns with a consistent gap.
+- Removed unrelated next/previous game links from game-specific articles.
+- Normalized the five English game guides with explicit, repeatable verification sections and current-version review cautions.
+- Corrected CS2 rendering guidance to defer to the current client default and removed unsupported “Verified” evidence labels.
+- Aligned breadcrumb structured data with the visible breadcrumb path.
+- Removed UTF-8 byte-order marks that prevented Jekyll from rendering Russian pages.
+- Corrected Russian translation keys and game-guide routes so language switching and internal links resolve.
+- Added model-specific temperature-limit lookup guidance and safer diagnostic, verification, and rollback steps.
+- Replaced Mermaid-dependent troubleshooting diagrams with readable decision paths.
+- Removed unsupported claims from the optimization-tools evidence page.
 - Updated the Pages base URL, links, and link-check paths for the renamed gaming-pc-optimization-guide repository.
 
 ## v1.3.0 - 2026-11-01
@@ -171,6 +190,7 @@ All notable changes to this project are documented in this file.
 
 ### Removed
 
+- Removed the decorative gradient background and card hover-lift effect.
 - Replaced multiple issue templates with one unified issue template.
 - Removed redundant structural complexity for easier maintenance.
 

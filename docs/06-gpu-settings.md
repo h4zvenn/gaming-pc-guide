@@ -5,6 +5,8 @@ description: "Configure NVIDIA, AMD, and Intel graphics settings for performance
 lang: en
 translation_key: gpu-settings
 permalink: /docs/06-gpu-settings.html
+last_checked: 2026-11-03
+applicable_to: Windows 11, Windows 10 (legacy), NVIDIA, AMD, Intel GPU and CPU
 ---
 
 Configure graphics driver settings per game, not globally. One game may benefit from a setting while another gets bugs, image degradation, or instability.

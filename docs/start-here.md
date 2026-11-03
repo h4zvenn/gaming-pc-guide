@@ -5,6 +5,8 @@ description: "Choose a safe, measurable troubleshooting route for common gaming 
 lang: en
 translation_key: start-here
 permalink: /docs/start-here.html
+last_checked: 2026-11-03
+applicable_to: Windows 11, Windows 10 (legacy), NVIDIA, AMD, Intel GPU and CPU
 ---
 
 Choose the route that matches the symptom. Diagnose before changing settings, then measure one change at a time.

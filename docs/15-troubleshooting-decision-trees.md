@@ -5,6 +5,8 @@ description: "Structured troubleshooting paths for crashes, freezes, network iss
 lang: en
 translation_key: troubleshooting-decision-trees
 permalink: /docs/15-troubleshooting-decision-trees.html
+last_checked: 2026-11-03
+applicable_to: Windows 11, Windows 10 (legacy), NVIDIA, AMD, Intel GPU and CPU
 ---
 
 
