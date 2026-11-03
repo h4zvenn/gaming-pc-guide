@@ -76,6 +76,6 @@ Start with the [Ultimate PC Gaming Optimization Guide 2026](ultimate-pc-gaming-g
 
 | Resource | Description |
 |----------|-------------|
-| [Safe Optimization Checklist](/downloads/checklists/safe-optimization-checklist.html) | Comprehensive checklist for safely optimizing your gaming PC |
-| [Performance Comparison Template](/downloads/templates/performance-comparison-template.html) | Template for recording and comparing performance changes |
-| [CS2 Verified Configurations](/downloads/configs/cs2-verified-configurations.html) | Verified game configurations for Counter-Strike 2 |
+| [Safe Optimization Checklist]({{ '/downloads/checklists/safe-optimization-checklist.html' | relative_url }}) | Comprehensive checklist for safely optimizing your gaming PC |
+| [Performance Comparison Template]({{ '/downloads/templates/performance-comparison-template.html' | relative_url }}) | Template for recording and comparing performance changes |
+| [CS2 Verified Configurations]({{ '/downloads/configs/cs2-verified-configurations.html' | relative_url }}) | Verified game configurations for Counter-Strike 2 |
