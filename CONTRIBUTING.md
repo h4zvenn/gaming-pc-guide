@@ -2,6 +2,12 @@
 
 Thanks for improving this guide. This repository prioritizes safe, testable, and rollback-friendly Windows 11 gaming optimizations.
 
+## Community and Support
+
+Join our [Discord community](https://discord.gg/U7uGQzK48F) for general discussion, gaming PC questions, and troubleshooting help.
+
+Use [GitHub Issues](https://github.com/h4zvenn/gaming-pc-optimization-guide/issues) for documentation errors, project bugs, and actionable improvement requests. Please follow our [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Contribution principles
 
 - English only: all content and documentation must be in English.
