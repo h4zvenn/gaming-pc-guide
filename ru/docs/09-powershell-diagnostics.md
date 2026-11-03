@@ -177,7 +177,7 @@ DISM /Online /Cleanup-Image /RestoreHealth
 sfc /scannow
 ```
 
-Перезагрузи компьютер после проверки. Если проблема осталась, проверь журнал CBS и [инструкции Microsoft](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image).
+Перезагрузи компьютер после проверки. Если проблема осталась, проверь журнал CBS и [инструкции Microsoft](https://learn.microsoft.com/en-us/windows-hardware/manufacture/desktop/repair-a-windows-image?view=windows-11).
 
 ## Журналы событий и WHEA
 
