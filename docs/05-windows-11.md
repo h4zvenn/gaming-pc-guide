@@ -302,7 +302,7 @@ Do not disable these without a clear reason:
 
 Some of these can have a measurable impact in specific setups, but disabling them reduces security and may affect compatibility. First identify a concrete issue, create a restore point, and evaluate the trade-off.
 
-Microsoft recommends keeping memory integrity enabled unless there is a specific, understood reason to change it. [Microsoft Learn](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity)
+Microsoft recommends keeping memory integrity enabled unless there is a specific, understood reason to change it. [Microsoft Learn](https://learn.microsoft.com/en-us/windows/security/hardware-security/enable-virtualization-based-protection-of-code-integrity?view=windows-11)
 
 > **Warning:** Do not run `.reg`, `.bat`, or PowerShell scripts that mass-disable protections and system features. “More disabled” does not mean “better optimized.”
 
