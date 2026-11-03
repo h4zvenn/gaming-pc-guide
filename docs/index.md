@@ -71,3 +71,11 @@ Start with the [Ultimate PC Gaming Optimization Guide 2026](ultimate-pc-gaming-g
 ## Related index
 
 [Game optimization guides](games/index.html)
+
+## Downloads
+
+| Resource | Description |
+|----------|-------------|
+| [Safe Optimization Checklist](/downloads/checklists/safe-optimization-checklist.html) | Comprehensive checklist for safely optimizing your gaming PC |
+| [Performance Comparison Template](/downloads/templates/performance-comparison-template.html) | Template for recording and comparing performance changes |
+| [CS2 Verified Configurations](/downloads/configs/cs2-verified-configurations.html) | Verified game configurations for Counter-Strike 2 |

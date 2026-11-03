@@ -52,6 +52,14 @@ permalink: /
     </ul>
   </section>
   <section>
+    <h2>Downloads</h2>
+    <ul class="link-list">
+      <li><a href="{{ '/downloads/checklists/safe-optimization-checklist.html' | relative_url }}">Safe Optimization Checklist</a><span>Comprehensive checklist for PC optimization</span></li>
+      <li><a href="{{ '/downloads/templates/performance-comparison-template.html' | relative_url }}">Performance Comparison Template</a><span>Template for recording performance changes</span></li>
+      <li><a href="{{ '/downloads/configs/cs2-verified-configurations.html' | relative_url }}">CS2 Verified Configurations</a><span>Tested game settings for Counter-Strike 2</span></li>
+    </ul>
+  </section>
+  <section>
     <h2>Games</h2>
     <ul class="link-list">
       <li><a href="{{ '/docs/games/cs2.html' | relative_url }}">Counter-Strike 2</a><span>Settings, latency, testing</span></li>
