@@ -14,7 +14,7 @@ A universal, evidence-based guide to optimizing gaming PCs across hardware and g
 
 ## ✨ What is this?
 
-Windows 11 is the primary operating system covered. Windows 10 is treated as a legacy platform because Microsoft ended standard support on October 14, 2025. See [Windows 10 Legacy Notes](https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/windows-10-legacy.html). OS-, vendor-, and game-specific advice is clearly labeled instead of being presented as universal.
+Windows 11 is the primary operating system covered. Windows 10 is treated as a legacy platform because Microsoft ended standard support on October 14, 2025. See <a href="https://h4zvenn.github.io/gaming-pc-optimization-guide/docs/windows-10-legacy.html">Windows 10 Legacy Notes</a>. OS-, vendor-, and game-specific advice is clearly labeled instead of being presented as universal.
 
 ### The method
 
