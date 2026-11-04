@@ -65,7 +65,7 @@
   const themeToggle = document.getElementById('themeToggle');
   const htmlElement = document.documentElement;
 
-  // Проверяем сохраненную тему в localStorage или системные настройки
+  // Check saved theme in localStorage or system preferences
   const savedTheme = localStorage.getItem('theme') || 
                      (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
 
