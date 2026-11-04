@@ -1,6 +1,3 @@
----
----
-
 :root {
   color-scheme: dark;
   --bg: #0b0f14;
@@ -18,8 +15,27 @@
   --danger: #ef4444;
   --radius: 14px;
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-  --sidebar-width: 280px;
+  --sidebar-width: 260px;
   --toc-width: 260px;
+}
+
+/* Светлая тема при установке атрибута data-theme="light" на тег <html> */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-2: #f1f5f9;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: #eff6ff;
+  --code-bg: #f8fafc;
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 *,
@@ -30,6 +46,8 @@
 
 html {
   scroll-padding-top: 24px;
+  /* Плавный переход при смене темы */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
@@ -96,7 +114,7 @@ img {
 
 .site-header {
   padding: 12px 0;
-  background: rgba(17, 24, 35, 0.92);
+  background: var(--surface);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(10px);
   position: sticky;
@@ -128,6 +146,13 @@ img {
   text-decoration: none;
 }
 
+/* Контейнер для переключателей языка и темы */
+.header-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .language-switcher {
   display: inline-flex;
   flex-shrink: 0;
@@ -157,6 +182,27 @@ img {
   background: var(--accent-soft);
 }
 
+/* Стили для кнопки переключения темы (Theme Toggle) */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  background: var(--surface-2);
+  border-color: var(--accent);
+}
+
 .site-nav {
   display: flex;
   flex-wrap: wrap;
@@ -164,27 +210,10 @@ img {
   margin-top: 16px;
 }
 
-/* Hide desktop navigation on mobile */
-@media (min-width: 1025px) {
-  .mobile-nav {
-    display: none !important;
-  }
-}
-
-/* Show desktop navigation only on desktop */
-@media (max-width: 1024px) {
-  .desktop-nav {
-    display: none !important;
-  }
-}
-
 .site-nav a {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
-}
-
-.site-nav a {
   padding: 7px 11px;
   border-radius: 8px;
   color: var(--muted);
@@ -218,13 +247,19 @@ img {
   transition: all 0.3s ease;
 }
 
+@media (min-width: 1025px) {
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
 @media (max-width: 1024px) {
   .mobile-menu-toggle {
     display: flex;
   }
 
   .desktop-nav {
-    display: none;
+    display: none !important;
   }
 
   .mobile-nav {
@@ -401,7 +436,7 @@ img {
 
 .link-list a {
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 650;
 }
 
 .link-list li:first-child {
@@ -554,19 +589,14 @@ h2 {
 
 .doc {
   display: grid;
-  grid-template-columns: var(--sidebar-width) minmax(0, 80ch) var(--toc-width);
-  grid-template-areas: "nav content toc";
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  grid-template-areas: "nav content";
   align-items: start;
   gap: 28px;
   width: 100%;
   max-width: 100%;
   margin-inline: auto;
   padding: 0 16px;
-}
-
-.doc.toc-disabled {
-  grid-template-columns: var(--sidebar-width) minmax(0, 80ch);
-  grid-template-areas: "nav content";
 }
 
 .doc-nav {
@@ -828,6 +858,10 @@ tbody tr:nth-child(even) td {
   background: rgba(22, 32, 46, 0.45);
 }
 
+[data-theme="light"] tbody tr:nth-child(even) td {
+  background: rgba(241, 245, 249, 0.6);
+}
+
 code {
   padding: 2px 6px;
   border-radius: 6px;
@@ -896,20 +930,14 @@ hr {
   line-height: 1.7;
 }
 
-.callout-info {
-  border-left-color: var(--accent);
-}
-
-.callout-note {
+.callout-info,
+.callout-note,
+.callout-important {
   border-left-color: var(--accent);
 }
 
 .callout-tip {
   border-left-color: var(--success);
-}
-
-.callout-important {
-  border-left-color: var(--accent);
 }
 
 .callout-warning {
@@ -975,7 +1003,7 @@ hr {
   display: block;
   margin-bottom: 0.6rem;
   color: var(--muted);
-  font-weight: 600;
+  font-weight: 650;
 }
 
 .search-form input {
@@ -1017,7 +1045,7 @@ hr {
 /* Responsive adjustments */
 @media (max-width: 1200px) {
   .doc {
-    grid-template-columns: var(--sidebar-width) minmax(0, 80ch) var(--toc-width);
+    grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
     padding: 0 12px;
   }
 
@@ -1032,8 +1060,7 @@ hr {
     grid-template-columns: 1fr;
     grid-template-areas:
       "content"
-      "nav"
-      "toc";
+      "nav";
   }
 
   .doc-nav {

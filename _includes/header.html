@@ -21,17 +21,24 @@
       <span class="hamburger"></span>
     </button>
     
-    <!-- Language switcher -->
-    <div class="language-switcher">
-      {% for lang in site.data.navigation.languages %}
-        {% if lang.code == page.lang %}
-          <span class="current-lang">{{ lang.name }}</span>
-        {% else %}
-          <a href="{{ lang.url | relative_url }}" class="lang-link">
-            {{ lang.name }}
-          </a>
-        {% endif %}
-      {% endfor %}
+    <!-- Theme toggle and language switcher -->
+    <div class="header-actions-group">
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        🌙
+      </button>
+      
+      <!-- Language switcher -->
+      <div class="language-switcher">
+        {% for lang in site.data.navigation.languages %}
+          {% if lang.code == page.lang %}
+            <span class="current-lang">{{ lang.name }}</span>
+          {% else %}
+            <a href="{{ lang.url | relative_url }}" class="lang-link">
+              {{ lang.name }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 </header>

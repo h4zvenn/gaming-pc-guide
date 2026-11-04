@@ -10,7 +10,7 @@ permalink: /
 <section class="home-hero">
   <div class="home-hero-text">
     <p class="hero-eyebrow">Ultimate PC Gaming Optimization Guide 2026</p>
-    <h1>Optimize the PC you have. Prove what actually helps.</h1>
+    <h1>Optimize the PC you have. Prove what actually helps.</h1>f
     <p class="hero-subtitle">A hardware-agnostic guide for desktops and gaming laptops, any GPU vendor, and different game workloads. Diagnose first, change one relevant setting, and measure the result.</p>
     <div class="hero-actions">
       <a class="button button-primary" href="{{ '/docs/ultimate-pc-gaming-guide-2026.html' | relative_url }}">Read the complete guide</a>

@@ -60,4 +60,24 @@
     .catch(() => {
       status.textContent = cfg.failed;
     });
+  
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('themeToggle');
+  const htmlElement = document.documentElement;
+
+  // Проверяем сохраненную тему в localStorage или системные настройки
+  const savedTheme = localStorage.getItem('theme') || 
+                     (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+
+  htmlElement.setAttribute('data-theme', savedTheme);
+  themeToggle.textContent = savedTheme === 'light' ? '☀️' : '🌙';
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    themeToggle.textContent = newTheme === 'light' ? '☀️' : '🌙';
+  });
 })();
