@@ -3,6 +3,8 @@ description: A hardware-agnostic, evidence-based guide to diagnosing and improvi
 baseurl: "/gaming-pc-optimization-guide"
 url: "https://h4zvenn.github.io"
 markdown: kramdown
+sass:
+  style: compressed
 
 
 lang: en
